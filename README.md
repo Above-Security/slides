@@ -1,5 +1,6 @@
 # above.github.io
 
-This repository hosts the user page for the GitHub Pages site.
+This repository hosts the slide deck for the GitHub Pages site.
 
-Open `index.html` in a browser or visit `https://above.github.io` to see the hello world page.
+Open `index.html` to view the first slide. The remaining slides are available as
+`slide2.html` through `slide8.html`.
