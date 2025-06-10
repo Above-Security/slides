@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
+      .use-case-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .use-case-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--card-color);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+      
+      .use-case-card:hover::after {
+        transform: scaleX(1);
+      }
+      
+      .use-case-card:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: var(--card-color);
+      }
+      
+      .card-red { --card-color: #dc2626; }
+      .card-orange { --card-color: #d97706; }
+      .card-yellow { --card-color: #ca8a04; }
+      .card-blue { --card-color: #2563eb; }
+      .card-teal { --card-color: #10b981; }
+      .card-purple { --card-color: #7c3aed; }
+      
+      .accent-teal { color: #10b981; }
+      .text-muted-orange { color: #d97706; }
+      .text-muted-purple { color: #7c3aed; }
+      .text-muted-blue { color: #2563eb; }
+      .text-muted-red { color: #dc2626; }
+      .text-muted-yellow { color: #ca8a04; }
+      
+      .grid-stagger {
+        animation: grid-stagger 1.2s ease-out;
+      }
+      
+      @keyframes grid-stagger {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      
+      .icon-morph {
+        animation: icon-morph 4s ease-in-out infinite;
+      }
+      
+      @keyframes icon-morph {
+        0%, 100% { transform: scale(1) rotate(0deg); }
+        50% { transform: scale(1.05) rotate(2deg); }
+      }
+      
+      .list-item {
+        transition: all 0.3s ease;
+      }
+      
+      .list-item:hover {
+        transform: translateX(3px);
+        color: var(--item-color);
+      }
+      
+      .card-island {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .card-island:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .logo-watermark {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        opacity: 0.3;
+        animation: logo-breathe 5s ease-in-out infinite;
+      }
+      
+      .logo-watermark path {
+        fill: #6b7280;
+      }
+      
+      @keyframes logo-breathe {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.02); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col p-16 relative">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Core Use Cases & Customer Pain Points</h1>
+        <p class="text-lg text-gray-600">Addressing Critical Security Challenges</p>
+      </div>
+
+      <!-- Use Cases Grid -->
+      <div class="grid grid-cols-2 gap-6 grid-stagger">
+        <!-- Privileged User Misuse -->
+        <div class="use-case-card rounded-lg p-6 card-red">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-user-shield text-muted-red text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">Privileged User Misuse</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #dc2626;"><i class="fas fa-dot-circle text-muted-red text-xs mr-2"></i>Dormant admin reactivation</li>
+            <li class="flex items-center list-item" style="--item-color: #dc2626;"><i class="fas fa-dot-circle text-muted-red text-xs mr-2"></i>Unauthorized data exports</li>
+            <li class="flex items-center list-item" style="--item-color: #dc2626;"><i class="fas fa-dot-circle text-muted-red text-xs mr-2"></i>Unsanctioned role changes</li>
+            <li class="flex items-center list-item" style="--item-color: #dc2626;"><i class="fas fa-dot-circle text-muted-red text-xs mr-2"></i>Policy violations</li>
+          </ul>
+        </div>
+
+        <!-- Offboarding Gaps -->
+        <div class="use-case-card rounded-lg p-6 card-orange">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-door-open text-muted-orange text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">Offboarding Gaps</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #d97706;"><i class="fas fa-dot-circle text-muted-orange text-xs mr-2"></i>Stale sessions</li>
+            <li class="flex items-center list-item" style="--item-color: #d97706;"><i class="fas fa-dot-circle text-muted-orange text-xs mr-2"></i>Token reuse</li>
+            <li class="flex items-center list-item" style="--item-color: #d97706;"><i class="fas fa-dot-circle text-muted-orange text-xs mr-2"></i>Shadow accounts</li>
+            <li class="flex items-center list-item" style="--item-color: #d97706;"><i class="fas fa-dot-circle text-muted-orange text-xs mr-2"></i>Delayed deprovisioning</li>
+          </ul>
+        </div>
+
+        <!-- SaaS Data Exfiltration -->
+        <div class="use-case-card rounded-lg p-6 card-yellow">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-cloud-download-alt text-muted-yellow text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">SaaS Data Exfiltration</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #ca8a04;"><i class="fas fa-dot-circle text-muted-yellow text-xs mr-2"></i>Unusual download volumes</li>
+            <li class="flex items-center list-item" style="--item-color: #ca8a04;"><i class="fas fa-dot-circle text-muted-yellow text-xs mr-2"></i>DLP bypass attempts</li>
+            <li class="flex items-center list-item" style="--item-color: #ca8a04;"><i class="fas fa-dot-circle text-muted-yellow text-xs mr-2"></i>Unauthorized sharing</li>
+            <li class="flex items-center list-item" style="--item-color: #ca8a04;"><i class="fas fa-dot-circle text-muted-yellow text-xs mr-2"></i>Insider threats</li>
+          </ul>
+        </div>
+
+        <!-- Behavioral Drift -->
+        <div class="use-case-card rounded-lg p-6 card-blue">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-chart-line text-muted-blue text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">Behavioral Drift & Lateral Movement</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #2563eb;"><i class="fas fa-dot-circle text-muted-blue text-xs mr-2"></i>Pattern changes</li>
+            <li class="flex items-center list-item" style="--item-color: #2563eb;"><i class="fas fa-dot-circle text-muted-blue text-xs mr-2"></i>Cross-app movement</li>
+            <li class="flex items-center list-item" style="--item-color: #2563eb;"><i class="fas fa-dot-circle text-muted-blue text-xs mr-2"></i>Privilege escalation</li>
+            <li class="flex items-center list-item" style="--item-color: #2563eb;"><i class="fas fa-dot-circle text-muted-blue text-xs mr-2"></i>Compromised accounts</li>
+          </ul>
+        </div>
+
+        <!-- Compliance Monitoring -->
+        <div class="use-case-card rounded-lg p-6 card-teal">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-clipboard-check accent-teal text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">Compliance Monitoring</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #10b981;"><i class="fas fa-dot-circle accent-teal text-xs mr-2"></i>Comprehensive audit trails</li>
+            <li class="flex items-center list-item" style="--item-color: #10b981;"><i class="fas fa-dot-circle accent-teal text-xs mr-2"></i>Regulatory reporting</li>
+            <li class="flex items-center list-item" style="--item-color: #10b981;"><i class="fas fa-dot-circle accent-teal text-xs mr-2"></i>Context-rich logging</li>
+            <li class="flex items-center list-item" style="--item-color: #10b981;"><i class="fas fa-dot-circle accent-teal text-xs mr-2"></i>Due diligence proof</li>
+          </ul>
+        </div>
+
+        <!-- Advanced Phishing -->
+        <div class="use-case-card rounded-lg p-6 card-purple">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-fishing text-muted-purple text-xl mr-3 icon-morph"></i>
+            <h3 class="text-lg font-bold text-gray-800">Advanced Phishing Detection</h3>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center list-item" style="--item-color: #7c3aed;"><i class="fas fa-dot-circle text-muted-purple text-xs mr-2"></i>OAuth consent abuse</li>
+            <li class="flex items-center list-item" style="--item-color: #7c3aed;"><i class="fas fa-dot-circle text-muted-purple text-xs mr-2"></i>Session hijacking</li>
+            <li class="flex items-center list-item" style="--item-color: #7c3aed;"><i class="fas fa-dot-circle text-muted-purple text-xs mr-2"></i>Post-login attacks</li>
+            <li class="flex items-center list-item" style="--item-color: #7c3aed;"><i class="fas fa-dot-circle text-muted-purple text-xs mr-2"></i>Browser-based threats</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Banner -->
+      <div class="mt-8 card-island rounded-lg p-6 border-purple-200 shadow-sm">
+        <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+          <i class="fas fa-bullseye text-muted-purple mr-3"></i>
+          Addressing the Post-Authentication Blind Spot
+        </h4>
+        <p class="text-gray-700">
+          These use cases represent critical security gaps that traditional tools miss because they focus on access control rather than actual user behavior within applications. Above provides the missing visibility layer.
+        </p>
+      </div>
+
+      <!-- Logo Watermark -->
+      <svg class="logo-watermark" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#6b7280"/>
+      </svg>
+    </div>
+  </body>
+</html>
