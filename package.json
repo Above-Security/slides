@@ -1,0 +1,13 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "This repository hosts the slide deck for the GitHub Pages site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx --yes html-validate index.html deck/*.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
