@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Above - Benefits</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="base.css" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -9,61 +10,61 @@
     <script src="base.js"></script>
     <style>
       .slide-container {
-        width: 1280px; 
-        min-height: 720px; 
+        width: 1280px;
+        min-height: 720px;
         background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
-      
+
       .differentiator-card {
         background: #ffffff;
         border: 1px solid #e5e7eb;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
-      
+
       .differentiator-card:hover {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         transform: translateY(-2px);
         border-color: #10b981;
       }
-      
+
       .accent-teal { color: #10b981; }
       .text-muted-orange { color: #d97706; }
       .text-muted-purple { color: #7c3aed; }
       .text-muted-blue { color: #2563eb; }
       .text-muted-red { color: #dc2626; }
-      
+
       .icon-container {
         transition: all 0.3s ease;
       }
-      
+
       .icon-container:hover {
         transform: scale(1.05);
       }
-      
+
       .metric-counter {
         animation: count-up 2s ease-out;
       }
-      
+
       @keyframes count-up {
         from { transform: scale(0.8); opacity: 0; }
         to { transform: scale(1); opacity: 1; }
       }
-      
+
       .progressive-reveal {
         animation: progressive-slide 1.2s ease-out;
       }
-      
+
       @keyframes progressive-slide {
         from { opacity: 0; transform: translateX(-30px); }
         to { opacity: 1; transform: translateX(0); }
       }
-      
+
       .feature-grid {
         position: relative;
       }
-      
+
       .feature-grid::after {
         content: '';
         position: absolute;
@@ -74,11 +75,11 @@
         background: linear-gradient(90deg, #10b981, #2563eb, #7c3aed, #d97706);
         animation: progress-bar 2s ease-out;
       }
-      
+
       @keyframes progress-bar {
         to { width: 100%; }
       }
-      
+
       .logo-watermark {
         position: absolute;
         bottom: 20px;
@@ -88,11 +89,11 @@
         opacity: 0.3;
         animation: logo-breathe 5s ease-in-out infinite;
       }
-      
+
       .logo-watermark path {
         fill: #6b7280;
       }
-      
+
       @keyframes logo-breathe {
         0%, 100% { opacity: 0.3; transform: scale(1); }
         50% { opacity: 0.5; transform: scale(1.02); }
@@ -216,8 +217,8 @@
         <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#6b7280"/>
       </svg>
       <div class="absolute bottom-4 right-4 flex space-x-4">
-        <a href="slide4.html" class="text-gray-600 hover:text-gray-900 text-xl"><i class="fas fa-arrow-left"></i></a>
-        <a href="slide6.html" class="text-gray-600 hover:text-gray-900 text-xl"><i class="fas fa-arrow-right"></i></a>
+        <a href="slide4.html" class="text-gray-600 hover:text-gray-900 text-xl"><span class="sr-only">Previous slide</span><i class="fas fa-arrow-left"></i></a>
+        <a href="slide6.html" class="text-gray-600 hover:text-gray-900 text-xl"><span class="sr-only">Next slide</span><i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </body>
