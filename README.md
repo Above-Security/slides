@@ -7,9 +7,9 @@ Open `deck/index.html` to view the first slide. The remaining slides are availab
 ## GitHub Pages Deployment
 
 The repository includes a workflow in `.github/workflows/pages.yml` that uploads
-the deck as an artifact and deploys it using the official **Deploy to GitHub
-Pages** action. Pushes to the `main` branch will automatically update the live
-site.
+the deck as an artifact and deploys it using the official **Deploy to GitHub Pages** action.
+A validation step runs `html-validate` on every HTML file to catch markup issues before deployment.
+Pushes to the `main` branch will automatically update the live site.
 
 ## Styling Guidelines
 
