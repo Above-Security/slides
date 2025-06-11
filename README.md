@@ -6,10 +6,12 @@ Open `deck/index.html` to view the first slide. The remaining slides are availab
 
 ## GitHub Pages Deployment
 
-The repository includes a workflow in `.github/workflows/pages.yml` that uploads
-the deck as an artifact and deploys it using the official **Deploy to GitHub Pages** action.
-A validation step runs `html-validate` on every HTML file to catch markup issues before deployment.
-Pushes to the `main` branch will automatically update the live site.
+GitHub Pages serves the site directly from the `main` branch. Simply push
+changes to update the live site.
+
+Before the site is visible, enable **GitHub Pages** in the repository settings
+and choose `main` as the source branch. Run `npm test` locally to validate the
+HTML before committing.
 
 ## Styling Guidelines
 
