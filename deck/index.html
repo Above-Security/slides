@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Above - Overview</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="base.css" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -9,76 +10,76 @@
     <script src="base.js"></script>
     <style>
       .slide-container {
-        width: 1280px; 
-        min-height: 720px; 
+        width: 1280px;
+        min-height: 720px;
         background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
-      
+
       .logo-container {
         position: relative;
         display: inline-block;
       }
-      
+
       .logo-animated {
         width: 60px;
         height: 60px;
         animation: logo-float 6s ease-in-out infinite;
         transition: all 0.3s ease;
       }
-      
+
       .logo-animated path {
         fill: #374151;
       }
-      
+
       @keyframes logo-float {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-3px); }
       }
-      
+
       .hero-text {
         animation: text-reveal 1.5s ease-out;
       }
-      
+
       @keyframes text-reveal {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      
+
       .card-island {
         background: #ffffff;
         border: 1px solid #e5e7eb;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         transition: all 0.3s ease;
       }
-      
+
       .card-island:hover {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         transform: translateY(-1px);
       }
-      
+
       .accent-teal { color: #10b981; }
       .bg-accent-teal { background-color: #10b981; }
-      
+
       .dark-section {
         background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
         transition: all 0.3s ease;
       }
-      
+
       .dark-section:hover {
         transform: translateY(-1px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
       }
-      
+
       .stagger-in {
         animation: stagger-fade-in 1.2s ease-out;
       }
-      
+
       @keyframes stagger-fade-in {
         from { opacity: 0; transform: translateX(-15px); }
         to { opacity: 1; transform: translateX(0); }
       }
-      
+
       .logo-watermark {
         position: absolute;
         bottom: 20px;
@@ -88,11 +89,11 @@
         opacity: 0.3;
         animation: logo-breathe 5s ease-in-out infinite;
       }
-      
+
       .logo-watermark path {
         fill: #6b7280;
       }
-      
+
       @keyframes logo-breathe {
         0%, 100% { opacity: 0.3; transform: scale(1); }
         50% { opacity: 0.5; transform: scale(1.02); }
@@ -115,7 +116,7 @@
             <span class="accent-teal">Above</span>
           </h1>
           <h2 class="text-2xl font-light text-gray-600 mb-8">
-            Revolutionizing Runtime Identity Threat Detection & Response
+            Revolutionizing Runtime Identity Threat Detection &amp; Response
           </h2>
         </div>
 
@@ -130,7 +131,7 @@
             </div>
             <p class="text-gray-600 text-sm">First fully application-aware Runtime ITDR platform</p>
           </div>
-          
+
           <div class="card-island rounded-lg p-6">
             <div class="flex items-center mb-4">
               <div class="w-10 h-10 bg-accent-teal rounded-lg flex items-center justify-center mr-4">
@@ -140,7 +141,7 @@
             </div>
             <p class="text-gray-600 text-sm">Detects misuse and insider threats in real-time</p>
           </div>
-          
+
           <div class="card-island rounded-lg p-6">
             <div class="flex items-center mb-4">
               <div class="w-10 h-10 bg-accent-teal rounded-lg flex items-center justify-center mr-4">
@@ -169,7 +170,7 @@
         <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#6b7280"/>
       </svg>
       <div class="absolute bottom-4 right-4 flex space-x-4">
-        <a href="slide2.html" class="text-gray-600 hover:text-gray-900 text-xl"><i class="fas fa-arrow-right"></i></a>
+        <a href="slide2.html" class="text-gray-600 hover:text-gray-900 text-xl"><span class="sr-only">Next slide</span><i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </body>
