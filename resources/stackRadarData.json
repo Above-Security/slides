@@ -1,0 +1,18 @@
+{
+  "categories": [
+    "ATO\u00a0Protection",
+    "Phishing\u00a0/\u00a0BEC",
+    "Runtime\u00a0Insider\u00a0Threat",
+    "Data\u00a0Exfiltration",
+    "Session\u00a0Hijack",
+    "Offboarding\u00a0&\u00a0Residual\u00a0Access"
+  ],
+  "scores": {
+    "Above": [1, 2, 5, 4, 4, 4],
+    "Grip\u00a0Security": [3, 2, 3, 2, 2, 3],
+    "Reco\u00a0AI": [3, 2, 3, 2, 2, 3],
+    "Island\u00a0Enterprise\u00a0Browser": [0, 5, 5, 5, 5, 3],
+    "Abnormal\u00a0Security": [5, 5, 0, 0, 1, 1],
+    "Reveal\u00a0Security": [3, 0, 4, 2, 2, 2]
+  }
+}
