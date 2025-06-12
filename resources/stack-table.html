@@ -4,132 +4,361 @@
   <meta charset="UTF-8">
   <title>Product Stack Comparison</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 6px 8px; text-align: center; }
-    thead th { background: #f0f0f0; }
-    .center-bold { text-align: center; font-weight: bold; }
-    .comp { background: #c6f6d5; }
-    .replace { background: #ffc9c9; }
-    .incremental { background: #fff3bf; }
-    .skip { background: #e9ecef; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    thead th {
+      background: #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .section-header th {
+      text-align: left;
+      background: #e5e7eb;
+    }
+
+    .coverage-full,
+    .coverage-partial,
+    .coverage-none,
+    .fit-complement,
+    .fit-incremental,
+    .fit-replace,
+    .fit-unnecessary {
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      display: inline-block;
+      margin: 2px 0;
+    }
+
+    .coverage-full {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .coverage-partial {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .coverage-none {
+      background: #fee2e2;
+      color: #7f1d1d;
+    }
+
+    .fit-complement {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .fit-incremental {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .fit-replace {
+      background: #fee2e2;
+      color: #7f1d1d;
+    }
+
+    .fit-unnecessary {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .legend {
+      margin-bottom: 1em;
+    }
+
+    .legend span {
+      margin-left: 0.5em;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1f2937;
+        color: #f1f5f9;
+      }
+
+      table {
+        border-color: #555;
+      }
+
+      th,
+      td {
+        border-color: #555;
+      }
+
+      thead th {
+        background: #374151;
+        color: #f1f5f9;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #2b303b;
+      }
+
+      .section-header th {
+        background: #4b5563;
+      }
+
+      .coverage-full {
+        background: #065f46;
+        color: #d1fae5;
+      }
+
+      .coverage-partial {
+        background: #92400e;
+        color: #fef3c7;
+      }
+
+      .coverage-none {
+        background: #7f1d1d;
+        color: #fee2e2;
+      }
+
+      .fit-complement {
+        background: #065f46;
+        color: #d1fae5;
+      }
+
+      .fit-incremental {
+        background: #92400e;
+        color: #fef3c7;
+      }
+
+      .fit-replace {
+        background: #7f1d1d;
+        color: #fee2e2;
+      }
+
+      .fit-unnecessary {
+        background: #374151;
+        color: #e5e7eb;
+      }
+    }
   </style>
 </head>
 <body>
-<h1>Product Stack Comparison</h1>
-<table>
+  <h1>Product Stack Comparison</h1>
+  <div class="legend">
+    <strong>Legend:</strong>
+    <div>
+      Coverage:
+      <span class="coverage-full" title="Covered: This stack addresses the use case fully">Full</span>
+      <span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span>
+      <span class="coverage-none" title="Not Covered: This stack does not address the use case">None</span>
+    </div>
+    <div>
+      Sales Fit:
+      <span class="fit-complement">Complementary</span>
+      <span class="fit-incremental">Incremental</span>
+      <span class="fit-replace">Replace Existing Tool</span>
+      <span class="fit-unnecessary">Low Priority</span>
+    </div>
+  </div>
+  <div class="table-wrapper">
+  <table id="stack-table">
+  <caption>Existing Stack Coverage Comparison</caption>
 <thead>
 <tr>
-<th scope="col">Stack Already in Place</th>
-<th scope="col">ATO</th>
-<th scope="col">Phishing Site / OAuth</th>
-<th scope="col">Insider-Runtime<br>(Managed Chrome)</th>
-<th scope="col">Residual Gap <em>we</em> solve</th>
-<th scope="col">Sales Posture</th>
+<th scope="col">Stack In Place</th>
+<th scope="col">ATO Coverage</th>
+<th scope="col">Phishing Site Coverage</th>
+<th scope="col">Insider Threat (Runtime)</th>
+<th scope="col">Unsolved Gap</th>
+<th scope="col" class="sort-fit">Sales Strategy Fit</th>
 </tr>
 </thead>
 <tbody>
-<tr><td colspan="6" class="center-bold">Single-Product Environments</td></tr>
+<tr class="section-header"><th colspan="6" scope="colgroup">Single-Product Environments</th></tr>
 <tr>
 <td>Grip Security (SSPM + ITDR 2.0)</td>
-<td>◑</td><td>◑</td><td>◑</td>
-<td>Semantic in-session behaviour; fine-grained SaaS actions</td>
-<td class="comp">🟢 Complement</td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>No real-time DOM action tracking</td>
+<td><span class="fit-complement">Complementary</span></td>
 </tr>
 <tr>
 <td>Reco AI (SSPM ITDR)</td>
-<td>◑</td><td>◑</td><td>◑</td>
-<td>Same as Grip</td>
-<td class="comp">🟢</td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>No real-time DOM action tracking</td>
+<td><span class="fit-complement">Complementary</span></td>
 </tr>
 <tr>
 <td>Reveal Security (log-journey)</td>
-<td>◑</td><td>❌</td><td>✅</td>
-<td>Lower-latency, UI-level context without SIEM quality logs</td>
-<td class="replace">🔴 Replace</td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Log-based, not real-time</td>
+<td><span class="fit-replace">Replace Existing Tool</span></td>
 </tr>
 <tr>
 <td>Island.io (Enterprise Browser)</td>
-<td>❌</td><td>✅</td><td>✅ (only in Island)</td>
-<td>Managed Chrome outside Island tenant; semantic SaaS actions</td>
-<td class="incremental">🟡 Incremental</td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>only in Island</small></td>
+<td>No visibility into unmanaged Chrome</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
 <tr>
 <td>Abnormal Security (BEC AI)</td>
-<td>✅</td><td>✅</td><td>❌</td>
-<td>Post-click SaaS misuse &amp; privilege abuse</td>
-<td class="comp">🟢</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td>No visibility after email click</td>
+<td><span class="fit-complement">Complementary</span></td>
 </tr>
 <tr>
 <td>CrowdStrike Falcon Identity</td>
-<td>✅</td><td>❌</td><td>◑</td>
-<td>UI-layer SaaS behaviour on managed Chrome</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>No DOM-level SaaS visibility</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
 <tr>
 <td>Microsoft Entra ID + Defender for Identity</td>
-<td>✅</td><td>◑</td><td>◑</td>
-<td>DOM-level actions in SaaS apps; fine-grained misuse</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>Lacks fine-grained SaaS actions</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
-<tr><td colspan="6" class="center-bold">Two-Tool Stacks (Typical Mid-Market)</td></tr>
+<tr class="section-header"><th colspan="6" scope="colgroup">Two-Tool Stacks (Typical Mid-Market)</th></tr>
 <tr>
 <td>Island + Grip</td>
-<td>✅</td><td>✅</td><td>✅ (in Island)</td>
-<td>Managed Chrome not using Island; deeper semantic detections</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
+<td>No visibility into unmanaged Chrome</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
 <tr>
 <td>Island + Abnormal</td>
-<td>✅</td><td>✅✅</td><td>✅ (in Island)</td>
-<td>Same as above; runtime drift when user shifts browsers</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
+<td>Drift when users leave Island</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
 <tr>
 <td>Grip + Abnormal</td>
-<td>✅</td><td>✅</td><td>◑</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
 <td>In-session semantics on managed Chrome</td>
-<td class="comp">🟢</td>
+<td><span class="fit-complement">Complementary</span></td>
 </tr>
 <tr>
 <td>CrowdStrike + Island</td>
-<td>✅</td><td>◑</td><td>✅ (in Island)</td>
-<td>Chrome runtime outside Island</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
+<td>No visibility into unmanaged Chrome</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
 <tr>
 <td>Silverfort + Grip</td>
-<td>✅</td><td>❌</td><td>◑</td>
-<td>Fine-grained app misuse &amp; managed-browser visibility</td>
-<td class="comp">🟢</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>No runtime SaaS context</td>
+<td><span class="fit-complement">Complementary</span></td>
 </tr>
-<tr><td colspan="6" class="center-bold">Three-Tool “Platinum” Stacks</td></tr>
+<tr class="section-header"><th colspan="6" scope="colgroup">Three-Tool “Platinum” Stacks</th></tr>
 <tr>
 <td>Island + Grip + Abnormal</td>
-<td>✅</td><td>✅✅</td><td>✅</td>
-<td>Tiny gap: corner-case Chrome devices not under Island; low ROI</td>
-<td class="skip">⚪ Skip</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Corner cases outside Island</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
 </tr>
 <tr>
 <td>Island + CrowdStrike + Abnormal</td>
-<td>✅</td><td>✅✅</td><td>✅</td>
-<td>Same tiny residual; unlikely to justify new spend</td>
-<td class="skip">⚪</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Corner cases outside Island</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
 </tr>
 <tr>
 <td>Grip + Abnormal + CrowdStrike</td>
-<td>✅</td><td>✅</td><td>◑</td>
-<td>UI-level insider misuse on managed Chrome</td>
-<td class="incremental">🟡</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>No DOM-level SaaS visibility</td>
+<td><span class="fit-incremental">Incremental</span></td>
 </tr>
-<tr><td colspan="6" class="center-bold">Four-Tool “Kitchen-Sink” Stack</td></tr>
+<tr class="section-header"><th colspan="6" scope="colgroup">Four-Tool “Kitchen-Sink” Stack</th></tr>
 <tr>
 <td>Island + Grip + CrowdStrike + Abnormal</td>
-<td>✅</td><td>✅✅</td><td>✅</td>
-<td>Negligible incremental value unless CISO mandates redundant telemetry</td>
-<td class="skip">⚪</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Negligible incremental value</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const order = {
+      'Complementary': 1,
+      'Incremental': 2,
+      'Replace Existing Tool': 3,
+      'Low Priority': 4
+    };
+    const header = document.querySelector('th.sort-fit');
+    const tbody = document.querySelector('#stack-table tbody');
+    let asc = true;
+    header.addEventListener('click', () => {
+      const sections = Array.from(tbody.querySelectorAll('tr.section-header'));
+      sections.forEach(sec => {
+        const rows = [];
+        for (let row = sec.nextElementSibling; row && !row.classList.contains('section-header'); row = row.nextElementSibling) {
+          rows.push(row);
+        }
+        rows.sort((a, b) => {
+          const valA = a.lastElementChild.textContent.trim();
+          const valB = b.lastElementChild.textContent.trim();
+          return asc ? order[valA] - order[valB] : order[valB] - order[valA];
+        });
+        rows.forEach(r => tbody.insertBefore(r, sec.nextElementSibling));
+      });
+      asc = !asc;
+    });
+  });
+</script>
 </body>
 </html>
