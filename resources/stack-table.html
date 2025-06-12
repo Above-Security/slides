@@ -1,70 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Above – Differentiation Radar</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-  body { padding:2rem; font-family: ui-sans-serif,system-ui; background:#f5f5f5; }
-  canvas { max-width: 800px; margin:auto; }
-</style>
+  <meta charset="utf-8">
+  <title>Above – Capability Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://unpkg.com/tabulator-tables@5.6.3/dist/css/tabulator.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/tabulator-tables@5.6.3/dist/js/tabulator.min.js"></script>
+  <style>
+    body { padding:2rem; font-family: ui-sans-serif,system-ui; background:#f5f5f5; }
+    canvas { max-width: 800px; margin:auto; }
+    #layout { display: flex; flex-wrap: wrap; gap: 2rem }
+    #tableDiv { flex: 1 1 600px; min-width: 300px }
+    #chartDiv { flex: 1 1 400px; min-width: 280px }
+    .fit-badge { padding:2px 6px; border-radius:4px; color:#fff; font-size:0.85rem; }
+  </style>
 </head>
 <body>
-  <h1 class="text-2xl font-bold mb-6 text-center">Above vs. Adjacent Products – Capability Radar</h1>
-  <div class="flex flex-col items-center">
-    <canvas id="radar" width="800" height="600"></canvas>
-    <p class="text-sm mt-4 text-gray-600 max-w-xl text-center">
-      Scores are on a 0‑5 scale (0 = none, 5 = best‑in‑class). Radar highlights where <strong>Above</strong> is uniquely strong (runtime browser‑side visibility on managed Chrome) versus stack alternatives.
-    </p>
+  <h1 class="text-2xl font-bold mb-6 text-center">Above vs. Other Stacks – Capability Explorer</h1>
+  <div class="mb-4 text-center text-sm text-gray-700">
+    Click a row to view its capability radar.
   </div>
 
-<script type="module">
-import data from './stackRadarData.json' assert { type: 'json' };
+  <div id="layout">
+    <div id="tableDiv"><div id="stackTable"></div></div>
+    <div id="chartDiv" class="card p-3"><canvas id="radarChart" height="400"></canvas></div>
+  </div>
 
-const categories = data.categories;
-const palette   = [
-  '#16a34a55','#3b82f655','#eab30855','#ef444455','#8b5cf655','#14b8a655'
-];
+  <script>
+  fetch('./stackRadarData_clean.json').then(r => r.json()).then(data => {
+    const categories = data.categories;
+    const fitColors = {
+      "Core": "#047857",
+      "Complementary": "#4d7c0f",
+      "Incremental": "#b45309",
+      "Low Priority": "#6b7280",
+      "Replace Existing Tool": "#7f1d1d"
+    };
+    const palette = ['#16a34a55','#3b82f655','#eab30855','#ef444455','#8b5cf655','#14b8a655'];
 
-const datasets = Object.entries(data.scores).map(([label, arr], idx) => {
-  return {
-    label,
-    data: arr,
-    fill: true,
-    backgroundColor: palette[idx % palette.length],
-    borderColor: palette[idx % palette.length].replace('55','dd'),
-    borderWidth: 1,
-    pointRadius: 3
-  };
-});
-
-new Chart(
-  document.getElementById('radar'),
-  {
-    type: 'radar',
-    data: {
-      labels: categories,
-      datasets
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: { boxWidth: 18 }
-        }
-      },
-      scales: {
-        r: {
-          beginAtZero: true,
-          max: 5,
-          ticks: { stepSize: 1 },
-          pointLabels: { font: { size: 12 } }
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    const radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: { labels: categories, datasets: [] },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 18 } }
+        },
+        scales: {
+          r: {
+            beginAtZero: true,
+            max: 5,
+            ticks: { stepSize: 1 },
+            pointLabels: { font: { size: 12 } }
+          }
         }
       }
-    }
+    });
+
+    const rows = [...data.vendors, data.core];
+    const tableData = rows.map(item => {
+      const row = { Product: item.name, Fit: item.fit };
+      data.categories.forEach((cat,i) => row[cat] = item.scores[i]);
+      return row;
+    });
+
+    new Tabulator("#stackTable", {
+      data: tableData,
+      layout: "fitDataStretch",
+      columns: [
+        { title: "Product", field: "Product", width: 220, frozen: true },
+        ...data.categories.map(cat => ({
+          title: cat, field: cat,
+          formatter:"progress", formatterParams:{min:0,max:5},
+          width:120
+        })),
+        {
+          title: "Sales Fit", field: "Fit", width:180,
+          formatter: cell => {
+            const f = cell.getValue();
+            const c = fitColors[f]||"#999";
+            return `<span class="fit-badge" style="background:${c}">${f}</span>`;
+          },
+          headerFilter: "select", headerFilterParams: { values: true }
+        }
+      ],
+      height: "600px",
+      rowClick: (e,row) => {
+        const d = row.getData();
+        radarChart.data.datasets = [{
+          label: d.Product,
+          data: data.categories.map(cat=>d[cat]),
+          fill: true,
+          backgroundColor: '#3b82f655',
+          borderColor: '#3b82f6dd',
+          borderWidth: 2,
+          pointRadius: 4
+        }];
+        radarChart.update();
+      }
+    });
   });
-</script>
+  </script>
 </body>
 </html>
