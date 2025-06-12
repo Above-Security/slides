@@ -5,74 +5,81 @@
     "Runtime Insider Threat",
     "Data Exfiltration",
     "Session Hijack",
-    "Offboarding & Residual Access"
+    "Offboarding & Residual Access",
+    "SaaS Discovery & Inventory"
   ],
   "vendors": [
     {
       "id": "grip",
       "name": "Grip Security",
-      "scores": [3,2,3,2,2,3],
+      "scores": [3, 0, 2, 2, 2, 4, 4],
       "fit": "Complementary"
     },
     {
       "id": "reco",
       "name": "Reco AI",
-      "scores": [3,2,3,2,2,3],
+      "scores": [2, 2, 3, 3, 1, 2, 5],
       "fit": "Complementary"
     },
     {
       "id": "island",
       "name": "Island Enterprise Browser",
-      "scores": [0,5,5,5,5,3],
+      "scores": [1, 1, 5, 5, 5, 4, 3],
       "fit": "Incremental"
     },
     {
       "id": "abnormal",
       "name": "Abnormal Security",
-      "scores": [5,5,0,0,1,1],
+      "scores": [5, 5, 1, 1, 1, 1, 1],
       "fit": "Complementary"
     },
     {
       "id": "reveal",
       "name": "Reveal Security",
-      "scores": [3,0,4,2,2,2],
+      "scores": [3, 0, 4, 3, 1, 2, 2],
       "fit": "Replace Existing Tool"
     },
     {
       "id": "cyberhaven",
       "name": "Cyberhaven DLP",
-      "scores": [0,0,3,4,2,2],
+      "scores": [0, 0, 3, 5, 1, 2, 1],
       "fit": "Complementary"
     },
     {
       "id": "nightfall",
       "name": "Nightfall AI DLP",
-      "scores": [0,0,3,3,2,2],
+      "scores": [0, 0, 2, 4, 1, 2, 1],
       "fit": "Complementary"
     },
     {
       "id": "dtex",
-      "name": "DTEX Systems (Endpoint Insider)",
-      "scores": [2,1,4,4,2,3],
+      "name": "DTEX Systems",
+      "scores": [2, 1, 5, 5, 2, 4, 3],
       "fit": "Complementary"
     },
     {
       "id": "exabeam",
-      "name": "Exabeam (SIEM UEBA)",
-      "scores": [3,2,3,2,2,2],
+      "name": "Exabeam (SIEM + UEBA)",
+      "scores": [4, 2, 3, 3, 1, 2, 3],
       "fit": "Complementary"
     },
     {
       "id": "valence",
-      "name": "Valence Security (SSPM + ITDR)",
-      "scores": [4,4,5,4,3,3],
+      "name": "Valence Security",
+      "scores": [4, 4, 5, 4, 2, 3, 5],
       "fit": "Incremental"
+    },
+    {
+      "id": "push",
+      "name": "Push Security",
+      "scores": [5, 5, 3, 2, 5, 2, 5],
+      "fit": "Overlap"
     }
   ],
   "core": {
     "id": "above",
     "name": "Above (Browser ITDR)",
-    "scores": [1,2,5,4,4,4],
+    "scores": [5, 5, 5, 4, 5, 4, 5],
     "fit": "Core"
   }
 }
