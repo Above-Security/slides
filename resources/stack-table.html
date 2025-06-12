@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <title>Product Stack Comparison</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <style type="text/tailwindcss">
     body {@apply p-10 font-sans;}
     .table-wrapper {@apply overflow-x-auto;}
@@ -273,11 +270,6 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    $('#stack-table').DataTable({
-      paging: false,
-      info: false,
-      ordering: false
-    });
     const order = {
       'Complementary': 1,
       'Incremental': 2,
