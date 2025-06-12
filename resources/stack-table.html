@@ -13,31 +13,31 @@
       overflow-x: auto;
     }
 
-    table {
+    #stack-table {
       border-collapse: collapse;
       width: 100%;
       min-width: 700px;
     }
 
-    th,
-    td {
+    #stack-table th,
+    #stack-table td {
       border: 1px solid #ccc;
       padding: 6px 8px;
       text-align: center;
     }
 
-    thead th {
+    #stack-table thead th {
       background: #f0f0f0;
       position: sticky;
       top: 0;
       z-index: 1;
     }
 
-    tbody tr:nth-child(even) {
+    #stack-table tbody tr:nth-child(even) {
       background: #f9f9f9;
     }
 
-    .section-header th {
+    #stack-table .section-header th {
       text-align: left;
       background: #e5e7eb;
     }
@@ -105,25 +105,25 @@
         color: #f1f5f9;
       }
 
-      table {
+      #stack-table {
         border-color: #555;
       }
 
-      th,
-      td {
+      #stack-table th,
+      #stack-table td {
         border-color: #555;
       }
 
-      thead th {
+      #stack-table thead th {
         background: #374151;
         color: #f1f5f9;
       }
 
-      tbody tr:nth-child(even) {
+      #stack-table tbody tr:nth-child(even) {
         background: #2b303b;
       }
 
-      .section-header th {
+      #stack-table .section-header th {
         background: #4b5563;
       }
 
@@ -253,6 +253,22 @@
 <td>Lacks fine-grained SaaS actions</td>
 <td><span class="fit-incremental">Incremental</span></td>
 </tr>
+<tr>
+<td>Cyberhaven (DLP)</td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>Lacks SaaS session context</td>
+<td><span class="fit-complement">Complementary</span></td>
+</tr>
+<tr>
+<td>Nightfall AI (DLP)</td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>Focuses on data content only</td>
+<td><span class="fit-complement">Complementary</span></td>
+</tr>
 <tr class="section-header"><th colspan="6" scope="colgroup">Two-Tool Stacks (Typical Mid-Market)</th></tr>
 <tr>
 <td>Island + Grip</td>
@@ -294,6 +310,30 @@
 <td>No runtime SaaS context</td>
 <td><span class="fit-complement">Complementary</span></td>
 </tr>
+<tr>
+<td>Island + Cyberhaven</td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
+<td>No ATO protection</td>
+<td><span class="fit-incremental">Incremental</span></td>
+</tr>
+<tr>
+<td>Grip + Cyberhaven</td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
+<td>Lacks full runtime visibility</td>
+<td><span class="fit-complement">Complementary</span></td>
+</tr>
+<tr>
+<td>Island + Nightfall</td>
+<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
+<td>No ATO protection</td>
+<td><span class="fit-incremental">Incremental</span></td>
+</tr>
 <tr class="section-header"><th colspan="6" scope="colgroup">Three-Tool “Platinum” Stacks</th></tr>
 <tr>
 <td>Island + Grip + Abnormal</td>
@@ -319,6 +359,22 @@
 <td>No DOM-level SaaS visibility</td>
 <td><span class="fit-incremental">Incremental</span></td>
 </tr>
+<tr>
+<td>Island + Grip + Cyberhaven</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Limited ROI over two-tool stack</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
+</tr>
+<tr>
+<td>Island + Abnormal + Cyberhaven</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Corner cases outside Island</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
+</tr>
 <tr class="section-header"><th colspan="6" scope="colgroup">Four-Tool “Kitchen-Sink” Stack</th></tr>
 <tr>
 <td>Island + Grip + CrowdStrike + Abnormal</td>
@@ -326,6 +382,14 @@
 <td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
 <td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
 <td>Negligible incremental value</td>
+<td><span class="fit-unnecessary">Low Priority</span></td>
+</tr>
+<tr>
+<td>Island + Grip + CrowdStrike + Cyberhaven</td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
+<td>Minimal value over existing stack</td>
 <td><span class="fit-unnecessary">Low Priority</span></td>
 </tr>
 </tbody>
