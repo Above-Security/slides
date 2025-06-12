@@ -1,301 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Product Stack Comparison</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/tailwindcss">
-    body {@apply p-10 font-sans;}
-    .table-wrapper {@apply overflow-x-auto;}
-    #stack-table {@apply border-collapse w-full min-w-[700px];}
-    #stack-table th, #stack-table td {@apply border border-gray-300 p-2 text-center;}
-    #stack-table thead th {@apply bg-gray-100 sticky top-0 z-10;}
-    #stack-table tbody tr:nth-child(even) {@apply bg-gray-50;}
-    #stack-table .section-header th {@apply text-left bg-gray-200;}
-    .coverage-full {@apply bg-green-100 text-green-700 font-semibold rounded px-2 inline-block;}
-    .coverage-partial {@apply bg-yellow-100 text-yellow-700 font-semibold rounded px-2 inline-block;}
-    .coverage-none {@apply bg-red-100 text-red-700 font-semibold rounded px-2 inline-block;}
-    .fit-complement {@apply bg-green-100 text-green-700 font-semibold rounded px-2 inline-block;}
-    .fit-incremental {@apply bg-yellow-100 text-yellow-700 font-semibold rounded px-2 inline-block;}
-    .fit-replace {@apply bg-red-100 text-red-700 font-semibold rounded px-2 inline-block;}
-    .fit-unnecessary {@apply bg-gray-300 text-gray-700 font-semibold rounded px-2 inline-block;}
-    .legend {@apply mb-4;}
-    .legend span {@apply ml-2;}
-    @media (prefers-color-scheme: dark) {
-      body {@apply bg-slate-800 text-slate-100;}
-      #stack-table th, #stack-table td {@apply border-gray-600;}
-      #stack-table thead th {@apply bg-slate-700 text-slate-100;}
-      #stack-table tbody tr:nth-child(even) {@apply bg-slate-700;}
-      #stack-table .section-header th {@apply bg-slate-600;}
-      .coverage-full {@apply bg-green-700 text-green-100;}
-      .coverage-partial {@apply bg-yellow-700 text-yellow-100;}
-      .coverage-none {@apply bg-red-700 text-red-100;}
-      .fit-complement {@apply bg-green-700 text-green-100;}
-      .fit-incremental {@apply bg-yellow-700 text-yellow-100;}
-      .fit-replace {@apply bg-red-700 text-red-100;}
-      .fit-unnecessary {@apply bg-gray-700 text-gray-200;}
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Security Stack Coverage Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/tabulator-tables@5.6.3/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+<script src="https://unpkg.com/tabulator-tables@5.6.3/dist/js/tabulator.min.js"></script>
+<style>
+  body{padding:2rem;background:#f8fafc;font-family:system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;}
+  #mainRow{display:flex;flex-wrap:wrap;gap:2rem}
+  #tableDiv{flex:1 1 600px;min-width:300px}
+  #chartDiv{flex:1 1 400px;min-width:280px}
+  .legend-box{display:inline-block;width:14px;height:14px;margin-right:6px;border-radius:2px}
+</style>
 </head>
 <body>
-  <h1>Product Stack Comparison</h1>
-  <div class="legend">
-    <strong>Legend:</strong>
-    <div>
-      Coverage:
-      <span class="coverage-full" title="Covered: This stack addresses the use case fully">Full</span>
-      <span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span>
-      <span class="coverage-none" title="Not Covered: This stack does not address the use case">None</span>
-    </div>
-    <div>
-      Sales Fit:
-      <span class="fit-complement">Complementary</span>
-      <span class="fit-incremental">Incremental</span>
-      <span class="fit-replace">Replace Existing Tool</span>
-      <span class="fit-unnecessary">Low Priority</span>
-    </div>
-  </div>
-  <div class="table-wrapper">
-  <table id="stack-table">
-  <caption>Existing Stack Coverage Comparison</caption>
-<thead>
-<tr>
-<th scope="col">Stack In Place</th>
-<th scope="col">ATO Coverage</th>
-<th scope="col">Phishing Site Coverage</th>
-<th scope="col">Insider Threat (Runtime)</th>
-<th scope="col">Unsolved Gap</th>
-<th scope="col" class="sort-fit">Sales Strategy Fit</th>
-</tr>
-</thead>
-<tbody>
-<tr class="section-header"><th colspan="6" scope="colgroup">Single-Product Environments</th></tr>
-<tr>
-<td>Grip Security (SSPM + ITDR 2.0)</td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>No real-time DOM action tracking</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>Reco AI (SSPM ITDR)</td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>No real-time DOM action tracking</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>Reveal Security (log-journey)</td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Log-based, not real-time</td>
-<td><span class="fit-replace">Replace Existing Tool</span></td>
-</tr>
-<tr>
-<td>Island.io (Enterprise Browser)</td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>only in Island</small></td>
-<td>No visibility into unmanaged Chrome</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Abnormal Security (BEC AI)</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td>No visibility after email click</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>CrowdStrike Falcon Identity</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>No DOM-level SaaS visibility</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Microsoft Entra ID + Defender for Identity</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>Lacks fine-grained SaaS actions</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Cyberhaven (DLP)</td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>Lacks SaaS session context</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>Nightfall AI (DLP)</td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>Focuses on data content only</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr class="section-header"><th colspan="6" scope="colgroup">Two-Tool Stacks (Typical Mid-Market)</th></tr>
-<tr>
-<td>Island + Grip</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
-<td>No visibility into unmanaged Chrome</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Island + Abnormal</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
-<td>Drift when users leave Island</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Grip + Abnormal</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>In-session semantics on managed Chrome</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>CrowdStrike + Island</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
-<td>No visibility into unmanaged Chrome</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Silverfort + Grip</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>No runtime SaaS context</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>Island + Cyberhaven</td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
-<td>No ATO protection</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Grip + Cyberhaven</td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>Lacks full runtime visibility</td>
-<td><span class="fit-complement">Complementary</span></td>
-</tr>
-<tr>
-<td>Island + Nightfall</td>
-<td><span class="coverage-none" title="Not Covered: This stack does not address the use case">Not Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span><br><small>in Island</small></td>
-<td>No ATO protection</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr class="section-header"><th colspan="6" scope="colgroup">Three-Tool “Platinum” Stacks</th></tr>
-<tr>
-<td>Island + Grip + Abnormal</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Corner cases outside Island</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-<tr>
-<td>Island + CrowdStrike + Abnormal</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Corner cases outside Island</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-<tr>
-<td>Grip + Abnormal + CrowdStrike</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-partial" title="Partial: This stack partially addresses the use case">Partial</span></td>
-<td>No DOM-level SaaS visibility</td>
-<td><span class="fit-incremental">Incremental</span></td>
-</tr>
-<tr>
-<td>Island + Grip + Cyberhaven</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Limited ROI over two-tool stack</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-<tr>
-<td>Island + Abnormal + Cyberhaven</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Corner cases outside Island</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-<tr class="section-header"><th colspan="6" scope="colgroup">Four-Tool “Kitchen-Sink” Stack</th></tr>
-<tr>
-<td>Island + Grip + CrowdStrike + Abnormal</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Negligible incremental value</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-<tr>
-<td>Island + Grip + CrowdStrike + Cyberhaven</td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td><span class="coverage-full" title="Covered: This stack addresses the use case fully">Covered</span></td>
-<td>Minimal value over existing stack</td>
-<td><span class="fit-unnecessary">Low Priority</span></td>
-</tr>
-</tbody>
-</table>
+<h1 class="mb-3">Security‑Stack Coverage Explorer</h1>
+
+<div class="mb-3">
+<span class="legend-box" style="background:#057a55"></span>Full&nbsp;
+<span class="legend-box" style="background:#facc15"></span>Partial&nbsp;
+<span class="legend-box" style="background:#dc2626"></span>None&nbsp;&nbsp;|&nbsp;&nbsp;
+<span class="legend-box" style="background:#4d7c0f"></span>Complement&nbsp;
+<span class="legend-box" style="background:#b45309"></span>Incremental&nbsp;
+<span class="legend-box" style="background:#7f1d1d"></span>Replace&nbsp;
+<span class="legend-box" style="background:#6b7280"></span>Low‑Priority
 </div>
+
+<div id="mainRow">
+  <div id="tableDiv">
+     <div id="stackTable"></div>
+  </div>
+  <div id="chartDiv" class="card p-3">
+     <canvas id="radarChart" height="380"></canvas>
+  </div>
+</div>
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const order = {
-      'Complementary': 1,
-      'Incremental': 2,
-      'Replace Existing Tool': 3,
-      'Low Priority': 4
-    };
-    const header = document.querySelector('th.sort-fit');
-    const tbody = document.querySelector('#stack-table tbody');
-    let asc = true;
-    header.addEventListener('click', () => {
-      const sections = Array.from(tbody.querySelectorAll('tr.section-header'));
-      sections.forEach(sec => {
-        const rows = [];
-        for (let row = sec.nextElementSibling; row && !row.classList.contains('section-header'); row = row.nextElementSibling) {
-          rows.push(row);
-        }
-        rows.sort((a, b) => {
-          const valA = a.lastElementChild.textContent.trim();
-          const valB = b.lastElementChild.textContent.trim();
-          return asc ? order[valA] - order[valB] : order[valB] - order[valA];
-        });
-        rows.forEach(r => tbody.insertBefore(r, sec.nextElementSibling));
-      });
-      asc = !asc;
+// load JSON
+fetch('stackMatrix.json')
+ .then(r=>r.json())
+ .then(data=>{
+    // helper for badge
+    const covColor=v=>v==1?'#057a55':v==0.5?'#facc15':'#dc2626';
+    const fitColor={'Complementary':'#4d7c0f','Incremental':'#b45309','Replace Existing Tool':'#7f1d1d','Low Priority':'#6b7280'};
+    const table=new Tabulator("#stackTable",{
+        data:data,
+        layout:"fitDataStretch",
+        columns:[
+           {title:"Stack",field:"stack",width:210,frozen:true},
+           {title:"ATO",field:"ato",width:70,formatter:(c)=>`<span style="display:inline-block;width:100%;height:100%;background:${covColor(c.getValue())};border-radius:4px"></span>`},
+           {title:"Phishing",field:"phishing",width:90,formatter:(c)=>`<span style="display:inline-block;width:100%;height:100%;background:${covColor(c.getValue())};border-radius:4px"></span>`},
+           {title:"Insider",field:"insider",width:90,formatter:(c)=>`<span style="display:inline-block;width:100%;height:100%;background:${covColor(c.getValue())};border-radius:4px"></span>`},
+           {title:"Gap",field:"gap",widthGrow:3},
+           {title:"Fit",field:"fit",width:130,formatter:(c)=>`<span style="background:${fitColor[c.getValue()]};color:#fff;padding:2px 6px;border-radius:4px;font-size:0.8rem">${c.getValue()}</span>`}
+        ],
+        initialSort:[{column:"fit",dir:"asc"}],
+        height:"600px",
     });
-  });
+
+    // radar chart for selected row
+    const ctx=document.getElementById('radarChart');
+    const chart=new Chart(ctx,{
+       type:'radar',
+       data:{labels:["ATO","Phishing","Insider"],datasets:[{label:'',data:[0,0,0],backgroundColor:'rgba(59,130,246,0.3)',borderColor:'#3b82f6',pointBackgroundColor:'#3b82f6'}]},
+       options:{responsive:true,plugins:{legend:{display:false}},scales:{r:{max:1,min:0,ticks:{stepSize:0.5}}}}
+    });
+    table.on("rowClick",(e,row)=>{
+       const d=row.getData();
+       chart.data.datasets[0].label=d.stack;
+       chart.data.datasets[0].data=[d.ato,d.phishing,d.insider];
+       chart.update();
+    });
+ });
 </script>
 </body>
 </html>

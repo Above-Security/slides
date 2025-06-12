@@ -1,0 +1,194 @@
+[
+  {
+    "stack": "Grip Security (SSPM + ITDR 2.0)",
+    "ato": 0.5,
+    "phishing": 0.5,
+    "insider": 0.5,
+    "gap": "No real-time DOM action tracking",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Reco AI (SSPM ITDR)",
+    "ato": 0.5,
+    "phishing": 0.5,
+    "insider": 0.5,
+    "gap": "No real-time DOM action tracking",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Reveal Security (log-journey)",
+    "ato": 0.5,
+    "phishing": 0.0,
+    "insider": 1.0,
+    "gap": "Log-based, not real-time",
+    "fit": "Replace Existing Tool"
+  },
+  {
+    "stack": "Island.io (Enterprise Browser)",
+    "ato": 0.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "No visibility into unmanaged Chrome",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Abnormal Security (BEC AI)",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 0.0,
+    "gap": "No visibility after email click",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "CrowdStrike Falcon Identity",
+    "ato": 1.0,
+    "phishing": 0.0,
+    "insider": 0.5,
+    "gap": "No DOM-level SaaS visibility",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Microsoft Entra ID + Defender for Identity",
+    "ato": 1.0,
+    "phishing": 0.5,
+    "insider": 0.5,
+    "gap": "Lacks fine-grained SaaS actions",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Cyberhaven (DLP)",
+    "ato": 0.0,
+    "phishing": 0.0,
+    "insider": 0.5,
+    "gap": "Lacks SaaS session context",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Nightfall AI (DLP)",
+    "ato": 0.0,
+    "phishing": 0.0,
+    "insider": 0.5,
+    "gap": "Focuses on data content only",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Island + Grip",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "No visibility into unmanaged Chrome",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Island + Abnormal",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Drift when users leave Island",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Grip + Abnormal",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 0.5,
+    "gap": "In-session semantics on managed Chrome",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "CrowdStrike + Island",
+    "ato": 1.0,
+    "phishing": 0.5,
+    "insider": 1.0,
+    "gap": "No visibility into unmanaged Chrome",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Silverfort + Grip",
+    "ato": 1.0,
+    "phishing": 0.0,
+    "insider": 0.5,
+    "gap": "No runtime SaaS context",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Island + Cyberhaven",
+    "ato": 0.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "No ATO protection",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Grip + Cyberhaven",
+    "ato": 0.5,
+    "phishing": 0.5,
+    "insider": 0.5,
+    "gap": "Lacks full runtime visibility",
+    "fit": "Complementary"
+  },
+  {
+    "stack": "Island + Nightfall",
+    "ato": 0.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "No ATO protection",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Island + Grip + Abnormal",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Corner cases outside Island",
+    "fit": "Low Priority"
+  },
+  {
+    "stack": "Island + CrowdStrike + Abnormal",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Corner cases outside Island",
+    "fit": "Low Priority"
+  },
+  {
+    "stack": "Grip + Abnormal + CrowdStrike",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 0.5,
+    "gap": "No DOM-level SaaS visibility",
+    "fit": "Incremental"
+  },
+  {
+    "stack": "Island + Grip + Cyberhaven",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Limited ROI over two-tool stack",
+    "fit": "Low Priority"
+  },
+  {
+    "stack": "Island + Abnormal + Cyberhaven",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Corner cases outside Island",
+    "fit": "Low Priority"
+  },
+  {
+    "stack": "Island + Grip + CrowdStrike + Abnormal",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Negligible incremental value",
+    "fit": "Low Priority"
+  },
+  {
+    "stack": "Island + Grip + CrowdStrike + Cyberhaven",
+    "ato": 1.0,
+    "phishing": 1.0,
+    "insider": 1.0,
+    "gap": "Minimal value over existing stack",
+    "fit": "Low Priority"
+  }
+]
