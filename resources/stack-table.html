@@ -28,47 +28,54 @@
   </div>
 
   <script>
-  fetch('./stackRadarData_clean.json').then(r => r.json()).then(data => {
-    const categories = data.categories;
-    const fitColors = {
-      "Core": "#047857",
-      "Complementary": "#4d7c0f",
-      "Incremental": "#b45309",
-      "Low Priority": "#6b7280",
-      "Replace Existing Tool": "#7f1d1d"
-    };
-    const palette = ['#16a34a55','#3b82f655','#eab30855','#ef444455','#8b5cf655','#14b8a655'];
+  (async () => {
+    try {
+      const response = await fetch('./stackRadarData_clean.json');
+      if (!response.ok) throw new Error('Data load failed');
+      const data = await response.json();
 
-    const ctx = document.getElementById('radarChart').getContext('2d');
-    const radarChart = new Chart(ctx, {
-      type: 'radar',
-      data: { labels: categories, datasets: [] },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 18 } }
-        },
-        scales: {
-          r: {
-            beginAtZero: true,
-            max: 5,
-            ticks: { stepSize: 1 },
-            pointLabels: { font: { size: 12 } }
+      const categories = data.categories;
+      const fitColors = {
+        "Core": "#047857",
+        "Complementary": "#4d7c0f",
+        "Incremental": "#b45309",
+        "Low Priority": "#6b7280",
+        "Replace Existing Tool": "#7f1d1d"
+      };
+      const palette = ['#16a34a55','#3b82f655','#eab30855','#ef444455','#8b5cf655','#14b8a655'];
+
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      const radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: { labels: categories, datasets: [] },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 18 } }
+          },
+          scales: {
+            r: {
+              beginAtZero: true,
+              max: 5,
+              ticks: { stepSize: 1 },
+              pointLabels: { font: { size: 12 } }
+            }
           }
         }
-      }
-    });
+      });
 
-    const rows = [...data.vendors, data.core];
-    const tableData = rows.map(item => {
-      const row = { Product: item.name, Fit: item.fit };
-      data.categories.forEach((cat,i) => row[cat] = item.scores[i]);
-      return row;
-    });
+      const normalize = item => {
+        const row = { Product: item.name, Fit: item.fit };
+        categories.forEach((cat,i) => row[cat] = item.scores[i]);
+        return row;
+      };
 
-    new Tabulator("#stackTable", {
-      data: tableData,
-      layout: "fitDataStretch",
+      const tableData = [...data.vendors, data.core].map(normalize);
+      let selectedProduct = null;
+
+      const table = new Tabulator("#stackTable", {
+        data: tableData,
+        layout: "fitDataStretch",
       columns: [
         { title: "Product", field: "Product", width: 220, frozen: true },
         ...data.categories.map(cat => ({
@@ -89,19 +96,37 @@
       height: "600px",
       rowClick: (e,row) => {
         const d = row.getData();
+        if (selectedProduct === d.Product) {
+          radarChart.data.datasets = [];
+          radarChart.update();
+          selectedProduct = null;
+          return;
+        }
+
+        const chartData = categories.map(cat => d[cat]);
+        if (chartData.some(v => typeof v !== 'number')) return;
+
+        selectedProduct = d.Product;
+        const idx = row.getPosition();
+        const color = palette[idx % palette.length];
+        const border = color.replace('55', 'dd');
+
         radarChart.data.datasets = [{
           label: d.Product,
-          data: data.categories.map(cat=>d[cat]),
+          data: chartData,
           fill: true,
-          backgroundColor: '#3b82f655',
-          borderColor: '#3b82f6dd',
+          backgroundColor: color,
+          borderColor: border,
           borderWidth: 2,
           pointRadius: 4
         }];
         radarChart.update();
       }
     });
-  });
+  } catch(err) {
+    console.error('Error loading data:', err);
+  }
+  })();
   </script>
 </body>
 </html>

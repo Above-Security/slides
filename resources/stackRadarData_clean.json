@@ -1,11 +1,11 @@
 {
   "categories": [
-    "ATO\u00a0Protection",
-    "Phishing\u00a0/\u00a0BEC",
-    "Runtime\u00a0Insider\u00a0Threat",
-    "Data\u00a0Exfiltration",
-    "Session\u00a0Hijack",
-    "Offboarding\u00a0&\u00a0Residual\u00a0Access"
+    "ATO Protection",
+    "Phishing / BEC",
+    "Runtime Insider Threat",
+    "Data Exfiltration",
+    "Session Hijack",
+    "Offboarding & Residual Access"
   ],
   "vendors": [
     {
