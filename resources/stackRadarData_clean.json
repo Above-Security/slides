@@ -1,0 +1,78 @@
+{
+  "categories": [
+    "ATO\u00a0Protection",
+    "Phishing\u00a0/\u00a0BEC",
+    "Runtime\u00a0Insider\u00a0Threat",
+    "Data\u00a0Exfiltration",
+    "Session\u00a0Hijack",
+    "Offboarding\u00a0&\u00a0Residual\u00a0Access"
+  ],
+  "vendors": [
+    {
+      "id": "grip",
+      "name": "Grip Security",
+      "scores": [3,2,3,2,2,3],
+      "fit": "Complementary"
+    },
+    {
+      "id": "reco",
+      "name": "Reco AI",
+      "scores": [3,2,3,2,2,3],
+      "fit": "Complementary"
+    },
+    {
+      "id": "island",
+      "name": "Island Enterprise Browser",
+      "scores": [0,5,5,5,5,3],
+      "fit": "Incremental"
+    },
+    {
+      "id": "abnormal",
+      "name": "Abnormal Security",
+      "scores": [5,5,0,0,1,1],
+      "fit": "Complementary"
+    },
+    {
+      "id": "reveal",
+      "name": "Reveal Security",
+      "scores": [3,0,4,2,2,2],
+      "fit": "Replace Existing Tool"
+    },
+    {
+      "id": "cyberhaven",
+      "name": "Cyberhaven DLP",
+      "scores": [0,0,3,4,2,2],
+      "fit": "Complementary"
+    },
+    {
+      "id": "nightfall",
+      "name": "Nightfall AI DLP",
+      "scores": [0,0,3,3,2,2],
+      "fit": "Complementary"
+    },
+    {
+      "id": "dtex",
+      "name": "DTEX Systems (Endpoint Insider)",
+      "scores": [2,1,4,4,2,3],
+      "fit": "Complementary"
+    },
+    {
+      "id": "exabeam",
+      "name": "Exabeam (SIEM UEBA)",
+      "scores": [3,2,3,2,2,2],
+      "fit": "Complementary"
+    },
+    {
+      "id": "valence",
+      "name": "Valence Security (SSPM + ITDR)",
+      "scores": [4,4,5,4,3,3],
+      "fit": "Incremental"
+    }
+  ],
+  "core": {
+    "id": "above",
+    "name": "Above (Browser ITDR)",
+    "scores": [1,2,5,4,4,4],
+    "fit": "Core"
+  }
+}
