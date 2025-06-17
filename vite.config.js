@@ -5,13 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/slides/',
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    outDir: 'dist'
   }
 })
 
