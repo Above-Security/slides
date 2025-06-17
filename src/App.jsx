@@ -71,16 +71,16 @@ const App = () => {
                   <div className="key-point-icon">
                     <i className="fas fa-brain"></i>
                   </div>
-                  <h3 className="key-point-title">LLM Analysis</h3>
-                  <p className="key-point-description">Semantic understanding of page content and user behavior to detect threats in real-time.</p>
+                  <h3 className="key-point-title">LLM Page Analysis</h3>
+                  <p className="key-point-description">Semantic understanding of page content and user interactions to detect malicious intent in real-time.</p>
                 </div>
 
                 <div className="key-point-card">
                   <div className="key-point-icon">
                     <i className="fas fa-eye"></i>
                   </div>
-                  <h3 className="key-point-title">Post-Auth Monitoring</h3>
-                  <p className="key-point-description">Monitors what users actually do inside SaaS apps after successful authentication.</p>
+                  <h3 className="key-point-title">LOTS Detection</h3>
+                  <p className="key-point-description">Detects Living Off Trusted Services attacks within legitimate platforms like OAuth, DocuSign, Dropbox.</p>
                 </div>
               </div>
 
@@ -125,8 +125,8 @@ const App = () => {
                   <div className="blind-spots-card">
                     <h4 className="blind-spots-title">Undetected Threats:</h4>
                     <ul className="blind-spots-list">
+                      <li><i className="fas fa-times"></i> LOTS attacks via trusted services (OAuth, DocuSign, Dropbox)</li>
                       <li><i className="fas fa-times"></i> Sophisticated phishing on fake SaaS portals</li>
-                      <li><i className="fas fa-times"></i> Malicious OAuth consent manipulation</li>
                       <li><i className="fas fa-times"></i> Gradual insider data exfiltration</li>
                       <li><i className="fas fa-times"></i> Session hijacking via stolen tokens</li>
                     </ul>
@@ -157,8 +157,8 @@ const App = () => {
                         <i className="fab fa-google"></i>
                       </div>
                       <div className="threat-details">
-                        <h4 className="threat-name">OAuth Phishing</h4>
-                        <p className="threat-description">Fake apps trick users into granting permissions on lookalike consent pages. Email security can't detect this.</p>
+                        <h4 className="threat-name">LOTS OAuth Abuse</h4>
+                        <p className="threat-description">Malicious apps abuse trusted OAuth pages to trick users into granting excessive permissions.</p>
                       </div>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">How It Works</h1>
-              <p className="slide-subtitle">Browser Extension + LLM Analysis</p>
+              <p className="slide-subtitle">Browser Extension + LLM Page Analysis</p>
             </header>
 
             <div className="content-section">
@@ -207,7 +207,7 @@ const App = () => {
                       </div>
                       <div className="tech-content">
                         <h4 className="tech-title">Browser Extension</h4>
-                        <p className="tech-description">Captures user interactions and page content across any web application</p>
+                        <p className="tech-description">Captures page content and user interactions across any web application</p>
                       </div>
                     </div>
 
@@ -216,8 +216,8 @@ const App = () => {
                         <i className="fas fa-brain"></i>
                       </div>
                       <div className="tech-content">
-                        <h4 className="tech-title">LLM Processing</h4>
-                        <p className="tech-description">Semantic analysis converts raw events into meaningful behavioral signals</p>
+                        <h4 className="tech-title">LLM Page Analysis</h4>
+                        <p className="tech-description">Semantic analysis of page content to detect malicious intent and LOTS attacks</p>
                       </div>
                     </div>
 
@@ -226,8 +226,8 @@ const App = () => {
                         <i className="fas fa-shield-alt"></i>
                       </div>
                       <div className="tech-content">
-                        <h4 className="tech-title">Real-Time Detection</h4>
-                        <p className="tech-description">Prevents threats before completion: blocks phishing, stops malicious OAuth consent</p>
+                        <h4 className="tech-title">Real-Time Prevention</h4>
+                        <p className="tech-description">Blocks malicious actions before completion: prevents credential entry, stops OAuth consent</p>
                       </div>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ const App = () => {
                         <i className="fas fa-search"></i>
                       </div>
                       <h4 className="concept-title">Semantic Understanding</h4>
-                      <p className="concept-description">LLM understands intent and context, not just patterns.</p>
+                      <p className="concept-description">LLM understands page intent and context, not just patterns.</p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">Cyberhaven Case Study</h1>
-              <p className="slide-subtitle">How We Would Have Detected It</p>
+              <p className="slide-subtitle">How OAuth Page Analysis Would Have Prevented It</p>
             </header>
 
             <div className="content-section">
@@ -286,8 +286,8 @@ const App = () => {
                     What Happened (2024)
                   </h3>
                   <p className="incident-description">
-                    Cyberhaven employee systematically accessed and downloaded customer data over several months. 
-                    Traditional DLP failed to detect the gradual exfiltration pattern.
+                    Cyberhaven employee used malicious OAuth app disguised as legitimate Google service to systematically access and download customer data. 
+                    Traditional security tools failed to detect the fake OAuth consent page.
                   </p>
                 </div>
 
@@ -301,32 +301,32 @@ const App = () => {
                     <div className="detection-item">
                       <div className="detection-step">1</div>
                       <div className="detection-content">
-                        <h4 className="detection-title">Behavioral Baseline Deviation</h4>
-                        <p className="detection-description">Employee accessing customer data outside normal job function triggers anomaly detection</p>
+                        <h4 className="detection-title">OAuth Page Analysis</h4>
+                        <p className="detection-description">LLM analyzes OAuth consent page and detects it's not actually a legitimate Google app despite visual similarity</p>
                       </div>
                     </div>
 
                     <div className="detection-item">
                       <div className="detection-step">2</div>
                       <div className="detection-content">
-                        <h4 className="detection-title">Data Access Pattern Analysis</h4>
-                        <p className="detection-description">LLM identifies systematic collection behavior: sequential customer record access over time</p>
+                        <h4 className="detection-title">Permission Scope Validation</h4>
+                        <p className="detection-description">Extension identifies excessive permissions requested that don't match the claimed app functionality</p>
                       </div>
                     </div>
 
                     <div className="detection-item">
                       <div className="detection-step">3</div>
                       <div className="detection-content">
-                        <h4 className="detection-title">Volume Anomaly Detection</h4>
-                        <p className="detection-description">Download volume significantly exceeds historical baseline for user role and department</p>
+                        <h4 className="detection-title">LOTS Attack Detection</h4>
+                        <p className="detection-description">Semantic analysis recognizes Living Off Trusted Services pattern - malicious intent within trusted OAuth flow</p>
                       </div>
                     </div>
 
                     <div className="detection-item">
                       <div className="detection-step">4</div>
                       <div className="detection-content">
-                        <h4 className="detection-title">Intent Classification</h4>
-                        <p className="detection-description">Semantic analysis of page interactions indicates data collection intent, not legitimate business use</p>
+                        <h4 className="detection-title">Real-Time Prevention</h4>
+                        <p className="detection-description">Blocks OAuth consent before token is granted, preventing any data access by the malicious application</p>
                       </div>
                     </div>
                   </div>
@@ -338,8 +338,8 @@ const App = () => {
                     Prevention Result
                   </h3>
                   <p className="outcome-description">
-                    Detection within days of pattern emergence, not months. Real-time alerting enables 
-                    immediate investigation and access revocation before significant data loss.
+                    Attack stopped at the OAuth consent stage. No data access granted to malicious app. 
+                    Zero customer data compromised through semantic understanding of page intent.
                   </p>
                 </div>
               </div>
@@ -373,12 +373,11 @@ const App = () => {
                       <strong>Attack:</strong> Pixel-perfect fake Office 365 login portal using new domain and SSL certificate.
                     </p>
                     <p className="scenario-detection">
-                      <strong>Detection:</strong> LLM analysis identifies malicious intent through page semantics and form behavior, 
-                      despite visual similarity to legitimate site.
+                      <strong>Detection:</strong> LLM analysis identifies malicious intent through page semantics and form behavior, despite visual similarity to legitimate site.
                     </p>
                     <div className="scenario-outcome">
-                      <i className="fas fa-check-circle"></i>
-                      <span>Blocks credential entry before compromise</span>
+                      <i className="fas fa-check"></i>
+                      Blocks credential entry before compromise
                     </div>
                   </div>
                 </div>
@@ -386,7 +385,7 @@ const App = () => {
                 <div className="scenario-card">
                   <div className="scenario-header">
                     <div className="scenario-icon">
-                      <i className="fas fa-key"></i>
+                      <i className="fab fa-google"></i>
                     </div>
                     <h3 className="scenario-title">Malicious OAuth Prevention</h3>
                   </div>
@@ -395,12 +394,11 @@ const App = () => {
                       <strong>Attack:</strong> Fake "Google Drive Backup" app requests excessive permissions on lookalike consent page.
                     </p>
                     <p className="scenario-detection">
-                      <strong>Detection:</strong> Extension analyzes OAuth consent page, identifies suspicious permission scope 
-                      and app legitimacy indicators.
+                      <strong>Detection:</strong> Extension analyzes OAuth consent page, identifies suspicious permission scope and app legitimacy indicators.
                     </p>
                     <div className="scenario-outcome">
-                      <i className="fas fa-check-circle"></i>
-                      <span>Prevents malicious OAuth consent before token granted</span>
+                      <i className="fas fa-check"></i>
+                      Prevents malicious OAuth consent before token granted
                     </div>
                   </div>
                 </div>
@@ -417,12 +415,11 @@ const App = () => {
                       <strong>Attack:</strong> Departing employee retains access through saved sessions or incomplete deprovisioning.
                     </p>
                     <p className="scenario-detection">
-                      <strong>Detection:</strong> Behavioral analysis identifies access patterns inconsistent with employment status 
-                      and normal usage patterns.
+                      <strong>Detection:</strong> Behavioral analysis identifies access patterns inconsistent with employment status and normal usage patterns.
                     </p>
                     <div className="scenario-outcome">
-                      <i className="fas fa-check-circle"></i>
-                      <span>Detects residual access during offboarding windows</span>
+                      <i className="fas fa-check"></i>
+                      Detects residual access during offboarding windows
                     </div>
                   </div>
                 </div>
@@ -430,7 +427,7 @@ const App = () => {
                 <div className="scenario-card">
                   <div className="scenario-header">
                     <div className="scenario-icon">
-                      <i className="fas fa-download"></i>
+                      <i className="fas fa-user-shield"></i>
                     </div>
                     <h3 className="scenario-title">Privilege Misuse Detection</h3>
                   </div>
@@ -439,12 +436,11 @@ const App = () => {
                       <strong>Attack:</strong> Marketing user accesses M&A documents in SharePoint outside normal job function.
                     </p>
                     <p className="scenario-detection">
-                      <strong>Detection:</strong> Cross-app behavioral analysis flags access to sensitive content 
-                      inconsistent with user role and historical patterns.
+                      <strong>Detection:</strong> Cross-app behavioral analysis flags access to sensitive content inconsistent with user role and historical patterns.
                     </p>
                     <div className="scenario-outcome">
-                      <i className="fas fa-check-circle"></i>
-                      <span>Immediate alert for privilege misuse investigation</span>
+                      <i className="fas fa-check"></i>
+                      Immediate alert for privilege misuse investigation
                     </div>
                   </div>
                 </div>
@@ -472,6 +468,7 @@ const App = () => {
                     <i className="fas fa-rocket"></i>
                     Deployment Model
                   </h3>
+                  
                   <div className="deployment-steps">
                     <div className="deployment-step">
                       <div className="step-number">1</div>
@@ -480,6 +477,7 @@ const App = () => {
                         <p className="step-description">Deploy via enterprise browser management (Chrome, Edge, Firefox)</p>
                       </div>
                     </div>
+
                     <div className="deployment-step">
                       <div className="step-number">2</div>
                       <div className="step-content">
@@ -487,6 +485,7 @@ const App = () => {
                         <p className="step-description">SaaS platform processes behavioral data and provides threat detection</p>
                       </div>
                     </div>
+
                     <div className="deployment-step">
                       <div className="step-number">3</div>
                       <div className="step-content">
@@ -500,50 +499,53 @@ const App = () => {
                 <div className="deployment-constraints">
                   <div className="constraints-grid">
                     <div className="constraint-card supported">
-                      <h4 className="constraint-header">
+                      <h3 className="constraint-header">
                         <i className="fas fa-check-circle"></i>
                         Supported Environments
-                      </h4>
+                      </h3>
                       <ul className="constraint-list">
-                        <li><i className="fas fa-check"></i> Managed corporate devices</li>
-                        <li><i className="fas fa-check"></i> Enterprise browser policies</li>
-                        <li><i className="fas fa-check"></i> Any web-based application</li>
-                        <li><i className="fas fa-check"></i> Real-time threat prevention</li>
+                        <li>
+                          <i className="fas fa-check"></i>
+                          <span>Managed corporate devices</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-check"></i>
+                          <span>Enterprise browser policies</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-check"></i>
+                          <span>Any web-based application</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-check"></i>
+                          <span>Real-time threat prevention</span>
+                        </li>
                       </ul>
                     </div>
 
                     <div className="constraint-card limitations">
-                      <h4 className="constraint-header">
+                      <h3 className="constraint-header">
                         <i className="fas fa-exclamation-triangle"></i>
                         Current Limitations
-                      </h4>
+                      </h3>
                       <ul className="constraint-list">
-                        <li><i className="fas fa-times"></i> BYOD/unmanaged devices (extension removal risk)</li>
-                        <li><i className="fas fa-times"></i> Native mobile applications</li>
-                        <li><i className="fas fa-times"></i> Desktop applications outside browser</li>
-                        <li><i className="fas fa-times"></i> Offline application usage</li>
+                        <li>
+                          <i className="fas fa-times"></i>
+                          <span>BYOD/unmanaged devices (extension removal risk)</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-times"></i>
+                          <span>Native mobile applications</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-times"></i>
+                          <span>Desktop applications outside browser</span>
+                        </li>
+                        <li>
+                          <i className="fas fa-times"></i>
+                          <span>Offline application usage</span>
+                        </li>
                       </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="deployment-timeline">
-                  <h3 className="timeline-title">
-                    <i className="fas fa-clock"></i>
-                    Implementation Timeline
-                  </h3>
-                  <div className="timeline-content">
-                    <div className="timeline-item">
-                      <div className="timeline-marker">Day 1</div>
-                      <div className="timeline-description">Extension deployment via browser management</div>
-                    </div>
-                    <div className="timeline-item">
-                      <div className="timeline-marker">Week 1</div>
-                      <div className="timeline-description">Baseline establishment and initial threat detection</div>
-                    </div>
-                    <div className="timeline-item">
-                      <div className="timeline-marker">Week 2</div>
-                      <div className="timeline-description">Full behavioral analysis and anomaly detection active</div>
                     </div>
                   </div>
                 </div>
@@ -557,13 +559,13 @@ const App = () => {
         );
 
       default:
-        return <div>Slide not found</div>;
+        return null;
     }
   };
 
   return (
     <div className="presentation-container">
-      <div className="presentation-header">
+      <div className="presentation-controls">
         <button 
           className="menu-button"
           onClick={() => setShowMenu(!showMenu)}
@@ -573,14 +575,14 @@ const App = () => {
         
         <div className="navigation-controls">
           <button 
-            className="nav-button"
+            className="nav-button prev"
             onClick={prevSlide}
             disabled={currentSlide === 0}
           >
             ←
           </button>
           <button 
-            className="nav-button"
+            className="nav-button next"
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
           >
@@ -601,11 +603,11 @@ const App = () => {
               {slides.map((slide, index) => (
                 <button
                   key={index}
-                  className={`menu-item ${index === currentSlide ? 'active' : ''}`}
+                  className={`menu-item ${currentSlide === index ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
                 >
-                  <span className="menu-item-number">{index + 1}</span>
-                  <span className="menu-item-title">{slide}</span>
+                  <span className="slide-number">{index + 1}</span>
+                  <span className="slide-name">{slide}</span>
                 </button>
               ))}
             </div>
