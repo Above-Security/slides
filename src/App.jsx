@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../deck/App.css';
+import './App.css';
 
 const App = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -181,7 +181,7 @@ const App = () => {
             <div className="deployment-card">
               <i className="fas fa-tachometer-alt"></i>
               <h3>Performance Impact</h3>
-              <p>< 2% CPU overhead, < 50MB memory footprint. Designed for enterprise-scale deployment across thousands of users.</p>
+              <p>&lt; 2% CPU overhead, &lt; 50MB memory footprint. Designed for enterprise-scale deployment across thousands of users.</p>
             </div>
           </div>
         </div>
