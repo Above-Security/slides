@@ -3,12 +3,37 @@ html, body {
   margin: 0;
 }
 
+:root {
+  --above-blue: #006DFF; /* Market Blue */
+  --above-yellow: #EDFF80; /* Racer Yellow */
+  --above-gray-90: #333333;
+  --above-gray-60: #737373;
+  --above-gray-30: #B3B3B3;
+  --above-gray-15: #D9D9D9;
+  --above-gray-05: #F2F2F2;
+}
+
+@font-face {
+  font-family: 'Square Sans Text';
+  src: url('https://square-fonts-production-f.squarecdn.com/square-text/SquareSansText-Upright-VF.woff2') format('woff2');
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Square Sans Display';
+  src: url('https://square-fonts-production-f.squarecdn.com/square-display/SquareSansDisplay-VF.woff2') format('woff2');
+  font-weight: 100 700;
+  font-display: swap;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  font-family: 'Square Sans Text', 'Square Sans Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, var(--above-gray-05) 0%, #ffffff 100%);
+  color: var(--above-gray-90);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
