@@ -6,8 +6,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Build outputs
-dist/
+# Build outputs (dist/ is needed for GitHub Pages deployment)
+# dist/
 build/
 *.local
 
