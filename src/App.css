@@ -20,8 +20,8 @@ body {
   flex-direction: column;
 }
 
-/* Header */
-.presentation-header {
+/* Presentation Controls */
+.presentation-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
