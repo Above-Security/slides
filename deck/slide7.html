@@ -10,10 +10,11 @@
     <script src="base.js"></script>
     <style>
       .slide-container {
-        width: 1280px;
-        min-height: 720px;
-        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        width: 100%;
+        max-width: 1280px;
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--above-gray-05) 0%, #ffffff 100%);
+        font-family: 'Square Sans Text', 'Square Sans Display', -apple-system, BlinkMacSystemFont, sans-serif;
       }
 
       .integration-card {
@@ -128,7 +129,7 @@
       }
 
       .logo-watermark path {
-        fill: #6b7280;
+        fill: var(--above-gray-60);
       }
 
       @keyframes logo-breathe {
