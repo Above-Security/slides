@@ -64,23 +64,23 @@ const App = () => {
                     <i className="fas fa-eye"></i>
                   </div>
                   <h3 className="key-point-title">Post-Authentication Monitoring</h3>
-                  <p className="key-point-description">Monitors user behavior inside applications after successful login</p>
+                  <p className="key-point-description">Monitors user behavior inside SaaS applications after successful login</p>
                 </div>
 
                 <div className="key-point-card">
                   <div className="key-point-icon">
-                    <i className="fas fa-globe"></i>
+                    <i className="fas fa-puzzle-piece"></i>
                   </div>
-                  <h3 className="key-point-title">Browser-Native Deployment</h3>
-                  <p className="key-point-description">Agentless architecture works across any web application</p>
+                  <h3 className="key-point-title">Browser Extension Deployment</h3>
+                  <p className="key-point-description">Agentless architecture deployed as browser extension across any web application</p>
                 </div>
 
                 <div className="key-point-card">
                   <div className="key-point-icon">
                     <i className="fas fa-brain"></i>
                   </div>
-                  <h3 className="key-point-title">Semantic Analysis</h3>
-                  <p className="key-point-description">LLM-powered understanding of user intent and context</p>
+                  <h3 className="key-point-title">LLM Page Analysis</h3>
+                  <p className="key-point-description">Semantic understanding of user interactions and page content to detect threats</p>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@ const App = () => {
                 </h3>
                 <p className="summary-text">
                   Traditional security tools monitor access but not behavior. Above detects misuse, insider threats, 
-                  and advanced attacks that occur after authentication — the blind spot where most damage happens.
+                  and sophisticated phishing attacks that occur after authentication — the blind spot where most damage happens.
                 </p>
               </div>
             </div>
@@ -125,10 +125,10 @@ const App = () => {
                   <div className="blind-spots-card">
                     <h4 className="blind-spots-title">Undetected Behaviors:</h4>
                     <ul className="blind-spots-list">
-                      <li><i className="fas fa-times"></i> Privilege escalation within apps</li>
-                      <li><i className="fas fa-times"></i> Data access pattern anomalies</li>
+                      <li><i className="fas fa-times"></i> Sophisticated phishing on fake SaaS portals</li>
+                      <li><i className="fas fa-times"></i> Malicious OAuth consent manipulation</li>
+                      <li><i className="fas fa-times"></i> Insider data access pattern anomalies</li>
                       <li><i className="fas fa-times"></i> Session hijacking and token abuse</li>
-                      <li><i className="fas fa-times"></i> OAuth consent manipulation</li>
                     </ul>
                   </div>
                 </div>
@@ -157,8 +157,8 @@ const App = () => {
                         <i className="fab fa-google"></i>
                       </div>
                       <div className="threat-details">
-                        <h4 className="threat-name">OAuth App Abuse</h4>
-                        <p className="threat-description">Malicious apps gain legitimate OAuth consent, then access data beyond intended scope. Email security can't detect this.</p>
+                        <h4 className="threat-name">Malicious OAuth Consent</h4>
+                        <p className="threat-description">Fake apps trick users into granting OAuth permissions on lookalike login pages. Browser extension prevents consent to malicious apps.</p>
                       </div>
                     </div>
                   </div>
@@ -166,11 +166,11 @@ const App = () => {
                   <div className="threat-item">
                     <div className="threat-content">
                       <div className="threat-icon session">
-                        <i className="fas fa-key"></i>
+                        <i className="fas fa-fish"></i>
                       </div>
                       <div className="threat-details">
-                        <h4 className="threat-name">Session Token Theft</h4>
-                        <p className="threat-description">Attackers steal session cookies via malware or phishing, impersonate users without triggering MFA.</p>
+                        <h4 className="threat-name">Sophisticated Phishing</h4>
+                        <p className="threat-description">Zero-day phishing kits create pixel-perfect fake SaaS portals. LLM page analysis detects malicious intent before credentials are entered.</p>
                       </div>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">Technical Approach</h1>
-              <p className="slide-subtitle">Browser-Native Behavioral Telemetry</p>
+              <p className="slide-subtitle">Browser Extension with LLM Analysis</p>
             </header>
 
             <div className="content-section">
@@ -203,11 +203,11 @@ const App = () => {
                   <div className="tech-stack-grid">
                     <div className="tech-item">
                       <div className="tech-icon">
-                        <i className="fas fa-globe"></i>
+                        <i className="fas fa-puzzle-piece"></i>
                       </div>
                       <div className="tech-content">
                         <h4 className="tech-title">Browser Extension Deployment</h4>
-                        <p className="tech-description">Captures semantic user interactions: clicks, form fills, navigation patterns, data access</p>
+                        <p className="tech-description">Lightweight extension captures user interactions and page content across any web application</p>
                       </div>
                     </div>
 
@@ -216,8 +216,8 @@ const App = () => {
                         <i className="fas fa-brain"></i>
                       </div>
                       <div className="tech-content">
-                        <h4 className="tech-title">LLM Normalization Engine</h4>
-                        <p className="tech-description">Converts raw browser events into semantic actions: "downloaded customer list", "escalated privileges"</p>
+                        <h4 className="tech-title">LLM Page Analysis</h4>
+                        <p className="tech-description">Semantic analysis of page content and user interactions to detect malicious intent and phishing attempts</p>
                       </div>
                     </div>
 
@@ -226,8 +226,8 @@ const App = () => {
                         <i className="fas fa-chart-line"></i>
                       </div>
                       <div className="tech-content">
-                        <h4 className="tech-title">Behavioral Baseline & Anomaly Detection</h4>
-                        <p className="tech-description">Establishes normal patterns, flags deviations: unusual data volume, off-hours access, privilege changes</p>
+                        <h4 className="tech-title">Behavioral Baseline & Detection</h4>
+                        <p className="tech-description">Establishes normal patterns, flags deviations: unusual data access, privilege changes, suspicious interactions</p>
                       </div>
                     </div>
                   </div>
@@ -248,16 +248,16 @@ const App = () => {
                       <div className="concept-icon">
                         <i className="fas fa-clock"></i>
                       </div>
-                      <h4 className="concept-title">Real-Time Processing</h4>
-                      <p className="concept-description">Sub-second detection and alerting for immediate threat response</p>
+                      <h4 className="concept-title">Real-Time Prevention</h4>
+                      <p className="concept-description">Prevents malicious actions before they complete - blocks phishing, stops malicious OAuth consent</p>
                     </div>
 
                     <div className="concept-card">
                       <div className="concept-icon">
                         <i className="fas fa-shield-alt"></i>
                       </div>
-                      <h4 className="concept-title">Privacy-Preserving</h4>
-                      <p className="concept-description">Captures behavioral metadata, not sensitive data content</p>
+                      <h4 className="concept-title">Semantic Understanding</h4>
+                      <p className="concept-description">LLM analysis understands page intent and user behavior context, not just patterns</p>
                     </div>
                   </div>
                 </div>
@@ -282,15 +282,15 @@ const App = () => {
               <div className="differentiators-grid">
                 <div className="differentiator-card">
                   <div className="differentiator-icon">
-                    <i className="fas fa-user-shield"></i>
+                    <i className="fas fa-fish"></i>
                   </div>
-                  <h3 className="differentiator-title">Insider Threat Patterns</h3>
+                  <h3 className="differentiator-title">Sophisticated Phishing Prevention</h3>
                   <p className="differentiator-description">
-                    Detects gradual privilege escalation, unusual data access volumes, and behavioral drift indicating malicious intent.
+                    LLM analysis detects zero-day phishing kits and fake SaaS portals by understanding page intent and content semantics.
                   </p>
                   <div className="differentiator-highlight">
                     <i className="fas fa-search"></i>
-                    Example: Admin account dormant 6 months suddenly downloads 50x normal data volume
+                    Example: Pixel-perfect fake SharePoint login detected before credentials entered
                   </div>
                 </div>
 
@@ -298,27 +298,27 @@ const App = () => {
                   <div className="differentiator-icon">
                     <i className="fas fa-key"></i>
                   </div>
-                  <h3 className="differentiator-title">Session Hijacking</h3>
+                  <h3 className="differentiator-title">Malicious OAuth Prevention</h3>
                   <p className="differentiator-description">
-                    Identifies stolen session tokens through behavioral inconsistencies: location, timing, interaction patterns.
+                    Prevents users from granting OAuth consent to malicious applications by analyzing app legitimacy and requested permissions.
                   </p>
                   <div className="differentiator-highlight">
                     <i className="fas fa-search"></i>
-                    Example: User session continues after device goes offline, different browser fingerprint
+                    Example: Fake "Google Drive" app requesting excessive permissions blocked at consent
                   </div>
                 </div>
 
                 <div className="differentiator-card">
                   <div className="differentiator-icon">
-                    <i className="fas fa-fish"></i>
+                    <i className="fas fa-user-shield"></i>
                   </div>
-                  <h3 className="differentiator-title">OAuth Abuse</h3>
+                  <h3 className="differentiator-title">Insider Threat Detection</h3>
                   <p className="differentiator-description">
-                    Monitors OAuth app behavior post-consent, detecting scope creep and unauthorized data access.
+                    Detects gradual privilege escalation, unusual data access volumes, and behavioral drift indicating malicious intent.
                   </p>
                   <div className="differentiator-highlight">
                     <i className="fas fa-search"></i>
-                    Example: "Calendar app" granted read access starts downloading contact lists
+                    Example: Marketing user accessing M&A documents in SharePoint outside normal role
                   </div>
                 </div>
 
@@ -326,13 +326,13 @@ const App = () => {
                   <div className="differentiator-icon">
                     <i className="fas fa-download"></i>
                   </div>
-                  <h3 className="differentiator-title">Data Exfiltration</h3>
+                  <h3 className="differentiator-title">Data Exfiltration Patterns</h3>
                   <p className="differentiator-description">
                     Tracks systematic data collection patterns that evade traditional DLP through low-and-slow techniques.
                   </p>
                   <div className="differentiator-highlight">
                     <i className="fas fa-search"></i>
-                    Example: Employee accessing customer records outside normal job function over weeks
+                    Example: Employee downloading customer records gradually over weeks before resignation
                   </div>
                 </div>
               </div>
@@ -355,54 +355,86 @@ const App = () => {
             <div className="content-section">
               <div className="use-cases-grid">
                 <div className="use-case-card">
-                  <div className="use-case-icon">
-                    <i className="fas fa-user-times"></i>
+                  <div className="use-case-header">
+                    <div className="use-case-icon">
+                      <i className="fas fa-fish"></i>
+                    </div>
+                    <h3 className="use-case-title">Cyberhaven-Style Prevention</h3>
                   </div>
-                  <h3 className="use-case-title">Terminated Employee Detection</h3>
-                  <p className="use-case-description">
-                    Identifies when terminated employees continue accessing systems via shared accounts or stolen credentials.
-                  </p>
-                  <div className="use-case-method">
-                    <strong>Detection Method:</strong> Session analysis reveals access patterns inconsistent with current employee roster
-                  </div>
-                </div>
-
-                <div className="use-case-card">
-                  <div className="use-case-icon">
-                    <i className="fas fa-user-cog"></i>
-                  </div>
-                  <h3 className="use-case-title">Privilege Escalation</h3>
-                  <p className="use-case-description">
-                    Catches users gaining elevated permissions through social engineering or system vulnerabilities.
-                  </p>
-                  <div className="use-case-method">
-                    <strong>Detection Method:</strong> Behavioral analysis flags sudden access to restricted resources or admin functions
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Employee systematically accesses customer data outside normal job function.
+                    </p>
+                    <p className="use-case-detection">
+                      <strong>Detection:</strong> LLM analysis identifies unusual data access patterns and semantic understanding of page content reveals systematic collection behavior.
+                    </p>
+                    <div className="use-case-outcome">
+                      <i className="fas fa-check-circle"></i>
+                      <span>Prevents gradual exfiltration before damage occurs</span>
+                    </div>
                   </div>
                 </div>
 
                 <div className="use-case-card">
-                  <div className="use-case-icon">
-                    <i className="fas fa-balance-scale"></i>
+                  <div className="use-case-header">
+                    <div className="use-case-icon">
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 className="use-case-title">Zero-Day Phishing Protection</h3>
                   </div>
-                  <h3 className="use-case-title">Compliance Violations</h3>
-                  <p className="use-case-description">
-                    Monitors for GDPR, HIPAA, SOX violations through unauthorized data access or retention policy breaches.
-                  </p>
-                  <div className="use-case-method">
-                    <strong>Detection Method:</strong> Semantic understanding of data types and access patterns against compliance rules
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Sophisticated phishing kit creates pixel-perfect fake Office 365 login portal.
+                    </p>
+                    <p className="use-case-detection">
+                      <strong>Detection:</strong> Browser extension analyzes page semantics with LLM, detects malicious intent despite visual similarity to legitimate site.
+                    </p>
+                    <div className="use-case-outcome">
+                      <i className="fas fa-check-circle"></i>
+                      <span>Blocks credential entry before compromise</span>
+                    </div>
                   </div>
                 </div>
 
                 <div className="use-case-card">
-                  <div className="use-case-icon">
-                    <i className="fas fa-moon"></i>
+                  <div className="use-case-header">
+                    <div className="use-case-icon">
+                      <i className="fas fa-key"></i>
+                    </div>
+                    <h3 className="use-case-title">Malicious OAuth Prevention</h3>
                   </div>
-                  <h3 className="use-case-title">After-Hours Anomalies</h3>
-                  <p className="use-case-description">
-                    Detects suspicious activity during non-business hours, weekends, or holidays when oversight is minimal.
-                  </p>
-                  <div className="use-case-method">
-                    <strong>Detection Method:</strong> Time-based behavioral baselines identify unusual access patterns outside normal work hours
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Fake application requests OAuth permissions mimicking legitimate Google Drive integration.
+                    </p>
+                    <p className="use-case-detection">
+                      <strong>Detection:</strong> Extension analyzes OAuth consent page, identifies suspicious permission requests and app legitimacy indicators.
+                    </p>
+                    <div className="use-case-outcome">
+                      <i className="fas fa-check-circle"></i>
+                      <span>Prevents malicious OAuth consent before token granted</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <div className="use-case-icon">
+                      <i className="fas fa-user-times"></i>
+                    </div>
+                    <h3 className="use-case-title">Offboarding Gap Detection</h3>
+                  </div>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Departing employee retains access to SaaS applications through saved sessions or incomplete deprovisioning.
+                    </p>
+                    <p className="use-case-detection">
+                      <strong>Detection:</strong> Behavioral analysis identifies access patterns inconsistent with employment status and normal usage.
+                    </p>
+                    <div className="use-case-outcome">
+                      <i className="fas fa-check-circle"></i>
+                      <span>Detects residual access during offboarding windows</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -424,72 +456,98 @@ const App = () => {
 
             <div className="content-section">
               <div className="deployment-overview">
-                <div className="deployment-card">
+                <div className="deployment-section">
                   <h3 className="deployment-title">
                     <i className="fas fa-rocket"></i>
-                    Implementation Process
+                    Deployment Model
                   </h3>
-
-                  <div className="deployment-steps">
-                    <div className="deployment-step">
-                      <div className="step-number">1</div>
-                      <div className="step-content">
-                        <h4 className="step-title">Browser Extension Deployment</h4>
-                        <p className="step-description">Deploy via MDM/GPO to all managed devices. No application-specific configuration required.</p>
+                  <div className="deployment-grid">
+                    <div className="deployment-item">
+                      <div className="deployment-icon">
+                        <i className="fas fa-puzzle-piece"></i>
+                      </div>
+                      <div className="deployment-content">
+                        <h4 className="deployment-name">Browser Extension</h4>
+                        <p className="deployment-description">Lightweight extension deployed via enterprise browser management (Chrome, Edge, Firefox)</p>
                       </div>
                     </div>
 
-                    <div className="deployment-step">
-                      <div className="step-number">2</div>
-                      <div className="step-content">
-                        <h4 className="step-title">Baseline Establishment</h4>
-                        <p className="step-description">2-week learning period to establish normal behavioral patterns for each user and application.</p>
+                    <div className="deployment-item">
+                      <div className="deployment-icon">
+                        <i className="fas fa-cloud"></i>
+                      </div>
+                      <div className="deployment-content">
+                        <h4 className="deployment-name">Cloud-Native Backend</h4>
+                        <p className="deployment-description">SaaS platform processes behavioral data and provides real-time threat detection</p>
                       </div>
                     </div>
 
-                    <div className="deployment-step">
-                      <div className="step-number">3</div>
-                      <div className="step-content">
-                        <h4 className="step-title">Integration & Alerting</h4>
-                        <p className="step-description">Connect to SIEM, SOAR, and identity providers. Configure alert thresholds and response workflows.</p>
+                    <div className="deployment-item">
+                      <div className="deployment-icon">
+                        <i className="fas fa-shield-alt"></i>
+                      </div>
+                      <div className="deployment-content">
+                        <h4 className="deployment-name">Privacy-Preserving</h4>
+                        <p className="deployment-description">Captures behavioral metadata and page semantics, not sensitive data content</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="integration-section">
-                  <h3 className="integration-title">Technical Integrations</h3>
+                  <h3 className="integration-title">Integration & Limitations</h3>
                   <div className="integration-grid">
-                    <div className="integration-card">
-                      <div className="integration-icon">
-                        <i className="fas fa-shield-alt"></i>
-                      </div>
-                      <h4 className="integration-name">SIEM Platforms</h4>
-                      <p className="integration-description">Splunk, QRadar, Sentinel, Chronicle</p>
+                    <div className="integration-card supported">
+                      <h4 className="integration-header">
+                        <i className="fas fa-check-circle"></i>
+                        Supported Environments
+                      </h4>
+                      <ul className="integration-list">
+                        <li><i className="fas fa-check"></i> Managed corporate devices</li>
+                        <li><i className="fas fa-check"></i> Enterprise browser policies</li>
+                        <li><i className="fas fa-check"></i> Any web-based SaaS application</li>
+                        <li><i className="fas fa-check"></i> Internal web applications</li>
+                        <li><i className="fas fa-check"></i> Real-time threat prevention</li>
+                      </ul>
                     </div>
 
-                    <div className="integration-card">
-                      <div className="integration-icon">
-                        <i className="fas fa-cogs"></i>
-                      </div>
-                      <h4 className="integration-name">SOAR Tools</h4>
-                      <p className="integration-description">Phantom, Demisto, Swimlane</p>
+                    <div className="integration-card limitations">
+                      <h4 className="integration-header">
+                        <i className="fas fa-exclamation-triangle"></i>
+                        Current Limitations
+                      </h4>
+                      <ul className="integration-list">
+                        <li><i className="fas fa-times"></i> BYOD/unmanaged devices (extension removal risk)</li>
+                        <li><i className="fas fa-times"></i> Native mobile applications</li>
+                        <li><i className="fas fa-times"></i> Desktop applications outside browser</li>
+                        <li><i className="fas fa-times"></i> Post-OAuth token monitoring</li>
+                        <li><i className="fas fa-times"></i> Offline application usage</li>
+                      </ul>
                     </div>
+                  </div>
+                </div>
 
-                    <div className="integration-card">
-                      <div className="integration-icon">
-                        <i className="fas fa-id-card"></i>
-                      </div>
-                      <h4 className="integration-name">Identity Providers</h4>
-                      <p className="integration-description">Azure AD, Okta, Ping, Auth0</p>
+                <div className="value-prop-section">
+                  <h3 className="value-prop-title">
+                    <i className="fas fa-target"></i>
+                    Strategic Value
+                  </h3>
+                  <div className="value-props">
+                    <div className="value-prop">
+                      <i className="fas fa-clock"></i>
+                      <span><strong>Rapid Deployment:</strong> Days, not months - no SIEM integration required</span>
                     </div>
-
-                    <div className="integration-card">
-                      <div className="integration-icon">
-                        <i className="fas fa-bell"></i>
-                      </div>
-                      <h4 className="integration-name">Alerting</h4>
-                      <p className="integration-description">Slack, Teams, PagerDuty, Email</p>
+                    <div className="value-prop">
+                      <i className="fas fa-eye"></i>
+                      <span><strong>Universal Coverage:</strong> Works with any browser-based application</span>
+                    </div>
+                    <div className="value-prop">
+                      <i className="fas fa-brain"></i>
+                      <span><strong>Semantic Detection:</strong> Understands intent, not just patterns</span>
+                    </div>
+                    <div className="value-prop">
+                      <i className="fas fa-shield-alt"></i>
+                      <span><strong>Real-Time Prevention:</strong> Stops threats before damage occurs</span>
                     </div>
                   </div>
                 </div>
@@ -503,60 +561,46 @@ const App = () => {
         );
 
       default:
-        return null;
+        return <div>Slide not found</div>;
     }
   };
 
   return (
-    <div className="app">
-      <header className="header">
-        <button className="menu-btn" onClick={() => setShowMenu(true)}>
-          <div className="menu-icon"></div>
+    <div className="presentation-container">
+      <div className="presentation-header">
+        <button 
+          className="menu-button"
+          onClick={() => setShowMenu(!showMenu)}
+        >
           Menu
         </button>
         
-        <div className="brand">
-          <svg className="brand-logo" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-          </svg>
-          Above Security
-        </div>
-
-        <div className="slide-counter">
-          {currentSlide + 1} / {slides.length}
-        </div>
-
-        <div className="nav-controls">
+        <div className="navigation-controls">
           <button 
-            className="nav-btn" 
+            className="nav-button"
             onClick={prevSlide}
             disabled={currentSlide === 0}
           >
             ←
           </button>
           <button 
-            className="nav-btn" 
+            className="nav-button"
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
           >
             →
           </button>
         </div>
-      </header>
 
-      <main className="slide-content">
-        {renderSlide()}
-      </main>
+        <div className="slide-counter">
+          {currentSlide + 1} / {slides.length}
+        </div>
+      </div>
 
       {showMenu && (
-        <div className="menu-overlay" onClick={() => setShowMenu(false)}>
-          <div className="menu-content" onClick={(e) => e.stopPropagation()}>
-            <div className="menu-header">
-              <h3>Slides</h3>
-              <button className="menu-close" onClick={() => setShowMenu(false)}>
-                ×
-              </button>
-            </div>
+        <div className="menu-overlay">
+          <div className="menu-content">
+            <h3 className="menu-title">Navigate to Slide</h3>
             <div className="menu-items">
               {slides.map((slide, index) => (
                 <button
@@ -564,14 +608,24 @@ const App = () => {
                   className={`menu-item ${index === currentSlide ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
                 >
-                  <span className="slide-number">{index + 1}</span>
-                  <span className="slide-title">{slide}</span>
+                  <span className="menu-item-number">{index + 1}</span>
+                  <span className="menu-item-title">{slide}</span>
                 </button>
               ))}
             </div>
+            <button 
+              className="menu-close"
+              onClick={() => setShowMenu(false)}
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
+
+      <main className="slide-content">
+        {renderSlide()}
+      </main>
     </div>
   );
 };
