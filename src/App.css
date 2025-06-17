@@ -1498,3 +1498,1065 @@ body {
   }
 }
 
+
+/* Competitive Landscape Slides - GitHub Brand Compliant */
+
+/* Slide 6: Competitive Landscape Overview */
+.competitive-landscape {
+  padding: 40px;
+  animation: slide-in-up 1.2s ease-out 0.2s both;
+}
+
+.market-gap-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #08872B;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gap-description {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.competitor-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.category-card {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #08872B;
+}
+
+.category-card.above-category {
+  background: linear-gradient(135deg, #08872B 0%, #5FED83 100%);
+  color: white;
+  border-color: #08872B;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.category-header i {
+  font-size: 20px;
+  color: #08872B;
+}
+
+.above-category .category-header i {
+  color: white;
+}
+
+.category-header h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+}
+
+.above-category .category-header h4 {
+  color: white;
+}
+
+.category-limitation {
+  background: #fff8dc;
+  color: #8b4513;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.category-advantage {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.competitor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.competitor {
+  background: #f6f8fa;
+  color: #656d76;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.above-highlight {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+}
+
+.category-gap {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.category-advantage-text {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: white;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.market-positioning {
+  text-align: center;
+}
+
+.positioning-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+}
+
+.positioning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.positioning-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: #f6f8fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.positioning-point:hover {
+  background: #08872B;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.positioning-point i {
+  font-size: 24px;
+  color: #08872B;
+}
+
+.positioning-point:hover i {
+  color: white;
+}
+
+.positioning-point span {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Slide 7-9: Competitor Comparison Slides */
+.competitor-comparison {
+  padding: 40px;
+  animation: slide-in-up 1.2s ease-out 0.2s both;
+}
+
+.comparison-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro-text {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comparison-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.comparison-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.competitor-approach, .above-advantage {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.above-advantage {
+  border-color: #08872B;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%);
+}
+
+.approach-title, .advantage-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.advantage-title {
+  color: #08872B;
+}
+
+.approach-list, .advantage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.approach-list li, .advantage-list li {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #656d76;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.approach-list li::before {
+  content: "•";
+  color: #656d76;
+  position: absolute;
+  left: 0;
+}
+
+.advantage-list li::before {
+  content: "✓";
+  color: #08872B;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.approach-limitation, .advantage-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.approach-limitation {
+  background: #fff8dc;
+  color: #8b4513;
+}
+
+.advantage-highlight {
+  background: #e6f7e6;
+  color: #08872B;
+}
+
+/* Use Case Comparison */
+.use-case-comparison {
+  background: #f6f8fa;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.use-case-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.scenario-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.push-response, .above-response {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #d1d9e0;
+}
+
+.above-response {
+  border-color: #08872B;
+}
+
+.response-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 16px;
+}
+
+.response-steps {
+  margin-bottom: 16px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.step i {
+  color: #08872B;
+}
+
+.step.miss i {
+  color: #d1242f;
+}
+
+.step.success i {
+  color: #08872B;
+}
+
+.response-result {
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.response-result.miss {
+  background: #ffebee;
+  color: #d1242f;
+}
+
+.response-result.success {
+  background: #e6f7e6;
+  color: #08872B;
+}
+
+/* Timeline Comparison */
+.timeline-comparison {
+  background: #f6f8fa;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.timeline-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #d1d9e0;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.timeline-marker.initial {
+  background: #656d76;
+}
+
+.timeline-marker.critical {
+  background: #ff6b35;
+}
+
+.timeline-marker.damage {
+  background: #d1242f;
+}
+
+.timeline-marker.aftermath {
+  background: #8b4513;
+}
+
+.timeline-content h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  margin-bottom: 12px;
+}
+
+.vendor-response {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.vendor-response.valence {
+  background: #fff8dc;
+  color: #8b4513;
+}
+
+.vendor-response.above {
+  background: #e6f7e6;
+  color: #08872B;
+}
+
+.vendor-response.above.success {
+  background: #08872B;
+  color: white;
+}
+
+/* Deployment Comparison */
+.deployment-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.deployment-approach {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.deployment-approach.above {
+  border-color: #08872B;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%);
+}
+
+.deployment-steps {
+  margin-bottom: 16px;
+}
+
+.step.complex {
+  color: #8b4513;
+}
+
+.step.simple {
+  color: #08872B;
+}
+
+.deployment-timeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.deployment-approach.island .deployment-timeline {
+  background: #fff8dc;
+  color: #8b4513;
+}
+
+.deployment-approach.above .deployment-timeline {
+  background: #e6f7e6;
+  color: #08872B;
+}
+
+/* Capability Comparison */
+.capability-comparison {
+  background: #f6f8fa;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.capability-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.capability-category {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #d1d9e0;
+}
+
+.capability-category h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 16px;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.capability-label {
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.capability-desc {
+  flex: 1;
+  color: #656d76;
+}
+
+.capability-icon {
+  font-size: 16px;
+}
+
+.capability-icon.positive {
+  color: #08872B;
+}
+
+.capability-icon.negative {
+  color: #d1242f;
+}
+
+.capability-icon.neutral {
+  color: #656d76;
+}
+
+/* Use Case Example */
+.use-case-example {
+  background: #f6f8fa;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.example-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.scenario-setup {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #d1d9e0;
+}
+
+.scenario-setup p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #24292f;
+  font-weight: 500;
+  margin: 0;
+}
+
+.scenario-responses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.response {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #d1d9e0;
+}
+
+.above-response {
+  border-color: #08872B;
+}
+
+.response h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 16px;
+}
+
+.response-flow {
+  margin-bottom: 16px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #656d76;
+}
+
+.flow-step.blocked i {
+  color: #d1242f;
+}
+
+.flow-step.success i {
+  color: #08872B;
+}
+
+.response-result {
+  font-weight: 600;
+  font-size: 14px;
+  color: #656d76;
+}
+
+/* Competitive Summary */
+.competitive-summary {
+  text-align: center;
+  margin-top: 40px;
+  padding: 24px;
+  background: linear-gradient(135deg, #08872B 0%, #5FED83 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.summary-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.summary-text {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 24px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-label {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Slide 10: Market Leadership */
+.market-leadership {
+  padding: 40px;
+  animation: slide-in-up 1.2s ease-out 0.2s both;
+}
+
+.leadership-intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.intro-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #08872B;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Market Matrix */
+.market-matrix {
+  margin-bottom: 48px;
+}
+
+.matrix-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.matrix-table {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: #d1d9e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.matrix-cell {
+  background: #ffffff;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.capability-header {
+  background: #f6f8fa;
+  font-weight: 600;
+  justify-content: flex-start;
+}
+
+.vendor-header {
+  background: #f6f8fa;
+  font-weight: 600;
+}
+
+.capability {
+  font-weight: 500;
+  justify-content: flex-start;
+}
+
+.above-cell {
+  background: #e6f7e6;
+  color: #08872B;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.competitor-cell {
+  color: #656d76;
+  font-size: 16px;
+}
+
+/* Market Opportunity */
+.market-opportunity {
+  margin-bottom: 48px;
+}
+
+.opportunity-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.opportunity-breakdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.opportunity-segment {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.segment-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.segment-header i {
+  font-size: 24px;
+  color: #08872B;
+}
+
+.segment-header h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+}
+
+.market-size {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #08872B;
+}
+
+.segment-gap {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: #656d76;
+  margin: 0;
+}
+
+.above-opportunity {
+  background: linear-gradient(135deg, #08872B 0%, #5FED83 100%);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  color: white;
+}
+
+.above-market-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.market-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.market-stat {
+  text-align: center;
+}
+
+.market-stat .stat-number {
+  display: block;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+.market-stat .stat-label {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Leadership Summary */
+.leadership-summary {
+  margin-bottom: 48px;
+}
+
+.winning-factors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.winning-factor {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.winning-factor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #08872B;
+}
+
+.winning-factor i {
+  font-size: 32px;
+  color: #08872B;
+  margin-bottom: 12px;
+}
+
+.winning-factor h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+.winning-factor p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  margin: 0;
+}
+
+/* Call to Action */
+.call-to-action {
+  background: linear-gradient(135deg, #24292f 0%, #656d76 100%);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  color: white;
+}
+
+.cta-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cta-text {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .competitor-categories {
+    grid-template-columns: 1fr;
+  }
+  
+  .positioning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .comparison-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .scenario-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .deployment-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scenario-responses {
+    grid-template-columns: 1fr;
+  }
+  
+  .matrix-table {
+    grid-template-columns: 2fr 1fr 1fr;
+    font-size: 12px;
+  }
+  
+  .opportunity-breakdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .market-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .winning-factors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
