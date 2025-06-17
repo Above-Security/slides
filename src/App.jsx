@@ -606,8 +606,8 @@ const App = () => {
                   className={`menu-item ${currentSlide === index ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
                 >
-                  <span className="slide-number">{index + 1}</span>
-                  <span className="slide-name">{slide}</span>
+                  <span className="menu-item-number">{index + 1}</span>
+                  <span className="menu-item-title">{slide}</span>
                 </button>
               ))}
             </div>
