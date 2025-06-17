@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import logoSvg from './assets/logo.svg';
 
 const App = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
 
   const slides = [
-    'Introduction',
-    'Identity Threat Landscape', 
-    'What is Runtime ITDR?',
-    'Above Platform',
-    'Key Differentiators',
-    'Core Use Cases',
-    'Security Stack Integration',
-    'Customer Success'
+    'Above Runtime ITDR',
+    'The Problem', 
+    'Technical Approach',
+    'Detection Capabilities',
+    'Real-World Use Cases',
+    'Deployment'
   ];
 
   useEffect(() => {
@@ -50,53 +47,51 @@ const App = () => {
       case 0:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">
+            <header className="slide-header">
+              <h1 className="slide-title">
                 <svg className="logo-small" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
                 </svg>
                 Above
               </h1>
-              <p className="subtitle">Runtime Identity Threat Detection & Response</p>
-            </div>
+              <p className="slide-subtitle">Runtime Identity Threat Detection & Response</p>
+            </header>
 
             <div className="content-section">
               <div className="key-points-grid">
-                <div className="key-point-card application-aware">
+                <div className="key-point-card">
                   <div className="key-point-icon">
                     <i className="fas fa-eye"></i>
                   </div>
-                  <h3 className="key-point-title">Application-Aware</h3>
-                  <p className="key-point-description">First fully application-aware Runtime ITDR platform</p>
+                  <h3 className="key-point-title">Post-Authentication Monitoring</h3>
+                  <p className="key-point-description">Monitors user behavior inside applications after successful login</p>
                 </div>
 
-                <div className="key-point-card real-time">
+                <div className="key-point-card">
                   <div className="key-point-icon">
-                    <i className="fas fa-bolt"></i>
+                    <i className="fas fa-globe"></i>
                   </div>
-                  <h3 className="key-point-title">Real-Time</h3>
-                  <p className="key-point-description">Detects misuse and insider threats in real-time</p>
+                  <h3 className="key-point-title">Browser-Native Deployment</h3>
+                  <p className="key-point-description">Agentless architecture works across any web application</p>
                 </div>
 
-                <div className="key-point-card anti-phishing">
+                <div className="key-point-card">
                   <div className="key-point-icon">
-                    <i className="fas fa-shield-alt"></i>
+                    <i className="fas fa-brain"></i>
                   </div>
-                  <h3 className="key-point-title">Anti-Phishing</h3>
-                  <p className="key-point-description">Detects advanced phishing beyond traditional email filters</p>
+                  <h3 className="key-point-title">Semantic Analysis</h3>
+                  <p className="key-point-description">LLM-powered understanding of user intent and context</p>
                 </div>
               </div>
 
               <div className="executive-summary">
                 <h3 className="summary-title">
-                  <i className="fas fa-rocket"></i>
-                  Empowering Security Teams
+                  <i className="fas fa-shield-alt"></i>
+                  The Gap We Fill
                 </h3>
                 <p className="summary-text">
-                  Traditional ITDR and IAM solutions fail post-authentication, focusing on access control rather than actual behavior inside applications. 
-                  Above addresses this critical gap by providing real-time detection of misuse, insider threats, and sophisticated phishing attacks within 
-                  SaaS and internal applications — including OAuth consent abuse, session hijacking, and browser-based social engineering that bypass 
-                  conventional email-based defenses.
+                  Traditional security tools monitor access but not behavior. Above detects misuse, insider threats, 
+                  and advanced attacks that occur after authentication — the blind spot where most damage happens.
                 </p>
               </div>
             </div>
@@ -110,89 +105,73 @@ const App = () => {
       case 1:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">The Identity Threat Landscape</h1>
-              <p className="subtitle">Identity as the Primary Attack Vector</p>
-            </div>
+            <header className="slide-header">
+              <h1 className="slide-title">The Problem</h1>
+              <p className="slide-subtitle">Post-Authentication Blind Spot</p>
+            </header>
 
             <div className="content-section">
               <div className="landscape-grid">
-                <div className="landscape-card critical-gap">
+                <div className="landscape-card">
                   <h3 className="landscape-title">
                     <i className="fas fa-exclamation-triangle"></i>
-                    The Critical Gap
+                    Current Tools Miss the Mark
                   </h3>
                   <p className="landscape-text">
-                    Existing tools focus on <strong style={{color: '#00872b'}}>access</strong>, not actual <strong style={{color: '#0969da'}}>behavior</strong> inside apps.
-                  </p>
-                  <p className="landscape-text">
-                    Compromised credentials alone don't tell the full story.
+                    IAM controls <strong>access</strong>. SIEM aggregates <strong>logs</strong>. 
+                    DLP monitors <strong>files</strong>. None see what users actually <strong>do</strong> inside applications.
                   </p>
                   
                   <div className="blind-spots-card">
-                    <h4 className="blind-spots-title">Traditional Security Blind Spots:</h4>
+                    <h4 className="blind-spots-title">Undetected Behaviors:</h4>
                     <ul className="blind-spots-list">
-                      <li><i className="fas fa-times"></i> Post-authentication behavior</li>
-                      <li><i className="fas fa-times"></i> In-application activities</li>
-                      <li><i className="fas fa-times"></i> Session-level visibility</li>
-                      <li><i className="fas fa-times"></i> Semantic user intent</li>
+                      <li><i className="fas fa-times"></i> Privilege escalation within apps</li>
+                      <li><i className="fas fa-times"></i> Data access pattern anomalies</li>
+                      <li><i className="fas fa-times"></i> Session hijacking and token abuse</li>
+                      <li><i className="fas fa-times"></i> OAuth consent manipulation</li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="landscape-card emerging-threats">
+                <div className="landscape-card">
                   <h3 className="landscape-title">
-                    <i className="fas fa-virus"></i>
-                    Emerging Identity Threats
+                    <i className="fas fa-bug"></i>
+                    Real Attack Examples
                   </h3>
                   
                   <div className="threat-item">
-                    <div className="threat-icon oauth">
-                      <i className="fab fa-google"></i>
-                    </div>
                     <div className="threat-content">
-                      <h4 className="threat-name">OAuth Phishing</h4>
-                      <p className="threat-description">Malicious apps trick users into granting access via OAuth, bypassing traditional authentication mechanisms</p>
+                      <div className="threat-icon insider">
+                        <i className="fas fa-user-secret"></i>
+                      </div>
+                      <div className="threat-details">
+                        <h4 className="threat-name">Cyberhaven Incident (2024)</h4>
+                        <p className="threat-description">Employee systematically accessed and downloaded customer data over months. Traditional DLP missed gradual exfiltration pattern.</p>
+                      </div>
                     </div>
                   </div>
 
                   <div className="threat-item">
-                    <div className="threat-icon session">
-                      <i className="fas fa-user-secret"></i>
-                    </div>
                     <div className="threat-content">
-                      <h4 className="threat-name">Session Hijacking</h4>
-                      <p className="threat-description">Attackers steal session tokens to impersonate users without re-authentication</p>
+                      <div className="threat-icon oauth">
+                        <i className="fab fa-google"></i>
+                      </div>
+                      <div className="threat-details">
+                        <h4 className="threat-name">OAuth App Abuse</h4>
+                        <p className="threat-description">Malicious apps gain legitimate OAuth consent, then access data beyond intended scope. Email security can't detect this.</p>
+                      </div>
                     </div>
                   </div>
 
                   <div className="threat-item">
-                    <div className="threat-icon shadow">
-                      <i className="fas fa-cloud"></i>
-                    </div>
                     <div className="threat-content">
-                      <h4 className="threat-name">Shadow IT Misuse</h4>
-                      <p className="threat-description">Unauthorized applications introduce security risks outside IT oversight</p>
-                    </div>
-                  </div>
-
-                  <div className="threat-item">
-                    <div className="threat-icon scraping">
-                      <i className="fas fa-download"></i>
-                    </div>
-                    <div className="threat-content">
-                      <h4 className="threat-name">Low-and-Slow Data Scraping</h4>
-                      <p className="threat-description">Incremental data exfiltration designed to evade traditional security alerts</p>
-                    </div>
-                  </div>
-
-                  <div className="threat-item">
-                    <div className="threat-icon insider">
-                      <i className="fas fa-user-times"></i>
-                    </div>
-                    <div className="threat-content">
-                      <h4 className="threat-name">Insider Threats</h4>
-                      <p className="threat-description">Malicious or negligent insiders misuse legitimate access to compromise data</p>
+                      <div className="threat-icon session">
+                        <i className="fas fa-key"></i>
+                      </div>
+                      <div className="threat-details">
+                        <h4 className="threat-name">Session Token Theft</h4>
+                        <p className="threat-description">Attackers steal session cookies via malware or phishing, impersonate users without triggering MFA.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -208,86 +187,78 @@ const App = () => {
       case 2:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">
-                <svg className="logo-small" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-                </svg>
-                What is Runtime ITDR?
-              </h1>
-              <p className="subtitle">Revolutionary Post-Authentication Security</p>
-            </div>
+            <header className="slide-header">
+              <h1 className="slide-title">Technical Approach</h1>
+              <p className="slide-subtitle">Browser-Native Behavioral Telemetry</p>
+            </header>
 
             <div className="content-section">
-              <div className="definition-card">
-                <h3 className="definition-title">
-                  <i className="fas fa-cogs"></i>
-                  Runtime ITDR Definition
-                </h3>
-                <p className="definition-text">
-                  Runtime Identity Threat Detection & Response monitors and analyzes user behavior <strong style={{color: '#00872b'}}>after successful authentication</strong>, providing real-time visibility into what users actually do inside applications, not just whether they can access them.
-                </p>
-                
-                <div className="comparison-grid">
-                  <div className="comparison-item">
-                    <h4 className="comparison-title">
-                      <i className="fas fa-times traditional-icon"></i>
-                      Traditional ITDR/UEBA/DLP
-                    </h4>
-                    <p className="comparison-text">Focuses on access patterns, login anomalies, and file-level monitoring. Limited visibility into application behavior.</p>
-                  </div>
-                  
-                  <div className="comparison-item">
-                    <h4 className="comparison-title">
-                      <i className="fas fa-check runtime-icon"></i>
-                      Runtime ITDR
-                    </h4>
-                    <p className="comparison-text">Monitors actual user interactions within applications, understanding semantic intent and behavioral context.</p>
-                  </div>
-                  
-                  <div className="comparison-item">
-                    <h4 className="comparison-title">
-                      <i className="fas fa-times traditional-icon"></i>
-                      SIEM Solutions
-                    </h4>
-                    <p className="comparison-text">Aggregates logs and events but lacks application-aware context and real-time behavioral analysis.</p>
-                  </div>
-                  
-                  <div className="comparison-item">
-                    <h4 className="comparison-title">
-                      <i className="fas fa-check runtime-icon"></i>
-                      Application-Aware
-                    </h4>
-                    <p className="comparison-text">Understands application workflows, user intent, and can detect subtle misuse patterns in real-time.</p>
+              <div className="platform-overview">
+                <div className="architecture-card">
+                  <h3 className="architecture-title">
+                    <i className="fas fa-cogs"></i>
+                    How It Works
+                  </h3>
+
+                  <div className="tech-stack-grid">
+                    <div className="tech-item">
+                      <div className="tech-icon">
+                        <i className="fas fa-globe"></i>
+                      </div>
+                      <div className="tech-content">
+                        <h4 className="tech-title">Browser Extension Deployment</h4>
+                        <p className="tech-description">Captures semantic user interactions: clicks, form fills, navigation patterns, data access</p>
+                      </div>
+                    </div>
+
+                    <div className="tech-item">
+                      <div className="tech-icon">
+                        <i className="fas fa-brain"></i>
+                      </div>
+                      <div className="tech-content">
+                        <h4 className="tech-title">LLM Normalization Engine</h4>
+                        <p className="tech-description">Converts raw browser events into semantic actions: "downloaded customer list", "escalated privileges"</p>
+                      </div>
+                    </div>
+
+                    <div className="tech-item">
+                      <div className="tech-icon">
+                        <i className="fas fa-chart-line"></i>
+                      </div>
+                      <div className="tech-content">
+                        <h4 className="tech-title">Behavioral Baseline & Anomaly Detection</h4>
+                        <p className="tech-description">Establishes normal patterns, flags deviations: unusual data volume, off-hours access, privilege changes</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="concepts-section">
-                <h3 className="concepts-title">Essential Runtime ITDR Concepts</h3>
-                <div className="concepts-grid">
-                  <div className="concept-card concept-behavioral">
-                    <div className="concept-icon">
-                      <i className="fas fa-chart-line"></i>
+                <div className="concepts-section">
+                  <h3 className="concepts-title">Key Technical Differentiators</h3>
+                  <div className="concepts-grid">
+                    <div className="concept-card">
+                      <div className="concept-icon">
+                        <i className="fas fa-layer-group"></i>
+                      </div>
+                      <h4 className="concept-title">Application-Agnostic</h4>
+                      <p className="concept-description">Works with any browser-based app without API integration or vendor cooperation</p>
                     </div>
-                    <h4 className="concept-title">Post-Auth Behavioral Observability</h4>
-                    <p className="concept-description">Continuous monitoring of user actions after successful login, creating behavioral baselines and detecting deviations</p>
-                  </div>
 
-                  <div className="concept-card concept-semantic">
-                    <div className="concept-icon">
-                      <i className="fas fa-brain"></i>
+                    <div className="concept-card">
+                      <div className="concept-icon">
+                        <i className="fas fa-clock"></i>
+                      </div>
+                      <h4 className="concept-title">Real-Time Processing</h4>
+                      <p className="concept-description">Sub-second detection and alerting for immediate threat response</p>
                     </div>
-                    <h4 className="concept-title">Semantic User Intent Interpretation</h4>
-                    <p className="concept-description">Understanding the meaning and context behind user actions, not just the technical events</p>
-                  </div>
 
-                  <div className="concept-card concept-session">
-                    <div className="concept-icon">
-                      <i className="fas fa-eye"></i>
+                    <div className="concept-card">
+                      <div className="concept-icon">
+                        <i className="fas fa-shield-alt"></i>
+                      </div>
+                      <h4 className="concept-title">Privacy-Preserving</h4>
+                      <p className="concept-description">Captures behavioral metadata, not sensitive data content</p>
                     </div>
-                    <h4 className="concept-title">Session-Level Visibility</h4>
-                    <p className="concept-description">Complete visibility into user sessions across applications, tracking behavior patterns and anomalies</p>
                   </div>
                 </div>
               </div>
@@ -302,85 +273,66 @@ const App = () => {
       case 3:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">
-                <svg className="logo-small" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-                </svg>
-                Above Platform
-              </h1>
-              <p className="subtitle">Browser-Native Runtime ITDR Architecture</p>
-            </div>
+            <header className="slide-header">
+              <h1 className="slide-title">Detection Capabilities</h1>
+              <p className="slide-subtitle">What We Catch That Others Miss</p>
+            </header>
 
             <div className="content-section">
-              <div className="platform-overview">
-                <div className="architecture-card">
-                  <h3 className="architecture-title">
-                    <i className="fas fa-layer-group"></i>
-                    Core Technology Stack
-                  </h3>
-                  
-                  <div className="tech-stack-grid">
-                    <div className="tech-item browser-native">
-                      <div className="tech-icon">
-                        <i className="fas fa-globe"></i>
-                      </div>
-                      <h4 className="tech-title">Browser-Native Telemetry</h4>
-                      <p className="tech-description">Agentless deployment capturing semantic behavioral data directly from browser interactions</p>
-                    </div>
-
-                    <div className="tech-item llm-analysis">
-                      <div className="tech-icon">
-                        <i className="fas fa-brain"></i>
-                      </div>
-                      <h4 className="tech-title">LLM Semantic Analysis</h4>
-                      <p className="tech-description">Large language models normalize and interpret user actions across any application interface</p>
-                    </div>
-
-                    <div className="tech-item real-time">
-                      <div className="tech-icon">
-                        <i className="fas fa-tachometer-alt"></i>
-                      </div>
-                      <h4 className="tech-title">Real-Time Risk Scoring</h4>
-                      <p className="tech-description">Continuous behavioral analysis with instant threat detection and automated response capabilities</p>
-                    </div>
+              <div className="differentiators-grid">
+                <div className="differentiator-card">
+                  <div className="differentiator-icon">
+                    <i className="fas fa-user-shield"></i>
+                  </div>
+                  <h3 className="differentiator-title">Insider Threat Patterns</h3>
+                  <p className="differentiator-description">
+                    Detects gradual privilege escalation, unusual data access volumes, and behavioral drift indicating malicious intent.
+                  </p>
+                  <div className="differentiator-highlight">
+                    <i className="fas fa-search"></i>
+                    Example: Admin account dormant 6 months suddenly downloads 50x normal data volume
                   </div>
                 </div>
 
-                <div className="capabilities-section">
-                  <h3 className="capabilities-title">Platform Capabilities</h3>
-                  <div className="capabilities-grid">
-                    <div className="capability-card">
-                      <div className="capability-header">
-                        <i className="fas fa-shield-alt"></i>
-                        <h4>Application-Agnostic Coverage</h4>
-                      </div>
-                      <p>Works across any browser-based application — commercial SaaS, internal tools, and long-tail applications</p>
-                    </div>
+                <div className="differentiator-card">
+                  <div className="differentiator-icon">
+                    <i className="fas fa-key"></i>
+                  </div>
+                  <h3 className="differentiator-title">Session Hijacking</h3>
+                  <p className="differentiator-description">
+                    Identifies stolen session tokens through behavioral inconsistencies: location, timing, interaction patterns.
+                  </p>
+                  <div className="differentiator-highlight">
+                    <i className="fas fa-search"></i>
+                    Example: User session continues after device goes offline, different browser fingerprint
+                  </div>
+                </div>
 
-                    <div className="capability-card">
-                      <div className="capability-header">
-                        <i className="fas fa-search"></i>
-                        <h4>Deep Behavioral Visibility</h4>
-                      </div>
-                      <p>Captures user interactions, data access patterns, and workflow deviations in real-time</p>
-                    </div>
+                <div className="differentiator-card">
+                  <div className="differentiator-icon">
+                    <i className="fas fa-fish"></i>
+                  </div>
+                  <h3 className="differentiator-title">OAuth Abuse</h3>
+                  <p className="differentiator-description">
+                    Monitors OAuth app behavior post-consent, detecting scope creep and unauthorized data access.
+                  </p>
+                  <div className="differentiator-highlight">
+                    <i className="fas fa-search"></i>
+                    Example: "Calendar app" granted read access starts downloading contact lists
+                  </div>
+                </div>
 
-                    <div className="capability-card">
-                      <div className="capability-header">
-                        <i className="fas fa-robot"></i>
-                        <h4>Automated Response</h4>
-                      </div>
-                      <p>Policy enforcement, session termination, and alert generation based on risk thresholds</p>
-                    </div>
-
-                    <div className="capability-card">
-                      <div className="capability-header">
-                        <i className="fas fa-chart-bar"></i>
-                        <h4>Compliance Monitoring</h4>
-                      </div>
-                      <p>Audit trail generation and regulatory compliance reporting for data access and user behavior</p>
-                    </div>
+                <div className="differentiator-card">
+                  <div className="differentiator-icon">
+                    <i className="fas fa-download"></i>
+                  </div>
+                  <h3 className="differentiator-title">Data Exfiltration</h3>
+                  <p className="differentiator-description">
+                    Tracks systematic data collection patterns that evade traditional DLP through low-and-slow techniques.
+                  </p>
+                  <div className="differentiator-highlight">
+                    <i className="fas fa-search"></i>
+                    Example: Employee accessing customer records outside normal job function over weeks
                   </div>
                 </div>
               </div>
@@ -395,66 +347,100 @@ const App = () => {
       case 4:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">Key Differentiators</h1>
-              <p className="subtitle">What Sets Above Apart</p>
-            </div>
+            <header className="slide-header">
+              <h1 className="slide-title">Real-World Use Cases</h1>
+              <p className="slide-subtitle">Specific Detection Scenarios</p>
+            </header>
 
             <div className="content-section">
-              <div className="differentiators-grid">
-                <div className="differentiator-card coverage">
-                  <div className="differentiator-icon">
-                    <i className="fas fa-globe-americas"></i>
+              <div className="use-cases-grid">
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-user-times"></i>
+                    <h3>Terminated Employee Detection</h3>
                   </div>
-                  <h3 className="differentiator-title">Universal Application Coverage</h3>
-                  <p className="differentiator-description">
-                    Application-agnostic monitoring across any browser-based interface, including long-tail and unsupported SaaS applications that traditional tools miss.
-                  </p>
-                  <div className="differentiator-highlight">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Works with 100% of browser-based applications</span>
-                  </div>
-                </div>
-
-                <div className="differentiator-card detection">
-                  <div className="differentiator-icon">
-                    <i className="fas fa-crosshairs"></i>
-                  </div>
-                  <h3 className="differentiator-title">Advanced Threat Detection</h3>
-                  <p className="differentiator-description">
-                    Real-time detection of sophisticated threats including privilege abuse, insider risk, and advanced phishing tactics that evade conventional security tools.
-                  </p>
-                  <div className="differentiator-highlight">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Catches threats other tools miss</span>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Employee terminated but cached tokens/sessions remain active
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> Session activity continues after HR system shows termination date
+                    </div>
                   </div>
                 </div>
 
-                <div className="differentiator-card semantic">
-                  <div className="differentiator-icon">
-                    <i className="fas fa-brain"></i>
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-database"></i>
+                    <h3>Cyberhaven-Style Data Theft</h3>
                   </div>
-                  <h3 className="differentiator-title">Semantic Understanding</h3>
-                  <p className="differentiator-description">
-                    LLM-powered semantic analysis reduces false positives by understanding user intent and context, not just raw events and patterns.
-                  </p>
-                  <div className="differentiator-highlight">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Dramatically reduces alert fatigue</span>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Employee systematically accesses customer data outside normal role
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> Support agent accessing enterprise customer records, downloading contact lists
+                    </div>
                   </div>
                 </div>
 
-                <div className="differentiator-card deployment">
-                  <div className="differentiator-icon">
-                    <i className="fas fa-rocket"></i>
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-crown"></i>
+                    <h3>Privilege Escalation</h3>
                   </div>
-                  <h3 className="differentiator-title">Rapid Deployment</h3>
-                  <p className="differentiator-description">
-                    Browser-native architecture enables agentless deployment without application modifications, integrations, or lengthy implementation cycles.
-                  </p>
-                  <div className="differentiator-highlight">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Deploy in days, not months</span>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> User gains admin privileges through social engineering or system exploit
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> Standard user suddenly performing admin functions: user creation, permission changes
+                    </div>
+                  </div>
+                </div>
+
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-mobile-alt"></i>
+                    <h3>Compromised OAuth App</h3>
+                  </div>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Legitimate OAuth app gets compromised, starts accessing data beyond original scope
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> Calendar integration app suddenly accessing email, contacts, file storage
+                    </div>
+                  </div>
+                </div>
+
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-clock"></i>
+                    <h3>After-Hours Anomalies</h3>
+                  </div>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Unusual activity patterns indicating compromised accounts
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> Accounting user accessing payroll data at 3 AM from new location
+                    </div>
+                  </div>
+                </div>
+
+                <div className="use-case-card">
+                  <div className="use-case-header">
+                    <i className="fas fa-balance-scale"></i>
+                    <h3>Compliance Violations</h3>
+                  </div>
+                  <div className="use-case-content">
+                    <p className="use-case-description">
+                      <strong>Scenario:</strong> Data access violating regulatory requirements (GDPR, HIPAA, SOX)
+                    </p>
+                    <div className="use-case-example">
+                      <strong>Detection:</strong> US employee accessing EU customer data without proper data processing agreement
+                    </div>
                   </div>
                 </div>
               </div>
@@ -469,286 +455,101 @@ const App = () => {
       case 5:
         return (
           <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">Core Use Cases</h1>
-              <p className="subtitle">Real-World Detection Scenarios</p>
-            </div>
-
-            <div className="content-section">
-              <div className="use-cases-grid">
-                <div className="use-case-card privileged">
-                  <div className="use-case-header">
-                    <i className="fas fa-user-shield"></i>
-                    <h3>Privileged User Misuse</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Detect dormant admin reactivation, unauthorized data exports, and role escalation attempts</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> Admin downloads 10x normal data volume after 6 months of inactivity
-                    </div>
-                  </div>
-                </div>
-
-                <div className="use-case-card offboarding">
-                  <div className="use-case-header">
-                    <i className="fas fa-user-times"></i>
-                    <h3>Offboarding Gaps</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Identify stale sessions, token reuse, and shadow accounts after employee departure</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> Terminated employee's session remains active in Salesforce via cached tokens
-                    </div>
-                  </div>
-                </div>
-
-                <div className="use-case-card exfiltration">
-                  <div className="use-case-header">
-                    <i className="fas fa-download"></i>
-                    <h3>Data Exfiltration</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Monitor SaaS-based data theft and insider threats through behavioral analysis</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> User systematically accesses customer records outside their normal scope
-                    </div>
-                  </div>
-                </div>
-
-                <div className="use-case-card compliance">
-                  <div className="use-case-header">
-                    <i className="fas fa-clipboard-check"></i>
-                    <h3>Compliance Monitoring</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Generate audit trails and monitor regulatory compliance for data access patterns</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> GDPR violation when user accesses EU customer data without proper authorization
-                    </div>
-                  </div>
-                </div>
-
-                <div className="use-case-card lateral">
-                  <div className="use-case-header">
-                    <i className="fas fa-route"></i>
-                    <h3>Lateral Movement</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Track behavioral drift and lateral movement within SaaS ecosystems</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> Compromised account explores applications and data outside normal workflow
-                    </div>
-                  </div>
-                </div>
-
-                <div className="use-case-card phishing">
-                  <div className="use-case-header">
-                    <i className="fas fa-fish"></i>
-                    <h3>Advanced Phishing</h3>
-                  </div>
-                  <div className="use-case-content">
-                    <p className="use-case-description">Detect OAuth consent abuse and session hijacking beyond traditional email filters</p>
-                    <div className="use-case-example">
-                      <strong>Detection Example:</strong> User grants OAuth permissions to malicious app mimicking legitimate service
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <svg className="logo-watermark" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-            </svg>
-          </div>
-        );
-
-      case 6:
-        return (
-          <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">Security Stack Integration</h1>
-              <p className="subtitle">Complementary to Existing Security Tools</p>
-            </div>
-
-            <div className="content-section">
-              <div className="integration-overview">
-                <div className="integration-card">
-                  <h3 className="integration-title">
-                    <i className="fas fa-puzzle-piece"></i>
-                    Fills the Critical Post-Authentication Blind Spot
-                  </h3>
-                  <p className="integration-description">
-                    Above complements existing security infrastructure by providing the missing layer of post-authentication behavioral visibility that no other tool covers.
-                  </p>
-                </div>
-
-                <div className="integrations-grid">
-                  <div className="tool-integration iam">
-                    <div className="tool-header">
-                      <i className="fas fa-key"></i>
-                      <h4>IAM & PAM</h4>
-                    </div>
-                    <div className="tool-content">
-                      <p className="tool-description">Extends identity management with runtime behavior monitoring</p>
-                      <div className="integration-benefit">
-                        <i className="fas fa-plus"></i>
-                        <span>Adds post-login visibility to access controls</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="tool-integration siem">
-                    <div className="tool-header">
-                      <i className="fas fa-chart-line"></i>
-                      <h4>SIEM & SOAR</h4>
-                    </div>
-                    <div className="tool-content">
-                      <p className="tool-description">Provides high-fidelity, actionable insights for SOC analysts</p>
-                      <div className="integration-benefit">
-                        <i className="fas fa-plus"></i>
-                        <span>Reduces manual investigations and false positives</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="tool-integration dlp">
-                    <div className="tool-header">
-                      <i className="fas fa-shield-alt"></i>
-                      <h4>DLP & CASB</h4>
-                    </div>
-                    <div className="tool-content">
-                      <p className="tool-description">Enhances data protection with behavioral context and intent analysis</p>
-                      <div className="integration-benefit">
-                        <i className="fas fa-plus"></i>
-                        <span>Detects data misuse beyond policy violations</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="tool-integration ueba">
-                    <div className="tool-header">
-                      <i className="fas fa-user-check"></i>
-                      <h4>UEBA & XDR</h4>
-                    </div>
-                    <div className="tool-content">
-                      <p className="tool-description">Adds application-aware behavioral analysis to user monitoring</p>
-                      <div className="integration-benefit">
-                        <i className="fas fa-plus"></i>
-                        <span>Provides semantic understanding of user actions</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="deployment-info">
-                  <h3 className="deployment-title">Deployment & Response</h3>
-                  <div className="deployment-grid">
-                    <div className="deployment-item">
-                      <i className="fas fa-clock"></i>
-                      <h4>Real-Time Response</h4>
-                      <p>Automated policy enforcement and session termination based on risk thresholds</p>
-                    </div>
-                    <div className="deployment-item">
-                      <i className="fas fa-plug"></i>
-                      <h4>API Integration</h4>
-                      <p>Seamless integration with existing security orchestration and response platforms</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <svg className="logo-watermark" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-            </svg>
-          </div>
-        );
-
-      case 7:
-        return (
-          <div className="slide-container">
-            <div className="header">
-              <h1 className="main-title">Customer Success</h1>
-              <p className="subtitle">Deployment Timeline & Operational Benefits</p>
-            </div>
+            <header className="slide-header">
+              <h1 className="slide-title">Deployment</h1>
+              <p className="slide-subtitle">Implementation & Integration</p>
+            </header>
 
             <div className="content-section">
               <div className="success-overview">
                 <div className="timeline-section">
                   <h3 className="timeline-title">
-                    <i className="fas fa-calendar-alt"></i>
-                    Typical Deployment Timeline
+                    <i className="fas fa-rocket"></i>
+                    Deployment Process
                   </h3>
                   <div className="timeline-grid">
                     <div className="timeline-item">
-                      <div className="timeline-marker week1"></div>
-                      <h4>Week 1-2</h4>
-                      <p>Initial deployment and configuration</p>
+                      <div className="timeline-marker">1</div>
+                      <div className="timeline-content">
+                        <h4>Browser Extension Rollout</h4>
+                        <p>Deploy via existing MDM/GPO infrastructure. No application changes required.</p>
+                      </div>
                     </div>
+
                     <div className="timeline-item">
-                      <div className="timeline-marker week3"></div>
-                      <h4>Week 3-4</h4>
-                      <p>Baseline establishment and tuning</p>
+                      <div className="timeline-marker">2</div>
+                      <div className="timeline-content">
+                        <h4>Baseline Establishment</h4>
+                        <p>2-4 weeks learning normal user behavior patterns across applications.</p>
+                      </div>
                     </div>
+
                     <div className="timeline-item">
-                      <div className="timeline-marker week5"></div>
-                      <h4>Week 5-6</h4>
-                      <p>Full production monitoring and alerting</p>
+                      <div className="timeline-marker">3</div>
+                      <div className="timeline-content">
+                        <h4>Detection Tuning</h4>
+                        <p>Adjust sensitivity based on organizational risk tolerance and false positive feedback.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="benefits-section">
-                  <h3 className="benefits-title">Operational Benefits</h3>
-                  <div className="benefits-grid">
-                    <div className="benefit-card coverage">
-                      <div className="benefit-icon">
-                        <i className="fas fa-eye"></i>
+                <div className="integration-overview">
+                  <div className="integrations-grid">
+                    <div className="tool-integration">
+                      <div className="tool-header">
+                        <i className="fas fa-chart-bar"></i>
+                        <h4>SIEM Integration</h4>
                       </div>
-                      <h4 className="benefit-title">Enhanced Visibility</h4>
-                      <p className="benefit-description">Complete visibility into user behavior across all browser-based applications</p>
+                      <div className="tool-content">
+                        <p className="tool-description">JSON alerts via REST API or syslog. Enriched with user context and behavioral analysis.</p>
+                        <div className="integration-benefit">
+                          <i className="fas fa-check"></i>
+                          Reduces analyst investigation time
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="benefit-card detection">
-                      <div className="benefit-icon">
-                        <i className="fas fa-search"></i>
+                    <div className="tool-integration">
+                      <div className="tool-header">
+                        <i className="fas fa-shield-alt"></i>
+                        <h4>SOAR Playbooks</h4>
                       </div>
-                      <h4 className="benefit-title">Improved Detection</h4>
-                      <p className="benefit-description">Identify threats and policy violations that traditional tools miss</p>
+                      <div className="tool-content">
+                        <p className="tool-description">Automated response triggers: session termination, account lockout, manager notification.</p>
+                        <div className="integration-benefit">
+                          <i className="fas fa-check"></i>
+                          Immediate threat containment
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="benefit-card response">
-                      <div className="benefit-icon">
-                        <i className="fas fa-tachometer-alt"></i>
+                    <div className="tool-integration">
+                      <div className="tool-header">
+                        <i className="fas fa-key"></i>
+                        <h4>Identity Providers</h4>
                       </div>
-                      <h4 className="benefit-title">Faster Response</h4>
-                      <p className="benefit-description">Real-time alerting and automated response capabilities</p>
+                      <div className="tool-content">
+                        <p className="tool-description">Correlates behavioral anomalies with identity events: role changes, group membership.</p>
+                        <div className="integration-benefit">
+                          <i className="fas fa-check"></i>
+                          Enhanced context for investigations
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="benefit-card compliance">
-                      <div className="benefit-icon">
+                    <div className="tool-integration">
+                      <div className="tool-header">
                         <i className="fas fa-clipboard-check"></i>
+                        <h4>Compliance Reporting</h4>
                       </div>
-                      <h4 className="benefit-title">Compliance Assurance</h4>
-                      <p className="benefit-description">Comprehensive audit trails and regulatory compliance reporting</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="coverage-metrics">
-                  <h3 className="metrics-title">Coverage Metrics</h3>
-                  <div className="metrics-grid">
-                    <div className="metric-item">
-                      <div className="metric-value">100%</div>
-                      <div className="metric-label">SaaS Surface Monitored</div>
-                    </div>
-                    <div className="metric-item">
-                      <div className="metric-value">Real-Time</div>
-                      <div className="metric-label">Threat Detection</div>
-                    </div>
-                    <div className="metric-item">
-                      <div className="metric-value">Zero</div>
-                      <div className="metric-label">Agent Deployment</div>
+                      <div className="tool-content">
+                        <p className="tool-description">Automated audit trails for SOX, GDPR, HIPAA compliance requirements.</p>
+                        <div className="integration-benefit">
+                          <i className="fas fa-check"></i>
+                          Simplified regulatory compliance
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -768,35 +569,50 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="navigation">
-        <button 
-          className="menu-button"
-          onClick={() => setShowMenu(!showMenu)}
-        >
+      <div className="header">
+        <button className="menu-btn" onClick={() => setShowMenu(true)}>
+          <div className="menu-icon"></div>
           Menu
         </button>
         
-        <div className="slide-info">
-          <svg className="nav-logo" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#24292f"/>
+        <div className="brand">
+          <svg className="brand-logo" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
           </svg>
-          <span>Above Runtime ITDR</span>
+          Above Presentation
         </div>
         
-        <div className="slide-counter">
-          {currentSlide + 1} / {slides.length}
-        </div>
+        <div className="slide-counter">{currentSlide + 1} / {slides.length}</div>
         
         <div className="nav-controls">
-          <button onClick={prevSlide} disabled={currentSlide === 0}>←</button>
-          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1}>→</button>
+          <button 
+            className="nav-btn" 
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+          >
+            ‹
+          </button>
+          <button 
+            className="nav-btn" 
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+          >
+            ›
+          </button>
         </div>
+      </div>
+
+      <div className="slide-content">
+        {renderSlide()}
       </div>
 
       {showMenu && (
         <div className="menu-overlay" onClick={() => setShowMenu(false)}>
           <div className="menu-content" onClick={(e) => e.stopPropagation()}>
-            <h3>Navigate to Slide</h3>
+            <div className="menu-header">
+              <h3>Slides</h3>
+              <button className="menu-close" onClick={() => setShowMenu(false)}>×</button>
+            </div>
             <div className="menu-items">
               {slides.map((slide, index) => (
                 <button
@@ -812,10 +628,6 @@ const App = () => {
           </div>
         </div>
       )}
-
-      <div className="slide-content">
-        {renderSlide()}
-      </div>
     </div>
   );
 };

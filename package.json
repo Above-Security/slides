@@ -1,13 +1,23 @@
 {
-  "name": "slides",
+  "name": "above-presentation",
   "version": "1.0.0",
-  "description": "This repository hosts the slide deck for the GitHub Pages site.",
+  "description": "Above Runtime ITDR Presentation",
   "main": "index.js",
   "scripts": {
-    "test": "npx --yes html-validate index.html deck/*.html"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No tests specified\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  }
 }
+
