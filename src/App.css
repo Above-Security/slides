@@ -2560,3 +2560,130 @@ body {
   }
 }
 
+
+/* Matrix Table Styling - Fixed */
+.matrix-table {
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr);
+  gap: 1px;
+  background: #d1d9e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.matrix-header {
+  display: contents;
+}
+
+.matrix-row {
+  display: contents;
+}
+
+.matrix-cell {
+  background: #ffffff;
+  padding: 16px 12px;
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60px;
+  line-height: 1.4;
+}
+
+.matrix-cell.capability-header,
+.matrix-cell.vendor-header {
+  background: #f6f8fa;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: #24292f;
+}
+
+.matrix-cell.capability {
+  background: #f6f8fa;
+  font-weight: 500;
+  color: #24292f;
+  text-align: left;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.matrix-cell.above-cell {
+  background: #e6ffed;
+  color: #0d4f1c;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.matrix-cell.competitor-cell {
+  background: #fff5f5;
+  color: #d1242f;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Use Case Coverage Styling */
+.use-case-coverage {
+  margin-top: 16px;
+}
+
+.coverage-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.coverage-item:last-child {
+  border-bottom: none;
+}
+
+.solution {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: #24292f;
+  min-width: 80px;
+}
+
+.coverage {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.coverage.strong {
+  background: #e6ffed;
+  color: #0d4f1c;
+  font-weight: 500;
+}
+
+.coverage.weak {
+  background: #fff5f5;
+  color: #d1242f;
+  font-weight: 500;
+}
+
+/* Responsive Design for Tables */
+@media (max-width: 768px) {
+  .matrix-table {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .matrix-cell {
+    padding: 12px;
+    min-height: auto;
+  }
+  
+  .matrix-cell.capability-header,
+  .matrix-cell.vendor-header {
+    background: #08872B;
+    color: white;
+  }
+}
+

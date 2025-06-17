@@ -567,19 +567,19 @@ const App = () => {
         return (
           <div className="slide-container">
             <header className="slide-header">
-              <h1 className="slide-title">The Competitive Reality</h1>
-              <p className="slide-subtitle">Why Every Alternative Falls Short</p>
+              <h1 className="slide-title">Competitive Landscape</h1>
+              <p className="slide-subtitle">Understanding the Security Stack</p>
             </header>
 
             <div className="competitive-landscape">
               <div className="market-gap-section">
                 <h3 className="section-title">
                   <i className="fas fa-crosshairs"></i>
-                  The $12B Market Gap
+                  The Runtime Protection Gap
                 </h3>
                 <p className="gap-description">
-                  Email security stops threats at the inbox. SaaS security finds misconfigurations. 
-                  Browser security replaces your infrastructure. <strong>No one protects users during actual interactions.</strong>
+                  Email security prevents phishing at delivery. SaaS security finds misconfigurations post-deployment. 
+                  Browser security offers policy controls. <strong>Above provides runtime protection during user interactions.</strong>
                 </p>
               </div>
 
@@ -588,39 +588,39 @@ const App = () => {
                   <div className="category-header">
                     <i className="fas fa-envelope"></i>
                     <h4>Email Security</h4>
-                    <span className="category-limitation">Pre-Delivery Only</span>
+                    <span className="category-limitation">Pre-Delivery</span>
                   </div>
                   <div className="competitor-list">
                     <span className="competitor">Abnormal Security</span>
                     <span className="competitor">Proofpoint</span>
                   </div>
-                  <p className="category-gap">Misses browser-based attacks that bypass email entirely</p>
+                  <p className="category-gap">Strong at preventing phishing emails, but misses browser-based ATO attempts</p>
                 </div>
 
                 <div className="category-card">
                   <div className="category-header">
                     <i className="fas fa-cloud"></i>
                     <h4>SaaS Security</h4>
-                    <span className="category-limitation">Post-Deployment</span>
+                    <span className="category-limitation">Post-Configuration</span>
                   </div>
                   <div className="competitor-list">
                     <span className="competitor">Valence Security</span>
                     <span className="competitor">Reco AI</span>
                   </div>
-                  <p className="category-gap">Detects risks after damage is done, no runtime prevention</p>
+                  <p className="category-gap">Excellent at finding risky configurations, but detects threats after they occur</p>
                 </div>
 
                 <div className="category-card">
                   <div className="category-header">
                     <i className="fas fa-browser"></i>
                     <h4>Browser Security</h4>
-                    <span className="category-limitation">Infrastructure Replacement</span>
+                    <span className="category-limitation">Policy-Based</span>
                   </div>
                   <div className="competitor-list">
                     <span className="competitor">Island Enterprise</span>
                     <span className="competitor">Push Security</span>
                   </div>
-                  <p className="category-gap">Requires massive infrastructure changes or lacks semantic understanding</p>
+                  <p className="category-gap">Strong policy enforcement, but limited semantic understanding of threats</p>
                 </div>
 
                 <div className="category-card above-category">
@@ -670,14 +670,14 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">Above vs. Push Security</h1>
-              <p className="slide-subtitle">Pattern Detection vs. Semantic Understanding</p>
+              <p className="slide-subtitle">Semantic Understanding vs. Pattern Detection</p>
             </header>
 
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Push Security is our closest competitor with browser extension deployment. 
-                  <strong>But pattern-based detection isn't enough for sophisticated threats.</strong>
+                  Push Security offers strong browser extension-based identity protection. 
+                  <strong>Above complements this with semantic understanding of user intent.</strong>
                 </p>
               </div>
 
@@ -686,71 +686,71 @@ const App = () => {
                   <div className="competitor-approach">
                     <h3 className="approach-title">
                       <i className="fas fa-search"></i>
-                      Push Security Approach
+                      Push Security Strengths
                     </h3>
                     <ul className="approach-list">
-                      <li>Browser extension for identity attack detection</li>
-                      <li>Pre-configured security controls</li>
-                      <li>Pattern-based credential theft detection</li>
-                      <li>Session hijacking monitoring</li>
-                      <li>SIEM/XDR integration required</li>
+                      <li>Browser extension for session hijacking detection</li>
+                      <li>Strong credential theft monitoring</li>
+                      <li>Identity attack pattern recognition</li>
+                      <li>Established SIEM/XDR integrations</li>
+                      <li>Proven deployment at scale</li>
                     </ul>
                     <div className="approach-limitation">
-                      <i className="fas fa-exclamation-triangle"></i>
-                      <span>Limitation: Cannot understand malicious intent in legitimate contexts</span>
+                      <i className="fas fa-info-circle"></i>
+                      <span>Focus: Pattern-based detection of known attack signatures</span>
                     </div>
                   </div>
 
                   <div className="above-advantage">
                     <h3 className="advantage-title">
                       <i className="fas fa-brain"></i>
-                      Above's Semantic Advantage
+                      Above's Complementary Value
                     </h3>
                     <ul className="advantage-list">
                       <li><strong>LLM semantic understanding</strong> of page content and user intent</li>
-                      <li><strong>OAuth page analysis</strong> detects malicious consent flows</li>
+                      <li><strong>OAuth consent flow analysis</strong> for ATO prevention</li>
                       <li><strong>LOTS detection</strong> within trusted services (DocuSign, Dropbox)</li>
-                      <li><strong>Real-time prevention</strong> with contextual user education</li>
-                      <li><strong>Zero integration</strong> - works standalone</li>
+                      <li><strong>Real-time user education</strong> with contextual warnings</li>
+                      <li><strong>Standalone deployment</strong> with optional SIEM integration</li>
                     </ul>
                     <div className="advantage-highlight">
-                      <i className="fas fa-trophy"></i>
-                      <span>Advantage: Understands malicious intent, not just suspicious patterns</span>
+                      <i className="fas fa-lightbulb"></i>
+                      <span>Focus: Understanding malicious intent in legitimate contexts</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="use-case-comparison">
-                  <h3 className="use-case-title">Real-World Scenario: Cyberhaven 2024 Attack</h3>
+                  <h3 className="use-case-title">ATO Scenario: Cyberhaven-Style OAuth Abuse</h3>
                   <div className="scenario-comparison">
                     <div className="push-response">
                       <h4 className="response-title">Push Security Response</h4>
                       <div className="response-steps">
                         <div className="step">
                           <i className="fas fa-check-circle"></i>
-                          <span>Detects credential reuse pattern</span>
+                          <span>Detects credential reuse patterns</span>
                         </div>
                         <div className="step">
                           <i className="fas fa-check-circle"></i>
-                          <span>Flags suspicious login location</span>
+                          <span>Flags suspicious login locations</span>
                         </div>
-                        <div className="step miss">
-                          <i className="fas fa-times-circle"></i>
-                          <span>Misses malicious OAuth consent on legitimate Google page</span>
+                        <div className="step neutral">
+                          <i className="fas fa-question-circle"></i>
+                          <span>May not detect malicious OAuth consent on legitimate Google page</span>
                         </div>
                       </div>
-                      <p className="response-result miss">Result: Attack succeeds through legitimate OAuth flow</p>
+                      <p className="response-result neutral">Result: Strong session protection, potential OAuth gap</p>
                     </div>
 
                     <div className="above-response">
                       <h4 className="response-title">Above Security Response</h4>
                       <div className="response-steps">
                         <div className="step">
-                          <i className="fas fa-check-circle"></i>
+                          <i className="fas fa-search"></i>
                           <span>Analyzes OAuth consent page semantically</span>
                         </div>
                         <div className="step">
-                          <i className="fas fa-check-circle"></i>
+                          <i className="fas fa-exclamation-triangle"></i>
                           <span>Detects excessive permissions request</span>
                         </div>
                         <div className="step success">
@@ -758,17 +758,17 @@ const App = () => {
                           <span>Blocks malicious consent with user education</span>
                         </div>
                       </div>
-                      <p className="response-result success">Result: Attack prevented at point of user decision</p>
+                      <p className="response-result success">Result: ATO prevented at point of user decision</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="competitive-summary">
-                <h3 className="summary-title">Why Above Wins</h3>
+                <h3 className="summary-title">Complementary Strengths</h3>
                 <p className="summary-text">
-                  Push Security protects against known attack patterns. 
-                  <strong>Above Security understands malicious intent in any context.</strong>
+                  Push Security excels at session protection and credential monitoring. 
+                  <strong>Above adds semantic understanding for consent-based attacks.</strong>
                 </p>
               </div>
             </div>
@@ -784,14 +784,14 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">Above vs. Valence Security</h1>
-              <p className="slide-subtitle">Runtime Prevention vs. Post-Incident Detection</p>
+              <p className="slide-subtitle">Runtime Prevention vs. Configuration Management</p>
             </header>
 
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Valence Security offers comprehensive SaaS security with strong market presence. 
-                  <strong>But finding risks after deployment isn't enough.</strong>
+                  Valence Security provides comprehensive SaaS security posture management. 
+                  <strong>Above focuses on runtime user interaction protection.</strong>
                 </p>
               </div>
 
@@ -799,43 +799,43 @@ const App = () => {
                 <div className="comparison-section">
                   <div className="competitor-approach">
                     <h3 className="approach-title">
-                      <i className="fas fa-search"></i>
-                      Valence Security Approach
+                      <i className="fas fa-cogs"></i>
+                      Valence Security Strengths
                     </h3>
                     <ul className="approach-list">
                       <li>Comprehensive SaaS discovery and SSPM</li>
                       <li>Identity threat detection in SaaS environments</li>
                       <li>Risk remediation and compliance workflows</li>
                       <li>API-based monitoring and configuration scanning</li>
-                      <li>Business user collaboration features</li>
+                      <li>Strong business user collaboration features</li>
                     </ul>
                     <div className="approach-limitation">
-                      <i className="fas fa-exclamation-triangle"></i>
-                      <span>Limitation: Reactive detection after threats materialize</span>
+                      <i className="fas fa-info-circle"></i>
+                      <span>Focus: Post-deployment configuration and risk management</span>
                     </div>
                   </div>
 
                   <div className="above-advantage">
                     <h3 className="advantage-title">
                       <i className="fas fa-shield-alt"></i>
-                      Above's Prevention Advantage
+                      Above's Runtime Focus
                     </h3>
                     <ul className="advantage-list">
                       <li><strong>Runtime protection</strong> during actual user interactions</li>
                       <li><strong>Browser-native deployment</strong> with zero API dependencies</li>
                       <li><strong>User intent analysis</strong> prevents malicious actions before they occur</li>
-                      <li><strong>Prevention at interaction point</strong> vs. post-incident remediation</li>
+                      <li><strong>Real-time intervention</strong> vs. post-incident remediation</li>
                       <li><strong>Immediate deployment</strong> via browser extension</li>
                     </ul>
                     <div className="advantage-highlight">
-                      <i className="fas fa-trophy"></i>
-                      <span>Advantage: Prevents threats instead of cleaning up after them</span>
+                      <i className="fas fa-lightbulb"></i>
+                      <span>Focus: Preventing threats at the moment of user interaction</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="timeline-comparison">
-                  <h3 className="timeline-title">Attack Timeline: OAuth Abuse in Trusted SaaS</h3>
+                  <h3 className="timeline-title">ATO Timeline: OAuth Abuse in Trusted SaaS</h3>
                   <div className="timeline">
                     <div className="timeline-event">
                       <div className="timeline-marker initial"></div>
@@ -851,7 +851,7 @@ const App = () => {
                       <div className="timeline-marker critical"></div>
                       <div className="timeline-content">
                         <h4>T+1: User Encounters Consent Page</h4>
-                        <p>Employee clicks malicious link, sees OAuth consent request</p>
+                        <p>Employee clicks phishing link, sees OAuth consent request</p>
                         <div className="vendor-response valence">Valence: No detection (legitimate OAuth flow)</div>
                         <div className="vendor-response above success">Above: Analyzes consent semantically, detects excessive permissions</div>
                       </div>
@@ -860,7 +860,7 @@ const App = () => {
                     <div className="timeline-event">
                       <div className="timeline-marker damage"></div>
                       <div className="timeline-content">
-                        <h4>T+2: User Grants Consent</h4>
+                        <h4>T+2: User Decision Point</h4>
                         <p>Without Above: User grants consent, attacker gains access</p>
                         <div className="vendor-response valence">Valence: Still no detection (authorized access)</div>
                         <div className="vendor-response above success">Above: Blocks consent with user education</div>
@@ -870,7 +870,7 @@ const App = () => {
                     <div className="timeline-event">
                       <div className="timeline-marker aftermath"></div>
                       <div className="timeline-content">
-                        <h4>T+Hours: Data Exfiltration Begins</h4>
+                        <h4>T+Hours: Data Access Begins</h4>
                         <p>Attacker uses legitimate OAuth token to access data</p>
                         <div className="vendor-response valence">Valence: Eventually detects unusual data access patterns</div>
                         <div className="vendor-response above success">Above: Attack already prevented</div>
@@ -881,19 +881,19 @@ const App = () => {
               </div>
 
               <div className="competitive-summary">
-                <h3 className="summary-title">The Prevention Advantage</h3>
+                <h3 className="summary-title">Different Problem Spaces</h3>
                 <p className="summary-text">
-                  Valence finds risky SaaS apps and configurations. 
-                  <strong>Above prevents malicious actions within legitimate apps.</strong>
+                  Valence excels at SaaS configuration management and compliance. 
+                  <strong>Above prevents malicious user actions within legitimate apps.</strong>
                 </p>
                 <div className="summary-stats">
                   <div className="stat">
                     <span className="stat-number">0</span>
-                    <span className="stat-label">Minutes to detect with Above</span>
+                    <span className="stat-label">Minutes to prevent with Above</span>
                   </div>
                   <div className="stat">
                     <span className="stat-number">Hours</span>
-                    <span className="stat-label">Time to detect with traditional SSPM</span>
+                    <span className="stat-label">Time to detect with SSPM</span>
                   </div>
                 </div>
               </div>
@@ -910,14 +910,14 @@ const App = () => {
           <div className="slide-container">
             <header className="slide-header">
               <h1 className="slide-title">Above vs. Island Enterprise Browser</h1>
-              <p className="slide-subtitle">Smart Extension vs. Infrastructure Replacement</p>
+              <p className="slide-subtitle">Semantic Intelligence vs. Policy Enforcement</p>
             </header>
 
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Island Enterprise Browser offers comprehensive browser security through replacement. 
-                  <strong>But forcing infrastructure changes kills productivity and adoption.</strong>
+                  Island Enterprise Browser provides comprehensive browser security through policy enforcement. 
+                  <strong>Above adds semantic intelligence to existing browsers.</strong>
                 </p>
               </div>
 
@@ -925,30 +925,30 @@ const App = () => {
                 <div className="deployment-comparison">
                   <div className="deployment-approach island">
                     <h3 className="approach-title">
-                      <i className="fas fa-exchange-alt"></i>
-                      Island's Replacement Strategy
+                      <i className="fas fa-browser"></i>
+                      Island's Browser Strategy
                     </h3>
                     <div className="deployment-steps">
                       <div className="step complex">
-                        <i className="fas fa-server"></i>
-                        <span>Replace entire browser infrastructure</span>
+                        <i className="fas fa-download"></i>
+                        <span>Deploy enterprise browser replacement</span>
                       </div>
                       <div className="step complex">
                         <i className="fas fa-users-cog"></i>
-                        <span>Retrain all employees on new browser</span>
+                        <span>Train employees on new browser interface</span>
                       </div>
                       <div className="step complex">
                         <i className="fas fa-tools"></i>
-                        <span>Reconfigure all browser-based workflows</span>
+                        <span>Migrate browser-based workflows and bookmarks</span>
                       </div>
                       <div className="step complex">
-                        <i className="fas fa-ban"></i>
-                        <span>Blanket restrictions (copy, paste, download)</span>
+                        <i className="fas fa-shield-alt"></i>
+                        <span>Configure granular security policies</span>
                       </div>
                     </div>
                     <div className="deployment-timeline">
                       <i className="fas fa-clock"></i>
-                      <span>Deployment: 6-12 months</span>
+                      <span>Deployment: 3-6 months</span>
                     </div>
                   </div>
 
@@ -972,12 +972,12 @@ const App = () => {
                       </div>
                       <div className="step simple">
                         <i className="fas fa-brain"></i>
-                        <span>Intelligent blocking with user education</span>
+                        <span>Intelligent threat detection with user education</span>
                       </div>
                     </div>
                     <div className="deployment-timeline">
                       <i className="fas fa-rocket"></i>
-                      <span>Deployment: 1 day</span>
+                      <span>Deployment: Same day</span>
                     </div>
                   </div>
                 </div>
@@ -989,12 +989,12 @@ const App = () => {
                       <h4>Data Protection</h4>
                       <div className="capability-item">
                         <span className="capability-label">Island:</span>
-                        <span className="capability-desc">Blocks all downloads/uploads</span>
-                        <i className="fas fa-times capability-icon negative"></i>
+                        <span className="capability-desc">Policy-based controls (configurable)</span>
+                        <i className="fas fa-check capability-icon positive"></i>
                       </div>
                       <div className="capability-item">
                         <span className="capability-label">Above:</span>
-                        <span className="capability-desc">Allows legitimate, blocks malicious</span>
+                        <span className="capability-desc">Semantic analysis of user intent</span>
                         <i className="fas fa-check capability-icon positive"></i>
                       </div>
                     </div>
@@ -1003,12 +1003,12 @@ const App = () => {
                       <h4>User Experience</h4>
                       <div className="capability-item">
                         <span className="capability-label">Island:</span>
-                        <span className="capability-desc">Restrictive, requires adaptation</span>
-                        <i className="fas fa-times capability-icon negative"></i>
+                        <span className="capability-desc">New browser interface to learn</span>
+                        <i className="fas fa-minus capability-icon neutral"></i>
                       </div>
                       <div className="capability-item">
                         <span className="capability-label">Above:</span>
-                        <span className="capability-desc">Seamless, maintains productivity</span>
+                        <span className="capability-desc">Works with familiar browsers</span>
                         <i className="fas fa-check capability-icon positive"></i>
                       </div>
                     </div>
@@ -1017,12 +1017,12 @@ const App = () => {
                       <h4>Threat Detection</h4>
                       <div className="capability-item">
                         <span className="capability-label">Island:</span>
-                        <span className="capability-desc">Policy-based restrictions</span>
-                        <i className="fas fa-minus capability-icon neutral"></i>
+                        <span className="capability-desc">Policy-based restrictions and monitoring</span>
+                        <i className="fas fa-check capability-icon positive"></i>
                       </div>
                       <div className="capability-item">
                         <span className="capability-label">Above:</span>
-                        <span className="capability-desc">Semantic threat understanding</span>
+                        <span className="capability-desc">LLM semantic threat understanding</span>
                         <i className="fas fa-check capability-icon positive"></i>
                       </div>
                     </div>
@@ -1031,8 +1031,8 @@ const App = () => {
                       <h4>Deployment Speed</h4>
                       <div className="capability-item">
                         <span className="capability-label">Island:</span>
-                        <span className="capability-desc">6-12 month enterprise rollout</span>
-                        <i className="fas fa-times capability-icon negative"></i>
+                        <span className="capability-desc">3-6 month enterprise rollout</span>
+                        <i className="fas fa-minus capability-icon neutral"></i>
                       </div>
                       <div className="capability-item">
                         <span className="capability-label">Above:</span>
@@ -1044,47 +1044,47 @@ const App = () => {
                 </div>
 
                 <div className="use-case-example">
-                  <h3 className="example-title">Real-World Example: Document Download</h3>
+                  <h3 className="example-title">Use Case: Suspicious Document Download</h3>
                   <div className="example-scenario">
                     <div className="scenario-setup">
-                      <p>Employee needs to download a contract from a vendor's portal for review</p>
+                      <p>Employee receives email with link to "urgent contract" requiring download</p>
                     </div>
                     <div className="scenario-responses">
                       <div className="response island-response">
                         <h4>Island Response</h4>
                         <div className="response-flow">
-                          <div className="flow-step blocked">
-                            <i className="fas fa-ban"></i>
-                            <span>Download blocked by policy</span>
+                          <div className="flow-step">
+                            <i className="fas fa-cog"></i>
+                            <span>Applies configured download policy</span>
                           </div>
                           <div className="flow-step">
-                            <i className="fas fa-ticket-alt"></i>
-                            <span>Employee submits IT ticket</span>
+                            <i className="fas fa-shield-alt"></i>
+                            <span>May allow or block based on domain/file type</span>
                           </div>
                           <div className="flow-step">
-                            <i className="fas fa-clock"></i>
-                            <span>2-day approval process</span>
+                            <i className="fas fa-clipboard-list"></i>
+                            <span>Logs activity for compliance</span>
                           </div>
                         </div>
-                        <p className="response-result">Result: Productivity loss, delayed business</p>
+                        <p className="response-result">Result: Policy-based decision, may miss context</p>
                       </div>
                       <div className="response above-response">
                         <h4>Above Response</h4>
                         <div className="response-flow">
                           <div className="flow-step">
                             <i className="fas fa-search"></i>
-                            <span>Analyzes document and source</span>
+                            <span>Analyzes page content and user context</span>
                           </div>
                           <div className="flow-step success">
-                            <i className="fas fa-check-circle"></i>
-                            <span>Legitimate document, allows download</span>
+                            <i className="fas fa-exclamation-triangle"></i>
+                            <span>Detects suspicious urgency language and sender</span>
                           </div>
                           <div className="flow-step">
-                            <i className="fas fa-shield-alt"></i>
-                            <span>Continues monitoring for threats</span>
+                            <i className="fas fa-graduation-cap"></i>
+                            <span>Educates user about phishing indicators</span>
                           </div>
                         </div>
-                        <p className="response-result">Result: Business continues, security maintained</p>
+                        <p className="response-result">Result: Context-aware protection with user education</p>
                       </div>
                     </div>
                   </div>
@@ -1092,10 +1092,10 @@ const App = () => {
               </div>
 
               <div className="competitive-summary">
-                <h3 className="summary-title">Smart Security vs. Blanket Restrictions</h3>
+                <h3 className="summary-title">Complementary Approaches</h3>
                 <p className="summary-text">
-                  Island replaces your browser to enforce security. 
-                  <strong>Above enhances your existing browser with intelligence.</strong>
+                  Island provides comprehensive browser replacement with strong policy controls. 
+                  <strong>Above enhances existing browsers with semantic intelligence.</strong>
                 </p>
               </div>
             </div>
@@ -1110,24 +1110,23 @@ const App = () => {
         return (
           <div className="slide-container">
             <header className="slide-header">
-              <h1 className="slide-title">Market Leadership Position</h1>
-              <p className="slide-subtitle">The Only Runtime ITDR Solution</p>
+              <h1 className="slide-title">Capability Comparison</h1>
+              <p className="slide-subtitle">Runtime ITDR vs. Traditional Security</p>
             </header>
 
             <div className="market-leadership">
               <div className="leadership-intro">
                 <h3 className="intro-title">
-                  <i className="fas fa-crown"></i>
-                  Above Security: Category Creator
+                  <i className="fas fa-chart-bar"></i>
+                  Security Capability Matrix
                 </h3>
                 <p className="intro-text">
-                  We didn't just build a better security tool. 
-                  <strong>We created an entirely new category: Runtime Identity Threat Detection & Response.</strong>
+                  Each solution excels in different areas. 
+                  <strong>Above uniquely provides runtime semantic understanding for ATO prevention.</strong>
                 </p>
               </div>
 
               <div className="market-matrix">
-                <h3 className="matrix-title">Competitive Advantage Matrix</h3>
                 <div className="matrix-table">
                   <div className="matrix-header">
                     <div className="matrix-cell capability-header">Capability</div>
@@ -1139,16 +1138,7 @@ const App = () => {
                   </div>
                   
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">Runtime Protection</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
-
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">LLM Semantic Analysis</div>
+                    <div className="matrix-cell capability">Runtime ATO Prevention</div>
                     <div className="matrix-cell above-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
@@ -1157,25 +1147,16 @@ const App = () => {
                   </div>
 
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">OAuth Page Analysis</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
-
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Zero Infrastructure Change</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
+                    <div className="matrix-cell capability">Session Hijacking Detection</div>
+                    <div className="matrix-cell above-cell">❌</div>
                     <div className="matrix-cell competitor-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">✅</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
                   </div>
 
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">LOTS Detection</div>
+                    <div className="matrix-cell capability">OAuth Consent Analysis</div>
                     <div className="matrix-cell above-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
@@ -1184,109 +1165,133 @@ const App = () => {
                   </div>
 
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">User Intent Understanding</div>
-                    <div className="matrix-cell above-cell">✅</div>
+                    <div className="matrix-cell capability">SaaS Configuration Management</div>
+                    <div className="matrix-cell above-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">✅</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
+                  </div>
+
+                  <div className="matrix-row">
+                    <div className="matrix-cell capability">Email Phishing Prevention</div>
+                    <div className="matrix-cell above-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">✅</div>
+                  </div>
+
+                  <div className="matrix-row">
+                    <div className="matrix-cell capability">Browser Policy Enforcement</div>
+                    <div className="matrix-cell above-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">❌</div>
+                    <div className="matrix-cell competitor-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                   </div>
                 </div>
               </div>
 
               <div className="market-opportunity">
-                <h3 className="opportunity-title">The $12 Billion Opportunity</h3>
+                <h3 className="opportunity-title">CISO Use Cases by Solution</h3>
                 <div className="opportunity-breakdown">
                   <div className="opportunity-segment">
                     <div className="segment-header">
-                      <i className="fas fa-envelope"></i>
-                      <h4>Email Security Market</h4>
-                      <span className="market-size">$4.2B</span>
-                    </div>
-                    <p className="segment-gap">Gap: Post-email browser threats</p>
-                  </div>
-
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
-                      <i className="fas fa-cloud"></i>
-                      <h4>SaaS Security Market</h4>
-                      <span className="market-size">$3.8B</span>
-                    </div>
-                    <p className="segment-gap">Gap: Runtime user interactions</p>
-                  </div>
-
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
-                      <i className="fas fa-browser"></i>
-                      <h4>Browser Security Market</h4>
-                      <span className="market-size">$2.1B</span>
-                    </div>
-                    <p className="segment-gap">Gap: Semantic threat understanding</p>
-                  </div>
-
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
                       <i className="fas fa-user-shield"></i>
-                      <h4>Identity Security Market</h4>
-                      <span className="market-size">$1.9B</span>
+                      <h4>Account Takeover (ATO)</h4>
                     </div>
-                    <p className="segment-gap">Gap: Runtime identity threats</p>
+                    <div className="use-case-coverage">
+                      <div className="coverage-item">
+                        <span className="solution">Above:</span>
+                        <span className="coverage strong">OAuth consent analysis</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Push:</span>
+                        <span className="coverage strong">Session hijacking detection</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Others:</span>
+                        <span className="coverage weak">Limited runtime protection</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="above-opportunity">
-                  <h4 className="above-market-title">
-                    <i className="fas fa-target"></i>
-                    Above's Addressable Market
-                  </h4>
-                  <div className="market-stats">
-                    <div className="market-stat">
-                      <span className="stat-number">$12B</span>
-                      <span className="stat-label">Total Addressable Market</span>
+                  <div className="opportunity-segment">
+                    <div className="segment-header">
+                      <i className="fas fa-envelope-open-text"></i>
+                      <h4>Phishing</h4>
                     </div>
-                    <div className="market-stat">
-                      <span className="stat-number">$3.2B</span>
-                      <span className="stat-label">Serviceable Addressable Market</span>
+                    <div className="use-case-coverage">
+                      <div className="coverage-item">
+                        <span className="solution">Abnormal:</span>
+                        <span className="coverage strong">Email-based phishing</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Above:</span>
+                        <span className="coverage strong">Browser-based phishing</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Others:</span>
+                        <span className="coverage weak">Limited phishing coverage</span>
+                      </div>
                     </div>
-                    <div className="market-stat">
-                      <span className="stat-number">$800M</span>
-                      <span className="stat-label">Serviceable Obtainable Market</span>
+                  </div>
+
+                  <div className="opportunity-segment">
+                    <div className="segment-header">
+                      <i className="fas fa-user-secret"></i>
+                      <h4>Insider Threats</h4>
+                    </div>
+                    <div className="use-case-coverage">
+                      <div className="coverage-item">
+                        <span className="solution">Valence:</span>
+                        <span className="coverage strong">SaaS misconfigurations</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Above:</span>
+                        <span className="coverage strong">Malicious user actions</span>
+                      </div>
+                      <div className="coverage-item">
+                        <span className="solution">Others:</span>
+                        <span className="coverage weak">Post-incident detection</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="leadership-summary">
-                <h3 className="summary-title">Why Above Wins the Market</h3>
+                <h3 className="summary-title">Complementary Security Stack</h3>
                 <div className="winning-factors">
                   <div className="winning-factor">
-                    <i className="fas fa-lightbulb"></i>
-                    <h4>Category Creation</h4>
-                    <p>First and only Runtime ITDR solution</p>
+                    <i className="fas fa-puzzle-piece"></i>
+                    <h4>Stack Integration</h4>
+                    <p>Above complements existing security tools</p>
+                  </div>
+                  <div className="winning-factor">
+                    <i className="fas fa-clock"></i>
+                    <h4>Runtime Focus</h4>
+                    <p>Unique position in preventing ATO at user decision point</p>
+                  </div>
+                  <div className="winning-factor">
+                    <i className="fas fa-brain"></i>
+                    <h4>Semantic Understanding</h4>
+                    <p>LLM analysis of user intent and page content</p>
                   </div>
                   <div className="winning-factor">
                     <i className="fas fa-rocket"></i>
-                    <h4>Technology Moat</h4>
-                    <p>LLM semantic understanding creates defensible advantage</p>
-                  </div>
-                  <div className="winning-factor">
-                    <i className="fas fa-users"></i>
-                    <h4>Market Timing</h4>
-                    <p>SaaS adoption + AI threats create perfect storm</p>
-                  </div>
-                  <div className="winning-factor">
-                    <i className="fas fa-chart-line"></i>
-                    <h4>Execution Speed</h4>
-                    <p>Same-day deployment vs. months for competitors</p>
+                    <h4>Rapid Deployment</h4>
+                    <p>Browser extension deployment in hours, not months</p>
                   </div>
                 </div>
               </div>
 
               <div className="call-to-action">
-                <h3 className="cta-title">The Time is Now</h3>
+                <h3 className="cta-title">The Runtime Protection Layer</h3>
                 <p className="cta-text">
-                  Every day without Above, your organization is vulnerable to the next Cyberhaven-style attack. 
-                  <strong>Don't wait for the breach. Deploy the category leader today.</strong>
+                  Traditional security tools excel at their core functions. 
+                  <strong>Above fills the runtime protection gap that no other solution addresses.</strong>
                 </p>
               </div>
             </div>
