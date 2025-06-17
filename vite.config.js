@@ -8,11 +8,11 @@ export default defineConfig({
     outDir: 'dist'
   },
   server: {
-    host: '0.0.0.0'
+    host: true
   },
   preview: {
-    host: '0.0.0.0',
-    disableHostCheck: true
+    host: true,
+    allowedHosts: 'all'
   }
 })
 
