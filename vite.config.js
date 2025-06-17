@@ -7,8 +7,12 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
+  server: {
+    host: '0.0.0.0'
+  },
   preview: {
-    host: true
+    host: '0.0.0.0',
+    disableHostCheck: true
   }
 })
 
