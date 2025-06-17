@@ -6,6 +6,13 @@ export default defineConfig({
   base: '/slides/',
   build: {
     outDir: 'dist'
+  },
+  server: {
+    host: true
+  },
+  preview: {
+    host: true,
+    allowedHosts: 'all'
   }
 })
 
