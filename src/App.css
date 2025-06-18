@@ -1,18 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #ffffff;
-  color: #24292f;
-  line-height: 1.5;
-  overflow: hidden;
-}
+/* Import Base Styles */
+@import './styles/base/variables.css';
+@import './styles/base/reset.css';
+@import './styles/base/typography.css';
 
 .presentation-container {
   height: 100vh;
