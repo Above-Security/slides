@@ -50,7 +50,7 @@ const App = () => {
 
   const renderSlide = () => {
     switch (currentSlide) {
-      case 2:
+      case 1:
         return (
           <div className="slide-container">
             <header className="slide-header">
