@@ -1,0 +1,129 @@
+/* Card Patterns - Common card styles used across slides */
+
+/* Base Card Styles */
+.card-base {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-base:hover {
+  border-color: #00872b;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+/* Card Variants */
+.card-secondary {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card-secondary:hover {
+  background: #ffffff;
+  border-color: #00872b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+/* Large Card for important sections */
+.card-large {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-large:hover {
+  border-color: #00872b;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+/* Icon Card Pattern */
+.icon-card {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+  background: #ffffff;
+  border-color: #00872b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+/* Standard Icon Styles */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: #00872b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.icon-card:hover .card-icon {
+  background: #5fed83;
+  transform: scale(1.05);
+}
+
+/* Grid patterns */
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cards-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards-grid-2,
+  .cards-grid-3,
+  .cards-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .card-base,
+  .card-large {
+    padding: 24px;
+  }
+  
+  .card-secondary,
+  .icon-card {
+    padding: 16px;
+  }
+}

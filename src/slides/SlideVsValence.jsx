@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideVsValence.module.css';
 
 const SlideVsValence = () => (
   <SlideLayout>
@@ -55,46 +56,46 @@ const SlideVsValence = () => (
           </div>
         </div>
 
-        <div className="timeline-comparison">
-          <h3 className="timeline-title">ATO Timeline: OAuth Abuse in Trusted SaaS</h3>
-          <div className="timeline">
-            <div className="timeline-event">
-              <div className="timeline-marker initial"></div>
-              <div className="timeline-content">
+        <div className={styles['timeline-comparison']}>
+          <h3 className={styles['timeline-title']}>ATO Timeline: OAuth Abuse in Trusted SaaS</h3>
+          <div className={styles['timeline']}>
+            <div className={styles['timeline-event']}>
+              <div className={`${styles['timeline-marker']} ${styles['initial']}`}></div>
+              <div className={styles['timeline-content']}>
                 <h4>T+0: Malicious OAuth App Created</h4>
                 <p>Attacker creates legitimate-looking OAuth application</p>
-                <div className="vendor-response valence">Valence: No detection (app appears legitimate)</div>
-                <div className="vendor-response above">Above: No detection (no user interaction yet)</div>
+                <div className={`${styles['vendor-response']} ${styles['valence']}`}>Valence: No detection (app appears legitimate)</div>
+                <div className={`${styles['vendor-response']} ${styles['above']}`}>Above: No detection (no user interaction yet)</div>
               </div>
             </div>
 
-            <div className="timeline-event">
-              <div className="timeline-marker critical"></div>
-              <div className="timeline-content">
+            <div className={styles['timeline-event']}>
+              <div className={`${styles['timeline-marker']} ${styles['critical']}`}></div>
+              <div className={styles['timeline-content']}>
                 <h4>T+1: User Encounters Consent Page</h4>
                 <p>Employee clicks phishing link, sees OAuth consent request</p>
-                <div className="vendor-response valence">Valence: No detection (legitimate OAuth flow)</div>
-                <div className="vendor-response above success">Above: Analyzes consent semantically, detects excessive permissions</div>
+                <div className={`${styles['vendor-response']} ${styles['valence']}`}>Valence: No detection (legitimate OAuth flow)</div>
+                <div className={`${styles['vendor-response']} ${styles['above']} ${styles['success']}`}>Above: Analyzes consent semantically, detects excessive permissions</div>
               </div>
             </div>
 
-            <div className="timeline-event">
-              <div className="timeline-marker damage"></div>
-              <div className="timeline-content">
+            <div className={styles['timeline-event']}>
+              <div className={`${styles['timeline-marker']} ${styles['damage']}`}></div>
+              <div className={styles['timeline-content']}>
                 <h4>T+2: User Decision Point</h4>
                 <p>Without Above: User grants consent, attacker gains access</p>
-                <div className="vendor-response valence">Valence: Still no detection (authorized access)</div>
-                <div className="vendor-response above success">Above: Blocks consent with user education</div>
+                <div className={`${styles['vendor-response']} ${styles['valence']}`}>Valence: Still no detection (authorized access)</div>
+                <div className={`${styles['vendor-response']} ${styles['above']} ${styles['success']}`}>Above: Blocks consent with user education</div>
               </div>
             </div>
 
-            <div className="timeline-event">
-              <div className="timeline-marker aftermath"></div>
-              <div className="timeline-content">
+            <div className={styles['timeline-event']}>
+              <div className={`${styles['timeline-marker']} ${styles['aftermath']}`}></div>
+              <div className={styles['timeline-content']}>
                 <h4>T+Hours: Data Access Begins</h4>
                 <p>Attacker uses legitimate OAuth token to access data</p>
-                <div className="vendor-response valence">Valence: Eventually detects unusual data access patterns</div>
-                <div className="vendor-response above success">Above: Attack already prevented</div>
+                <div className={`${styles['vendor-response']} ${styles['valence']}`}>Valence: Eventually detects unusual data access patterns</div>
+                <div className={`${styles['vendor-response']} ${styles['above']} ${styles['success']}`}>Above: Attack already prevented</div>
               </div>
             </div>
           </div>

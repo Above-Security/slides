@@ -1,5 +1,7 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideIntro.module.css';
+// Note: Common styles like key-points-grid, executive-summary are now in shared-slide-components.css
 
 /**
  * Above Intro Slide — highlighting precise runtime ITDR and in-browser phishing prevention.
