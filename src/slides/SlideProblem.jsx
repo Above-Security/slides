@@ -19,7 +19,7 @@ const SlideProblem = () => (
           <p className={styles['landscape-text']}>
             Existing tools focus on <strong>access</strong>, not actual <strong>behavior</strong> inside apps.
           </p>
-          <p className={styles['landscape-text']} style={{ marginTop: '12px' }}>
+          <p className={`${styles['landscape-text']} mt-3`}>
             Compromised credentials alone don't tell the full story.
           </p>
 
