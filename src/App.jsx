@@ -190,7 +190,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 3:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -276,7 +276,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 4:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -357,7 +357,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 5:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -459,7 +459,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 6:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -564,7 +564,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 7:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -667,7 +667,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 8:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -781,7 +781,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 9:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -907,7 +907,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 10:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -1108,7 +1108,7 @@ const App = () => {
           </div>
         );
 
-      case 2:
+      case 11:
         return (
           <div className="slide-container">
             <header className="slide-header">
