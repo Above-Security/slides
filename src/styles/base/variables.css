@@ -1,0 +1,84 @@
+/* CSS Custom Properties - Design Tokens */
+:root {
+  /* Colors - GitHub Brand Compliant */
+  --color-primary: #00872b;
+  --color-primary-light: #5fed83;
+  --color-primary-gradient: linear-gradient(90deg, #5fed83, #00872b);
+  
+  --color-text-primary: #24292f;
+  --color-text-secondary: #656d76;
+  --color-text-inverse: #ffffff;
+  
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f6f8fa;
+  --color-background-dark: #24292f;
+  --color-background-darker: #1c2128;
+  
+  --color-border-primary: #d1d9e0;
+  --color-border-focus: #00872b;
+  
+  --color-danger: #d1242f;
+  --color-warning: #fd7e14;
+  --color-info: #6f42c1;
+  
+  /* Typography */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-brand: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Font Weights */
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 48px;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+  --spacing-4xl: 48px;
+  --spacing-5xl: 64px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 135, 43, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 135, 43, 0.12);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  
+  /* Z-Index Scale */
+  --z-index-base: 1;
+  --z-index-controls: 100;
+  --z-index-menu: 200;
+  --z-index-modal: 300;
+}
+
