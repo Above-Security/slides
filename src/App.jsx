@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const App = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
   const [showMenu, setShowMenu] = useState(false);
 
   const slides = [
@@ -15,12 +15,26 @@ const App = () => {
     'Competitive Landscape',
     'Above vs. Push Security',
     'Above vs. Valence Security',
-    'Above vs. Island Browser',
-    'Market Leadership'
+    'Why Above Wins Every Sale'
   ];
 
+  const totalSlides = 10;
+
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev < totalSlides ? prev + 1 : prev));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev > 1 ? prev - 1 : prev));
+  };
+
+  const goToSlide = (slideNumber) => {
+    setCurrentSlide(slideNumber);
+    setShowMenu(false);
+  };
+
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyPress = (event) => {
       if (event.key === 'ArrowRight' || event.key === ' ') {
         nextSlide();
       } else if (event.key === 'ArrowLeft') {
@@ -30,26 +44,13 @@ const App = () => {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-    setShowMenu(false);
-  };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   const renderSlide = () => {
     switch (currentSlide) {
-      case 0:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -107,7 +108,7 @@ const App = () => {
           </div>
         );
 
-      case 1:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -275,7 +276,7 @@ const App = () => {
           </div>
         );
 
-      case 3:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -356,7 +357,7 @@ const App = () => {
           </div>
         );
 
-      case 4:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -458,7 +459,7 @@ const App = () => {
           </div>
         );
 
-      case 5:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -563,7 +564,7 @@ const App = () => {
           </div>
         );
 
-      case 6:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -579,7 +580,8 @@ const App = () => {
                 </h3>
                 <p className="intro-text">
                   Email security prevents phishing at delivery. SaaS security finds misconfigurations post-deployment.<br />
-                  Browser security offers policy controls. <strong>Above provides runtime protection during user interactions.</strong>
+                  Browser security offers policy controls.<br />
+                  <strong>Above provides runtime protection during user interactions.</strong>
                 </p>
               </div>
 
@@ -665,7 +667,7 @@ const App = () => {
           </div>
         );
 
-      case 7:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -779,7 +781,7 @@ const App = () => {
           </div>
         );
 
-      case 8:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -905,7 +907,7 @@ const App = () => {
           </div>
         );
 
-      case 9:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
@@ -1106,204 +1108,157 @@ const App = () => {
           </div>
         );
 
-      case 10:
+      case 2:
         return (
           <div className="slide-container">
             <header className="slide-header">
-              <h1 className="slide-title">Capability Comparison</h1>
-              <p className="slide-subtitle">Runtime ITDR vs. Traditional Security</p>
+              <h1 className="slide-title">Why Above Wins Every Sale</h1>
+              <p className="slide-subtitle">The Ultimate Competitive Advantage Matrix</p>
             </header>
 
             <div className="market-leadership">
               <div className="leadership-intro">
                 <h3 className="intro-title">
-                  <i className="fas fa-chart-bar"></i>
-                  Security Capability Matrix
+                  <i className="fas fa-trophy"></i>
+                  The CEO's Competitive Playbook
                 </h3>
-                <p className="intro-text">
-                  Each solution excels in different areas. 
-                  <strong>Above uniquely provides runtime semantic understanding for ATO prevention.</strong>
+                <p className="intro-description">
+                  Every security category has leaders. Email has Abnormal. SaaS has Valence. Browser has Island.<br />
+                  <strong>Above owns Runtime ITDR - the only category that prevents attacks during user interactions.</strong>
                 </p>
               </div>
 
-              <div className="market-matrix">
+              <div className="winning-matrix">
+                <h3 className="matrix-title">
+                  <i className="fas fa-chess-king"></i>
+                  The Winning Capabilities Matrix
+                </h3>
+                <p className="matrix-description">
+                  Each solution excels in different areas. <strong>Above uniquely dominates the most critical attack vector: runtime user interactions.</strong>
+                </p>
+
                 <div className="matrix-table">
-                  <div className="matrix-header">
-                    <div className="matrix-cell capability-header">Capability</div>
-                    <div className="matrix-cell vendor-header">Above</div>
-                    <div className="matrix-cell vendor-header">Push</div>
-                    <div className="matrix-cell vendor-header">Valence</div>
-                    <div className="matrix-cell vendor-header">Island</div>
-                    <div className="matrix-cell vendor-header">Abnormal</div>
-                  </div>
-                  
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Runtime Phishing Prevention</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
+                  <div className="matrix-cell capability-header">Capability</div>
+                  <div className="matrix-cell vendor-header">Above</div>
+                  <div className="matrix-cell vendor-header">Push</div>
+                  <div className="matrix-cell vendor-header">Valence</div>
+                  <div className="matrix-cell vendor-header">Island</div>
+                  <div className="matrix-cell vendor-header">Abnormal</div>
 
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Session Hijacking Detection</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
+                  <div className="matrix-cell capability-name">Runtime Phishing Prevention</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
 
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Semantic Content Analysis</div>
-                    <div className="matrix-cell above-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
+                  <div className="matrix-cell capability-name">Semantic Content Analysis</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
 
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">SaaS Configuration Management</div>
-                    <div className="matrix-cell above-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                  </div>
+                  <div className="matrix-cell capability-name">LOTS Detection in Trusted Services</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
 
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Email Phishing Prevention</div>
-                    <div className="matrix-cell above-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                  </div>
+                  <div className="matrix-cell capability-name">Zero-Day Attack Prevention</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-partial">⚠️</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-partial">⚠️</div>
+                  <div className="matrix-cell competitor-partial">⚠️</div>
 
-                  <div className="matrix-row">
-                    <div className="matrix-cell capability">Browser Policy Enforcement</div>
-                    <div className="matrix-cell above-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
-                    <div className="matrix-cell competitor-cell">✅</div>
-                    <div className="matrix-cell competitor-cell">❌</div>
+                  <div className="matrix-cell capability-name">Real-Time User Education</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+
+                  <div className="matrix-cell capability-name">Session Hijacking Detection</div>
+                  <div className="matrix-cell above-win">✅</div>
+                  <div className="matrix-cell competitor-yes">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-yes">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+
+                  <div className="matrix-cell capability-name">SaaS Configuration Management</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-yes">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+
+                  <div className="matrix-cell capability-name">Email Phishing Prevention</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-yes">✅</div>
+
+                  <div className="matrix-cell capability-name">Browser Policy Enforcement</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                  <div className="matrix-cell competitor-yes">✅</div>
+                  <div className="matrix-cell competitor-no">❌</div>
+                </div>
+              </div>
+
+              <div className="market-domination">
+                <h3 className="domination-title">
+                  <i className="fas fa-crown"></i>
+                  Market Domination Strategy
+                </h3>
+                <div className="domination-grid">
+                  <div className="domination-card category-creation">
+                    <div className="card-icon">
+                      <i className="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Category Creation</h4>
+                    <p>Runtime ITDR is a new $12B category. Above is the category king.</p>
+                  </div>
+                  <div className="domination-card unique-moat">
+                    <div className="card-icon">
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Defensible Moat</h4>
+                    <p>LLM semantic understanding creates an unassailable competitive advantage.</p>
+                  </div>
+                  <div className="domination-card market-timing">
+                    <div className="card-icon">
+                      <i className="fas fa-rocket"></i>
+                    </div>
+                    <h4>Perfect Timing</h4>
+                    <p>SaaS adoption explosion + AI breakthrough = Above's moment to dominate.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="market-opportunity">
-                <h3 className="opportunity-title">CISO Use Cases by Solution</h3>
-                <div className="opportunity-breakdown">
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
-                      <i className="fas fa-user-shield"></i>
-                      <h4>Account Takeover (ATO)</h4>
-                    </div>
-                    <div className="use-case-coverage">
-                      <div className="coverage-item">
-                        <span className="solution">Above:</span>
-                        <span className="coverage strong">OAuth consent analysis</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Push:</span>
-                        <span className="coverage strong">Session hijacking detection</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Others:</span>
-                        <span className="coverage weak">Limited runtime protection</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
-                      <i className="fas fa-envelope-open-text"></i>
-                      <h4>Phishing</h4>
-                    </div>
-                    <div className="use-case-coverage">
-                      <div className="coverage-item">
-                        <span className="solution">Abnormal:</span>
-                        <span className="coverage strong">Email-based phishing</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Above:</span>
-                        <span className="coverage strong">Browser-based phishing</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Others:</span>
-                        <span className="coverage weak">Limited phishing coverage</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="opportunity-segment">
-                    <div className="segment-header">
-                      <i className="fas fa-user-secret"></i>
-                      <h4>Insider Threats</h4>
-                    </div>
-                    <div className="use-case-coverage">
-                      <div className="coverage-item">
-                        <span className="solution">Valence:</span>
-                        <span className="coverage strong">SaaS misconfigurations</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Above:</span>
-                        <span className="coverage strong">Malicious user actions</span>
-                      </div>
-                      <div className="coverage-item">
-                        <span className="solution">Others:</span>
-                        <span className="coverage weak">Post-incident detection</span>
-                      </div>
-                    </div>
+              <div className="ceo-message">
+                <div className="message-content">
+                  <h3 className="message-title">
+                    <i className="fas fa-quote-left"></i>
+                    The Category King's Advantage
+                  </h3>
+                  <p className="message-text">
+                    "In cybersecurity, category kings capture 70% of market value. Email security has Proofpoint. 
+                    Endpoint has CrowdStrike. <strong>Runtime ITDR will have Above.</strong> 
+                    Don't wait for the breach. Deploy the category leader today."
+                  </p>
+                  <div className="message-attribution">
+                    <strong>— The Above Advantage</strong>
                   </div>
                 </div>
-              </div>
-
-              <div className="leadership-summary">
-                <h3 className="summary-title">Complementary Security Stack</h3>
-                <div className="winning-factors">
-                  <div className="winning-factor">
-                    <i className="fas fa-puzzle-piece"></i>
-                    <h4>Stack Integration</h4>
-                    <p>Above complements existing security tools</p>
-                  </div>
-                  <div className="winning-factor">
-                    <i className="fas fa-clock"></i>
-                    <h4>Runtime Focus</h4>
-                    <p>Unique position in preventing ATO at user decision point</p>
-                  </div>
-                  <div className="winning-factor">
-                    <i className="fas fa-brain"></i>
-                    <h4>Semantic Understanding</h4>
-                    <p>LLM analysis of user intent and page content</p>
-                  </div>
-                  <div className="winning-factor">
-                    <i className="fas fa-rocket"></i>
-                    <h4>Rapid Deployment</h4>
-                    <p>Browser extension deployment in hours, not months</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="call-to-action">
-                <h3 className="cta-title">The Runtime Protection Layer</h3>
-                <p className="cta-text">
-                  Traditional security tools excel at their core functions. 
-                  <strong>Above fills the runtime protection gap that no other solution addresses.</strong>
-                </p>
               </div>
             </div>
-
-            <svg className="logo-watermark" viewBox="0 0 2011 1566" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2011 1566L1201 173L506 1391L301 1390L1105 0L900 2L0 1563L605 1561L1205 527L1710 1392L1503 1389L1204 869L1105 1045L1405 1562L2011 1566Z" fill="#00872b"/>
-            </svg>
           </div>
         );
-
-      default:
-        return null;
     }
   };
 
@@ -1316,47 +1271,43 @@ const App = () => {
         >
           Menu
         </button>
-        
         <div className="navigation-controls">
           <button 
-            className="nav-button prev"
+            className="nav-button"
             onClick={prevSlide}
-            disabled={currentSlide === 0}
+            disabled={currentSlide === 1}
           >
             ←
           </button>
+          <span className="slide-counter">{currentSlide}/{totalSlides}</span>
           <button 
-            className="nav-button next"
+            className="nav-button"
             onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
+            disabled={currentSlide === totalSlides}
           >
             →
           </button>
-        </div>
-
-        <div className="slide-counter">
-          {currentSlide + 1} / {slides.length}
         </div>
       </div>
 
       {showMenu && (
         <div className="menu-overlay">
           <div className="menu-content">
-            <h3 className="menu-title">Navigate to Slide</h3>
+            <h3>Navigate to Slide</h3>
             <div className="menu-items">
               {slides.map((slide, index) => (
                 <button
-                  key={index}
-                  className={`menu-item ${currentSlide === index ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
+                  key={index + 1}
+                  className={`menu-item ${currentSlide === index + 1 ? 'active' : ''}`}
+                  onClick={() => goToSlide(index + 1)}
                 >
-                  <span className="menu-item-number">{index + 1}</span>
-                  <span className="menu-item-title">{slide}</span>
+                  <span className="slide-number">{index + 1}</span>
+                  <span className="slide-title">{slide}</span>
                 </button>
               ))}
             </div>
             <button 
-              className="menu-close"
+              className="close-button"
               onClick={() => setShowMenu(false)}
             >
               Close
@@ -1365,12 +1316,11 @@ const App = () => {
         </div>
       )}
 
-      <main className="slide-content">
+      <div className="slide-container">
         {renderSlide()}
-      </main>
+      </div>
     </div>
   );
-};
+}
 
 export default App;
-
