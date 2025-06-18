@@ -577,8 +577,8 @@ const App = () => {
                   <i className="fas fa-crosshairs"></i>
                   The Runtime Protection Gap
                 </h3>
-                <p className="gap-description">
-                  Email security prevents phishing at delivery. SaaS security finds misconfigurations post-deployment. 
+                <p className="intro-text">
+                  Email security prevents phishing at delivery. SaaS security finds misconfigurations post-deployment.<br />
                   Browser security offers policy controls. <strong>Above provides runtime protection during user interactions.</strong>
                 </p>
               </div>
@@ -676,8 +676,8 @@ const App = () => {
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Push Security offers strong browser extension-based identity protection. 
-                  <strong>Above complements this with semantic understanding of user intent.</strong>
+                  Push Security offers strong browser extension-based identity protection.<br />
+                  <strong>Above delivers superior semantic understanding and broader threat coverage.</strong>
                 </p>
               </div>
 
@@ -704,14 +704,14 @@ const App = () => {
                   <div className="above-advantage">
                     <h3 className="advantage-title">
                       <i className="fas fa-brain"></i>
-                      Above's Complementary Value
+                      Above's Superior Capabilities
                     </h3>
                     <ul className="advantage-list">
-                      <li><strong>LLM semantic understanding</strong> of page content and user intent</li>
-                      <li><strong>OAuth consent flow analysis</strong> for ATO prevention</li>
+                      <li><strong>Semantic phishing detection</strong> across all attack vectors</li>
+                      <li><strong>Session hijacking prevention</strong> with behavioral analysis</li>
                       <li><strong>LOTS detection</strong> within trusted services (DocuSign, Dropbox)</li>
                       <li><strong>Real-time user education</strong> with contextual warnings</li>
-                      <li><strong>Standalone deployment</strong> with optional SIEM integration</li>
+                      <li><strong>Zero-infrastructure deployment</strong> via browser extension</li>
                     </ul>
                     <div className="advantage-highlight">
                       <i className="fas fa-lightbulb"></i>
@@ -790,7 +790,7 @@ const App = () => {
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Valence Security provides comprehensive SaaS security posture management. 
+                  Valence Security provides comprehensive SaaS security posture management.<br />
                   <strong>Above focuses on runtime user interaction protection.</strong>
                 </p>
               </div>
@@ -916,7 +916,7 @@ const App = () => {
             <div className="competitor-comparison">
               <div className="comparison-intro">
                 <p className="intro-text">
-                  Island Enterprise Browser provides comprehensive browser security through policy enforcement. 
+                  Island Enterprise Browser provides comprehensive browser security through policy enforcement.<br />
                   <strong>Above adds semantic intelligence to existing browsers.</strong>
                 </p>
               </div>
@@ -1138,7 +1138,7 @@ const App = () => {
                   </div>
                   
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">Runtime ATO Prevention</div>
+                    <div className="matrix-cell capability">Runtime Phishing Prevention</div>
                     <div className="matrix-cell above-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
@@ -1148,7 +1148,7 @@ const App = () => {
 
                   <div className="matrix-row">
                     <div className="matrix-cell capability">Session Hijacking Detection</div>
-                    <div className="matrix-cell above-cell">❌</div>
+                    <div className="matrix-cell above-cell">✅</div>
                     <div className="matrix-cell competitor-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">✅</div>
@@ -1156,7 +1156,7 @@ const App = () => {
                   </div>
 
                   <div className="matrix-row">
-                    <div className="matrix-cell capability">OAuth Consent Analysis</div>
+                    <div className="matrix-cell capability">Semantic Content Analysis</div>
                     <div className="matrix-cell above-cell">✅</div>
                     <div className="matrix-cell competitor-cell">❌</div>
                     <div className="matrix-cell competitor-cell">❌</div>
