@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideIntro.module.css';
 
 const SlideIntro = () => (
   <SlideLayout>
@@ -14,38 +15,38 @@ const SlideIntro = () => (
     </header>
 
     <div className="content-section">
-      <div className="key-points-grid">
-        <div className="key-point-card">
-          <div className="key-point-icon">
+      <div className={styles.keyPointsGrid}>
+        <div className={styles.keyPointCard}>
+          <div className={styles.keyPointIcon}>
             <i className="fas fa-puzzle-piece"></i>
           </div>
-          <h3 className="key-point-title">Browser Extension</h3>
-          <p className="key-point-description">Deployed via enterprise browser management. No agents, no SIEM integration required.</p>
+          <h3 className={styles.keyPointTitle}>Browser Extension</h3>
+          <p className={styles.keyPointDescription}>Deployed via enterprise browser management. No agents, no SIEM integration required.</p>
         </div>
 
-        <div className="key-point-card">
-          <div className="key-point-icon">
+        <div className={styles.keyPointCard}>
+          <div className={styles.keyPointIcon}>
             <i className="fas fa-brain"></i>
           </div>
-          <h3 className="key-point-title">LLM Page Analysis</h3>
-          <p className="key-point-description">Semantic understanding of page content and user interactions to detect malicious intent in real-time.</p>
+          <h3 className={styles.keyPointTitle}>LLM Page Analysis</h3>
+          <p className={styles.keyPointDescription}>Semantic understanding of page content and user interactions to detect malicious intent in real-time.</p>
         </div>
 
-        <div className="key-point-card">
-          <div className="key-point-icon">
+        <div className={styles.keyPointCard}>
+          <div className={styles.keyPointIcon}>
             <i className="fas fa-eye"></i>
           </div>
-          <h3 className="key-point-title">LOTS Detection</h3>
-          <p className="key-point-description">Detects Living Off Trusted Services attacks within legitimate platforms like OAuth, DocuSign, Dropbox.</p>
+          <h3 className={styles.keyPointTitle}>LOTS Detection</h3>
+          <p className={styles.keyPointDescription}>Detects Living Off Trusted Services attacks within legitimate platforms like OAuth, DocuSign, Dropbox.</p>
         </div>
       </div>
 
-      <div className="executive-summary">
-        <h3 className="summary-title">
+      <div className={styles.executiveSummary}>
+        <h3 className={styles.summaryTitle}>
           <i className="fas fa-shield-alt"></i>
           Runtime ITDR for the SaaS Era
         </h3>
-        <p className="summary-text">
+        <p className={styles.summaryText}>
           Traditional tools monitor access. We monitor behavior. Detects insider threats,
           sophisticated phishing, and malicious OAuth consent that occur after authentication.
         </p>
