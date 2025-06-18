@@ -1408,3 +1408,1329 @@ body {
   color: #00872b;
 }
 
+
+/* Competitive Landscape Slides CSS */
+
+/* Competitive Overview (Slide 6) */
+.competitive-overview {
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+  animation: slide-in-up 1.2s ease-out both;
+}
+
+.competitive-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.competitive-intro h2 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 20px;
+}
+
+.competitive-intro p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.competitive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.competitive-category {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d1d9e0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.competitive-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #08872B;
+}
+
+.competitive-category h3 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.competitive-category h3 i {
+  margin-right: 12px;
+  color: #08872B;
+  font-size: 28px;
+}
+
+.competitive-category p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #656d76;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.competitive-vendors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vendor-tag {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: #656d76;
+  font-weight: 500;
+}
+
+/* Push Security Comparison (Slide 7) */
+.push-comparison {
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+  animation: slide-in-up 1.2s ease-out both;
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.comparison-header h2 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 15px;
+}
+
+.comparison-header p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  color: #656d76;
+  line-height: 1.5;
+}
+
+.comparison-intro {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-left: 4px solid #08872B;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.comparison-intro p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #24292f;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.competitor-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d1d9e0;
+}
+
+.competitor-section h3 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.competitor-section h3 i {
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.competitor-section.push h3 i {
+  color: #0969da;
+}
+
+.competitor-section.above h3 i {
+  color: #08872B;
+}
+
+.capability-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.capability-list li {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #24292f;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.capability-list li i {
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #08872B;
+}
+
+.advantage-section {
+  background: linear-gradient(135deg, #08872B 0%, #0a9d2f 100%);
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  text-align: center;
+}
+
+.advantage-section h3 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantage-section h3 i {
+  margin-right: 12px;
+  font-size: 28px;
+}
+
+.advantage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advantage-list li {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.advantage-list li i {
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 16px;
+  color: #bfffd1;
+}
+
+/* Valence Security Comparison (Slide 8) */
+.valence-comparison {
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+  animation: slide-in-up 1.2s ease-out both;
+}
+
+.timeline-comparison {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d1d9e0;
+}
+
+.timeline-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline-title h3 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-title h3 i {
+  margin-right: 12px;
+  font-size: 32px;
+  color: #08872B;
+}
+
+.timeline-title p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #656d76;
+  margin: 0;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-step {
+  text-align: center;
+  position: relative;
+}
+
+.timeline-step::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: -15px;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #08872B 0%, #656d76 100%);
+  z-index: 1;
+}
+
+.timeline-step:last-child::after {
+  display: none;
+}
+
+.timeline-marker {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-marker.t0 {
+  background: #08872B;
+  box-shadow: 0 4px 12px rgba(8, 135, 43, 0.3);
+}
+
+.timeline-marker.t1 {
+  background: #ff6b35;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.timeline-marker.t2 {
+  background: #d1242f;
+  box-shadow: 0 4px 12px rgba(209, 36, 47, 0.3);
+}
+
+.timeline-marker.t3 {
+  background: #656d76;
+  box-shadow: 0 4px 12px rgba(101, 109, 118, 0.3);
+}
+
+.timeline-content h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.timeline-response {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.timeline-response.above {
+  background: #e6f7e6;
+  color: #0a5d0a;
+  border: 1px solid #08872B;
+}
+
+.timeline-response.valence {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+}
+
+/* Island Browser Comparison (Slide 9) */
+.island-comparison {
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+  animation: slide-in-up 1.2s ease-out both;
+}
+
+.use-case-comparison {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d1d9e0;
+}
+
+.use-case-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.use-case-title i {
+  margin-right: 12px;
+  color: #08872B;
+  font-size: 28px;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.approach-section {
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #d1d9e0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.approach-section.island {
+  border-color: #0969da;
+  background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 100%);
+}
+
+.approach-section.above {
+  border-color: #08872B;
+  background: linear-gradient(135deg, #e6f7e6 0%, #ffffff 100%);
+}
+
+.approach-section h4 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.approach-section.island h4 {
+  color: #0969da;
+}
+
+.approach-section.above h4 {
+  color: #08872B;
+}
+
+.approach-section h4 i {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.approach-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.approach-steps li {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #24292f;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.approach-steps li i {
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.approach-section.island .approach-steps li i {
+  color: #0969da;
+}
+
+.approach-section.above .approach-steps li i {
+  color: #08872B;
+}
+
+.use-case-example {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  border-left: 4px solid #08872B;
+}
+
+.use-case-example h5 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 10px;
+}
+
+.use-case-example p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Market Leadership (Slide 10) */
+.market-leadership {
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+  animation: slide-in-up 1.2s ease-out both;
+}
+
+.leadership-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.leadership-header h2 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 20px;
+}
+
+.leadership-header p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  color: #656d76;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.capability-matrix {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d1d9e0;
+  margin-bottom: 40px;
+  overflow-x: auto;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid #d1d9e0;
+  font-size: 14px;
+}
+
+.matrix-table th {
+  background: #08872B;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.matrix-table td {
+  background: white;
+  color: #24292f;
+}
+
+.matrix-table .capability-name {
+  text-align: left;
+  font-weight: 500;
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+.matrix-table .check-yes {
+  color: #08872B;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.matrix-table .check-no {
+  color: #d1242f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.matrix-table .check-partial {
+  color: #fb8500;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.leadership-cta {
+  background: linear-gradient(135deg, #08872B 0%, #0a9d2f 100%);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+.leadership-cta h3 {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.leadership-cta p {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  background: white;
+  color: #08872B;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: #f6f8fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .competitive-overview,
+  .push-comparison,
+  .valence-comparison,
+  .island-comparison,
+  .market-leadership {
+    padding: 40px 30px;
+  }
+  
+  .competitive-grid,
+  .comparison-grid,
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .timeline-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .timeline-step::after {
+    display: none;
+  }
+  
+  .matrix-table {
+    font-size: 12px;
+  }
+  
+  .matrix-table th,
+  .matrix-table td {
+    padding: 12px 8px;
+  }
+}
+
+
+/* Competitor Comparison Styles */
+.competitor-comparison {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.comparison-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-text strong {
+  color: #00872b;
+  font-weight: 600;
+}
+
+.comparison-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.deployment-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.deployment-approach {
+  background: #f6f8fa;
+  border-radius: 12px;
+  padding: 30px;
+  border: 2px solid #d1d9e0;
+  transition: all 0.3s ease;
+}
+
+.deployment-approach:hover {
+  border-color: #00872b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 135, 43, 0.1);
+}
+
+.deployment-approach.island {
+  border-left: 4px solid #0969da;
+}
+
+.deployment-approach.above {
+  border-left: 4px solid #00872b;
+}
+
+.approach-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 20px;
+}
+
+.approach-title i {
+  color: #00872b;
+  font-size: 24px;
+}
+
+.deployment-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #d1d9e0;
+  transition: all 0.2s ease;
+}
+
+.step:hover {
+  border-color: #00872b;
+  transform: translateX(4px);
+}
+
+.step.complex {
+  border-left: 3px solid #d1242f;
+}
+
+.step.simple {
+  border-left: 3px solid #00872b;
+}
+
+.step i {
+  color: #656d76;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.deployment-timeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #00872b;
+  background: rgba(0, 135, 43, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.deployment-timeline i {
+  color: #00872b;
+}
+
+.capability-comparison {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #d1d9e0;
+}
+
+.capability-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.capability-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.capability-category {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.capability-category h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #00872b;
+  padding-bottom: 8px;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.capability-item:last-child {
+  border-bottom: none;
+}
+
+.capability-label {
+  font-weight: 600;
+  color: #24292f;
+  min-width: 80px;
+}
+
+.capability-desc {
+  flex: 1;
+  margin-left: 12px;
+  color: #656d76;
+}
+
+.capability-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.capability-icon.positive {
+  color: #00872b;
+}
+
+.capability-icon.negative {
+  color: #d1242f;
+}
+
+.ato-scenario {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #d1d9e0;
+  margin-top: 30px;
+}
+
+.scenario-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scenario-title i {
+  color: #d1242f;
+  font-size: 24px;
+}
+
+.scenario-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.vendor-response {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.vendor-response h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vendor-response.push h4 {
+  color: #0969da;
+}
+
+.vendor-response.above h4 {
+  color: #00872b;
+}
+
+.response-steps {
+  list-style: none;
+  padding: 0;
+}
+
+.response-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #d1d9e0;
+}
+
+.response-steps li i {
+  margin-top: 2px;
+  width: 16px;
+  text-align: center;
+}
+
+.response-steps li.detection {
+  border-left-color: #0969da;
+}
+
+.response-steps li.prevention {
+  border-left-color: #00872b;
+}
+
+.response-steps li.gap {
+  border-left-color: #d1242f;
+}
+
+.scenario-result {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.scenario-result.push {
+  background: rgba(9, 105, 218, 0.1);
+  color: #0969da;
+  border: 1px solid rgba(9, 105, 218, 0.2);
+}
+
+.scenario-result.above {
+  background: rgba(0, 135, 43, 0.1);
+  color: #00872b;
+  border: 1px solid rgba(0, 135, 43, 0.2);
+}
+
+/* Timeline Styles for Valence Comparison */
+.timeline-container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #d1d9e0;
+  margin: 30px 0;
+}
+
+.timeline-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timeline-title i {
+  color: #d1242f;
+  font-size: 28px;
+}
+
+.attack-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+  margin: 40px 0;
+}
+
+.attack-timeline::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, #d1242f 0%, #fd8c73 50%, #00872b 100%);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.timeline-event {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.timeline-marker {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-marker.attack {
+  background: linear-gradient(135deg, #d1242f, #fd8c73);
+}
+
+.timeline-marker.detection {
+  background: linear-gradient(135deg, #0969da, #54aeff);
+}
+
+.timeline-marker.prevention {
+  background: linear-gradient(135deg, #00872b, #5fed83);
+}
+
+.timeline-marker.gap {
+  background: linear-gradient(135deg, #656d76, #8c959f);
+}
+
+.timeline-time {
+  font-size: 14px;
+  font-weight: 600;
+  color: #656d76;
+  margin-bottom: 8px;
+}
+
+.timeline-event-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+.timeline-description {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.4;
+}
+
+.timeline-vendor {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timeline-vendor.valence {
+  background: rgba(9, 105, 218, 0.1);
+  color: #0969da;
+  border: 1px solid rgba(9, 105, 218, 0.2);
+}
+
+.timeline-vendor.above {
+  background: rgba(0, 135, 43, 0.1);
+  color: #00872b;
+  border: 1px solid rgba(0, 135, 43, 0.2);
+}
+
+.timeline-vendor.none {
+  background: rgba(101, 109, 118, 0.1);
+  color: #656d76;
+  border: 1px solid rgba(101, 109, 118, 0.2);
+}
+
+/* Market Leadership Styles */
+.market-leadership {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leadership-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.leadership-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 16px;
+}
+
+.leadership-header p {
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.capability-matrix {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #d1d9e0;
+  overflow-x: auto;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 16px 12px;
+  text-align: center;
+  border-bottom: 1px solid #d1d9e0;
+  vertical-align: middle;
+}
+
+.matrix-table th {
+  background: #f6f8fa;
+  font-weight: 600;
+  color: #24292f;
+  border-bottom: 2px solid #00872b;
+}
+
+.matrix-table th.capability-name {
+  text-align: left;
+  min-width: 200px;
+}
+
+.matrix-table td.capability-name {
+  text-align: left;
+  font-weight: 500;
+  color: #24292f;
+}
+
+.matrix-table .check {
+  color: #00872b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.matrix-table .cross {
+  color: #d1242f;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.matrix-table .partial {
+  color: #fb8500;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.market-opportunity {
+  background: linear-gradient(135deg, #00872b, #5fed83);
+  color: white;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.opportunity-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.opportunity-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.cta-section {
+  background: white;
+  color: #24292f;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 40px;
+  text-align: center;
+  border: 2px solid #00872b;
+}
+
+.cta-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00872b;
+  margin-bottom: 16px;
+}
+
+.cta-text {
+  font-size: 16px;
+  color: #656d76;
+  line-height: 1.6;
+}
+
+.cta-text strong {
+  color: #00872b;
+  font-weight: 600;
+}
+
+/* Responsive Design for Competitive Slides */
+@media (max-width: 768px) {
+  .competitor-comparison {
+    padding: 20px;
+  }
+  
+  .deployment-comparison {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .scenario-comparison {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .attack-timeline {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .attack-timeline::before {
+    display: none;
+  }
+  
+  .opportunity-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .matrix-table {
+    font-size: 12px;
+  }
+  
+  .matrix-table th,
+  .matrix-table td {
+    padding: 12px 8px;
+  }
+}
+
