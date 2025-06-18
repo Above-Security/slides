@@ -20,3 +20,311 @@
 @import './styles/utils/responsive.css';
 
 /* Remaining slide-specific styles will be moved to individual slide modules */
+
+/* Key Points Grid (Slide 1) - RESTORED */
+.key-points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+  animation: grid-reveal 1.5s ease-out 0.3s both;
+}
+
+.key-point-card {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.key-point-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #5fed83, #00872b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.key-point-card:hover::before {
+  transform: scaleX(1);
+}
+
+.key-point-card:hover {
+  background: #ffffff;
+  border-color: #00872b;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.12);
+}
+
+.key-point-icon {
+  width: 48px;
+  height: 48px;
+  background: #00872b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  transition: all 0.3s ease;
+}
+
+.key-point-card:hover .key-point-icon {
+  background: #5fed83;
+  transform: scale(1.05);
+}
+
+.key-point-icon i {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.key-point-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+.key-point-description {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+}
+
+
+/* Executive Summary - RESTORED */
+.executive-summary {
+  background: linear-gradient(135deg, #24292f 0%, #1c2128 100%);
+  border-radius: 16px;
+  padding: 32px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  animation: summary-reveal 1.5s ease-out 0.6s both;
+}
+
+.executive-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #5fed83, #00872b, #bfffd1);
+  animation: gradient-flow 3s ease-in-out infinite;
+}
+
+.summary-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.summary-title i {
+  color: #5fed83;
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.summary-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f6fc;
+}
+
+/* Landscape Grid (Slide 2) - RESTORED */
+.landscape-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.landscape-card {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 32px;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: slide-in-up 1.5s ease-out both;
+}
+
+.landscape-card:hover {
+  background: #ffffff;
+  border-color: #00872b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+
+.landscape-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.landscape-title i {
+  margin-right: 12px;
+  font-size: 28px;
+}
+
+.landscape-title .fa-exclamation-triangle {
+  color: #fd7e14;
+}
+
+.landscape-title .fa-bug {
+  color: #dc3545;
+}
+
+.landscape-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #24292f;
+  margin-bottom: 16px;
+}
+
+.blind-spots-card {
+  background: #fff8f0;
+  border: 1px solid #fd7e14;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.blind-spots-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 12px;
+}
+
+.blind-spots-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blind-spots-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #656d76;
+}
+
+.blind-spots-list li i {
+  color: #dc3545;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.threat-item {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.threat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--threat-color);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.threat-item:hover::before {
+  transform: scaleY(1);
+}
+
+.threat-item:hover {
+  border-color: var(--threat-color);
+  transform: translateX(4px);
+}
+
+
+.threat-icon.oauth {
+  --threat-color: #fd7e14;
+}
+
+.threat-icon.session {
+  --threat-color: #6f42c1;
+}
+
+.threat-icon.insider {
+  --threat-color: #d1242f;
+}
+
+.threat-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.threat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.threat-icon.oauth {
+  background: #fd7e14;
+}
+
+.threat-icon.session {
+  background: #6f42c1;
+}
+
+.threat-icon.insider {
+  background: #d1242f;
+}
+
+.threat-details {
+  flex: 1;
+}
+
+.threat-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 4px;
+}
+
+.threat-description {
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+}
+
