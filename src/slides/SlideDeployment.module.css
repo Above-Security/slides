@@ -1,7 +1,7 @@
 /* SlideDeployment.jsx - Deployment Styles */
 
 .deployment-overview {
-  animation: github-slide-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  animation: githubSlideReveal 1.2s var(--ease-github) 0.1s both;
 }
 
 .deployment-method {
@@ -94,10 +94,10 @@
 }
 
 .step-description {
-  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
-  color: #656d76;
-  line-height: 1.5;
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
   margin: 0;
 }
 
@@ -188,19 +188,7 @@
 }
 
 .constraint-card.limitations .constraint-list li i {
-  color: #d1242f;
-}
-
-@keyframes github-slide-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: var(--state-danger);
 }
 
 /* Responsive */

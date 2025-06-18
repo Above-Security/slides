@@ -139,45 +139,33 @@
 }
 
 .concept-icon i {
-  color: #ffffff;
-  font-size: 20px;
+  color: var(--text-inverse);
+  font-size: var(--text-xl);
 }
 
 .concept-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 8px;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
 }
 
 .concept-description {
-  font-size: 14px;
-  color: #656d76;
-  line-height: 1.5;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
   margin: 0;
-}
-
-@keyframes slide-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .tech-icon {
   width: 48px;
   height: 48px;
-  background: var(--color-primary);
+  background: var(--brand-primary);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: var(--spacing-lg);
+  margin-right: var(--space-4);
   color: var(--color-text-inverse);
   font-size: var(--font-size-xl);
   flex-shrink: 0;
