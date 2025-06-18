@@ -16,12 +16,10 @@ const SlideRuntimeITDR = () => (
           Runtime ITDR Definition
         </h2>
         <p className="summary-text">
-          Runtime Identity Threat Detection & Response focuses on <strong>post-authentication behavioral observability</strong> 
-          and <strong>semantic user intent interpretation</strong> within live application sessions.
+          Runtime Identity Threat Detection & Response focuses on <strong>post-authentication behavioral observability</strong> and <strong>semantic user intent interpretation</strong> within live application sessions.
         </p>
         <p className="summary-text" style={{marginTop: '16px'}}>
-          Unlike traditional ITDR that monitors access events, Runtime ITDR provides <strong>session-level visibility</strong> 
-          into what users actually do inside applications, enabling detection of threats that occur after successful authentication.
+          Unlike traditional ITDR that monitors access events, Runtime ITDR provides <strong>session-level visibility</strong> into what users actually do inside applications, enabling detection of threats that occur after successful authentication.
         </p>
       </div>
 
