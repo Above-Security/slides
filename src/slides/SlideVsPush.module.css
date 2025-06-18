@@ -2,100 +2,100 @@
 
 /* Use Case Comparison - Unique to SlideVsPush */
 .use-case-comparison {
-  background: #f6f8fa;
-  border-radius: 12px;
-  padding: 32px;
+    background: #f6f8fa;
+    border-radius: 12px;
+    padding: 32px;
 }
 
 .use-case-title {
-  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 24px;
-  text-align: center;
+    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #24292f;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 .scenario-comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
 .push-response,
 .above-response {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  border: 1px solid #d1d9e0;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #d1d9e0;
 }
 
 .above-response {
-  border-color: #08872B;
+    border-color: #08872B;
 }
 
 .response-title {
-  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 16px;
+    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #24292f;
+    margin-bottom: 16px;
 }
 
 .response-steps {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .step {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
 .step i {
-  color: #08872B;
+    color: #08872B;
 }
 
 .step.miss i {
-  color: #d1242f;
+    color: #d1242f;
 }
 
 .step.success i {
-  color: #08872B;
+    color: #08872B;
 }
 
 .step.neutral i {
-  color: #656d76;
+    color: #656d76;
 }
 
 .response-result {
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 .response-result.miss {
-  background: #ffebee;
-  color: #d1242f;
+    background: #ffebee;
+    color: #d1242f;
 }
 
 .response-result.success {
-  background: #e6f7e6;
-  color: #08872B;
+    background: #e6f7e6;
+    color: #08872B;
 }
 
 .response-result.neutral {
-  background: #f6f8fa;
-  color: #656d76;
+    background: #f6f8fa;
+    color: #656d76;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .scenario-comparison {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+    .scenario-comparison {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 }

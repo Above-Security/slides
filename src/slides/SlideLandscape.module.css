@@ -200,6 +200,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -211,9 +212,8 @@
   .competitor-categories {
     grid-template-columns: 1fr;
   }
-  
+
   .positioning-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
