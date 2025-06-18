@@ -4,8 +4,8 @@ import SlideLayout from '../components/SlideLayout';
 const SlideProblem = () => (
   <SlideLayout>
     <header className="slide-header">
-      <h1 className="slide-title">The Problem</h1>
-      <p className="slide-subtitle">Post-Authentication Blind Spot</p>
+      <h1 className="slide-title">The Identity Threat Landscape</h1>
+      <p className="slide-subtitle">Identity as the Primary Attack Vector</p>
     </header>
 
     <div className="content-section">
@@ -13,41 +13,31 @@ const SlideProblem = () => (
         <div className="landscape-card">
           <h3 className="landscape-title">
             <i className="fas fa-exclamation-triangle"></i>
-            Security Stack Gap
+            The Critical Gap
           </h3>
           <p className="landscape-text">
-            IAM controls <strong>access</strong>. SIEM aggregates <strong>logs</strong>.
-            DLP monitors <strong>files</strong>. None see what users actually <strong>do</strong> inside applications.
+            Existing tools focus on <strong>access</strong>, not actual <strong>behavior</strong> inside apps.
+          </p>
+          <p className="landscape-text" style={{ marginTop: '12px' }}>
+            Compromised credentials alone don't tell the full story.
           </p>
 
           <div className="blind-spots-card">
-            <h4 className="blind-spots-title">Undetected Threats:</h4>
+            <h4 className="blind-spots-title">Traditional Security Blind Spots:</h4>
             <ul className="blind-spots-list">
-              <li><i className="fas fa-times"></i> Sophisticated phishing campaigns targeting authenticated users</li>
-              <li><i className="fas fa-times"></i> Advanced social engineering via trusted platforms</li>
-              <li><i className="fas fa-times"></i> Gradual insider data exfiltration</li>
-              <li><i className="fas fa-times"></i> Session hijacking via stolen tokens</li>
+              <li><i className="fas fa-times"></i> Post-authentication behavior</li>
+              <li><i className="fas fa-times"></i> In-application activities</li>
+              <li><i className="fas fa-times"></i> Session-level visibility</li>
+              <li><i className="fas fa-times"></i> Semantic user intent</li>
             </ul>
           </div>
         </div>
 
         <div className="landscape-card">
           <h3 className="landscape-title">
-            <i className="fas fa-bug"></i>
-            Sophisticated Phishing Examples
+            <i className="fas fa-crosshairs"></i>
+            Emerging Identity Threats
           </h3>
-
-          <div className="threat-item">
-            <div className="threat-content">
-              <div className="threat-icon insider">
-                <i className="fas fa-user-secret"></i>
-              </div>
-              <div className="threat-details">
-                <h4 className="threat-name">Cyberhaven Incident (2024)</h4>
-                <p className="threat-description">Employee systematically downloaded customer data over months. Traditional DLP missed gradual exfiltration pattern.</p>
-              </div>
-            </div>
-          </div>
 
           <div className="threat-item">
             <div className="threat-content">
@@ -55,8 +45,8 @@ const SlideProblem = () => (
                 <i className="fab fa-google"></i>
               </div>
               <div className="threat-details">
-                <h4 className="threat-name">LOTS OAuth Phishing</h4>
-                <p className="threat-description">Sophisticated campaigns abuse trusted OAuth flows and legitimate services to bypass traditional email security.</p>
+                <h4 className="threat-name">OAuth Phishing</h4>
+                <p className="threat-description">Malicious apps trick users into granting access via OAuth, bypassing traditional authentication mechanisms</p>
               </div>
             </div>
           </div>
@@ -64,11 +54,35 @@ const SlideProblem = () => (
           <div className="threat-item">
             <div className="threat-content">
               <div className="threat-icon session">
-                <i className="fas fa-fish"></i>
+                <i className="fas fa-key"></i>
               </div>
               <div className="threat-details">
-                <h4 className="threat-name">Zero-Day Phishing Portals</h4>
-                <p className="threat-description">Pixel-perfect fake SaaS portals using advanced evasion techniques that bypass traditional detection methods.</p>
+                <h4 className="threat-name">Session Hijacking</h4>
+                <p className="threat-description">Attackers steal session tokens to impersonate users without re-authentication</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="threat-item">
+            <div className="threat-content">
+              <div className="threat-icon insider">
+                <i className="fas fa-user-times"></i>
+              </div>
+              <div className="threat-details">
+                <h4 className="threat-name">Low-and-Slow Data Scraping</h4>
+                <p className="threat-description">Incremental data exfiltration designed to evade traditional security alerts</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="threat-item">
+            <div className="threat-content">
+              <div className="threat-icon insider">
+                <i className="fas fa-user-secret"></i>
+              </div>
+              <div className="threat-details">
+                <h4 className="threat-name">Insider Threats</h4>
+                <p className="threat-description">Malicious or negligent insiders misuse legitimate access to compromise data</p>
               </div>
             </div>
           </div>
@@ -79,3 +93,4 @@ const SlideProblem = () => (
 );
 
 export default SlideProblem;
+

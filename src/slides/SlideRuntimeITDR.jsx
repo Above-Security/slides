@@ -16,26 +16,24 @@ const SlideRuntimeITDR = () => (
           Runtime ITDR Definition
         </h2>
         <p className="summary-text">
-          Runtime Identity Threat Detection & Response focuses on <strong>post-authentication behavioral observability</strong> 
-          and <strong>semantic user intent interpretation</strong> within live application sessions.
+          Runtime Identity Threat Detection & Response focuses on <strong>post-authentication behavioral observability</strong> and <strong>semantic user intent interpretation</strong> within live application sessions.
         </p>
-        <p className="summary-text" style={{marginTop: '16px'}}>
-          Unlike traditional ITDR that monitors access events, Runtime ITDR provides <strong>session-level visibility</strong> 
-          into what users actually do inside applications, enabling detection of threats that occur after successful authentication.
+        <p className="summary-text" style={{ marginTop: '16px' }}>
+          Unlike traditional ITDR that monitors access events, Runtime ITDR provides <strong>session-level visibility</strong> into what users actually do inside applications, enabling detection of threats that occur after successful authentication.
         </p>
       </div>
 
       {/* Comparison Grid */}
-      <div className="landscape-grid" style={{marginTop: '48px'}}>
+      <div className="landscape-grid" style={{ marginTop: '48px' }}>
         {/* Traditional Approaches */}
         <div className="landscape-card">
           <h3 className="landscape-title">
             <i className="fas fa-shield-alt"></i>
             Traditional ITDR, UEBA, DLP, SIEM
           </h3>
-          
-          <div style={{marginBottom: '24px'}}>
-            <h4 style={{fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px'}}>Focus Areas:</h4>
+
+          <div style={{ marginBottom: '24px' }}>
+            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Focus Areas:</h4>
             <ul className="blind-spots-list">
               <li><i className="fas fa-circle"></i>Authentication events</li>
               <li><i className="fas fa-circle"></i>Network traffic analysis</li>
@@ -61,9 +59,9 @@ const SlideRuntimeITDR = () => (
             <i className="fas fa-eye"></i>
             Runtime ITDR Approach
           </h3>
-          
-          <div style={{marginBottom: '24px'}}>
-            <h4 style={{fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px'}}>Focus Areas:</h4>
+
+          <div style={{ marginBottom: '24px' }}>
+            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Focus Areas:</h4>
             <ul className="blind-spots-list">
               <li><i className="fas fa-circle"></i>In-application behavior</li>
               <li><i className="fas fa-circle"></i>User intent analysis</li>
@@ -72,20 +70,20 @@ const SlideRuntimeITDR = () => (
             </ul>
           </div>
 
-          <div style={{background: '#f0f9f4', border: '1px solid #00872b', borderRadius: '12px', padding: '20px'}}>
-            <h4 style={{fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px'}}>Advantages:</h4>
+          <div style={{ background: '#f0f9f4', border: '1px solid #00872b', borderRadius: '12px', padding: '20px' }}>
+            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Advantages:</h4>
             <ul className="blind-spots-list">
-              <li><i className="fas fa-check" style={{color: '#00872b'}}></i>Real-time threat detection</li>
-              <li><i className="fas fa-check" style={{color: '#00872b'}}></i>Application-aware context</li>
-              <li><i className="fas fa-check" style={{color: '#00872b'}}></i>Reduced false positives</li>
-              <li><i className="fas fa-check" style={{color: '#00872b'}}></i>Proactive prevention</li>
+              <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Real-time threat detection</li>
+              <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Application-aware context</li>
+              <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Reduced false positives</li>
+              <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Proactive prevention</li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Key Concepts */}
-      <div className="key-points-grid" style={{marginTop: '48px'}}>
+      <div className="key-points-grid" style={{ marginTop: '48px' }}>
         <div className="key-point-card">
           <div className="key-point-icon">
             <i className="fas fa-eye"></i>
