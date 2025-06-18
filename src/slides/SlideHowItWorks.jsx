@@ -23,7 +23,7 @@ const SlideHowItWorks = () => (
               </div>
               <div className="tech-content">
                 <h4 className="tech-title">Browser Extension</h4>
-                <p className="tech-description">Captures page content and user interactions across any web application</p>
+                <p className="tech-description">Captures page content and user interactions across any web application in real-time</p>
               </div>
             </div>
 
@@ -33,7 +33,7 @@ const SlideHowItWorks = () => (
               </div>
               <div className="tech-content">
                 <h4 className="tech-title">LLM Page Analysis</h4>
-                <p className="tech-description">Semantic analysis of page content to detect malicious intent and LOTS attacks</p>
+                <p className="tech-description">Semantic analysis of page content to detect sophisticated phishing attempts and malicious intent</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ const SlideHowItWorks = () => (
               </div>
               <div className="tech-content">
                 <h4 className="tech-title">Real-Time Prevention</h4>
-                <p className="tech-description">Blocks malicious actions before completion: prevents credential entry, stops OAuth consent</p>
+                <p className="tech-description">Blocks sophisticated attacks before completion: prevents credential entry, stops malicious OAuth consent</p>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ const SlideHowItWorks = () => (
                 <i className="fas fa-search"></i>
               </div>
               <h4 className="concept-title">Semantic Understanding</h4>
-              <p className="concept-description">LLM understands page intent and context, not just patterns.</p>
+              <p className="concept-description">LLM understands page intent and context, detecting sophisticated evasion techniques.</p>
             </div>
           </div>
         </div>

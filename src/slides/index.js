@@ -1,4 +1,5 @@
 import SlideIntro from './SlideIntro';
+import SlideRuntimeITDR from './SlideRuntimeITDR';
 import SlideProblem from './SlideProblem';
 import SlideHowItWorks from './SlideHowItWorks';
 import SlideCaseStudy from './SlideCaseStudy';
@@ -12,6 +13,7 @@ import SlideMarketLeadership from './SlideMarketLeadership';
 
 export const slideData = [
   { title: 'Above Runtime ITDR', Component: SlideIntro },
+  { title: 'What is Runtime ITDR?', Component: SlideRuntimeITDR },
   { title: 'The Problem', Component: SlideProblem },
   { title: 'How It Works', Component: SlideHowItWorks },
   { title: 'Cyberhaven Case Study', Component: SlideCaseStudy },
