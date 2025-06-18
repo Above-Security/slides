@@ -208,6 +208,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -224,8 +225,15 @@ body {
 }
 
 @keyframes header-reveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .slide-title {
@@ -241,6 +249,42 @@ body {
   margin: 0 0 16px 0;
 }
 
+/* Brand Name Styling with Gradient Underline */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-name::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #5fed83, #00872b);
+  animation: underline-grow 1s ease-out 1.8s both;
+}
+
+@keyframes underline-grow {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
 .slide-subtitle {
   font-size: 20px;
   color: #656d76;
@@ -249,14 +293,21 @@ body {
 }
 
 .logo-small {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   animation: logo-float 6s ease-in-out infinite;
 }
 
 @keyframes logo-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 /* Content Sections */
@@ -275,8 +326,15 @@ body {
 }
 
 @keyframes grid-reveal {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .key-point-card {
@@ -372,13 +430,27 @@ body {
 }
 
 @keyframes gradient-flow {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(100%); }
+
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes summary-reveal {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .summary-title {
@@ -421,8 +493,15 @@ body {
 }
 
 @keyframes slide-in-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .landscape-card:hover {
@@ -529,9 +608,17 @@ body {
   transform: translateX(4px);
 }
 
-.threat-icon.oauth { --threat-color: #fd7e14; }
-.threat-icon.session { --threat-color: #6f42c1; }
-.threat-icon.insider { --threat-color: #d1242f; }
+.threat-icon.oauth {
+  --threat-color: #fd7e14;
+}
+
+.threat-icon.session {
+  --threat-color: #6f42c1;
+}
+
+.threat-icon.insider {
+  --threat-color: #d1242f;
+}
 
 .threat-content {
   display: flex;
@@ -552,9 +639,17 @@ body {
   margin-top: 2px;
 }
 
-.threat-icon.oauth { background: #fd7e14; }
-.threat-icon.session { background: #6f42c1; }
-.threat-icon.insider { background: #d1242f; }
+.threat-icon.oauth {
+  background: #fd7e14;
+}
+
+.threat-icon.session {
+  background: #6f42c1;
+}
+
+.threat-icon.insider {
+  background: #d1242f;
+}
 
 .threat-details {
   flex: 1;
@@ -729,13 +824,14 @@ body {
 }
 
 @keyframes github-case-reveal {
-  from { 
-    opacity: 0; 
-    transform: translateY(24px) scale(0.98); 
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -931,13 +1027,14 @@ body {
 }
 
 @keyframes github-grid-reveal {
-  from { 
-    opacity: 0; 
-    transform: translateY(24px) scale(0.95); 
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -1056,13 +1153,14 @@ body {
 }
 
 @keyframes github-slide-reveal {
-  from { 
-    opacity: 0; 
-    transform: translateY(32px); 
+  from {
+    opacity: 0;
+    transform: translateY(32px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1453,20 +1551,20 @@ body {
   .slide-container {
     padding: 32px;
   }
-  
+
   .key-points-grid,
   .concepts-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .landscape-grid,
   .detection-scenarios,
   .constraints-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   .slide-title {
     font-size: 36px;
   }
@@ -1476,22 +1574,22 @@ body {
   .presentation-header {
     padding: 8px 16px;
   }
-  
+
   .slide-container {
     padding: 24px 16px;
   }
-  
+
   .slide-title {
     font-size: 28px;
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .logo-small {
     width: 32px;
     height: 32px;
   }
-  
+
   .menu-content {
     min-width: 300px;
     margin: 16px;
@@ -1733,7 +1831,8 @@ body {
   gap: 32px;
 }
 
-.competitor-approach, .above-advantage {
+.competitor-approach,
+.above-advantage {
   background: #ffffff;
   border: 1px solid #d1d9e0;
   border-radius: 12px;
@@ -1745,7 +1844,8 @@ body {
   background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%);
 }
 
-.approach-title, .advantage-title {
+.approach-title,
+.advantage-title {
   font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -1760,13 +1860,15 @@ body {
   color: #08872B;
 }
 
-.approach-list, .advantage-list {
+.approach-list,
+.advantage-list {
   list-style: none;
   padding: 0;
   margin: 0 0 16px 0;
 }
 
-.approach-list li, .advantage-list li {
+.approach-list li,
+.advantage-list li {
   font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 15px;
   color: #656d76;
@@ -1791,7 +1893,8 @@ body {
   font-weight: bold;
 }
 
-.approach-limitation, .advantage-highlight {
+.approach-limitation,
+.advantage-highlight {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1833,7 +1936,8 @@ body {
   gap: 24px;
 }
 
-.push-response, .above-response {
+.push-response,
+.above-response {
   background: #ffffff;
   border-radius: 8px;
   padding: 20px;
@@ -2377,8 +2481,8 @@ body {
 }
 
 .above-cell {
-  background: #e6f7e6;
-  color: #08872B;
+  background: #e6ffed;
+  color: #0d4f1c;
   font-weight: 600;
   font-size: 16px;
 }
@@ -2570,45 +2674,45 @@ body {
   .competitor-categories {
     grid-template-columns: 1fr;
   }
-  
+
   .positioning-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .comparison-section {
     grid-template-columns: 1fr;
   }
-  
+
   .scenario-comparison {
     grid-template-columns: 1fr;
   }
-  
+
   .deployment-comparison {
     grid-template-columns: 1fr;
   }
-  
+
   .capability-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .scenario-responses {
     grid-template-columns: 1fr;
   }
-  
+
   .matrix-table {
     grid-template-columns: 2fr 1fr 1fr;
     font-size: 12px;
   }
-  
+
   .opportunity-breakdown {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .market-stats {
     flex-direction: column;
     gap: 24px;
   }
-  
+
   .winning-factors {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2668,8 +2772,8 @@ body {
 .matrix-cell.above-cell {
   background: #e6ffed;
   color: #0d4f1c;
-  font-size: 18px;
   font-weight: 600;
+  font-size: 18px;
 }
 
 .matrix-cell.competitor-cell {
@@ -2728,16 +2832,15 @@ body {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
+
   .matrix-cell {
     padding: 12px;
     min-height: auto;
   }
-  
+
   .matrix-cell.capability-header,
   .matrix-cell.vendor-header {
     background: #08872B;
     color: white;
   }
 }
-
