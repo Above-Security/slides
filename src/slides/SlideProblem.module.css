@@ -3,70 +3,70 @@
 .landscape-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: var(--space-12);
   align-items: start;
 }
 
 .landscape-card {
-  background: #f6f8fa;
-  border: 1px solid #d1d9e0;
-  border-radius: 16px;
-  padding: 32px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
   height: 100%;
   position: relative;
-  transition: all 0.3s ease;
-  animation: slide-in-up 1.5s ease-out both;
+  transition: all var(--transition-normal);
+  animation: slideInUp var(--duration-slow) var(--ease-out) both;
 }
 
 .landscape-card:hover {
-  background: #ffffff;
-  border-color: #00872b;
+  background: var(--surface-raised);
+  border-color: var(--brand-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .landscape-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #24292f;
-  margin-bottom: 24px;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
   display: flex;
   align-items: center;
 }
 
 .landscape-title i {
-  margin-right: 12px;
-  font-size: 28px;
+  margin-right: var(--space-3);
+  font-size: var(--text-3xl);
 }
 
 .landscape-title .fa-exclamation-triangle {
-  color: #fd7e14;
+  color: var(--state-warning);
 }
 
 .landscape-title .fa-crosshairs {
-  color: #dc3545;
+  color: var(--state-danger);
 }
 
 .landscape-text {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #24292f;
-  margin-bottom: 16px;
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
 }
 
 .blind-spots-card {
-  background: #fff8f0;
-  border: 1px solid #fd7e14;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 24px;
+  background: var(--alert-warning-bg);
+  border: 1px solid var(--border-warning);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-top: var(--space-6);
 }
 
 .blind-spots-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 12px;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
 }
 
 .blind-spots-list {
@@ -78,24 +78,24 @@
 .blind-spots-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #656d76;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
 }
 
 .blind-spots-list li i {
-  color: #dc3545;
-  margin-right: 8px;
-  font-size: 12px;
+  color: var(--state-danger);
+  margin-right: var(--space-2);
+  font-size: var(--text-xs);
 }
 
 .threat-item {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
-  transition: all 0.3s ease;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
 }
@@ -110,7 +110,7 @@
   background: var(--threat-color);
   transform: scaleY(0);
   transform-origin: bottom;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .threat-item:hover::before {
@@ -125,35 +125,35 @@
 .threat-content {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .threat-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-base);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 14px;
+  color: var(--text-inverse);
+  font-size: var(--text-base);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
 }
 
 .threat-icon.oauth {
-  background: #fd7e14;
-  --threat-color: #fd7e14;
+  background: var(--state-warning);
+  --threat-color: var(--state-warning);
 }
 
 .threat-icon.session {
-  background: #6f42c1;
-  --threat-color: #6f42c1;
+  background: var(--state-info);
+  --threat-color: var(--state-info);
 }
 
 .threat-icon.insider {
-  background: #d1242f;
-  --threat-color: #d1242f;
+  background: var(--state-danger);
+  --threat-color: var(--state-danger);
 }
 
 .threat-details {
@@ -161,34 +161,22 @@
 }
 
 .threat-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 4px;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
 }
 
 .threat-description {
-  font-size: 13px;
-  color: #656d76;
-  line-height: 1.4;
-}
-
-@keyframes slide-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-snug);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .landscape-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--space-6);
   }
 }

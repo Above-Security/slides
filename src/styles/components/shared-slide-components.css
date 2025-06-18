@@ -2,13 +2,13 @@
 
 /* Executive Summary - Used in SlideIntro, SlideRuntimeITDR */
 .executive-summary {
-  background: linear-gradient(135deg, #24292f 0%, #1c2128 100%);
-  border-radius: 16px;
-  padding: 32px;
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  color: var(--text-inverse);
   position: relative;
   overflow: hidden;
-  animation: summary-reveal 1.5s ease-out 0.6s both;
+  animation: summaryReveal 1.5s var(--ease-out) 0.6s both;
 }
 
 .executive-summary::before {
@@ -18,46 +18,46 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #5fed83, #00872b, #bfffd1);
-  animation: gradient-flow 3s ease-in-out infinite;
+  background: linear-gradient(90deg, var(--brand-primary-light), var(--brand-primary), var(--brand-primary-light));
+  animation: gradientFlow 3s ease-in-out infinite;
 }
 
 .summary-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-4);
   display: flex;
   align-items: center;
 }
 
 .summary-title i {
-  color: #5fed83;
-  margin-right: 12px;
-  font-size: 24px;
+  color: var(--brand-primary-light);
+  margin-right: var(--space-3);
+  font-size: var(--text-2xl);
 }
 
 .summary-text {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #f0f6fc;
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-inverse);
 }
 
 /* Key Points Grid - Used in SlideIntro, SlideRuntimeITDR */
 .key-points-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
   animation: grid-reveal 1.5s ease-out 0.3s both;
 }
 
 .key-point-card {
-  background: #f6f8fa;
-  border: 1px solid #d1d9e0;
-  border-radius: 12px;
-  padding: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
 }
@@ -69,10 +69,10 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #5fed83, #00872b);
+  background: var(--brand-gradient);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .key-point-card:hover::before {
@@ -80,111 +80,116 @@
 }
 
 .key-point-card:hover {
-  background: #ffffff;
-  border-color: #00872b;
+  background: var(--surface-primary);
+  border-color: var(--brand-primary);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .key-point-icon {
-  width: 48px;
-  height: 48px;
-  background: #00872b;
-  border-radius: 8px;
+  width: var(--space-12);
+  height: var(--space-12);
+  background: var(--brand-primary);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
-  transition: all 0.3s ease;
+  margin: 0 auto var(--space-4);
+  transition: all var(--transition-normal);
 }
 
 .key-point-card:hover .key-point-icon {
-  background: #5fed83;
+  background: var(--brand-primary-light);
   transform: scale(1.05);
 }
 
 .key-point-icon i {
-  color: #ffffff;
-  font-size: 20px;
+  color: var(--text-inverse);
+  font-size: var(--text-xl);
 }
 
 .key-point-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 8px;
+  font-family: var(--font-brand);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
 }
 
 .key-point-description {
-  font-size: 14px;
-  color: #656d76;
-  line-height: 1.5;
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
 }
 
 /* Landscape Grid - Used in multiple slides */
 .landscape-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: var(--space-12);
   align-items: start;
 }
 
 .landscape-card {
-  background: #f6f8fa;
-  border: 1px solid #d1d9e0;
-  border-radius: 16px;
-  padding: 32px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
   height: 100%;
   position: relative;
-  transition: all 0.3s ease;
-  animation: slide-in-up 1.5s ease-out both;
+  transition: all var(--transition-normal);
+  animation: slideInUp var(--duration-slow) ease-out both;
 }
 
 .landscape-card:hover {
-  background: #ffffff;
-  border-color: #00872b;
+  background: var(--surface-primary);
+  border-color: var(--brand-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .landscape-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #24292f;
-  margin-bottom: 24px;
+  font-family: var(--font-brand);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
   display: flex;
   align-items: center;
 }
 
 .landscape-title i {
-  margin-right: 12px;
-  font-size: 28px;
+  margin-right: var(--space-3);
+  font-size: var(--text-3xl);
 }
 
 .landscape-title .fa-exclamation-triangle {
-  color: #fd7e14;
+  color: var(--text-warning);
 }
 
 .landscape-title .fa-shield-alt {
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
 .landscape-title .fa-eye {
-  color: #6f42c1;
+  color: var(--text-info);
 }
 
 .landscape-text {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #24292f;
-  margin-bottom: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
 }
 
 /* Focus Areas - Used in multiple slides */
 .focus-areas {
-  font-size: 16px;
-  font-weight: 600;
-  color: #24292f;
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
@@ -229,54 +234,18 @@
 }
 
 .blind-spots-list li i.fa-check {
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
-/* Common Animations */
-@keyframes grid-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Responsive */
+@media (max-width: 768px) {
+  .key-points-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes summary-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gradient-flow {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes slide-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .landscape-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 }

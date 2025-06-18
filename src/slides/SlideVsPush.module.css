@@ -2,100 +2,102 @@
 
 /* Use Case Comparison - Unique to SlideVsPush */
 .use-case-comparison {
-    background: #f6f8fa;
-    border-radius: 12px;
-    padding: 32px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
 }
 
 .use-case-title {
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: #24292f;
-    margin-bottom: 24px;
+    font-family: var(--font-brand);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
     text-align: center;
 }
 
 .scenario-comparison {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: var(--space-6);
 }
 
 .push-response,
 .above-response {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    border: 1px solid #d1d9e0;
+    background: var(--surface-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    border: 1px solid var(--border-primary);
 }
 
 .above-response {
-    border-color: #08872B;
+    border-color: var(--brand-primary);
 }
 
 .response-title {
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #24292f;
-    margin-bottom: 16px;
+    font-family: var(--font-brand);
+    font-size: var(--text-md);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
 }
 
 .response-steps {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
 }
 
 .step {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    font-family: var(--font-primary);
 }
 
 .step i {
-    color: #08872B;
+    color: var(--brand-primary);
 }
 
 .step.miss i {
-    color: #d1242f;
+    color: var(--state-danger);
 }
 
 .step.success i {
-    color: #08872B;
+    color: var(--brand-primary);
 }
 
 .step.neutral i {
-    color: #656d76;
+    color: var(--text-secondary);
 }
 
 .response-result {
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
+    font-weight: var(--weight-semibold);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-base);
+    font-size: var(--text-sm);
+    font-family: var(--font-primary);
 }
 
 .response-result.miss {
-    background: #ffebee;
-    color: #d1242f;
+    background: var(--alert-danger-bg);
+    color: var(--state-danger);
 }
 
 .response-result.success {
-    background: #e6f7e6;
-    color: #08872B;
+    background: var(--alert-success-bg);
+    color: var(--brand-primary);
 }
 
 .response-result.neutral {
-    background: #f6f8fa;
-    color: #656d76;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     .scenario-comparison {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: var(--space-6);
     }
 }
