@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideRuntimeITDR.module.css';
 
 const SlideRuntimeITDR = () => (
   <SlideLayout>
@@ -33,7 +34,7 @@ const SlideRuntimeITDR = () => (
           </h3>
 
           <div style={{ marginBottom: '24px' }}>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Focus Areas:</h4>
+            <h4 className="focus-areas">Focus Areas:</h4>
             <ul className="blind-spots-list">
               <li><i className="fas fa-circle"></i>Authentication events</li>
               <li><i className="fas fa-circle"></i>Network traffic analysis</li>
@@ -61,7 +62,7 @@ const SlideRuntimeITDR = () => (
           </h3>
 
           <div style={{ marginBottom: '24px' }}>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Focus Areas:</h4>
+            <h4 className="focus-areas">Focus Areas:</h4>
             <ul className="blind-spots-list">
               <li><i className="fas fa-circle"></i>In-application behavior</li>
               <li><i className="fas fa-circle"></i>User intent analysis</li>
@@ -70,8 +71,8 @@ const SlideRuntimeITDR = () => (
             </ul>
           </div>
 
-          <div style={{ background: '#f0f9f4', border: '1px solid #00872b', borderRadius: '12px', padding: '20px' }}>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#24292f', marginBottom: '12px' }}>Advantages:</h4>
+          <div className={styles['advantages-section']}>
+            <h4>Advantages:</h4>
             <ul className="blind-spots-list">
               <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Real-time threat detection</li>
               <li><i className="fas fa-check" style={{ color: '#00872b' }}></i>Application-aware context</li>

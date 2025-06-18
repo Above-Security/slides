@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideDeployment.module.css';
 
 const SlideDeployment = () => (
   <SlideLayout>
@@ -9,48 +10,48 @@ const SlideDeployment = () => (
     </header>
 
     <div className="content-section">
-      <div className="deployment-overview">
-        <div className="deployment-method">
-          <h3 className="deployment-title">
+      <div className={styles['deployment-overview']}>
+        <div className={styles['deployment-method']}>
+          <h3 className={styles['deployment-title']}>
             <i className="fas fa-rocket"></i>
             Deployment Model
           </h3>
 
-          <div className="deployment-steps">
-            <div className="deployment-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <h4 className="step-title">Browser Extension Distribution</h4>
-                <p className="step-description">Deploy via enterprise browser management (Chrome, Edge, Firefox)</p>
+          <div className={styles['deployment-steps']}>
+            <div className={styles['deployment-step']}>
+              <div className={styles['step-number']}>1</div>
+              <div className={styles['step-content']}>
+                <h4 className={styles['step-title']}>Browser Extension Distribution</h4>
+                <p className={styles['step-description']}>Deploy via enterprise browser management (Chrome, Edge, Firefox)</p>
               </div>
             </div>
 
-            <div className="deployment-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <h4 className="step-title">Cloud Backend Configuration</h4>
-                <p className="step-description">SaaS platform processes behavioral data and provides threat detection</p>
+            <div className={styles['deployment-step']}>
+              <div className={styles['step-number']}>2</div>
+              <div className={styles['step-content']}>
+                <h4 className={styles['step-title']}>Cloud Backend Configuration</h4>
+                <p className={styles['step-description']}>SaaS platform processes behavioral data and provides threat detection</p>
               </div>
             </div>
 
-            <div className="deployment-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <h4 className="step-title">Baseline Establishment</h4>
-                <p className="step-description">Learn normal user behavior patterns across applications</p>
+            <div className={styles['deployment-step']}>
+              <div className={styles['step-number']}>3</div>
+              <div className={styles['step-content']}>
+                <h4 className={styles['step-title']}>Baseline Establishment</h4>
+                <p className={styles['step-description']}>Learn normal user behavior patterns across applications</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="deployment-constraints">
-          <div className="constraints-grid">
-            <div className="constraint-card supported">
-              <h3 className="constraint-header">
+        <div className={styles['deployment-constraints']}>
+          <div className={styles['constraints-grid']}>
+            <div className={`${styles['constraint-card']} ${styles['supported']}`}>
+              <h3 className={styles['constraint-header']}>
                 <i className="fas fa-check-circle"></i>
                 Supported Environments
               </h3>
-              <ul className="constraint-list">
+              <ul className={styles['constraint-list']}>
                 <li>
                   <i className="fas fa-check"></i>
                   <span>Managed corporate devices</span>
@@ -70,12 +71,12 @@ const SlideDeployment = () => (
               </ul>
             </div>
 
-            <div className="constraint-card limitations">
-              <h3 className="constraint-header">
+            <div className={`${styles['constraint-card']} ${styles['limitations']}`}>
+              <h3 className={styles['constraint-header']}>
                 <i className="fas fa-exclamation-triangle"></i>
                 Current Limitations
               </h3>
-              <ul className="constraint-list">
+              <ul className={styles['constraint-list']}>
                 <li>
                   <i className="fas fa-times"></i>
                   <span>BYOD/unmanaged devices (extension removal risk)</span>

@@ -1,0 +1,30 @@
+/* SlideRuntimeITDR.jsx - Runtime ITDR Styles */
+
+.advantages-section {
+  background: #f0f9f4;
+  border: 1px solid #00872b;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.advantages-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 12px;
+}
+
+.advantages-section .blind-spots-list li i {
+  color: #00872b;
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
