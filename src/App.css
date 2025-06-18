@@ -56,28 +56,37 @@ body {
 }
 
 .nav-button {
-  width: 32px;
-  height: 32px;
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
-  color: #24292f;
-  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00872b, #5fed83);
+  border: 2px solid #00872b;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  transition: all 0.2s;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 135, 43, 0.2);
 }
 
 .nav-button:hover:not(:disabled) {
-  background: #f6f8fa;
-  border-color: #00872b;
+  background: linear-gradient(135deg, #5fed83, #00872b);
+  border-color: #5fed83;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 135, 43, 0.3);
 }
 
 .nav-button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  background: #f6f8fa;
+  border-color: #d1d9e0;
+  color: #656d76;
+  transform: none;
+  box-shadow: none;
 }
 
 .slide-counter {
@@ -2732,5 +2741,194 @@ body {
   .matrix-table td {
     padding: 12px 8px;
   }
+}
+
+
+/* Competitive Landscape Slide (Slide 7) */
+.competitive-landscape {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.market-gap-section {
+  text-align: center;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #f6f8fa, #ffffff);
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid #d1d9e0;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.section-title i {
+  color: #00872b;
+  font-size: 32px;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #656d76;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-text strong {
+  color: #00872b;
+  font-weight: 600;
+}
+
+.competitor-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  border: 2px solid #d1d9e0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 135, 43, 0.15);
+  border-color: #00872b;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00872b, #5fed83);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-header i {
+  color: #00872b;
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.category-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.category-limitation {
+  background: rgba(209, 36, 47, 0.1);
+  color: #d1242f;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.competitor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.competitor {
+  background: #f6f8fa;
+  color: #24292f;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #d1d9e0;
+  transition: all 0.2s ease;
+}
+
+.competitor:hover {
+  background: #00872b;
+  color: white;
+  border-color: #00872b;
+}
+
+.category-gap {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  font-style: italic;
+  border-left: 3px solid #00872b;
+  padding-left: 12px;
+  margin-top: 16px;
+}
+
+.runtime-protection-card {
+  background: linear-gradient(135deg, #00872b, #5fed83);
+  color: white;
+  border: none;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.runtime-protection-card .category-header {
+  justify-content: center;
+}
+
+.runtime-protection-card .category-header i {
+  color: white;
+}
+
+.runtime-protection-card .category-header h4 {
+  color: white;
+}
+
+.runtime-protection-card .category-limitation {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.runtime-protection-card .competitor {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.runtime-protection-card .competitor:hover {
+  background: white;
+  color: #00872b;
+}
+
+.runtime-protection-card .category-gap {
+  color: rgba(255, 255, 255, 0.9);
+  border-left-color: white;
 }
 
