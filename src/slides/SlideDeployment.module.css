@@ -1,0 +1,214 @@
+/* SlideDeployment.jsx - Deployment Styles */
+
+.deployment-overview {
+  animation: github-slide-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.deployment-method {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.deployment-method::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #00872b, #5fed83);
+}
+
+.deployment-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deployment-title i {
+  color: #00872b;
+  font-size: 28px;
+}
+
+.deployment-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.deployment-step {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.deployment-step:hover {
+  background: #ffffff;
+  border-color: #00872b;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00872b 0%, #5fed83 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: white;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 135, 43, 0.2);
+}
+
+.step-content {
+  text-align: center;
+}
+
+.step-title {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+.step-description {
+  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.deployment-constraints {
+  margin-top: 32px;
+}
+
+.constraints-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.constraint-card {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.constraint-card.supported {
+  border-color: #00872b;
+  background: linear-gradient(135deg, #bfffd1 0%, rgba(191, 255, 209, 0.3) 100%);
+}
+
+.constraint-card.limitations {
+  border-color: #d1242f;
+  background: linear-gradient(135deg, #fed7d7 0%, rgba(254, 215, 215, 0.3) 100%);
+}
+
+.constraint-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.constraint-header {
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #24292f;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.constraint-header i {
+  font-size: 20px;
+}
+
+.constraint-card.supported .constraint-header i {
+  color: #00872b;
+}
+
+.constraint-card.limitations .constraint-header i {
+  color: #d1242f;
+}
+
+.constraint-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.constraint-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #24292f;
+}
+
+.constraint-list li:last-child {
+  margin-bottom: 0;
+}
+
+.constraint-list li i {
+  margin-right: 12px;
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+}
+
+.constraint-card.supported .constraint-list li i {
+  color: #00872b;
+}
+
+.constraint-card.limitations .constraint-list li i {
+  color: #d1242f;
+}
+
+@keyframes github-slide-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .deployment-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .constraints-grid {
+    grid-template-columns: 1fr;
+  }
+}

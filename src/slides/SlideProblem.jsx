@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideProblem.module.css';
 
 const SlideProblem = () => (
   <SlideLayout>
@@ -9,22 +10,22 @@ const SlideProblem = () => (
     </header>
 
     <div className="content-section">
-      <div className="landscape-grid">
-        <div className="landscape-card">
-          <h3 className="landscape-title">
+      <div className={styles['landscape-grid']}>
+        <div className={styles['landscape-card']}>
+          <h3 className={styles['landscape-title']}>
             <i className="fas fa-exclamation-triangle"></i>
             The Critical Gap
           </h3>
-          <p className="landscape-text">
+          <p className={styles['landscape-text']}>
             Existing tools focus on <strong>access</strong>, not actual <strong>behavior</strong> inside apps.
           </p>
-          <p className="landscape-text" style={{ marginTop: '12px' }}>
+          <p className={styles['landscape-text']} style={{ marginTop: '12px' }}>
             Compromised credentials alone don't tell the full story.
           </p>
 
-          <div className="blind-spots-card">
-            <h4 className="blind-spots-title">Traditional Security Blind Spots:</h4>
-            <ul className="blind-spots-list">
+          <div className={styles['blind-spots-card']}>
+            <h4 className={styles['blind-spots-title']}>Traditional Security Blind Spots:</h4>
+            <ul className={styles['blind-spots-list']}>
               <li><i className="fas fa-times"></i> Post-authentication behavior</li>
               <li><i className="fas fa-times"></i> In-application activities</li>
               <li><i className="fas fa-times"></i> Session-level visibility</li>
@@ -33,56 +34,56 @@ const SlideProblem = () => (
           </div>
         </div>
 
-        <div className="landscape-card">
-          <h3 className="landscape-title">
+        <div className={styles['landscape-card']}>
+          <h3 className={styles['landscape-title']}>
             <i className="fas fa-crosshairs"></i>
             Emerging Identity Threats
           </h3>
 
-          <div className="threat-item">
-            <div className="threat-content">
-              <div className="threat-icon oauth">
+          <div className={styles['threat-item']}>
+            <div className={styles['threat-content']}>
+              <div className={`${styles['threat-icon']} ${styles['oauth']}`}>
                 <i className="fab fa-google"></i>
               </div>
-              <div className="threat-details">
-                <h4 className="threat-name">OAuth Phishing</h4>
-                <p className="threat-description">Malicious apps trick users into granting access via OAuth, bypassing traditional authentication mechanisms</p>
+              <div className={styles['threat-details']}>
+                <h4 className={styles['threat-name']}>OAuth Phishing</h4>
+                <p className={styles['threat-description']}>Malicious apps trick users into granting access via OAuth, bypassing traditional authentication mechanisms</p>
               </div>
             </div>
           </div>
 
-          <div className="threat-item">
-            <div className="threat-content">
-              <div className="threat-icon session">
+          <div className={styles['threat-item']}>
+            <div className={styles['threat-content']}>
+              <div className={`${styles['threat-icon']} ${styles['session']}`}>
                 <i className="fas fa-key"></i>
               </div>
-              <div className="threat-details">
-                <h4 className="threat-name">Session Hijacking</h4>
-                <p className="threat-description">Attackers steal session tokens to impersonate users without re-authentication</p>
+              <div className={styles['threat-details']}>
+                <h4 className={styles['threat-name']}>Session Hijacking</h4>
+                <p className={styles['threat-description']}>Attackers steal session tokens to impersonate users without re-authentication</p>
               </div>
             </div>
           </div>
 
-          <div className="threat-item">
-            <div className="threat-content">
-              <div className="threat-icon insider">
+          <div className={styles['threat-item']}>
+            <div className={styles['threat-content']}>
+              <div className={`${styles['threat-icon']} ${styles['insider']}`}>
                 <i className="fas fa-user-times"></i>
               </div>
-              <div className="threat-details">
-                <h4 className="threat-name">Low-and-Slow Data Scraping</h4>
-                <p className="threat-description">Incremental data exfiltration designed to evade traditional security alerts</p>
+              <div className={styles['threat-details']}>
+                <h4 className={styles['threat-name']}>Low-and-Slow Data Scraping</h4>
+                <p className={styles['threat-description']}>Incremental data exfiltration designed to evade traditional security alerts</p>
               </div>
             </div>
           </div>
 
-          <div className="threat-item">
-            <div className="threat-content">
-              <div className="threat-icon insider">
+          <div className={styles['threat-item']}>
+            <div className={styles['threat-content']}>
+              <div className={`${styles['threat-icon']} ${styles['insider']}`}>
                 <i className="fas fa-user-secret"></i>
               </div>
-              <div className="threat-details">
-                <h4 className="threat-name">Insider Threats</h4>
-                <p className="threat-description">Malicious or negligent insiders misuse legitimate access to compromise data</p>
+              <div className={styles['threat-details']}>
+                <h4 className={styles['threat-name']}>Insider Threats</h4>
+                <p className={styles['threat-description']}>Malicious or negligent insiders misuse legitimate access to compromise data</p>
               </div>
             </div>
           </div>

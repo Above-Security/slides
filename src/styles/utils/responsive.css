@@ -24,7 +24,6 @@
   }
 
   .landscape-grid,
-  .detection-scenarios,
   .constraints-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);

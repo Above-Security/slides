@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
+import styles from './SlideVsPush.module.css';
 
 const SlideVsPush = () => (
   <SlideLayout>
@@ -55,45 +56,45 @@ const SlideVsPush = () => (
           </div>
         </div>
 
-        <div className="use-case-comparison">
-          <h3 className="use-case-title">ATO Scenario: Cyberhaven-Style OAuth Abuse</h3>
-          <div className="scenario-comparison">
-            <div className="push-response">
-              <h4 className="response-title">Push Security Response</h4>
-              <div className="response-steps">
-                <div className="step">
+        <div className={styles['use-case-comparison']}>
+          <h3 className={styles['use-case-title']}>ATO Scenario: Cyberhaven-Style OAuth Abuse</h3>
+          <div className={styles['scenario-comparison']}>
+            <div className={styles['push-response']}>
+              <h4 className={styles['response-title']}>Push Security Response</h4>
+              <div className={styles['response-steps']}>
+                <div className={styles['step']}>
                   <i className="fas fa-check-circle"></i>
                   <span>Detects credential reuse patterns</span>
                 </div>
-                <div className="step">
+                <div className={styles['step']}>
                   <i className="fas fa-check-circle"></i>
                   <span>Flags suspicious login locations</span>
                 </div>
-                <div className="step neutral">
+                <div className={`${styles['step']} ${styles['neutral']}`}>
                   <i className="fas fa-question-circle"></i>
                   <span>May not detect malicious OAuth consent on legitimate Google page</span>
                 </div>
               </div>
-              <p className="response-result neutral">Result: Strong session protection, potential OAuth gap</p>
+              <p className={`${styles['response-result']} ${styles['neutral']}`}>Result: Strong session protection, potential OAuth gap</p>
             </div>
 
-            <div className="above-response">
-              <h4 className="response-title">Above Security Response</h4>
-              <div className="response-steps">
-                <div className="step">
+            <div className={styles['above-response']}>
+              <h4 className={styles['response-title']}>Above Security Response</h4>
+              <div className={styles['response-steps']}>
+                <div className={styles['step']}>
                   <i className="fas fa-search"></i>
                   <span>Analyzes OAuth consent page semantically</span>
                 </div>
-                <div className="step">
+                <div className={styles['step']}>
                   <i className="fas fa-exclamation-triangle"></i>
                   <span>Detects excessive permissions request</span>
                 </div>
-                <div className="step success">
+                <div className={`${styles['step']} ${styles['success']}`}>
                   <i className="fas fa-shield-alt"></i>
                   <span>Blocks malicious consent with user education</span>
                 </div>
               </div>
-              <p className="response-result success">Result: ATO prevented at point of user decision</p>
+              <p className={`${styles['response-result']} ${styles['success']}`}>Result: ATO prevented at point of user decision</p>
             </div>
           </div>
         </div>
