@@ -1,32 +1,20 @@
 /* Shared Competitor Comparison Styles - Used in SlideVsPush, SlideVsValence, etc. */
 
 .competitor-comparison {
-    padding: 40px;
-    animation: slide-in-up 1.2s ease-out 0.2s both;
-}
-
-@keyframes slide-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    padding: var(--space-10);
+    animation: slideInUp 1.2s var(--ease-out) 0.2s both;
 }
 
 .comparison-intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-10);
 }
 
 .intro-text {
-    font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 18px;
-    color: #656d76;
-    line-height: 1.6;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -45,23 +33,23 @@
 
 .competitor-approach,
 .above-advantage {
-    background: #ffffff;
-    border: 1px solid #d1d9e0;
-    border-radius: 12px;
-    padding: 24px;
+    background: var(--surface-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
 }
 
 .above-advantage {
-    border-color: #08872B;
-    background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%);
+    border-color: var(--brand-primary);
+    background: linear-gradient(135deg, var(--surface-primary) 0%, #f0fff4 100%);
 }
 
 .approach-title,
 .advantage-title {
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: #24292f;
+    font-family: var(--font-brand);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -69,7 +57,7 @@
 }
 
 .advantage-title {
-    color: #08872B;
+    color: var(--brand-primary);
 }
 
 .approach-list,
@@ -81,25 +69,25 @@
 
 .approach-list li,
 .advantage-list li {
-    font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 15px;
-    color: #656d76;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    padding-left: 20px;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-5);
     position: relative;
 }
 
 .approach-list li::before {
     content: "•";
-    color: #656d76;
+    color: var(--text-secondary);
     position: absolute;
     left: 0;
 }
 
 .advantage-list li::before {
     content: "✓";
-    color: #08872B;
+    color: var(--brand-primary);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -122,39 +110,39 @@
 }
 
 .advantage-highlight {
-    background: #e6f7e6;
-    color: #08872B;
+    background: var(--alert-success-bg);
+    color: var(--brand-primary);
 }
 
 /* Competitive Summary */
 .competitive-summary {
     text-align: center;
-    margin-top: 40px;
-    padding: 24px;
-    background: linear-gradient(135deg, #08872B 0%, #5FED83 100%);
-    border-radius: 12px;
-    color: white;
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background: var(--brand-gradient-vertical);
+    border-radius: var(--radius-lg);
+    color: var(--text-inverse);
 }
 
 .summary-title {
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 24px;
-    font-weight: 600;
+    font-family: var(--font-brand);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
     margin-bottom: 16px;
 }
 
 .summary-text {
-    font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     margin: 0;
 }
 
 .summary-stats {
     display: flex;
     justify-content: center;
-    gap: 48px;
-    margin-top: 24px;
+    gap: var(--space-12);
+    margin-top: var(--space-6);
 }
 
 .stat {
@@ -163,15 +151,15 @@
 
 .stat-number {
     display: block;
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 36px;
-    font-weight: 700;
+    font-family: var(--font-brand);
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-bold);
     line-height: 1;
 }
 
 .stat-label {
-    font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
     opacity: 0.9;
 }
 

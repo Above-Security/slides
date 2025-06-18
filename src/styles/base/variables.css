@@ -21,10 +21,10 @@
   --color-warning: #fd7e14;
   --color-info: #6f42c1;
   
-  /* Typography */
-  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography - GitHub Brand Compliant */
+  --font-family-primary: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-brand: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-family-mono: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: 'Monaspace Neon', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Font Weights */
   --font-weight-light: 200;

@@ -1,7 +1,7 @@
 /* SlideCaseStudy.jsx - Case Study Styles */
 
 .case-study-container {
-  animation: github-case-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  animation: githubCaseReveal 1.2s var(--ease-github) 0.1s both;
 }
 
 .incident-overview {
@@ -42,10 +42,10 @@
 }
 
 .incident-description {
-  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  color: #24292f;
-  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  color: var(--text-primary);
+  line-height: var(--leading-relaxed);
 }
 
 .detection-analysis {
@@ -139,10 +139,10 @@
 }
 
 .detection-description {
-  font-family: 'Monaspace', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 15px;
-  color: #656d76;
-  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
   margin: 0;
 }
 
@@ -173,16 +173,4 @@
   color: #24292f;
   line-height: 1.6;
   margin: 0;
-}
-
-@keyframes github-case-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
