@@ -23,8 +23,8 @@ const SlideProblem = () => (
           <div className="blind-spots-card">
             <h4 className="blind-spots-title">Undetected Threats:</h4>
             <ul className="blind-spots-list">
-              <li><i className="fas fa-times"></i> LOTS attacks via trusted services (OAuth, DocuSign, Dropbox)</li>
-              <li><i className="fas fa-times"></i> Sophisticated phishing on fake SaaS portals</li>
+              <li><i className="fas fa-times"></i> Sophisticated phishing campaigns targeting authenticated users</li>
+              <li><i className="fas fa-times"></i> Advanced social engineering via trusted platforms</li>
               <li><i className="fas fa-times"></i> Gradual insider data exfiltration</li>
               <li><i className="fas fa-times"></i> Session hijacking via stolen tokens</li>
             </ul>
@@ -34,7 +34,7 @@ const SlideProblem = () => (
         <div className="landscape-card">
           <h3 className="landscape-title">
             <i className="fas fa-bug"></i>
-            Real Attack Examples
+            Sophisticated Phishing Examples
           </h3>
 
           <div className="threat-item">
@@ -55,8 +55,8 @@ const SlideProblem = () => (
                 <i className="fab fa-google"></i>
               </div>
               <div className="threat-details">
-                <h4 className="threat-name">LOTS OAuth Abuse</h4>
-                <p className="threat-description">Malicious apps abuse trusted OAuth pages to trick users into granting excessive permissions.</p>
+                <h4 className="threat-name">LOTS OAuth Phishing</h4>
+                <p className="threat-description">Sophisticated campaigns abuse trusted OAuth flows and legitimate services to bypass traditional email security.</p>
               </div>
             </div>
           </div>
@@ -67,8 +67,8 @@ const SlideProblem = () => (
                 <i className="fas fa-fish"></i>
               </div>
               <div className="threat-details">
-                <h4 className="threat-name">Zero-Day Phishing</h4>
-                <p className="threat-description">Pixel-perfect fake SaaS portals bypass traditional detection. Users enter credentials before realizing it's fake.</p>
+                <h4 className="threat-name">Zero-Day Phishing Portals</h4>
+                <p className="threat-description">Pixel-perfect fake SaaS portals using advanced evasion techniques that bypass traditional detection methods.</p>
               </div>
             </div>
           </div>
