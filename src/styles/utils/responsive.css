@@ -11,6 +11,15 @@
   pointer-events: none;
 }
 
+.logo {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3xl);
+}
+
 /* Tablet Breakpoint */
 @media (max-width: 1024px) {
   .slide-container {

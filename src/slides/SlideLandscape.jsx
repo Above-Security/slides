@@ -16,8 +16,8 @@ const SlideLandscape = () => (
           The Runtime Protection Gap
         </h3>
         <p className={styles['intro-text']}>
-          Email security prevents phishing at delivery. SaaS security finds misconfigurations post-deployment.<br />
-          Browser security offers policy controls. <strong>Above provides runtime protection during user interactions.</strong>
+          Email security stops bad content at delivery. SaaS security flags risky settings after the fact. <br />
+          Browsers enforce access policy. <strong>Above sees the threat unfold — during the session — and stops it in the moment.</strong>
         </p>
       </div>
 
@@ -31,34 +31,64 @@ const SlideLandscape = () => (
           <div className={styles['competitor-list']}>
             <span className={styles['competitor']}>Abnormal Security</span>
             <span className={styles['competitor']}>Proofpoint</span>
+            <span className={styles['competitor']}>Sublime</span>
           </div>
-          <p className={styles['category-gap']}>Strong at preventing phishing emails, but misses browser-based ATO attempts</p>
+          <p className={styles['category-gap']}>Catches phishing emails, but blind once the user clicks. No visibility into LOTS, OAuth phishing, or in-session deception.</p>
         </div>
 
         <div className={styles['category-card']}>
           <div className={styles['category-header']}>
             <i className="fas fa-cloud"></i>
-            <h4>SaaS Security</h4>
+            <h4>SaaS Security Posture</h4>
             <span className={styles['category-limitation']}>Post-Configuration</span>
           </div>
           <div className={styles['competitor-list']}>
             <span className={styles['competitor']}>Valence Security</span>
-            <span className={styles['competitor']}>Reco AI</span>
+            <span className={styles['competitor']}>Reco</span>
+            <span className={styles['competitor']}>Grip Security</span>
+            <span className={styles['competitor']}>Savvy</span>
           </div>
-          <p className={styles['category-gap']}>Excellent at finding risky configurations, but detects threats after they occur</p>
+          <p className={styles['category-gap']}>Map risks via SaaS logs — if they exist. No real-time view. Miss active misuse, misbehavior, and gray-area threats.</p>
         </div>
 
         <div className={styles['category-card']}>
           <div className={styles['category-header']}>
-            <i className="fas fa-browser"></i>
-            <h4>Browser Security</h4>
+            <i className="fas fa-globe"></i>
+            <h4>Inline CASB</h4>
+            <span className={styles['category-limitation']}>Traffic Proxy</span>
+          </div>
+          <div className={styles['competitor-list']}>
+            <span className={styles['competitor']}>Netskope</span>
+            <span className={styles['competitor']}>Skyhigh Security</span>
+          </div>
+          <p className={styles['category-gap']}>Struggles with SSL pinning. No access to DOM or real user behavior. Can’t see what the user sees or intends.</p>
+        </div>
+
+        <div className={styles['category-card']}>
+          <div className={styles['category-header']}>
+            <i className="fas fa-globe-americas"></i>
+            <h4>Enterprise Browsers</h4>
             <span className={styles['category-limitation']}>Policy-Based</span>
           </div>
           <div className={styles['competitor-list']}>
-            <span className={styles['competitor']}>Island Enterprise</span>
-            <span className={styles['competitor']}>Push Security</span>
+            <span className={styles['competitor']}>Island</span>
+            <span className={styles['competitor']}>Talon</span>
           </div>
-          <p className={styles['category-gap']}>Strong policy enforcement, but limited semantic understanding of threats</p>
+          <p className={styles['category-gap']}>Govern access and usage with tight policies — but no awareness of intent, deception, or insider manipulation.</p>
+        </div>
+
+        <div className={styles['category-card']}>
+          <div className={styles['category-header']}>
+            <i className="fas fa-user-secret"></i>
+            <h4>UEBA & ITDR</h4>
+            <span className={styles['category-limitation']}>After the Incident</span>
+          </div>
+          <div className={styles['competitor-list']}>
+            <span className={styles['competitor']}>DTEX</span>
+            <span className={styles['competitor']}>Exabeam</span>
+            <span className={styles['competitor']}>Reveal Security</span>
+          </div>
+          <p className={styles['category-gap']}>Exabeam reacts at the SIEM layer — too late. DTEX lacks browser visibility. Reveal relies on coarse UI flows, not intent.</p>
         </div>
 
         <div className={`${styles['category-card']} ${styles['above-category']}`}>
@@ -70,7 +100,7 @@ const SlideLandscape = () => (
           <div className={styles['competitor-list']}>
             <span className={`${styles['competitor']} ${styles['above-highlight']}`}>Above Security</span>
           </div>
-          <p className={styles['category-advantage-text']}>Semantic understanding at the moment of user decision</p>
+          <p className={styles['category-advantage-text']}>Understands behavior in context. Catches threats others miss — when it’s still possible to stop them.</p>
         </div>
       </div>
 

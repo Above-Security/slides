@@ -6,7 +6,7 @@ const SlideDetection = () => (
   <SlideLayout>
     <header className="slide-header">
       <h1 className="slide-title">Real-World Detection</h1>
-      <p className="slide-subtitle">Sophisticated Phishing Prevention</p>
+      <p className="slide-subtitle">Where Runtime Visibility Changes the Outcome</p>
     </header>
 
     <div className="content-section">
@@ -16,18 +16,18 @@ const SlideDetection = () => (
             <div className={styles['scenario-icon']}>
               <i className="fas fa-fish"></i>
             </div>
-            <h3 className={styles['scenario-title']}>Advanced Phishing Portal Detection</h3>
+            <h3 className={styles['scenario-title']}>Fake Microsoft Login Page (AiTM Phish)</h3>
           </div>
           <div className={styles['scenario-content']}>
             <p className={styles['scenario-description']}>
-              <strong>Attack:</strong> Pixel-perfect fake Office 365 login portal using new domain, valid SSL certificate, and advanced evasion techniques.
+              <strong>Attack:</strong> Attacker sends link to pixel-perfect fake Microsoft login hosted on compromised SharePoint subdomain. Uses AiTM kit to harvest credentials + session cookies.
             </p>
             <p className={styles['scenario-detection']}>
-              <strong>Detection:</strong> LLM analysis identifies malicious intent through page semantics, form behavior, and contextual anomalies despite visual similarity.
+              <strong>Detection:</strong> Above flags form structure and JavaScript behavior inconsistent with legitimate login flow — semantic model detects spoofed branding and session token theft pattern.
             </p>
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-check"></i>
-              Blocks credential entry before compromise
+              Session blocked before credentials submitted
             </div>
           </div>
         </div>
@@ -37,18 +37,18 @@ const SlideDetection = () => (
             <div className={styles['scenario-icon']}>
               <i className="fab fa-google"></i>
             </div>
-            <h3 className={styles['scenario-title']}>LOTS OAuth Phishing Prevention</h3>
+            <h3 className={styles['scenario-title']}>Consent Phishing via OAuth (LOTS)</h3>
           </div>
           <div className={styles['scenario-content']}>
             <p className={styles['scenario-description']}>
-              <strong>Attack:</strong> Sophisticated campaign using fake "Google Drive Backup" app with lookalike consent pages and excessive permission requests.
+              <strong>Attack:</strong> Attacker sends fake “Google Workspace Backup” OAuth app with Google branding. App asks for Gmail read/send + Drive access.
             </p>
             <p className={styles['scenario-detection']}>
-              <strong>Detection:</strong> Runtime analysis of OAuth consent flows, app legitimacy verification, and permission scope assessment in real-time.
+              <strong>Detection:</strong> Above detects mismatch between app identity, permissions requested, and consent screen branding — LOTS signature pattern flagged.
             </p>
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-check"></i>
-              Prevents malicious OAuth consent before token granted
+              OAuth token request blocked before consent
             </div>
           </div>
         </div>
@@ -56,20 +56,20 @@ const SlideDetection = () => (
         <div className={styles['scenario-card']}>
           <div className={styles['scenario-header']}>
             <div className={styles['scenario-icon']}>
-              <i className="fas fa-envelope"></i>
+              <i className="fas fa-envelope-open-text"></i>
             </div>
-            <h3 className={styles['scenario-title']}>Business Email Compromise Detection</h3>
+            <h3 className={styles['scenario-title']}>Account Takeover via Shared Cookie</h3>
           </div>
           <div className={styles['scenario-content']}>
             <p className={styles['scenario-description']}>
-              <strong>Attack:</strong> Sophisticated BEC campaign using compromised executive accounts to request wire transfers through legitimate email platforms.
+              <strong>Attack:</strong> Attacker reuses session cookie from shared browser profile to access internal CRM without triggering MFA.
             </p>
             <p className={styles['scenario-detection']}>
-              <strong>Detection:</strong> Behavioral analysis identifies unusual communication patterns and financial request anomalies within email applications.
+              <strong>Detection:</strong> Above detects behavioral mismatch with historical user — different location, click cadence, app navigation pattern triggers identity drift model.
             </p>
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-check"></i>
-              Flags suspicious financial requests for review
+              Session terminated before data access
             </div>
           </div>
         </div>
@@ -77,20 +77,20 @@ const SlideDetection = () => (
         <div className={styles['scenario-card']}>
           <div className={styles['scenario-header']}>
             <div className={styles['scenario-icon']}>
-              <i className="fas fa-user-shield"></i>
+              <i className="fas fa-user-tie"></i>
             </div>
-            <h3 className={styles['scenario-title']}>Privilege Misuse Detection</h3>
+            <h3 className={styles['scenario-title']}>Privileged Misuse by Insider</h3>
           </div>
           <div className={styles['scenario-content']}>
             <p className={styles['scenario-description']}>
-              <strong>Attack:</strong> Marketing user accesses M&A documents in SharePoint outside normal job function after sophisticated social engineering.
+              <strong>Attack:</strong> Departing finance exec accesses acquisition documents across multiple apps two days before exit.
             </p>
             <p className={styles['scenario-detection']}>
-              <strong>Detection:</strong> Cross-app behavioral analysis flags access to sensitive content inconsistent with user role and historical patterns.
+              <strong>Detection:</strong> Above correlates cross-app access behavior, detects deviation from peer role norms, and flags intent mismatch.
             </p>
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-check"></i>
-              Immediate alert for privilege misuse investigation
+              Real-time alert triggered with full session trace
             </div>
           </div>
         </div>

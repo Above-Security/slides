@@ -20,7 +20,7 @@ const SlideProblem = () => (
             Existing tools focus on <strong>access</strong>, not actual <strong>behavior</strong> inside apps.
           </p>
           <p className={`${styles['landscape-text']} mt-3`}>
-            Compromised credentials alone don't tell the full story.
+            Most threats today occur <em>after</em> login — where visibility breaks down.
           </p>
 
           <div className={styles['blind-spots-card']}>
@@ -46,8 +46,10 @@ const SlideProblem = () => (
                 <i className="fab fa-google"></i>
               </div>
               <div className={styles['threat-details']}>
-                <h4 className={styles['threat-name']}>OAuth Phishing</h4>
-                <p className={styles['threat-description']}>Malicious apps trick users into granting access via OAuth, bypassing traditional authentication mechanisms</p>
+                <h4 className={styles['threat-name']}>Semantic Phishing (LOTS)</h4>
+                <p className={styles['threat-description']}>
+                  Living Off Trusted Services (LOTS): attackers exploit legitimate-looking apps and interfaces to trick users into granting access — bypassing email security and MFA.
+                </p>
               </div>
             </div>
           </div>
@@ -59,7 +61,9 @@ const SlideProblem = () => (
               </div>
               <div className={styles['threat-details']}>
                 <h4 className={styles['threat-name']}>Session Hijacking</h4>
-                <p className={styles['threat-description']}>Attackers steal session tokens to impersonate users without re-authentication</p>
+                <p className={styles['threat-description']}>
+                  Attackers steal tokens or cookies to impersonate users, bypassing MFA entirely.
+                </p>
               </div>
             </div>
           </div>
@@ -67,11 +71,13 @@ const SlideProblem = () => (
           <div className={styles['threat-item']}>
             <div className={styles['threat-content']}>
               <div className={`${styles['threat-icon']} ${styles['insider']}`}>
-                <i className="fas fa-user-times"></i>
+                <i className="fas fa-user-clock"></i>
               </div>
               <div className={styles['threat-details']}>
                 <h4 className={styles['threat-name']}>Low-and-Slow Data Scraping</h4>
-                <p className={styles['threat-description']}>Incremental data exfiltration designed to evade traditional security alerts</p>
+                <p className={styles['threat-description']}>
+                  Insiders extract sensitive data gradually to avoid detection — flying under the SIEM/DLP radar.
+                </p>
               </div>
             </div>
           </div>
@@ -82,11 +88,14 @@ const SlideProblem = () => (
                 <i className="fas fa-user-secret"></i>
               </div>
               <div className={styles['threat-details']}>
-                <h4 className={styles['threat-name']}>Insider Threats</h4>
-                <p className={styles['threat-description']}>Malicious or negligent insiders misuse legitimate access to compromise data</p>
+                <h4 className={styles['threat-name']}>Gray-Area Insider Misuse</h4>
+                <p className={styles['threat-description']}>
+                  Legitimate users doing inappropriate things with valid access — often invisible to rule-based systems.
+                </p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -94,4 +103,3 @@ const SlideProblem = () => (
 );
 
 export default SlideProblem;
-
