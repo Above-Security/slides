@@ -1,0 +1,27 @@
+/* Main Layout Container */
+.presentation-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide Content Area */
+.slide-content {
+  flex: 1;
+  overflow: auto;
+  background: var(--color-background-primary);
+}
+
+.slide-container {
+  min-height: calc(100vh - 60px);
+  padding: var(--spacing-5xl);
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Content Sections */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
