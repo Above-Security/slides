@@ -64,6 +64,7 @@
     text-align: center;
     min-height: 48px;
     border: 1px solid var(--surface-primary);
+    gap: var(--space-1);
 }
 
 .capability-header {

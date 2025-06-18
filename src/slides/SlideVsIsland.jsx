@@ -6,192 +6,185 @@ const SlideVsIsland = () => (
   <SlideLayout>
     <header className="slide-header">
       <h1 className="slide-title">Above vs. Island Enterprise Browser</h1>
-      <p className="slide-subtitle">Semantic Intelligence vs. Policy Enforcement</p>
+      <p className="slide-subtitle">Behavioral Intelligence vs. Policy Enforcement</p>
     </header>
 
     <div className="competitor-comparison">
       <div className="comparison-intro">
         <p className="intro-text">
-          Island Enterprise Browser provides comprehensive browser security through policy enforcement.<br />
-          <strong>Above adds semantic intelligence to existing browsers.</strong>
+          Island enforces usage policy through a controlled browser environment.<br />
+          <strong>Above enables real-time detection of subtle behavioral threats in the browsers users already trust and use.</strong>
         </p>
       </div>
 
-      <div className="comparison-grid">
-        <div className={styles['deployment-comparison']}>
-          <div className={styles['deployment-approach']}>
-            <h3 className="approach-title">
-              <i className="fas fa-browser"></i>
-              Island's Browser Strategy
-            </h3>
-            <div className={styles['deployment-steps']}>
-              <div className={`${styles['step']} ${styles['complex']}`}>
-                <i className="fas fa-download"></i>
-                <span>Deploy enterprise browser replacement</span>
-              </div>
-              <div className={`${styles['step']} ${styles['complex']}`}>
-                <i className="fas fa-users-cog"></i>
-                <span>Train employees on new browser interface</span>
-              </div>
-              <div className={`${styles['step']} ${styles['complex']}`}>
-                <i className="fas fa-tools"></i>
-                <span>Migrate browser-based workflows and bookmarks</span>
-              </div>
-              <div className={`${styles['step']} ${styles['complex']}`}>
-                <i className="fas fa-shield-alt"></i>
-                <span>Configure granular security policies</span>
-              </div>
+      <div className={styles['deployment-comparison']}>
+        <div className={styles['deployment-approach']}>
+          <h3 className="approach-title">
+            <i className="fas fa-globe"></i>
+            Island's Browser Strategy
+          </h3>
+          <div className={styles['deployment-steps']}>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-download"></i>
+              <span>Replace existing browsers with Island</span>
             </div>
-            <div className={styles['deployment-timeline']}>
-              <i className="fas fa-clock"></i>
-              <span>Deployment: 3-6 months</span>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-users-cog"></i>
+              <span>Train users on a new browser UI</span>
+            </div>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-tools"></i>
+              <span>Reconfigure bookmarks, workflows, extensions</span>
+            </div>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-shield-alt"></i>
+              <span>Define and enforce granular policies</span>
             </div>
           </div>
-
-          <div className={`${styles['deployment-approach']} ${styles['above']}`}>
-            <h3 className="approach-title">
-              <i className="fas fa-puzzle-piece"></i>
-              Above's Extension Strategy
-            </h3>
-            <div className={styles['deployment-steps']}>
-              <div className={`${styles['step']} ${styles['simple']}`}>
-                <i className="fas fa-download"></i>
-                <span>Deploy browser extension via existing MDM</span>
-              </div>
-              <div className={`${styles['step']} ${styles['simple']}`}>
-                <i className="fas fa-user-check"></i>
-                <span>Zero user training required</span>
-              </div>
-              <div className={`${styles['step']} ${styles['simple']}`}>
-                <i className="fas fa-cog"></i>
-                <span>Works with existing browser workflows</span>
-              </div>
-              <div className={`${styles['step']} ${styles['simple']}`}>
-                <i className="fas fa-brain"></i>
-                <span>Intelligent threat detection with user education</span>
-              </div>
-            </div>
-            <div className={styles['deployment-timeline']}>
-              <i className="fas fa-rocket"></i>
-              <span>Deployment: Same day</span>
-            </div>
+          <div className={styles['deployment-timeline']}>
+            <i className="fas fa-clock"></i>
+            <span>Deployment: Months</span>
           </div>
         </div>
 
-        <div className={styles['capability-comparison']}>
-          <h3 className={styles['capability-title']}>Security Approach Comparison</h3>
-          <div className={styles['capability-grid']}>
-            <div className={styles['capability-category']}>
-              <h4>Data Protection</h4>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Island:</span>
-                <span className={styles['capability-desc']}>Policy-based controls (configurable)</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Above:</span>
-                <span className={styles['capability-desc']}>Semantic analysis of user intent</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
+        <div className={`${styles['deployment-approach']} ${styles['above']}`}>
+          <h3 className="approach-title">
+            <i className="fas fa-puzzle-piece"></i>
+            Above's Extension Strategy
+          </h3>
+          <div className={styles['deployment-steps']}>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-download"></i>
+              <span>Deploy lightweight browser extension</span>
             </div>
-
-            <div className={styles['capability-category']}>
-              <h4>User Experience</h4>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Island:</span>
-                <span className={styles['capability-desc']}>New browser interface to learn</span>
-                <i className={`fas fa-minus ${styles['capability-icon']} ${styles['neutral']}`}></i>
-              </div>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Above:</span>
-                <span className={styles['capability-desc']}>Works with familiar browsers</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-user-check"></i>
+              <span>No change to browser UI or user behavior</span>
             </div>
-
-            <div className={styles['capability-category']}>
-              <h4>Threat Detection</h4>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Island:</span>
-                <span className={styles['capability-desc']}>Policy-based restrictions and monitoring</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Above:</span>
-                <span className={styles['capability-desc']}>LLM semantic threat understanding</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-brain"></i>
+              <span>LLM-driven analysis of in-session activity</span>
             </div>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-shield-alt"></i>
+              <span>Blocks threats based on intent, not rules</span>
+            </div>
+          </div>
+          <div className={styles['deployment-timeline']}>
+            <i className="fas fa-rocket"></i>
+            <span>Deployment: Same day</span>
+          </div>
+        </div>
+      </div>
 
-            <div className={styles['capability-category']}>
-              <h4>Deployment Speed</h4>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Island:</span>
-                <span className={styles['capability-desc']}>3-6 month enterprise rollout</span>
-                <i className={`fas fa-minus ${styles['capability-icon']} ${styles['neutral']}`}></i>
-              </div>
-              <div className={styles['capability-item']}>
-                <span className={styles['capability-label']}>Above:</span>
-                <span className={styles['capability-desc']}>Same-day deployment</span>
-                <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
-              </div>
+      <div className={styles['capability-comparison']}>
+        <h3 className={styles['capability-title']}>Detection vs. Control</h3>
+        <div className={styles['capability-grid']}>
+          <div className={styles['capability-category']}>
+            <h4>Threat Visibility</h4>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Island:</span>
+              <span className={styles['capability-desc']}>Sees browser events, lacks semantic interpretation</span>
+              <i className={`fas fa-minus ${styles['capability-icon']} ${styles['neutral']}`}></i>
+            </div>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Above:</span>
+              <span className={styles['capability-desc']}>Understands user intent and threat context</span>
+              <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
+            </div>
+          </div>
+
+          <div className={styles['capability-category']}>
+            <h4>User Disruption</h4>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Island:</span>
+              <span className={styles['capability-desc']}>Requires browser migration</span>
+              <i className={`fas fa-times ${styles['capability-icon']} ${styles['negative']}`}></i>
+            </div>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Above:</span>
+              <span className={styles['capability-desc']}>Invisible to user, no UI change</span>
+              <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
+            </div>
+          </div>
+
+          <div className={styles['capability-category']}>
+            <h4>Threat Prevention</h4>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Island:</span>
+              <span className={styles['capability-desc']}>Blocks based on static policies</span>
+              <i className={`fas fa-minus ${styles['capability-icon']} ${styles['neutral']}`}></i>
+            </div>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Above:</span>
+              <span className={styles['capability-desc']}>Blocks based on dynamic understanding of behavior</span>
+              <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
+            </div>
+          </div>
+
+          <div className={styles['capability-category']}>
+            <h4>Deployment Speed</h4>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Island:</span>
+              <span className={styles['capability-desc']}>Multi-month rollout + change management</span>
+              <i className={`fas fa-times ${styles['capability-icon']} ${styles['negative']}`}></i>
+            </div>
+            <div className={styles['capability-item']}>
+              <span className={styles['capability-label']}>Above:</span>
+              <span className={styles['capability-desc']}>Rolls out in hours with zero disruption</span>
+              <i className={`fas fa-check ${styles['capability-icon']} ${styles['positive']}`}></i>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className={styles['use-case-example']}>
-          <h3 className={styles['example-title']}>Use Case: Suspicious Document Download</h3>
-          <div className={styles['example-scenario']}>
-            <div className={styles['scenario-setup']}>
-              <p>Employee receives email with link to "urgent contract" requiring download</p>
+      <div className={styles['use-case-example']}>
+        <h3 className={styles['example-title']}>Use Case: Privilege Misuse Over Time</h3>
+        <div className={styles['example-scenario']}>
+          <div className={styles['scenario-setup']}>
+            <p>A salesperson nearing resignation spends weeks viewing closed-won opportunities they don’t own, competitor contracts, and comp plans in Salesforce.</p>
+          </div>
+          <div className={styles['scenario-responses']}>
+            <div className={styles['response']}>
+              <h4>Island Response</h4>
+              <div className={styles['response-flow']}>
+                <div className={styles['flow-step']}>
+                  <i className="fas fa-cog"></i>
+                  <span>Policy may block bulk exports or high-risk domains</span>
+                </div>
+                <div className={styles['flow-step']}>
+                  <i className="fas fa-clipboard-list"></i>
+                  <span>Activity logged for later review</span>
+                </div>
+              </div>
+              <p className={styles['response-result']}>Result: Misses intent-driven misuse that stays inside policy</p>
             </div>
-            <div className={styles['scenario-responses']}>
-              <div className={styles['response']}>
-                <h4>Island Response</h4>
-                <div className={styles['response-flow']}>
-                  <div className={styles['flow-step']}>
-                    <i className="fas fa-cog"></i>
-                    <span>Applies configured download policy</span>
-                  </div>
-                  <div className={styles['flow-step']}>
-                    <i className="fas fa-shield-alt"></i>
-                    <span>May allow or block based on domain/file type</span>
-                  </div>
-                  <div className={styles['flow-step']}>
-                    <i className="fas fa-clipboard-list"></i>
-                    <span>Logs activity for compliance</span>
-                  </div>
+            <div className={`${styles['response']} ${styles['above-response']}`}>
+              <h4>Above Response</h4>
+              <div className={styles['response-flow']}>
+                <div className={styles['flow-step']}>
+                  <i className="fas fa-search"></i>
+                  <span>Analyzes user navigation and access patterns</span>
                 </div>
-                <p className={styles['response-result']}>Result: Policy-based decision, may miss context</p>
-              </div>
-              <div className={`${styles['response']} ${styles['above-response']}`}>
-                <h4>Above Response</h4>
-                <div className={styles['response-flow']}>
-                  <div className={styles['flow-step']}>
-                    <i className="fas fa-search"></i>
-                    <span>Analyzes page content and user context</span>
-                  </div>
-                  <div className={`${styles['flow-step']} ${styles['success']}`}>
-                    <i className="fas fa-exclamation-triangle"></i>
-                    <span>Detects suspicious urgency language and sender</span>
-                  </div>
-                  <div className={styles['flow-step']}>
-                    <i className="fas fa-graduation-cap"></i>
-                    <span>Educates user about phishing indicators</span>
-                  </div>
+                <div className={styles['flow-step']}>
+                  <i className="fas fa-user-clock"></i>
+                  <span>Flags out-of-role behavior across sessions</span>
                 </div>
-                <p className={styles['response-result']}>Result: Context-aware protection with user education</p>
+                <div className={styles['flow-step']}>
+                  <i className="fas fa-shield-alt"></i>
+                  <span>Surfaces escalating risk for security and HR</span>
+                </div>
               </div>
+              <p className={styles['response-result']}>Result: Early detection of slow-burn insider threat</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="competitive-summary">
-        <h3 className="summary-title">Complementary Approaches</h3>
+        <h3 className="summary-title">Where Policy Ends, Intent Begins</h3>
         <p className="summary-text">
-          Island provides comprehensive browser replacement with strong policy controls.
-          <strong>Above enhances existing browsers with semantic intelligence.</strong>
+          Island enforces what users can do. <br /><strong>Above understands what they’re trying to do — and stops the risk before it unfolds.</strong>
         </p>
       </div>
     </div>

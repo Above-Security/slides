@@ -6,14 +6,14 @@ const SlideVsPush = () => (
   <SlideLayout>
     <header className="slide-header">
       <h1 className="slide-title">Above vs. Push Security</h1>
-      <p className="slide-subtitle">Semantic Understanding vs. Pattern Detection</p>
+      <p className="slide-subtitle">Semantic Understanding vs. Pattern Recognition</p>
     </header>
 
     <div className="competitor-comparison">
       <div className="comparison-intro">
         <p className="intro-text">
-          Push Security offers strong browser extension-based identity protection.<br />
-          <strong>Above delivers superior semantic understanding and broader threat coverage.</strong>
+          Push Security delivers effective protection for credential-based identity threats through browser extension telemetry.<br />
+          <strong>Above goes further — by understanding intent, behavior, and context in real time.</strong>
         </p>
       </div>
 
@@ -25,57 +25,57 @@ const SlideVsPush = () => (
               Push Security Strengths
             </h3>
             <ul className="approach-list">
-              <li>Browser extension for session hijacking detection</li>
-              <li>Strong credential theft monitoring</li>
-              <li>Identity attack pattern recognition</li>
-              <li>Established SIEM/XDR integrations</li>
-              <li>Proven deployment at scale</li>
+              <li>Browser-based detection of session hijacking and token theft</li>
+              <li>Strong on credential compromise prevention</li>
+              <li>Solid integrations with SIEM/XDR tools</li>
+              <li>Lightweight deployment footprint</li>
+              <li>Focused identity protection use cases</li>
             </ul>
             <div className="approach-limitation">
               <i className="fas fa-info-circle"></i>
-              <span>Focus: Pattern-based detection of known attack signatures</span>
+              <span>Pattern-matching model — blind to unknown or subtle intent-based threats</span>
             </div>
           </div>
 
           <div className="above-advantage">
             <h3 className="advantage-title">
               <i className="fas fa-brain"></i>
-              Above's Superior Capabilities
+              Above's Runtime Advantage
             </h3>
             <ul className="advantage-list">
-              <li><strong>Semantic phishing detection</strong> across all attack vectors</li>
-              <li><strong>Session hijacking prevention</strong> with behavioral analysis</li>
-              <li><strong>LOTS detection</strong> within trusted services (DocuSign, Dropbox)</li>
-              <li><strong>Real-time user education</strong> with contextual warnings</li>
-              <li><strong>Zero-infrastructure deployment</strong> via browser extension</li>
+              <li><strong>LLM-driven phishing detection</strong> — detects consent phishing, spoofed OAuth, AiTM</li>
+              <li><strong>Behavioral deviation</strong> from user norms and role expectations</li>
+              <li><strong>Cross-app session tracing</strong> to identify lateral movement and gray-area abuse</li>
+              <li><strong>Real-time user guidance</strong> and block on intent-confirmed threats</li>
+              <li><strong>Visibility into any SaaS or web app</strong> — even those with no API or logs</li>
             </ul>
             <div className="advantage-highlight">
               <i className="fas fa-lightbulb"></i>
-              <span>Focus: Understanding malicious intent in legitimate contexts</span>
+              <span>Understands what the user sees — and what they intend to do</span>
             </div>
           </div>
         </div>
 
         <div className={styles['use-case-comparison']}>
-          <h3 className={styles['use-case-title']}>ATO Scenario: Cyberhaven-Style OAuth Abuse</h3>
+          <h3 className={styles['use-case-title']}>Real-World Use Case: OAuth Consent Phish</h3>
           <div className={styles['scenario-comparison']}>
             <div className={styles['push-response']}>
               <h4 className={styles['response-title']}>Push Security Response</h4>
               <div className={styles['response-steps']}>
                 <div className={styles['step']}>
                   <i className="fas fa-check-circle"></i>
-                  <span>Detects credential reuse patterns</span>
+                  <span>Detects credential reuse and token theft</span>
                 </div>
                 <div className={styles['step']}>
                   <i className="fas fa-check-circle"></i>
-                  <span>Flags suspicious login locations</span>
+                  <span>Flags logins from suspicious locations</span>
                 </div>
-                <div className={`${styles['step']} ${styles['neutral']}`}>
+                <div className={`${styles['step']} ${styles['neutral']}`}> 
                   <i className="fas fa-question-circle"></i>
-                  <span>May not detect malicious OAuth consent on legitimate Google page</span>
+                  <span>May miss legitimate-looking OAuth app with malicious intent</span>
                 </div>
               </div>
-              <p className={`${styles['response-result']} ${styles['neutral']}`}>Result: Strong session protection, potential OAuth gap</p>
+              <p className={`${styles['response-result']} ${styles['neutral']}`}>Result: Strong identity protection, but limited semantic detection</p>
             </div>
 
             <div className={styles['above-response']}>
@@ -83,28 +83,29 @@ const SlideVsPush = () => (
               <div className={styles['response-steps']}>
                 <div className={styles['step']}>
                   <i className="fas fa-search"></i>
-                  <span>Analyzes OAuth consent page semantically</span>
+                  <span>Analyzes page structure and app identity with LLM</span>
                 </div>
                 <div className={styles['step']}>
                   <i className="fas fa-exclamation-triangle"></i>
-                  <span>Detects excessive permissions request</span>
+                  <span>Flags scope mismatches and branding deception</span>
                 </div>
                 <div className={`${styles['step']} ${styles['success']}`}>
                   <i className="fas fa-shield-alt"></i>
-                  <span>Blocks malicious consent with user education</span>
+                  <span>Stops OAuth consent before it’s granted</span>
                 </div>
               </div>
-              <p className={`${styles['response-result']} ${styles['success']}`}>Result: ATO prevented at point of user decision</p>
+              <p className={`${styles['response-result']} ${styles['success']}`}>Result: Threat neutralized before access is granted</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="competitive-summary">
-        <h3 className="summary-title">Complementary Strengths</h3>
+        <h3 className="summary-title">Positioning</h3>
         <p className="summary-text">
-          Push Security excels at session protection and credential monitoring.
-          <strong>Above adds semantic understanding for consent-based attacks.</strong>
+          Push Security addresses session integrity and credential threats well. 
+          <strong>
+            <br/>Above expands the perimeter — understanding context, intent, and semantics to prevent unseen attacks in real time.</strong>
         </p>
       </div>
     </div>

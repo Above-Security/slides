@@ -1,13 +1,14 @@
 /* Main Layout Container */
 .presentation-container {
-  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for mobile compatibility */
   display: flex;
   flex-direction: column;
 }
 
 /* Slide Content Area */
 .slide-content {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0; /* Prevents overflow issues on mobile */
   overflow: auto;
   background: var(--color-background-primary);
 }

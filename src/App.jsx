@@ -2,11 +2,44 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { slideData } from './slides';
 
-const App = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [showMenu, setShowMenu] = useState(false);
+const getSlideIndexFromUrl = () => {
+  const match = window.location.pathname.match(/slide\/(\d+)/);
+  if (match) {
+    const idx = parseInt(match[1], 10) - 1;
+    if (!isNaN(idx) && idx >= 0 && idx < slideData.length) return idx;
+  }
+  return 0;
+};
 
+const App = () => {
+  // Redirect to /slides/slide/1 if not already on a valid slide path
+  useEffect(() => {
+    const isOnSlides = window.location.pathname.startsWith('/slides/slide/');
+    if (!isOnSlides) {
+      window.history.replaceState(null, '', '/slides/slide/1');
+    }
+  }, []);
+
+  const [currentSlide, setCurrentSlide] = useState(getSlideIndexFromUrl());
+  const [showMenu, setShowMenu] = useState(false);
   const slides = slideData;
+
+  // Sync URL with current slide
+  useEffect(() => {
+    const url = `/slides/slide/${currentSlide + 1}`;
+    if (window.location.pathname !== url) {
+      window.history.replaceState(null, '', url);
+    }
+  }, [currentSlide]);
+
+  // Listen for browser navigation (back/forward)
+  useEffect(() => {
+    const onPopState = () => {
+      setCurrentSlide(getSlideIndexFromUrl());
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event) => {

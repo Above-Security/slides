@@ -129,6 +129,12 @@
     font-size: var(--text-2xl);
     font-weight: var(--weight-semibold);
     margin-bottom: 16px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .summary-text {
