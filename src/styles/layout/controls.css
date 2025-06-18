@@ -1,0 +1,22 @@
+/* Presentation Controls Bar */
+.presentation-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  background: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border-primary);
+  z-index: var(--z-index-controls);
+}
+
+.navigation-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.slide-counter {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+

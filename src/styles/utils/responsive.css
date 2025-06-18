@@ -1,0 +1,99 @@
+/* Responsive Design Breakpoints */
+
+/* Logo Watermark */
+.logo-watermark {
+  position: absolute;
+  bottom: var(--spacing-2xl);
+  right: var(--spacing-2xl);
+  width: 32px;
+  height: 32px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .slide-container {
+    padding: var(--spacing-3xl);
+  }
+
+  .key-points-grid,
+  .concepts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .landscape-grid,
+  .detection-scenarios,
+  .constraints-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .slide-title {
+    font-size: 36px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .presentation-controls {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .slide-container {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .slide-title {
+    font-size: 28px;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .logo-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-content {
+    min-width: 300px;
+    margin: var(--spacing-lg);
+  }
+
+  .key-point-card,
+  .landscape-card,
+  .concept-card {
+    padding: var(--spacing-lg);
+  }
+
+  .architecture-card {
+    padding: var(--spacing-2xl);
+  }
+
+  .executive-summary {
+    padding: var(--spacing-2xl);
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+  .slide-container {
+    padding: var(--spacing-lg);
+  }
+
+  .slide-title {
+    font-size: 24px;
+  }
+
+  .menu-content {
+    min-width: 280px;
+    margin: var(--spacing-sm);
+  }
+
+  .key-points-grid,
+  .concepts-grid {
+    gap: var(--spacing-md);
+  }
+}
+
