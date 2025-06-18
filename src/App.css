@@ -20,8 +20,15 @@ body {
   flex-direction: column;
 }
 
-/* Presentation Controls */
-.presentation-controls {
+/* App Layout */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2732,5 +2739,13 @@ body {
   .matrix-table td {
     padding: 12px 8px;
   }
+}
+
+
+/* Main slide content area */
+.slide-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 
