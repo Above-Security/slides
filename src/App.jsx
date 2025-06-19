@@ -89,43 +89,6 @@ const App = () => {
     return <SlideComponent />;
   };
 
-  // Update meta tags for each slide
-  useEffect(() => {
-    const currentSlideData = slides[currentSlide];
-    const slideTitle = currentSlideData?.title || 'Above Security';
-    const slideNumber = currentSlide + 1;
-    
-    // Update page title
-    document.title = `${slideTitle} - Above Security Pitch Deck`;
-    
-    // Update OG meta tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', `${slideTitle} - Above Security`);
-    }
-    
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute('content', `https://above-security.github.io/slides/slide/${slideNumber}`);
-    }
-    
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', `Slide ${slideNumber}: ${slideTitle}. Above Security's Runtime ITDR platform for sophisticated phishing detection and insider threat prevention.`);
-    }
-    
-    // Update Twitter meta tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', `${slideTitle} - Above Security`);
-    }
-    
-    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
-    if (twitterUrl) {
-      twitterUrl.setAttribute('content', `https://above-security.github.io/slides/slide/${slideNumber}`);
-    }
-  }, [currentSlide, slides]);
-
   return (
     <div className="presentation-container">
       <div className="presentation-controls">
