@@ -11,27 +11,33 @@ const App = () => {
     clarityEvent('app_session_start');
     claritySet('app_name', 'Above Security Platform');
     claritySet('app_version', '1.0.0');
+    
+    // Handle hash routing from 404.html redirects
+    if (window.location.hash && window.location.hash.startsWith('#/')) {
+      const hashPath = window.location.hash.substring(1); // Remove #
+      window.history.replaceState(null, '', hashPath);
+    }
   }, []);
 
   return (
     <Router>
       <Routes>
-        {/* Homepage route - accessible at /slides/home */}
+        {/* Homepage routes */}
         <Route path="/home" element={<HomePage />} />
         
-        {/* Slides presentation routes - accessible at /slides/slide/1 etc */}
+        {/* Slides presentation routes */}
         <Route path="/slide/*" element={<PresentationApp />} />
         <Route path="/slide/:slideNumber" element={<PresentationApp />} />
         
-        {/* Default /slides/ route - redirect to slide 1 for existing links */}
-        <Route path="/slides/" element={<Navigate to="/slide/1" replace />} />
-        <Route path="/slides" element={<Navigate to="/slide/1" replace />} />
+        {/* Legacy /slides/ path compatibility */}
+        <Route path="/slides/" element={<Navigate to="/home" replace />} />
+        <Route path="/slides" element={<Navigate to="/home" replace />} />
         
-        {/* Root route - for custom domain, redirect to home */}
+        {/* Root route - redirect to homepage */}
         <Route path="/" element={<Navigate to="/home" replace />} />
         
-        {/* Catch-all route - redirect to slide 1 for backward compatibility */}
-        <Route path="*" element={<Navigate to="/slide/1" replace />} />
+        {/* Catch-all route */}
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </Router>
   );

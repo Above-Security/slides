@@ -43,29 +43,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/slides/apple-touch-icon.png" />
     
     <script>
-      // GitHub Pages SPA routing solution
-      // When a route like /slides/slide/1 is accessed directly,
+      // SPA routing solution for custom domain (abovesec.com)
+      // When a route like /home or /slide/1 is accessed directly,
       // GitHub Pages returns this 404.html, which redirects to the main app
       // with the route preserved in the URL hash
       
       const path = window.location.pathname;
-      const basePath = '/slides/';
       
-      if (path.startsWith(basePath)) {
-        // Extract the route part after /slides/
-        const route = path.substring(basePath.length);
-        
-        if (route && route !== '') {
-          // Redirect to the base with the route as hash
-          // /slides/slide/1 becomes /slides/#/slide/1
-          window.location.replace(basePath + '#/' + route);
-        } else {
-          // Just redirect to base
-          window.location.replace(basePath);
-        }
+      if (path && path !== '/') {
+        // Convert /home or /slide/1 to /#/home or /#/slide/1
+        window.location.replace('/#' + path);
       } else {
-        // Not a slides route, redirect to base
-        window.location.replace(basePath);
+        // Root path, just go to homepage
+        window.location.replace('/');
       }
     </script>
   </head>
@@ -121,10 +111,10 @@
     <meta name="format-detection" content="telephone=no" />
     
     <!-- Favicon Package -->
-    <link rel="icon" type="image/svg+xml" href="/slides/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/slides/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/slides/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/slides/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/slides/site.webmanifest" />
     
     <!-- Preconnect for Performance -->
