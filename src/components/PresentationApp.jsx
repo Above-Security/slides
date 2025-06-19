@@ -20,7 +20,7 @@ const getSlideIndexFromUrl = (params, location) => {
     pathname = window.location.hash.substring(1); // Remove the #
   }
 
-  const match = pathname.match(/\/slide\/(\d+)/);
+  const match = pathname.match(/\/slides\/(\d+)/);
   if (match) {
     const idx = parseInt(match[1], 10) - 1;
     if (!isNaN(idx) && idx >= 0 && idx < slideData.length) return idx;
@@ -68,7 +68,7 @@ const PresentationApp = () => {
   useEffect(() => {
     // Update URL when slide changes
     if (!isInitialLoad) {
-      navigate(`/slide/${currentSlide + 1}`, { replace: false });
+      navigate(`/slides/${currentSlide + 1}`, { replace: false });
     }
 
     // Enhanced slide tracking with presentation engagement
