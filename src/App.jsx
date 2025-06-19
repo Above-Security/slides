@@ -13,16 +13,9 @@ const getSlideIndexFromUrl = () => {
 };
 
 const App = () => {
-  // Redirect to /slides/slide/1 if not already on a valid slide path
-  useEffect(() => {
-    const isOnSlides = window.location.pathname.startsWith('/slides/slide/');
-    if (!isOnSlides) {
-      window.history.replaceState(null, '', '/slides/slide/1');
-    }
-  }, []);
-
   const [currentSlide, setCurrentSlide] = useState(getSlideIndexFromUrl());
   const [showMenu, setShowMenu] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const slides = slideData;
 
   // Track presentation session start (simplified)
@@ -30,18 +23,19 @@ const App = () => {
     // Simple session tracking without complex data
     clarityEvent('presentation_session_start');
     claritySet('presentation_name', 'Above Security Pitch Deck');
+    setIsInitialLoad(false);
   }, []); // Empty dependency array - only run once on mount
 
   // Sync URL with current slide (simplified tracking)
   useEffect(() => {
     const url = `/slides/slide/${currentSlide + 1}`;
-    if (window.location.pathname !== url) {
+    if (window.location.pathname !== url && !isInitialLoad) {
       window.history.pushState(null, '', url);
     }
 
     // Simple slide tracking
     claritySet('current_slide_number', currentSlide + 1);
-  }, [currentSlide]);
+  }, [currentSlide, isInitialLoad]);
 
   // Listen for browser navigation (back/forward)
   useEffect(() => {
