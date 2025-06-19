@@ -65,13 +65,13 @@ const HomePage = () => {
                     <div className="homepage-body">
                         <div className="coming-soon-content">
                             <p className="coming-soon-description">
-                                We're building something incredible. Backed by tier 1 investors, 
+                                We're building something incredible. <br />Backed by tier 1 investors, 
                                 our team is working on revolutionary technology that will transform 
                                 how organizations approach security and threat detection.
                             </p>
                             
                             <div className="action-buttons">
-                                <a href="mailto:contact@above.security" className="secondary-button">
+                                <a href="mailto:aviv@abovesec.com" className="secondary-button">
                                     <svg className="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
