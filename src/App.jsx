@@ -4,7 +4,7 @@ import { slideData } from './slides';
 import { clarityEvent, claritySet } from './utils/clarity';
 
 const getSlideIndexFromUrl = () => {
-  const match = window.location.pathname.match(/slide\/(\d+)/);
+  const match = window.location.pathname.match(/\/slides\/slide\/(\d+)/);
   if (match) {
     const idx = parseInt(match[1], 10) - 1;
     if (!isNaN(idx) && idx >= 0 && idx < slideData.length) return idx;
@@ -25,39 +25,22 @@ const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const slides = slideData;
 
-  // Track presentation session start
+  // Track presentation session start (simplified)
   useEffect(() => {
-    clarityEvent('presentation_session_start', {
-      initial_slide: currentSlide + 1,
-      total_slides: slides.length,
-      user_agent: navigator.userAgent,
-      screen_resolution: `${screen.width}x${screen.height}`,
-      viewport_size: `${window.innerWidth}x${window.innerHeight}`
-    });
-    
-    // Set session-level tags
+    // Simple session tracking without complex data
+    clarityEvent('presentation_session_start');
     claritySet('presentation_name', 'Above Security Pitch Deck');
-    claritySet('total_slides', slides.length);
   }, []); // Empty dependency array - only run once on mount
 
-  // Sync URL with current slide and track in Clarity
+  // Sync URL with current slide (simplified tracking)
   useEffect(() => {
     const url = `/slides/slide/${currentSlide + 1}`;
     if (window.location.pathname !== url) {
-      window.history.replaceState(null, '', url);
+      window.history.pushState(null, '', url);
     }
-    
-    // Track slide navigation in Clarity
-    const slideTitle = slides[currentSlide]?.title || `Slide ${currentSlide + 1}`;
-    clarityEvent('slide_navigation', {
-      slide_index: currentSlide + 1,
-      slide_title: slideTitle,
-      total_slides: slides.length
-    });
-    
-    // Set custom Clarity tags for current slide
-    claritySet('current_slide', slideTitle);
-    claritySet('slide_number', currentSlide + 1);
+
+    // Simple slide tracking
+    claritySet('current_slide_number', currentSlide + 1);
   }, [currentSlide]);
 
   // Listen for browser navigation (back/forward)
@@ -65,12 +48,6 @@ const App = () => {
     const onPopState = () => {
       const newSlideIndex = getSlideIndexFromUrl();
       setCurrentSlide(newSlideIndex);
-      
-      // Track browser navigation
-      clarityEvent('browser_navigation', {
-        slide_index: newSlideIndex + 1,
-        navigation_type: 'browser_button'
-      });
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
@@ -80,13 +57,10 @@ const App = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowRight' || event.key === ' ') {
         nextSlide();
-        clarityEvent('keyboard_navigation', { direction: 'next', key: event.key });
       } else if (event.key === 'ArrowLeft') {
         prevSlide();
-        clarityEvent('keyboard_navigation', { direction: 'previous', key: event.key });
       } else if (event.key === 'Escape') {
         setShowMenu(false);
-        clarityEvent('menu_interaction', { action: 'close_via_escape' });
       }
     };
 
@@ -95,43 +69,18 @@ const App = () => {
   }, [currentSlide]);
 
   const nextSlide = () => {
-    const previousSlide = currentSlide;
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-    clarityEvent('slide_navigation', { 
-      action: 'next', 
-      method: 'button_click',
-      from_slide: previousSlide + 1,
-      to_slide: ((previousSlide + 1) % slides.length) + 1
-    });
   };
 
   const prevSlide = () => {
-    const previousSlide = currentSlide;
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    clarityEvent('slide_navigation', { 
-      action: 'previous', 
-      method: 'button_click',
-      from_slide: previousSlide + 1,
-      to_slide: ((previousSlide - 1 + slides.length) % slides.length) + 1
-    });
   };
 
   const goToSlide = (index) => {
-    const previousSlide = currentSlide;
     setCurrentSlide(index);
     setShowMenu(false);
-    
-    clarityEvent('slide_navigation', { 
-      action: 'direct_navigation', 
-      method: 'menu_click',
-      from_slide: previousSlide + 1,
-      to_slide: index + 1,
-      slide_title: slides[index]?.title
-    });
-    
-    clarityEvent('menu_interaction', { action: 'slide_selected', slide_index: index + 1 });
   };
-  
+
   const renderSlide = () => {
     const SlideComponent = slides[currentSlide].Component;
     return <SlideComponent />;
@@ -142,30 +91,22 @@ const App = () => {
   return (
     <div className="presentation-container">
       <div className="presentation-controls">
-        <button 
+        <button
           className="menu-button"
-          onClick={() => {
-            const newShowMenu = !showMenu;
-            setShowMenu(newShowMenu);
-            clarityEvent('menu_interaction', { 
-              action: newShowMenu ? 'open' : 'close',
-              method: 'button_click',
-              current_slide: currentSlide + 1
-            });
-          }}
+          onClick={() => setShowMenu(!showMenu)}
         >
           Menu
         </button>
-        
+
         <div className="navigation-controls">
-          <button 
+          <button
             className="nav-button prev"
             onClick={prevSlide}
             disabled={currentSlide === 0}
           >
             ←
           </button>
-          <button 
+          <button
             className="nav-button next"
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
@@ -195,7 +136,7 @@ const App = () => {
                 </button>
               ))}
             </div>
-            <button 
+            <button
               className="menu-close"
               onClick={() => setShowMenu(false)}
             >
