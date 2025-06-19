@@ -87,6 +87,20 @@
       }
     }
     </script>
+
+    <!-- GitHub Pages SPA URL restoration script -->
+    <script type="text/javascript">
+      // Check if we have a redirect from 404.html (query string starts with ?/)
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = decodeURIComponent(l.search.slice(1)).replace(/&/g, '?').replace(/~and~/g, '&');
+          console.log('Restoring URL from:', l.href, 'to path:', decoded);
+          
+          // Replace current history entry with the intended URL
+          l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + decoded + l.hash);
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="root"></div>
