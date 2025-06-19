@@ -14,20 +14,24 @@ const App = () => {
   }, []);
 
   return (
-    <Router basename="/slides">
+    <Router>
       <Routes>
-        {/* Homepage route - will be accessible at /slides/home */}
-        <Route path="/home" element={<HomePage />} />
+        {/* Homepage route - accessible at /slides/home */}
+        <Route path="/slides/home" element={<HomePage />} />
         
-        {/* Slides presentation routes - will be accessible at /slides/slide/1 etc */}
-        <Route path="/slide/*" element={<PresentationApp />} />
-        <Route path="/slide/:slideNumber" element={<PresentationApp />} />
+        {/* Slides presentation routes - accessible at /slides/slide/1 etc */}
+        <Route path="/slides/slide/*" element={<PresentationApp />} />
+        <Route path="/slides/slide/:slideNumber" element={<PresentationApp />} />
         
-        {/* Default route - redirect to homepage for custom domain */}
-        <Route path="/" element={<Navigate to="/home" replace />} />
+        {/* Default /slides/ route - redirect to slide 1 for existing links */}
+        <Route path="/slides/" element={<Navigate to="/slides/slide/1" replace />} />
+        <Route path="/slides" element={<Navigate to="/slides/slide/1" replace />} />
         
-        {/* Catch-all route - redirect to homepage */}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        {/* Root route - for custom domain, redirect to home */}
+        <Route path="/" element={<Navigate to="/slides/home" replace />} />
+        
+        {/* Catch-all route - redirect to slide 1 for backward compatibility */}
+        <Route path="*" element={<Navigate to="/slides/slide/1" replace />} />
       </Routes>
     </Router>
   );
