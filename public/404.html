@@ -53,19 +53,47 @@
     </div>
     
     <script>
-        // GitHub Pages 404 redirect for HashRouter
+        // GitHub Pages 404 redirect for HashRouter - Updated for new route structure
         (function() {
-            const path = window.location.pathname;
+            console.log('🔄 [404.html] GitHub Pages redirect starting...');
+            console.log('🔄 [404.html] Current URL:', window.location.href);
             
-            // If we're at a path that should be handled by React Router
-            if (path !== '/' && !path.includes('.')) {
-                // Convert BrowserRouter path to HashRouter format
-                const newHash = '#' + path + window.location.search;
-                window.location.replace(window.location.origin + '/' + newHash);
+            const currentPath = window.location.pathname;
+            const search = window.location.search;
+            
+            // Parse the intended route from the URL
+            let targetHash = '';
+            
+            // Handle different URL patterns that might come to 404
+            if (currentPath === '/slides/1' || currentPath === '/slide/1') {
+                targetHash = '#/slides/1';
+            } else if (currentPath === '/slides' || currentPath === '/slides/') {
+                targetHash = '#/slides';  // Will redirect to /slides/1 by React Router
+            } else if (currentPath.match(/^\/slides\/(\d+)$/)) {
+                const slideNumber = currentPath.match(/^\/slides\/(\d+)$/)[1];
+                targetHash = `#/slides/${slideNumber}`;
+            } else if (currentPath.match(/^\/slide\/(\d+)$/)) {
+                // Legacy slide URLs - redirect to new structure
+                const slideNumber = currentPath.match(/^\/slide\/(\d+)$/)[1];
+                targetHash = `#/slides/${slideNumber}`;
+            } else if (currentPath === '/home') {
+                targetHash = '#/';  // Homepage
+            } else if (currentPath === '/') {
+                targetHash = '#/';  // Homepage
             } else {
-                // Default redirect to home
-                window.location.replace(window.location.origin + '/#/slide/1');
+                // Default fallback to homepage
+                targetHash = '#/';
             }
+            
+            // Construct the final URL
+            const baseUrl = window.location.origin;
+            const finalUrl = baseUrl + '/' + targetHash + search;
+            
+            console.log('🔄 [404.html] Redirecting to:', finalUrl);
+            console.log('🔄 [404.html] Target hash:', targetHash);
+            
+            // Perform the redirect
+            window.location.replace(finalUrl);
         })();
     </script>
 </body>
