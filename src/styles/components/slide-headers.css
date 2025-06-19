@@ -55,5 +55,20 @@
   width: 64px;
   height: 64px;
   animation: logo-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 135, 43, 0.2));
+  transition: all var(--transition-normal, 0.3s) ease;
+  cursor: pointer;
 }
 
+.logo-small:hover {
+  filter: drop-shadow(0 6px 12px rgba(0, 135, 43, 0.3));
+  transform: scale(1.05) translateY(-2px);
+}
+
+.logo-small:hover path {
+  fill: var(--color-primary-light, #5fed83);
+}
+
+.logo-small path {
+  transition: fill var(--transition-normal, 0.3s) ease;
+}
