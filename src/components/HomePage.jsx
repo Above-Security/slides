@@ -1,9 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './LogoWatermark';
+import { initializeClarity, clarityEvent, claritySet } from '../utils/clarity';
 import './HomePage.css';
 
 const HomePage = () => {
+    useEffect(() => {
+        // Initialize Clarity when the homepage loads
+        initializeClarity();
+        
+        // Track homepage view
+        clarityEvent('homepage_view');
+        claritySet('page_type', 'homepage');
+        claritySet('user_journey', 'homepage_landing');
+        
+        // Track homepage engagement timing
+        const startTime = Date.now();
+        
+        // Track how long users stay on homepage
+        const trackEngagementTime = () => {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            clarityEvent('homepage_engagement_time', { time_spent_seconds: timeSpent });
+            claritySet('homepage_time_spent', timeSpent.toString());
+        };
+        
+        // Track when user leaves or closes tab
+        const handleBeforeUnload = () => {
+            trackEngagementTime();
+        };
+        
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        
+        console.log('Homepage loaded with Clarity tracking');
+        
+        // Cleanup
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+            trackEngagementTime();
+        };
+    }, []);
+
+    const handleEmailClick = () => {
+        clarityEvent('email_contact_clicked');
+        claritySet('user_action', 'email_contact');
+        claritySet('cta_clicked', 'get_early_access');
+        console.log('Email contact tracked');
+    };
+
+    const handleLogoClick = () => {
+        clarityEvent('logo_clicked');
+        claritySet('user_action', 'logo_interaction');
+        console.log('Logo interaction tracked');
+    };
+
     return (
         <>
             {/* Document Head Metadata - React 19 native support */}
@@ -51,7 +100,7 @@ const HomePage = () => {
             <div className="homepage-overlay">
                 <div className="homepage-content">
                     <div className="homepage-header">
-                        <div className="company-logo">
+                        <div className="company-logo" onClick={handleLogoClick}>
                             <Logo />
                         </div>
                         <h1 className="homepage-title">
@@ -71,7 +120,11 @@ const HomePage = () => {
                             </p>
                             
                             <div className="action-buttons">
-                                <a href="mailto:aviv@abovesec.com" className="secondary-button">
+                                <a 
+                                    href="mailto:aviv@abovesec.com" 
+                                    className="secondary-button"
+                                    onClick={handleEmailClick}
+                                >
                                     <svg className="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
