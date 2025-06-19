@@ -421,6 +421,7 @@
   margin-bottom: var(--space-4);
   display: flex;
   align-items: center;
+  gap: var(--space-3);
 }
 
 .summary-title i {

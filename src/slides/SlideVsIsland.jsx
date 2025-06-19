@@ -20,25 +20,25 @@ const SlideVsIsland = () => (
       <div className={styles['deployment-comparison']}>
         <div className={styles['deployment-approach']}>
           <h3 className="approach-title">
-            <i className="fas fa-globe"></i>
-            Island's Browser Strategy
+            <i className="fas fa-shield-alt"></i>
+            Island's Policy Enforcement
           </h3>
           <div className={styles['deployment-steps']}>
             <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-gavel"></i>
+              <span>Rule-based access controls and restrictions</span>
+            </div>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-ban"></i>
+              <span>Block/allow lists for websites and apps</span>
+            </div>
+            <div className={`${styles['step']} ${styles['complex']}`}>
+              <i className="fas fa-eye-slash"></i>
+              <span>No insight into user intent or threat context</span>
+            </div>
+            <div className={`${styles['step']} ${styles['complex']}`}>
               <i className="fas fa-download"></i>
               <span>Replace existing browsers with Island</span>
-            </div>
-            <div className={`${styles['step']} ${styles['complex']}`}>
-              <i className="fas fa-users-cog"></i>
-              <span>Train users on a new browser UI</span>
-            </div>
-            <div className={`${styles['step']} ${styles['complex']}`}>
-              <i className="fas fa-tools"></i>
-              <span>Reconfigure bookmarks, workflows, extensions</span>
-            </div>
-            <div className={`${styles['step']} ${styles['complex']}`}>
-              <i className="fas fa-shield-alt"></i>
-              <span>Define and enforce granular policies</span>
             </div>
           </div>
           <div className={styles['deployment-timeline']}>
@@ -49,25 +49,25 @@ const SlideVsIsland = () => (
 
         <div className={`${styles['deployment-approach']} ${styles['above']}`}>
           <h3 className="approach-title">
-            <i className="fas fa-puzzle-piece"></i>
-            Above's Extension Strategy
+            <i className="fas fa-brain"></i>
+            Above's LLM-Driven Detection
           </h3>
           <div className={styles['deployment-steps']}>
             <div className={`${styles['step']} ${styles['simple']}`}>
-              <i className="fas fa-download"></i>
-              <span>Deploy lightweight browser extension</span>
-            </div>
-            <div className={`${styles['step']} ${styles['simple']}`}>
-              <i className="fas fa-user-check"></i>
-              <span>No change to browser UI or user behavior</span>
-            </div>
-            <div className={`${styles['step']} ${styles['simple']}`}>
               <i className="fas fa-brain"></i>
-              <span>LLM-driven analysis of in-session activity</span>
+              <span>LLM understands user intent and page context</span>
             </div>
             <div className={`${styles['step']} ${styles['simple']}`}>
               <i className="fas fa-shield-alt"></i>
-              <span>Blocks threats based on intent, not rules</span>
+              <span>Detects threats based on behavior, not rules</span>
+            </div>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-eye"></i>
+              <span>Real-time visibility into post-auth activity</span>
+            </div>
+            <div className={`${styles['step']} ${styles['simple']}`}>
+              <i className="fas fa-puzzle-piece"></i>
+              <span>Deploy lightweight browser extension</span>
             </div>
           </div>
           <div className={styles['deployment-timeline']}>

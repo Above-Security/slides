@@ -24,38 +24,42 @@ const SlideIntro = () => (
       <div className="key-points-grid">
         <div className="key-point-card">
           <div className="key-point-icon">
-            <i className="fas fa-puzzle-piece"></i>
+            <i className="fas fa-shield-alt"></i>
           </div>
-          <h3 className="key-point-title">Browser-Native Deployment</h3>
-          <p className="key-point-description">Deployed as a lightweight Chrome extension—no agents, no log integrations, no traffic steering.</p>
+          <h3 className="key-point-title">What Above Does</h3>
+          <p className="key-point-description">Runtime ITDR that sees user behavior inside applications — detecting threats that bypass traditional security controls.</p>
         </div>
 
         <div className="key-point-card">
           <div className="key-point-icon">
-            <i className="fas fa-user-shield"></i>
+            <i className="fas fa-user-secret"></i>
           </div>
-          <h3 className="key-point-title">In-Browser Phishing Prevention</h3>
-          <p className="key-point-description">Stops credential harvesting, rogue OAuth consent, and UI-based deception at the point of interaction.</p>
+          <h3 className="key-point-title">Core Problems We Address</h3>
+          <p className="key-point-description">Insider misuse, credential harvesting, session hijacking, and OAuth abuse that happen inside trusted applications.</p>
         </div>
 
         <div className="key-point-card">
           <div className="key-point-icon">
-            <i className="fas fa-eye"></i>
+            <i className="fas fa-brain"></i>
           </div>
-          <h3 className="key-point-title">Post-Auth Misuse Detection</h3>
-          <p className="key-point-description">Detects insider threats and gray-area misuse by interpreting user behavior across SaaS apps in real time.</p>
+          <h3 className="key-point-title">Why It Matters</h3>
+          <p className="key-point-description">Traditional tools miss post-auth threats. We bridge the gap with real-time behavioral analysis and intent detection.</p>
         </div>
       </div>
 
       <div className="executive-summary">
         <h3 className="summary-title">
-          <i className="fas fa-shield-alt"></i>
-          The Above Advantage
+          <i className="fas fa-exclamation-triangle"></i>
+          The Identity Threat Gap
         </h3>
         <p className="summary-text">
-          Traditional <strong>ITDR</strong> and <strong>IAM</strong> solutions fail post-authentication, focusing on access control rather than actual behavior inside applications.
-          <br />
-          <strong>Above</strong> addresses this critical gap by providing real-time detection of misuse, insider threats, and sophisticated phishing attacks within SaaS and internal applications — including OAuth consent abuse, session hijacking, and browser-based social engineering that bypass conventional email-based defenses.
+          <strong>80% of breaches happen after authentication</strong> — when users are already inside your apps. Traditional ITDR, DLP, and UEBA tools watch logs and traffic, but they can't see what users actually do inside applications.
+        </p>
+        <p className="summary-text mt-4">
+          <strong>Above</strong> is ITDR but with post-authentication visibility. We detect insider threats, credential harvesting, and misuse in real-time by understanding user behavior and intent — not just access patterns.
+        </p>
+        <p className="summary-text mt-4">
+          Unlike traditional ITDR that relies on logs and alerts, Above works directly in the browser to capture real user behavior. We deploy as an extension across any web application — no API integrations, no traffic steering, no SIEM dependency.
         </p>
       </div>
     </div>
