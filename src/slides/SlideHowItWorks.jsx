@@ -58,7 +58,7 @@ const SlideHowItWorks = () => (
                 <i className="fas fa-layer-group"></i>
               </div>
               <h4 className={styles['concept-title']}>App-Agnostic</h4>
-              <p className={styles['concept-description']}>Works with any browser-based app. No API integration required.</p>
+              <p className={styles['concept-description']}>Works with any app. No API integration required.</p>
             </div>
 
             <div className={styles['concept-card']}>
@@ -66,7 +66,7 @@ const SlideHowItWorks = () => (
                 <i className="fas fa-clock"></i>
               </div>
               <h4 className={styles['concept-title']}>Instant Deployment</h4>
-              <p className={styles['concept-description']}>Days to deploy via browser management. No SIEM integration.</p>
+              <p className={styles['concept-description']}>Days to deploy via browser management. Sends alerts to existing SIEM/SOAR platforms.</p>
             </div>
 
             <div className={styles['concept-card']}>
@@ -74,7 +74,7 @@ const SlideHowItWorks = () => (
                 <i className="fas fa-search"></i>
               </div>
               <h4 className={styles['concept-title']}>Semantic Understanding</h4>
-              <p className={styles['concept-description']}>LLM understands page intent and context, detecting sophisticated evasion techniques.</p>
+              <p className={styles['concept-description']}>LLM understands user intent and page context, bridging gaps that ITDR, DLP, and UEBA miss in real-world scenarios.</p>
             </div>
           </div>
         </div>

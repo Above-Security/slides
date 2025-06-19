@@ -23,7 +23,7 @@ const SlideRuntimeITDR = () => (
           It works by analyzing the actual session: clicks, actions, intent. If someone misuses access, steals data, masks their behavior — or falls for a phishing page that looks legitimate — you’ll know. In real time.
         </p>
         <p className="summary-text mt-4">
-          This includes <strong>next-gen phishing</strong> like LOTS (Living Off Trusted Services), consent phishing, and session hijacking — attacks that bypass email security and fool users inside trusted domains.
+          This includes <strong>next-gen phishing</strong> like LOTS (Living Off Trusted Services), consent phishing, and session hijacking — attacks that bypass email security and exploit users within trusted domains.
         </p>
       </div>
 

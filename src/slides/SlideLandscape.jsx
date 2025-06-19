@@ -72,7 +72,7 @@ const SlideLandscape = () => (
           </div>
           <div className={styles['competitor-list']}>
             <span className={styles['competitor']}>Island</span>
-            <span className={styles['competitor']}>Talon</span>
+            <span className={styles['competitor']}>Prisma Access Browser</span>
           </div>
           <p className={styles['category-gap']}>Govern access and usage with tight policies — but no awareness of intent, deception, or insider manipulation.</p>
         </div>

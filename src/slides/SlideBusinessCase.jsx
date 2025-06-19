@@ -177,7 +177,7 @@ const SlideBusinessCase = () => (
       <section className="card card--dark card--spacious">
         <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--text-inverse)', marginBottom: '24px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <i className="fas fa-rocket" style={{ marginRight: '12px' }}></i>
-          Path to $10B+ Valuation
+          Strategic Growth Roadmap: Path to $10B+ Valuation
         </h3>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '32px' }}>
@@ -185,7 +185,7 @@ const SlideBusinessCase = () => (
             <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--brand-primary-light)', marginBottom: '12px' }}>Phase 1: 2025-27</div>
             <div style={{ fontSize: '0.95rem', color: 'var(--text-inverse)', marginBottom: '12px', fontWeight: 600 }}>Runtime ITDR for SaaS</div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-inverse)', lineHeight: 1.4 }}>
-              &lt;5% FP rate, 90-day deployments to 250K endpoints, replace 20% of legacy CASB licenses
+              Target: &lt;5% FP rate, 90-day deployments to 250K endpoints, aim to replace 20% of legacy CASB licenses
             </div>
             <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--brand-primary-light)', marginTop: '12px' }}>~$2-3B TAM</div>
           </div>
@@ -194,7 +194,7 @@ const SlideBusinessCase = () => (
             <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-inverse)', marginBottom: '12px' }}>Phase 2: 2027-29</div>
             <div style={{ fontSize: '0.95rem', color: 'var(--text-inverse)', marginBottom: '12px', fontWeight: 600 }}>Identity-Centric Zero-Trust</div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-inverse)', lineHeight: 1.4 }}>
-              30% of customer SaaS sessions covered by adaptive policy engine with granular controls
+              Goal: Cover 30% of customer SaaS sessions with adaptive policy engine and granular controls
             </div>
             <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-inverse)', marginTop: '12px' }}>+$2B TAM</div>
           </div>
@@ -203,25 +203,28 @@ const SlideBusinessCase = () => (
             <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-inverse)', marginBottom: '12px' }}>Phase 3: 2029-32</div>
             <div style={{ fontSize: '0.95rem', color: 'var(--text-inverse)', marginBottom: '12px', fontWeight: 600 }}>Unified Workforce Risk Platform</div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-inverse)', lineHeight: 1.4 }}>
-              IRM dashboards, HRM coaching, JIT access - 50% drop in insider incidents
+              Vision: IRM dashboards, HRM coaching, JIT access - targeting 50% reduction in insider incidents
             </div>
             <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-inverse)', marginTop: '12px' }}>+$3-4B TAM</div>
           </div>
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px' }}>
+          <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)', textAlign: 'center', marginBottom: '16px', fontStyle: 'italic' }}>
+            Key Performance Targets
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', textAlign: 'center' }}>
             <div>
               <div style={{ fontSize: '2.2rem', fontWeight: 700, color: 'var(--brand-primary-light)', marginBottom: '8px' }}>&lt;5%</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>False positive rate target<br />(wins most bake-offs)</div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>False positive rate target<br />(to win most bake-offs)</div>
             </div>
             <div>
               <div style={{ fontSize: '2.2rem', fontWeight: 700, color: 'var(--brand-primary-light)', marginBottom: '8px' }}>90-Day</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>Deployment to 250K endpoints<br />(vs. 6+ month alternatives)</div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>Target deployment to 250K endpoints<br />(vs. 6+ month alternatives)</div>
             </div>
             <div>
               <div style={{ fontSize: '2.2rem', fontWeight: 700, color: 'var(--brand-primary-light)', marginBottom: '8px' }}>20%</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>CASB license replacement<br />in customer accounts</div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-inverse)' }}>Aimed CASB license replacement<br />in customer accounts</div>
             </div>
           </div>
         </div>

@@ -71,27 +71,26 @@ const SlideDeployment = () => (
               </ul>
             </div>
 
-            <div className={`${styles['constraint-card']} ${styles['limitations']}`}>
+            <div className={`${styles['constraint-card']} ${styles['roadmap']}`}>
               <h3 className={styles['constraint-header']}>
-                <i className="fas fa-exclamation-triangle"></i>
-                Current Limitations
+                <i className="fas fa-road"></i>
+                Expansion Roadmap
               </h3>
+              <p className={styles['roadmap-intro']}>
+                Extending coverage with commodity ITDR capabilities:
+              </p>
               <ul className={styles['constraint-list']}>
                 <li>
-                  <i className="fas fa-times"></i>
-                  <span>BYOD/unmanaged devices (extension removal risk)</span>
+                  <i className="fas fa-arrow-right"></i>
+                  <span>API integrations for native mobile apps</span>
                 </li>
                 <li>
-                  <i className="fas fa-times"></i>
-                  <span>Native mobile applications</span>
+                  <i className="fas fa-arrow-right"></i>
+                  <span>Endpoint agents for desktop application coverage</span>
                 </li>
                 <li>
-                  <i className="fas fa-times"></i>
-                  <span>Desktop applications outside browser</span>
-                </li>
-                <li>
-                  <i className="fas fa-times"></i>
-                  <span>Offline application usage</span>
+                  <i className="fas fa-arrow-right"></i>
+                  <span>Log correlation for offline activity reconstruction</span>
                 </li>
               </ul>
             </div>
