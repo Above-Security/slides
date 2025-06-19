@@ -1,7 +1,7 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
 import styles from './SlideMarketLeadership.module.css';
-import {Logo} from '../components/LogoWatermark';
+import { Logo } from '../components/LogoWatermark';
 
 const SlideMarketLeadership = () => (
   <SlideLayout>
@@ -18,7 +18,7 @@ const SlideMarketLeadership = () => (
         </h3>
         <p className={styles['intro-text']}>
           Each category addresses a different layer of risk — access control, misconfiguration, detection, and response.
-          <strong>Above uniquely covers the runtime behavioral layer left exposed by every other vendor.</strong>
+          <br /><strong>Above uniquely covers the runtime behavioral layer left exposed by every other vendor.</strong>
         </p>
       </div>
 
@@ -36,11 +36,11 @@ const SlideMarketLeadership = () => (
           {[
             ['Real-Time Session Threat Detection (Runtime ITDR)', '✅', '✅', '❌', '❌', '❌'],
             ['Post-authentication User Behavior Visibility', '✅', '✅', '❌', '❌', '❌'],
-            ['Browser-Based Phishing Detection (AiTM, Consent)', '✅', '❌', '❌', '❌', '❌'],
+            ['Browser-Based Phishing Detection (AiTM, Consent)', '✅', '❌', '❌', '✅', '❌'],
             ['High-Fidelity Insider Threat Prevention', '✅', '❌', '❌', '❌', '❌'],
             ['Misuse of Legitimate SaaS Tools', '✅', '❌', '❌', '❌', '❌'],
             ['Third-Party OAuth Abuse Coverage', '✅', '❌', '❌', '❌', '❌'],
-            ['Risky SaaS & Shadow App Discovery', '✅', '❌', '✅', '❌', '❌'],
+            ['Risky SaaS & Shadow App Discovery', '✅', '❌', '✅', '✅', '❌'],
             ['Session Hijacking Detection', '✅', '✅', '❌', '✅', '❌'],
             ['Prevention of Credential Misuse in-session', '✅', '❌', '❌', '❌', '❌'],
             ['SaaS Misconfig Detection & Remediation', '❌', '❌', '✅', '❌', '❌'],
