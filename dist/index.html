@@ -14,10 +14,10 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://above-security.github.io/slides/" />
+    <meta property="og:url" content="https://abovesec.com/" />
     <meta property="og:title" content="Above Security — Browser ITDR Platform" />
     <meta property="og:description" content="Runtime identity threat detection using browser telemetries. Detect sophisticated phishing, insider threats, and behavioral anomalies in real-time." />
-    <meta property="og:image" content="https://above-security.github.io/slides/og-image.png" />
+    <meta property="og:image" content="https://abovesec.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Above Security Runtime ITDR Platform" />
@@ -26,10 +26,10 @@
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://above-security.github.io/slides/" />
+    <meta name="twitter:url" content="https://abovesec.com/" />
     <meta name="twitter:title" content="Above Security — Browser ITDR Platform" />
     <meta name="twitter:description" content="Runtime identity threat detection using browser telemetries. Detect sophisticated phishing and insider threats in real-time." />
-    <meta name="twitter:image" content="https://above-security.github.io/slides/og-image.png" />
+    <meta name="twitter:image" content="https://abovesec.com/og-image.png" />
     <meta name="twitter:image:alt" content="Above Security Runtime ITDR Platform" />
     <meta name="twitter:creator" content="@AboveSecurity" />
     <meta name="twitter:site" content="@AboveSecurity" />
@@ -47,11 +47,11 @@
     <meta name="format-detection" content="telephone=no" />
     
     <!-- Favicon Package -->
-    <link rel="icon" type="image/svg+xml" href="/slides/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/slides/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/slides/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/slides/apple-touch-icon.png" />
-    <link rel="manifest" href="/slides/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,7 +70,7 @@
       "name": "Above Security",
       "description": "Browser ITDR platform using runtime telemetries for identity threat detection and sophisticated phishing prevention",
       "url": "https://abovesec.com",
-      "logo": "https://above-security.github.io/slides/favicon.svg",
+      "logo": "https://abovesec.com/favicon.svg",
       "sameAs": [
         "https://github.com/above-security",
         "https://abovesec.com"
@@ -89,6 +89,26 @@
         "addressCountry": "US"
       }
     }
+    </script>
+    
+    <!-- GitHub Pages SPA routing solution -->
+    <script>
+      // Check if this is a redirect from 404.html
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') + l.hash
+            );
+          }
+        }
+      }(window.location))
     </script>
     <script type="module" crossorigin src="/assets/index-DTR6hFkY.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D189nk8N.css">
