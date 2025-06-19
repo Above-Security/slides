@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Above Security - Redirecting...</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #001122 0%, #003344 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 2rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #00ff88;
+        }
+        .message {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        .spinner {
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid #00ff88;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">ABOVE</div>
+        <div class="message">Redirecting to presentation...</div>
+        <div class="spinner"></div>
+    </div>
+    
+    <script>
+        // GitHub Pages 404 redirect for HashRouter
+        (function() {
+            const path = window.location.pathname;
+            
+            // If we're at a path that should be handled by React Router
+            if (path !== '/' && !path.includes('.')) {
+                // Convert BrowserRouter path to HashRouter format
+                const newHash = '#' + path + window.location.search;
+                window.location.replace(window.location.origin + '/' + newHash);
+            } else {
+                // Default redirect to home
+                window.location.replace(window.location.origin + '/#/slide/1');
+            }
+        })();
+    </script>
+</body>
+</html>
