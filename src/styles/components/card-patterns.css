@@ -29,10 +29,28 @@
   border-color: var(--bg-darker);
 }
 
+/* Higher specificity for dark card hover to override base card hover */
+.card.card--dark:hover {
+  background: var(--bg-darker) !important;
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-inverse);
+}
+
 .card--brand {
   background: var(--brand-gradient-vertical);
   color: var(--text-inverse);
   border-color: var(--brand-primary);
+}
+
+/* Higher specificity for brand card hover to override base card hover */
+.card.card--brand:hover {
+  background: var(--brand-gradient-vertical) !important;
+  border-color: var(--brand-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-inverse);
 }
 
 .card--elevated {
@@ -463,18 +481,18 @@
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
-  
+
   .key-points-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
   }
-  
+
   .card,
   .landscape-card,
   .scenario-card {
     padding: var(--space-5);
   }
-  
+
   .card--spacious {
     padding: var(--space-6);
   }
