@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Above Security's Browser ITDR platform delivers runtime identity threat detection using browser telemetries. Detect sophisticated phishing, insider threats, and session hijacking in real-time." />
-    <meta name="keywords" content="Browser ITDR, Runtime ITDR, Identity Threat Detection, Browser Telemetries, Sophisticated Phishing, Runtime Security, Browser Security, Insider Threat, Zero Trust, Above Security" />
-    <meta name="author" content="Above Security" />
-    <meta name="robots" content="index, follow" />
+    <title>Above Security - Redirecting...</title>
+    <script>
+      // GitHub Pages SPA routing solution
+      // When a route like /slides/slide/1 is accessed directly,
+      // GitHub Pages returns this 404.html, which redirects to the main app
+      // with the route preserved in the URL hash
+      
+      const path = window.location.pathname;
+      const basePath = '/slides/';
+      
+      if (path.startsWith(basePath)) {
+        // Extract the route part after /slides/
+        const route = path.substring(basePath.length);
+        
+        if (route && route !== '') {
+          // Redirect to the base with the route as hash
+          // /slides/slide/1 becomes /slides/#/slide/1
+          window.location.replace(basePath + '#/' + route);
+        } else {
+          // Just redirect to base
+          window.location.replace(basePath);
+        }
+      } else {
+        // Not a slides route, redirect to base
+        window.location.replace(basePath);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Above Security presentation...</p>
+  </body>
+</html>
     
     <!-- Title -->
     <title>Above Security — Browser ITDR Platform | Sophisticated Phishing Detection</title>

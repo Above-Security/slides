@@ -4,22 +4,22 @@
     "description": "Browser ITDR platform using runtime telemetries for identity threat detection and sophisticated phishing prevention",
     "icons": [
         {
-            "src": "/favicon-16x16.png",
+            "src": "/slides/favicon-16x16.png",
             "sizes": "16x16",
             "type": "image/png"
         },
         {
-            "src": "/favicon-32x32.png",
+            "src": "/slides/favicon-32x32.png",
             "sizes": "32x32",
             "type": "image/png"
         },
         {
-            "src": "/apple-touch-icon.png",
+            "src": "/slides/apple-touch-icon.png",
             "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "/favicon.svg",
+            "src": "/slides/favicon.svg",
             "sizes": "any",
             "type": "image/svg+xml"
         }
