@@ -43,20 +43,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/slides/apple-touch-icon.png" />
     
     <script>
-      // SPA routing solution for custom domain (abovesec.com)
-      // When a route like /home or /slide/1 is accessed directly,
-      // GitHub Pages returns this 404.html, which redirects to the main app
-      // with the route preserved in the URL hash
-      
-      const path = window.location.pathname;
-      
-      if (path && path !== '/') {
-        // Convert /home or /slide/1 to /#/home or /#/slide/1
-        window.location.replace('/#' + path);
-      } else {
-        // Root path, just go to homepage
-        window.location.replace('/');
-      }
+      // Simple SPA redirect - let React Router handle all routing
+      window.location.replace('/');
     </script>
   </head>
   <body>
