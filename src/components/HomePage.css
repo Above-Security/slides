@@ -69,7 +69,7 @@
 }
 
 .homepage-content {
-    padding: var(--spacing-2xl, 40px);
+    padding: var(--spacing-3xl, 32px);
     position: relative;
     z-index: 2;
 }
@@ -77,11 +77,11 @@
 /* Header Styles */
 .homepage-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl, 40px);
+    margin-bottom: var(--spacing-3xl, 32px);
 }
 
 .company-logo {
-    margin-bottom: var(--spacing-lg, 24px);
+    margin-bottom: var(--spacing-xl, 20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,7 @@
     font-size: var(--font-size-3xl, 2.25rem);
     line-height: var(--line-height-tight, 1.25);
     color: var(--color-text-primary, #24292f);
-    margin: 0 0 var(--spacing-sm, 8px) 0;
+    margin: 0 0 var(--spacing-md, 12px) 0;
     text-align: center;
 }
 
@@ -108,10 +108,7 @@
 .brand-name {
     position: relative;
     display: inline-block;
-    background: linear-gradient(135deg, #24292f 0%, #656d76 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-text-primary, #24292f);
 }
 
 .brand-name::after {
@@ -150,7 +147,7 @@
 }
 
 .coming-soon-content {
-    margin-bottom: var(--spacing-xl, 32px);
+    margin-bottom: var(--spacing-2xl, 24px);
 }
 
 .coming-soon-description {
@@ -159,7 +156,7 @@
     font-size: var(--font-size-lg, 1.125rem);
     line-height: var(--line-height-relaxed, 1.625);
     color: var(--color-text-secondary, #656d76);
-    margin: 0 0 var(--spacing-xl, 32px) 0;
+    margin: 0 0 var(--spacing-2xl, 24px) 0;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
@@ -169,8 +166,8 @@
 .action-buttons {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md, 16px);
-    margin-bottom: var(--spacing-xl, 32px);
+    gap: var(--spacing-md, 12px);
+    margin-bottom: var(--spacing-2xl, 24px);
     align-items: center;
 }
 
@@ -211,8 +208,8 @@
 /* Footer Styles */
 .homepage-footer {
     border-top: 1px solid var(--color-border-muted, #d8dee4);
-    padding-top: var(--spacing-lg, 24px);
-    margin-top: var(--spacing-lg, 24px);
+    padding-top: var(--spacing-xl, 20px);
+    margin-top: var(--spacing-xl, 20px);
 }
 
 .brand-notice {
@@ -228,13 +225,22 @@
 /* Responsive Design */
 @media (min-width: 768px) {
     .homepage-content {
-        padding: var(--spacing-3xl, 48px);
+        padding: var(--spacing-4xl, 48px);
+    }
+    
+    .homepage-header {
+        margin-bottom: var(--spacing-4xl, 48px);
+    }
+    
+    .coming-soon-content {
+        margin-bottom: var(--spacing-3xl, 32px);
     }
     
     .action-buttons {
         flex-direction: row;
         justify-content: center;
-        gap: var(--spacing-lg, 24px);
+        gap: var(--spacing-xl, 20px);
+        margin-bottom: var(--spacing-3xl, 32px);
     }
     
     .secondary-button {
@@ -245,16 +251,25 @@
 
 @media (max-width: 767px) {
     .homepage-overlay {
-        margin: var(--spacing-md, 16px);
+        margin: var(--spacing-lg, 16px);
         max-width: calc(100% - 32px);
     }
     
     .homepage-content {
-        padding: var(--spacing-xl, 32px) var(--spacing-lg, 24px);
+        padding: var(--spacing-2xl, 24px) var(--spacing-xl, 20px);
+    }
+    
+    .homepage-header {
+        margin-bottom: var(--spacing-2xl, 24px);
+    }
+    
+    .company-logo {
+        margin-bottom: var(--spacing-md, 12px);
     }
     
     .homepage-title {
         font-size: var(--font-size-2xl, 1.875rem);
+        margin-bottom: var(--spacing-sm, 8px);
     }
     
     .homepage-subtitle {
@@ -263,5 +278,35 @@
     
     .coming-soon-description {
         font-size: var(--font-size-base, 1rem);
+        margin-bottom: var(--spacing-xl, 20px);
+    }
+    
+    .coming-soon-content {
+        margin-bottom: var(--spacing-xl, 20px);
+    }
+    
+    .action-buttons {
+        margin-bottom: var(--spacing-xl, 20px);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .homepage-overlay {
+        margin: var(--spacing-md, 12px);
+        max-width: calc(100% - 24px);
+    }
+    
+    .homepage-content {
+        padding: var(--spacing-xl, 20px) var(--spacing-lg, 16px);
+    }
+    
+    .homepage-title {
+        font-size: var(--font-size-xl, 1.5rem);
+    }
+    
+    .coming-soon-description {
+        font-size: var(--font-size-sm, 0.875rem);
+        line-height: 1.5;
     }
 }
