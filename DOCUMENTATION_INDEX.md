@@ -6,19 +6,88 @@ This directory contains all essential documentation for the Above Security prese
 
 ### **[README.md](README.md)** - Main Project Documentation
 - 🎯 **Purpose**: Complete project overview and quick start guide
-- 📊 **Status**: ✅ Current and comprehensive
-- 🔄 **Last Updated**: January 2025
-- 📝 **Contains**: Architecture, setup, deployment, troubleshooting
+- 📊 **Status**: ✅ Current and comprehensive (Updated June 2025)
+- 📝 **Contains**: Architecture, 14-slide presentation structure, setup, deployment
 
 ### **[ROUTING_BEST_PRACTICES.md](ROUTING_BEST_PRACTICES.md)** - Routing Architecture Guide
 - 🎯 **Purpose**: Detailed routing implementation and best practices
 - 📊 **Status**: ✅ Current - reflects production routing structure
-- 🔄 **Last Updated**: January 2025  
 - 📝 **Contains**: RESTful design, URL patterns, technical implementation
 
 ### **[BRAND_GUIDELINES.md](BRAND_GUIDELINES.md)** - Design System Documentation
 - 🎯 **Purpose**: Design tokens, typography, color system
 - 📊 **Status**: ✅ Current design system reference
+- 📝 **Contains**: CSS architecture, component patterns, responsive design
+
+### **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Development Setup
+- 🎯 **Purpose**: Environment configuration and development workflow
+- 📊 **Status**: ✅ Current setup instructions
+- 📝 **Contains**: Installation, build process, deployment steps
+
+### **[CLARITY_ANALYTICS.md](CLARITY_ANALYTICS.md)** - Analytics Configuration
+- 🎯 **Purpose**: Microsoft Clarity analytics implementation
+- 📊 **Status**: ✅ Current tracking configuration
+- 📝 **Contains**: Event tracking, user behavior analytics, performance metrics
+
+### **[METADATA_SEO.md](METADATA_SEO.md)** - SEO and Metadata
+- 🎯 **Purpose**: Search engine optimization and social media metadata
+- 📊 **Status**: ✅ Current SEO configuration
+- 📝 **Contains**: Meta tags, Open Graph, social sharing optimization
+
+### **[DOMAIN_SETUP.md](DOMAIN_SETUP.md)** - Domain Configuration
+- 🎯 **Purpose**: Custom domain setup and DNS configuration
+- 📊 **Status**: ✅ Current domain configuration for abovesec.com
+- 📝 **Contains**: DNS settings, SSL configuration, GitHub Pages setup
+
+## 🎯 **Presentation Content (PRESERVE)**
+
+### **14 Production Slides - DO NOT REMOVE:**
+1. **SlideIntro.jsx** - Above Runtime ITDR introduction
+2. **SlideRuntimeITDR.jsx** - Technology definition and positioning
+3. **SlideProblem.jsx** - Current identity security challenges  
+4. **SlideHowItWorks.jsx** - Technical implementation details
+5. **SlideCaseStudy.jsx** - Cyberhaven case study
+6. **SlideCaseStudy2.jsx** - Rippling–Deel espionage case
+7. **SlideDetection.jsx** - Real-world detection examples
+8. **SlideDeployment.jsx** - Implementation process
+9. **SlideLandscape.jsx** - Competitive landscape
+10. **SlideVsPush.jsx** - vs Push Security comparison
+11. **SlideVsValence.jsx** - vs Valence Security comparison
+12. **SlideVsIsland.jsx** - vs Island Browser comparison
+13. **SlideMarketLeadership.jsx** - Industry recognition
+14. **SlideBusinessCase.jsx** - Investment justification and ROI
+
+**⚠️ Critical**: All slides are production-ready and in active use. Any modifications require explicit approval.
+
+## 🗂️ **File Organization**
+
+```
+📁 Root Documentation (Essential)
+├── README.md                    # Main documentation
+├── ROUTING_BEST_PRACTICES.md    # Technical routing guide
+├── BRAND_GUIDELINES.md          # Design system  
+├── SETUP_GUIDE.md              # Development setup
+├── CLARITY_ANALYTICS.md         # Analytics configuration
+├── METADATA_SEO.md             # SEO and metadata
+├── DOMAIN_SETUP.md             # Domain configuration
+└── DOCUMENTATION_INDEX.md       # This file
+
+📁 src/slides/ (Production Content)
+├── index.js                     # Slide registration
+├── Slide*.jsx                   # 14 individual slide components
+└── Slide*.module.css           # Component-specific styling
+```
+
+## 🔄 **Maintenance Guidelines**
+
+- **README.md**: Update when major features or architecture changes
+- **Slide Components**: Preserve all 14 slides - they are production-ready
+- **Documentation**: Keep current with actual implementation
+- **Cleanup**: Remove outdated summary files and temporary documentation
+
+---
+
+*Last Updated: June 19, 2025*
 - 🔄 **Last Updated**: January 2025
 - 📝 **Contains**: CSS architecture, brand compliance, responsive design
 

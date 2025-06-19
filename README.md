@@ -2,6 +2,8 @@
 
 A professional React-based presentation showcasing Above Security's Runtime Identity Threat Detection & Response platform. Built with optimal routing architecture, comprehensive design system, and enterprise-grade quality.
 
+*Last Updated: June 19, 2025*
+
 ## 🌐 **Live Application**
 
 **Production URL:** https://abovesec.com/
@@ -25,16 +27,48 @@ This presentation is designed for technical buyers including CISOs, SecOps leads
 
 ## 📋 **Presentation Content**
 
-### **Slide Deck Structure:**
-1. **Introduction** - Above Security overview and mission
-2. **Problem Statement** - Current identity security challenges
-3. **Detection Overview** - Runtime threat detection approach  
-4. **How It Works** - Technical implementation details
-5. **Market Landscape** - Competitive positioning
-6. **Market Leadership** - Industry recognition and validation
-7. **Competitor Analysis** - Valence, Push Security, Island comparisons
-8. **Case Study** - Real-world deployment examples
-9. **Deployment** - Implementation and rollout process
+### **Complete Slide Deck (14 Slides):**
+1. **Above Runtime ITDR** (`SlideIntro`) - Company introduction and platform overview
+2. **What is Runtime ITDR?** (`SlideRuntimeITDR`) - Technology definition and positioning  
+3. **The Problem** (`SlideProblem`) - Current identity security challenges
+4. **How It Works** (`SlideHowItWorks`) - Technical implementation and architecture
+5. **Cyberhaven Case Study** (`SlideCaseStudy`) - Real-world insider threat detection
+6. **Rippling–Deel Espionage Case** (`SlideCaseStudy2`) - Corporate espionage prevention
+7. **Real-World Detection** (`SlideDetection`) - Live threat detection examples
+8. **Deployment** (`SlideDeployment`) - Implementation and rollout process
+9. **Competitive Landscape** (`SlideLandscape`) - Market positioning overview
+10. **Above vs. Push Security** (`SlideVsPush`) - Direct competitor comparison
+11. **Above vs. Valence Security** (`SlideVsValence`) - Direct competitor comparison  
+12. **Above vs. Island Browser** (`SlideVsIsland`) - Direct competitor comparison
+13. **Market Leadership** (`SlideMarketLeadership`) - Industry recognition and validation
+14. **Business Case for Above Security** (`SlideBusinessCase`) - Investment justification and ROI
+
+**⚠️ PRESERVATION NOTICE:** All 14 slides above are production-ready and must be preserved. Do not remove or modify slide components without explicit approval.
+
+## 🛡️ **Slide Preservation Policy**
+
+**CRITICAL NOTICE**: The 14 slides listed above represent the complete, production-ready presentation and must be preserved at all costs.
+
+### **Protected Components:**
+- All `Slide*.jsx` files in `/src/slides/`
+- All `Slide*.module.css` files in `/src/slides/`
+- The `slideData` array in `/src/slides/index.js`
+
+### **Before Making Changes:**
+1. ✅ Verify the change doesn't remove any of the 14 core slides
+2. ✅ Test that all slides still render correctly after modifications
+3. ✅ Ensure the slide navigation and routing still functions
+4. ✅ Get explicit approval for any structural changes to slide components
+
+### **Recovery Instructions:**
+If slides are accidentally removed, they can be recovered from git history:
+```bash
+# View git history for a specific slide
+git log --oneline -p -- src/slides/SlideBusinessCase.jsx
+
+# Restore from a specific commit
+git checkout <commit-hash> -- src/slides/SlideBusinessCase.jsx
+```
 
 ## 🏗️ **Architecture Overview**
 
@@ -545,6 +579,26 @@ For detailed brand guidelines, see [BRAND_GUIDELINES.md](./BRAND_GUIDELINES.md)
 - **Runtime Performance:** GPU-accelerated animations only
 - **Asset Optimization:** Efficient font and icon loading
 - **Mobile Performance:** Responsive design with touch optimization
+
+## 📊 **Current Status (June 2025)**
+
+### **✅ Production Ready**
+- **Live Site**: https://abovesec.com/ fully operational
+- **Complete Presentation**: All 14 slides restored and functional
+- **Documentation**: Updated and synchronized with current implementation
+- **Architecture**: Stable routing with GitHub Pages optimization
+
+### **Recent Restorations (June 2025)**
+- **SlideCaseStudy2.jsx**: Rippling–Deel espionage case study fully restored
+- **SlideBusinessCase.jsx**: Complete business case with market analysis restored  
+- **CSS Modules**: All associated styling files restored
+- **Documentation**: README and indexes updated with accurate slide inventory
+
+### **Cleanup Completed**
+- **Removed**: 3 outdated summary/completion files
+- **Removed**: 2 empty/duplicate slide files  
+- **Updated**: All documentation to reflect current 14-slide structure
+- **Verified**: All slides are functional and preservation notices added
 
 ## 📄 License
 
