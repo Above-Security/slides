@@ -19,6 +19,7 @@
   width: 100%;
   height: 4px;
   background: linear-gradient(90deg, var(--brand-primary-light), var(--brand-primary), var(--brand-primary-light));
+  background-size: 200% 100%;
   animation: gradientFlow 3s ease-in-out infinite;
 }
 
