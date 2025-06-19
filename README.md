@@ -301,7 +301,7 @@ This presentation is proprietary to Above Security. All rights reserved.
 
 ## 🤝 Contributing
 
-This is a private repository for Above Security's presentation materials. For updates or modifications, please contact the development team.
+This is a private repository for Above Security's presentation materials. For updates or modifications, please contact Aviv (CEO) at aviv@abovesec.com.
 
 ### Development Guidelines
 - Follow the established design system patterns

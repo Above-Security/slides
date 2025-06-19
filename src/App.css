@@ -22,5 +22,6 @@
 /* Import Utilities */
 @import './styles/utils/utilities.css';
 @import './styles/utils/responsive.css';
+@import './styles/utils/logo-hover-effects.css';
 
 /* Remaining slide-specific styles will be moved to individual slide modules */

@@ -62,3 +62,54 @@ export const clarityUpgrade = (reason) => {
         console.warn('Clarity upgrade failed:', error);
     }
 };
+
+// Enhanced tracking functions for email gating
+export const trackEmailGateEvent = (eventType, email = null, additionalData = {}) => {
+    try {
+        const eventData = {
+            event_type: eventType,
+            timestamp: new Date().toISOString(),
+            ...additionalData
+        };
+
+        if (email) {
+            const domain = email.split('@')[1];
+            eventData.email_domain = domain;
+            eventData.has_email = true;
+        }
+
+        clarityEvent(`email_gate_${eventType}`, eventData);
+
+        // Set tags for filtering in Clarity
+        if (email) {
+            claritySet('user_has_email', 'true');
+            claritySet('user_email_domain', domain);
+        }
+
+    } catch (error) {
+        console.warn('Email gate tracking failed:', error);
+    }
+};
+
+// Track presentation engagement with email context
+export const trackPresentationEngagement = (slideNumber, slideTitle, email = null) => {
+    try {
+        const engagementData = {
+            slide_number: slideNumber,
+            slide_title: slideTitle,
+            has_user_email: !!email,
+            timestamp: new Date().toISOString()
+        };
+
+        if (email) {
+            engagementData.user_domain = email.split('@')[1];
+        }
+
+        clarityEvent('presentation_slide_view', engagementData);
+        claritySet('current_slide', slideNumber);
+        claritySet('last_slide_title', slideTitle);
+
+    } catch (error) {
+        console.warn('Presentation engagement tracking failed:', error);
+    }
+};
