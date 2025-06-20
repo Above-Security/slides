@@ -32,7 +32,7 @@ const PresentationApp = () => {
   const params = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [currentSlide, setCurrentSlide] = useState(getSlideIndexFromUrl(params, location));
   const [showMenu, setShowMenu] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
@@ -166,8 +166,8 @@ const PresentationApp = () => {
       {/* Dynamic title for presentation slides */}
       <title>{`Above Security - Slide ${currentSlide + 1} | Runtime ITDR Platform`}</title>
       <meta name="description" content={`Above Security presentation slide ${currentSlide + 1} - Runtime Identity Threat Detection & Response platform.`} />
-      
-      <div className="presentation-container">
+
+      <div className="presentation-container" data-testid="presentation-app">
         <div className="presentation-controls">
           <button
             className="menu-button"
