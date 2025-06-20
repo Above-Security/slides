@@ -48,9 +48,13 @@ const HomePage = () => {
     };
 
     const handleLogoClick = () => {
-        clarityEvent('logo_clicked');
-        claritySet('user_action', 'logo_interaction');
-        console.log('Logo interaction tracked');
+        try {
+            clarityEvent('logo_clicked');
+            claritySet('user_action', 'logo_interaction');
+            console.log('Logo interaction tracked');
+        } catch (error) {
+            console.warn('Analytics tracking failed:', error);
+        }
     };
 
     return (
@@ -96,7 +100,7 @@ const HomePage = () => {
             {/* Canonical URL */}
             <link rel="canonical" href="https://abovesec.com/" />
 
-            <div className="homepage-container">
+            <div className="homepage-container" data-testid="home-page">
                 <div className="homepage-overlay">
                     <div className="homepage-content">
                         <div className="homepage-header">

@@ -411,6 +411,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -422,6 +423,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -429,9 +431,12 @@
 }
 
 @keyframes iconPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.05);
     }
@@ -442,34 +447,34 @@
     .use-case-detail-container {
         padding: var(--spacing-lg, 16px);
     }
-    
+
     .scenarios-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl, 24px);
     }
-    
+
     .scenario-card {
         padding: var(--spacing-xl, 24px);
     }
-    
+
     .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md, 12px);
     }
-    
+
     .use-case-hero-title {
         font-size: var(--text-4xl, 32px);
     }
-    
+
     .use-case-hero-description {
         font-size: var(--text-md, 16px);
     }
-    
+
     .use-case-detail-navigation {
         flex-direction: column;
         gap: var(--spacing-md, 12px);
     }
-    
+
     .nav-link {
         width: 100%;
         justify-content: center;
@@ -482,14 +487,14 @@
         background: white;
         padding: 0;
     }
-    
+
     .scenario-card {
         box-shadow: none;
         border: 1px solid #ccc;
         break-inside: avoid;
         margin-bottom: var(--spacing-lg, 16px);
     }
-    
+
     .use-case-detail-navigation,
     .back-link {
         display: none;

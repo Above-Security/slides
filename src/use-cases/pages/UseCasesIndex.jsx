@@ -6,15 +6,19 @@ import '../styles/UseCasesIndex.css';
 
 const UseCasesIndex = () => {
     useEffect(() => {
-        // Initialize Clarity tracking for use cases
-        initializeClarity();
-        
-        // Track use cases index view
-        clarityEvent('use_cases_index_view');
-        claritySet('page_type', 'use_cases_index');
-        claritySet('user_journey', 'use_cases_exploration');
-        
-        console.log('Use Cases Index loaded with Clarity tracking');
+        try {
+            // Initialize Clarity tracking for use cases
+            initializeClarity();
+
+            // Track use cases index view
+            clarityEvent('use_cases_index_view');
+            claritySet('page_type', 'use_cases_index');
+            claritySet('user_journey', 'use_cases_exploration');
+
+            console.log('Use Cases Index loaded with Clarity tracking');
+        } catch (error) {
+            console.warn('Analytics initialization failed:', error);
+        }
     }, []);
 
     const useCases = [
@@ -53,9 +57,21 @@ const UseCasesIndex = () => {
     ];
 
     const handleUseCaseClick = (useCaseId) => {
-        clarityEvent('use_case_clicked', { use_case: useCaseId });
-        claritySet('selected_use_case', useCaseId);
-        console.log(`Use case selected: ${useCaseId}`);
+        try {
+            clarityEvent('use_case_clicked', { use_case: useCaseId });
+            claritySet('selected_use_case', useCaseId);
+            console.log(`Use case selected: ${useCaseId}`);
+        } catch (error) {
+            console.warn('Analytics tracking failed:', error);
+        }
+    };
+
+    const handleLogoClick = () => {
+        try {
+            clarityEvent('logo_clicked_from_use_cases');
+        } catch (error) {
+            console.warn('Analytics tracking failed:', error);
+        }
     };
 
     return (
@@ -64,26 +80,26 @@ const UseCasesIndex = () => {
             <title>Use Cases - Above Security | Runtime ITDR Solutions</title>
             <meta name="description" content="Explore real-world use cases for Above Security's Runtime ITDR platform. See how we detect phishing, account takeovers, insider threats, and zero-day attacks." />
             <meta name="keywords" content="phishing detection, account takeover prevention, insider threat, zero-day protection, ITDR, runtime security" />
-            
-            <div className="use-cases-container">
+
+            <div className="use-cases-container" data-testid="use-cases-index">
                 <div className="use-cases-content">
                     {/* Header Section */}
                     <header className="use-cases-header">
-                        <Link to="/home" className="logo-container" onClick={() => clarityEvent('logo_clicked_from_use_cases')}>
+                        <Link to="/home" className="logo-container" onClick={handleLogoClick}>
                             <Logo className="use-cases-logo" />
                         </Link>
-                        
+
                         <div className="use-cases-hero">
                             <h1 className="use-cases-title">Runtime ITDR Use Cases</h1>
                             <p className="use-cases-subtitle">
-                                Real-world scenarios where Above Security's runtime visibility 
+                                Real-world scenarios where Above Security's runtime visibility
                                 and behavioral analysis stop threats that traditional security misses
                             </p>
                         </div>
                     </header>
 
                     {/* Use Cases Grid */}
-                    <section className="use-cases-grid">
+                    <main className="use-cases-grid">
                         {useCases.map((useCase) => (
                             <Link
                                 key={useCase.id}
@@ -95,11 +111,11 @@ const UseCasesIndex = () => {
                                 <div className="use-case-icon">
                                     <i className={useCase.icon}></i>
                                 </div>
-                                
+
                                 <div className="use-case-content">
                                     <h3 className="use-case-title">{useCase.title}</h3>
                                     <p className="use-case-description">{useCase.description}</p>
-                                    
+
                                     <div className="use-case-meta">
                                         <span className="scenarios-count">
                                             {useCase.scenarios} scenarios
@@ -111,7 +127,7 @@ const UseCasesIndex = () => {
                                 </div>
                             </Link>
                         ))}
-                    </section>
+                    </main>
 
                     {/* Navigation Footer */}
                     <footer className="use-cases-navigation">
@@ -119,7 +135,7 @@ const UseCasesIndex = () => {
                             <i className="fas fa-home"></i>
                             Back to Home
                         </Link>
-                        
+
                         <Link to="/slide/1" className="nav-link primary">
                             View Full Presentation
                             <i className="fas fa-arrow-right"></i>
