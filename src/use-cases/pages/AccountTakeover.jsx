@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
+import '../../styles/layout/navigation-footer.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/AccountTakeover.css';
 
@@ -249,16 +250,15 @@ const AccountTakeover = () => {
                     </main>
 
                     {/* Navigation Footer */}
-                    <footer className="account-takeover-footer">
-                        <div className="account-takeover-footer-content">
-                            <Logo className="account-takeover-footer-logo" />
-                            <div className="account-takeover-footer-nav">
-                                <Link to="/" className="account-takeover-footer-link">
-                                    <i className="fas fa-home"></i>
-                                    Home
-                                </Link>
-                            </div>
-                        </div>
+                    <footer className="navigation-footer multi-link">
+                        <Link to="/use-cases" className="nav-link secondary">
+                            <i className="fas fa-arrow-left"></i>
+                            Back to Use Cases
+                        </Link>
+                        <Link to="/slides/1" className="nav-link primary">
+                            View Full Presentation
+                            <i className="fas fa-arrow-right"></i>
+                        </Link>
                     </footer>
                 </div>
             </div>

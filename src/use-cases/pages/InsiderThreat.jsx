@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
+import '../../styles/layout/navigation-footer.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/InsiderThreat.css';
 
@@ -260,16 +261,15 @@ const InsiderThreat = () => {
                     </main>
 
                     {/* Navigation Footer */}
-                    <footer className="insider-threat-footer">
-                        <div className="insider-threat-footer-content">
-                            <Logo className="insider-threat-footer-logo" />
-                            <div className="insider-threat-footer-nav">
-                                <Link to="/" className="insider-threat-footer-link">
-                                    <i className="fas fa-home"></i>
-                                    Home
-                                </Link>
-                            </div>
-                        </div>
+                    <footer className="navigation-footer multi-link">
+                        <Link to="/use-cases" className="nav-link secondary">
+                            <i className="fas fa-arrow-left"></i>
+                            Back to Use Cases
+                        </Link>
+                        <Link to="/slides/1" className="nav-link primary">
+                            View Full Presentation
+                            <i className="fas fa-arrow-right"></i>
+                        </Link>
                     </footer>
                 </div>
             </div>

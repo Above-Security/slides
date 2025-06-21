@@ -139,10 +139,15 @@ describe('FloatingNavigation Integration Tests', () => {
             
             global.IntersectionObserver = mockObserver;
 
+            // Create a proper DOM container for the test
+            const testContainer = document.createElement('div');
+            document.body.appendChild(testContainer);
+
             render(
                 <MemoryRouter>
-                    <FloatingNavigation />
-                </MemoryRouter>
+                    <FloatingNavigation _testMode={true} />
+                </MemoryRouter>,
+                { container: testContainer }
             );
 
             const nav = screen.getByRole('navigation');
@@ -159,6 +164,9 @@ describe('FloatingNavigation Integration Tests', () => {
             await waitFor(() => {
                 expect(nav).toHaveClass('is-stuck');
             });
+
+            // Cleanup
+            document.body.removeChild(testContainer);
         });
     });
 
