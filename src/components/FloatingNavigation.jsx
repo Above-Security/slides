@@ -33,15 +33,72 @@ const FloatingNavigation = ({
 }) => {
     const location = useLocation();
     const [isEnhanced, setIsEnhanced] = useState(false);
+    const [isStuck, setIsStuck] = useState(false);
     const navRef = useRef(null);
+    const sentinelRef = useRef(null);
 
-    // Enhanced scroll-based sticky state detection
+    // IntersectionObserver-based sticky state detection
+    useEffect(() => {
+        if (!navRef.current || typeof IntersectionObserver === 'undefined') {
+            return;
+        }
+
+        // Create a sentinel element for intersection detection
+        const sentinel = document.createElement('div');
+        sentinel.style.position = 'absolute';
+        sentinel.style.top = `${topOffset}px`;
+        sentinel.style.height = '1px';
+        sentinel.style.width = '1px';
+        sentinel.style.pointerEvents = 'none';
+        sentinel.style.visibility = 'hidden';
+        
+        // Safely insert sentinel before the nav element
+        try {
+            if (navRef.current.parentNode) {
+                navRef.current.parentNode.insertBefore(sentinel, navRef.current);
+                sentinelRef.current = sentinel;
+            }
+        } catch (error) {
+            // If DOM manipulation fails, fall back gracefully
+            console.warn('IntersectionObserver sentinel creation failed:', error);
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // When sentinel is not intersecting, nav is stuck
+                    setIsStuck(!entry.isIntersecting);
+                });
+            },
+            {
+                threshold: 0,
+                rootMargin: '0px'
+            }
+        );
+
+        observer.observe(sentinel);
+
+        return () => {
+            observer.disconnect();
+            if (sentinelRef.current && sentinelRef.current.parentNode) {
+                try {
+                    sentinelRef.current.parentNode.removeChild(sentinelRef.current);
+                } catch (error) {
+                    // Ignore cleanup errors
+                    console.warn('IntersectionObserver cleanup failed:', error);
+                }
+            }
+        };
+    }, [topOffset]);
+
+    // Enhanced scroll-based state detection (for enhanced styling)
     useEffect(() => {
         const handleScroll = () => {
             if (!navRef.current) return;
             
             const navRect = navRef.current.getBoundingClientRect();
-            // Invert logic: enhanced when at top, subtle when scrolled
+            // Enhanced when at top, subtle when scrolled
             const shouldBeEnhanced = navRect.top > topOffset;
             
             setIsEnhanced(shouldBeEnhanced);
@@ -166,12 +223,13 @@ const FloatingNavigation = ({
     return (
         <nav 
             ref={navRef}
-            className={`floating-navigation ${isEnhanced ? 'is-enhanced' : ''} ${className}`}
+            className={`floating-navigation ${isEnhanced ? 'is-enhanced' : ''} ${isStuck ? 'is-stuck' : ''} ${className}`}
             style={{ '--top-offset': `${topOffset}px` }}
             role="navigation"
             aria-label="Use cases navigation"
             data-testid="floating-navigation"
             data-enhanced={isEnhanced}
+            data-stuck={isStuck}
         >
             <ul className="floating-nav-list" role="list">
                 {navigationLinks.map((link) => {

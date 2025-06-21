@@ -189,6 +189,7 @@
 .nav-text {
   font-weight: inherit;
   color: inherit;
+  white-space: nowrap;
 }
 
 /* Responsive text handling on mobile */
@@ -291,6 +292,24 @@
   
   /* Slightly more opaque border when at top */
   opacity: 1;
+}
+
+/* STUCK STATE - When navigation becomes sticky */
+.floating-navigation.is-stuck .floating-nav-list {
+  /* Additional shadow elevation when stuck */
+  box-shadow: var(--shadow-xl);
+  
+  /* Enhanced border for stuck state */
+  border: 1px solid var(--color-primary-light);
+}
+
+/* Enhanced border animation when stuck */
+.floating-navigation.is-stuck .floating-nav-list::before {
+  /* More prominent animation when stuck */
+  animation: borderGradientFlow 6s linear infinite;
+  
+  /* Higher opacity for stuck state */
+  opacity: 0.9;
 }
 
 /* ANIMATION KEYFRAMES */

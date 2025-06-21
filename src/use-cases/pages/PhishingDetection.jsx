@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
+import '../../styles/layout/navigation-footer.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/PhishingDetection.css';
 
@@ -744,7 +745,11 @@ const PhishingDetection = () => {
                     </main>
 
                     {/* Navigation Footer */}
-                    <footer className="navigation-footer">
+                    <footer className="navigation-footer multi-link">
+                        <Link to="/use-cases" className="nav-link secondary">
+                            <i className="fas fa-arrow-left"></i>
+                            Back to Use Cases
+                        </Link>
                         <Link to="/slides/1" className="nav-link primary">
                             View Full Presentation
                             <i className="fas fa-arrow-right"></i>
