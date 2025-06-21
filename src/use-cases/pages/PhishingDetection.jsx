@@ -28,7 +28,7 @@ const COMPREHENSIVE_PHISHING_DATA = {
     title: 'Comprehensive Phishing Prevention',
     subtitle: 'Beyond Email, Beyond LOTS — Runtime Protection Against Modern Threats',
     description: 'Advanced phishing operates inside trusted environments using OAuth flows, productivity apps, and legitimate workflows. Above\'s runtime ITDR prevents these threats during live user interaction where no log or rule-based tool can intervene.',
-    icon: 'fas fa-shield-virus',
+    icon: 'fas fa-shield',
     color: 'var(--brand-primary)',
     
     executiveSummary: {
@@ -59,7 +59,7 @@ const COMPREHENSIVE_PHISHING_DATA = {
         {
             id: 'docusign-oauth',
             title: 'DocuSign-Embedded OAuth Phishing',
-            icon: 'fas fa-file-signature',
+            icon: 'fas fa-file-alt',
             description: 'Real DocuSign email with document linking to third-party OAuth screen impersonating Box or Google Drive.',
             impact: 'High-privilege scope grants to malicious apps',
             attackVector: 'Legitimate email → document link → deceptive OAuth consent',
@@ -131,12 +131,12 @@ const COMPREHENSIVE_PHISHING_DATA = {
         {
             capability: 'Live UI Parsing',
             description: 'Parses and interprets live user interfaces (DOM, URL, branding, OAuth scopes)',
-            icon: 'fas fa-search-plus'
+            icon: 'fas fa-search'
         },
         {
             capability: 'Pre-Consent Detection',
             description: 'Flags deceptive in-session events before consent is given',
-            icon: 'fas fa-hand-paper'
+            icon: 'fas fa-hand'
         },
         {
             capability: 'Semantic Analysis',
@@ -146,7 +146,7 @@ const COMPREHENSIVE_PHISHING_DATA = {
         {
             capability: 'AiTM Prevention',
             description: 'Intercepts AiTM attempts by validating session flow consistency',
-            icon: 'fas fa-shield-check'
+            icon: 'fas fa-shield'
         },
         {
             capability: 'Real-time Blocking',
@@ -156,7 +156,7 @@ const COMPREHENSIVE_PHISHING_DATA = {
         {
             capability: 'Zero Backend Dependency',
             description: 'Requires no backend logs or API telemetry for operation',
-            icon: 'fas fa-lightning-bolt'
+            icon: 'fas fa-bolt'
         }
     ],
 
@@ -391,8 +391,9 @@ const PhishingDetection = () => {
                     </header>
 
                     <main>
-                        {/* Executive Summary */}
-                        <section className="executive-summary" role="region" aria-labelledby="executive-summary-heading">
+                        <div className="content-group" id="problem-definition">
+                            {/* Executive Summary */}
+                            <section className="executive-summary executive-summary--dark" role="region" aria-labelledby="executive-summary-heading">
                             <div className="section-header">
                                 <h2 id="executive-summary-heading" className="section-title">
                                     <i className="fas fa-star"></i>
@@ -400,11 +401,11 @@ const PhishingDetection = () => {
                                 </h2>
                             </div>
                             <div className="executive-content">
-                                <p className="executive-description">{COMPREHENSIVE_PHISHING_DATA.executiveSummary.description}</p>
+                                <p className="executive-description executive-description--dark">{COMPREHENSIVE_PHISHING_DATA.executiveSummary.description}</p>
                                 <div className="key-points-grid">
                                     {COMPREHENSIVE_PHISHING_DATA.executiveSummary.keyPoints.map((point, index) => (
                                         <div key={index} className="key-point-card">
-                                            <i className="fas fa-check-circle"></i>
+                                            <i className="fas fa-check"></i>
                                             <span>{point}</span>
                                         </div>
                                     ))}
@@ -480,9 +481,11 @@ const PhishingDetection = () => {
                                 ))}
                             </div>
                         </section>
+                        </div> {/* End Problem Definition */}
 
-                        {/* Traditional Tool Gaps */}
-                        <section className="tool-gaps" role="region" aria-labelledby="tool-gaps-heading">
+                        <div className="content-group" id="solution-analysis">
+                            {/* Traditional Tool Gaps */}
+                            <section className="tool-gaps" role="region" aria-labelledby="tool-gaps-heading">
                             <div className="section-header">
                                 <h2 id="tool-gaps-heading" className="section-title">
                                     <i className="fas fa-exclamation-circle"></i>
@@ -556,9 +559,11 @@ const PhishingDetection = () => {
                                 ))}
                             </div>
                         </section>
+                        </div> {/* End Solution Analysis */}
 
-                        {/* Business Impact Metrics */}
-                        <section className="business-impact" role="region" aria-labelledby="business-impact-heading">
+                        <div className="content-group" id="business-value">
+                            {/* Business Impact Metrics */}
+                            <section className="business-impact" role="region" aria-labelledby="business-impact-heading">
                             <div className="section-header">
                                 <h2 id="business-impact-heading" className="section-title">
                                     <i className="fas fa-chart-line"></i>
@@ -630,46 +635,55 @@ const PhishingDetection = () => {
                                 </div>
                             </div>
                         </section>
+                        </div> {/* End Business Value */}
 
-                        {/* POV Success Criteria */}
-                        <section className="pov-success" role="region" aria-labelledby="pov-heading">
+                        {/* IV. IMPLEMENTATION */}
+                        <div className="content-group" id="implementation">
+                            {/* POV Success Criteria */}
+                            <section className="pov-success" role="region" aria-labelledby="pov-heading">
                             <div className="section-header">
                                 <h2 id="pov-heading" className="section-title">
-                                    <i className="fas fa-target"></i>
+                                    <i className="fas fa-bullseye"></i>
                                     What a Successful POV Looks Like
                                 </h2>
-                                <div className="pov-timeline-hero">
+                                <div className="timeline-hero">
                                     <h3 className="timeline-title">{COMPREHENSIVE_PHISHING_DATA.povSuccess.timeline}</h3>
                                     <p className="timeline-description">{COMPREHENSIVE_PHISHING_DATA.povSuccess.timelineDescription}</p>
                                 </div>
                             </div>
                             
                             {/* Executive Horizontal Timeline */}
-                            <div className="pov-timeline">
+                            <div className="timeline">
                                 <div className="timeline-phases-container">
                                     {COMPREHENSIVE_PHISHING_DATA.povSuccess.phases.map((phase, index) => (
-                                        <div key={index} className="timeline-phase" style={{'--phase-color': phase.color}}>
+                                        <div key={index} className="timeline-phase" style={{
+                                            '--phase-color': phase.color,
+                                            '--phase-color-rgb': phase.color === '#08872B' ? '8, 135, 43' : 
+                                                                 phase.color === '#1F7A3A' ? '31, 122, 58' : '13, 84, 33'
+                                        }}>
                                             <div className="phase-number">{index + 1}</div>
                                             <div className="phase-content">
-                                                <div className="phase-header">
-                                                    <h3 className="phase-title">{phase.title}</h3>
-                                                    <span className="phase-duration">{phase.duration}</span>
-                                                </div>
-                                                <p className="phase-description">{phase.description}</p>
-                                                <div className="phase-milestones">
-                                                    <h4>Key Milestones</h4>
-                                                    <ul>
-                                                        {phase.keyMilestones.map((milestone, milestoneIndex) => (
-                                                            <li key={milestoneIndex}>{milestone}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                                <div className="phase-footer">
-                                                    <div className="deliverable">
-                                                        <strong>Deliverable:</strong> {phase.deliverable}
+                                                <div>
+                                                    <div className="phase-header">
+                                                        <h3 className="phase-title">{phase.title}</h3>
+                                                        <span className="phase-duration">{phase.duration}</span>
                                                     </div>
-                                                    <div className="stakeholders">
-                                                        <strong>Stakeholders:</strong> {phase.stakeholders}
+                                                    <p className="phase-description">{phase.description}</p>
+                                                    <div className="phase-milestones">
+                                                        <h4>Key Milestones</h4>
+                                                        <ul>
+                                                            {phase.keyMilestones.map((milestone, milestoneIndex) => (
+                                                                <li key={milestoneIndex}>{milestone}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                    <div className="phase-footer">
+                                                        <div className="deliverable">
+                                                            <strong>Deliverable:</strong> {phase.deliverable}
+                                                        </div>
+                                                        <div className="stakeholders">
+                                                            <strong>Stakeholders:</strong> {phase.stakeholders}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -706,9 +720,12 @@ const PhishingDetection = () => {
                                 </div>
                             </div>
                         </section>
+                        </div> {/* End Implementation */}
 
-                        {/* Summary Call-to-Action */}
-                        <section className="summary-cta" role="region" aria-labelledby="summary-heading">
+                        {/* V. CALL TO ACTION */}
+                        <div className="content-group" id="call-to-action">
+                            {/* Summary Call-to-Action */}
+                            <section className="summary-cta" role="region" aria-labelledby="summary-heading">
                             <div className="cta-gradient-background"></div>
                             <div className="cta-content">
                                 <h2 id="summary-heading">Advanced Phishing Is No Longer a Domain Problem</h2>
@@ -723,12 +740,13 @@ const PhishingDetection = () => {
                                 </div>
                             </div>
                         </section>
+                        </div> {/* End Call to Action */}
                     </main>
 
                     {/* Navigation Footer */}
-                    <footer className="comprehensive-phishing-navigation">
+                    <footer className="navigation-footer">
                         <Link to="/use-cases" className="nav-link secondary">
-                            <i className="fas fa-grid-2"></i>
+                            <i className="fas fa-th"></i>
                             All Use Cases
                         </Link>
 

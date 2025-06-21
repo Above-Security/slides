@@ -45,17 +45,17 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
                 // Check if component renders with correct testId
                 expect(screen.getByTestId(testId)).toBeInTheDocument();
-                
+
                 // Check if component renders the correct title
                 expect(screen.getByText(title)).toBeInTheDocument();
-                
+
                 // PhishingDetection has "Business Impact" instead of "Performance Metrics"
                 if (Component === PhishingDetection) {
                     expect(screen.getByText('Business Impact')).toBeInTheDocument();
                 } else {
                     expect(screen.getByText('Performance Metrics')).toBeInTheDocument();
                 }
-                
+
                 unmount();
             });
         });
@@ -79,7 +79,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                 expectedMetrics.forEach(metric => {
                     expect(screen.getByText(metric)).toBeInTheDocument();
                 });
-                
+
                 unmount();
             });
         });
@@ -96,7 +96,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
             components.forEach(({ Component, expectedEvent }) => {
                 vi.clearAllMocks();
-                
+
                 const { unmount } = render(
                     <MemoryRouter>
                         <Component />
@@ -105,7 +105,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
                 expect(initializeClarity).toHaveBeenCalled();
                 expect(clarityEvent).toHaveBeenCalledWith(expectedEvent);
-                
+
                 unmount();
             });
         });
@@ -130,7 +130,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                 // Check for component-specific container class
                 const componentContainer = container.querySelector(`.${expectedContainer}`);
                 expect(componentContainer).toBeInTheDocument();
-                
+
                 unmount();
             });
         });
@@ -152,7 +152,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
                 // Check for component-specific scenario section title
                 expect(screen.getByText(expectedScenarioType)).toBeInTheDocument();
-                
+
                 unmount();
             });
         });
@@ -172,12 +172,12 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                 // Back link should exist in each component
                 const backLinks = screen.getAllByText('Back to Use Cases');
                 expect(backLinks.length).toBeGreaterThanOrEqual(1);
-                
+
                 // All back links should have correct href
                 backLinks.forEach(link => {
                     expect(link.closest('a')).toHaveAttribute('href', '/use-cases');
                 });
-                
+
                 unmount();
             });
         });

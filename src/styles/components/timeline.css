@@ -1,0 +1,358 @@
+/* ==================================================
+   TIMELINE COMPONENT - REUSABLE ACROSS USE CASES
+   Built incrementally with UX best practices
+   ================================================== */
+
+/* Timeline container */
+.timeline {
+    margin: 48px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Timeline hero header */
+.timeline-hero {
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.timeline-hero:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.timeline-hero::before {
+    display: none; /* Removed gradient for cleaner appearance */
+}
+
+.timeline-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-md) 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.timeline-description {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    margin: 0 auto;
+    line-height: 1.6;
+    max-width: 600px;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Three-column layout with connecting line background */
+.timeline-phases-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+    align-items: stretch; /* Ensure equal height columns */
+    min-height: 600px; /* Minimum height for consistency */
+    background-image: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 15%, 
+        var(--color-primary) 15%, 
+        var(--color-primary-light) 50%, 
+        var(--color-primary) 85%, 
+        transparent 85%, 
+        transparent 100%
+    );
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: center 24px;
+}
+
+/* Each phase column */
+.timeline-phase {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: stretch;
+    gap: 24px;
+    height: 100%; /* Ensure full height */
+}
+
+/* Phase numbers - simple centering */
+.phase-number {
+    width: 48px;
+    height: 48px;
+    background: var(--phase-color, var(--color-primary));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    position: relative;
+    justify-self: center; /* Center in grid */
+}
+
+/* Phase content cards */
+.phase-content {
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-primary);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto; /* Content area and footer */
+    transition: all var(--transition-normal);
+    height: 100%; /* Fill available grid space */
+}
+
+.timeline-phase:hover .phase-content {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--phase-color, var(--color-primary));
+}
+
+/* Content structure */
+.phase-content > div {
+    padding: 24px;
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Header, description, milestones */
+    gap: 20px;
+    height: 100%; /* Ensure full height usage */
+}
+
+/* Ensure consistent spacing above milestones */
+.phase-header {
+    min-height: 120px; /* Fixed height to align milestone headers */
+}
+
+.phase-description {
+    min-height: 72px; /* Fixed height to align milestone headers */
+}
+
+/* Phase header */
+.phase-header {
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--phase-color, var(--color-primary));
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    min-height: 120px; /* Fixed height to align milestone headers */
+}
+
+.phase-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px; /* Fixed height for all titles */
+}
+
+.phase-duration {
+    background: rgba(0, 135, 43, 0.1);
+    color: var(--phase-color, var(--color-primary));
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Prevent wrapping */
+    justify-self: center; /* Center in grid */
+}
+
+/* Phase description */
+.phase-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px; /* Fixed height to align milestone headers */
+}
+
+/* Milestones */
+.phase-milestones {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 16px;
+    align-content: start;
+}
+
+.phase-milestones h4 {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.phase-milestones ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+}
+
+.phase-milestones li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    padding-left: 20px;
+    position: relative;
+    font-weight: var(--font-weight-medium);
+    min-height: 1.4em; /* Consistent line height */
+}
+
+.phase-milestones li::before {
+    content: '✓';
+    color: var(--phase-color, var(--color-primary));
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: var(--font-size-xs);
+}
+
+/* Footer */
+.phase-footer {
+    background: var(--color-background-secondary);
+    padding: 20px 16px;
+    border-top: 2px solid var(--phase-color, var(--color-primary));
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    margin: 0 -24px -24px -24px;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    display: grid;
+    gap: 8px;
+    align-content: center;
+    text-align: center;
+    min-height: 80px; /* Fixed footer height */
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.phase-footer:hover {
+    background: rgba(var(--phase-color-rgb, 0, 135, 43), 0.02);
+}
+
+.phase-footer div {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.phase-footer strong {
+    color: var(--phase-color, var(--color-primary));
+    font-weight: var(--font-weight-bold);
+    margin-right: 4px;
+    position: relative;
+}
+
+.phase-footer strong::before {
+    content: '•';
+    color: var(--phase-color, var(--color-primary));
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.deliverable {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.stakeholders {
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.deliverable {
+    color: var(--color-text-primary);
+}
+
+.stakeholders {
+    color: var(--color-text-secondary);
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN - SIMPLE & RELIABLE
+   ================================================== */
+
+/* Tablet and below - stack vertically */
+@media (max-width: 768px) {
+    .timeline-phases-container {
+        flex-direction: column;
+        gap: 32px;
+        background-image: none;
+        align-items: center;
+    }
+
+    .timeline-phase {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .timeline-phase:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 32px;
+        background: var(--phase-color, var(--color-primary));
+        border-radius: 2px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .timeline {
+        padding: 0 16px;
+    }
+
+    .timeline-phase {
+        max-width: 100%;
+    }
+
+    .phase-content > div {
+        padding: 20px;
+    }
+
+    .phase-footer {
+        margin: auto -20px -20px -20px;
+        padding: 14px;
+    }
+
+    .phase-title {
+        font-size: var(--font-size-md);
+    }
+
+    .phase-description {
+        font-size: var(--font-size-sm);
+    }
+}
