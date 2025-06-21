@@ -3,6 +3,7 @@
   height: 100dvh; /* Use dynamic viewport height for mobile compatibility */
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Prevent scrolling in presentation mode */
 }
 
 /* Slide Content Area */
