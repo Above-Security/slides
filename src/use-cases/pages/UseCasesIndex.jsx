@@ -136,7 +136,7 @@ const UseCasesIndex = () => {
                             Back to Home
                         </Link>
 
-                        <Link to="/slide/1" className="nav-link primary">
+                        <Link to="/slides/1" className="nav-link primary">
                             View Full Presentation
                             <i className="fas fa-arrow-right"></i>
                         </Link>
