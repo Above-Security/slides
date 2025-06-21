@@ -253,15 +253,15 @@ describe('Individual Use Case Components', () => {
         it('all components initialize analytics', () => {
             const expectedEvents = {
                 PhishingDetection: 'comprehensive_phishing_prevention_view',
-                AccountTakeover: 'account_takeover_view', 
+                AccountTakeover: 'account_takeover_view',
                 InsiderThreat: 'insider_threat_view',
                 ZeroDayProtection: 'zero_day_protection_view'
             };
-            
+
             const expectedPageTypes = {
                 PhishingDetection: 'comprehensive_phishing_prevention',
                 AccountTakeover: 'account_takeover',
-                InsiderThreat: 'insider_threat', 
+                InsiderThreat: 'insider_threat',
                 ZeroDayProtection: 'zero_day_protection'
             };
 
@@ -289,7 +289,7 @@ describe('Individual Use Case Components', () => {
     describe('Error Handling', () => {
         it('all components handle analytics failures gracefully', () => {
             const components = [PhishingDetection, AccountTakeover, InsiderThreat, ZeroDayProtection];
-            
+
             // Mock analytics to fail
             initializeClarity.mockImplementation(() => {
                 throw new Error('Analytics failed');

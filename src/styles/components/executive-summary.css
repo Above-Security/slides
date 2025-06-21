@@ -1,0 +1,192 @@
+/* ==================================================
+   EXECUTIVE SUMMARY - DARK THEME COMPONENT
+   Premium dark design for executive summary sections
+   ================================================== */
+
+/* Executive Summary - Premium Dark Design with Enhanced Visual Hierarchy */
+.executive-summary--dark {
+    background: linear-gradient(135deg, #1c2128 0%, #24292f 50%, #1c2128 100%) !important;
+    color: var(--color-text-inverse) !important;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-primary);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Override section styling for executive summary */
+.executive-summary--dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-primary));
+    background-size: 200% 100%;
+    animation: gradientFlow 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.executive-summary--dark::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 135, 43, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 135, 43, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Executive summary header styling override */
+.executive-summary--dark .section-header::before {
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-text-inverse), var(--color-primary-light));
+    opacity: 1;
+}
+
+.executive-summary--dark .section-title {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.executive-summary--dark .section-title i {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    box-shadow: 0 4px 12px rgba(0, 135, 43, 0.3);
+}
+
+/* Ensure content stays above the overlay */
+.executive-summary--dark > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.executive-description--dark {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin-bottom: var(--spacing-2xl);
+    line-height: 1.7;
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Key Points Grid - Executive Summary Specific */
+.key-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    justify-content: center;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* For 5 items - nice 3-2 pyramid layout on larger screens */
+@media (min-width: 1000px) {
+    .key-points-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: var(--spacing-xl);
+        max-width: 1000px;
+    }
+    
+    /* First 3 items take equal width */
+    .key-points-grid .key-point-card:nth-child(-n+3) {
+        flex: 0 0 calc(33.333% - var(--spacing-xl));
+        max-width: 300px;
+    }
+    
+    /* Last 2 items centered in second row with balanced gap */
+    .key-points-grid .key-point-card:nth-child(n+4) {
+        flex: 0 0 calc(33.333% - var(--spacing-xl));
+        max-width: 300px;
+    }
+    
+    /* Create perfectly centered positioning for the bottom row */
+    .key-points-grid .key-point-card:nth-child(4) {
+        margin-right: calc(var(--spacing-xl) / 3);
+    }
+    
+    .key-points-grid .key-point-card:nth-child(5) {
+        margin-left: calc(var(--spacing-xl) / 3);
+    }
+}
+
+@media (max-width: 999px) and (min-width: 700px) {
+    .key-points-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 699px) {
+    .key-points-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+.key-point-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 135, 43, 0.3);
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+    justify-content: center;
+}
+
+.key-point-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-color: var(--color-primary-light);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.key-point-card i {
+    color: var(--color-primary-light);
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(95, 237, 131, 0.2);
+    border-radius: 50%;
+    padding: var(--spacing-xs);
+}
+
+.key-point-card span {
+    font-weight: var(--font-weight-semibold);
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: var(--font-size-md);
+    line-height: 1.4;
+}
