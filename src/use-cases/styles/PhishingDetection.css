@@ -1,0 +1,497 @@
+/* PhishingDetection Component Styles - Completely Independent */
+/* No shared dependencies - all styles contained within this file */
+
+:root {
+    /* Phishing-specific color variables */
+    --phishing-primary: var(--brand-primary, #0969da);
+    --phishing-secondary: var(--security-blue-2, #0550ae);
+    --phishing-bg: var(--surface-primary, #ffffff);
+    --phishing-text: var(--text-primary, #24292f);
+    --phishing-text-secondary: var(--text-secondary, #656d76);
+    --phishing-border: var(--border-primary, #d1d9e0);
+    --phishing-border-secondary: var(--border-secondary, #e1e4e8);
+    --phishing-surface: var(--surface-secondary, #f6f8fa);
+    --phishing-surface-raised: var(--surface-raised, #ffffff);
+    --phishing-critical: var(--severity-critical, #cf222e);
+    --phishing-high: var(--severity-high, #d1242f);
+    --phishing-medium: var(--severity-medium, #bf8700);
+    --phishing-success: var(--success-color, #1f883d);
+}
+
+/* Container and Layout */
+.phishing-detection-container {
+    min-height: 100vh;
+    background: var(--phishing-bg);
+    color: var(--phishing-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.phishing-detection-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg, 16px);
+}
+
+/* Header Styles */
+.phishing-detection-header {
+    margin-bottom: var(--spacing-2xl, 32px);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    color: var(--phishing-text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm, 14px);
+    font-weight: var(--weight-medium, 500);
+    margin-bottom: var(--spacing-lg, 16px);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--phishing-primary);
+}
+
+.phishing-hero {
+    text-align: center;
+    padding: var(--spacing-2xl, 32px) 0;
+    background: linear-gradient(135deg, var(--phishing-surface) 0%, var(--phishing-bg) 100%);
+    border-radius: var(--radius-lg, 8px);
+    border: 1px solid var(--phishing-border-secondary);
+}
+
+.phishing-hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: var(--accent-color, var(--phishing-primary));
+    color: white;
+    border-radius: 50%;
+    font-size: var(--text-2xl, 24px);
+    margin-bottom: var(--spacing-lg, 16px);
+    box-shadow: 0 4px 16px rgba(9, 105, 218, 0.2);
+}
+
+.phishing-hero-title {
+    font-size: var(--text-4xl, 36px);
+    font-weight: var(--weight-bold, 700);
+    color: var(--phishing-text);
+    margin: 0 0 var(--spacing-sm, 8px) 0;
+}
+
+.phishing-hero-subtitle {
+    font-size: var(--text-xl, 20px);
+    font-weight: var(--weight-medium, 500);
+    color: var(--accent-color, var(--phishing-primary));
+    margin: 0 0 var(--spacing-md, 12px) 0;
+}
+
+.phishing-hero-description {
+    font-size: var(--text-lg, 18px);
+    color: var(--phishing-text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Section Titles */
+.phishing-section-title {
+    font-size: var(--text-2xl, 24px);
+    font-weight: var(--weight-semibold, 600);
+    color: var(--phishing-text);
+    margin-bottom: var(--spacing-lg, 16px);
+    text-align: center;
+}
+
+/* Metrics Section */
+.phishing-metrics {
+    margin-bottom: var(--spacing-3xl, 48px);
+}
+
+.phishing-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg, 16px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.phishing-metric-card {
+    background: var(--phishing-surface-raised);
+    border: 1px solid var(--phishing-border-secondary);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-xl, 24px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.phishing-metric-card:hover {
+    border-color: var(--phishing-primary);
+    box-shadow: 0 4px 16px rgba(9, 105, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+.phishing-metric-value {
+    font-size: var(--text-3xl, 32px);
+    font-weight: var(--weight-bold, 700);
+    color: var(--phishing-primary);
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+.phishing-metric-label {
+    font-size: var(--text-sm, 14px);
+    font-weight: var(--weight-medium, 500);
+    color: var(--phishing-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Scenarios Section */
+.phishing-scenarios {
+    margin-bottom: var(--spacing-3xl, 48px);
+}
+
+.phishing-scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl, 24px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.phishing-scenario-card {
+    background: var(--phishing-surface-raised);
+    border: 1px solid var(--phishing-border-secondary);
+    border-radius: var(--radius-lg, 8px);
+    padding: var(--spacing-xl, 24px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    --severity-color: var(--phishing-medium);
+}
+
+.phishing-scenario-card.critical {
+    --severity-color: var(--phishing-critical);
+}
+
+.phishing-scenario-card.high {
+    --severity-color: var(--phishing-high);
+}
+
+.phishing-scenario-card.medium {
+    --severity-color: var(--phishing-medium);
+}
+
+.phishing-scenario-card:hover {
+    border-color: var(--severity-color);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.phishing-scenario-card:focus {
+    outline: 2px solid var(--severity-color);
+    outline-offset: 2px;
+}
+
+.phishing-scenario-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md, 12px);
+    margin-bottom: var(--spacing-lg, 16px);
+}
+
+.phishing-scenario-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--severity-color);
+    color: white;
+    border-radius: 50%;
+    font-size: var(--text-lg, 18px);
+    flex-shrink: 0;
+}
+
+.phishing-scenario-title-section {
+    flex: 1;
+}
+
+.phishing-scenario-title {
+    font-size: var(--text-lg, 18px);
+    font-weight: var(--weight-semibold, 600);
+    color: var(--phishing-text);
+    margin: 0 0 var(--spacing-xs, 4px) 0;
+}
+
+.phishing-severity-badge {
+    display: inline-block;
+    padding: var(--spacing-xs, 4px) var(--spacing-sm, 8px);
+    background: var(--severity-color);
+    color: white;
+    font-size: var(--text-xs, 12px);
+    font-weight: var(--weight-bold, 700);
+    border-radius: var(--radius-sm, 3px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.phishing-scenario-content {
+    space-y: var(--spacing-md, 12px);
+}
+
+.phishing-scenario-section {
+    margin-bottom: var(--spacing-md, 12px);
+}
+
+.phishing-scenario-section-title {
+    font-size: var(--text-sm, 14px);
+    font-weight: var(--weight-semibold, 600);
+    color: var(--phishing-text);
+    margin-bottom: var(--spacing-xs, 4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.phishing-scenario-text {
+    font-size: var(--text-sm, 14px);
+    color: var(--phishing-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.phishing-scenario-outcome {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    padding: var(--spacing-sm, 8px);
+    background: rgba(31, 136, 61, 0.1);
+    border: 1px solid var(--phishing-success);
+    border-radius: var(--radius-sm, 3px);
+    font-size: var(--text-sm, 14px);
+    font-weight: var(--weight-medium, 500);
+    color: var(--phishing-success);
+    margin: var(--spacing-md, 12px) 0;
+}
+
+.phishing-scenario-outcome i {
+    color: var(--phishing-success);
+}
+
+.phishing-scenario-techniques,
+.phishing-scenario-indicators {
+    margin-top: var(--spacing-md, 12px);
+}
+
+.phishing-scenario-techniques h5,
+.phishing-scenario-indicators h5 {
+    font-size: var(--text-xs, 12px);
+    font-weight: var(--weight-semibold, 600);
+    color: var(--phishing-text);
+    margin-bottom: var(--spacing-xs, 4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.phishing-technique-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs, 4px);
+}
+
+.phishing-technique-tag {
+    display: inline-block;
+    padding: var(--spacing-xs, 4px) var(--spacing-sm, 8px);
+    background: var(--phishing-surface);
+    color: var(--severity-color);
+    font-size: var(--text-xs, 12px);
+    font-weight: var(--weight-medium, 500);
+    border: 1px solid var(--phishing-border-secondary);
+    border-radius: var(--radius-sm, 3px);
+}
+
+.phishing-indicator-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phishing-indicator-list li {
+    font-size: var(--text-xs, 12px);
+    color: var(--phishing-text-secondary);
+    padding: var(--spacing-xs, 4px) 0;
+    position: relative;
+    padding-left: var(--spacing-md, 12px);
+}
+
+.phishing-indicator-list li::before {
+    content: '•';
+    color: var(--severity-color);
+    font-weight: var(--weight-bold, 700);
+    position: absolute;
+    left: 0;
+}
+
+/* Additional Info Section */
+.phishing-additional-info {
+    margin-bottom: var(--spacing-3xl, 48px);
+}
+
+.phishing-info-callout {
+    background: var(--phishing-surface);
+    border: 1px solid var(--phishing-border-secondary);
+    border-radius: var(--radius-lg, 8px);
+    padding: var(--spacing-2xl, 32px);
+}
+
+.phishing-info-callout h3 {
+    color: var(--phishing-text);
+    font-size: var(--text-xl, 20px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-md, 12px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.phishing-info-callout h3 i {
+    color: var(--phishing-primary);
+    font-size: var(--text-lg, 18px);
+}
+
+.phishing-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg, 16px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.phishing-benefit-card {
+    background: var(--phishing-surface-raised);
+    border: 1px solid var(--phishing-border-secondary);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-lg, 16px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.phishing-benefit-card:hover {
+    border-color: var(--phishing-primary);
+    box-shadow: 0 4px 16px rgba(9, 105, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+.phishing-benefit-card i {
+    font-size: var(--text-2xl, 24px);
+    color: var(--phishing-primary);
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+.phishing-benefit-card h4 {
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-semibold, 600);
+    color: var(--phishing-text);
+    margin: 0 0 var(--spacing-xs, 4px) 0;
+}
+
+.phishing-benefit-card p {
+    font-size: var(--text-sm, 14px);
+    color: var(--phishing-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Navigation Footer */
+.phishing-detection-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--spacing-2xl, 32px);
+    border-top: 1px solid var(--phishing-border);
+}
+
+.phishing-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    padding: var(--spacing-md, 12px) var(--spacing-xl, 24px);
+    border-radius: var(--radius-xl, 12px);
+    text-decoration: none;
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-medium, 500);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.phishing-nav-link.secondary {
+    color: var(--phishing-text-secondary);
+    background: var(--phishing-surface);
+    border-color: var(--phishing-border-secondary);
+}
+
+.phishing-nav-link.secondary:hover {
+    color: var(--phishing-text);
+    background: var(--phishing-surface-raised);
+    border-color: var(--phishing-border);
+}
+
+.phishing-nav-link.primary {
+    color: white;
+    background: var(--phishing-primary);
+    border-color: var(--phishing-primary);
+}
+
+.phishing-nav-link.primary:hover {
+    background: var(--phishing-secondary);
+    border-color: var(--phishing-secondary);
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .phishing-detection-content {
+        padding: var(--spacing-md, 12px);
+    }
+    
+    .phishing-hero {
+        padding: var(--spacing-lg, 16px);
+    }
+    
+    .phishing-hero-title {
+        font-size: var(--text-2xl, 24px);
+    }
+    
+    .phishing-scenarios-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg, 16px);
+    }
+    
+    .phishing-metrics-grid,
+    .phishing-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md, 12px);
+    }
+    
+    .phishing-detection-navigation {
+        flex-direction: column;
+        gap: var(--spacing-md, 12px);
+    }
+    
+    .phishing-nav-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .phishing-scenario-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .phishing-technique-tags {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,581 @@
+/* Account Takeover Use Case - Independent Styling */
+
+:root {
+    /* Account Takeover Specific Color Variables */
+    --account-takeover-primary: var(--security-blue-2, #2563eb);
+    --account-takeover-secondary: var(--security-blue-1, #3b82f6);
+    --account-takeover-accent: var(--brand-secondary, #10b981);
+    --account-takeover-critical: var(--text-danger, #dc2626);
+    --account-takeover-high: var(--text-warning, #ea580c);
+    --account-takeover-medium: var(--text-info, #0284c7);
+    
+    /* Account Takeover Surface Colors */
+    --account-takeover-surface: var(--surface-primary, #ffffff);
+    --account-takeover-surface-raised: var(--surface-raised, #f8fafc);
+    --account-takeover-surface-hover: var(--surface-hover, #f1f5f9);
+    
+    /* Account Takeover Border Colors */
+    --account-takeover-border: var(--border-primary, #e2e8f0);
+    --account-takeover-border-secondary: var(--border-secondary, #cbd5e1);
+    --account-takeover-border-focus: var(--border-focus, #3b82f6);
+    
+    /* Account Takeover Text Colors */
+    --account-takeover-text: var(--text-primary, #1e293b);
+    --account-takeover-text-secondary: var(--text-secondary, #64748b);
+    --account-takeover-text-muted: var(--text-muted, #94a3b8);
+}
+
+/* Container and Layout */
+.account-takeover-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--account-takeover-surface) 0%, var(--account-takeover-surface-raised) 100%);
+    color: var(--account-takeover-text);
+    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.account-takeover-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg, 24px);
+}
+
+/* Header Styles */
+.account-takeover-header {
+    margin-bottom: var(--spacing-2xl, 48px);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    color: var(--account-takeover-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xl, 32px);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--account-takeover-primary);
+}
+
+.back-link i {
+    font-size: 0.9em;
+}
+
+/* Hero Section */
+.account-takeover-hero {
+    text-align: center;
+    padding: var(--spacing-2xl, 48px) var(--spacing-xl, 32px);
+    background: var(--account-takeover-surface);
+    border-radius: var(--radius-xl, 12px);
+    border: 1px solid var(--account-takeover-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.account-takeover-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color, var(--account-takeover-primary)) 0%, var(--account-takeover-secondary) 100%);
+}
+
+.account-takeover-hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-color, var(--account-takeover-primary)) 0%, var(--account-takeover-secondary) 100%);
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-lg, 24px);
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.account-takeover-hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-md, 16px);
+    line-height: 1.2;
+}
+
+.account-takeover-hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--accent-color, var(--account-takeover-primary));
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg, 24px);
+}
+
+.account-takeover-hero-description {
+    font-size: 1.1rem;
+    color: var(--account-takeover-text-secondary);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Titles */
+.account-takeover-section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-xl, 32px);
+    text-align: center;
+    position: relative;
+}
+
+.account-takeover-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--account-takeover-primary) 0%, var(--account-takeover-secondary) 100%);
+    border-radius: 2px;
+}
+
+/* Metrics Section */
+.account-takeover-metrics {
+    margin-bottom: var(--spacing-2xl, 48px);
+}
+
+.account-takeover-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg, 24px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.account-takeover-metric-card {
+    background: var(--account-takeover-surface);
+    border: 1px solid var(--account-takeover-border);
+    border-radius: var(--radius-lg, 12px);
+    padding: var(--spacing-xl, 32px);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.account-takeover-metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: var(--account-takeover-primary);
+}
+
+.account-takeover-metric-value {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--account-takeover-primary);
+    margin-bottom: var(--spacing-sm, 8px);
+    line-height: 1;
+}
+
+.account-takeover-metric-label {
+    font-size: 0.95rem;
+    color: var(--account-takeover-text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Scenarios Section */
+.account-takeover-scenarios {
+    margin-bottom: var(--spacing-2xl, 48px);
+}
+
+.account-takeover-scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl, 32px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.account-takeover-scenario-card {
+    background: var(--account-takeover-surface-raised);
+    border: 1px solid var(--account-takeover-border-secondary);
+    border-radius: var(--radius-lg, 8px);
+    padding: var(--spacing-xl, 24px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    --severity-color: var(--account-takeover-medium);
+}
+
+.account-takeover-scenario-card.critical {
+    --severity-color: var(--account-takeover-critical);
+}
+
+.account-takeover-scenario-card.high {
+    --severity-color: var(--account-takeover-high);
+}
+
+.account-takeover-scenario-card.medium {
+    --severity-color: var(--account-takeover-medium);
+}
+
+.account-takeover-scenario-card:hover {
+    border-color: var(--severity-color);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.account-takeover-scenario-card:focus {
+    outline: 2px solid var(--severity-color);
+    outline-offset: 2px;
+}
+
+.account-takeover-scenario-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md, 16px);
+    margin-bottom: var(--spacing-lg, 24px);
+}
+
+.account-takeover-scenario-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--severity-color) 0%, var(--severity-color) 100%);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.account-takeover-scenario-title-section {
+    flex: 1;
+}
+
+.account-takeover-scenario-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-xs, 4px);
+    line-height: 1.3;
+}
+
+.account-takeover-severity-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-takeover-severity-badge.critical {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--account-takeover-critical);
+}
+
+.account-takeover-severity-badge.high {
+    background: rgba(234, 88, 12, 0.1);
+    color: var(--account-takeover-high);
+}
+
+.account-takeover-severity-badge.medium {
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--account-takeover-medium);
+}
+
+.account-takeover-scenario-content {
+    space-y: var(--spacing-md, 16px);
+}
+
+.account-takeover-scenario-section {
+    margin-bottom: var(--spacing-md, 16px);
+}
+
+.account-takeover-scenario-section-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-xs, 6px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-takeover-scenario-text {
+    color: var(--account-takeover-text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.account-takeover-scenario-outcome {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    padding: var(--spacing-sm, 12px);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-md, 6px);
+    color: var(--account-takeover-accent);
+    font-weight: 500;
+    margin: var(--spacing-md, 16px) 0;
+}
+
+.account-takeover-scenario-outcome i {
+    color: var(--account-takeover-accent);
+}
+
+.account-takeover-scenario-techniques,
+.account-takeover-scenario-indicators {
+    margin-top: var(--spacing-md, 16px);
+}
+
+.account-takeover-scenario-techniques h5,
+.account-takeover-scenario-indicators h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-sm, 8px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-takeover-technique-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs, 6px);
+}
+
+.account-takeover-technique-tag {
+    padding: 4px 8px;
+    background: var(--account-takeover-surface-hover);
+    border: 1px solid var(--account-takeover-border);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--account-takeover-text-secondary);
+    font-weight: 500;
+}
+
+.account-takeover-indicator-list {
+    margin: 0;
+    padding-left: var(--spacing-md, 16px);
+}
+
+.account-takeover-indicator-list li {
+    color: var(--account-takeover-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-xs, 4px);
+}
+
+/* Additional Info Section */
+.account-takeover-additional-info {
+    margin-bottom: var(--spacing-2xl, 48px);
+}
+
+.account-takeover-info-callout {
+    background: var(--account-takeover-surface);
+    border: 1px solid var(--account-takeover-border);
+    border-radius: var(--radius-lg, 12px);
+    padding: var(--spacing-2xl, 48px);
+    position: relative;
+}
+
+.account-takeover-info-callout h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 12px);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-lg, 24px);
+}
+
+.account-takeover-info-callout h3 i {
+    color: var(--account-takeover-primary);
+    font-size: 1.2em;
+}
+
+.account-takeover-info-callout p {
+    color: var(--account-takeover-text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: var(--spacing-xl, 32px);
+}
+
+.account-takeover-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg, 24px);
+}
+
+.account-takeover-benefit-card {
+    background: var(--account-takeover-surface-raised);
+    border: 1px solid var(--account-takeover-border-secondary);
+    border-radius: var(--radius-md, 8px);
+    padding: var(--spacing-lg, 24px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.account-takeover-benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--account-takeover-primary);
+}
+
+.account-takeover-benefit-card i {
+    display: block;
+    font-size: 2rem;
+    color: var(--account-takeover-primary);
+    margin-bottom: var(--spacing-md, 16px);
+}
+
+.account-takeover-benefit-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--account-takeover-text);
+    margin-bottom: var(--spacing-sm, 12px);
+}
+
+.account-takeover-benefit-card p {
+    color: var(--account-takeover-text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Footer */
+.account-takeover-footer {
+    margin-top: var(--spacing-2xl, 48px);
+    padding-top: var(--spacing-xl, 32px);
+    border-top: 1px solid var(--account-takeover-border);
+}
+
+.account-takeover-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg, 24px);
+}
+
+.account-takeover-footer-logo {
+    height: 32px;
+    opacity: 0.6;
+}
+
+.account-takeover-footer-nav {
+    display: flex;
+    gap: var(--spacing-lg, 24px);
+}
+
+.account-takeover-footer-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    color: var(--account-takeover-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.account-takeover-footer-link:hover {
+    color: var(--account-takeover-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .account-takeover-content {
+        padding: var(--spacing-md, 16px);
+    }
+    
+    .account-takeover-hero {
+        padding: var(--spacing-xl, 32px) var(--spacing-lg, 24px);
+    }
+    
+    .account-takeover-hero-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .account-takeover-scenarios-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg, 24px);
+    }
+    
+    .account-takeover-scenario-card {
+        padding: var(--spacing-lg, 20px);
+    }
+    
+    .account-takeover-metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-md, 16px);
+    }
+    
+    .account-takeover-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md, 16px);
+    }
+    
+    .account-takeover-footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .account-takeover-footer-nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-takeover-scenario-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing-sm, 12px);
+    }
+    
+    .account-takeover-technique-tags {
+        justify-content: center;
+    }
+    
+    .account-takeover-info-callout {
+        padding: var(--spacing-xl, 24px);
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .account-takeover-scenario-card {
+        border-width: 2px;
+    }
+    
+    .account-takeover-severity-badge {
+        border: 1px solid currentColor;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .account-takeover-scenario-card,
+    .account-takeover-metric-card,
+    .account-takeover-benefit-card,
+    .back-link,
+    .account-takeover-footer-link {
+        transition: none;
+    }
+    
+    .account-takeover-scenario-card:hover,
+    .account-takeover-metric-card:hover,
+    .account-takeover-benefit-card:hover {
+        transform: none;
+    }
+}
