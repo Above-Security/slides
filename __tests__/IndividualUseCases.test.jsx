@@ -37,40 +37,40 @@ describe('Individual Use Case Components', () => {
         it('renders phishing detection use case correctly', () => {
             renderWithRouter(PhishingDetection);
 
-            expect(screen.getByText('Phishing Detection')).toBeInTheDocument();
-            expect(screen.getByText('Real-time detection of sophisticated phishing attacks')).toBeInTheDocument();
-            expect(screen.getByText('99.7%')).toBeInTheDocument(); // Detection rate
+            expect(screen.getByText('Comprehensive Phishing Prevention')).toBeInTheDocument();
+            expect(screen.getByText('Beyond Email, Beyond LOTS — Runtime Protection Against Modern Threats')).toBeInTheDocument();
+            expect(screen.getByText('Living Off Trusted Services (LOTS) attacks')).toBeInTheDocument(); // Key point
         });
 
         it('renders all 4 phishing scenarios', () => {
             renderWithRouter(PhishingDetection);
 
-            expect(screen.getByText('Fake Microsoft Login Page (AiTM Phish)')).toBeInTheDocument();
-            expect(screen.getByText('Consent Phishing via OAuth (LOTS)')).toBeInTheDocument();
-            expect(screen.getByText('Credential Harvesting Portal')).toBeInTheDocument();
-            expect(screen.getByText('Business Email Compromise (BEC)')).toBeInTheDocument();
+            expect(screen.getByText('Cyberhaven Incident (2024)')).toBeInTheDocument();
+            expect(screen.getByText('DocuSign-Embedded OAuth Phishing')).toBeInTheDocument();
+            expect(screen.getByText('Slack/Teams IM-Driven Payloads')).toBeInTheDocument();
+            expect(screen.getByText('Adversary-in-the-Middle Session Hijacking')).toBeInTheDocument();
         });
 
         it('renders specific phishing content and benefits', () => {
             renderWithRouter(PhishingDetection);
 
-            expect(screen.getByText('Why Phishing Detection Matters')).toBeInTheDocument();
-            expect(screen.getByText('AiTM Protection')).toBeInTheDocument();
-            expect(screen.getByText('OAuth Abuse Detection')).toBeInTheDocument();
+            expect(screen.getByText('Executive Summary')).toBeInTheDocument();
+            expect(screen.getByText('Real-World Phishing Incidents')).toBeInTheDocument();
+            expect(screen.getByText('Why Traditional Tools Miss Modern Phishing')).toBeInTheDocument();
         });
 
         it('has correct test ID for phishing detection page', () => {
             renderWithRouter(PhishingDetection);
-            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument();
+            expect(screen.getByTestId('comprehensive-phishing')).toBeInTheDocument();
         });
 
         it('tracks analytics correctly for phishing detection', () => {
             renderWithRouter(PhishingDetection);
 
             expect(initializeClarity).toHaveBeenCalledOnce();
-            expect(clarityEvent).toHaveBeenCalledWith('phishing_detection_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'phishing_detection');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'phishing-detection');
+            expect(clarityEvent).toHaveBeenCalledWith('comprehensive_phishing_prevention_view');
+            expect(claritySet).toHaveBeenCalledWith('page_type', 'comprehensive_phishing_prevention');
+            expect(claritySet).toHaveBeenCalledWith('use_case', 'comprehensive-phishing-prevention');
         });
     });
 
@@ -203,7 +203,12 @@ describe('Individual Use Case Components', () => {
         ];
 
         it('all components render metrics section', () => {
-            components.forEach(({ Component }) => {
+            // PhishingDetection has "Business Impact", others have "Performance Metrics"
+            const { unmount: unmountPhishing } = renderWithRouter(PhishingDetection);
+            expect(screen.getByText('Business Impact')).toBeInTheDocument();
+            unmountPhishing();
+
+            [AccountTakeover, InsiderThreat, ZeroDayProtection].forEach((Component) => {
                 const { unmount } = renderWithRouter(Component);
                 expect(screen.getByText('Performance Metrics')).toBeInTheDocument();
                 unmount();
@@ -211,7 +216,12 @@ describe('Individual Use Case Components', () => {
         });
 
         it('all components render scenarios section', () => {
-            components.forEach(({ Component }) => {
+            // PhishingDetection has "Real-World Phishing Incidents", others have different scenario sections
+            const { unmount: unmountPhishing } = renderWithRouter(PhishingDetection);
+            expect(screen.getByText('Real-World Phishing Incidents')).toBeInTheDocument();
+            unmountPhishing();
+
+            [AccountTakeover, InsiderThreat, ZeroDayProtection].forEach((Component) => {
                 const { unmount } = renderWithRouter(Component);
                 // Each component has its own scenario section title
                 const scenarioText = screen.getByText(/Real-World.*Scenarios/);
@@ -242,14 +252,14 @@ describe('Individual Use Case Components', () => {
 
         it('all components initialize analytics', () => {
             const expectedEvents = {
-                PhishingDetection: 'phishing_detection_view',
+                PhishingDetection: 'comprehensive_phishing_prevention_view',
                 AccountTakeover: 'account_takeover_view', 
                 InsiderThreat: 'insider_threat_view',
                 ZeroDayProtection: 'zero_day_protection_view'
             };
             
             const expectedPageTypes = {
-                PhishingDetection: 'phishing_detection',
+                PhishingDetection: 'comprehensive_phishing_prevention',
                 AccountTakeover: 'account_takeover',
                 InsiderThreat: 'insider_threat', 
                 ZeroDayProtection: 'zero_day_protection'
@@ -295,10 +305,10 @@ describe('Individual Use Case Components', () => {
 
     describe('Data Integration', () => {
         it('all components load correct data for their use case', () => {
-            // PhishingDetection should load phishing-detection data
+            // PhishingDetection should load comprehensive phishing data
             renderWithRouter(PhishingDetection);
-            expect(screen.getByText('99.7%')).toBeInTheDocument(); // Phishing detection rate
-            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument();
+            expect(screen.getByText('99.9%')).toBeInTheDocument(); // Improvement metric
+            expect(screen.getByTestId('comprehensive-phishing')).toBeInTheDocument();
             cleanup();
 
             // AccountTakeover should load account-takeover data
