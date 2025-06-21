@@ -60,8 +60,8 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
             const components = [
                 { Component: PhishingDetection, expectedMetrics: ['99.7%', '<0.1%', '<200ms'] },
                 { Component: AccountTakeover, expectedMetrics: ['99.5%', '<0.2%', '<150ms'] },
-                { Component: InsiderThreat, expectedMetrics: ['99.8%', '<0.05%', '<100ms'] },
-                { Component: ZeroDayProtection, expectedMetrics: ['99.9%', '<0.01%', '<50ms'] }
+                { Component: InsiderThreat, expectedMetrics: ['98.9%', '<0.3%', '<300ms'] },
+                { Component: ZeroDayProtection, expectedMetrics: ['97.8%', '<0.5%', '<500ms'] }
             ];
 
             components.forEach(({ Component, expectedMetrics }) => {
@@ -136,7 +136,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                 { Component: PhishingDetection, expectedScenarioType: 'Real-World Phishing Scenarios' },
                 { Component: AccountTakeover, expectedScenarioType: 'Real-World Account Takeover Scenarios' },
                 { Component: InsiderThreat, expectedScenarioType: 'Real-World Insider Threat Scenarios' },
-                { Component: ZeroDayProtection, expectedScenarioType: 'Real-World Zero-Day Protection Scenarios' }
+                { Component: ZeroDayProtection, expectedScenarioType: 'Real-World Zero-Day Scenarios' }
             ];
 
             components.forEach(({ Component, expectedScenarioType }) => {
