@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
+import FloatingNavigation from '../../components/FloatingNavigation';
+import '../../components/FloatingNavigationIntegration.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/UseCasesIndex.css';
 
@@ -82,6 +84,9 @@ const UseCasesIndex = () => {
             <meta name="keywords" content="phishing detection, account takeover prevention, insider threat, zero-day protection, ITDR, runtime security" />
 
             <div className="use-cases-container" data-testid="use-cases-index">
+                {/* Floating Navigation */}
+                <FloatingNavigation />
+                
                 <div className="use-cases-content">
                     {/* Header Section */}
                     <header className="use-cases-header">
@@ -131,12 +136,12 @@ const UseCasesIndex = () => {
 
                     {/* Navigation Footer */}
                     <footer className="use-cases-navigation">
-                        <Link to="/" className="nav-link secondary">
+                        <Link to="/" className="nav-link secondary use-cases-back">
                             <i className="fas fa-home"></i>
                             Back to Home
                         </Link>
-
-                        <Link to="/slides/1" className="nav-link primary">
+                        
+                        <Link to="/slides/1" className="nav-link primary use-cases-cta">
                             View Full Presentation
                             <i className="fas fa-arrow-right"></i>
                         </Link>

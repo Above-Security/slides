@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
+import FloatingNavigation from '../../components/FloatingNavigation';
+import '../../components/FloatingNavigationIntegration.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/ZeroDayProtection.css';
 
@@ -92,14 +94,12 @@ const ZeroDayProtection = () => {
             <meta name="description" content={ZERO_DAY_PROTECTION_DATA.description} />
 
             <div className="zero-day-protection-container" data-testid="zero-day-protection">
+                {/* Floating Navigation */}
+                <FloatingNavigation />
+                
                 <div className="zero-day-protection-content">
                     {/* Header */}
                     <header className="zero-day-protection-header">
-                        <Link to="/use-cases" className="back-link">
-                            <i className="fas fa-arrow-left"></i>
-                            Back to Use Cases
-                        </Link>
-
                         <div className="zero-day-protection-hero" style={{ '--accent-color': ZERO_DAY_PROTECTION_DATA.color }}>
                             <div className="zero-day-protection-hero-icon">
                                 <i className={ZERO_DAY_PROTECTION_DATA.icon}></i>
@@ -259,10 +259,6 @@ const ZeroDayProtection = () => {
                         <div className="zero-day-protection-footer-content">
                             <Logo className="zero-day-protection-footer-logo" />
                             <div className="zero-day-protection-footer-nav">
-                                <Link to="/use-cases" className="zero-day-protection-footer-link">
-                                    <i className="fas fa-arrow-left"></i>
-                                    Back to Use Cases
-                                </Link>
                                 <Link to="/" className="zero-day-protection-footer-link">
                                     <i className="fas fa-home"></i>
                                     Home

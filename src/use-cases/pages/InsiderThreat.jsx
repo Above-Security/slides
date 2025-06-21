@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
+import FloatingNavigation from '../../components/FloatingNavigation';
+import '../../components/FloatingNavigationIntegration.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/InsiderThreat.css';
 
@@ -103,14 +105,12 @@ const InsiderThreat = () => {
             <meta name="description" content={INSIDER_THREAT_DATA.description} />
 
             <div className="insider-threat-container" data-testid="insider-threat">
+                {/* Floating Navigation */}
+                <FloatingNavigation />
+                
                 <div className="insider-threat-content">
                     {/* Header */}
                     <header className="insider-threat-header">
-                        <Link to="/use-cases" className="back-link">
-                            <i className="fas fa-arrow-left"></i>
-                            Back to Use Cases
-                        </Link>
-
                         <div className="insider-threat-hero" style={{ '--accent-color': INSIDER_THREAT_DATA.color }}>
                             <div className="insider-threat-hero-icon">
                                 <i className={INSIDER_THREAT_DATA.icon}></i>
@@ -264,10 +264,6 @@ const InsiderThreat = () => {
                         <div className="insider-threat-footer-content">
                             <Logo className="insider-threat-footer-logo" />
                             <div className="insider-threat-footer-nav">
-                                <Link to="/use-cases" className="insider-threat-footer-link">
-                                    <i className="fas fa-arrow-left"></i>
-                                    Back to Use Cases
-                                </Link>
                                 <Link to="/" className="insider-threat-footer-link">
                                     <i className="fas fa-home"></i>
                                     Home

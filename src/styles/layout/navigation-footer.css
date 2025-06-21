@@ -6,11 +6,16 @@
 /* Navigation Footer */
 .navigation-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Default to center for single buttons */
     align-items: center;
     padding: var(--spacing-xl) 0;
     border-top: 1px solid var(--color-border-primary);
     margin-top: var(--spacing-4xl);
+}
+
+/* When there are multiple links, use space-between layout */
+.navigation-footer.multi-link {
+    justify-content: space-between;
 }
 
 .nav-link {

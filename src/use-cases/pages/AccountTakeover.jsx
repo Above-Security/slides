@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
+import FloatingNavigation from '../../components/FloatingNavigation';
+import '../../components/FloatingNavigationIntegration.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/AccountTakeover.css';
 
@@ -103,14 +105,12 @@ const AccountTakeover = () => {
             <meta name="description" content={ACCOUNT_TAKEOVER_DATA.description} />
 
             <div className="account-takeover-container" data-testid="account-takeover">
+                {/* Floating Navigation */}
+                <FloatingNavigation />
+                
                 <div className="account-takeover-content">
                     {/* Header */}
                     <header className="account-takeover-header">
-                        <Link to="/use-cases" className="back-link">
-                            <i className="fas fa-arrow-left"></i>
-                            Back to Use Cases
-                        </Link>
-
                         <div className="account-takeover-hero" style={{ '--accent-color': ACCOUNT_TAKEOVER_DATA.color }}>
                             <div className="account-takeover-hero-icon">
                                 <i className={ACCOUNT_TAKEOVER_DATA.icon}></i>
@@ -253,10 +253,6 @@ const AccountTakeover = () => {
                         <div className="account-takeover-footer-content">
                             <Logo className="account-takeover-footer-logo" />
                             <div className="account-takeover-footer-nav">
-                                <Link to="/use-cases" className="account-takeover-footer-link">
-                                    <i className="fas fa-arrow-left"></i>
-                                    Back to Use Cases
-                                </Link>
                                 <Link to="/" className="account-takeover-footer-link">
                                     <i className="fas fa-home"></i>
                                     Home
