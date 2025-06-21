@@ -15,10 +15,13 @@ vi.mock('../src/components/PresentationApp', () => ({
 
 vi.mock('../src/use-cases', () => ({
     UseCasesIndex: () => <div data-testid="use-cases-index">Use Cases Index</div>,
-    UseCaseDetail: () => <div data-testid="use-case-detail">Use Case Detail</div>
+    PhishingDetection: () => <div data-testid="phishing-detection">Phishing Detection</div>,
+    AccountTakeover: () => <div data-testid="account-takeover">Account Takeover</div>,
+    InsiderThreat: () => <div data-testid="insider-threat">Insider Threat</div>,
+    ZeroDayProtection: () => <div data-testid="zero-day-protection">Zero-Day Protection</div>
 }))
 
-describe('App Router', () => {
+describe('App Router - Updated Architecture', () => {
     const renderWithRouter = (initialEntries = ['/']) => {
         return render(
             <MemoryRouter initialEntries={initialEntries}>
@@ -62,20 +65,35 @@ describe('App Router', () => {
         })
     })
 
-    describe('Use Cases Routes', () => {
+    describe('Use Cases Routes - New Architecture', () => {
         it('renders UseCasesIndex at /use-cases', () => {
             renderWithRouter(['/use-cases'])
             expect(screen.getByTestId('use-cases-index')).toBeInTheDocument()
         })
 
-        it('renders UseCaseDetail for specific use case', () => {
+        it('renders PhishingDetection component for phishing-detection route', () => {
             renderWithRouter(['/use-cases/phishing-detection'])
-            expect(screen.getByTestId('use-case-detail')).toBeInTheDocument()
+            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument()
         })
 
-        it('handles multiple use case IDs', () => {
+        it('renders AccountTakeover component for account-takeover route', () => {
             renderWithRouter(['/use-cases/account-takeover'])
-            expect(screen.getByTestId('use-case-detail')).toBeInTheDocument()
+            expect(screen.getByTestId('account-takeover')).toBeInTheDocument()
+        })
+
+        it('renders InsiderThreat component for insider-threat route', () => {
+            renderWithRouter(['/use-cases/insider-threat'])
+            expect(screen.getByTestId('insider-threat')).toBeInTheDocument()
+        })
+
+        it('renders ZeroDayProtection component for zero-day-protection route', () => {
+            renderWithRouter(['/use-cases/zero-day-protection'])
+            expect(screen.getByTestId('zero-day-protection')).toBeInTheDocument()
+        })
+
+        it('redirects invalid use case routes to homepage', () => {
+            renderWithRouter(['/use-cases/invalid-use-case'])
+            expect(screen.getByTestId('home-page')).toBeInTheDocument()
         })
     })
 
@@ -88,6 +106,16 @@ describe('App Router', () => {
             cleanup()
             renderWithRouter(['/use-cases'])
             expect(screen.getByTestId('use-cases-index')).toBeInTheDocument()
+        })
+
+        it('maintains route state during navigation', () => {
+            renderWithRouter(['/slides/10'])
+            expect(screen.getByTestId('presentation-app')).toBeInTheDocument()
+
+            // Test that we can navigate to use cases
+            cleanup()
+            renderWithRouter(['/use-cases/phishing-detection'])
+            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument()
         })
     })
 
@@ -102,10 +130,10 @@ describe('App Router', () => {
             renderWithRouter(['/slides/10'])
             expect(screen.getByTestId('presentation-app')).toBeInTheDocument()
 
-            // Test that we can navigate to use cases
+            // Test that we can navigate to individual use cases
             cleanup()
-            renderWithRouter(['/use-cases'])
-            expect(screen.getByTestId('use-cases-index')).toBeInTheDocument()
+            renderWithRouter(['/use-cases/account-takeover'])
+            expect(screen.getByTestId('account-takeover')).toBeInTheDocument()
         })
     })
 
@@ -115,19 +143,98 @@ describe('App Router', () => {
             expect(screen.getByTestId('presentation-app')).toBeInTheDocument()
         })
 
-        it('handles special characters in use case IDs', () => {
-            renderWithRouter(['/use-cases/test-case-with-hyphens'])
-            expect(screen.getByTestId('use-case-detail')).toBeInTheDocument()
+        it('handles special characters in use case routes', () => {
+            // Test hyphenated routes work correctly
+            renderWithRouter(['/use-cases/phishing-detection'])
+            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument()
+            
+            cleanup()
+            renderWithRouter(['/use-cases/zero-day-protection'])
+            expect(screen.getByTestId('zero-day-protection')).toBeInTheDocument()
         })
 
         it('handles multiple consecutive slashes', () => {
-            // Multiple slashes should be handled gracefully, may redirect to home
-            renderWithRouter(['/use-cases//test'])
-            // Either should show a valid component or redirect to home
-            const hasValidComponent = screen.queryByTestId('use-case-detail') ||
-                screen.queryByTestId('home-page') ||
-                screen.queryByTestId('use-cases-index')
-            expect(hasValidComponent).toBeInTheDocument()
+            // Multiple slashes should redirect to home
+            renderWithRouter(['/use-cases//invalid'])
+            expect(screen.getByTestId('home-page')).toBeInTheDocument()
+        })
+
+        it('handles case sensitivity correctly', () => {
+            // Routes should be case sensitive and invalid case should redirect
+            renderWithRouter(['/use-cases/Phishing-Detection'])
+            expect(screen.getByTestId('home-page')).toBeInTheDocument()
         })
     })
+
+    describe('Use Case Route Validation', () => {
+        const validUseCaseRoutes = [
+            '/use-cases/phishing-detection',
+            '/use-cases/account-takeover', 
+            '/use-cases/insider-threat',
+            '/use-cases/zero-day-protection'
+        ];
+
+        const expectedComponents = [
+            'phishing-detection',
+            'account-takeover',
+            'insider-threat', 
+            'zero-day-protection'
+        ];
+
+        it('all valid use case routes render correct components', () => {
+            validUseCaseRoutes.forEach((route, index) => {
+                cleanup();
+                renderWithRouter([route]);
+                expect(screen.getByTestId(expectedComponents[index])).toBeInTheDocument();
+            });
+        });
+
+        it('invalid use case IDs redirect to home', () => {
+            const invalidRoutes = [
+                '/use-cases/non-existent',
+                '/use-cases/phishing', // Partial match
+                '/use-cases/account-takeover-prevention', // Too long
+                '/use-cases/123' // Numeric
+            ];
+
+            invalidRoutes.forEach(route => {
+                cleanup();
+                renderWithRouter([route]);
+                expect(screen.getByTestId('home-page')).toBeInTheDocument();
+            });
+            
+            // Test that /use-cases/ shows use cases index (trailing slash normalized)
+            cleanup();
+            renderWithRouter(['/use-cases/']);
+            expect(screen.getByTestId('use-cases-index')).toBeInTheDocument();
+        });
+    })
+
+    describe('Routing Performance', () => {
+        it('renders routes without significant delay', async () => {
+            const start = performance.now();
+            renderWithRouter(['/use-cases/phishing-detection']);
+            expect(screen.getByTestId('phishing-detection')).toBeInTheDocument();
+            const end = performance.now();
+            
+            // Should render in under 100ms
+            expect(end - start).toBeLessThan(100);
+        });
+
+        it('handles rapid route changes', () => {
+            const routes = [
+                '/use-cases/phishing-detection',
+                '/use-cases/account-takeover',
+                '/use-cases/insider-threat',
+                '/use-cases/zero-day-protection'
+            ];
+
+            routes.forEach(route => {
+                cleanup();
+                renderWithRouter([route]);
+                // Should render without errors
+                expect(document.body).toBeInTheDocument();
+            });
+        });
+    });
 })

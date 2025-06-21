@@ -405,6 +405,261 @@
     box-shadow: var(--shadow-lg, 0 10px 10px -5px rgba(0, 0, 0, 0.04));
 }
 
+/* Additional Use Case Content Styles */
+.use-case-additional-info {
+    margin-top: var(--spacing-2xl, 32px);
+    padding-top: var(--spacing-2xl, 32px);
+    border-top: 1px solid var(--border-secondary, #e1e4e8);
+}
+
+.info-callout {
+    background: var(--surface-secondary, #f6f8fa);
+    border: 1px solid var(--border-secondary, #e1e4e8);
+    border-radius: var(--radius-lg, 8px);
+    padding: var(--spacing-xl, 24px);
+}
+
+.info-callout h3 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-xl, 20px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-md, 12px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.info-callout h3 i {
+    color: var(--accent-color, var(--brand-primary));
+    font-size: var(--text-lg, 18px);
+}
+
+.key-benefits {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg, 16px) 0 0 0;
+}
+
+.key-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm, 8px);
+    margin-bottom: var(--spacing-sm, 8px);
+    color: var(--text-secondary, #656d76);
+}
+
+.key-benefits li i {
+    color: var(--success-color, #1f883d);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Detection Methods Grid */
+.detection-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg, 16px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.method-card {
+    background: var(--surface-raised, #ffffff);
+    border: 1px solid var(--border-secondary, #e1e4e8);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-lg, 16px);
+    transition: all 0.3s var(--ease-github, ease-out);
+}
+
+.method-card:hover {
+    border-color: var(--accent-color, var(--brand-primary));
+    box-shadow: 0 3px 12px rgba(9, 105, 218, 0.1);
+    transform: translateY(-1px);
+}
+
+.method-card h4 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-sm, 8px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.method-card h4 i {
+    color: var(--accent-color, var(--brand-primary));
+}
+
+.method-card p {
+    color: var(--text-secondary, #656d76);
+    font-size: var(--text-sm, 14px);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Threat Indicators Layout */
+.threat-indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg, 16px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.indicator-category {
+    background: var(--surface-raised, #ffffff);
+    border: 1px solid var(--border-secondary, #e1e4e8);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-lg, 16px);
+}
+
+.indicator-category h4 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-md, 12px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.indicator-category h4 i {
+    color: var(--text-danger, #cf222e);
+}
+
+.indicator-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.indicator-category li {
+    color: var(--text-secondary, #656d76);
+    font-size: var(--text-sm, 14px);
+    padding: var(--spacing-xs, 4px) 0;
+    position: relative;
+    padding-left: var(--spacing-lg, 16px);
+}
+
+.indicator-category li::before {
+    content: '→';
+    color: var(--text-danger, #cf222e);
+    position: absolute;
+    left: 0;
+    font-weight: var(--weight-bold, 700);
+}
+
+/* Analysis Techniques Grid */
+.analysis-techniques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg, 16px);
+    margin-top: var(--spacing-lg, 16px);
+}
+
+.technique-card {
+    background: var(--surface-raised, #ffffff);
+    border: 1px solid var(--border-secondary, #e1e4e8);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-lg, 16px);
+    transition: all 0.3s var(--ease-github, ease-out);
+}
+
+.technique-card:hover {
+    border-color: var(--text-warning, #bf8700);
+    box-shadow: 0 3px 12px rgba(191, 135, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.technique-card h4 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-sm, 8px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.technique-card h4 i {
+    color: var(--text-warning, #bf8700);
+}
+
+.technique-card p {
+    color: var(--text-secondary, #656d76);
+    font-size: var(--text-sm, 14px);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Protection Benefits */
+.protection-benefits {
+    margin-top: var(--spacing-xl, 24px);
+    background: var(--surface-raised, #ffffff);
+    border: 1px solid var(--border-secondary, #e1e4e8);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--spacing-lg, 16px);
+}
+
+.protection-benefits h4 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-md, 16px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-md, 12px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.protection-benefits h4 i {
+    color: var(--success-color, #1f883d);
+}
+
+.protection-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.protection-benefits li {
+    color: var(--text-secondary, #656d76);
+    font-size: var(--text-sm, 14px);
+    padding: var(--spacing-xs, 4px) 0;
+    position: relative;
+    padding-left: var(--spacing-lg, 16px);
+}
+
+.protection-benefits li::before {
+    content: '✓';
+    color: var(--success-color, #1f883d);
+    position: absolute;
+    left: 0;
+    font-weight: var(--weight-bold, 700);
+}
+
+/* Error State Styles */
+.use-case-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    padding: var(--spacing-2xl, 32px);
+}
+
+.use-case-error h1 {
+    color: var(--text-primary, #24292f);
+    font-size: var(--text-2xl, 24px);
+    font-weight: var(--weight-semibold, 600);
+    margin-bottom: var(--spacing-md, 12px);
+}
+
+.use-case-error p {
+    color: var(--text-secondary, #656d76);
+    font-size: var(--text-md, 16px);
+    margin-bottom: var(--spacing-xl, 24px);
+}
+
 /* Animations */
 @keyframes useCaseDetailSlideIn {
     from {
@@ -478,6 +733,23 @@
     .nav-link {
         width: 100%;
         justify-content: center;
+    }
+
+    .detection-methods,
+    .threat-indicators,
+    .analysis-techniques {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md, 12px);
+    }
+    
+    .method-card,
+    .technique-card,
+    .indicator-category {
+        padding: var(--spacing-md, 12px);
+    }
+    
+    .info-callout {
+        padding: var(--spacing-lg, 16px);
     }
 }
 
