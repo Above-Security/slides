@@ -29,7 +29,8 @@
 }
 
 .timeline-hero::before {
-    display: none; /* Removed gradient for cleaner appearance */
+    display: none;
+    /* Removed gradient for cleaner appearance */
 }
 
 .timeline-title {
@@ -58,17 +59,18 @@
     gap: 40px;
     margin-top: 40px;
     position: relative;
-    align-items: stretch; /* Ensure equal height columns */
-    min-height: 600px; /* Minimum height for consistency */
-    background-image: linear-gradient(90deg, 
-        transparent 0%, 
-        transparent 15%, 
-        var(--color-primary) 15%, 
-        var(--color-primary-light) 50%, 
-        var(--color-primary) 85%, 
-        transparent 85%, 
-        transparent 100%
-    );
+    align-items: stretch;
+    /* Ensure equal height columns */
+    min-height: 600px;
+    /* Minimum height for consistency */
+    background-image: linear-gradient(90deg,
+            transparent 0%,
+            transparent 15%,
+            var(--color-primary) 15%,
+            var(--color-primary-light) 50%,
+            var(--color-primary) 85%,
+            transparent 85%,
+            transparent 100%);
     background-size: 100% 3px;
     background-repeat: no-repeat;
     background-position: center 24px;
@@ -80,7 +82,8 @@
     grid-template-rows: auto 1fr;
     align-items: stretch;
     gap: 24px;
-    height: 100%; /* Ensure full height */
+    height: 100%;
+    /* Ensure full height */
 }
 
 /* Phase numbers - simple centering */
@@ -99,7 +102,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 2;
     position: relative;
-    justify-self: center; /* Center in grid */
+    justify-self: center;
+    /* Center in grid */
 }
 
 /* Phase content cards */
@@ -110,9 +114,11 @@
     box-shadow: var(--shadow-sm);
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr auto; /* Content area and footer */
+    grid-template-rows: 1fr auto;
+    /* Content area and footer */
     transition: all var(--transition-normal);
-    height: 100%; /* Fill available grid space */
+    height: 100%;
+    /* Fill available grid space */
 }
 
 .timeline-phase:hover .phase-content {
@@ -122,21 +128,25 @@
 }
 
 /* Content structure */
-.phase-content > div {
+.phase-content>div {
     padding: 24px;
     display: grid;
-    grid-template-rows: auto auto 1fr; /* Header, description, milestones */
+    grid-template-rows: auto auto 1fr;
+    /* Header, description, milestones */
     gap: 20px;
-    height: 100%; /* Ensure full height usage */
+    height: 100%;
+    /* Ensure full height usage */
 }
 
 /* Ensure consistent spacing above milestones */
 .phase-header {
-    min-height: 120px; /* Fixed height to align milestone headers */
+    min-height: 120px;
+    /* Fixed height to align milestone headers */
 }
 
 .phase-description {
-    min-height: 72px; /* Fixed height to align milestone headers */
+    min-height: 72px;
+    /* Fixed height to align milestone headers */
 }
 
 /* Phase header */
@@ -147,7 +157,8 @@
     display: grid;
     gap: 12px;
     align-content: start;
-    min-height: 120px; /* Fixed height to align milestone headers */
+    min-height: 120px;
+    /* Fixed height to align milestone headers */
 }
 
 .phase-title {
@@ -159,7 +170,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px; /* Fixed height for all titles */
+    min-height: 52px;
+    /* Fixed height for all titles */
 }
 
 .phase-duration {
@@ -171,8 +183,10 @@
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    white-space: nowrap; /* Prevent wrapping */
-    justify-self: center; /* Center in grid */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    justify-self: center;
+    /* Center in grid */
 }
 
 /* Phase description */
@@ -186,7 +200,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 72px; /* Fixed height to align milestone headers */
+    min-height: 72px;
+    /* Fixed height to align milestone headers */
 }
 
 /* Milestones */
@@ -223,7 +238,8 @@
     padding-left: 20px;
     position: relative;
     font-weight: var(--font-weight-medium);
-    min-height: 1.4em; /* Consistent line height */
+    min-height: 1.4em;
+    /* Consistent line height */
 }
 
 .phase-milestones li::before {
@@ -249,7 +265,8 @@
     gap: 8px;
     align-content: center;
     text-align: center;
-    min-height: 80px; /* Fixed footer height */
+    min-height: 80px;
+    /* Fixed footer height */
     position: relative;
     transition: all var(--transition-normal);
 }
@@ -339,7 +356,7 @@
         max-width: 100%;
     }
 
-    .phase-content > div {
+    .phase-content>div {
         padding: 20px;
     }
 
