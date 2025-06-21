@@ -36,7 +36,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 80%, rgba(0, 135, 43, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(0, 135, 43, 0.1) 0%, transparent 50%);
     pointer-events: none;
@@ -60,14 +60,21 @@
 }
 
 /* Ensure content stays above the overlay */
-.executive-summary--dark > * {
+.executive-summary--dark>* {
     position: relative;
     z-index: 2;
 }
 
 @keyframes gradientFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .executive-description--dark {
@@ -105,24 +112,24 @@
         gap: var(--spacing-xl);
         max-width: 1000px;
     }
-    
+
     /* First 3 items take equal width */
     .key-points-grid .key-point-card:nth-child(-n+3) {
         flex: 0 0 calc(33.333% - var(--spacing-xl));
         max-width: 300px;
     }
-    
+
     /* Last 2 items centered in second row with balanced gap */
     .key-points-grid .key-point-card:nth-child(n+4) {
         flex: 0 0 calc(33.333% - var(--spacing-xl));
         max-width: 300px;
     }
-    
+
     /* Create perfectly centered positioning for the bottom row */
     .key-points-grid .key-point-card:nth-child(4) {
         margin-right: calc(var(--spacing-xl) / 3);
     }
-    
+
     .key-points-grid .key-point-card:nth-child(5) {
         margin-left: calc(var(--spacing-xl) / 3);
     }

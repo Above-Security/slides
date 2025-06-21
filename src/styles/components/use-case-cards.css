@@ -40,26 +40,27 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: transparent; /* Default - no gradient */
+    background: transparent;
+    /* Default - no gradient */
     z-index: 1;
 }
 
 .incident-card.high::before {
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--color-warning) 20%, 
-        var(--color-warning) 80%, 
-        transparent 100%
-    ); /* Orange gradient for high severity */
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--color-warning) 20%,
+            var(--color-warning) 80%,
+            transparent 100%);
+    /* Orange gradient for high severity */
 }
 
 .incident-card.critical::before {
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--color-danger) 20%, 
-        var(--color-danger) 80%, 
-        transparent 100%
-    ); /* Red gradient for critical severity */
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--color-danger) 20%,
+            var(--color-danger) 80%,
+            transparent 100%);
+    /* Red gradient for critical severity */
 }
 
 .incident-card:hover {
@@ -243,7 +244,8 @@
     border-radius: var(--radius-md);
 }
 
-.before, .after {
+.before,
+.after {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
