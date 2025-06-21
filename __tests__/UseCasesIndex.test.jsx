@@ -46,7 +46,7 @@ describe('UseCasesIndex Component', () => {
             expect(logo).toBeInTheDocument()
 
             const logoLink = logo.closest('a')
-            expect(logoLink).toHaveAttribute('href', '/home')
+            expect(logoLink).toHaveAttribute('href', '/')
         })
 
         it('renders all four use case cards', () => {
@@ -72,10 +72,10 @@ describe('UseCasesIndex Component', () => {
             renderWithRouter()
 
             const homeLink = screen.getByText('Back to Home').closest('a')
-            expect(homeLink).toHaveAttribute('href', '/home')
+            expect(homeLink).toHaveAttribute('href', '/')
 
             const presentationLink = screen.getByText('View Full Presentation').closest('a')
-            expect(presentationLink).toHaveAttribute('href', '/slide/1')
+            expect(presentationLink).toHaveAttribute('href', '/slides/1')
         })
 
         it('generates correct use case detail links', () => {

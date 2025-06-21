@@ -85,7 +85,7 @@ const UseCasesIndex = () => {
                 <div className="use-cases-content">
                     {/* Header Section */}
                     <header className="use-cases-header">
-                        <Link to="/home" className="logo-container" onClick={handleLogoClick}>
+                        <Link to="/" className="logo-container" onClick={handleLogoClick}>
                             <Logo className="use-cases-logo" />
                         </Link>
 
@@ -131,7 +131,7 @@ const UseCasesIndex = () => {
 
                     {/* Navigation Footer */}
                     <footer className="use-cases-navigation">
-                        <Link to="/home" className="nav-link secondary">
+                        <Link to="/" className="nav-link secondary">
                             <i className="fas fa-home"></i>
                             Back to Home
                         </Link>
