@@ -1,7 +1,7 @@
 {
     "name": "Above Security - Browser ITDR Platform",
     "short_name": "Above Security",
-    "description": "Browser ITDR platform using runtime telemetries for identity threat detection and sophisticated phishing prevention",
+    "description": "Ruuntime ITDR platform using runtime telemetries for identity threat detection and sophisticated phishing prevention",
     "icons": [
         {
             "src": "/slides/favicon-16x16.png",

@@ -1,0 +1,378 @@
+/*
+ * FloatingNavigation Component Styles
+ * 
+ * SYSTEMATIC IMPLEMENTATION DOCUMENTATION:
+ * 
+ * 1. STICKY BEHAVIOR:
+ *    - Uses position: sticky with configurable --top-offset
+ *    - IntersectionObserver detects when element hits top of viewport
+ *    - .is-stuck class applied when navigation becomes sticky
+ *    - Proper threshold detection prevents flickering
+ * 
+ * 2. ALWAYS-ON BORDER ANIMATION:
+ *    - Subtle gradient border active at all times (not just when stuck)
+ *    - Uses brand tokens: --color-primary and --color-primary-light
+ *    - 8s slow animation for professional, non-distracting effect
+ *    - No layout impact - uses ::before pseudo-element with mask
+ * 
+ * 3. ENHANCED STICKY STATE:
+ *    - Additional shadow elevation when stuck
+ *    - Slightly intensified border animation (4s instead of 8s)
+ *    - Smooth 200ms transitions as required
+ * 
+ * 4. IMPROVED HOVER EFFECTS:
+ *    - Soft background fill using --color-background-secondary
+ *    - Minimal translateY(-1px) for subtle elevation
+ *    - 150ms transitions for responsiveness
+ *    - Brand-compliant colors only
+ * 
+ * 5. ACCESSIBILITY & PERFORMANCE:
+ *    - prefers-reduced-motion support
+ *    - WCAG-compliant touch targets (44px minimum)
+ *    - High contrast mode support
+ *    - contain: layout style for performance
+ */
+
+/* Main Navigation Container - Sticky Positioning */
+.floating-navigation {
+  /* Sticky positioning with proper offset for visibility detection */
+  position: sticky;
+  top: var(--top-offset, var(--spacing-lg)); /* Default 16px */
+  z-index: var(--z-index-controls);
+  
+  /* Layout using token-based spacing */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+  
+  /* Entrance animation using design tokens */
+  animation: floatingNavEnter var(--transition-slow) ease-out;
+  
+  /* Performance optimization */
+  contain: layout style;
+  will-change: transform;
+}
+
+/* Navigation List Container - Clean Layout */
+.floating-nav-list {
+  /* Flexbox layout with consistent spacing */
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Tighter gap for better visual grouping */
+  margin: 0;
+  padding: 8px 16px; /* More compact padding */
+  list-style: none;
+  
+  /* Base styling using design system tokens only */
+  background-color: var(--color-background-primary);
+  border-radius: var(--radius-2xl);
+  
+  /* Clean shadow for depth */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  
+  /* Always-on animated border setup */
+  position: relative;
+  overflow: hidden;
+  
+  /* Smooth transitions for state changes */
+  transition: 
+    box-shadow 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+/* Always-On Subtle Border Animation - Active at All Times */
+.floating-nav-list::before {
+  /* Positioning for animated border */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* CRITICAL: Prevent this pseudo-element from blocking pointer events */
+  pointer-events: none;
+  
+  /* Animated gradient border using brand tokens */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary-light),
+    var(--color-primary),
+    var(--color-primary-light),
+    transparent
+  );
+  background-size: 200% 100%;
+  
+  /* Border positioning and styling */
+  border-radius: var(--radius-2xl);
+  padding: 1px; /* Border thickness */
+  
+  /* Gradient animation - always active */
+  animation: borderGradientFlow 8s linear infinite;
+  
+  /* Mask to create border effect */
+  -webkit-mask: 
+    linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  mask-composite: exclude;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .floating-nav-list {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Navigation List Items - Semantic Structure */
+.floating-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links - Clean and Consistent */
+.floating-nav-link {
+  /* WCAG-compliant layout and touch targets */
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 10px 16px; /* Fixed padding for consistent spacing */
+  min-height: 44px; /* WCAG AA minimum */
+  
+  /* Typography using design tokens */
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  
+  /* Base styling using tokens */
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  
+  /* Smooth transitions for all interaction states */
+  transition: 
+    background-color 200ms ease-in-out,
+    border-color 200ms ease-in-out,
+    color 200ms ease-in-out,
+    box-shadow 200ms ease-in-out;
+  
+  /* Interaction cursor */
+  cursor: pointer;
+  
+  /* Prevent text selection during interaction */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Icon styling using design tokens */
+.floating-nav-link i {
+  font-size: var(--font-size-sm);
+  color: currentColor;
+  opacity: 0.8;
+  transition: opacity 200ms ease-in-out;
+}
+
+/* Text content styling */
+.nav-text {
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Responsive text handling on mobile */
+@media (max-width: 640px) {
+  .nav-text {
+    /* Hide text labels on mobile, keep icons for space */
+    display: none;
+  }
+  
+  .floating-nav-link {
+    padding: 10px; /* Square padding for mobile */
+    gap: 0;
+  }
+  
+  .floating-nav-link i {
+    font-size: var(--font-size-md);
+  }
+  
+  .floating-nav-list {
+    gap: 2px; /* Even tighter on mobile */
+    padding: 6px 12px;
+  }
+}
+
+/* CLEAN HOVER STATE - Subtle and Professional */
+.floating-nav-link:hover {
+  /* Light background with subtle tint */
+  background-color: rgba(246, 248, 250, 0.8);
+  border-color: rgba(0, 135, 43, 0.2);
+  color: var(--color-primary);
+  
+  /* Soft shadow without movement */
+  box-shadow: 0 2px 8px rgba(0, 135, 43, 0.1);
+}
+
+.floating-nav-link:hover i {
+  opacity: 1;
+}
+
+/* Focus State - Accessibility Compliant */
+.floating-nav-link:focus {
+  outline: none;
+  background-color: rgba(246, 248, 250, 0.8);
+  border-color: var(--color-border-focus);
+  color: var(--color-primary);
+  
+  /* Clear focus ring for keyboard navigation */
+  box-shadow: 
+    0 0 0 2px var(--color-background-primary),
+    0 0 0 4px var(--color-border-focus);
+}
+
+/* Active/Pressed State */
+.floating-nav-link:active {
+  background-color: rgba(246, 248, 250, 0.9);
+  border-color: var(--color-border-focus);
+}
+
+/* Current Page/Active Link State - Clean and Modern */
+.floating-nav-link.active {
+  background: linear-gradient(135deg, var(--color-primary), rgba(0, 135, 43, 0.9));
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-semibold);
+  border-color: transparent;
+  
+  /* Clean shadow without excessive blur */
+  box-shadow: 0 2px 12px rgba(0, 135, 43, 0.3);
+}
+
+.floating-nav-link.active i {
+  opacity: 1;
+  color: var(--color-text-inverse);
+}
+
+.floating-nav-link.active:hover {
+  /* Subtle brightness increase for active state */
+  background: linear-gradient(135deg, rgba(0, 135, 43, 0.95), var(--color-primary));
+  box-shadow: 0 3px 16px rgba(0, 135, 43, 0.35);
+}
+
+.floating-nav-link.active:focus {
+  box-shadow: 
+    0 0 0 2px var(--color-background-primary),
+    0 0 0 4px var(--color-primary);
+}
+
+/* ENHANCED STATE - When at top of page (more prominent) */
+.floating-navigation.is-enhanced .floating-nav-list {
+  /* Enhanced elevation when at top */
+  box-shadow: var(--shadow-lg);
+  
+  /* Subtle scale for visual feedback */
+  transform: scale(1.02);
+}
+
+/* Intensified border animation when at top */
+.floating-navigation.is-enhanced .floating-nav-list::before {
+  /* Faster animation when at top for more prominent effect */
+  animation: borderGradientFlow 4s linear infinite;
+  
+  /* Slightly more opaque border when at top */
+  opacity: 1;
+}
+
+/* ANIMATION KEYFRAMES */
+
+/* Entrance Animation */
+@keyframes floatingNavEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-var(--spacing-md));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Always-On Border Gradient Flow */
+@keyframes borderGradientFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ACCESSIBILITY & MOTION PREFERENCES */
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .floating-nav-list {
+    border: 2px solid var(--color-text-primary);
+  }
+  
+  .floating-nav-link {
+    border-width: 1px;
+  }
+  
+  .floating-nav-link:focus {
+    border-width: 2px;
+  }
+  
+  /* Disable animated border in high contrast mode */
+  .floating-nav-list::before {
+    display: none;
+  }
+}
+
+/* Reduced Motion Support - Disable All Animations */
+@media (prefers-reduced-motion: reduce) {
+  .floating-navigation {
+    animation: none;
+  }
+  
+  .floating-nav-list,
+  .floating-nav-link {
+    transition: none;
+  }
+  
+  .floating-nav-link:hover {
+    transform: none;
+  }
+  
+  .floating-navigation.is-enhanced .floating-nav-list {
+    transform: none;
+  }
+  
+  /* Static border for reduced motion preference */
+  .floating-nav-list::before {
+    animation: none;
+    background: var(--color-primary);
+    opacity: 0.3;
+  }
+  
+  .floating-navigation.is-enhanced .floating-nav-list::before {
+    opacity: 0.5;
+  }
+}
+
+/* Print Styles - Hide Navigation */
+@media print {
+  .floating-navigation {
+    display: none;
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
+import FloatingNavigation from '../../components/FloatingNavigation';
+import '../../components/FloatingNavigationIntegration.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
 import '../styles/PhishingDetection.css';
 
@@ -369,14 +371,12 @@ const PhishingDetection = () => {
             <meta name="keywords" content="phishing prevention, LOTS attacks, OAuth abuse, AiTM, runtime security, browser protection" />
 
             <div className="comprehensive-phishing-container" data-testid="comprehensive-phishing">
+                {/* Floating Navigation */}
+                <FloatingNavigation />
+                
                 <div className="comprehensive-phishing-content">
                     {/* Header */}
                     <header className="comprehensive-phishing-header">
-                        <Link to="/use-cases" className="back-link">
-                            <i className="fas fa-arrow-left"></i>
-                            Back to Use Cases
-                        </Link>
-
                         <div className="comprehensive-hero" style={{ '--accent-color': COMPREHENSIVE_PHISHING_DATA.color }}>
                             <div className="hero-gradient-background"></div>
                             <div className="hero-content">
@@ -745,12 +745,7 @@ const PhishingDetection = () => {
 
                     {/* Navigation Footer */}
                     <footer className="navigation-footer">
-                        <Link to="/use-cases" className="nav-link secondary">
-                            <i className="fas fa-th"></i>
-                            All Use Cases
-                        </Link>
-
-                        <Link to="/slide/1" className="nav-link primary">
+                        <Link to="/slides/1" className="nav-link primary">
                             View Full Presentation
                             <i className="fas fa-arrow-right"></i>
                         </Link>
