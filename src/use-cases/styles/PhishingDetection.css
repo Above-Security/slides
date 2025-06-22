@@ -5,7 +5,7 @@
 
 /* Import base design system */
 @import '../../styles/base/variables.css';
-@import '../../styles/components/card-patterns.css';
+/* card-patterns.css already imported globally in App.css - removed duplicate */
 @import '../../styles/components/buttons.css';
 @import '../../styles/components/timeline.css';
 @import '../../styles/components/content-groups.css';

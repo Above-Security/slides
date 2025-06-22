@@ -1,0 +1,246 @@
+/* ==================================================
+   ADVANCED INTERACTION ENHANCEMENTS
+   Micro-interactions and progressive enhancement
+   ================================================== */
+
+/* ===== ADVANCED CURSOR INTERACTIONS ===== */
+.use-case-card {
+  cursor: none;
+  position: relative;
+}
+
+.use-case-card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
+.use-case-card:hover::after {
+  opacity: 0.6;
+}
+
+/* ===== MAGNETISM EFFECT ===== */
+.use-case-card:hover .use-case-icon {
+  animation: magneticFloat 2s ease-in-out infinite;
+}
+
+@keyframes magneticFloat {
+  0%, 100% { transform: scale(1.1) rotate(5deg) translateY(0); }
+  50% { transform: scale(1.1) rotate(5deg) translateY(-2px); }
+}
+
+/* ===== PARTICLE SYSTEM (CSS-only) ===== */
+.use-case-card::before {
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--accent-color) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at 50% 10%, var(--accent-color) 0.5px, transparent 0.5px);
+  background-size: 50px 50px, 30px 30px, 20px 20px;
+  background-position: 0 0, 0 0, 0 0;
+  animation: particleFlow 20s linear infinite;
+}
+
+@keyframes particleFlow {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 50px 50px, -30px 30px, 20px -20px; }
+}
+
+/* ===== SCROLL-DRIVEN ANIMATIONS ===== */
+@supports (animation-timeline: scroll()) {
+  .use-cases-container {
+    animation: parallaxBackground linear;
+    animation-timeline: scroll();
+  }
+  
+  @keyframes parallaxBackground {
+    from { background-position: 0 0; }
+    to { background-position: 0 50px; }
+  }
+  
+  .use-case-card {
+    animation: cardParallax linear;
+    animation-timeline: scroll();
+  }
+  
+  @keyframes cardParallax {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+}
+
+/* ===== ADVANCED FOCUS MANAGEMENT ===== */
+.use-case-card:focus-visible {
+  outline: none;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    var(--shadow-elevated),
+    0 0 0 3px rgba(8, 135, 43, 0.3),
+    0 0 0 6px rgba(8, 135, 43, 0.1);
+}
+
+.use-case-card:focus-visible .use-case-icon {
+  transform: scale(1.1) rotate(5deg);
+  animation: focusPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes focusPulse {
+  from { box-shadow: 0 8px 32px rgba(8, 135, 43, 0.2); }
+  to { box-shadow: 0 12px 48px rgba(8, 135, 43, 0.4); }
+}
+
+/* ===== ENHANCED LOADING STATES ===== */
+.use-case-card[data-loading="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.use-case-card[data-loading="true"]::before {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(8, 135, 43, 0.2) 50%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== ERROR STATES ===== */
+.use-case-card[data-error="true"] {
+  border-color: var(--text-danger);
+  background: rgba(209, 36, 47, 0.05);
+  animation: errorShake 0.5s ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* ===== SUCCESS STATES ===== */
+.use-case-card[data-success="true"] {
+  border-color: var(--brand-primary);
+  background: rgba(8, 135, 43, 0.05);
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* ===== MOBILE GESTURE ENHANCEMENTS ===== */
+@media (hover: none) and (pointer: coarse) {
+  .use-case-card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .use-case-card:active {
+    transform: scale(0.98);
+    background: var(--gradient-card-hover);
+  }
+  
+  .use-case-card::after {
+    display: none;
+  }
+  
+  /* Enhanced touch feedback */
+  .use-case-card:active .use-case-icon {
+    transform: scale(1.05);
+  }
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+@media (prefers-color-scheme: dark) {
+  .use-case-card {
+    background: rgba(36, 41, 47, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .use-case-card:hover {
+    background: rgba(36, 41, 47, 0.95);
+    border-color: rgba(95, 237, 131, 0.3);
+  }
+  
+  .use-cases-title {
+    color: #ffffff;
+  }
+  
+  .use-case-title {
+    color: #ffffff;
+  }
+  
+  .use-case-description {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* ===== PRINT OPTIMIZATIONS ===== */
+@media print {
+  .use-case-card::before,
+  .use-case-card::after,
+  .use-case-icon::before {
+    display: none !important;
+  }
+  
+  .use-case-card {
+    break-inside: avoid;
+    border: 1px solid #000;
+    margin-bottom: 1rem;
+  }
+  
+  .use-case-icon {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.use-case-card {
+  /* Promote to composite layer for smooth animations */
+  will-change: transform, opacity;
+  
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  
+  /* Optimize paint and layout */
+  contain: layout style paint;
+}
+
+.use-case-icon {
+  /* Optimize icon animations */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ===== HIGH PERFORMANCE MODE ===== */
+@media (prefers-reduced-data: reduce) {
+  .use-cases-container::before,
+  .use-case-card::before,
+  .use-case-card::after,
+  .use-case-icon::before {
+    display: none;
+  }
+  
+  .use-case-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import SlideLayout from '../components/SlideLayout';
-import '../styles/components/card-patterns.css';
+// card-patterns.css already imported globally in App.css - removed duplicate
 import '../styles/components/shared-slide-components.css';
 
 const SlideBusinessCase = () => (
