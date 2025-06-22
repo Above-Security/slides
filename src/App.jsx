@@ -9,6 +9,9 @@ import {
   InsiderThreat, 
   ZeroDayProtection 
 } from './use-cases';
+import { 
+  CompanyIndex
+} from './company';
 import './App.css';
 
 const App = () => {
@@ -39,6 +42,7 @@ const App = () => {
         caseSensitive 
       />
       <Route path="/use-cases/*" element={<Navigate to="/" replace />} />
+      <Route path="/company" element={<CompanyIndex />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
