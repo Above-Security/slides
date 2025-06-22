@@ -1,0 +1,90 @@
+/* CompanyIndex.css - Styled narrative page using PhishingDetection patterns */
+@import '../../styles/base/variables.css';
+@import '../../styles/components/section-headers.css';
+@import '../../styles/components/content-groups.css';
+
+.company-narrative-container {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-brand-body);
+  min-height: 100vh;
+}
+
+.company-narrative-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-4xl) var(--spacing-3xl);
+}
+
+.company-hero {
+  position: relative;
+  text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  border: 1px solid var(--border-secondary);
+  background: var(--surface-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-4xl);
+}
+
+.company-hero-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--spacing-lg);
+}
+
+.company-hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.vision-statement {
+  font-size: var(--text-xl);
+  line-height: var(--leading-loose);
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.narrative-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-xl) 0;
+}
+
+.narrative-table th,
+.narrative-table td {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-secondary);
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.narrative-table th {
+  background: var(--surface-secondary);
+  font-weight: var(--weight-semibold);
+}
+
+.narrative-hook,
+.critical-stance,
+.blunt-message {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.final-statement {
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  font-size: var(--text-md);
+}
