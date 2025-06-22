@@ -12,6 +12,8 @@ import {
 import { 
   CompanyIndex
 } from './company';
+import FloatingTOCDemo from './company/pages/FloatingTOCDemo';
+import SectionContainerDemo from './company/pages/SectionContainerDemo';
 import './App.css';
 
 const App = () => {
@@ -43,6 +45,8 @@ const App = () => {
       />
       <Route path="/use-cases/*" element={<Navigate to="/" replace />} />
       <Route path="/company" element={<CompanyIndex />} />
+      <Route path="/company/toc-demo" element={<FloatingTOCDemo />} />
+      <Route path="/company/section-demo" element={<SectionContainerDemo />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
