@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
+import CalloutBox from '../components/CalloutBox';
 
 const ValueProofSection = () => (
   <SectionContainer id="value-proof" title="7 | IF NO ATTACKS DURING POV – PROVING VALUE">
@@ -10,9 +11,9 @@ const ValueProofSection = () => (
         <li><strong>Investigation Drill</strong> – Re‑play a historic incident with and without our timeline; have analyst live‑compare speed.</li>
         <li><strong>Red‑Team Voucher</strong> – Offer post‑sale internal phish simulation voucher to prove stop‑rate (paid by us if miss KPI).</li>
       </ol>
-      <div className="blunt-message">
+      <CalloutBox variant="blunt">
         <em>"If in 14 days we don't surface anything you find useful, we deserve to lose."</em>
-      </div>
+      </CalloutBox>
     </div>
   </SectionContainer>
 );
