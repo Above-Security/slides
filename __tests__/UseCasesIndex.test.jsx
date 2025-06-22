@@ -105,10 +105,15 @@ describe('UseCasesIndex Component', () => {
             const phishingCard = screen.getByText('Phishing Detection').closest('a')
             await user.click(phishingCard)
 
-            expect(clarityEvent).toHaveBeenCalledWith('use_case_clicked', {
-                use_case: 'phishing-detection'
-            })
+            expect(clarityEvent).toHaveBeenCalledWith('use_case_clicked', 
+                expect.objectContaining({
+                    use_case: 'phishing-detection',
+                    interaction_type: 'enhanced_card_click',
+                    timestamp: expect.any(Number)
+                })
+            )
             expect(claritySet).toHaveBeenCalledWith('selected_use_case', 'phishing-detection')
+            expect(claritySet).toHaveBeenCalledWith('interaction_method', 'enhanced_ui')
         })
 
         it('tracks logo clicks', async () => {
@@ -118,7 +123,12 @@ describe('UseCasesIndex Component', () => {
             const logoLink = screen.getByTestId('logo').closest('a')
             await user.click(logoLink)
 
-            expect(clarityEvent).toHaveBeenCalledWith('logo_clicked_from_use_cases')
+            expect(clarityEvent).toHaveBeenCalledWith('logo_clicked_from_use_cases',
+                expect.objectContaining({
+                    interaction_type: 'enhanced_logo_hover',
+                    timestamp: expect.any(Number)
+                })
+            )
         })
     })
 

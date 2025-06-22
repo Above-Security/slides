@@ -245,15 +245,15 @@ main {
     position: relative;
 }
 
-main section {
+.comprehensive-phishing-container main section {
     position: relative;
     padding: var(--spacing-4xl) 0;
     border-bottom: 1px solid var(--border-secondary);
     transition: all var(--transition-standard);
 }
 
-/* Alternating section backgrounds for visual hierarchy */
-main section:nth-child(even) {
+/* Alternating section backgrounds for visual hierarchy - scoped to phishing detection */
+.comprehensive-phishing-container main section:nth-child(even) {
     background: var(--bg-secondary);
     margin: 0 calc(-1 * var(--spacing-2xl));
     padding: var(--spacing-4xl) var(--spacing-2xl);
@@ -261,12 +261,12 @@ main section:nth-child(even) {
     border-bottom: none;
 }
 
-main section:nth-child(odd) {
+.comprehensive-phishing-container main section:nth-child(odd) {
     background: var(--bg-primary);
 }
 
-/* Section dividers - subtle visual separation */
-main section:not(:last-child)::after {
+/* Section dividers - subtle visual separation - scoped to phishing detection */
+.comprehensive-phishing-container main section:not(:last-child)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -278,12 +278,12 @@ main section:not(:last-child)::after {
     border-radius: var(--radius-sm);
 }
 
-main section:nth-child(even):not(:last-child)::after {
+.comprehensive-phishing-container main section:nth-child(even):not(:last-child)::after {
     background: linear-gradient(90deg, transparent, var(--border-primary), transparent);
 }
 
-/* Section spacing optimization */
-main section+section {
+/* Section spacing optimization - scoped to phishing detection */
+.comprehensive-phishing-container main section+section {
     margin-top: var(--spacing-3xl);
 }
 
