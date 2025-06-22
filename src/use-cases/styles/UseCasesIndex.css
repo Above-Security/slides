@@ -1,4 +1,7 @@
-/* Use Cases Index Styles - Above Security Brand Aligned */
+/* Use Cases Index Styles - Above.use-cases-logo {
+    /* Removed conflicting height rule - now handled in enhanced CSS */
+    width: auto;
+}urity Brand Aligned */
 /* Following GitHub Brand Guidelines and Homepage/Detection Slide Patterns */
 
 .use-cases-container {
@@ -32,7 +35,7 @@
 }
 
 .use-cases-logo {
-    height: 48px;
+    height: 72px;
     width: auto;
 }
 
