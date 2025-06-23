@@ -1,10 +1,11 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
+import styles from '../styles/CompanyIndex.module.css';
 
 const HypothesesSection = () => (
   <SectionContainer id="hypotheses" title="6 | DEAL‑CRITICAL HYPOTHESES & HOW WE TEST">
     <div>
-      <table className="narrative-table">
+      <table className={styles.narrativeTable}>
         <thead>
           <tr>
             <th>Hypothesis</th>

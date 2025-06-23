@@ -1,10 +1,11 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
+import styles from '../styles/CompanyIndex.module.css';
 
 const PositioningSection = () => (
   <SectionContainer id="positioning" title="4 | REPLACE vs ENHANCE – POSITIONING">
     <div>
-      <table className="narrative-table">
+      <table className={styles.narrativeTable}>
         <thead>
           <tr>
             <th>Tool</th>
