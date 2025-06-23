@@ -30,6 +30,19 @@
   animation: fadeInUp var(--transition-bounce);
 }
 
+.company-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+  background-size: 200% 100%;
+  animation: gradientFlow 6s linear infinite;
+  pointer-events: none;
+}
+
 .company-hero::before {
   content: '';
   position: absolute;
@@ -109,6 +122,7 @@
 
 
 .final-statement {
+  position: relative;
   background: var(--bg-dark);
   color: var(--text-inverse);
   padding: var(--spacing-xl);
@@ -116,7 +130,23 @@
   margin-top: var(--spacing-xl);
   text-align: center;
   font-size: var(--text-md);
+  box-shadow: var(--shadow-md);
   animation: fadeInUp var(--transition-github);
+}
+
+.final-statement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-gradient);
+  background-size: 200% 100%;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  animation: gradientFlow 6s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes fadeInUp {
@@ -129,3 +159,10 @@
     transform: translateY(0);
   }
 }
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

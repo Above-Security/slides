@@ -193,11 +193,26 @@
 .vision .sectionInner {
   border: 2px solid var(--brand-primary);
   background: linear-gradient(
-    135deg, 
-    var(--surface-primary) 0%, 
+    135deg,
+    var(--surface-primary) 0%,
     rgba(95, 237, 131, 0.02) 100%
   );
   box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.vision .sectionInner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+  background-size: 200% 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  animation: gradientFlow 6s linear infinite;
 }
 
 .vision .sectionInner:hover {
@@ -366,3 +381,10 @@
     color: #000 !important;
   }
 }
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
