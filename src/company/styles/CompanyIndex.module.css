@@ -1,0 +1,175 @@
+/* CompanyIndex.css - Styled narrative page using PhishingDetection patterns */
+@import '../../styles/tokens/design-tokens.css';
+@import '../../styles/base/variables.css';
+@import '../../styles/components/section-headers.css';
+@import '../../styles/components/content-groups.css';
+
+.company-narrative-container {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-brand-body);
+  min-height: 100vh;
+}
+
+.company-narrative-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-8);
+}
+
+.company-hero {
+  position: relative;
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  border-radius: var(--radius-2xl);
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  margin-bottom: var(--space-16);
+  border: 1px solid var(--border-secondary);
+  animation: fadeInUp var(--transition-github);
+}
+
+.company-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+  background-size: 200% 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  animation: gradientFlow 6s linear infinite;
+  pointer-events: none;
+}
+
+.company-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(95,237,131,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.company-hero-title {
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-extrabold);
+  margin-bottom: var(--space-4);
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-hero-subtitle {
+  font-size: var(--text-xl);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.vision-statement {
+  font-size: var(--text-xl);
+  line-height: var(--leading-loose);
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-primary);
+  color: var(--text-inverse);
+  margin: 0 auto var(--space-6);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-normal);
+}
+
+.hero-icon:hover {
+  transform: scale(1.05);
+}
+
+.narrative-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-xl) 0;
+}
+
+.narrative-table tbody tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.narrative-table tbody tr:hover {
+  background: var(--surface-hover);
+}
+
+.narrative-table th,
+.narrative-table td {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-secondary);
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.narrative-table th {
+  background: var(--surface-secondary);
+  font-weight: var(--weight-semibold);
+}
+
+
+.final-statement {
+  position: relative;
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-12);
+  text-align: center;
+  font-size: var(--text-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-primary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp var(--transition-github);
+}
+
+.final-statement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+  background-size: 200% 100%;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  animation: gradientFlow 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
