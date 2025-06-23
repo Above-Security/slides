@@ -10,7 +10,7 @@ const ExecutiveSummarySection = () => (
         <li><em>Expand</em> by monetizing the <strong>unique browser telemetry</strong> every other control plane lacks.</li>
         <li><em>Dominate</em> by adding real‑time insider threat prevention, gradually encroaching on legacy CASB / UEBA budgets.</li>
       </ul>
-      <div className={styles.finalStatement}>
+      <div className={styles["final-statement"]}>
         <strong>Above</strong> becomes the lightweight, deploy‑anywhere runtime layer that <strong>starts</strong> where IAM ends and <strong>finishes</strong> what CASB &amp; email security can’t.
       </div>
     </div>

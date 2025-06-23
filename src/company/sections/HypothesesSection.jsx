@@ -5,7 +5,7 @@ import styles from '../styles/CompanyIndex.module.css';
 const HypothesesSection = () => (
   <SectionContainer id="hypotheses" title="6 | DEAL‑CRITICAL HYPOTHESES & HOW WE TEST">
     <div>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>Hypothesis</th>

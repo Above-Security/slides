@@ -23,9 +23,9 @@ const CompanyIndex = () => {
   }, []);
 
   return (
-    <div className={styles.companyNarrativeContainer}>
+    <div className={styles["company-narrative-container"]}>
       <VisionHero />
-      <main className={styles.companyNarrativeContent}>
+      <main className={styles["company-narrative-content"]}>
         <GoToMarket />
         <PovPlaybook />
         <MetricsSection />

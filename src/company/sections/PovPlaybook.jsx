@@ -9,7 +9,7 @@ const PovPlaybook = () => (
       <p><em>We get one shot to prove value in less than a monthly sprint. The buyer has five other pilots in flight — we must be the one that actually finishes.</em></p>
 
       <h3>2.1 PoV Guard‑Rails (3 Weeks Total)</h3>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>Phase</th>
@@ -52,7 +52,7 @@ const PovPlaybook = () => (
       </table>
 
       <h3>2.2 Success KPIs &amp; Pass‑Fail Gates</h3>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>KPI</th>
