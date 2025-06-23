@@ -5,7 +5,7 @@ import styles from '../styles/CompanyIndex.module.css';
 const RoadmapSection = () => (
   <SectionContainer id="roadmap" title="5 | YEAR‑2 EXPANSION ROADMAP (12‑24 Months)">
     <div>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>Q</th>

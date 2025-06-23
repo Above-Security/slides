@@ -5,7 +5,7 @@ import styles from '../styles/CompanyIndex.module.css';
 const PositioningSection = () => (
   <SectionContainer id="positioning" title="4 | REPLACE vs ENHANCE – POSITIONING">
     <div>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>Tool</th>

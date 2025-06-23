@@ -5,7 +5,7 @@ import styles from '../styles/CompanyIndex.module.css';
 const MetricsSection = () => (
   <SectionContainer id="metrics" title="3 | METRICS THAT MATTER (LAND → EXPAND)" variant="executive">
     <div>
-      <table className={styles.narrativeTable}>
+      <table className={styles["narrative-table"]}>
         <thead>
           <tr>
             <th>Dimension</th>
