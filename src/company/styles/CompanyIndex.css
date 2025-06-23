@@ -12,9 +12,9 @@
 }
 
 .company-narrative-content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-4xl) var(--spacing-3xl);
+  padding: var(--space-16) var(--space-8);
 }
 
 .company-hero {
@@ -22,15 +22,16 @@
   text-align: center;
   padding: var(--space-16) var(--space-8);
   border-radius: var(--radius-2xl);
-  background: var(--brand-gradient);
-  color: var(--text-inverse);
+  background: var(--surface-primary);
+  color: var(--text-primary);
   box-shadow: var(--shadow-xl);
   overflow: hidden;
   margin-bottom: var(--space-16);
-  animation: fadeInUp var(--transition-bounce);
+  border: 1px solid var(--border-secondary);
+  animation: fadeInUp var(--transition-github);
 }
 
-.company-hero::after {
+.company-hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -39,15 +40,17 @@
   height: 4px;
   background: var(--brand-gradient);
   background-size: 200% 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   animation: gradientFlow 6s linear infinite;
   pointer-events: none;
 }
 
-.company-hero::before {
+.company-hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(95,237,131,0.08), transparent 70%);
   pointer-events: none;
 }
 
@@ -62,7 +65,7 @@
 
 .company-hero-subtitle {
   font-size: var(--text-xl);
-  color: var(--text-inverse);
+  color: var(--text-secondary);
   margin-bottom: var(--space-6);
 }
 
@@ -72,7 +75,7 @@
   font-style: italic;
   max-width: 800px;
   margin: 0 auto;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .hero-icon {
@@ -82,15 +85,15 @@
   width: 72px;
   height: 72px;
   border-radius: var(--radius-lg);
-  background: var(--text-inverse);
-  color: var(--brand-primary);
+  background: var(--brand-primary);
+  color: var(--text-inverse);
   margin: 0 auto var(--space-6);
   box-shadow: var(--shadow-lg);
   transition: transform var(--transition-normal);
 }
 
 .hero-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .narrative-table {
@@ -123,24 +126,28 @@
 
 .final-statement {
   position: relative;
-  background: var(--bg-dark);
-  color: var(--text-inverse);
-  padding: var(--spacing-xl);
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  padding: var(--space-8);
   border-radius: var(--radius-lg);
-  margin-top: var(--spacing-xl);
+  margin-top: var(--space-12);
   text-align: center;
   font-size: var(--text-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-primary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   animation: fadeInUp var(--transition-github);
 }
 
 .final-statement::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: var(--brand-gradient);
   background-size: 200% 100%;
   border-top-left-radius: var(--radius-lg);
