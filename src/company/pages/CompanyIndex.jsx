@@ -10,7 +10,7 @@ import HypothesesSection from '../sections/HypothesesSection';
 import ValueProofSection from '../sections/ValueProofSection';
 import RisksSection from '../sections/RisksSection';
 import ExecutiveSummarySection from '../sections/ExecutiveSummarySection';
-import '../styles/CompanyIndex.css';
+import styles from '../styles/CompanyIndex.module.css';
 
 const CompanyIndex = () => {
   useEffect(() => {
@@ -23,9 +23,9 @@ const CompanyIndex = () => {
   }, []);
 
   return (
-    <div className="company-narrative-container">
+    <div className={styles.companyNarrativeContainer}>
       <VisionHero />
-      <main className="company-narrative-content">
+      <main className={styles.companyNarrativeContent}>
         <GoToMarket />
         <PovPlaybook />
         <MetricsSection />

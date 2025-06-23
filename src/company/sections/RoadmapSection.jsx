@@ -1,10 +1,11 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
+import styles from '../styles/CompanyIndex.module.css';
 
 const RoadmapSection = () => (
   <SectionContainer id="roadmap" title="5 | YEAR‑2 EXPANSION ROADMAP (12‑24 Months)">
     <div>
-      <table className="narrative-table">
+      <table className={styles.narrativeTable}>
         <thead>
           <tr>
             <th>Q</th>

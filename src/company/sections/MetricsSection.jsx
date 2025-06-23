@@ -1,10 +1,11 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
+import styles from '../styles/CompanyIndex.module.css';
 
 const MetricsSection = () => (
   <SectionContainer id="metrics" title="3 | METRICS THAT MATTER (LAND → EXPAND)" variant="executive">
     <div>
-      <table className="narrative-table">
+      <table className={styles.narrativeTable}>
         <thead>
           <tr>
             <th>Dimension</th>
