@@ -202,6 +202,17 @@
     background: linear-gradient(135deg, #4edb71 0%, #006a23 100%);
 }
 
+/* Matrix link specific styling */
+.matrix-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: var(--shadow-lg, 0 4px 16px rgba(102, 126, 234, 0.3)) !important;
+}
+
+.matrix-link:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+    box-shadow: var(--shadow-xl, 0 8px 24px rgba(102, 126, 234, 0.4)) !important;
+}
+
 .button-icon {
     width: 16px;
     height: 16px;
