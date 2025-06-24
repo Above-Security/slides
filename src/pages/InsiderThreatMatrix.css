@@ -221,6 +221,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -1072,7 +1073,9 @@
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .loading-spinner {
@@ -1105,23 +1108,27 @@
 }
 
 @keyframes elegantSpin {
-  0% { 
+  0% {
     transform: rotate(0deg) scale(1);
     opacity: 1;
   }
-  25% { 
+
+  25% {
     transform: rotate(90deg) scale(1.05);
     opacity: 0.9;
   }
-  50% { 
+
+  50% {
     transform: rotate(180deg) scale(1.1);
     opacity: 0.8;
   }
-  75% { 
+
+  75% {
     transform: rotate(270deg) scale(1.05);
     opacity: 0.9;
   }
-  100% { 
+
+  100% {
     transform: rotate(360deg) scale(1);
     opacity: 1;
   }
@@ -1132,6 +1139,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1170,6 +1178,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1447,56 +1456,146 @@
   align-items: center;
 }
 
-/* Mobile Responsiveness for New Features */
-@media (max-width: 768px) {
-  .breadcrumb-container {
-    padding: var(--space-2) var(--space-4);
-    min-height: 40px;
-  }
-  
-  .breadcrumbs {
-    font-size: var(--text-xs);
-    gap: var(--space-1);
-  }
-  
-  .breadcrumb-link,
-  .breadcrumb-current {
-    font-size: var(--text-xs);
-    padding: var(--space-1) var(--space-2);
-  }
-  
-  .breadcrumb-separator {
-    margin: 0;
-  }
-  
-  .onboarding-modal {
-    margin: var(--space-4);
-    max-height: 90vh;
-  }
-  
-  .onboarding-step {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .nav-brand h1 {
-    font-size: var(--text-lg);
-  }
-  
-  .onboarding-trigger {
-    margin-left: var(--space-2);
-  }
-  
-  .loading-spinner {
-    padding: var(--space-6);
-  }
-  
-  .loading-spinner i {
-    font-size: 28px;
-  }
-  
-  .loading-spinner span {
-    font-size: var(--text-base);
-  }
+/* =================================
+   SECURITY IMPACT CALCULATOR
+   ================================= */
+
+.security-calculator {
+  background: var(--surface-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-top: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-secondary);
+}
+
+.security-calculator h3 {
+  font-family: var(--font-brand);
+  font-weight: var(--weight-brand-primary);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  text-align: center;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.calc-card {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--border-secondary);
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-card.primary {
+  background: linear-gradient(135deg, rgba(0, 135, 43, 0.1) 0%, rgba(0, 135, 43, 0.05) 100%);
+  border-color: var(--brand-primary);
+}
+
+.calc-card:hover {
+  transform: var(--transform-hover);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-primary);
+}
+
+.calc-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 135, 43, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.calc-card:hover::after {
+  opacity: 1;
+}
+
+.calc-icon {
+  font-size: var(--text-3xl);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-3);
+}
+
+.calc-content {
+  position: relative;
+  z-index: 1;
+}
+
+.calc-value {
+  font-family: var(--font-brand);
+  font-weight: var(--weight-black);
+  font-size: var(--text-3xl);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-1);
+  line-height: 1;
+}
+
+.calc-label {
+  font-family: var(--font-brand);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.calc-subtitle {
+  font-family: var(--font-brand);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.calculator-summary {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--border-secondary);
+  text-align: center;
+}
+
+.calculator-summary p {
+  font-family: var(--font-brand);
+  font-weight: var(--weight-normal);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+.calculator-summary strong {
+  color: var(--text-primary);
+  font-weight: var(--weight-bold);
+}
+
+.time-savings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-brand);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--brand-primary);
+  background: rgba(0, 135, 43, 0.1);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-base);
+  display: inline-flex;
 }

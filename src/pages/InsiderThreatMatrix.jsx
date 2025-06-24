@@ -11,7 +11,7 @@ const InsiderThreatMatrix = () => {
   const [selectedThreat, setSelectedThreat] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  
+
   // Enhanced UX state
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -102,14 +102,14 @@ const InsiderThreatMatrix = () => {
   // Enhanced search functionality with suggestions
   const generateSearchSuggestions = useMemo(() => {
     if (!searchTerm || searchTerm.length < 2) return [];
-    
+
     const allTerms = stats.allThreats.flatMap(threat => [
       threat.title,
       threat.id,
       threat.category,
       ...threat.coverage.capabilities
     ]);
-    
+
     return allTerms
       .filter(term => term.toLowerCase().includes(searchTerm.toLowerCase()))
       .slice(0, 6)
@@ -132,47 +132,62 @@ const InsiderThreatMatrix = () => {
     }
   };
 
-  // Smart recommendations based on coverage gaps
-  const getSmartRecommendations = useMemo(() => {
-    const recommendations = [];
-    
-    // Find categories with low coverage
-    Object.entries(stats.categoryStats).forEach(([category, data]) => {
-      if (data.percentage < 50) {
-        recommendations.push({
-          type: 'coverage-gap',
-          category,
-          message: `${category} has only ${data.percentage}% coverage. Consider reviewing these ${data.none} uncovered threats.`,
-          action: () => changeView('matrix', { category }),
-          icon: 'fas fa-exclamation-triangle'
-        });
-      }
-    });
-    
-    // Highlight high-value targets
-    const criticalThreats = stats.allThreats.filter(t => 
-      ['Data Loss', 'Exfiltration via Web Service', 'Espionage', 'Misappropriation of Funds'].includes(t.title)
-    );
-    
-    const uncoveredCritical = criticalThreats.filter(t => t.coverage.level === 'none');
-    if (uncoveredCritical.length > 0) {
-      recommendations.push({
-        type: 'critical-gap',
-        message: `${uncoveredCritical.length} high-impact threats have no coverage. These require immediate attention.`,
-        action: () => {
-          changeView('detail', { threat: uncoveredCritical[0] });
-        },
-        icon: 'fas fa-shield-alt'
-      });
-    }
-    
-    return recommendations.slice(0, 3); // Show top 3 recommendations
+  // Security impact calculator based on coverage data
+  const getSecurityImpactMetrics = useMemo(() => {
+    // Calculate risk exposure based on coverage gaps
+    const uncoveredThreats = stats.allThreats.filter(t => t.coverage.level === 'none');
+    const partiallyUncovered = stats.allThreats.filter(t => t.coverage.level === 'partial');
+
+    // Risk scoring based on threat categories (higher = more critical)
+    const riskWeights = {
+      'Data Destruction': 0.9,
+      'Data Exfiltration': 1.0,
+      'Data Manipulation': 0.8,
+      'Resource Hijacking': 0.6,
+      'Denial of Service': 0.7
+    };
+
+    const totalRiskExposure = uncoveredThreats.reduce((total, threat) => {
+      const weight = riskWeights[threat.category] || 0.5;
+      return total + weight;
+    }, 0);
+
+    const partialRiskExposure = partiallyUncovered.reduce((total, threat) => {
+      const weight = (riskWeights[threat.category] || 0.5) * 0.3; // 30% risk for partial coverage
+      return total + weight;
+    }, 0);
+
+    const totalPossibleRisk = stats.allThreats.reduce((total, threat) => {
+      return total + (riskWeights[threat.category] || 0.5);
+    }, 0);
+
+    const riskReduction = Math.round(((totalPossibleRisk - totalRiskExposure - partialRiskExposure) / totalPossibleRisk) * 100);
+
+    // Time to deployment calculation
+    const traditionalDeploymentWeeks = 12; // Typical enterprise security tool deployment
+    const aboveDeploymentHours = 24;
+    const timeSavings = traditionalDeploymentWeeks * 7 * 24 - aboveDeploymentHours;
+
+    // Calculate detection speed advantage
+    const traditionalDetectionDays = 287; // Industry average breach detection time
+    const aboveDetectionMinutes = 5; // Real-time detection
+    const detectionSpeedUp = Math.round((traditionalDetectionDays * 24 * 60) / aboveDetectionMinutes);
+
+    return {
+      riskReduction,
+      uncoveredCount: uncoveredThreats.length,
+      partialCount: partiallyUncovered.length,
+      timeSavingsDays: Math.round(timeSavings / 24),
+      deploymentSpeedMultiplier: Math.round(traditionalDeploymentWeeks * 168 / 24),
+      detectionSpeedUp: detectionSpeedUp > 1000 ? `${Math.round(detectionSpeedUp / 1000)}` : detectionSpeedUp,
+      coverageEffectiveness: Math.round((stats.coverageCounts.direct + stats.coverageCounts.partial * 0.5) / stats.totalThreats * 100)
+    };
   }, [stats]);
 
   // Enhanced navigation with breadcrumbs
   const updateBreadcrumbs = (view, threat = null, category = null) => {
     const newBreadcrumbs = [{ label: 'Dashboard', view: 'dashboard' }];
-    
+
     if (view === 'matrix') {
       const categoryLabel = category === 'all' ? 'All Threats' : category;
       newBreadcrumbs.push({ label: categoryLabel, view: 'matrix', category });
@@ -184,20 +199,20 @@ const InsiderThreatMatrix = () => {
       }
       newBreadcrumbs.push({ label: `${threat.id}: ${threat.title}`, view: 'detail', threat });
     }
-    
+
     setBreadcrumbs(newBreadcrumbs);
   };
 
   // Enhanced view transitions with loading states
   const changeView = (newView, options = {}) => {
     setIsLoading(true);
-    
+
     setTimeout(() => {
       setCurrentView(newView);
-      
+
       if (options.threat) setSelectedThreat(options.threat);
       if (options.category !== undefined) setSelectedCategory(options.category);
-      
+
       updateBreadcrumbs(newView, options.threat, options.category);
       setIsLoading(false);
     }, 80); // Faster loading state for better responsiveness
@@ -350,32 +365,69 @@ const InsiderThreatMatrix = () => {
           </div>
         </div>
 
-        {/* Smart Recommendations Section */}
-        {getSmartRecommendations.length > 0 && (
-          <div className="smart-recommendations">
-            <h3>
-              <i className="fas fa-lightbulb"></i>
-              Smart Recommendations
-            </h3>
-            <div className="recommendations-grid">
-              {getSmartRecommendations.map((rec, index) => (
-                <div 
-                  key={index} 
-                  className={`recommendation-card ${rec.type}`}
-                  onClick={rec.action}
-                >
-                  <div className="rec-icon">
-                    <i className={rec.icon}></i>
-                  </div>
-                  <div className="rec-content">
-                    <p>{rec.message}</p>
-                    <span className="rec-action">Click to investigate →</span>
-                  </div>
-                </div>
-              ))}
+        {/* Security Impact Calculator Section */}
+        <div className="security-calculator">
+          <h3>
+            <i className="fas fa-calculator"></i>
+            Security Impact Calculator
+          </h3>
+          <div className="calculator-grid">
+            <div className="calc-card primary">
+              <div className="calc-icon">
+                <i className="fas fa-shield-alt"></i>
+              </div>
+              <div className="calc-content">
+                <div className="calc-value">{getSecurityImpactMetrics.riskReduction}%</div>
+                <div className="calc-label">Risk Reduction</div>
+                <div className="calc-subtitle">With Above deployment</div>
+              </div>
+            </div>
+
+            <div className="calc-card">
+              <div className="calc-icon">
+                <i className="fas fa-clock"></i>
+              </div>
+              <div className="calc-content">
+                <div className="calc-value">{getSecurityImpactMetrics.deploymentSpeedMultiplier}x</div>
+                <div className="calc-label">Faster Deployment</div>
+                <div className="calc-subtitle">vs traditional tools</div>
+              </div>
+            </div>
+
+            <div className="calc-card">
+              <div className="calc-icon">
+                <i className="fas fa-bolt"></i>
+              </div>
+              <div className="calc-content">
+                <div className="calc-value">{getSecurityImpactMetrics.detectionSpeedUp}x</div>
+                <div className="calc-label">Faster Detection</div>
+                <div className="calc-subtitle">Real-time vs 287-day average</div>
+              </div>
+            </div>
+
+            <div className="calc-card">
+              <div className="calc-icon">
+                <i className="fas fa-exclamation-triangle"></i>
+              </div>
+              <div className="calc-content">
+                <div className="calc-value">{getSecurityImpactMetrics.uncoveredCount}</div>
+                <div className="calc-label">Uncovered Threats</div>
+                <div className="calc-subtitle">Require additional controls</div>
+              </div>
             </div>
           </div>
-        )}
+
+          <div className="calculator-summary">
+            <p>
+              <strong>Bottom Line:</strong> Above Security provides immediate coverage for {stats.coverageCounts.direct + stats.coverageCounts.partial} out of {stats.totalThreats} insider threats,
+              reducing your organization's risk exposure by {getSecurityImpactMetrics.riskReduction}% within 24 hours.
+            </p>
+            <div className="time-savings">
+              <i className="fas fa-clock"></i>
+              <span>Save {getSecurityImpactMetrics.timeSavingsDays} days compared to traditional security deployments</span>
+            </div>
+          </div>
+        </div>
 
         <div className="cta-section">
           <button
@@ -435,7 +487,7 @@ const InsiderThreatMatrix = () => {
               className="threat-search"
             />
             <i className="fas fa-search search-icon"></i>
-            
+
             {showSearchSuggestions && generateSearchSuggestions.length > 0 && (
               <div className="search-suggestions">
                 {generateSearchSuggestions.map((suggestion, index) => (
@@ -601,7 +653,7 @@ const InsiderThreatMatrix = () => {
           <div className="onboarding-modal">
             <div className="onboarding-header">
               <h2>Welcome to the Insider Threat Matrix</h2>
-              <button 
+              <button
                 className="close-onboarding"
                 onClick={() => setShowOnboarding(false)}
               >
@@ -638,7 +690,7 @@ const InsiderThreatMatrix = () => {
               </div>
             </div>
             <div className="onboarding-actions">
-              <button 
+              <button
                 className="start-exploring"
                 onClick={() => setShowOnboarding(false)}
               >
@@ -653,7 +705,7 @@ const InsiderThreatMatrix = () => {
       <nav className="matrix-navigation">
         <div className="nav-brand">
           <h1>Above Security × Insider Threat Matrix</h1>
-          <button 
+          <button
             className="onboarding-trigger"
             onClick={() => setShowOnboarding(true)}
             title="Take a guided tour"
