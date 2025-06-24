@@ -12,6 +12,7 @@ import SlideVsValence from './SlideVsValence';
 import SlideVsIsland from './SlideVsIsland';
 import SlideMarketLeadership from './SlideMarketLeadership';
 import SlideBusinessCase from './SlideBusinessCase';
+import SlideAppendix from './SlideAppendix';
 
 export const slideData = [
   { title: 'Above Runtime ITDR', Component: SlideIntro },
@@ -28,4 +29,5 @@ export const slideData = [
   { title: 'Above vs. Island Browser', Component: SlideVsIsland },
   { title: 'Market Leadership', Component: SlideMarketLeadership },
   { title: 'Business Case for Above Security', Component: SlideBusinessCase },
+  { title: 'Appendix', Component: SlideAppendix },
 ];
