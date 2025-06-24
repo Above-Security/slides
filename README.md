@@ -2,7 +2,28 @@
 
 A professional React-based presentation showcasing Above Security's Runtime Identity Threat Detection & Response platform. Built with optimal routing architecture, comprehensive design system, and enterprise-grade quality.
 
-*Last Updated: June 19, 2025*
+*Last Updated: June 23, 2025*
+
+## 🎯 **NEW: Insider Threat Matrix Analysis**
+
+**[View the comprehensive insider threat matrix analysis →](/insider-threat-matrix)**
+
+We've created a world-class analysis showing how Above Security's Runtime ITDR platform addresses **74%** of all 116 insider threat vectors from the insider threat matrix. This comprehensive page includes:
+
+- **Interactive filtering** by threat category and coverage level
+- **Detailed mapping** of Above's capabilities to each threat vector
+- **Visual analytics** showing coverage across all 5 threat categories
+- **Real-world explanations** of how Above detects and prevents each threat
+- **Category-specific insights** with coverage percentages
+
+### Key Highlights:
+- 🎯 **65 Direct Coverage** threats that Above directly detects and prevents
+- 🔍 **31 Partial Coverage** threats with valuable Above signals  
+- ⚠️ **20 No Coverage** threats outside browser-based scope
+- 📊 **87% Infringement Coverage** - excellent at preventing actual harm
+- 🧠 **90% Motive Coverage** - superior behavioral detection
+
+---
 
 ## 🌐 **Live Application**
 
@@ -10,6 +31,7 @@ A professional React-based presentation showcasing Above Security's Runtime Iden
 
 ### **Route Structure:**
 - **Homepage**: `https://abovesec.com/` - Professional landing page  
+- **Insider Threat Matrix**: `https://abovesec.com/insider-threat-matrix` - **NEW: Comprehensive threat analysis**
 - **Presentation**: `https://abovesec.com/slides` - Full slide deck
 - **Direct Slides**: `https://abovesec.com/slides/5` - Specific slide access
 

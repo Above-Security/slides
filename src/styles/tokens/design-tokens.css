@@ -56,6 +56,10 @@
   --alert-danger-bg: #ffeef0;
   --alert-info-bg: #f0f4ff;
   
+  /* Warning Gradient Colors */
+  --warning-light: #fd7e14;
+  --warning-dark: #d97706;
+  
   /* ===== TYPOGRAPHY ===== */
   /* Font Families - GitHub Brand Compliant */
   --font-primary: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -157,6 +161,11 @@
   --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.15);
   
+  /* Text Shadows */
+  --text-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --text-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --text-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.4);
+  
   /* ===== MOTION ===== */
   /* Duration */
   --duration-instant: 0ms;
@@ -179,6 +188,19 @@
   --transition-slow: var(--duration-slow) var(--ease-out);
   --transition-bounce: var(--duration-normal) var(--ease-bounce);
   --transition-github: var(--duration-normal) var(--ease-github);
+  
+  /* Motion Transforms */
+  --transform-hover: translateY(-2px);
+  --transform-press: translateY(0px);
+  --transform-float-sm: translateY(-4px);
+  --transform-float-md: translateY(-8px);
+  --transform-float-lg: translateY(-12px);
+  
+  /* Backdrop Filters */
+  --backdrop-blur-sm: blur(4px);
+  --backdrop-blur-md: blur(8px);
+  --backdrop-blur-lg: blur(12px);
+  --backdrop-blur-xl: blur(16px);
   
   /* ===== Z-INDEX SCALE ===== */
   --z-base: 1;
