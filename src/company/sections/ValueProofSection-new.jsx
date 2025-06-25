@@ -37,19 +37,14 @@ const ValueProofSection = () => {
         <div style={{ 
           marginBottom: 'var(--spacing-xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-secondary)', 
-          borderRadius: 'var(--radius-lg)',
-          borderLeft: '4px solid var(--color-primary)'
+          background: 'var(--bg-secondary)', 
+          borderRadius: 'var(--border-radius-lg)',
+          borderLeft: '4px solid var(--brand-primary)'
         }}>
           <strong>Value Demonstration Strategy:</strong> When real attacks don't occur during the PoV period, we have multiple proven methods to demonstrate security value and ROI to stakeholders.
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-          gap: 'var(--spacing-lg)', 
-          marginBottom: 'var(--spacing-xl)' 
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)', marginBottom: 'var(--spacing-xl)' }}>
           {valueProofStrategies.map((strategy, index) => (
             <ValueProofCard
               key={index}

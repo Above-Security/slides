@@ -53,7 +53,7 @@
 .demo-section h2 {
   font-size: 28px;
   font-weight: 600;
-  color: #00872b;
+  color: var(--brand-primary);
   margin: 0 0 32px 0;
   padding-bottom: 16px;
   border-bottom: 2px solid #e1e4e8;
@@ -110,7 +110,7 @@
 
 /* ===== SPECIAL CONTENT TYPES ===== */
 .vision-content {
-  background: linear-gradient(135deg, #00872b 0%, #5fed83 100%);
+  background: var(--brand-gradient);
   border-radius: 16px;
   padding: 40px;
   margin: 32px 0;
@@ -138,7 +138,7 @@
 
 .narrative-hook {
   background: rgba(0, 135, 43, 0.05);
-  border-left: 4px solid #00872b;
+  border-left: 4px solid var(--brand-primary);
   border-radius: 0 8px 8px 0;
   padding: 20px;
   margin: 24px 0;

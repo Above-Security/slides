@@ -30,18 +30,14 @@ const RisksSection = () => {
         <div style={{ 
           marginBottom: 'var(--spacing-xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-secondary)', 
-          borderRadius: 'var(--radius-lg)',
-          borderLeft: '4px solid var(--color-primary)'
+          background: 'var(--bg-secondary)', 
+          borderRadius: 'var(--border-radius-lg)',
+          borderLeft: '4px solid var(--brand-primary)'
         }}>
           <strong>Risk Management Framework:</strong> Proactive identification and mitigation of deployment, operational, and adoption risks that could impact customer success and retention.
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-          gap: 'var(--spacing-lg)' 
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)' }}>
           {criticalRisks.map((risk, index) => (
             <RiskMitigationCard
               key={index}
@@ -56,23 +52,23 @@ const RisksSection = () => {
         <div style={{ 
           marginTop: 'var(--spacing-2xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-primary)', 
-          border: '1px solid var(--color-border-primary)',
-          borderRadius: 'var(--radius-lg)',
+          background: 'var(--surface-primary)', 
+          border: '1px solid var(--border-secondary)',
+          borderRadius: 'var(--border-radius-lg)',
           boxShadow: 'var(--shadow-sm)'
         }}>
           <h4 style={{ 
             margin: '0 0 var(--spacing-md) 0',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text-primary)',
             fontSize: 'var(--font-size-md)',
             fontWeight: 'var(--font-weight-bold)'
           }}>
-            <i className="fas fa-shield-alt" /> Risk Monitoring & Response
+            🛡️ Risk Monitoring & Response
           </h4>
           <p style={{ 
             margin: 0, 
-            color: 'var(--color-text-secondary)',
-            lineHeight: '1.6'
+            color: 'var(--text-secondary)',
+            lineHeight: 'var(--line-height-relaxed)'
           }}>
             Each risk category has specific monitoring KPIs and escalation procedures. Weekly risk reviews during deployment phase ensure early detection and rapid response to emerging issues.
           </p>

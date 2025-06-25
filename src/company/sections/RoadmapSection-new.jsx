@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionContainer from '../../components/SectionContainer';
 import RoadmapTimelineCard from '../components/RoadmapTimelineCard';
-import styles from '../styles/CompanyIndex.module.css';
 
 const RoadmapSection = () => {
   const roadmapItems = [
@@ -66,117 +65,16 @@ const RoadmapSection = () => {
           <strong>Year-2 Strategy:</strong> Transition from phishing prevention to full Runtime ITDR platform with insider threat detection, real-time policy enforcement, and orchestrated response capabilities.
         </div>
 
-        <div style={{ 
-          maxWidth: '900px', 
-          margin: '0 auto',
-          marginBottom: 'var(--spacing-2xl)'
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)', marginBottom: 'var(--spacing-2xl)' }}>
           {roadmapItems.map((item, index) => (
-            <div key={index} style={{
-              display: 'flex',
-              gap: 'var(--spacing-xl)',
-              marginBottom: index < roadmapItems.length - 1 ? 'var(--spacing-2xl)' : '0',
-              position: 'relative'
-            }}>
-              {/* Timeline Marker */}
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                flexShrink: 0,
-                position: 'relative',
-                minWidth: '50px'
-              }}>
-                {/* Timeline Dot */}
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: 'var(--brand-primary)',
-                  border: '4px solid var(--surface-primary)',
-                  boxShadow: '0 0 0 4px var(--brand-primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '16px',
-                  fontWeight: 'bold',
-                  zIndex: 2
-                }}>
-                  {index + 1}
-                </div>
-                
-                {/* Timeline Line */}
-                {index < roadmapItems.length - 1 && (
-                  <div style={{
-                    width: '4px',
-                    height: '120px',
-                    background: 'linear-gradient(to bottom, var(--brand-primary), #e5e7eb)',
-                    marginTop: 'var(--spacing-md)'
-                  }}></div>
-                )}
-              </div>
-              
-              {/* Roadmap Content */}
-              <div style={{ 
-                flex: 1,
-                background: 'var(--surface-primary)',
-                border: '1px solid var(--border-secondary)',
-                borderRadius: 'var(--border-radius-lg)',
-                padding: 'var(--spacing-xl)',
-                boxShadow: 'var(--shadow-sm)'
-              }}>
-                <div style={{
-                  display: 'inline-block',
-                  padding: 'var(--spacing-xs) var(--spacing-sm)',
-                  background: 'var(--brand-primary)',
-                  color: 'white',
-                  borderRadius: 'var(--border-radius-md)',
-                  fontWeight: 'var(--font-weight-bold)',
-                  fontSize: 'var(--font-size-sm)',
-                  marginBottom: 'var(--spacing-md)'
-                }}>
-                  {item.quarter}
-                </div>
-                
-                <h3 style={{
-                  fontSize: 'var(--font-size-lg)',
-                  fontWeight: 'var(--font-weight-bold)',
-                  color: 'var(--text-primary)',
-                  margin: '0 0 var(--spacing-md) 0'
-                }}>
-                  {item.capability}
-                </h3>
-                
-                <div style={{ display: 'grid', gap: 'var(--spacing-sm)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--spacing-sm)',
-                    padding: 'var(--spacing-sm)',
-                    background: 'var(--bg-secondary)',
-                    borderRadius: 'var(--border-radius-md)',
-                    fontSize: 'var(--font-size-sm)'
-                  }}>
-                    <i className="fas fa-dollar-sign" style={{ color: 'var(--brand-primary)', width: '16px' }} />
-                    <span>{item.revenue}</span>
-                  </div>
-                  
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--spacing-sm)',
-                    padding: 'var(--spacing-sm)',
-                    background: 'var(--bg-secondary)',
-                    borderRadius: 'var(--border-radius-md)',
-                    fontSize: 'var(--font-size-sm)'
-                  }}>
-                    <i className="fas fa-flask" style={{ color: 'var(--text-secondary)', width: '16px' }} />
-                    <span>{item.hypothesis}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RoadmapTimelineCard
+              key={index}
+              quarter={item.quarter}
+              capability={item.capability}
+              revenue={item.revenue}
+              hypothesis={item.hypothesis}
+              status={item.status}
+            />
           ))}
         </div>
 

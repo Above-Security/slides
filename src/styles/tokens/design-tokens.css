@@ -1,60 +1,61 @@
 /* Enhanced Design Token System */
 :root {
   /* ===== BRAND COLORS ===== */
-  /* Primary Brand Colors */
-  --brand-primary: #00872b;
-  --brand-primary-light: #5fed83;
-  --brand-primary-dark: #006620;
-  --brand-gradient: linear-gradient(90deg, #5fed83, #00872b);
-  --brand-gradient-vertical: linear-gradient(135deg, #00872b 0%, #5fed83 100%);
+  /* Primary Brand Colors - GitHub Official Brand Palette */
+  --brand-primary: #08872B;        /* GitHub Green 4 - Primary brand color */
+  --brand-primary-light: #5FED83;  /* GitHub Green 3 - Light brand color */
+  --brand-primary-dark: #104C35;   /* GitHub Green 5 - Dark brand color */
+  --brand-gradient: linear-gradient(90deg, #5FED83, #08872B);
+  --brand-gradient-vertical: linear-gradient(135deg, #08872B 0%, #5FED83 100%);
 
   /* ===== SEMANTIC COLORS ===== */
-  /* Text Colors */
-  --text-primary: #24292f;
-  --text-secondary: #656d76;
-  --text-tertiary: #8b949e;
-  --text-inverse: #ffffff;
-  --text-success: #00872b;
+  /* Text Colors - Primer Foundation */
+  --text-primary: #24292f;      /* Primer gray-900 - Primary text */
+  --text-secondary: #656d76;    /* Primer gray-600 - Secondary text */
+  --text-tertiary: #8b949e;     /* Primer gray-500 - Tertiary text */
+  --text-inverse: #ffffff;      /* Pure white for dark backgrounds */
+  --text-success: #1a7f37;     /* Primer green-600 - Success states */
   --text-success-dark: #0d4f1c;
-  --text-danger: #d1242f;
-  --text-warning: #fd7e14;
-  --text-info: #6f42c1;
+  --text-danger: #d1242f;      /* Primer red-600 - Error/danger states */
+  --text-warning: #d1242f;     /* Primer orange-600 - Warning states */
+  --text-info: #0969da;        /* Primer blue-600 - Information states */
 
-  /* Background Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f6f8fa;
-  --bg-tertiary: #eaeef2;
-  --bg-dark: #24292f;
-  --bg-darker: #1c2128;
+  /* Background Colors - Primer Foundation */
+  --bg-primary: #ffffff;       /* Pure white - Primary background */
+  --bg-secondary: #f6f8fa;     /* Primer gray-100 - Secondary background */
+  --bg-tertiary: #eaeef2;      /* Primer gray-200 - Tertiary background */
+  --bg-dark: #24292f;          /* Primer gray-900 - Dark background */
+  --bg-darker: #1c2128;        /* Primer gray-950 - Darker background */
   --bg-overlay: rgba(0, 0, 0, 0.5);
-  --bg-success: #e6ffed;
-  --bg-danger: #fff5f5;
-  --bg-warning: #fff8dc;
+  --bg-success: #d4f7dc;       /* Primer green-100 - Success background */
+  --bg-danger: #ffeef0;        /* Primer red-100 - Error background */
+  --bg-warning: #fff8f0;       /* Primer orange-100 - Warning background */
+  --bg-info: #dbeafe;          /* Primer blue-100 - Info background */
 
-  /* Surface Colors */
-  --surface-primary: #ffffff;
-  --surface-secondary: #f6f8fa;
-  --surface-raised: #ffffff;
-  --surface-hover: #f0f6fc;
+  /* Surface Colors - Primer System */
+  --surface-primary: #ffffff;    /* Primary surfaces - cards, modals */
+  --surface-secondary: #f6f8fa;  /* Secondary surfaces - sidebars */
+  --surface-raised: #ffffff;     /* Elevated surfaces - overlays */
+  --surface-hover: #f0f6fc;      /* Hover states - Primer blue-50 */
 
-  /* Border Colors */
-  --border-primary: #d1d9e0;
-  --border-secondary: #eaeef2;
-  --border-focus: #00872b;
-  --border-danger: #d1242f;
-  --border-warning: #deb887;
+  /* Border Colors - Primer Foundation */
+  --border-primary: #d1d9e0;    /* Primer gray-300 - Primary borders */
+  --border-secondary: #eaeef2;  /* Primer gray-200 - Secondary borders */
+  --border-focus: #0969da;      /* Primer blue-600 - Focus states */
+  --border-danger: #d1242f;     /* Primer red-600 - Error borders */
+  --border-warning: #d1242f;    /* Primer orange-600 - Warning borders */
 
   /* State Colors */
   --state-danger: #d1242f;
   --state-warning: #fd7e14;
-  --state-success: #00872b;
-  --state-info: #6f42c1;
+  --state-success: #1a7f37;
+  --state-info: #0969da;
 
   /* Alert Background Colors */
-  --alert-success-bg: #d4edf4;
+  --alert-success-bg: #d4f7dc;
   --alert-warning-bg: #fff8f0;
   --alert-danger-bg: #ffeef0;
-  --alert-info-bg: #f0f4ff;
+  --alert-info-bg: #dbeafe;
 
   /* Warning Gradient Colors */
   --warning-light: #fd7e14;

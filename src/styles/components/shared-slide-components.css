@@ -196,18 +196,18 @@
 
 /* Blind Spots - Used in multiple slides */
 .blind-spots-card {
-  background: #fff8f0;
-  border: 1px solid #fd7e14;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 24px;
+  background: var(--bg-warning);
+  border: 1px solid var(--border-warning);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-top: var(--space-6);
 }
 
 .blind-spots-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #24292f;
-  margin-bottom: 12px;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
 }
 
 .blind-spots-list {
@@ -219,19 +219,19 @@
 .blind-spots-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #656d76;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
 }
 
 .blind-spots-list li i {
-  color: #dc3545;
-  margin-right: 8px;
-  font-size: 12px;
+  color: var(--text-danger);
+  margin-right: var(--space-2);
+  font-size: var(--text-xs);
 }
 
 .blind-spots-list li i.fa-circle {
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
 .blind-spots-list li i.fa-check {

@@ -5,8 +5,8 @@
 }
 
 .deployment-method {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
   padding: 32px;
   margin-bottom: 32px;
@@ -22,14 +22,14 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #00872b, #5fed83);
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
 }
 
 .deployment-title {
   font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #24292f;
+  color: var(--text-primary);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .deployment-title i {
-  color: #00872b;
+  color: var(--brand-primary);
   font-size: 28px;
 }
 
@@ -49,8 +49,8 @@
 }
 
 .deployment-step {
-  background: #f6f8fa;
-  border: 1px solid #d1d9e0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   padding: 24px;
   text-align: center;
@@ -59,8 +59,8 @@
 }
 
 .deployment-step:hover {
-  background: #ffffff;
-  border-color: #00872b;
+  background: var(--bg-primary);
+  border-color: var(--brand-primary);
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 135, 43, 0.1);
 }
@@ -68,7 +68,7 @@
 .step-number {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #00872b 0%, #5fed83 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@
   font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #24292f;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -112,8 +112,8 @@
 }
 
 .constraint-card {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
   padding: 24px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -121,18 +121,18 @@
 }
 
 .constraint-card.supported {
-  border-color: #00872b;
-  background: linear-gradient(135deg, #bfffd1 0%, rgba(191, 255, 209, 0.3) 100%);
+  border-color: var(--brand-primary);
+  background: linear-gradient(135deg, var(--bg-success) 0%, rgba(191, 255, 209, 0.3) 100%);
 }
 
 .constraint-card.limitations {
-  border-color: #d1242f;
-  background: linear-gradient(135deg, #fed7d7 0%, rgba(254, 215, 215, 0.3) 100%);
+  border-color: var(--text-danger);
+  background: linear-gradient(135deg, var(--bg-danger) 0%, rgba(254, 215, 215, 0.3) 100%);
 }
 
 .constraint-card.roadmap {
-  border-color: #0969da;
-  background: linear-gradient(135deg, #cce7ff 0%, rgba(204, 231, 255, 0.3) 100%);
+  border-color: var(--text-info);
+  background: linear-gradient(135deg, var(--bg-info) 0%, rgba(204, 231, 255, 0.3) 100%);
 }
 
 .constraint-card:hover {
@@ -144,7 +144,7 @@
   font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #24292f;
+  color: var(--text-primary);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -156,15 +156,15 @@
 }
 
 .constraint-card.supported .constraint-header i {
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
 .constraint-card.limitations .constraint-header i {
-  color: #d1242f;
+  color: var(--text-danger);
 }
 
 .constraint-card.roadmap .constraint-header i {
-  color: #0969da;
+  color: var(--text-info);
 }
 
 .constraint-list {
@@ -193,7 +193,7 @@
 }
 
 .constraint-card.supported .constraint-list li i {
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
 .constraint-card.limitations .constraint-list li i {

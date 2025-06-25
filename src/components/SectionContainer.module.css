@@ -121,18 +121,6 @@
   position: relative;
 }
 
-.sectionContent h3::before {
-  content: '';
-  position: absolute;
-  left: calc(-1 * var(--space-4));
-  top: 0;
-  bottom: 0;
-  width: var(--space-0-5);
-  background: var(--brand-primary);
-  border-radius: var(--radius-full);
-  opacity: 0.3;
-}
-
 .sectionContent h4 {
   font-family: var(--font-brand-headline);
   font-size: var(--text-lg);
@@ -270,13 +258,13 @@
 
 /* Executive variant - enhanced styling */
 .executive .sectionInner {
-  border: 2px solid #e1e4e8;
+  border: 2px solid var(--border-primary);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .executive .sectionTitle {
   font-size: 32px;
-  color: #00872b;
+  color: var(--brand-primary);
 }
 
 /* Priority sections - larger title */

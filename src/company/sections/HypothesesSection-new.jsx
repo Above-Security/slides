@@ -33,18 +33,14 @@ const HypothesesSection = () => {
         <div style={{ 
           marginBottom: 'var(--spacing-xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-secondary)', 
-          borderRadius: 'var(--radius-lg)',
-          borderLeft: '4px solid var(--color-primary)'
+          background: 'var(--bg-secondary)', 
+          borderRadius: 'var(--border-radius-lg)',
+          borderLeft: '4px solid var(--brand-primary)'
         }}>
           <strong>Validation Framework:</strong> These three hypotheses are fundamental to our business model. Each has specific evidence thresholds and kill criteria that will determine Year-1 strategy pivots if validation fails.
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-          gap: 'var(--spacing-lg)' 
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)' }}>
           {hypotheses.map((hypothesis, index) => (
             <HypothesesTestCard
               key={index}
@@ -60,24 +56,24 @@ const HypothesesSection = () => {
         <div style={{ 
           marginTop: 'var(--spacing-2xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-primary)', 
-          border: '1px solid var(--color-border-primary)',
-          borderRadius: 'var(--radius-lg)',
+          background: 'var(--surface-primary)', 
+          border: '1px solid var(--border-secondary)',
+          borderRadius: 'var(--border-radius-lg)',
           boxShadow: 'var(--shadow-sm)'
         }}>
           <h4 style={{ 
             margin: '0 0 var(--spacing-md) 0',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text-primary)',
             fontSize: 'var(--font-size-md)',
             fontWeight: 'var(--font-weight-bold)'
           }}>
-            <i className="fas fa-flask" /> Testing Timeline
+            🧪 Testing Timeline
           </h4>
           <ul style={{ 
             margin: 0, 
             paddingLeft: 'var(--spacing-lg)',
-            color: 'var(--color-text-secondary)',
-            lineHeight: '1.6'
+            color: 'var(--text-secondary)',
+            lineHeight: 'var(--line-height-relaxed)'
           }}>
             <li><strong>Q1:</strong> Deploy pilot programs with 3-5 customers to test user tolerance</li>
             <li><strong>Q2:</strong> Measure IR speed improvements with established customers</li>

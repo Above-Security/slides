@@ -17,12 +17,12 @@
     0 8px 24px rgba(0, 135, 43, 0.15);
   --toc-backdrop: blur(20px) saturate(180%);
   --toc-radius: 20px;
-  --toc-primary: #00872b;
-  --toc-primary-light: #5fed83;
+  --toc-primary: var(--brand-primary);
+  --toc-primary-light: var(--brand-primary-light);
   --toc-primary-alpha: rgba(0, 135, 43, 0.08);
   --toc-text-primary: #24292f;
   --toc-text-secondary: #656d76;
-  --toc-text-active: #00872b;
+  --toc-text-active: var(--brand-primary);
   --toc-spacing: 16px;
   --toc-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
