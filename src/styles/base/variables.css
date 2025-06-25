@@ -1,25 +1,25 @@
 /* CSS Custom Properties - Design Tokens */
 :root {
   /* Colors - GitHub Brand Compliant */
-  --color-primary: #00872b;
-  --color-primary-light: #5fed83;
-  --color-primary-gradient: linear-gradient(90deg, #5fed83, #00872b);
+  --color-primary: #08872B;        /* GitHub Green 4 - Primary brand color */
+  --color-primary-light: #5FED83;  /* GitHub Green 3 - Light brand color */
+  --color-primary-gradient: linear-gradient(90deg, #5FED83, #08872B);
   
-  --color-text-primary: #24292f;
-  --color-text-secondary: #656d76;
-  --color-text-inverse: #ffffff;
+  --color-text-primary: #24292f;   /* Primer gray-900 - Primary text */
+  --color-text-secondary: #656d76; /* Primer gray-600 - Secondary text */
+  --color-text-inverse: #ffffff;   /* Pure white for dark backgrounds */
   
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #f6f8fa;
-  --color-background-dark: #24292f;
-  --color-background-darker: #1c2128;
+  --color-background-primary: #ffffff;   /* Pure white - Primary background */
+  --color-background-secondary: #f6f8fa; /* Primer gray-100 - Secondary background */
+  --color-background-dark: #24292f;      /* Primer gray-900 - Dark background */
+  --color-background-darker: #1c2128;    /* Primer gray-950 - Darker background */
   
-  --color-border-primary: #d1d9e0;
-  --color-border-focus: #00872b;
+  --color-border-primary: #d1d9e0;  /* Primer gray-300 - Primary borders */
+  --color-border-focus: #0969da;    /* Primer blue-600 - Focus states */
   
-  --color-danger: #d1242f;
-  --color-warning: #fd7e14;
-  --color-info: #6f42c1;
+  --color-danger: #d1242f;          /* Primer red-600 - Error/danger states */
+  --color-warning: #fd7e14;         /* Warning color */
+  --color-info: #0969da;            /* Primer blue-600 - Information states */
   
   /* Typography - GitHub Brand Compliant */
   --font-family-primary: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;

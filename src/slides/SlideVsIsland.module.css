@@ -17,7 +17,7 @@
 
 .deployment-approach.above {
     border-color: var(--brand-primary);
-    background: linear-gradient(135deg, var(--surface-primary) 0%, #f0fff4 100%);
+    background: linear-gradient(135deg, var(--surface-primary) 0%, var(--bg-success) 100%);
 }
 
 .deployment-steps {
@@ -34,7 +34,7 @@
 }
 
 .step.complex {
-    color: #8b4513;
+    color: var(--text-warning);
 }
 
 .step.simple {
@@ -56,8 +56,8 @@
 }
 
 .deployment-approach.island .deployment-timeline {
-    background: #fff8dc;
-    color: #8b4513;
+    background: var(--bg-warning);
+    color: var(--text-warning);
 }
 
 .deployment-approach.above .deployment-timeline {

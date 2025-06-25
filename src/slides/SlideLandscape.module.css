@@ -12,7 +12,7 @@
 .section-title {
   font-size: 28px;
   font-weight: 700;
-  color: #24292f;
+  color: var(--text-primary);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
 }
 
 .section-title i {
-  color: #00872b;
+  color: var(--brand-primary);
   font-size: 32px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .category-card.above-category {
-  background: linear-gradient(135deg, #f0fff4 0%, #e8f5e8 100%);
+  background: linear-gradient(135deg, var(--bg-success) 0%, var(--bg-secondary) 100%);
   border-color: var(--brand-primary);
 }
 
@@ -111,9 +111,9 @@
 }
 
 .competitor {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
-  color: #24292f;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
   font-size: 14px;
   padding: 6px 12px;
   border-radius: 20px;
@@ -121,30 +121,30 @@
 }
 
 .competitor.above-highlight {
-  background: #00872b;
-  color: #ffffff;
-  border-color: #00872b;
+  background: var(--brand-primary);
+  color: var(--text-inverse);
+  border-color: var(--brand-primary);
   font-weight: 600;
 }
 
 .category-gap {
   font-size: 14px;
-  color: #656d76;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
 }
 
 .category-advantage-text {
   font-size: 14px;
-  color: #00872b;
+  color: var(--brand-primary);
   line-height: 1.5;
   margin: 0;
   font-weight: 500;
 }
 
 .market-positioning {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
   padding: 32px;
   text-align: center;
@@ -153,7 +153,7 @@
 .positioning-title {
   font-size: 24px;
   font-weight: 700;
-  color: #24292f;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
@@ -169,25 +169,25 @@
   align-items: center;
   gap: 12px;
   padding: 20px;
-  background: #f6f8fa;
+  background: var(--bg-secondary);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .positioning-point:hover {
-  background: #00872b;
-  color: #ffffff;
+  background: var(--brand-primary);
+  color: var(--text-inverse);
   transform: translateY(-4px);
 }
 
 .positioning-point i {
   font-size: 32px;
-  color: #00872b;
+  color: var(--brand-primary);
   transition: color 0.3s ease;
 }
 
 .positioning-point:hover i {
-  color: #ffffff;
+  color: var(--text-inverse);
 }
 
 .positioning-point span {

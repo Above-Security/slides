@@ -54,12 +54,7 @@ const MetricsSection = () => {
   return (
     <SectionContainer id="metrics" title="3 | METRICS THAT MATTER (LAND → EXPAND)" variant="executive">
       <div>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', 
-          gap: 'var(--spacing-xl)',
-          alignItems: 'start'
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)' }}>
           {metrics.map((metric, index) => (
             <MetricsCard
               key={index}
@@ -77,9 +72,9 @@ const MetricsSection = () => {
         <div style={{ 
           marginTop: 'var(--spacing-2xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--color-background-secondary)', 
-          borderRadius: 'var(--radius-lg)',
-          borderLeft: '4px solid var(--color-primary)'
+          background: 'var(--bg-secondary)', 
+          borderRadius: 'var(--border-radius-lg)',
+          borderLeft: '4px solid var(--brand-primary)'
         }}>
           <strong>Success Framework:</strong> These metrics establish clear value demonstration for both technical teams (phish prevention, IR efficiency) and business stakeholders (deployment friction, visibility ROI). Target achievements within 90 days create expansion momentum.
         </div>

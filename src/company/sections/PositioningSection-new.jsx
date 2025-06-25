@@ -51,11 +51,7 @@ const PositioningSection = () => {
           <strong>Strategic Positioning:</strong> Our approach varies by tool category - we enhance email security, augment network tools, supersede point solutions, and provide lightweight alternatives to heavyweight browsers. Each positioning requires specific risk mitigation strategies.
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-          gap: 'var(--spacing-lg)' 
-        }}>
+        <div style={{ display: 'grid', gap: 'var(--spacing-lg)' }}>
           {positioningData.map((item, index) => (
             <PositioningCard
               key={index}

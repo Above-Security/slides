@@ -62,6 +62,10 @@ Professional React platform showcasing Above Security's Runtime Identity Threat 
 - Index file with barrel exports
 - Section-specific components and styles
 - Standalone navigation and routing
+- SPA design with hash-based routing for GitHub Pages compatibility
+- Shared components for cross-section functionality
+- Consistent design token usage across sections
+- Important to not bleed styles or components across sections to maintain modularit
 
 **Example Structure**:
 ```

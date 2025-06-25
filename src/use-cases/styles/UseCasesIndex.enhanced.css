@@ -159,13 +159,13 @@ svg.use-cases-logo,
 /* Logo path color animations */
 .use-cases-logo path,
 .logo-container svg.logo path {
-  fill: #00872b;
+  fill: var(--brand-primary);
   transition: fill 0.3s ease;
 }
 
 .logo-container:hover .use-cases-logo path,
 .logo-container:hover svg.logo path {
-  fill: #5fed83;
+  fill: var(--brand-primary-light);
 }
 
 .use-cases-hero {
