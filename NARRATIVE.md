@@ -1,159 +1,162 @@
-**Above – Two‑Year Strategic Narrative & Execution Plan (Phishing → Observability → Runtime Insider Threat)**
+# 📘 NARRATIVE.md
 
 ---
 
-## 0. Vision in One Sentence
+## ✅ Vision in One Sentence
 
-*Become the browser‑native control plane that sees and stops what every other security tool misses – from sophisticated phishing to gray‑area insider misuse – without changing how users work.*
-
----
-
-## 1 | YEAR‑1 GO‑TO‑MARKET (0‑12 Months)
-
-### 1.1 How We Sell (Motion)
-
-| Stage                        | Channel                                  | Champion                                   | Commercial Model                                      | Critical Risks                                                              |
-| ---------------------------- | ---------------------------------------- | ------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------- |
-| **Land** – 1‑500 seats pilot | Direct (founder‑led AE + SE)             | SecOps Team Lead / Staff Security Engineer | Flat pilot fee (or free if under 500 seats)           | Low signal if no phishing occurs                                            |
-| **Expand** – 500‑5 000 seats | Same account team, add CISO exec sponsor | CISO / Dir. Identity                       | Annual SaaS (ARR/seat) w/ phishing + telemetry bundle | Budget comes from email‑sec – must avoid “yet‑another‑phishing‑tool” bucket |
-| **Scale** – 5 000‑50 000     | MSSP & VAR co‑sell                       | IR, SOC leadership                         | Tiered seat‑based + volume discount                   | Privacy & data‑residency objections                                         |
-
-> **Narrative hook:** *“Email gateways catch <40 % of initial phish. Everything else starts in the browser – we stop it **and** give you post‑auth forensics the instant you need them.”*
-
-### 1.2 What We Sell (Packages)
-
-1. **Starter (PhishGuard)** – real‑time phishing soft‑block & coaching (Chrome Extension only).<br>
-2. **Growth (PhishGuard + ScopeLens)** – adds full browser telemetry export to SIEM/XDR; timeline & enrichment panels for investigations.<br>
-3. **Platform (Runtime ITDR)** – unlocks Year‑2 detections (privilege misuse, insider drift) + response policies.
-
-> **Critical stance:** Don’t attempt full insider detections in Year‑1 – “visibility first” avoids promise / delivery gap that kills early deals.
-
-### 1.3 Ideal ICP (Beach‑head)
-
-* **Size :** 500‑5 000 employees (fast buy cycles, but material ARR).
-* **Profile :** Cloud‑native, Google Workspace / M365, heavy SaaS.
-* **Pain triggers :** ‑ Recent AitM / OAuth phish scare ‑ Overworked IR team ‑ Mandate to move toward Zero‑Trust but no budget for Enterprise Browser replacement.
-* **Tech stack fit :** Okta or Entra ID, CrowdStrike, Splunk/Chronicle, Proofpoint/Mimecast.
+> Real-time visibility into what every user actually does in SaaS and web apps — to detect intent, catch insider threats, and shut down account misuse before it escalates.
 
 ---
 
-## 2 | YEAR‑1 POV & SUCCESS PLAYBOOK
+## 📈 YEAR‑1 GO‑TO‑MARKET (0‑12 Months)
 
-### 2.0 Why So Much Rigor?
-
-*We get one shot to prove value in less than a monthly sprint.  The buyer has five other pilots in flight — we must be the one that actually finishes.*
-
-### 2.1 PoV Guard‑Rails (3 Weeks Total)
-
-| Phase                    | Days     | Objectives                                                        | Activities                                                                                                                       | Exit / Evidence                                                                            |
-| ------------------------ | -------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **Prep**                 |  −5 → 0  | ‑ Contract / DPIA signed  ‑ Admins briefed  ‑ Success KPIs frozen | ‑ 30‑min kickoff call  ‑ Provide G‑Workspace / Entra json for extension force‑install  ‑ Enable SIEM webhook                     | • Work‑back plan agreed • < 1 h customer effort                                            |
-| **Week 1 – Instrument**  |  1 → 7   | 100 % of pilot fleet covered; no UX regression                    | ① Push extension ② Validate health dashboard ③ Daily stand‑up w/ SecOps                                                          | • ≥ 90 % agents green • Zero perf complaints                                               |
-| **Week 2 – Observe**     |  8 → 14  | Surface “unknown unknowns” + near‑miss phish                      | ① Passive detections only ② Risk report (unknown SaaS, consent pages) ③ Live SIEM enrichment demo                                | • ≥ 3 true‑positive phish **or** ≥ 10 consent/OAuth risk events • ≥ 20 % new SaaS surfaced |
-| **Week 3 – Act & Coach** |  15 → 21 | Prove user coaching & SOC efficiency                              | ① Flip to soft‑block ② Measure override rate ③ IR drill – replay last month’s phish incident with Above timeline ④ Exec read‑out | • <1 % override • 2× faster triage in drill • Signed business‑case deck                    |
-
-### 2.2 Success KPIs & Pass‑Fail Gates
-
-| KPI                                          | Pass Target               | Fail Trigger |
-| -------------------------------------------- | ------------------------- | ------------ |
-| Phish / consent phish blocked pre‑credential | > 90 % of observed events | < 70 %       |
-| Unknown SaaS discovery delta                 | ≥ 20 % increase           | < 10 %       |
-| User override rate after coaching            | < 2 %                     | ≥ 5 %        |
-| Analyst triage time reduction                | ≥ 30 % faster             | < 10 %       |
-| Deployment effort (customer hours)           | ≤ 4 h total               | > 8 h        |
-
-### 2.3 If **No Real Attacks** Occur
-
-1. **Near‑Miss Ledger** – auto‑generate annotated timeline of blocked look‑alike domains, expired certificates, abnormal OAuth scopes.
-2. **Visibility Wins Report** – quantified SaaS & extension inventory delta delivered as PDF plus raw CSV for SIEM.
-3. **Forensic Drill** – SOC re‑opens a closed phish ticket; runs side‑by‑side with/without Above telemetry.
-4. **Red‑Team Voucher** – post‑purchase commitment: *if* internal red‑team bypasses Above we credit 1 mo licence.
-
-### 2.4 Set‑up Checklist (Shared with Buyer)
-
-* ❏ Stakeholder map (CISO, SecOps lead, IT, Privacy Counsel)
-* ❏ Definition of “pilot success” signed (KPIs & thresholds)
-* ❏ Browser versions > v116 Chrome / Edge confirmed
-* ❏ SIEM endpoint / token supplied
-* ❏ Slack or Teams channel for daily comms
+| Initiative      | Detail                                                                                                                      |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Entry Motion    | Founder-led direct sales, leveraging design partnerships with 5–10 security-forward mid-market CISOs                        |
+| Roles           | Hire 1 AE and 1 SDR for scale post-month 6                                                                                  |
+| ICP             | Mid-market orgs (100–3,000 employees), Chrome-managed fleet, SaaS-heavy, low visibility into user behavior post-login       |
+| Channels        | Founder outbound, mutual network intros, CISO Slack communities                                                             |
+| Messaging       | Browser-based visibility post-authentication; catch insider misuse, SaaS misuse, OAuth grants, role drift, offboarding risk |
+| Conversion Flow | Design partner → 3-week POV → pilot → land                                                                                  |
 
 ---
 
-## 3 | METRICS THAT MATTER (LAND → EXPAND)
+## 🚦 YEAR‑1 POV & SUCCESS PLAYBOOK
 
- | METRICS THAT MATTER (LAND → EXPAND)
+**3 Weeks Total** — Show value **even if nothing bad happens.**
 
-| Dimension               | KPI                                          | Baseline Pain | Win Condition   |
-| ----------------------- | -------------------------------------------- | ------------- | --------------- |
-| **Phish Prevention**    | % Consent/OAuth phish blocked pre‑credential | Unknown       | >90 % of events |
-| **User Coaching**       | Override‑after‑coaching rate                 | N/A           | <2 %            |
-| **IR Efficiency**       | Analyst triage time per phish incident       | 45 min        | <15 min         |
-| **Visibility Lift**     | Net‑new SaaS apps surfaced                   | ?             | +20 % in 30 d   |
-| **Deployment Friction** | Support tickets per 1 000 users              | –             | <0.5            |
+### ✅ PoV Guard-Rails
 
----
-
-## 4 | REPLACE vs ENHANCE – POSITIONING
-
-| Tool                     | Our Stance                             | Talk‑Track                                                                                                | Risk                                                                          |
-| ------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Secure Email Gateway** | **Enhance**                            | “…we catch what slips after the click.”                                                                   | Duplication worries – show pass‑through integration                           |
-| **CASB / SSE**           | **Augment now, muzzle later (Year‑2)** | “…CASB sees traffic; we see intent in the UI. Eventually we can enforce same policies without PAC files.” | Must not appear as direct rip‑and‑replace too early                           |
-| **Push Security**        | **Supersede**                          | “Push v2 = us + detection + coaching + SIEM timelines.”                                                   | Need proof on richer detections                                               |
-| **Enterprise Browser**   | **Lightweight alt**                    | “Same runtime control without forcing browser swap.”                                                      | Browser replacement vendors will spread FUD on extension bypass – have answer |
+| Phase  | Focus      | Milestone                                                                    |
+| ------ | ---------- | ---------------------------------------------------------------------------- |
+| Week 1 | Deployment | Extension live on 10–50 users in <1 hour                                     |
+| Week 2 | Visibility | Capture: unsanctioned app use, admin activity, OAuth grants, export behavior |
+| Week 3 | Outcomes   | Deliver session visibility report + validate with security owner             |
 
 ---
 
-## 5 | YEAR‑2 EXPANSION ROADMAP (12‑24 Months)
+## 📋 Set-up Checklist (Shared with Buyer)
 
-| Q           | Capability                                                      | New Revenue Lever                      | Hypothesis to Prove                                              |
-| ----------- | --------------------------------------------------------------- | -------------------------------------- | ---------------------------------------------------------------- |
-| **Q1 ‑ Q2** | Insider heat‑map (behavioral drift scoring)                     | Add‑on per‑seat fee                    | Browser telemetry + ML = earlier insider signal than DTEX        |
-| **Q2 ‑ Q3** | Real‑time policy actions (block mass export, rogue role change) | “Runtime DLP Lite” module              | Customers will pay to *prevent* insider misuse, not just observe |
-| **Q3 ‑ Q4** | API tie‑ins to ZTNA / IdP for session kill, step‑up auth        | Enterprise tier / workflow credits     | Orchestrated response drives stickiness and upsell               |
-| **Q4**      | BYOD lightweight agent (Edge + unmanaged Chrome)                | Opens EDU & contractor‑heavy verticals | Privacy gates solvable with FIDO attestation                     |
-
-### Year‑2 ICP Layer‑Cake
-
-1. **Existing PhishGuard customers** – upsell Runtime ITDR.
-2. **IRM / Insider‑Risk programs** in financial / healthcare orgs.
-3. **CASB refresh cycles** where Netskope / Skyhigh replacement is planned – sell as faster/cheaper alternative.
+* ✅ Define Chrome policy group (managed devices)
+* ✅ Push browser extension via policy
+* ✅ Align on what buyer wants to see (e.g., OAuth, exfiltration, AI use, stale sessions)
+* ✅ Configure optional webhook or SIEM push for integrations
 
 ---
 
-## 6 | DEAL‑CRITICAL HYPOTHESES & HOW WE TEST
+## 🎯 Success KPIs & Pass‑Fail Gates
 
-| Hypothesis                                         | Evidence Sought in Y1                        | Kill‑Criteria                                                            |
-| -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------ |
-| Users tolerate coaching interstitials              | <1 % uninstall rate in pilot                 | >5 % uninstall => redesign UX                                            |
-| Browser telemetry materially speeds IR             | Analysts quote ≥30 % faster RCA              | <10 % speed‑up => narrow scope                                           |
-| Extension delivers enough coverage vs full browser | 80 % of managed fleet stays on Chrome‑family | If customer base shifts to Safari/Firefox >30 %, need cross‑browser port |
-
----
-
-## 7 | IF **NO ATTACKS** DURING POV – PROVING VALUE
-
-1. **Near‑miss Evidence** – Show flagged consent pages, password‑reuse prompts, and blocklist hits from open‑source phish IOCs.
-2. **Visibility Delta** – Quantify unknown SaaS, risky extensions, weak MFA scores for each user – give risk report.
-3. **Investigation Drill** – Re‑play a historic incident with and without our timeline; have analyst live‑compare speed.
-4. **Red‑Team Voucher** – Offer post‑sale internal phish simulation voucher to prove stop‑rate (paid by us if miss KPI).
-
-> *Be blunt with buyer*: “If in 14 days we don’t surface anything you find useful, we deserve to lose.”
+| Signal            | Pass Threshold                                                            |
+| ----------------- | ------------------------------------------------------------------------- |
+| OAuth visibility  | Show all apps authorized by users in period                               |
+| Offboarding drift | Detect 100% of active sessions tied to disabled accounts                  |
+| AI use / abuse    | Detect 1+ non-approved AI tools used in monitored group                   |
+| Real detections   | Buyer flags 2+ events as actionable (drift, misuse, misuse-to-intent gap) |
+| Feedback          | Buyer confirms: "We had no other tool that could show us this."           |
 
 ---
 
-## 8 | CRITICAL RISKS & COUNTER‑MEASURES
+## 📊 METRICS THAT MATTER (LAND → EXPAND)
 
-* **Extension removal / evasion** – Detect uninstall, auto‑re‑enroll via MDM, raise IdP webhook to force step‑up auth.
-* **Privacy objections** – Provide on‑device redaction, PCI/PII tag drop, and EU data‑center option; publish DPIA template.
-* **‘Yet another console’ fatigue** – Ship Splunk / Sentinel apps Day‑1; console optional.
+| Metric                         | Why It Matters                                      |
+| ------------------------------ | --------------------------------------------------- |
+| MTTR (insider)                 | Faster investigation using session context          |
+| MTTD (token/role drift)        | Early detection of misuse not caught by IdP or CASB |
+| Unique OAuth grants            | Quantifies exposure via 3rd-party app delegation    |
+| % SaaS with session visibility | Shows coverage breadth beyond API-integrated apps   |
+| Detection → IR tickets         | Proves operational integration                      |
+| Heatmap of user risk           | Maps behavior concentration, aids prioritization    |
 
 ---
 
-## 9 | EXECUTIVE SUMMARY (TL;DR)
+## 🔁 REPLACE vs ENHANCE — POSITIONING
 
-* *Land fast* with phishing prevention & coaching that shows ROI in <14 days.
-* *Expand* by monetizing the **unique browser telemetry** every other control plane lacks.
-* *Dominate* by adding real‑time insider threat prevention, gradually encroaching on legacy CASB / UEBA budgets.
+| Tool       | Replace?          | Enhance How?                                                   |
+| ---------- | ----------------- | -------------------------------------------------------------- |
+| CASB / DLP | ❌                 | We see user behavior *before* files move or traffic is flagged |
+| SSPM       | ❌                 | We show *usage*, not just config posture                       |
+| EDR/XDR    | ❌                 | We add browser identity-level session context                  |
+| UEBA       | ✅ (often shelved) | Ours works in real time, no SIEM needed                        |
 
-**Above** becomes the lightweight, deploy‑anywhere runtime layer that **starts** where IAM ends and **finishes** what CASB & email security can’t.
+---
+
+## 🚀 YEAR‑2 EXPANSION ROADMAP (12‑24 Months)
+
+| Area                       | Detail                                                     |
+| -------------------------- | ---------------------------------------------------------- |
+| Browser telemetry platform | Build unified signal layer across all web activity         |
+| Behavioral risk scoring    | Add per-user risk index based on drift, intent, misuse     |
+| Remediation actions        | Revoke sessions, block app grants, show in-browser banners |
+| Coaching UX                | Display real-time guidance (“this app is unsanctioned”)    |
+| Manager visibility         | Heatmaps and summaries by team, org unit, persona          |
+
+---
+
+## ❓ DEAL‑CRITICAL HYPOTHESES & HOW WE TEST
+
+| Hypothesis                               | How We Test                                               |
+| ---------------------------------------- | --------------------------------------------------------- |
+| Teams want visibility even if no attack  | Show frictionless insights during uneventful weeks        |
+| OAuth abuse is invisible                 | Quantify unrecognized app connections and prompt feedback |
+| Offboarding drift is common              | Surface residual sessions after IdP deactivation          |
+| Chrome telemetry is operationally useful | Confirm analysts act on Above data in IR flows            |
+
+---
+
+## ⚠️ CRITICAL RISKS & COUNTER-MEASURES
+
+| Risk                                   | Counter-Measure                                                                            |
+| -------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Buyer claims: "CASB already does this" | Show behavioral evidence CASB *can’t* see — e.g., UI actions, OAuth detail, ChatGPT misuse |
+| Privacy concern                        | No keystrokes, no screen captures — only security-relevant events with clear logs          |
+| Overhead concern                       | Show install is 60 seconds, Chrome only, low CPU impact                                    |
+| "We don’t need it if no breach"        | Prove prevention ROI by showing risky intent before it becomes an incident                 |
+
+---
+
+## ✂️ EXECUTIVE SUMMARY (TL;DR)
+
+* Above gives you **real-time visibility** into what users actually do in SaaS, browsers, and unsanctioned apps.
+* Detects intent-based insider risk: gray-area misuse, role drift, offboarding gaps, AI workarounds, OAuth abuse.
+* Browser-native, Chrome-only, fast to deploy. No agents, no traffic routing, no log parsing.
+* Not just a new category — a usable layer of signal and accountability that every org needs.
+
+---
+
+## 🎯 How We Nail ICP
+
+| Trait                    | Signal                                        |
+| ------------------------ | --------------------------------------------- |
+| Mid-market org           | 100–3,000 employees, no IRM headcount         |
+| SaaS-heavy               | >20 apps, browser-first work                  |
+| Identity-forward         | Okta, MDM in place                            |
+| Security visibility gaps | Unknown OAuth, offboarding drift, SaaS misuse |
+
+---
+
+## 🔬 How We Nail POV
+
+* Fast setup (<1 hr)
+* Evidence delivered in Week 1
+* Stakeholder engagement: we surface what they didn’t know was happening
+* Actionable signal → IR / GRC / Identity teams
+
+---
+
+## 👁️‍🗨️ Use Cases, Visibility, What We Show
+
+| Category               | What We See                                           |
+| ---------------------- | ----------------------------------------------------- |
+| Phishing aftermath     | OAuth grants, session token persistence               |
+| Insider misuse         | Role misuse, scraping, drift                          |
+| AI misuse              | Use of consumer LLMs in unsanctioned places           |
+| SaaS misuse            | Shadow tools, exports, public shares                  |
+| Offboarding            | Tokens still alive, old SSO sessions reused           |
+| Excessive personal use | YouTube, ChatGPT, consumer shopping by internal users |
+| Unauthorized software  | Risky extensions, downloads from unvetted SaaS        |
+
+---
+
+We give teams **visibility into user behavior** they’ve never had — and we do it in **weeks, not quarters**.
+
+**Above = post-auth visibility, behavioral detection, and real-time control — built on browser telemetry.**

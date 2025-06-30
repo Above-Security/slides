@@ -7,112 +7,257 @@ import styles from '../styles/CompanyIndex.module.css';
 const PovPlaybook = () => {
   const phases = [
     {
-      phase: 'Preparation',
-      days: '-5 → 0 days',
-      objectives: 'Contract / DPIA signed, Admins briefed, Success KPIs frozen',
-      activities: '30-min kickoff call, provide force-install JSON, enable SIEM webhook',
-      exitCriteria: 'Work-back plan agreed, <1h customer effort',
+      phase: 'Week 1 – Deployment',
+      days: '1 → 7 days',
+      objectives: 'Extension live on 10-50 users in <1 hour',
+      activities: 'Define Chrome policy group, push browser extension via policy, validate deployment',
+      exitCriteria: '100% extension deployment, no performance issues',
       phaseNumber: '1'
     },
     {
-      phase: 'Week 1 – Instrument',
-      days: '1 → 7 days',
-      objectives: '100% of pilot fleet covered; no UX regression',
-      activities: 'Push extension, validate health dashboard, daily stand-up w/ SecOps',
-      exitCriteria: '≥90% agents green, zero performance complaints',
+      phase: 'Week 2 – Visibility',
+      days: '8 → 14 days',
+      objectives: 'Capture: unsanctioned app use, admin activity, OAuth grants, export behavior',
+      activities: 'Monitor user sessions, collect behavioral data, identify shadow IT and risk patterns',
+      exitCriteria: 'Show OAuth visibility, detect AI tool usage, surface offboarding drift',
       phaseNumber: '2'
     },
     {
-      phase: 'Week 2 – Observe',
-      days: '8 → 14 days',
-      objectives: 'Surface "unknown unknowns" + near-miss phishing',
-      activities: 'Passive detections only, risk report, live SIEM enrichment demo',
-      exitCriteria: '≥3 true-positive phish or ≥10 consent/OAuth risk events, ≥20% new SaaS surfaced',
-      phaseNumber: '3'
-    },
-    {
-      phase: 'Week 3 – Act & Coach',
+      phase: 'Week 3 – Outcomes',
       days: '15 → 21 days',
-      objectives: 'Prove user coaching & SOC efficiency',
-      activities: 'Flip to soft-block, measure override rate, IR drill with timeline, exec read-out',
-      exitCriteria: '<1% override, 2× faster triage, signed business-case deck',
-      phaseNumber: '4'
+      objectives: 'Deliver session visibility report + validate with security owner',
+      activities: 'Present findings, demonstrate unique insights, validate operational value',
+      exitCriteria: 'Buyer confirms: "We had no other tool that could show us this"',
+      phaseNumber: '3'
     }
   ];
 
   const kpiGates = [
     {
-      kpi: 'Phishing / consent phishing blocked pre-credential',
-      passTarget: '>90% of observed events',
-      failTrigger: '<70%',
+      kpi: 'OAuth visibility',
+      passTarget: 'Show all apps authorized by users in period',
+      failTrigger: 'Unable to track OAuth grants',
       status: 'pending'
     },
     {
-      kpi: 'Unknown SaaS discovery delta',
-      passTarget: '≥20% increase',
-      failTrigger: '<10%',
+      kpi: 'Offboarding drift',
+      passTarget: 'Detect 100% of active sessions tied to disabled accounts',
+      failTrigger: 'Missing session persistence detection',
       status: 'pending'
     },
     {
-      kpi: 'User override rate after coaching',
-      passTarget: '<2%',
-      failTrigger: '≥5%',
+      kpi: 'AI use / abuse',
+      passTarget: 'Detect 1+ non-approved AI tools used in monitored group',
+      failTrigger: 'No unsanctioned AI tool detection',
       status: 'pending'
     },
     {
-      kpi: 'Analyst triage time reduction',
-      passTarget: '≥30% faster',
-      failTrigger: '<10%',
+      kpi: 'Real detections',
+      passTarget: 'Buyer flags 2+ events as actionable (drift, misuse, intent gap)',
+      failTrigger: 'No actionable insights generated',
       status: 'pending'
     },
     {
-      kpi: 'Deployment effort (customer hours)',
-      passTarget: '≤4h total',
-      failTrigger: '>8h',
+      kpi: 'Feedback validation',
+      passTarget: 'Buyer confirms: "We had no other tool that could show us this"',
+      failTrigger: 'Buyer sees no unique value',
       status: 'pending'
-    }
-  ];
-
-  const contingencyPlans = [
-    {
-      title: 'Near-Miss Ledger',
-      description: 'Auto-generate annotated timeline of blocked look-alike domains, expired certificates, abnormal OAuth scopes.',
-      icon: 'fas fa-list-alt'
-    },
-    {
-      title: 'Visibility Wins Report',
-      description: 'Quantified SaaS & extension inventory delta delivered as PDF plus raw CSV for SIEM.',
-      icon: 'fas fa-chart-bar'
-    },
-    {
-      title: 'Forensic Drill',
-      description: 'SOC re-opens a closed phish ticket; runs side-by-side with/without Above telemetry.',
-      icon: 'fas fa-search'
-    },
-    {
-      title: 'Red-Team Voucher',
-      description: 'Post-purchase commitment: if internal red-team bypasses Above we credit 1 month license.',
-      icon: 'fas fa-shield-alt'
     }
   ];
 
   const setupChecklist = [
-    'Stakeholder map (CISO, SecOps lead, IT, Privacy Counsel)',
-    'Definition of "pilot success" signed (KPIs & thresholds)',
-    'Browser versions >v116 Chrome / Edge confirmed',
-    'SIEM endpoint / token supplied',
-    'Slack or Teams channel for daily communications'
+    'Define Chrome policy group (managed devices)',
+    'Push browser extension via policy',
+    'Align on what buyer wants to see (OAuth, exfiltration, AI use, stale sessions)',
+    'Configure optional webhook or SIEM push for integrations'
   ];
 
   return (
-    <SectionContainer id="pov-playbook" title="2 | YEAR-1 POV & SUCCESS PLAYBOOK">
+    <SectionContainer
+      id="pov-playbook"
+      title="2 | YEAR‑1 POV & SUCCESS PLAYBOOK"
+      variant="executive"
+      priority="high"
+    >
       <div>
-        {/* Introduction */}
-        <div className={styles["pov-intro"]}>
-          <h3>2.0 Why So Much Rigor?</h3>
-          <p>
-            <em>We get one shot to prove value in less than a monthly sprint. The buyer has five other pilots in flight — we must be the one that actually finishes.</em>
-          </p>
+        <div style={{ 
+          marginBottom: 'var(--spacing-xl)', 
+          padding: 'var(--spacing-lg)', 
+          background: 'var(--color-background-secondary)', 
+          borderRadius: 'var(--border-radius-lg)',
+          borderLeft: '4px solid var(--color-primary)'
+        }}>
+          <strong>3 Weeks Total</strong> — Show value <strong>even if nothing bad happens.</strong>
+        </div>
+
+        {/* POV Guard-Rails Table from NARRATIVE.md */}
+        <h3>
+          <i className="fas fa-traffic-light" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+          POV Guard-Rails
+        </h3>
+        <div style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <table style={{ 
+            width: '100%', 
+            borderCollapse: 'collapse', 
+            marginBottom: 'var(--spacing-lg)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            borderRadius: 'var(--border-radius-md)',
+            overflow: 'hidden',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+          }}>
+            <thead>
+              <tr style={{ 
+                backgroundColor: 'rgba(0, 135, 43, 0.05)',
+                borderBottom: '2px solid rgba(0, 135, 43, 0.1)'
+              }}>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-calendar-week" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Phase
+                </th>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-crosshairs" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Focus
+                </th>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-flag-checkered" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Milestone
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
+                <td style={{ 
+                  padding: 'var(--spacing-md)', 
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  verticalAlign: 'top'
+                }}>
+                  <i className="fas fa-play" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Week 1
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Deployment
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Extension live on 10–50 users in &lt;1 hour
+                </td>
+              </tr>
+              <tr style={{ backgroundColor: 'rgba(0, 0, 0, 0.02)', borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
+                <td style={{ 
+                  padding: 'var(--spacing-md)', 
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  verticalAlign: 'top'
+                }}>
+                  <i className="fas fa-eye" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Week 2
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Visibility
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Capture: unsanctioned app use, admin activity, OAuth grants, export behavior
+                </td>
+              </tr>
+              <tr>
+                <td style={{ 
+                  padding: 'var(--spacing-md)', 
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  verticalAlign: 'top'
+                }}>
+                  <i className="fas fa-trophy" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Week 3
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Outcomes
+                </td>
+                <td style={{ 
+                  padding: 'var(--spacing-md)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.5',
+                  verticalAlign: 'top'
+                }}>
+                  Deliver session visibility report + validate with security owner
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Set-up Checklist from NARRATIVE.md */}
+        <h3>
+          <i className="fas fa-clipboard-check" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+          Set-up Checklist (Shared with Buyer)
+        </h3>
+        <div style={{ 
+          marginBottom: 'var(--spacing-xl)',
+          padding: 'var(--spacing-lg)',
+          backgroundColor: 'rgba(0, 135, 43, 0.03)',
+          borderRadius: 'var(--border-radius-md)',
+          border: '1px solid rgba(0, 135, 43, 0.1)'
+        }}>
+          <ul style={{ margin: 0, paddingLeft: 'var(--spacing-lg)' }}>
+            {setupChecklist.map((item, index) => (
+              <li key={index} style={{ 
+                marginBottom: 'var(--spacing-sm)',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.5'
+              }}>
+                <i className="fas fa-check" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* PoV Phases */}
@@ -165,20 +310,81 @@ const PovPlaybook = () => {
           </div>
         </div>
 
-        {/* Success KPIs */}
+        {/* Success KPIs & Pass-Fail Gates */}
         <div className={styles["pov-section"]}>
-          <h3>2.2 Success KPIs & Pass-Fail Gates</h3>
+          <h3>
+            <i className="fas fa-chart-bar" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+            Success KPIs &amp; Pass-Fail Gates
+          </h3>
           
-          <div className={styles["kpi-gates-grid"]}>
-            {kpiGates.map((kpi, index) => (
-              <KpiGateCard
-                key={index}
-                kpi={kpi.kpi}
-                passTarget={kpi.passTarget}
-                failTrigger={kpi.failTrigger}
-                status={kpi.status}
-              />
-            ))}
+          <div style={{ marginBottom: 'var(--spacing-xl)' }}>
+            <table style={{ 
+              width: '100%', 
+              borderCollapse: 'collapse', 
+              marginBottom: 'var(--spacing-lg)',
+              border: '1px solid rgba(0, 0, 0, 0.1)',
+              borderRadius: 'var(--border-radius-md)',
+              overflow: 'hidden',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+            }}>
+              <thead>
+                <tr style={{ 
+                  backgroundColor: 'rgba(0, 135, 43, 0.05)',
+                  borderBottom: '2px solid rgba(0, 135, 43, 0.1)'
+                }}>
+                  <th style={{ 
+                    padding: 'var(--spacing-md)', 
+                    textAlign: 'left',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    fontSize: 'var(--font-size-sm)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    <i className="fas fa-signal" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                    Signal
+                  </th>
+                  <th style={{ 
+                    padding: 'var(--spacing-md)', 
+                    textAlign: 'left',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    fontSize: 'var(--font-size-sm)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    <i className="fas fa-bullseye" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                    Pass Threshold
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {kpiGates.map((kpi, index) => (
+                  <tr key={index} style={{ 
+                    backgroundColor: index % 2 === 1 ? 'rgba(0, 0, 0, 0.02)' : 'transparent',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.05)'
+                  }}>
+                    <td style={{ 
+                      padding: 'var(--spacing-md)', 
+                      fontWeight: '600',
+                      color: 'var(--color-text-primary)',
+                      verticalAlign: 'top'
+                    }}>
+                      <i className="fas fa-key" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                      {kpi.kpi}
+                    </td>
+                    <td style={{ 
+                      padding: 'var(--spacing-md)',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: '1.5',
+                      verticalAlign: 'top'
+                    }}>
+                      {kpi.passTarget}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -187,15 +393,7 @@ const PovPlaybook = () => {
           <h3>2.3 If No Real Attacks Occur</h3>
           
           <div className={styles["contingency-grid"]}>
-            {contingencyPlans.map((plan, index) => (
-              <div key={index} className={styles["contingency-card"]}>
-                <h4>
-                  <i className={plan.icon} />
-                  {plan.title}
-                </h4>
-                <p>{plan.description}</p>
-              </div>
-            ))}
+            {/* No contingency plans provided in the change description */}
           </div>
         </div>
 

@@ -5,24 +5,35 @@ import HypothesesTestCard from '../components/HypothesesTestCard';
 const HypothesesSection = () => {
   const hypotheses = [
     {
-      hypothesis: 'Users tolerate coaching interstitials',
-      evidence: '<1% uninstall rate in pilot',
-      killCriteria: '>5% uninstall => redesign UX',
-      riskLevel: 'medium',
-      testProgress: 0
-    },
-    {
-      hypothesis: 'Browser telemetry materially speeds IR',
-      evidence: 'Analysts quote ≥30% faster RCA',
-      killCriteria: '<10% speed-up => narrow scope',
+      hypothesis: 'Teams want visibility even if no attack',
+      evidence: 'Show frictionless insights during uneventful weeks',
+      testMethod: 'Demonstrate value through behavioral patterns and risk identification',
+      killCriteria: 'If customers only engage during incidents',
       riskLevel: 'high',
       testProgress: 0
     },
     {
-      hypothesis: 'Extension delivers enough coverage vs full browser',
-      evidence: '80% of managed fleet stays on Chrome-family',
-      killCriteria: 'If customer base shifts to Safari/Firefox >30%, need cross-browser port',
+      hypothesis: 'OAuth abuse is invisible',
+      evidence: 'Quantify unrecognized app connections and prompt feedback',
+      testMethod: 'Surface OAuth grants that security teams didn\'t know existed',
+      killCriteria: 'If teams already have complete OAuth visibility',
+      riskLevel: 'medium',
+      testProgress: 0
+    },
+    {
+      hypothesis: 'Offboarding drift is common',
+      evidence: 'Surface residual sessions after IdP deactivation',
+      testMethod: 'Detect active sessions tied to disabled accounts',
+      killCriteria: 'If organizations have perfect session hygiene',
       riskLevel: 'low',
+      testProgress: 0
+    },
+    {
+      hypothesis: 'Chrome telemetry is operationally useful',
+      evidence: 'Confirm analysts act on Above data in IR flows',
+      testMethod: 'Track investigation workflow improvements and SIEM integration',
+      killCriteria: 'If analysts don\'t change behavior based on our data',
+      riskLevel: 'high',
       testProgress: 0
     }
   ];
@@ -37,7 +48,7 @@ const HypothesesSection = () => {
           borderRadius: 'var(--radius-lg)',
           borderLeft: '4px solid var(--color-primary)'
         }}>
-          <strong>Validation Framework:</strong> These three hypotheses are fundamental to our business model. Each has specific evidence thresholds and kill criteria that will determine Year-1 strategy pivots if validation fails.
+          <strong>Validation Framework:</strong> These four hypotheses are fundamental to proving market need and product-market fit. Each hypothesis has specific testing methods and evidence requirements that validate our core value proposition.
         </div>
 
         <div style={{ 

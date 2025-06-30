@@ -6,50 +6,62 @@ import styles from '../styles/CompanyIndex.module.css';
 const RoadmapSection = () => {
   const roadmapItems = [
     {
-      quarter: 'Q1-Q2',
-      capability: 'Insider heat-map (behavioral drift scoring)',
-      revenue: 'Add-on per-seat fee',
-      hypothesis: 'Browser telemetry + ML = earlier insider signal than DTEX',
+      area: 'Browser telemetry platform',
+      detail: 'Build unified signal layer across all web activity',
+      timeline: 'Q1-Q2 2026',
+      hypothesis: 'Comprehensive browser telemetry creates defensible moat',
       status: 'planned'
     },
     {
-      quarter: 'Q2-Q3',
-      capability: 'Real-time policy actions (block mass export, rogue role change)',
-      revenue: '"Runtime DLP Lite" module',
-      hypothesis: 'Customers will pay to prevent insider misuse, not just observe',
+      area: 'Behavioral risk scoring',
+      detail: 'Add per-user risk index based on drift, intent, misuse',
+      timeline: 'Q2-Q3 2026',
+      hypothesis: 'ML-driven risk scoring enables proactive intervention',
       status: 'planned'
     },
     {
-      quarter: 'Q3-Q4',
-      capability: 'API tie-ins to ZTNA / IdP for session kill, step-up auth',
-      revenue: 'Enterprise tier / workflow credits',
-      hypothesis: 'Orchestrated response drives stickiness and upsell',
+      area: 'Remediation actions',
+      detail: 'Revoke sessions, block app grants, show in-browser banners',
+      timeline: 'Q3-Q4 2026',
+      hypothesis: 'Automated response capabilities drive enterprise adoption',
       status: 'planned'
     },
     {
-      quarter: 'Q4',
-      capability: 'BYOD lightweight agent (Edge + unmanaged Chrome)',
-      revenue: 'Opens EDU & contractor-heavy verticals',
-      hypothesis: 'Privacy gates solvable with FIDO attestation',
+      area: 'Coaching UX',
+      detail: 'Display real-time guidance ("this app is unsanctioned")',
+      timeline: 'Q4 2026',
+      hypothesis: 'User education reduces security incidents proactively',
+      status: 'planned'
+    },
+    {
+      area: 'Manager visibility',
+      detail: 'Heatmaps and summaries by team, org unit, persona',
+      timeline: 'Q1 2027',
+      hypothesis: 'Management dashboards enable organizational behavior insights',
       status: 'planned'
     }
   ];
 
   const icpLayers = [
     {
-      title: 'Existing PhishGuard customers',
-      description: 'Upsell Runtime ITDR to proven successful deployments',
-      icon: 'fas fa-arrow-up'
+      title: 'Year-1 design partners',
+      description: 'Expand successful POVs into full platform deployments',
+      icon: 'fas fa-rocket'
     },
     {
-      title: 'IRM / Insider-Risk programs',
-      description: 'Target financial & healthcare organizations with compliance requirements',
+      title: 'Mid-market with IRM needs',
+      description: 'Target orgs needing insider risk management without dedicated tools',
       icon: 'fas fa-user-shield'
     },
     {
-      title: 'CASB refresh cycles',
-      description: 'Sell as faster/cheaper alternative where Netskope / Skyhigh replacement is planned',
-      icon: 'fas fa-sync-alt'
+      title: 'Chrome Enterprise customers',
+      description: 'Leverage existing Google Workspace relationships for expansion',
+      icon: 'fas fa-chrome'
+    },
+    {
+      title: 'Identity-forward organizations',
+      description: 'Orgs with mature IdP deployments seeking behavioral layer',
+      icon: 'fas fa-id-card'
     }
   ];
 
@@ -59,11 +71,82 @@ const RoadmapSection = () => {
         <div style={{ 
           marginBottom: 'var(--spacing-xl)', 
           padding: 'var(--spacing-lg)', 
-          background: 'var(--bg-secondary)', 
+          background: 'var(--color-background-secondary)', 
           borderRadius: 'var(--border-radius-lg)',
-          borderLeft: '4px solid var(--brand-primary)'
+          borderLeft: '4px solid var(--color-primary)'
         }}>
-          <strong>Year-2 Strategy:</strong> Transition from phishing prevention to full Runtime ITDR platform with insider threat detection, real-time policy enforcement, and orchestrated response capabilities.
+          <strong>Platform Evolution:</strong> Year-2 expansion focuses on building comprehensive behavioral risk platform with automated response capabilities.
+        </div>
+
+        {/* Year-2 Expansion Roadmap Table */}
+        <div style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <table style={{ 
+            width: '100%', 
+            borderCollapse: 'collapse', 
+            marginBottom: 'var(--spacing-lg)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            borderRadius: 'var(--border-radius-md)',
+            overflow: 'hidden',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+          }}>
+            <thead>
+              <tr style={{ 
+                backgroundColor: 'rgba(0, 135, 43, 0.05)',
+                borderBottom: '2px solid rgba(0, 135, 43, 0.1)'
+              }}>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-puzzle-piece" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Area
+                </th>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-info-circle" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Detail
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {roadmapItems.map((item, index) => (
+                <tr key={index} style={{ 
+                  backgroundColor: index % 2 === 1 ? 'rgba(0, 0, 0, 0.02)' : 'transparent',
+                  borderBottom: '1px solid rgba(0, 0, 0, 0.05)'
+                }}>
+                  <td style={{ 
+                    padding: 'var(--spacing-md)', 
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    verticalAlign: 'top'
+                  }}>
+                    <i className="fas fa-arrow-right" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                    {item.area}
+                  </td>
+                  <td style={{ 
+                    padding: 'var(--spacing-md)',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: '1.5',
+                    verticalAlign: 'top'
+                  }}>
+                    {item.detail}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div style={{ 
@@ -136,7 +219,7 @@ const RoadmapSection = () => {
                   fontSize: 'var(--font-size-sm)',
                   marginBottom: 'var(--spacing-md)'
                 }}>
-                  {item.quarter}
+                  {item.timeline}
                 </div>
                 
                 <h3 style={{
@@ -145,7 +228,7 @@ const RoadmapSection = () => {
                   color: 'var(--text-primary)',
                   margin: '0 0 var(--spacing-md) 0'
                 }}>
-                  {item.capability}
+                  {item.area}
                 </h3>
                 
                 <div style={{ display: 'grid', gap: 'var(--spacing-sm)' }}>
@@ -159,7 +242,7 @@ const RoadmapSection = () => {
                     fontSize: 'var(--font-size-sm)'
                   }}>
                     <i className="fas fa-dollar-sign" style={{ color: 'var(--brand-primary)', width: '16px' }} />
-                    <span>{item.revenue}</span>
+                    <span>{item.detail}</span>
                   </div>
                   
                   <div style={{
