@@ -41,16 +41,16 @@ const CompanyIndex = () => {
     };
   }, [handleScroll]);
 
-  // Table of Contents for navigation
+  // Table of Contents for navigation - Updated from NARRATIVE.md
   const tocSections = [
-    { id: 'go-to-market', title: 'Go-to-Market', icon: 'fas fa-chart-line' },
-    { id: 'pov-playbook', title: 'PoV Playbook', icon: 'fas fa-play-circle' },
-    { id: 'metrics', title: 'Success Metrics', icon: 'fas fa-chart-bar' },
-    { id: 'positioning', title: 'Market Position', icon: 'fas fa-crosshairs' },
-    { id: 'roadmap', title: 'Product Roadmap', icon: 'fas fa-road' },
-    { id: 'hypotheses', title: 'Key Hypotheses', icon: 'fas fa-lightbulb' },
-    { id: 'value-proof', title: 'Value Validation', icon: 'fas fa-check-circle' },
-    { id: 'risks', title: 'Risk Mitigation', icon: 'fas fa-shield-alt' },
+    { id: 'go-to-market', title: 'Year-1 Go-to-Market', icon: 'fas fa-chart-line' },
+    { id: 'pov-playbook', title: 'PoV & Success Playbook', icon: 'fas fa-play-circle' },
+    { id: 'metrics', title: 'Metrics That Matter', icon: 'fas fa-chart-bar' },
+    { id: 'positioning', title: 'Replace vs Enhance', icon: 'fas fa-crosshairs' },
+    { id: 'roadmap', title: 'Year-2 Expansion', icon: 'fas fa-road' },
+    { id: 'hypotheses', title: 'Deal-Critical Hypotheses', icon: 'fas fa-lightbulb' },
+    { id: 'value-proof', title: 'Use Cases & Visibility', icon: 'fas fa-eye' },
+    { id: 'risks', title: 'Critical Risks', icon: 'fas fa-shield-alt' },
     { id: 'executive-summary', title: 'Executive Summary', icon: 'fas fa-flag-checkered' }
   ];
 
@@ -68,28 +68,28 @@ const CompanyIndex = () => {
       <div className={styles["hero-wrapper"]}>
         <VisionHero />
         
-        {/* Strategic Overview Cards */}
+        {/* Strategic Overview Cards - Updated from NARRATIVE.md */}
         <div className={styles["overview-cards"]}>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
-              <i className="fas fa-target" />
+              <i className="fas fa-eye" />
             </div>
-            <h3>Mission Critical</h3>
-            <p>Browser-native control plane that sees and stops what every other security tool misses</p>
+            <h3>Real-time Visibility</h3>
+            <p>Post-authentication behavioral visibility into what every user actually does in SaaS and web apps</p>
           </div>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
-              <i className="fas fa-rocket" />
+              <i className="fas fa-clock" />
             </div>
-            <h3>Market Ready</h3>
-            <p>$7-9B TAM with proven go-to-market strategy and immediate customer validation</p>
+            <h3>Weeks, Not Quarters</h3>
+            <p>Fast setup (&lt;1 hr), evidence delivered in Week 1, actionable insights from day one</p>
           </div>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
-              <i className="fas fa-shield-alt" />
+              <i className="fas fa-browser" />
             </div>
-            <h3>Category Leader</h3>
-            <p>Runtime ITDR pioneer with unique post-authentication behavioral visibility</p>
+            <h3>Browser-Native</h3>
+            <p>Chrome-only deployment with no agents, no traffic routing, no log parsing required</p>
           </div>
         </div>
       </div>
@@ -103,11 +103,14 @@ const CompanyIndex = () => {
       {/* Main content with enhanced layout */}
       <main className={styles["company-narrative-content"]}>
         <div className={styles["content-wrapper"]}>
-          {/* Section divider with executive context */}
+          {/* Section divider with executive context - Updated from NARRATIVE.md */}
           <div className={styles["section-divider"]}>
             <div className={styles["divider-content"]}>
               <h2>Strategic Business Narrative</h2>
-              <p>Comprehensive two-year execution plan for Above Security's Runtime Identity Threat Detection & Response platform</p>
+              <p>Real-time visibility into what every user actually does in SaaS and web apps — to detect intent, catch insider threats, and shut down account misuse before it escalates.</p>
+              <div className={styles["narrative-tagline"]}>
+                <strong>Above = post-auth visibility, behavioral detection, and real-time control — built on browser telemetry.</strong>
+              </div>
             </div>
           </div>
 
@@ -139,16 +142,19 @@ const CompanyIndex = () => {
         </div>
       </main>
 
-      {/* Footer with next steps */}
+      {/* Footer with next steps - Updated from NARRATIVE.md */}
       <footer className={styles["narrative-footer"]}>
         <div className={styles["footer-content"]}>
           <div className={styles["footer-cta"]}>
-            <h3>Ready to Transform Your Security Posture?</h3>
-            <p>Discover how Above Security's Runtime ITDR platform can provide the post-authentication visibility your organization needs.</p>
+            <h3>Ready to See What Users Actually Do?</h3>
+            <p>Discover the behavioral evidence your CASB can't see — OAuth grants, session persistence, AI misuse, and insider intent before it becomes an incident.</p>
+            <div className={styles["footer-highlight"]}>
+              <p><strong>We give teams visibility into user behavior they've never had — and we do it in weeks, not quarters.</strong></p>
+            </div>
             <div className={styles["footer-actions"]}>
               <a href="/use-cases" className={styles["cta-button"]}>
-                <i className="fas fa-layer-group" />
-                Explore Use Cases
+                <i className="fas fa-eye" />
+                See Use Cases & Visibility
               </a>
               <a href="/slides" className={styles["cta-button-secondary"]}>
                 <i className="fas fa-presentation" />

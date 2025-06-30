@@ -5,41 +5,45 @@ import PositioningCard from '../components/PositioningCard';
 const PositioningSection = () => {
   const positioningData = [
     {
-      tool: 'Secure Email Gateway',
-      stance: 'Enhance',
+      tool: 'CASB / DLP',
+      stance: 'Enhance ❌',
       stanceType: 'enhance',
-      talkTrack: '"...we catch what slips after the click."',
-      risk: 'Duplication worries – show pass-through integration',
-      icon: 'fas fa-envelope-open-text'
+      talkTrack: 'We see user behavior *before* files move or traffic is flagged',
+      risk: 'Buyer claims: "CASB already does this"',
+      counterMeasure: 'Show behavioral evidence CASB *can\'t* see — UI actions, OAuth detail, ChatGPT misuse',
+      icon: 'fas fa-cloud'
     },
     {
-      tool: 'CASB / SSE',
-      stance: 'Augment now, muzzle later (Year-2)',
-      stanceType: 'augment',
-      talkTrack: '"...CASB sees traffic; we see intent in the UI. Eventually we can enforce same policies without PAC files."',
-      risk: 'Must not appear as direct rip-and-replace too early',
-      icon: 'fas fa-cloud-upload-alt'
+      tool: 'SSPM',
+      stance: 'Enhance ❌',
+      stanceType: 'enhance',
+      talkTrack: 'We show *usage*, not just config posture',
+      risk: 'Limited differentiation on config monitoring',
+      counterMeasure: 'Focus on behavioral risk vs. configuration compliance',
+      icon: 'fas fa-cog'
     },
     {
-      tool: 'Push Security',
-      stance: 'Supersede',
-      stanceType: 'supersede',
-      talkTrack: '"Push v2 = us + detection + coaching + SIEM timelines."',
-      risk: 'Need proof on richer detections',
-      icon: 'fas fa-mobile-alt'
+      tool: 'EDR/XDR',
+      stance: 'Enhance ❌',
+      stanceType: 'enhance',
+      talkTrack: 'We add browser identity-level session context',
+      risk: 'Endpoint tools claim browser coverage',
+      counterMeasure: 'Show post-authentication session detail that EDR misses',
+      icon: 'fas fa-desktop'
     },
     {
-      tool: 'Enterprise Browser',
-      stance: 'Lightweight alternative',
-      stanceType: 'alternative',
-      talkTrack: '"Same runtime control without forcing browser swap."',
-      risk: 'Browser replacement vendors will spread FUD on extension bypass – have answer',
-      icon: 'fas fa-globe'
+      tool: 'UEBA',
+      stance: 'Replace ✅ (often shelved)',
+      stanceType: 'replace',
+      talkTrack: 'Ours works in real time, no SIEM needed',
+      risk: 'UEBA solutions often already purchased but unused',
+      counterMeasure: 'Position as "UEBA that actually works" with immediate value',
+      icon: 'fas fa-chart-line'
     }
   ];
 
   return (
-    <SectionContainer id="positioning" title="4 | REPLACE vs ENHANCE – POSITIONING">
+    <SectionContainer id="positioning" title="4 | REPLACE vs ENHANCE — POSITIONING">
       <div>
         <div style={{ 
           marginBottom: 'var(--spacing-xl)', 
@@ -48,7 +52,104 @@ const PositioningSection = () => {
           borderRadius: 'var(--border-radius-lg)',
           borderLeft: '4px solid var(--brand-primary)'
         }}>
-          <strong>Strategic Positioning:</strong> Our approach varies by tool category - we enhance email security, augment network tools, supersede point solutions, and provide lightweight alternatives to heavyweight browsers. Each positioning requires specific risk mitigation strategies.
+          <strong>Strategic Positioning:</strong> We enhance existing security tools by providing behavioral visibility they lack, while positioning to replace UEBA solutions that organizations have often shelved due to complexity and lack of actionable insights.
+        </div>
+
+        {/* Replace vs Enhance Table */}
+        <div style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <table style={{ 
+            width: '100%', 
+            borderCollapse: 'collapse', 
+            marginBottom: 'var(--spacing-lg)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            borderRadius: 'var(--border-radius-md)',
+            overflow: 'hidden',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+          }}>
+            <thead>
+              <tr style={{ 
+                backgroundColor: 'rgba(0, 135, 43, 0.05)',
+                borderBottom: '2px solid rgba(0, 135, 43, 0.1)'
+              }}>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-tools" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Tool
+                </th>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'center',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-exchange-alt" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Replace?
+                </th>
+                <th style={{ 
+                  padding: 'var(--spacing-md)', 
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 'var(--font-size-sm)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  <i className="fas fa-plus-circle" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Enhance How?
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {positioningData.map((item, index) => (
+                <tr key={index} style={{ 
+                  backgroundColor: index % 2 === 1 ? 'rgba(0, 0, 0, 0.02)' : 'transparent',
+                  borderBottom: '1px solid rgba(0, 0, 0, 0.05)'
+                }}>
+                  <td style={{ 
+                    padding: 'var(--spacing-md)', 
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    verticalAlign: 'top'
+                  }}>
+                    <i className={item.icon} style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                    {item.tool}
+                  </td>
+                  <td style={{ 
+                    padding: 'var(--spacing-md)',
+                    textAlign: 'center',
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-lg)',
+                    verticalAlign: 'top'
+                  }}>
+                    <span style={{ 
+                      color: item.stance.includes('❌') ? '#dc3545' : '#28a745',
+                      fontSize: 'var(--font-size-xl)'
+                    }}>
+                      {item.stance}
+                    </span>
+                  </td>
+                  <td style={{ 
+                    padding: 'var(--spacing-md)',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: '1.5',
+                    verticalAlign: 'top'
+                  }}>
+                    {item.talkTrack}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div style={{ 
