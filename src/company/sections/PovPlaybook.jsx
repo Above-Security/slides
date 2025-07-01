@@ -26,7 +26,7 @@ const PovPlaybook = () => {
       phase: 'Week 3 – Outcomes',
       days: '15 → 21 days',
       objectives: 'Deliver session visibility report + validate with security owner',
-      activities: 'Present findings, demonstrate unique insights, validate operational value',
+      activities: 'Present findings, demonstrate unique insights, validate operational value, provide session timeline + context for HR/legal, optional user nudge for risky behavior',
       exitCriteria: 'Buyer confirms: "We had no other tool that could show us this"',
       phaseNumber: '3'
     }

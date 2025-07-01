@@ -4,7 +4,7 @@
 
 ## ✅ Vision in One Sentence
 
-> Real-time visibility into what every user actually does in SaaS and web apps — to detect intent, catch insider threats, and shut down account misuse before it escalates.
+> Real-time visibility into user behavior inside SaaS and browsers — to detect risky activity, guide users in the moment, and protect data without changing how users work.
 
 ---
 

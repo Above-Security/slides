@@ -57,6 +57,24 @@ const MetricsSection = () => {
       target: 'Top 5% flagged',
       icon: 'fas fa-chart-heat',
       variant: 'intelligence'
+    },
+    {
+      dimension: 'Risky behavior nudges delivered',
+      description: 'Real-time user guidance and policy enforcement effectiveness',
+      kpi: 'In-browser nudges delivered to users',
+      baseline: '0',
+      target: '>500/month',
+      icon: 'fas fa-hand-point-right',
+      variant: 'coaching'
+    },
+    {
+      dimension: 'Users with behavior timelines',
+      description: 'Comprehensive session context available for HR/legal investigations',
+      kpi: 'Users with detailed behavioral timelines',
+      baseline: '0%',
+      target: '100% monitored users',
+      icon: 'fas fa-timeline',
+      variant: 'forensics'
     }
   ];
 

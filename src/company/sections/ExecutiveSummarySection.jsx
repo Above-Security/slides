@@ -6,10 +6,10 @@ const ExecutiveSummarySection = () => (
   <SectionContainer id="executive-summary" title="9 | EXECUTIVE SUMMARY (TL;DR)">
     <div>
       <ul>
-        <li><strong>Above gives you real-time visibility</strong> into what users actually do in SaaS, browsers, and unsanctioned apps.</li>
-        <li><strong>Detects intent-based insider risk:</strong> gray-area misuse, role drift, offboarding gaps, AI workarounds, OAuth abuse.</li>
+        <li><strong>Above gives you real-time visibility</strong> into what users actually do in SaaS apps, browsers, and unsanctioned tools.</li>
+        <li><strong>Nudges users</strong> with in-browser guidance to prevent risky behavior before it becomes an incident.</li>
+        <li><strong>Helps HR/legal investigate</strong> with detailed behavioral timelines and session context.</li>
         <li><strong>Browser-native, Chrome-only, fast to deploy.</strong> No agents, no traffic routing, no log parsing.</li>
-        <li><strong>Not just a new category</strong> — a usable layer of signal and accountability that every org needs.</li>
       </ul>
       <div className={styles["final-statement"]}>
         <strong>We give teams visibility into user behavior they've never had — and we do it in weeks, not quarters.</strong>

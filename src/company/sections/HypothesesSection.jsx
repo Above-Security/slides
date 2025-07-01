@@ -35,6 +35,22 @@ const HypothesesSection = () => {
       killCriteria: 'If analysts don\'t change behavior based on our data',
       riskLevel: 'high',
       testProgress: 0
+    },
+    {
+      hypothesis: 'Real-time nudges improve security',
+      evidence: 'Users respond positively to in-browser guidance',
+      testMethod: 'Measure user compliance with policy nudges and behavior change',
+      killCriteria: 'If users ignore or disable nudges consistently',
+      riskLevel: 'medium',
+      testProgress: 0
+    },
+    {
+      hypothesis: 'Post-incident timeline matters',
+      evidence: 'HR/legal teams value detailed behavioral context',
+      testMethod: 'Track usage of session timelines in investigations',
+      killCriteria: 'If timeline data doesn\'t influence investigation outcomes',
+      riskLevel: 'low',
+      testProgress: 0
     }
   ];
 
