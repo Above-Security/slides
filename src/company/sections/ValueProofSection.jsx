@@ -24,6 +24,12 @@ const ValueProofSection = () => {
       priority: 'high'
     },
     {
+      category: 'Real-time nudging',
+      whatWeSee: 'In-browser policy-based user guidance',
+      icon: 'fas fa-hand-point-right',
+      priority: 'high'
+    },
+    {
       category: 'SaaS misuse',
       whatWeSee: 'Shadow tools, exports, public shares',
       icon: 'fas fa-cloud-download-alt',

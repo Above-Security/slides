@@ -6,7 +6,7 @@ const PositioningSection = () => {
   const positioningData = [
     {
       tool: 'CASB / DLP',
-      stance: 'Enhance ❌',
+      stance: 'Enhance',
       stanceType: 'enhance',
       talkTrack: 'We see user behavior *before* files move or traffic is flagged',
       risk: 'Buyer claims: "CASB already does this"',
@@ -15,7 +15,7 @@ const PositioningSection = () => {
     },
     {
       tool: 'SSPM',
-      stance: 'Enhance ❌',
+      stance: 'Enhance',
       stanceType: 'enhance',
       talkTrack: 'We show *usage*, not just config posture',
       risk: 'Limited differentiation on config monitoring',
@@ -24,7 +24,7 @@ const PositioningSection = () => {
     },
     {
       tool: 'EDR/XDR',
-      stance: 'Enhance ❌',
+      stance: 'Enhance',
       stanceType: 'enhance',
       talkTrack: 'We add browser identity-level session context',
       risk: 'Endpoint tools claim browser coverage',
@@ -33,9 +33,9 @@ const PositioningSection = () => {
     },
     {
       tool: 'UEBA',
-      stance: 'Replace ✅ (often shelved)',
+      stance: 'Replace',
       stanceType: 'replace',
-      talkTrack: 'Ours works in real time, no SIEM needed',
+      talkTrack: 'Faster deployment, real-time SaaS focus, no SIEM complexity (often shelved)',
       risk: 'UEBA solutions often already purchased but unused',
       counterMeasure: 'Position as "UEBA that actually works" with immediate value',
       icon: 'fas fa-chart-line'
@@ -52,7 +52,7 @@ const PositioningSection = () => {
           borderRadius: 'var(--border-radius-lg)',
           borderLeft: '4px solid var(--brand-primary)'
         }}>
-          <strong>Strategic Positioning:</strong> We enhance existing security tools by providing behavioral visibility they lack, while positioning to replace UEBA solutions that organizations have often shelved due to complexity and lack of actionable insights.
+          <strong>Strategic Positioning:</strong> Above is <em>not</em> a new DLP or UBA... we complement existing tools by providing behavioral visibility they lack, while positioning to replace UEBA solutions that organizations have often shelved due to complexity and lack of actionable insights.
         </div>
 
         {/* Replace vs Enhance Table */}
@@ -92,8 +92,8 @@ const PositioningSection = () => {
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px'
                 }}>
-                  <i className="fas fa-exchange-alt" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
-                  Replace?
+                  <i className="fas fa-arrows-alt-h" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+                  Approach
                 </th>
                 <th style={{ 
                   padding: 'var(--spacing-md)', 
@@ -131,12 +131,35 @@ const PositioningSection = () => {
                     fontSize: 'var(--font-size-lg)',
                     verticalAlign: 'top'
                   }}>
-                    <span style={{ 
-                      color: item.stance.includes('❌') ? '#dc3545' : '#28a745',
-                      fontSize: 'var(--font-size-xl)'
-                    }}>
-                      {item.stance}
-                    </span>
+                    {item.stanceType === 'enhance' ? (
+                      <span style={{ 
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        padding: 'var(--spacing-xs) var(--spacing-sm)',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        color: '#28a745',
+                        borderRadius: 'var(--border-radius-sm)',
+                        fontSize: 'var(--font-size-sm)',
+                        fontWeight: '600'
+                      }}>
+                        <i className="fas fa-plus-circle" style={{ marginRight: '6px' }}></i>
+                        {item.stance}
+                      </span>
+                    ) : (
+                      <span style={{ 
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        padding: 'var(--spacing-xs) var(--spacing-sm)',
+                        backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                        color: '#856404',
+                        borderRadius: 'var(--border-radius-sm)',
+                        fontSize: 'var(--font-size-sm)',
+                        fontWeight: '600'
+                      }}>
+                        <i className="fas fa-exchange-alt" style={{ marginRight: '6px' }}></i>
+                        {item.stance}
+                      </span>
+                    )}
                   </td>
                   <td style={{ 
                     padding: 'var(--spacing-md)',
