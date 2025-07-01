@@ -280,13 +280,184 @@ const GoToMarket = () => (
 				</table>
 			</div>
 
-			<h3>1.1 How We Sell (Motion)</h3>
-			<MotionTimeline phases={phases} />
+			<h3 style={{
+				fontSize: 'var(--font-size-2xl)',
+				fontWeight: '700',
+				color: 'var(--color-text-primary)',
+				marginBottom: 'var(--spacing-lg)'
+			}}>
+				<i className="fas fa-handshake" style={{ marginRight: '12px', color: 'var(--color-primary)' }}></i>
+				1.1 How We Sell (Motion)
+			</h3>
+			
+			{/* Clean Timeline Cards */}
+			<div style={{
+				display: 'flex',
+				flexDirection: 'column',
+				gap: 'var(--spacing-xl)',
+				marginBottom: 'var(--spacing-xl)'
+			}}>
+				{phases.map((phase, index) => (
+					<div key={index} style={{
+						background: 'var(--color-background-primary)',
+						border: '1px solid rgba(0, 135, 43, 0.15)',
+						borderRadius: 'var(--border-radius-md)',
+						padding: 'var(--spacing-lg)',
+						position: 'relative',
+						borderLeft: '4px solid var(--color-primary)'
+
+					}}>
+						{/* Phase Header */}
+						<div style={{
+							display: 'flex',
+							alignItems: 'center',
+							marginBottom: 'var(--spacing-md)'
+						}}>
+							<div style={{
+								width: '44px',
+								height: '44px',
+								borderRadius: '50%',
+								background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								marginRight: 'var(--spacing-md)',
+								color: 'white',
+								boxShadow: '0 4px 8px rgba(0, 135, 43, 0.3)'
+							}}>
+								<i className={phase.icon} style={{ fontSize: '20px' }}></i>
+							</div>
+							<h4 style={{
+								margin: 0,
+								fontSize: 'calc(var(--font-size-xl) * 1.1)',
+								fontWeight: '700',
+								color: 'var(--color-text-primary)',
+								letterSpacing: '-0.5px'
+							}}>
+								{phase.stage}
+							</h4>
+						</div>
+						
+						{/* Phase Details Grid */}
+						<div style={{
+							display: 'grid',
+							gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+							gap: 'var(--spacing-md)',
+							marginBottom: 'var(--spacing-md)'
+						}}>
+							<div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-xs) * 1.1)', 
+									fontWeight: '700', 
+									color: 'var(--color-primary)',
+									textTransform: 'uppercase',
+									marginBottom: 'var(--spacing-xs)',
+									letterSpacing: '0.5px'
+								}}>
+									<i className="fas fa-route" style={{ marginRight: '6px' }}></i>
+									Channel
+								</div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-sm) * 1.1)', 
+									color: 'var(--color-text-secondary)',
+									lineHeight: '1.5',
+									fontWeight: '500'
+								}}>
+									{phase.channel}
+								</div>
+							</div>
+							
+							<div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-xs) * 1.1)', 
+									fontWeight: '700', 
+									color: 'var(--color-primary)',
+									textTransform: 'uppercase',
+									marginBottom: 'var(--spacing-xs)',
+									letterSpacing: '0.5px'
+								}}>
+									<i className="fas fa-user-tie" style={{ marginRight: '6px' }}></i>
+									Champion
+								</div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-sm) * 1.1)', 
+									color: 'var(--color-text-secondary)',
+									lineHeight: '1.5',
+									fontWeight: '500'
+								}}>
+									{phase.champion}
+								</div>
+							</div>
+							
+							<div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-xs) * 1.1)', 
+									fontWeight: '700', 
+									color: 'var(--color-primary)',
+									textTransform: 'uppercase',
+									marginBottom: 'var(--spacing-xs)',
+									letterSpacing: '0.5px'
+								}}>
+									<i className="fas fa-cogs" style={{ marginRight: '6px' }}></i>
+									Model
+								</div>
+								<div style={{ 
+									fontSize: 'calc(var(--font-size-sm) * 1.1)', 
+									color: 'var(--color-text-secondary)',
+									lineHeight: '1.5',
+									fontWeight: '500'
+								}}>
+									{phase.model}
+								</div>
+							</div>
+						</div>
+						
+						{/* Risk Warning */}
+						<div style={{
+							display: 'flex',
+							alignItems: 'center',
+							padding: 'var(--spacing-sm)',
+							backgroundColor: 'rgba(255, 193, 7, 0.08)',
+							borderRadius: 'var(--border-radius-sm)',
+							border: '1px solid rgba(255, 193, 7, 0.2)'
+						}}>
+							<i className="fas fa-exclamation-triangle" style={{ 
+								marginRight: '8px', 
+								color: '#f39c12',
+								fontSize: 'var(--font-size-sm)'
+							}}></i>
+							<div>
+								<span style={{ 
+									fontSize: 'calc(var(--font-size-xs) * 1.1)', 
+									fontWeight: '700', 
+									color: '#856404',
+									textTransform: 'uppercase',
+									letterSpacing: '0.5px'
+								}}>
+									Risk: 
+								</span>
+								<span style={{ 
+									fontSize: 'calc(var(--font-size-sm) * 1.1)', 
+									color: '#856404',
+									marginLeft: '4px',
+									fontWeight: '500',
+									lineHeight: '1.4'
+								}}>
+									{phase.risk}
+								</span>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+			
 			<CalloutBox variant="hook">
 				<em>
+					<i className="fas fa-quote-left" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
 					"Real-time visibility into what every user actually does in SaaS and web
 					apps — to detect intent, catch insider threats, and shut down account
 					misuse before it escalates."
+					<i className="fas fa-quote-right" style={{ marginLeft: '8px', color: 'var(--color-primary)' }}></i>
 				</em>
 			</CalloutBox>
 

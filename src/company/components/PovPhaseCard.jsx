@@ -5,9 +5,6 @@ const PovPhaseCard = ({ phase, days, objectives, activities, exitCriteria, phase
   return (
     <div className={`${styles['pov-phase-card']} ${isActive ? styles['pov-phase-card--active'] : ''}`}>
       <div className={styles['pov-phase-header']}>
-        <div className={styles['phase-number']}>
-          {phaseNumber}
-        </div>
         <div className={styles['phase-info']}>
           <h3 className={styles['phase-title']}>{phase}</h3>
           <span className={styles['phase-duration']}>{days}</span>

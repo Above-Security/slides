@@ -466,6 +466,7 @@ main {
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
     position: relative;
+    align-items: flex-start;
 }
 
 .timeline-marker {
@@ -474,28 +475,25 @@ main {
     align-items: center;
     flex-shrink: 0;
     position: relative;
+    padding-top: var(--spacing-sm);
 }
 
 .timeline-dot {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    border: 3px solid var(--color-background-primary);
-    box-shadow: var(--shadow-sm);
+    /* Styles are now handled inline in the component for better control */
     position: relative;
     z-index: 2;
 }
 
 .timeline-line {
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: var(--color-border-primary);
+    background: linear-gradient(180deg, var(--color-primary), rgba(0, 135, 43, 0.3));
     position: absolute;
-    top: 24px;
+    top: 52px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    border-radius: 2px;
 }
 
 .timeline-content {
@@ -506,6 +504,7 @@ main {
     border: 1px solid var(--color-border-primary);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
+    margin-top: calc(-1 * var(--spacing-sm));
 }
 
 .timeline-content:hover {
