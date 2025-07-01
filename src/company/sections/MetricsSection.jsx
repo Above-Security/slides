@@ -19,7 +19,7 @@ const MetricsSection = () => {
       kpi: 'Time to detect privilege drift and session abuse',
       baseline: 'Days/weeks',
       target: 'Real-time',
-      icon: 'fas fa-radar',
+      icon: 'fas fa-stopwatch',
       variant: 'performance'
     },
     {
@@ -55,7 +55,7 @@ const MetricsSection = () => {
       kpi: 'High-risk users identified proactively',
       baseline: 'Unknown',
       target: 'Top 5% flagged',
-      icon: 'fas fa-chart-heat',
+      icon: 'fas fa-fire',
       variant: 'intelligence'
     },
     {

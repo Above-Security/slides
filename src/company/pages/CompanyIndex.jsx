@@ -86,7 +86,7 @@ const CompanyIndex = () => {
           </div>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
-              <i className="fas fa-browser" />
+              <i className="fas fa-globe" />
             </div>
             <h3>Browser-Native</h3>
             <p>Chrome-only deployment with no agents, no traffic routing, no log parsing required</p>

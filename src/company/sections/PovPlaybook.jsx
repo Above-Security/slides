@@ -273,18 +273,26 @@ const PovPlaybook = () => {
                   <div 
                     className={styles["timeline-dot"]}
                     style={{
-                      background: index === 1 ? 'var(--color-primary)' : 'var(--color-text-secondary)',
+                      background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
                       color: 'white',
-                      fontSize: '16px',
+                      fontSize: '18px',
                       fontWeight: 'bold',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      width: '48px',
-                      height: '48px'
+                      width: '52px',
+                      height: '52px',
+                      borderRadius: '50%',
+                      boxShadow: index === 1 ? '0 4px 12px rgba(0, 135, 43, 0.4)' : '0 2px 8px rgba(0, 0, 0, 0.2)',
+                      border: '3px solid white',
+                      transition: 'all 0.3s ease'
                     }}
                   >
-                    {phase.phaseNumber}
+                    <i className={
+                      index === 0 ? 'fas fa-play' : 
+                      index === 1 ? 'fas fa-eye' : 
+                      'fas fa-trophy'
+                    } style={{ fontSize: '20px' }}></i>
                   </div>
                   
                   {/* Timeline Line */}
@@ -301,7 +309,6 @@ const PovPlaybook = () => {
                     objectives={phase.objectives}
                     activities={phase.activities}
                     exitCriteria={phase.exitCriteria}
-                    phaseNumber={phase.phaseNumber}
                     isActive={index === 1}
                   />
                 </div>
