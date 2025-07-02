@@ -15,6 +15,7 @@ import {
 import FloatingTOCDemo from './company/pages/FloatingTOCDemo';
 import SectionContainerDemo from './company/pages/SectionContainerDemo';
 import InsiderThreatMatrix from './pages/InsiderThreatMatrix';
+import InsiderThreatDeck from './pages/InsiderThreatDeck';
 import './App.css';
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
       <Route path="/company/toc-demo" element={<FloatingTOCDemo />} />
       <Route path="/company/section-demo" element={<SectionContainerDemo />} />
       <Route path="/insider-threat-matrix" element={<InsiderThreatMatrix />} />
+      <Route path="/insider-threat-deck" element={<InsiderThreatDeck />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
