@@ -10,7 +10,7 @@ const SlideBusinessCase = () => {
     <SlideLayout>
       <header className="slide-header">
         <h1 className="slide-title">Business Case for Above Security</h1>
-        <p className="slide-subtitle">Runtime ITDR Platform</p>
+        <p className="slide-subtitle">Insider Protection Platform</p>
       </header>
 
       <div className="content-section">
@@ -18,14 +18,19 @@ const SlideBusinessCase = () => {
         <section style={{ marginBottom: '48px' }}>
           <div className="executive-summary">
             <h2 className="summary-title">
-              <i className="fas fa-trophy"></i>
-              Strategic Market Positioning
+              <i className="fas fa-layer-group"></i>
+              Tool Consolidation & Market Opportunity
             </h2>
             <p className="summary-text">
-              Above's browser-native runtime intelligence positions us to capture significant share across
-              <strong> $7-9B in serviceable TAM</strong> with double-digit CAGR—sufficient headroom for a
-              <strong> $10B+ revenue target by early 2030s</strong>.
+              CISOs are actively seeking to <strong>replace 2-3 point solutions</strong> with Above's unified insider protection platform.
+              Our browser-native approach positions us to capture significant share across
+              <strong> $7-9B in serviceable TAM</strong> with double-digit CAGR.
             </p>
+            <div style={{ marginTop: '16px', padding: '16px', backgroundColor: 'var(--bg-success)', borderRadius: '8px', border: '2px solid var(--brand-primary)' }}>
+              <p style={{ fontSize: '1.1rem', fontWeight: 500, margin: 0, color: 'var(--brand-primary)' }}>
+                <i className="fas fa-quote-left"></i> "If I can replace SSPM + DLP + something else with this, I'm in." — I.B, CISO Advisor
+              </p>
+            </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginTop: '32px' }}>
@@ -41,15 +46,23 @@ const SlideBusinessCase = () => {
                   <div style={{ display: 'grid', gap: '12px' }}>
                     <div style={{ padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '6px', border: '1px solid var(--brand-primary)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                        <span style={{ fontWeight: 600 }}>🥇 Identity Threat Detection (ITDR)</span>
-                        <strong style={{ color: 'var(--brand-primary)' }}>$13B</strong>
+                        <span style={{ fontWeight: 600 }}>🥇 Insider Protection (DLP + UEBA)</span>
+                        <strong style={{ color: 'var(--brand-primary)' }}>$15B</strong>
                       </div>
-                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>22-23% CAGR | Perfect fit: post-auth signals</div>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>25% CAGR | Replace Cyberhaven, Exabeam portions</div>
                     </div>
 
                     <div style={{ padding: '8px', backgroundColor: 'var(--surface-secondary)', borderRadius: '6px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                        <span style={{ fontWeight: 600 }}>🥈 Insider Risk Management (IRM)</span>
+                        <span style={{ fontWeight: 600 }}>🥈 SaaS Security Posture (SSPM)</span>
+                        <strong>$8B</strong>
+                      </div>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>30% CAGR | Real-time behavior vs. configuration</div>
+                    </div>
+
+                    <div style={{ padding: '8px', backgroundColor: 'var(--surface-secondary)', borderRadius: '6px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                        <span style={{ fontWeight: 600 }}>🥉 Insider Risk Management (IRM)</span>
                         <strong style={{ color: 'var(--brand-primary)' }}>$2B+</strong>
                       </div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>18% CAGR | High fit: runtime intent detection</div>
