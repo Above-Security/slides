@@ -68,7 +68,19 @@ const CompanyIndex = () => {
       <div className={styles["hero-wrapper"]}>
         <VisionHero />
         
-        {/* Strategic Overview Cards - Updated from NARRATIVE.md */}
+        {/* Action Buttons - Moved to top */}
+        <div className={styles["hero-actions"]}>
+          <a href="/#/insider-threat-matrix" className={styles["primary-cta-button"]}>
+            <i className="fas fa-shield-alt" />
+            Explore Insider Threat Matrix
+          </a>
+          <a href="/#/slides" className={styles["secondary-cta-button"]}>
+            <i className="fas fa-presentation" />
+            View Presentation Deck
+          </a>
+        </div>
+        
+        {/* Strategic Overview Cards with integrated quotes */}
         <div className={styles["overview-cards"]}>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
@@ -76,6 +88,10 @@ const CompanyIndex = () => {
             </div>
             <h3>Real-time Visibility</h3>
             <p>Post-authentication behavioral visibility into what every user actually does in SaaS and web apps</p>
+            <div className={styles["card-quote"]}>
+              <em>"This is the first tool I've seen that tells me what's happening after login."</em>
+              <span>— Carl, former CISO @ Johnson Controls</span>
+            </div>
           </div>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
@@ -83,6 +99,10 @@ const CompanyIndex = () => {
             </div>
             <h3>Weeks, Not Quarters</h3>
             <p>Fast setup (&lt;1 hr), evidence delivered in Week 1, actionable insights from day one</p>
+            <div className={styles["card-quote"]}>
+              <em>"If I can replace Cyberhaven + SSPM with this, I'm in."</em>
+              <span>— Israel, CISO @ MIO Partners</span>
+            </div>
           </div>
           <div className={styles["overview-card"]}>
             <div className={styles["card-icon"]}>
@@ -90,6 +110,10 @@ const CompanyIndex = () => {
             </div>
             <h3>Browser-Native</h3>
             <p>Chrome-only deployment with no agents, no traffic routing, no log parsing required</p>
+            <div className={styles["card-quote"]}>
+              <em>"I want to guide users, not punish them. Real-time nudges are powerful."</em>
+              <span>— Leon, CISO @ OpenLane</span>
+            </div>
           </div>
         </div>
       </div>
@@ -110,6 +134,12 @@ const CompanyIndex = () => {
               <p>Real-time visibility into what every user actually does in SaaS and web apps — to detect intent, catch insider threats, and shut down account misuse before it escalates.</p>
               <div className={styles["narrative-tagline"]}>
                 <strong>Above = post-auth visibility, behavioral detection, and real-time control — built on browser telemetry.</strong>
+              </div>
+              <div className={styles["ciso-insight"]}>
+                <blockquote>
+                  "We don't call it insider threat anymore. We call it <strong>insider protection</strong>."
+                </blockquote>
+                <cite>— Janel, Field CISO @ Trace3</cite>
               </div>
             </div>
           </div>
@@ -142,6 +172,76 @@ const CompanyIndex = () => {
         </div>
       </main>
 
+      {/* CISO Advisory Board Quotes Section */}
+      <section className={styles["ciso-quotes-section"]}>
+        <div className={styles["content-wrapper"]}>
+          <div className={styles["section-header"]}>
+            <h2>What CISOs Are Saying</h2>
+            <p>Insights from our advisory board validate Above's unique position in insider protection</p>
+          </div>
+          
+          <div className={styles["quotes-grid"]}>
+            <div className={styles["quote-card"]}>
+              <div className={styles["quote-content"]}>
+                <blockquote>
+                  "This is the first tool I've seen that tells me what's happening <em>after</em> login."
+                </blockquote>
+                <cite>— Carl, former CISO at Johnson Controls</cite>
+              </div>
+            </div>
+            
+            <div className={styles["quote-card"]}>
+              <div className={styles["quote-content"]}>
+                <blockquote>
+                  "I want to guide users, not punish them. Real-time nudges are powerful."
+                </blockquote>
+                <cite>— Leon, CISO at OpenLane</cite>
+              </div>
+            </div>
+            
+            <div className={styles["quote-card"]}>
+              <div className={styles["quote-content"]}>
+                <blockquote>
+                  "If I can replace Cyberhaven + SSPM with this, I'm in."
+                </blockquote>
+                <cite>— Israel, CISO at MIO Partners</cite>
+              </div>
+            </div>
+            
+            <div className={styles["quote-card"]}>
+              <div className={styles["quote-content"]}>
+                <blockquote>
+                  "We don't call it insider threat anymore. We call it <strong>insider protection</strong>."
+                </blockquote>
+                <cite>— Janel, Field CISO @ Trace3</cite>
+              </div>
+            </div>
+          </div>
+          
+          <div className={styles["ciso-insights"]}>
+            <h3>Key Validated Themes</h3>
+            <div className={styles["insights-grid"]}>
+              <div className={styles["insight-item"]}>
+                <i className="fas fa-eye" />
+                <span><strong>Post-login visibility</strong> fills a critical blind spot</span>
+              </div>
+              <div className={styles["insight-item"]}>
+                <i className="fas fa-shield-alt" />
+                <span><strong>Insider protection</strong> over threat detection</span>
+              </div>
+              <div className={styles["insight-item"]}>
+                <i className="fas fa-compress-arrows-alt" />
+                <span><strong>Tool consolidation</strong> is a priority for 2025</span>
+              </div>
+              <div className={styles["insight-item"]}>
+                <i className="fas fa-users" />
+                <span><strong>Real-time guidance</strong> prevents user mistakes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer with next steps - Updated from NARRATIVE.md */}
       <footer className={styles["narrative-footer"]}>
         <div className={styles["footer-content"]}>
@@ -152,13 +252,9 @@ const CompanyIndex = () => {
               <p><strong>We give teams visibility into user behavior they've never had — and we do it in weeks, not quarters.</strong></p>
             </div>
             <div className={styles["footer-actions"]}>
-              <a href="/use-cases" className={styles["cta-button"]}>
-                <i className="fas fa-eye" />
-                See Use Cases & Visibility
-              </a>
-              <a href="/slides" className={styles["cta-button-secondary"]}>
-                <i className="fas fa-presentation" />
-                View Executive Deck
+              <a href="/#/insider-threat-matrix" className={styles["cta-button"]}>
+                <i className="fas fa-shield-alt" />
+                Explore Insider Threat Matrix
               </a>
             </div>
           </div>

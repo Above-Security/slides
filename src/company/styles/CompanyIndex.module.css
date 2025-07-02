@@ -102,37 +102,45 @@
     margin: 0 auto;
 }
 
-.company-logo {
+/* Company Logo - Ultra-specific to override all global CSS bleeding */
+.company-narrative-container .company-hero .company-logo {
     margin-bottom: var(--spacing-xl);
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.use-cases-logo {
-    height: 72px;
-    width: auto;
-    fill: var(--color-primary);
-    transition: all var(--transition-normal);
+/* Company logo base styles - borrowed from HomePage.css */
+.company-narrative-container .company-hero .company-logo svg.logo.above-company-hero-logo,
+.company-narrative-container .company-hero .company-logo .logo.above-company-hero-logo,
+.company-narrative-container .hero-wrapper .company-hero .company-logo svg.logo.above-company-hero-logo,
+.company-narrative-container .hero-wrapper .company-hero .company-logo .logo.above-company-hero-logo {
+    fill: var(--color-primary, #08872b) !important;
+    filter: drop-shadow(0 4px 8px rgba(0, 135, 43, 0.2)) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    animation: companyLogoFloat 4s ease-in-out infinite !important;
 }
 
-/* Higher specificity to override any conflicting styles */
-.company-hero .company-logo .use-cases-logo,
-.company-logo svg.use-cases-logo,
-svg.use-cases-logo {
-    height: 72px;
-    width: auto;
-    fill: var(--color-primary) !important;
-    transition: all var(--transition-normal);
-    display: block;
+/* Company logo hover effects - borrowed from HomePage.css */
+.company-narrative-container .company-hero .company-logo svg.logo.above-company-hero-logo:hover,
+.company-narrative-container .company-hero .company-logo .logo.above-company-hero-logo:hover,
+.company-narrative-container .hero-wrapper .company-hero .company-logo svg.logo.above-company-hero-logo:hover,
+.company-narrative-container .hero-wrapper .company-hero .company-logo .logo.above-company-hero-logo:hover {
+    fill: var(--color-primary-light, #5fed83) !important;
+    transform: scale(1.05) translateY(-2px) rotate(2deg) !important;
+    filter: drop-shadow(0 6px 12px rgba(0, 135, 43, 0.3)) !important;
 }
 
-.use-cases-logo:hover,
-.company-hero .company-logo .use-cases-logo:hover,
-.company-logo svg.use-cases-logo:hover,
-svg.use-cases-logo:hover {
-    fill: var(--color-primary-light) !important;
-    transform: scale(1.05);
+/* Company-specific logo floating animation - borrowed from HomePage.css */
+@keyframes companyLogoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .company-hero-title {
@@ -313,6 +321,103 @@ main {
     color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
+}
+
+/* Hero Actions */
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin: var(--spacing-2xl) 0 var(--spacing-3xl);
+    flex-wrap: wrap;
+}
+
+.primary-cta-button,
+.secondary-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-cta-button {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-text-inverse);
+    border: none;
+}
+
+.secondary-cta-button {
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.primary-cta-button:hover,
+.secondary-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.primary-cta-button:hover {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+}
+
+.secondary-cta-button:hover {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+/* Card Quotes */
+.card-quote {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border-primary);
+    font-style: italic;
+    font-size: var(--font-size-sm);
+}
+
+.card-quote em {
+    display: block;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.card-quote span {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* CISO Insight */
+.ciso-insight {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(var(--color-primary-rgb), 0.1);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.ciso-insight blockquote {
+    margin: 0 0 var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--color-text-primary);
+}
+
+.ciso-insight cite {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Executive Summary - Component-specific dark theme */
@@ -1497,5 +1602,144 @@ main {
     .hero-wrapper {
         margin: 0 calc(-1 * var(--spacing-lg));
         padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-3xl);
+    }
+}
+
+/* CISO Quotes Section */
+.ciso-quotes-section {
+    background: linear-gradient(135deg, 
+        var(--color-background-secondary) 0%,
+        var(--color-background-primary) 100%);
+    padding: var(--spacing-3xl) 0;
+    margin: var(--spacing-2xl) 0 0;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.quote-card {
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.quote-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-xl);
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    opacity: 0.3;
+    line-height: 1;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-content blockquote {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-md);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.quote-content cite {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-style: normal;
+}
+
+.ciso-insights {
+    margin-top: var(--spacing-3xl);
+    text-align: center;
+}
+
+.ciso-insights h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+}
+
+.insight-item:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-subtle);
+}
+
+.insight-item i {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    min-width: 20px;
+}
+
+.insight-item span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: 1.5;
+}
+
+/* Mobile responsive adjustments for CISO quotes */
+@media (max-width: 768px) {
+    .quotes-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .quote-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .quote-content blockquote {
+        font-size: var(--font-size-base);
+    }
+    
+    .insights-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .insight-item {
+        padding: var(--spacing-md);
+        text-align: left;
     }
 }

@@ -24,7 +24,7 @@ const SlideLandscape = () => (
             <i className="fas fa-trophy"></i> Replace Multiple Tools
           </h4>
           <p style={{ fontSize: '1.1rem', fontWeight: 500 }}>
-            "If I can replace Cyberhaven + something else with this, I'm in." — Israel, CISO Fund Advisor
+            "If I can replace Cyberhaven + something else with this, I'm in." — Leon, F500 CISO Advisor
           </p>
         </div>
       </div>
