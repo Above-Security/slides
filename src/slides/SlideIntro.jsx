@@ -61,6 +61,14 @@ const SlideIntro = () => (
         <p className="summary-text mt-4">
           Above works directly in the browser to capture real user behavior and provide in-browser nudges. We deploy as an extension across any web application — no API integrations, no traffic steering, no SIEM dependency.
         </p>
+        
+        {/* Call to Action */}
+        <div className="slide-cta">
+          <a href="/#/insider-threat-matrix" className="cta-button">
+            <i className="fas fa-shield-alt"></i>
+            Explore Insider Threat Matrix
+          </a>
+        </div>
       </div>
     </div>
   </SlideLayout>

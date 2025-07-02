@@ -6,7 +6,22 @@ const VisionHero = () => (
   <header className={styles["company-hero"]}>
     <div className={styles["hero-content"]}>
       <div className={styles["company-logo"]}>
-        <Logo className="use-cases-logo" />
+        <Logo 
+          className="above-company-hero-logo" 
+          style={{
+            height: '72px',
+            width: '72px',
+            minHeight: '72px',
+            maxHeight: '72px', 
+            minWidth: '72px',
+            maxWidth: '72px',
+            display: 'block',
+            alignItems: 'initial',
+            justifyContent: 'initial',
+            gap: 'initial',
+            flex: 'none'
+          }}
+        />
       </div>
       <h1 className={styles["company-hero-title"]}>Above Strategic Narrative</h1>
       <p className={styles["company-hero-subtitle"]}>Two‑Year Strategic Narrative &amp; Execution Plan</p>
