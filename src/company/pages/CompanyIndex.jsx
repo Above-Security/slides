@@ -242,6 +242,66 @@ const CompanyIndex = () => {
         </div>
       </section>
 
+      {/* Advisory Board Section */}
+      <section className={styles["advisory-board-section"]}>
+        <div className={styles["content-wrapper"]}>
+          <div className={styles["section-header"]}>
+            <h2>Backed by Industry Leaders</h2>
+            <p>Our advisory board includes CEOs, CISOs, and security leaders from the world's most innovative companies</p>
+          </div>
+          
+          <div className={styles["advisors-grid"]}>
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Ofer Ben Noon</h4>
+                <p>CEO @ Talon</p>
+              </div>
+            </div>
+            
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Ofer Smadari</h4>
+                <p>CEO @ Torq</p>
+              </div>
+            </div>
+            
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Etay Bogner</h4>
+                <p>GM @ Proofpoint</p>
+              </div>
+            </div>
+            
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Dan Benjamin</h4>
+                <p>CEO @ Dig</p>
+              </div>
+            </div>
+            
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Karl Mattson</h4>
+                <p>CISO @ Endor Labs</p>
+              </div>
+            </div>
+            
+            <div className={styles["advisor-card"]}>
+              <div className={styles["advisor-info"]}>
+                <h4>Matan Fattal</h4>
+                <p>CEO @ Ivix / Silverfort</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className={styles["additional-advisors"]}>
+            <p className={styles["additional-text"]}>
+              <strong>Plus directors and executives from</strong> Wiz, Island, and other leading security companies
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer with next steps - Updated from NARRATIVE.md */}
       <footer className={styles["narrative-footer"]}>
         <div className={styles["footer-content"]}>
