@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-.company-logo {
+.insider-threat-deck .company-logo {
   margin-bottom: var(--spacing-xl);
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@
 }
 
 /* Center the logo above the header */
-.company-logo.company-logo-centered {
+.insider-threat-deck .company-logo.company-logo-centered {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +63,7 @@
 }
 
 /* Enhanced logo with homepage-style hover effects */
-.company-logo .logo {
+.insider-threat-deck .company-logo .logo {
   height: 72px;
   width: auto;
   fill: var(--color-primary);
@@ -73,13 +73,13 @@
   animation: logoFloat 6s ease-in-out infinite;
 }
 
-.company-logo .logo:hover {
+.insider-threat-deck .company-logo .logo:hover {
   fill: var(--color-primary-light);
   transform: scale(1.05) translateY(-2px) rotate(2deg);
   filter: drop-shadow(0 6px 12px rgba(0, 135, 43, 0.3));
 }
 
-.company-logo .logo path {
+.insider-threat-deck .company-logo .logo path {
   transition: fill 0.3s ease;
 }
 

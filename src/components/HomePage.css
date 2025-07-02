@@ -87,6 +87,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+/* Homepage-specific logo styles */
+.homepage-container .company-logo .logo {
+    width: 60px;
+    height: auto;
+    display: block;
+    fill: var(--brand-primary, #00872b);
+    filter: drop-shadow(0 4px 8px rgba(0, 135, 43, 0.2));
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+.homepage-container .company-logo .logo:hover {
+    fill: var(--color-primary-light, #5fed83);
+    transform: scale(1.05) translateY(-2px) rotate(2deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 135, 43, 0.3));
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .homepage-title {
@@ -348,5 +376,25 @@
     .coming-soon-description {
         font-size: var(--font-size-sm, 0.875rem);
         line-height: 1.5;
+    }
+}
+
+/* Accessibility - Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .homepage-container .company-logo .logo {
+        animation: none;
+    }
+    
+    .homepage-overlay::before {
+        animation: none;
+    }
+    
+    .homepage-overlay {
+        animation: none;
+    }
+    
+    .brand-name::after {
+        animation: none;
+        width: 100%;
     }
 }
