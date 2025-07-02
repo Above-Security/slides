@@ -56,7 +56,7 @@ const packages = [
 const icpItems = [
 	{
 		label: 'Size',
-		text: '100-3,000 employees (mid-market sweet spot)',
+		text: '1000-5,000 employees (mid-market sweet spot)',
 		icon: 'fas fa-users',
 	},
 	{
