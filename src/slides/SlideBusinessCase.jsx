@@ -26,6 +26,24 @@ const SlideBusinessCase = () => {
               Our browser-native approach positions us to capture significant share across
               <strong> $7-9B in serviceable TAM</strong> with double-digit CAGR.
             </p>
+            
+            {/* Compliance Differentiator */}
+            <div style={{ 
+              marginTop: '20px', 
+              padding: '16px', 
+              backgroundColor: 'var(--brand-primary)', 
+              borderRadius: '8px', 
+              color: 'white'
+            }}>
+              <p style={{ fontSize: '1.1rem', fontWeight: 600, margin: 0, display: 'flex', alignItems: 'center' }}>
+                <i className="fas fa-award" style={{ marginRight: '12px', color: '#FFD700' }}></i>
+                <span>Compliance-Ready Documentation: The Ultimate Differentiator</span>
+              </p>
+              <p style={{ fontSize: '0.9rem', margin: '8px 0 0 0', opacity: 0.95 }}>
+                Built-in SOX 404, SOC 2, GDPR, PCI DSS, NIST CSF, and ISO 27001 controls eliminate compliance gaps that plague legacy solutions.
+              </p>
+            </div>
+
             <div style={{ marginTop: '16px', padding: '16px', backgroundColor: 'var(--bg-success)', borderRadius: '8px', border: '2px solid var(--brand-primary)' }}>
               <p style={{ fontSize: '1.1rem', fontWeight: 500, margin: 0, color: 'var(--brand-primary)' }}>
                 <i className="fas fa-quote-left"></i> "If I can replace SSPM + DLP + something else with this, I'm in." — I.B, CISO Advisor
@@ -95,7 +113,24 @@ const SlideBusinessCase = () => {
                       <li><strong>Browser-semantic depth</strong> vs. log-based detection</li>
                       <li><strong>Runtime signals</strong> beat post-facto analysis</li>
                       <li><strong>No proxy pain</strong> - solves SSL pinning gaps</li>
+                      <li><strong>Compliance-first architecture</strong> - audit-ready by design</li>
                     </ul>
+                  </div>
+
+                  {/* Compliance Advantage Callout */}
+                  <div style={{ 
+                    marginBottom: '16px',
+                    padding: '12px',
+                    backgroundColor: 'var(--bg-success)',
+                    borderRadius: '6px',
+                    border: '1px solid var(--brand-primary)'
+                  }}>
+                    <div style={{ fontWeight: 600, marginBottom: '6px', color: 'var(--brand-primary)', fontSize: '0.9rem' }}>
+                      🏆 Compliance Competitive Edge:
+                    </div>
+                    <div style={{ fontSize: '0.8rem', lineHeight: 1.4 }}>
+                      Pre-built controls for SOX 404.B.1, SOC 2 CC6.1, GDPR Art. 32.1(d), PCI DSS 7.1.1, NIST CSF, and ISO 27001 — turn compliance from cost center to competitive advantage.
+                    </div>
                   </div>
 
                   <div>
@@ -104,6 +139,7 @@ const SlideBusinessCase = () => {
                       <li>ITDR incumbents rely on logs, not sessions</li>
                       <li>CASB vendors admit unmanaged browser gaps</li>
                       <li>UEBA consolidating into XDR - signal export opportunity</li>
+                      <li><strong>Compliance documentation gaps</strong> plague legacy tools</li>
                     </ul>
                   </div>
                 </div>
@@ -178,7 +214,22 @@ const SlideBusinessCase = () => {
                         <li>Real-time insider threat detection</li>
                         <li>Audit-grade behavioral logs</li>
                         <li>Compliance visibility</li>
+                        <li><strong>SOX 404 & SOC 2 ready documentation</strong></li>
                       </ul>
+                      
+                      {/* Compliance Badge */}
+                      <div style={{ 
+                        marginTop: '12px', 
+                        padding: '8px', 
+                        backgroundColor: 'var(--bg-success)', 
+                        borderRadius: '6px',
+                        textAlign: 'center',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        color: 'var(--brand-primary)'
+                      }}>
+                        🏆 Enterprise Compliance Controls
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -201,7 +252,22 @@ const SlideBusinessCase = () => {
                         <li>Easy browser-native deployment</li>
                         <li>Immediate SaaS threat coverage</li>
                         <li>CASB replacement/augmentation</li>
+                        <li><strong>PCI DSS & GDPR compliance automation</strong></li>
                       </ul>
+                      
+                      {/* Compliance Badge */}
+                      <div style={{ 
+                        marginTop: '12px', 
+                        padding: '8px', 
+                        backgroundColor: 'var(--bg-success)', 
+                        borderRadius: '6px',
+                        textAlign: 'center',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        color: 'var(--brand-primary)'
+                      }}>
+                        📋 Regulatory Framework Ready
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -224,7 +290,22 @@ const SlideBusinessCase = () => {
                         <li>Browser telemetry integration</li>
                         <li>SIEM/UEBA enrichment</li>
                         <li>Runtime policy enforcement</li>
+                        <li><strong>NIST CSF & ISO 27001 alignment</strong></li>
                       </ul>
+                      
+                      {/* Compliance Badge */}
+                      <div style={{ 
+                        marginTop: '12px', 
+                        padding: '8px', 
+                        backgroundColor: 'var(--bg-success)', 
+                        borderRadius: '6px',
+                        textAlign: 'center',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        color: 'var(--brand-primary)'
+                      }}>
+                        🔧 Technical Compliance Controls
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -269,7 +350,21 @@ const SlideBusinessCase = () => {
                         <li>Browser telemetry & SIEM integration</li>
                         <li>Audit-grade behavioral logs</li>
                         <li>Compliance dashboards</li>
+                        <li><strong>SOX, SOC 2, GDPR, PCI DSS controls built-in</strong></li>
                       </ul>
+                      
+                      {/* Compliance Value Callout */}
+                      <div style={{ 
+                        marginTop: '16px',
+                        padding: '12px',
+                        backgroundColor: 'var(--brand-primary)',
+                        borderRadius: '6px',
+                        color: 'white',
+                        fontSize: '0.85rem',
+                        textAlign: 'center'
+                      }}>
+                        <strong>🏆 Compliance Advantage:</strong> Pre-built regulatory frameworks eliminate the need for costly compliance consultants and reduce audit preparation time by 60-80%.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -346,6 +441,8 @@ const SlideBusinessCase = () => {
                           <li><strong>Unified ITDR + IRM platform</strong> - one console for all insider risks</li>
                           <li><strong>Runtime policy enforcement</strong> - block risky actions in real-time</li>
                           <li><strong>Zero proxy infrastructure</strong> - eliminate network bottlenecks</li>
+                          <li><strong>Compliance-ready documentation</strong> - audit-grade logs for SOX, SOC 2, GDPR, PCI DSS</li>
+                          <li><strong>Regulatory framework automation</strong> - reduce compliance costs by 60-80%</li>
                         </ul>
                       </div>
                     </div>

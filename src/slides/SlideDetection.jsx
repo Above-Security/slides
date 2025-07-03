@@ -7,6 +7,21 @@ const SlideDetection = () => (
     <header className="slide-header">
       <h1 className="slide-title">Real-Time User Protection</h1>
       <p className="slide-subtitle">Guiding Users to Avoid Mistakes</p>
+      
+      {/* Compliance Banner */}
+      <div style={{ 
+        marginTop: '16px', 
+        padding: '12px 20px', 
+        backgroundColor: 'var(--brand-primary)', 
+        borderRadius: '8px', 
+        color: 'white',
+        textAlign: 'center'
+      }}>
+        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>
+          <i className="fas fa-award" style={{ marginRight: '8px', color: '#FFD700' }}></i>
+          Every scenario generates audit-grade documentation for SOX 404, SOC 2, GDPR & PCI DSS compliance
+        </span>
+      </div>
     </header>
 
     <div className="content-section">
@@ -29,6 +44,20 @@ const SlideDetection = () => (
               <i className="fas fa-shield-alt"></i>
               User guided to verify app legitimacy before granting access
             </div>
+            
+            {/* Compliance Badge */}
+            <div style={{ 
+              marginTop: '12px', 
+              padding: '8px', 
+              backgroundColor: 'var(--bg-success)', 
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              color: 'var(--brand-primary)',
+              textAlign: 'center'
+            }}>
+              📋 SOX 404.B.1 & SOC 2 CC6.1 Controls
+            </div>
           </div>
         </div>
 
@@ -49,6 +78,20 @@ const SlideDetection = () => (
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-shield-alt"></i>
               User guided to approved AI tools with data protection
+            </div>
+            
+            {/* Compliance Badge */}
+            <div style={{ 
+              marginTop: '12px', 
+              padding: '8px', 
+              backgroundColor: 'var(--bg-success)', 
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              color: 'var(--brand-primary)',
+              textAlign: 'center'
+            }}>
+              🔐 GDPR Art. 32.1(d) & PCI DSS 7.1.1
             </div>
           </div>
         </div>
@@ -71,6 +114,20 @@ const SlideDetection = () => (
               <i className="fas fa-shield-alt"></i>
               Security team alerted with session details for immediate termination
             </div>
+            
+            {/* Compliance Badge */}
+            <div style={{ 
+              marginTop: '12px', 
+              padding: '8px', 
+              backgroundColor: 'var(--bg-success)', 
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              color: 'var(--brand-primary)',
+              textAlign: 'center'
+            }}>
+              🚪 NIST CSF & ISO 27001 Access Controls
+            </div>
           </div>
         </div>
 
@@ -91,6 +148,20 @@ const SlideDetection = () => (
             <div className={styles['scenario-outcome']}>
               <i className="fas fa-shield-alt"></i>
               Complete behavioral timeline delivered for forensic analysis
+            </div>
+            
+            {/* Compliance Badge */}
+            <div style={{ 
+              marginTop: '12px', 
+              padding: '8px', 
+              backgroundColor: 'var(--bg-success)', 
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              color: 'var(--brand-primary)',
+              textAlign: 'center'
+            }}>
+              📊 SOX 404 & SOC 2 Audit Documentation
             </div>
           </div>
         </div>
