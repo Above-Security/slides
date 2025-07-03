@@ -397,11 +397,465 @@ const PovPlaybook = () => {
 
         {/* Contingency Plans */}
         <div className={styles["pov-section"]}>
-          <h3>2.3 If No Real Attacks Occur</h3>
+          <h3>
+            <i className="fas fa-shield-check" style={{ marginRight: '8px', color: 'var(--color-primary)' }}></i>
+            2.3 If No Real Attacks Occur
+          </h3>
           
-          <div className={styles["contingency-grid"]}>
-            {/* No contingency plans provided in the change description */}
+          {/* Hero Message */}
+          <div style={{ 
+            marginBottom: 'var(--spacing-xl)',
+            padding: 'var(--spacing-xl)',
+            background: 'linear-gradient(135deg, rgba(0, 135, 43, 0.08), rgba(0, 135, 43, 0.03))',
+            borderRadius: 'var(--border-radius-lg)',
+            border: '2px solid rgba(0, 135, 43, 0.15)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              width: '100px',
+              height: '100px',
+              background: 'rgba(0, 135, 43, 0.05)',
+              borderRadius: '50%',
+              transform: 'translate(30px, -30px)'
+            }}></div>
+            <h4 style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: 'var(--color-primary)',
+              marginBottom: 'var(--spacing-md)',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <i className="fas fa-chart-line" style={{ marginRight: '12px', fontSize: '1.5rem' }}></i>
+              Value Without Incidents
+            </h4>
+            <p style={{ 
+              fontSize: '1.1rem',
+              color: 'var(--color-text-primary)',
+              lineHeight: '1.7',
+              margin: 0,
+              fontWeight: '500'
+            }}>
+              Even without security incidents, Above delivers <strong>immediate, measurable value</strong> through behavioral insights and proactive risk reduction.
+            </p>
           </div>
+
+          {/* Value Categories Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: 'var(--spacing-xl)',
+            marginBottom: 'var(--spacing-xxl)'
+          }}>
+            
+            {/* OAuth Permissions Card */}
+            <div style={{
+              padding: 'var(--spacing-xl)',
+              background: 'linear-gradient(135deg, #ffffff, #fafbfc)',
+              borderRadius: 'var(--border-radius-lg)',
+              border: '1px solid rgba(0, 135, 43, 0.1)',
+              boxShadow: '0 8px 25px rgba(0, 135, 43, 0.08)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+            }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--spacing-lg)',
+                boxShadow: '0 4px 12px rgba(0, 135, 43, 0.25)'
+              }}>
+                <i className="fas fa-key" style={{ fontSize: '24px', color: 'white' }}></i>
+              </div>
+              <h4 style={{ 
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: 'var(--color-text-primary)',
+                marginBottom: 'var(--spacing-md)',
+                lineHeight: '1.3'
+              }}>
+                OAuth Permission Audit
+              </h4>
+              <ul style={{ 
+                margin: 0, 
+                padding: 0,
+                listStyle: 'none',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.6'
+              }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Total OAuth grants discovered across all users
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  High-risk permissions flagged (full access, admin rights)
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Apps with excessive data access
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Dormant OAuth grants recommended for revocation
+                </li>
+              </ul>
+            </div>
+
+            {/* Shadow SaaS Discovery */}
+            <div style={{
+              padding: 'var(--spacing-xl)',
+              background: 'linear-gradient(135deg, #ffffff, #fafbfc)',
+              borderRadius: 'var(--border-radius-lg)',
+              border: '1px solid rgba(0, 135, 43, 0.1)',
+              boxShadow: '0 8px 25px rgba(0, 135, 43, 0.08)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+            }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--spacing-lg)',
+                boxShadow: '0 4px 12px rgba(0, 135, 43, 0.25)'
+              }}>
+                <i className="fas fa-eye-slash" style={{ fontSize: '24px', color: 'white' }}></i>
+              </div>
+              <h4 style={{ 
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: 'var(--color-text-primary)',
+                marginBottom: 'var(--spacing-md)',
+                lineHeight: '1.3'
+              }}>
+                Shadow SaaS Inventory
+              </h4>
+              <ul style={{ 
+                margin: 0, 
+                padding: 0,
+                listStyle: 'none',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.6'
+              }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Unsanctioned applications in active use
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  AI tools and data processing platforms
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  File sharing and collaboration apps
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Usage patterns and data exposure risks
+                </li>
+              </ul>
+            </div>
+
+            {/* User Behavior Analytics */}
+            <div style={{
+              padding: 'var(--spacing-xl)',
+              background: 'linear-gradient(135deg, #ffffff, #fafbfc)',
+              borderRadius: 'var(--border-radius-lg)',
+              border: '1px solid rgba(0, 135, 43, 0.1)',
+              boxShadow: '0 8px 25px rgba(0, 135, 43, 0.08)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+            }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--spacing-lg)',
+                boxShadow: '0 4px 12px rgba(0, 135, 43, 0.25)'
+              }}>
+                <i className="fas fa-users" style={{ fontSize: '24px', color: 'white' }}></i>
+              </div>
+              <h4 style={{ 
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: 'var(--color-text-primary)',
+                marginBottom: 'var(--spacing-md)',
+                lineHeight: '1.3'
+              }}>
+                User Behavior Insights
+              </h4>
+              <ul style={{ 
+                margin: 0, 
+                padding: 0,
+                listStyle: 'none',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.6'
+              }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Real-time nudges delivered to users
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Risky behavior patterns identified
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Behavior change trends over time
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Preventive guidance effectiveness metrics
+                </li>
+              </ul>
+            </div>
+
+            {/* Security Recommendations */}
+            <div style={{
+              padding: 'var(--spacing-xl)',
+              background: 'linear-gradient(135deg, #ffffff, #fafbfc)',
+              borderRadius: 'var(--border-radius-lg)',
+              border: '1px solid rgba(0, 135, 43, 0.1)',
+              boxShadow: '0 8px 25px rgba(0, 135, 43, 0.08)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+            }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                background: 'linear-gradient(135deg, var(--color-primary), #0d7d2f)',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--spacing-lg)',
+                boxShadow: '0 4px 12px rgba(0, 135, 43, 0.25)'
+              }}>
+                <i className="fas fa-shield-alt" style={{ fontSize: '24px', color: 'white' }}></i>
+              </div>
+              <h4 style={{ 
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: 'var(--color-text-primary)',
+                marginBottom: 'var(--spacing-md)',
+                lineHeight: '1.3'
+              }}>
+                Actionable Recommendations
+              </h4>
+              <ul style={{ 
+                margin: 0, 
+                padding: 0,
+                listStyle: 'none',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.6'
+              }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Policy updates based on actual usage patterns
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Priority OAuth grants to review/revoke
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  User training recommendations
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Integration opportunities with existing tools
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Quantifiable Metrics Dashboard */}
+          <div style={{
+            padding: 'var(--spacing-xxl)',
+            background: 'linear-gradient(135deg, rgba(0, 135, 43, 0.08), rgba(0, 135, 43, 0.03))',
+            borderRadius: 'var(--border-radius-lg)',
+            border: '2px solid rgba(0, 135, 43, 0.15)',
+            marginBottom: 'var(--spacing-xl)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: '-50px',
+              left: '-50px',
+              width: '150px',
+              height: '150px',
+              background: 'rgba(0, 135, 43, 0.05)',
+              borderRadius: '50%'
+            }}></div>
+            <div style={{
+              position: 'absolute',
+              bottom: '-30px',
+              right: '-30px',
+              width: '120px',
+              height: '120px',
+              background: 'rgba(0, 135, 43, 0.03)',
+              borderRadius: '50%'
+            }}></div>
+            
+            <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)', position: 'relative', zIndex: 1 }}>
+              <h4 style={{
+                fontSize: '1.75rem',
+                fontWeight: '800',
+                color: 'var(--color-primary)',
+                marginBottom: 'var(--spacing-md)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <i className="fas fa-chart-line" style={{ marginRight: '16px', fontSize: '2rem' }}></i>
+                Quantifiable Value Delivered
+              </h4>
+              <p style={{
+                fontSize: '1.1rem',
+                color: 'var(--color-text-secondary)',
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Measurable outcomes from Above's behavioral insights, even without security incidents
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: 'var(--spacing-xl)',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{ 
+                textAlign: 'center',
+                padding: 'var(--spacing-lg)',
+                background: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: 'var(--border-radius-md)',
+                border: '1px solid rgba(0, 135, 43, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: '900', 
+                  color: 'var(--color-primary)',
+                  lineHeight: '1',
+                  marginBottom: 'var(--spacing-sm)'
+                }}>100%</div>
+                <div style={{ 
+                  fontSize: '1rem', 
+                  color: 'var(--color-text-primary)',
+                  fontWeight: '600',
+                  marginBottom: 'var(--spacing-xs)'
+                }}>OAuth Visibility</div>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.4'
+                }}>Complete audit coverage</div>
+              </div>
+              
+              <div style={{ 
+                textAlign: 'center',
+                padding: 'var(--spacing-lg)',
+                background: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: 'var(--border-radius-md)',
+                border: '1px solid rgba(0, 135, 43, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: '900', 
+                  color: 'var(--color-primary)',
+                  lineHeight: '1',
+                  marginBottom: 'var(--spacing-sm)'
+                }}>15-30</div>
+                <div style={{ 
+                  fontSize: '1rem', 
+                  color: 'var(--color-text-primary)',
+                  fontWeight: '600',
+                  marginBottom: 'var(--spacing-xs)'
+                }}>Shadow Apps</div>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.4'
+                }}>Discovered per 100 users</div>
+              </div>
+              
+              <div style={{ 
+                textAlign: 'center',
+                padding: 'var(--spacing-lg)',
+                background: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: 'var(--border-radius-md)',
+                border: '1px solid rgba(0, 135, 43, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: '900', 
+                  color: 'var(--color-primary)',
+                  lineHeight: '1',
+                  marginBottom: 'var(--spacing-sm)'
+                }}>5-10</div>
+                <div style={{ 
+                  fontSize: '1rem', 
+                  color: 'var(--color-text-primary)',
+                  fontWeight: '600',
+                  marginBottom: 'var(--spacing-xs)'
+                }}>Users Nudged</div>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.4'
+                }}>Daily behavioral guidance</div>
+              </div>
+              
+              <div style={{ 
+                textAlign: 'center',
+                padding: 'var(--spacing-lg)',
+                background: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: 'var(--border-radius-md)',
+                border: '1px solid rgba(0, 135, 43, 0.1)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: '900', 
+                  color: 'var(--color-primary)',
+                  lineHeight: '1',
+                  marginBottom: 'var(--spacing-sm)'
+                }}>25%</div>
+                <div style={{ 
+                  fontSize: '1rem', 
+                  color: 'var(--color-text-primary)',
+                  fontWeight: '600',
+                  marginBottom: 'var(--spacing-xs)'
+                }}>Behavior Change</div>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: '1.4'
+                }}>Risk reduction over time</div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Setup Checklist */}
