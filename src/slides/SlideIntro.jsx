@@ -143,13 +143,13 @@ const SlideIntro = () => (
             Every user action is captured with audit-grade precision, providing the detailed behavioral documentation required for <strong>SOX 404</strong>, <strong>SOC 2</strong>, <strong>GDPR</strong>, and <strong>PCI DSS</strong> compliance frameworks.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', fontSize: '0.8rem' }}>
-            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px', color: 'var(--brand-primary)' }}>
               <strong>SOX 404.B.1</strong><br />User Access Controls
             </div>
-            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px', color: 'var(--brand-primary)' }}>
               <strong>SOC 2 CC6.1</strong><br />Logical Access Security
             </div>
-            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px', color: 'var(--brand-primary)' }}>
               <strong>GDPR Art. 32.1(d)</strong><br />Data Processing Security
             </div>
           </div>
