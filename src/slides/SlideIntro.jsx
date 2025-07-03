@@ -139,7 +139,7 @@ const SlideIntro = () => (
             <i className="fas fa-clipboard-check" style={{ marginRight: '8px' }}></i>
             Compliance-First Architecture
           </h4>
-          <p style={{ fontSize: '0.9rem', marginBottom: '12px', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '0.9rem', marginBottom: '12px', lineHeight: 1.5, color: 'var(--text-primary)' }}>
             Every user action is captured with audit-grade precision, providing the detailed behavioral documentation required for <strong>SOX 404</strong>, <strong>SOC 2</strong>, <strong>GDPR</strong>, and <strong>PCI DSS</strong> compliance frameworks.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', fontSize: '0.8rem' }}>
