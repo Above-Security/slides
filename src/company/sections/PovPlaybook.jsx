@@ -438,10 +438,38 @@ const PovPlaybook = () => {
               color: 'var(--color-text-primary)',
               lineHeight: '1.7',
               margin: 0,
-              fontWeight: '500'
+              fontWeight: '500',
+              marginBottom: 'var(--spacing-md)'
             }}>
               Even without security incidents, Above delivers <strong>immediate, measurable value</strong> through behavioral insights and proactive risk reduction.
             </p>
+            <div style={{
+              padding: 'var(--spacing-md)',
+              background: 'rgba(255, 255, 255, 0.9)',
+              borderRadius: 'var(--border-radius-md)',
+              border: '1px solid rgba(0, 135, 43, 0.2)',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <h5 style={{
+                margin: '0 0 var(--spacing-sm) 0',
+                color: 'var(--color-primary)',
+                fontSize: '1rem',
+                fontWeight: '700',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <i className="fas fa-clipboard-check" style={{ marginRight: '8px' }}></i>
+                Compliance-Ready Documentation
+              </h5>
+              <p style={{
+                margin: 0,
+                fontSize: '0.95rem',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.5'
+              }}>
+                <strong>Audit-ready reports</strong> for SOX 404 (access controls), SOC 2 Type II (access monitoring), GDPR Article 32 (access logging), and PCI DSS 7.1 (user access restrictions) — delivered automatically as part of your PoV.
+              </p>
+            </div>
           </div>
 
           {/* Value Categories Grid */}
@@ -482,6 +510,16 @@ const PovPlaybook = () => {
                 lineHeight: '1.3'
               }}>
                 OAuth Permission Audit
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  color: 'var(--color-primary)',
+                  marginTop: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  ✓ SOX • SOC 2 • GDPR • PCI DSS Compliant
+                </div>
               </h4>
               <ul style={{ 
                 margin: 0, 
@@ -502,9 +540,33 @@ const PovPlaybook = () => {
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
                   Apps with excessive data access
                 </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
                   Dormant OAuth grants recommended for revocation
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>SOX 404.B.1:</strong> Access control documentation
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>SOC 2 CC6.1:</strong> Logical access security monitoring
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>GDPR Art. 32.1(d):</strong> Access logging and monitoring
+                  </div>
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>PCI DSS 7.1.1:</strong> User access restrictions documentation
+                  </div>
                 </li>
               </ul>
             </div>
@@ -539,6 +601,16 @@ const PovPlaybook = () => {
                 lineHeight: '1.3'
               }}>
                 Shadow SaaS Inventory
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  color: 'var(--color-primary)',
+                  marginTop: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  ✓ Risk Assessment • Vendor Management • Data Governance
+                </div>
               </h4>
               <ul style={{ 
                 margin: 0, 
@@ -549,19 +621,37 @@ const PovPlaybook = () => {
               }}>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Unsanctioned applications in active use
+                  Complete inventory of unsanctioned applications
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  AI tools and data processing platforms
+                  AI/ML tools with data processing capabilities
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  File sharing and collaboration apps
+                  File sharing and collaboration platforms
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Usage frequency and data exposure analysis
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-exclamation-triangle" style={{ color: '#f39c12', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>Risk Impact:</strong> Vendor risk, data loss prevention, contract compliance
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>NIST CSF 1.1 ID.AM-3:</strong> Organizational communication and data flows mapped
+                  </div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Usage patterns and data exposure risks
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>ISO 27001 A.12.6.1:</strong> Management of technical vulnerabilities
+                  </div>
                 </li>
               </ul>
             </div>
@@ -595,7 +685,17 @@ const PovPlaybook = () => {
                 marginBottom: 'var(--spacing-md)',
                 lineHeight: '1.3'
               }}>
-                User Behavior Insights
+                User Behavior Analytics
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  color: 'var(--color-primary)',
+                  marginTop: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  ✓ Zero Trust • UEBA • Insider Protection Compliant
+                </div>
               </h4>
               <ul style={{ 
                 margin: 0, 
@@ -606,19 +706,37 @@ const PovPlaybook = () => {
               }}>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Real-time nudges delivered to users
+                  Real-time nudges delivered to at-risk users
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Risky behavior patterns identified
+                  Anomalous behavior patterns and risk scoring
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Behavior change trends over time
+                  Behavior change trends and effectiveness metrics
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  Session timeline reconstruction for HR/legal
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-brain" style={{ color: '#8e44ad', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>AI Prevention:</strong> Proactive user guidance vs reactive detection
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>NIST CSF 2.0 DE.AE-2:</strong> Event data analysis for anomaly detection
+                  </div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                  <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Preventive guidance effectiveness metrics
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>ISO 27001 A.12.4.1:</strong> Event logging and monitoring procedures
+                  </div>
                 </li>
               </ul>
             </div>
@@ -653,6 +771,16 @@ const PovPlaybook = () => {
                 lineHeight: '1.3'
               }}>
                 Actionable Recommendations
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  color: 'var(--color-primary)',
+                  marginTop: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  ✓ Risk Mitigation • Process Improvement • ROI Optimization
+                </div>
               </h4>
               <ul style={{ 
                 margin: 0, 
@@ -673,9 +801,33 @@ const PovPlaybook = () => {
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
                   User training recommendations
                 </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
                   Integration opportunities with existing tools
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-dollar-sign" style={{ color: '#27ae60', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>Cost Savings:</strong> Tool consolidation opportunities (15-30% security budget reduction)
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-clock" style={{ color: '#3498db', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>Time to Value:</strong> Immediate actionability vs traditional 6-month implementation
+                  </div>
+                </li>
+                <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>CISA Zero Trust:</strong> Behavioral analytics supporting ZT architecture
+                  </div>
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <i className="fas fa-shield-alt" style={{ color: '#e74c3c', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
+                  <div>
+                    <strong>NIST SP 800-207:</strong> Zero Trust identity verification and continuous monitoring
+                  </div>
                 </li>
               </ul>
             </div>
