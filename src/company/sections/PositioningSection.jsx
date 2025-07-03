@@ -35,9 +35,9 @@ const PositioningSection = () => {
       tool: 'UEBA',
       stance: 'Replace',
       stanceType: 'replace',
-      talkTrack: 'Faster deployment, real-time SaaS focus, no SIEM complexity (often shelved)',
+      talkTrack: 'Triggers immediate actions: MFA challenges, session blocks, access quarantine',
       risk: 'UEBA solutions often already purchased but unused',
-      counterMeasure: 'Position as "UEBA that actually works" with immediate value',
+      counterMeasure: 'Show actionable controls that eliminate manual work vs unused risk scores',
       icon: 'fas fa-chart-line'
     }
   ];

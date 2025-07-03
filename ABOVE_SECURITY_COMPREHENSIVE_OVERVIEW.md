@@ -158,7 +158,7 @@ Runtime ITDR provides visibility into user behavior **after authentication** by 
 - **User Profiling**: Establishes normal behavior patterns for each user
 - **Peer Group Analysis**: Compares user behavior to role-based cohorts
 - **Temporal Pattern Recognition**: Identifies time-based behavioral anomalies
-- **Risk Scoring**: Continuous risk assessment based on behavioral indicators
+- **Automated Response Actions**: Immediate interventions based on behavioral indicators - MFA challenges, session termination, access quarantine
 
 #### Semantic Context Understanding
 - **Page Content Analysis**: LLM-powered understanding of application interfaces
@@ -515,7 +515,7 @@ Above's browser-native runtime intelligence positions the company to capture sig
 #### Key Milestones
 - **Product**: Adaptive policy engine with ML-driven controls
 - **Sales**: $200M ARR with expansion into mid-market
-- **Technology**: Real-time session risk scoring and enforcement
+- **Technology**: Real-time session monitoring and automated enforcement actions
 - **Market**: Platform consolidation of identity security tools
 
 ### Phase 3: Unified Workforce Risk Platform (2029-32)

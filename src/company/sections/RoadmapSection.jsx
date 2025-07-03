@@ -13,10 +13,10 @@ const RoadmapSection = () => {
       status: 'planned'
     },
     {
-      area: 'Behavioral risk scoring',
-      detail: 'Add per-user risk index based on drift, intent, misuse',
+      area: 'Automated response controls',
+      detail: 'MFA challenges, session blocks, and access quarantine based on behavior',
       timeline: 'Q2-Q3 2026',
-      hypothesis: 'ML-driven risk scoring enables proactive intervention',
+      hypothesis: 'Actionable controls eliminate alert fatigue and manual intervention',
       status: 'planned'
     },
     {

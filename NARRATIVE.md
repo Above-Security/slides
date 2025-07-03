@@ -4,7 +4,7 @@
 
 ## ✅ Vision in One Sentence
 
-> Real-time visibility into user behavior inside SaaS and browsers — to detect risky activity, guide users in the moment, and protect data without changing how users work.
+> Real-time visibility into user behavior inside SaaS and b| "We don't need it if no breach"        | Compliance requires behavioral monitoring anyway — get SOX 404, SOC 2, GDPR controls + security value |owsers — to detect risky activity, guide users in the moment, and protect data without changing how users work.
 
 ---
 
@@ -76,7 +76,7 @@
 | CASB / DLP | ❌                 | We see user behavior *before* files move or traffic is flagged |
 | SSPM       | ❌                 | We show *usage*, not just config posture                       |
 | EDR/XDR    | ❌                 | We add browser identity-level session context                  |
-| UEBA       | ✅ (often shelved) | Ours works in real time, no SIEM needed                        |
+| UEBA       | ✅ (often shelved) | Ours triggers real-time actions: MFA challenges, session blocks |
 
 ---
 
@@ -85,7 +85,7 @@
 | Area                       | Detail                                                     |
 | -------------------------- | ---------------------------------------------------------- |
 | Browser telemetry platform | Build unified signal layer across all web activity         |
-| Behavioral risk scoring    | Add per-user risk index based on drift, intent, misuse     |
+| Behavioral risk scoring    | Automatic response triggers: session termination, MFA, quarantine |
 | Remediation actions        | Revoke sessions, block app grants, show in-browser banners |
 | Coaching UX                | Display real-time guidance (“this app is unsanctioned”)    |
 | Manager visibility         | Heatmaps and summaries by team, org unit, persona          |

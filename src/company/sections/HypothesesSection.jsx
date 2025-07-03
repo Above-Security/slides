@@ -7,7 +7,7 @@ const HypothesesSection = () => {
     {
       hypothesis: 'Teams want visibility even if no attack',
       evidence: 'Show frictionless insights during uneventful weeks',
-      testMethod: 'Demonstrate value through behavioral patterns and risk identification',
+      testMethod: 'Demonstrate value through automated response capabilities and proactive interventions',
       killCriteria: 'If customers only engage during incidents',
       riskLevel: 'high',
       testProgress: 0
