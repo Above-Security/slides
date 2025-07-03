@@ -21,6 +21,31 @@ const SlideIntro = () => (
     </header>
 
     <div className="content-section">
+      {/* Compliance Value Proposition Banner */}
+      <div style={{ 
+        marginBottom: '32px', 
+        padding: '20px', 
+        backgroundColor: 'var(--brand-primary)', 
+        borderRadius: '12px', 
+        textAlign: 'center',
+        color: 'white'
+      }}>
+        <h2 style={{ 
+          fontSize: '1.4rem', 
+          fontWeight: 700, 
+          marginBottom: '12px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <i className="fas fa-award" style={{ marginRight: '12px', color: '#FFD700' }}></i>
+          Compliance-Ready Documentation & Controls
+        </h2>
+        <p style={{ fontSize: '1rem', margin: 0, opacity: 0.95 }}>
+          Built-in compliance frameworks: <strong>SOX 404</strong> • <strong>SOC 2</strong> • <strong>GDPR</strong> • <strong>PCI DSS</strong> • <strong>NIST CSF</strong> • <strong>ISO 27001</strong>
+        </p>
+      </div>
+
       <div className="key-points-grid">
         <div className="key-point-card">
           <div className="key-point-icon">
@@ -28,6 +53,17 @@ const SlideIntro = () => (
           </div>
           <h3 className="key-point-title">What Above Does</h3>
           <p className="key-point-description">Real-time visibility after login — protecting employees from mistakes and guiding secure behavior inside SaaS applications.</p>
+          <div style={{ 
+            marginTop: '12px', 
+            padding: '8px', 
+            backgroundColor: 'var(--bg-success)', 
+            borderRadius: '6px',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            color: 'var(--brand-primary)'
+          }}>
+            🏆 Audit-Ready Behavioral Logs
+          </div>
         </div>
 
         <div className="key-point-card">
@@ -36,6 +72,17 @@ const SlideIntro = () => (
           </div>
           <h3 className="key-point-title">Core Problems We Address</h3>
           <p className="key-point-description">OAuth abuse, offboarding drift, shadow AI usage, and risky app authorizations that happen after authentication.</p>
+          <div style={{ 
+            marginTop: '12px', 
+            padding: '8px', 
+            backgroundColor: 'var(--bg-success)', 
+            borderRadius: '6px',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            color: 'var(--brand-primary)'
+          }}>
+            📋 SOX 404 & SOC 2 Controls
+          </div>
         </div>
 
         <div className="key-point-card">
@@ -44,6 +91,17 @@ const SlideIntro = () => (
           </div>
           <h3 className="key-point-title">Why It Matters</h3>
           <p className="key-point-description">This is the first tool that tells you what's happening after login — with real-time guidance instead of reactive punishment.</p>
+          <div style={{ 
+            marginTop: '12px', 
+            padding: '8px', 
+            backgroundColor: 'var(--bg-success)', 
+            borderRadius: '6px',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            color: 'var(--brand-primary)'
+          }}>
+            🔐 GDPR & PCI Compliance Built-in
+          </div>
         </div>
       </div>
 
@@ -61,6 +119,41 @@ const SlideIntro = () => (
         <p className="summary-text mt-4">
           Above works directly in the browser to capture real user behavior and provide in-browser nudges. We deploy as an extension across any web application — no API integrations, no traffic steering, no SIEM dependency.
         </p>
+
+        {/* Compliance Benefits Highlight */}
+        <div style={{ 
+          marginTop: '24px', 
+          padding: '20px', 
+          backgroundColor: 'var(--surface-secondary)', 
+          borderRadius: '8px',
+          border: '2px solid var(--brand-primary)'
+        }}>
+          <h4 style={{ 
+            fontSize: '1.1rem', 
+            fontWeight: 600, 
+            color: 'var(--brand-primary)', 
+            marginBottom: '12px',
+            display: 'flex',
+            alignItems: 'center'
+          }}>
+            <i className="fas fa-clipboard-check" style={{ marginRight: '8px' }}></i>
+            Compliance-First Architecture
+          </h4>
+          <p style={{ fontSize: '0.9rem', marginBottom: '12px', lineHeight: 1.5 }}>
+            Every user action is captured with audit-grade precision, providing the detailed behavioral documentation required for <strong>SOX 404</strong>, <strong>SOC 2</strong>, <strong>GDPR</strong>, and <strong>PCI DSS</strong> compliance frameworks.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', fontSize: '0.8rem' }}>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+              <strong>SOX 404.B.1</strong><br />User Access Controls
+            </div>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+              <strong>SOC 2 CC6.1</strong><br />Logical Access Security
+            </div>
+            <div style={{ textAlign: 'center', padding: '8px', backgroundColor: 'var(--bg-success)', borderRadius: '4px' }}>
+              <strong>GDPR Art. 32.1(d)</strong><br />Data Processing Security
+            </div>
+          </div>
+        </div>
         
         {/* Call to Action */}
         <div className="slide-cta">
