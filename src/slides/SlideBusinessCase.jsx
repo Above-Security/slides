@@ -337,7 +337,7 @@ const SlideBusinessCase = () => {
                     </div>
 
                     <div style={{ backgroundColor: 'var(--surface-secondary)', padding: '16px', borderRadius: '8px', marginBottom: '20px' }}>
-                      <div style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '12px' }}>Example: 5,000 Employees</div>
+                      <div style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '12px', color: 'var(--text-primary)' }}>Example: 5,000 Employees</div>
                       <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: '8px' }}>$120K/year</div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>All features included - undercut incumbents by 70-80%</div>
                     </div>
