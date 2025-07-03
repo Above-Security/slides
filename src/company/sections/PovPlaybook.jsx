@@ -710,7 +710,7 @@ const PovPlaybook = () => {
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>
-                  Anomalous behavior patterns and risk scoring
+                  Automated session challenges and access controls
                 </li>
                 <li style={{ marginBottom: 'var(--spacing-sm)', display: 'flex', alignItems: 'flex-start' }}>
                   <i className="fas fa-check-circle" style={{ color: 'var(--color-primary)', marginRight: '12px', marginTop: '2px', fontSize: '14px' }}></i>

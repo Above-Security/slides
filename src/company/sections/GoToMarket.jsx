@@ -48,7 +48,7 @@ const packages = [
 	{
 		name: 'Advanced Detection',
 		description:
-			'Year-2 capabilities: risk scoring, remediation actions, and coaching UX.',
+			'Year-2 capabilities: automated response controls, session challenges, and real-time coaching.',
 		icon: 'fas fa-brain',
 	},
 ];

@@ -24,7 +24,7 @@ const RisksSection = () => {
     },
     {
       risk: '"We don\'t need it if no breach"',
-      mitigation: 'Prove prevention ROI by showing risky intent before it becomes an incident',
+      mitigation: 'Compliance requirements demand behavioral monitoring anyway — Above delivers SOX 404, SOC 2, GDPR controls with security value as bonus',
       severity: 'high',
       icon: 'fas fa-shield-alt'
     }
