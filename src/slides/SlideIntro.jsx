@@ -21,31 +21,6 @@ const SlideIntro = () => (
     </header>
 
     <div className="content-section">
-      {/* Compliance Value Proposition Banner */}
-      <div style={{ 
-        marginBottom: '32px', 
-        padding: '20px', 
-        backgroundColor: 'var(--brand-primary)', 
-        borderRadius: '12px', 
-        textAlign: 'center',
-        color: 'white'
-      }}>
-        <h2 style={{ 
-          fontSize: '1.4rem', 
-          fontWeight: 700, 
-          marginBottom: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <i className="fas fa-award" style={{ marginRight: '12px', color: '#FFD700' }}></i>
-          Compliance-Ready Documentation & Controls
-        </h2>
-        <p style={{ fontSize: '1rem', margin: 0, opacity: 0.95 }}>
-          Built-in compliance frameworks: <strong>SOX 404</strong> • <strong>SOC 2</strong> • <strong>GDPR</strong> • <strong>PCI DSS</strong> • <strong>NIST CSF</strong> • <strong>ISO 27001</strong>
-        </p>
-      </div>
-
       <div className="key-points-grid">
         <div className="key-point-card">
           <div className="key-point-icon">
