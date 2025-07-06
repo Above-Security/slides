@@ -274,13 +274,6 @@ const CompanyIndex = () => {
             
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
-                <h4>Dan Benjamin</h4>
-                <p>CEO @ Dig</p>
-              </div>
-            </div>
-            
-            <div className={styles["advisor-card"]}>
-              <div className={styles["advisor-info"]}>
                 <h4>Karl Mattson</h4>
                 <p>CISO @ Endor Labs</p>
               </div>
