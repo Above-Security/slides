@@ -1,0 +1,31 @@
+/* ContentGroup Component Styles */
+/* Extracted from PhishingDetection.css - maintaining exact design */
+
+.content-group {
+    margin-bottom: var(--spacing-6xl);
+    padding: 0;
+}
+
+.content-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Nested sections within content groups */
+.content-group section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.content-group section:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-group {
+        margin-bottom: var(--spacing-4xl);
+    }
+    
+    .content-group section {
+        margin-bottom: var(--spacing-3xl);
+    }
+}

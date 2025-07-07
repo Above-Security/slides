@@ -1,0 +1,47 @@
+/* CardGrid Component Styles */
+/* Extracted from PhishingDetection.css - maintaining exact design */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: var(--grid-columns, repeat(auto-fit, minmax(400px, 1fr)));
+    gap: var(--grid-gap, var(--spacing-2xl));
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Grid variations */
+.card-grid.incidents-grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.card-grid.tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card-grid.differentiators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-grid.metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-md);
+    }
+    
+    .card-grid.incidents-grid,
+    .card-grid.tools-grid,
+    .card-grid.differentiators-grid,
+    .card-grid.metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
