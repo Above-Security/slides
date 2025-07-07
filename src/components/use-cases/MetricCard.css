@@ -1,0 +1,117 @@
+/* MetricCard Component Styles */
+/* Extracted from PhishingDetection.css - maintaining exact design */
+
+.business-metric-card {
+    background: var(--color-background-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-normal);
+}
+
+.business-metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.metric-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.4;
+}
+
+.metric-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.before-after {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-md);
+}
+
+.before,
+.after {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1;
+}
+
+.before .label,
+.after .label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-secondary);
+}
+
+.before .value,
+.after .value {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.before-after i {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+.improvement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-5));
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+}
+
+.improvement-value {
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+}
+
+.improvement-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .business-metric-card {
+        padding: var(--spacing-xl);
+    }
+    
+    .before-after {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .before-after i {
+        transform: rotate(90deg);
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .before .value,
+    .after .value {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm);
+    }
+    
+    .improvement-value {
+        font-size: var(--font-size-lg);
+    }
+}

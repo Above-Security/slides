@@ -1,0 +1,53 @@
+/* SectionHeader Component Styles */
+/* Extracted from PhishingDetection.css - maintaining exact design */
+
+.section-header {
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.section-title i {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    width: 32px;
+    text-align: center;
+}
+
+.section-description {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 1.6;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: var(--font-size-2xl);
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .section-title i {
+        font-size: var(--font-size-xl);
+    }
+    
+    .section-description {
+        font-size: var(--font-size-sm);
+    }
+}

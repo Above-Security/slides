@@ -1,0 +1,95 @@
+/* ToolGapCard Component Styles */
+/* Extracted from PhishingDetection.css - maintaining exact design */
+
+.tool-gap-card {
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.tool-gap-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+.tool-gap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-md);
+}
+
+.tool-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.coverage-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+.coverage-bar {
+    width: 80px;
+    height: 8px;
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--color-border-primary);
+}
+
+.coverage-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-danger), var(--color-warning));
+    border-radius: var(--radius-sm);
+    transition: width var(--transition-normal);
+}
+
+.coverage-percentage {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+}
+
+.tool-limitation {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tool-gap-card {
+        padding: var(--spacing-xl);
+    }
+    
+    .tool-gap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .coverage-indicator {
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .coverage-bar {
+        width: 100%;
+    }
+}

@@ -5,7 +5,19 @@ import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
 import '../../styles/layout/navigation-footer.css';
 import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
-import '../styles/PhishingDetection.css';
+import {
+    SectionHeader,
+    ContentGroup,
+    HeroSection,
+    CardGrid,
+    IncidentCard,
+    ToolGapCard,
+    DifferentiatorCard,
+    MetricCard,
+    ExecutiveSummary,
+    POVSection
+} from '../../components/use-cases';
+import '../styles/PhishingDetection-clean.css';
 
 /**
  * PhishingDetection Use Case Component - Completely Independent
@@ -377,235 +389,106 @@ const PhishingDetection = () => {
                 
                 <div className="comprehensive-phishing-content">
                     {/* Header */}
-                    <header className="comprehensive-phishing-header">
-                        <div className="comprehensive-hero" style={{ '--accent-color': COMPREHENSIVE_PHISHING_DATA.color }}>
-                            <div className="hero-gradient-background"></div>
-                            <div className="hero-content">
-                                <div className="hero-icon">
-                                    <i className={COMPREHENSIVE_PHISHING_DATA.icon}></i>
-                                </div>
-                                <h1 className="hero-title">{COMPREHENSIVE_PHISHING_DATA.title}</h1>
-                                <p className="hero-subtitle">{COMPREHENSIVE_PHISHING_DATA.subtitle}</p>
-                                <p className="hero-description">{COMPREHENSIVE_PHISHING_DATA.description}</p>
-                            </div>
-                        </div>
-                    </header>
+                    <HeroSection 
+                        title={COMPREHENSIVE_PHISHING_DATA.title}
+                        subtitle={COMPREHENSIVE_PHISHING_DATA.subtitle}
+                        description={COMPREHENSIVE_PHISHING_DATA.description}
+                        icon={COMPREHENSIVE_PHISHING_DATA.icon}
+                        accentColor={COMPREHENSIVE_PHISHING_DATA.color}
+                        className="comprehensive-phishing-header"
+                    />
 
                     <main>
-                        <div className="content-group" id="problem-definition">
+                        <ContentGroup id="problem-definition">
                             {/* Executive Summary */}
-                            <section className="executive-summary executive-summary--dark" role="region" aria-labelledby="executive-summary-heading">
-                                <div className="section-header">
-                                    <h2 id="executive-summary-heading" className="section-title">
-                                        <i className="fas fa-star"></i>
-                                        {COMPREHENSIVE_PHISHING_DATA.executiveSummary.title}
-                                    </h2>
-                                </div>
-                                <div className="executive-content">
-                                    <p className="executive-description executive-description--dark">{COMPREHENSIVE_PHISHING_DATA.executiveSummary.description}</p>
-                                    <div className="key-points-grid">
-                                        {COMPREHENSIVE_PHISHING_DATA.executiveSummary.keyPoints.map((point, index) => (
-                                            <div key={index} className="key-point-card">
-                                                <i className="fas fa-check"></i>
-                                                <span>{point}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </section>
+                            <ExecutiveSummary 
+                                summary={COMPREHENSIVE_PHISHING_DATA.executiveSummary}
+                                variant="dark"
+                            />
 
                             {/* Real-World Incidents */}
                             <section className="real-world-incidents" role="region" aria-labelledby="incidents-heading">
-                                <div className="section-header">
-                                    <h2 id="incidents-heading" className="section-title">
-                                        <i className="fas fa-exclamation-triangle"></i>
-                                        Real-World Phishing Incidents
-                                    </h2>
-                                    <p className="section-description">Examples of advanced phishing attacks that bypass traditional security controls</p>
-                                </div>
+                                <SectionHeader
+                                    id="incidents-heading"
+                                    title="Real-World Phishing Incidents"
+                                    icon="fas fa-exclamation-triangle"
+                                    description="Examples of advanced phishing attacks that bypass traditional security controls"
+                                />
                                 <div className="incidents-grid">
                                     {COMPREHENSIVE_PHISHING_DATA.realWorldIncidents.map((incident) => (
-                                        <div
+                                        <IncidentCard
                                             key={incident.id}
-                                            className={`incident-card ${incident.severity}`}
-                                            onClick={() => handleIncidentClick(incident.id)}
-                                            role="button"
-                                            tabIndex={0}
-                                            onKeyDown={(e) => {
-                                                if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    handleIncidentClick(incident.id);
-                                                }
-                                            }}
-                                            aria-label={`View details for ${incident.title} incident`}
-                                        >
-                                            <div className="incident-header">
-                                                <div className="incident-icon">
-                                                    <i className={incident.icon}></i>
-                                                </div>
-                                                <div className="incident-title-section">
-                                                    <h3 className="incident-title">{incident.title}</h3>
-                                                    <div className="incident-meta">
-                                                        <span className={`severity-badge ${incident.severity}`}>
-                                                            {incident.severity.toUpperCase()}
-                                                        </span>
-                                                        <span className="affected-count">{incident.affected}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="incident-content">
-                                                <p className="incident-description">{incident.description}</p>
-
-                                                <div className="incident-details">
-                                                    <div className="detail-section">
-                                                        <h4>Attack Vector</h4>
-                                                        <p>{incident.attackVector}</p>
-                                                    </div>
-
-                                                    <div className="detail-section">
-                                                        <h4>Impact</h4>
-                                                        <p className="impact-text">{incident.impact}</p>
-                                                    </div>
-
-                                                    <div className="detail-section above-prevention">
-                                                        <h4>Above Prevention</h4>
-                                                        <p>{incident.abovePrevention}</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="incident-category">
-                                                    <span className="category-tag">{incident.category}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            incident={incident}
+                                            onClick={handleIncidentClick}
+                                        />
                                     ))}
                                 </div>
                             </section>
-                        </div> {/* End Problem Definition */}
+                        </ContentGroup> {/* End Problem Definition */}
 
-                        <div className="content-group" id="solution-analysis">
+                        <ContentGroup id="solution-analysis">
                             {/* Traditional Tool Gaps */}
                             <section className="tool-gaps" role="region" aria-labelledby="tool-gaps-heading">
-                                <div className="section-header">
-                                    <h2 id="tool-gaps-heading" className="section-title">
-                                        <i className="fas fa-exclamation-circle"></i>
-                                        Why Traditional Tools Miss Modern Phishing
-                                    </h2>
-                                    <p className="section-description">Coverage gaps in existing security solutions against advanced phishing techniques</p>
-                                </div>
-                                <div className="tool-gaps-grid">
+                                <SectionHeader
+                                    id="tool-gaps-heading"
+                                    title="Why Traditional Tools Miss Modern Phishing"
+                                    icon="fas fa-exclamation-circle"
+                                    description="Coverage gaps in existing security solutions against advanced phishing techniques"
+                                />
+                                <CardGrid className="tool-gaps-grid">
                                     {COMPREHENSIVE_PHISHING_DATA.traditionalToolGaps.map((tool, index) => (
-                                        <div
+                                        <ToolGapCard
                                             key={index}
-                                            className="tool-gap-card"
-                                            onClick={() => handleToolGapClick(tool.tool)}
-                                            role="button"
-                                            tabIndex={0}
-                                            onKeyDown={(e) => {
-                                                if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    handleToolGapClick(tool.tool);
-                                                }
-                                            }}
-                                        >
-                                            <div className="tool-gap-header">
-                                                <h3 className="tool-name">{tool.tool}</h3>
-                                                <div className="coverage-indicator">
-                                                    <div className="coverage-bar">
-                                                        <div
-                                                            className="coverage-fill"
-                                                            style={{ width: tool.coverage }}
-                                                        ></div>
-                                                    </div>
-                                                    <span className="coverage-percentage">{tool.coverage}</span>
-                                                </div>
-                                            </div>
-                                            <p className="tool-limitation">{tool.limitation}</p>
-                                        </div>
+                                            tool={tool}
+                                            onClick={handleToolGapClick}
+                                        />
                                     ))}
-                                </div>
+                                </CardGrid>
                             </section>
 
                             {/* Above Differentiators */}
                             <section className="above-differentiators" role="region" aria-labelledby="differentiators-heading">
-                                <div className="section-header">
-                                    <h2 id="differentiators-heading" className="section-title">
-                                        <i className="fas fa-rocket"></i>
-                                        Why Above Is Different
-                                    </h2>
-                                    <p className="section-description">Above operates as a lightweight browser-based runtime agent with unique capabilities</p>
-                                </div>
-                                <div className="differentiators-grid">
+                                <SectionHeader
+                                    id="differentiators-heading"
+                                    title="Why Above Is Different"
+                                    icon="fas fa-rocket"
+                                    description="Above operates as a lightweight browser-based runtime agent with unique capabilities"
+                                />
+                                <CardGrid className="differentiators-grid">
                                     {COMPREHENSIVE_PHISHING_DATA.aboveDifferentiators.map((diff, index) => (
-                                        <div
+                                        <DifferentiatorCard
                                             key={index}
-                                            className="differentiator-card"
-                                            onClick={() => handleDifferentiatorClick(diff.capability)}
-                                            role="button"
-                                            tabIndex={0}
-                                            onKeyDown={(e) => {
-                                                if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    handleDifferentiatorClick(diff.capability);
-                                                }
-                                            }}
-                                        >
-                                            <div className="differentiator-icon">
-                                                <i className={diff.icon}></i>
-                                            </div>
-                                            <h3 className="differentiator-title">{diff.capability}</h3>
-                                            <p className="differentiator-description">{diff.description}</p>
-                                        </div>
+                                            differentiator={diff}
+                                            onClick={handleDifferentiatorClick}
+                                        />
                                     ))}
-                                </div>
+                                </CardGrid>
                             </section>
-                        </div> {/* End Solution Analysis */}
+                        </ContentGroup> {/* End Solution Analysis */}
 
-                        <div className="content-group" id="business-value">
+                        <ContentGroup id="business-value">
                             {/* Business Impact Metrics */}
                             <section className="business-impact" role="region" aria-labelledby="business-impact-heading">
-                                <div className="section-header">
-                                    <h2 id="business-impact-heading" className="section-title">
-                                        <i className="fas fa-chart-line"></i>
-                                        Business Impact
-                                    </h2>
-                                    <p className="section-description">Quantified improvements in security posture and operational efficiency</p>
-                                </div>
+                                <SectionHeader
+                                    id="business-impact-heading"
+                                    title="Business Impact"
+                                    icon="fas fa-chart-line"
+                                    description="Quantified improvements in security posture and operational efficiency"
+                                />
                                 <div className="business-metrics-grid">
                                     {COMPREHENSIVE_PHISHING_DATA.businessImpact.metrics.map((metric, index) => (
-                                        <div key={index} className="business-metric-card">
-                                            <h3 className="metric-title">{metric.metric}</h3>
-                                            <div className="metric-comparison">
-                                                <div className="before-after">
-                                                    <div className="before">
-                                                        <span className="label">Before</span>
-                                                        <span className="value">{metric.before}</span>
-                                                    </div>
-                                                    <i className="fas fa-arrow-right"></i>
-                                                    <div className="after">
-                                                        <span className="label">After</span>
-                                                        <span className="value">{metric.after}</span>
-                                                    </div>
-                                                </div>
-                                                <div className="improvement">
-                                                    <span className="improvement-value">{metric.improvement}</span>
-                                                    <span className="improvement-label">improvement</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <MetricCard key={index} metric={metric} />
                                     ))}
                                 </div>
                             </section>
 
                             {/* Compliance & Strategic Alignment */}
                             <section className="compliance-strategic" role="region" aria-labelledby="compliance-heading">
-                                <div className="section-header">
-                                    <h2 id="compliance-heading" className="section-title">
-                                        <i className="fas fa-certificate"></i>
-                                        Compliance & Strategic Alignment
-                                    </h2>
-                                </div>
+                                <SectionHeader
+                                    id="compliance-heading"
+                                    title="Compliance & Strategic Alignment"
+                                    icon="fas fa-certificate"
+                                />
                                 <div className="compliance-strategic-grid">
                                     <div className="compliance-section">
                                         <h3>Compliance Frameworks</h3>
@@ -636,10 +519,10 @@ const PhishingDetection = () => {
                                     </div>
                                 </div>
                             </section>
-                        </div> {/* End Business Value */}
+                        </ContentGroup> {/* End Business Value */}
 
                         {/* IV. IMPLEMENTATION */}
-                        <div className="content-group" id="implementation">
+                        <ContentGroup id="implementation">
                             {/* POV Success Criteria */}
                             <section className="pov-success" role="region" aria-labelledby="pov-heading">
                                 <div className="section-header">
@@ -695,36 +578,24 @@ const PhishingDetection = () => {
 
                                 {/* Metrics Grid */}
                                 <div className="pov-grid">
-                                    <div className="pov-section">
-                                        <h3>Core Metrics</h3>
-                                        <ul>
-                                            {COMPREHENSIVE_PHISHING_DATA.povSuccess.coreMetrics.map((metric, index) => (
-                                                <li key={index}>{metric}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="pov-section">
-                                        <h3>Executive Outcomes</h3>
-                                        <ul>
-                                            {COMPREHENSIVE_PHISHING_DATA.povSuccess.executiveOutcomes.map((outcome, index) => (
-                                                <li key={index}>{outcome}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="pov-section">
-                                        <h3>CISO Buying Triggers</h3>
-                                        <ul>
-                                            {COMPREHENSIVE_PHISHING_DATA.povSuccess.buyingTriggers.map((trigger, index) => (
-                                                <li key={index}>{trigger}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                    <POVSection 
+                                        title="Core Metrics"
+                                        items={COMPREHENSIVE_PHISHING_DATA.povSuccess.coreMetrics}
+                                    />
+                                    <POVSection 
+                                        title="Executive Outcomes"
+                                        items={COMPREHENSIVE_PHISHING_DATA.povSuccess.executiveOutcomes}
+                                    />
+                                    <POVSection 
+                                        title="CISO Buying Triggers"
+                                        items={COMPREHENSIVE_PHISHING_DATA.povSuccess.buyingTriggers}
+                                    />
                                 </div>
                             </section>
-                        </div> {/* End Implementation */}
+                        </ContentGroup> {/* End Implementation */}
 
                         {/* V. CALL TO ACTION */}
-                        <div className="content-group" id="call-to-action">
+                        <ContentGroup id="call-to-action">
                             {/* Summary Call-to-Action */}
                             <section className="summary-cta" role="region" aria-labelledby="summary-heading">
                                 <div className="cta-gradient-background"></div>
@@ -741,7 +612,7 @@ const PhishingDetection = () => {
                                     </div>
                                 </div>
                             </section>
-                        </div> {/* End Call to Action */}
+                        </ContentGroup> {/* End Call to Action */}
                     </main>
 
                     {/* Navigation Footer */}
