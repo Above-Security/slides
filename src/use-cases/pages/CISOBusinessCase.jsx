@@ -215,7 +215,7 @@ const CISO_BUSINESS_CASE_DATA = {
         traditionalToolMisses: [
             {
                 gap: 'Behavioral context in shadow apps',
-                description: 'WHAT users do inside unauthorized tools, not just WHICH tools they access',
+                description: 'WHICH & WHAT users do inside unauthorized tools, not just WHICH tools they access',
                 icon: 'fas fa-user-secret'
             },
             {
