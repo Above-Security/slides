@@ -35,7 +35,7 @@ describe('UseCasesIndex Component', () => {
         it('renders the main title and subtitle', () => {
             renderWithRouter()
 
-            expect(screen.getByText('Runtime ITDR Use Cases')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & Behavior Visibility')).toBeInTheDocument()
             expect(screen.getByText(/Real-world scenarios where Above Security/)).toBeInTheDocument()
         })
 
@@ -139,7 +139,7 @@ describe('UseCasesIndex Component', () => {
             renderWithRouter()
 
             const mainTitle = screen.getByRole('heading', { level: 1 })
-            expect(mainTitle).toHaveTextContent('Runtime ITDR Use Cases')
+            expect(mainTitle).toHaveTextContent('Runtime Insider Protection & Behavior Visibility')
 
             const useCaseTitles = screen.getAllByRole('heading', { level: 3 })
             expect(useCaseTitles).toHaveLength(3)
@@ -169,7 +169,7 @@ describe('UseCasesIndex Component', () => {
             // For now, we ensure the component renders without errors
             renderWithRouter()
 
-            expect(screen.getByText('Runtime ITDR Use Cases')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & Behavior Visibility')).toBeInTheDocument()
         })
     })
 
@@ -182,7 +182,7 @@ describe('UseCasesIndex Component', () => {
 
             // Component should still render even if analytics fail
             expect(() => renderWithRouter()).not.toThrow()
-            expect(screen.getByText('Runtime ITDR Use Cases')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & Behavior Visibility')).toBeInTheDocument()
         })
     })
 
@@ -192,7 +192,7 @@ describe('UseCasesIndex Component', () => {
 
             // In a real browser environment, this would check document.title
             // For testing, we verify the component attempts to set it
-            expect(screen.getByText('Runtime ITDR Use Cases')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & Behavior Visibility')).toBeInTheDocument()
         })
     })
 })

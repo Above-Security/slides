@@ -143,7 +143,7 @@ const CISO_BUSINESS_CASE_DATA = {
             {
                 category: 'Discovery',
                 traditional: 'WHICH shadow apps users access',
-                above: 'WHAT users do inside shadow apps',
+                above: 'WHICH & WHAT users do inside shadow apps',
                 advantage: 'Behavioral intelligence vs. app inventory'
             },
             {
