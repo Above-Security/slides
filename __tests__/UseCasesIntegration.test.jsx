@@ -18,9 +18,7 @@ vi.mock('../src/components/LogoWatermark', () => ({
 
 // Import standalone components only - no shared abstractions
 import PhishingDetection from '../src/use-cases/pages/PhishingDetection';
-import AccountTakeover from '../src/use-cases/pages/AccountTakeover';
 import InsiderThreat from '../src/use-cases/pages/InsiderThreat';
-import ZeroDayProtection from '../src/use-cases/pages/ZeroDayProtection';
 
 describe('Use Cases Integration Tests - Standalone Components', () => {
     beforeEach(() => {
@@ -31,9 +29,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
         it('all components render independently without shared dependencies', () => {
             const components = [
                 { Component: PhishingDetection, testId: 'comprehensive-phishing', title: 'Comprehensive Phishing Prevention' },
-                { Component: AccountTakeover, testId: 'account-takeover', title: 'Account Takeover Prevention' },
-                { Component: InsiderThreat, testId: 'insider-threat', title: 'Insider Threat Detection' },
-                { Component: ZeroDayProtection, testId: 'zero-day-protection', title: 'Zero-Day Protection' }
+                { Component: InsiderThreat, testId: 'insider-protection', title: 'Insider Protection' }
             ];
 
             components.forEach(({ Component, testId, title }) => {
@@ -47,13 +43,14 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                 expect(screen.getByTestId(testId)).toBeInTheDocument();
 
                 // Check if component renders the correct title
-                expect(screen.getByText(title)).toBeInTheDocument();
+                expect(screen.getByRole('heading', { name: title })).toBeInTheDocument();
 
                 // PhishingDetection has "Business Impact" instead of "Performance Metrics"
                 if (Component === PhishingDetection) {
                     expect(screen.getByText('Business Impact')).toBeInTheDocument();
                 } else {
-                    expect(screen.getByText('Performance Metrics')).toBeInTheDocument();
+                    // InsiderThreat also uses "Business Impact"
+                    expect(screen.getByText('Business Impact')).toBeInTheDocument();
                 }
 
                 unmount();
@@ -63,9 +60,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
         it('all components have their own embedded data structures', () => {
             const components = [
                 { Component: PhishingDetection, expectedMetrics: ['99.9%', '96.7%', '99%'] },
-                { Component: AccountTakeover, expectedMetrics: ['99.5%', '<0.2%', '<150ms'] },
-                { Component: InsiderThreat, expectedMetrics: ['98.9%', '<0.3%', '<300ms'] },
-                { Component: ZeroDayProtection, expectedMetrics: ['97.8%', '<0.5%', '<500ms'] }
+                { Component: InsiderThreat, expectedMetrics: ['99%', '85%', '137%'] }
             ];
 
             components.forEach(({ Component, expectedMetrics }) => {
@@ -89,9 +84,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
         it('all components initialize analytics correctly with their own events', () => {
             const components = [
                 { Component: PhishingDetection, expectedEvent: 'comprehensive_phishing_prevention_view' },
-                { Component: AccountTakeover, expectedEvent: 'account_takeover_view' },
-                { Component: InsiderThreat, expectedEvent: 'insider_threat_view' },
-                { Component: ZeroDayProtection, expectedEvent: 'zero_day_protection_view' }
+                { Component: InsiderThreat, expectedEvent: 'insider_protection_view' }
             ];
 
             components.forEach(({ Component, expectedEvent }) => {
@@ -115,9 +108,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
         it('components do not share CSS classes or dependencies', () => {
             const components = [
                 { Component: PhishingDetection, expectedContainer: 'comprehensive-phishing-container' },
-                { Component: AccountTakeover, expectedContainer: 'account-takeover-container' },
-                { Component: InsiderThreat, expectedContainer: 'insider-threat-container' },
-                { Component: ZeroDayProtection, expectedContainer: 'zero-day-protection-container' }
+                { Component: InsiderThreat, expectedContainer: 'insider-protection-container' }
             ];
 
             components.forEach(({ Component, expectedContainer }) => {
@@ -138,9 +129,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
         it('components have unique scenario content and styling', () => {
             const components = [
                 { Component: PhishingDetection, expectedScenarioType: 'Real-World Phishing Incidents' },
-                { Component: AccountTakeover, expectedScenarioType: 'Real-World Account Takeover Scenarios' },
-                { Component: InsiderThreat, expectedScenarioType: 'Real-World Insider Threat Scenarios' },
-                { Component: ZeroDayProtection, expectedScenarioType: 'Real-World Zero-Day Scenarios' }
+                { Component: InsiderThreat, expectedScenarioType: 'Real-World Insider Protection Incidents' }
             ];
 
             components.forEach(({ Component, expectedScenarioType }) => {
@@ -160,7 +149,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
     describe('Navigation Independence', () => {
         it('all components have consistent but independent navigation structure', () => {
-            const components = [PhishingDetection, AccountTakeover, InsiderThreat, ZeroDayProtection];
+            const components = [PhishingDetection, InsiderThreat];
 
             components.forEach(Component => {
                 const { unmount } = render(
@@ -185,7 +174,7 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
 
     describe('Error Resilience - Standalone Components', () => {
         it('components handle rendering gracefully even with undefined props', () => {
-            const components = [PhishingDetection, AccountTakeover, InsiderThreat, ZeroDayProtection];
+            const components = [PhishingDetection, InsiderThreat];
 
             components.forEach(Component => {
                 expect(() => {

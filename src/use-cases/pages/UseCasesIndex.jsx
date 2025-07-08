@@ -38,16 +38,6 @@ const UseCasesIndex = () => {
             impact: 'Critical'
         },
         {
-            id: 'account-takeover',
-            title: 'Account Takeover Prevention',
-            description: 'Behavioral analysis to detect unauthorized access and session hijacking',
-            icon: 'fas fa-user-shield',
-            color: 'var(--security-blue-2)',
-            scenarios: 3,
-            complexity: 'High',
-            impact: 'Critical'
-        },
-        {
             id: 'insider-threat',
             title: 'Insider Threat Detection',
             description: 'Cross-app behavior correlation to identify privileged misuse and data exfiltration',
@@ -58,20 +48,10 @@ const UseCasesIndex = () => {
             impact: 'Severe'
         },
         {
-            id: 'zero-day-protection',
-            title: 'Zero-Day Protection',
-            description: 'Runtime analysis to detect unknown threats and novel attack patterns',
-            icon: 'fas fa-bug',
-            color: 'var(--text-warning)',
-            scenarios: 2,
-            complexity: 'Advanced',
-            impact: 'High'
-        },
-        {
             id: 'ciso-business-case',
             title: 'CISO Business Case',
             description: 'Comprehensive business case for runtime identity & insider protection platform',
-            icon: 'fas fa-chart-line',
+            icon: 'fas fa-briefcase',
             color: 'var(--brand-primary)',
             scenarios: 1,
             complexity: 'Strategic',
@@ -161,8 +141,8 @@ const UseCasesIndex = () => {
         <>
             {/* Enhanced Document Head Metadata */}
             <title>Runtime ITDR Use Cases - Above Security | Advanced Threat Detection</title>
-            <meta name="description" content="Discover Above Security's world-class Runtime ITDR solutions. Advanced phishing detection, account takeover prevention, insider threat detection, and zero-day protection." />
-            <meta name="keywords" content="runtime ITDR, advanced phishing detection, account takeover prevention, insider threat detection, zero-day protection, behavioral analysis, real-time security" />
+            <meta name="description" content="Discover Above Security's world-class Runtime ITDR solutions. Advanced phishing detection, insider threat protection, and executive business case analysis." />
+            <meta name="keywords" content="runtime ITDR, advanced phishing detection, insider threat protection, CISO business case, behavioral analysis, real-time security" />
 
             <div className="use-cases-container" data-testid="use-cases-index">
                 {/* Floating Navigation with Enhanced Integration */}
@@ -182,7 +162,7 @@ const UseCasesIndex = () => {
 
                         <div className="use-cases-hero">
                             <h1 className="use-cases-title">
-                                Runtime ITDR Use Cases
+                                Runtime Insider Protection & SaaS Observability
                             </h1>
                             <p className="use-cases-subtitle">
                                 Real-world scenarios where Above Security's advanced runtime visibility

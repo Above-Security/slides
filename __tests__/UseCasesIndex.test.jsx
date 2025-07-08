@@ -49,21 +49,20 @@ describe('UseCasesIndex Component', () => {
             expect(logoLink).toHaveAttribute('href', '/')
         })
 
-        it('renders all four use case cards', () => {
+        it('renders all three use case cards', () => {
             renderWithRouter()
 
             expect(screen.getByText('Phishing Detection')).toBeInTheDocument()
-            expect(screen.getByText('Account Takeover Prevention')).toBeInTheDocument()
             expect(screen.getByText('Insider Threat Detection')).toBeInTheDocument()
-            expect(screen.getByText('Zero-Day Protection')).toBeInTheDocument()
+            expect(screen.getByText('CISO Business Case')).toBeInTheDocument()
         })
 
         it('displays correct scenario counts for each use case', () => {
             renderWithRouter()
 
             expect(screen.getByText('4 scenarios')).toBeInTheDocument()
-            expect(screen.getAllByText('3 scenarios')).toHaveLength(2)
-            expect(screen.getByText('2 scenarios')).toBeInTheDocument()
+            expect(screen.getByText('3 scenarios')).toBeInTheDocument()
+            expect(screen.getByText('1 scenarios')).toBeInTheDocument()
         })
     })
 
@@ -84,8 +83,11 @@ describe('UseCasesIndex Component', () => {
             const phishingCard = screen.getByText('Phishing Detection').closest('a')
             expect(phishingCard).toHaveAttribute('href', '/use-cases/phishing-detection')
 
-            const accountCard = screen.getByText('Account Takeover Prevention').closest('a')
-            expect(accountCard).toHaveAttribute('href', '/use-cases/account-takeover')
+            const insiderCard = screen.getByText('Insider Threat Detection').closest('a')
+            expect(insiderCard).toHaveAttribute('href', '/use-cases/insider-threat')
+
+            const businessCard = screen.getByText('CISO Business Case').closest('a')
+            expect(businessCard).toHaveAttribute('href', '/use-cases/ciso-business-case')
         })
     })
 
@@ -140,7 +142,7 @@ describe('UseCasesIndex Component', () => {
             expect(mainTitle).toHaveTextContent('Runtime ITDR Use Cases')
 
             const useCaseTitles = screen.getAllByRole('heading', { level: 3 })
-            expect(useCaseTitles).toHaveLength(5)
+            expect(useCaseTitles).toHaveLength(3)
         })
 
         it('has proper link accessibility', () => {

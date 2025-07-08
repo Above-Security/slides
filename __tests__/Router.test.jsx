@@ -16,9 +16,7 @@ vi.mock('../src/components/PresentationApp', () => ({
 vi.mock('../src/use-cases', () => ({
     UseCasesIndex: () => <div data-testid="use-cases-index">Use Cases Index</div>,
     PhishingDetection: () => <div data-testid="phishing-detection">Phishing Detection</div>,
-    AccountTakeover: () => <div data-testid="account-takeover">Account Takeover</div>,
     InsiderThreat: () => <div data-testid="insider-threat">Insider Threat</div>,
-    ZeroDayProtection: () => <div data-testid="zero-day-protection">Zero-Day Protection</div>,
     CISOBusinessCase: () => <div data-testid="ciso-business-case">CISO Business Case</div>
 }))
 
@@ -77,19 +75,14 @@ describe('App Router - Updated Architecture', () => {
             expect(screen.getByTestId('phishing-detection')).toBeInTheDocument()
         })
 
-        it('renders AccountTakeover component for account-takeover route', () => {
-            renderWithRouter(['/use-cases/account-takeover'])
-            expect(screen.getByTestId('account-takeover')).toBeInTheDocument()
-        })
-
         it('renders InsiderThreat component for insider-threat route', () => {
             renderWithRouter(['/use-cases/insider-threat'])
             expect(screen.getByTestId('insider-threat')).toBeInTheDocument()
         })
 
-        it('renders ZeroDayProtection component for zero-day-protection route', () => {
-            renderWithRouter(['/use-cases/zero-day-protection'])
-            expect(screen.getByTestId('zero-day-protection')).toBeInTheDocument()
+        it('renders CISO Business Case component for ciso-business-case route', () => {
+            renderWithRouter(['/use-cases/ciso-business-case'])
+            expect(screen.getByTestId('ciso-business-case')).toBeInTheDocument()
         })
 
         it('redirects invalid use case routes to homepage', () => {
@@ -133,8 +126,8 @@ describe('App Router - Updated Architecture', () => {
 
             // Test that we can navigate to individual use cases
             cleanup()
-            renderWithRouter(['/use-cases/account-takeover'])
-            expect(screen.getByTestId('account-takeover')).toBeInTheDocument()
+            renderWithRouter(['/use-cases/insider-threat'])
+            expect(screen.getByTestId('insider-threat')).toBeInTheDocument()
         })
     })
 
@@ -150,8 +143,8 @@ describe('App Router - Updated Architecture', () => {
             expect(screen.getByTestId('phishing-detection')).toBeInTheDocument()
             
             cleanup()
-            renderWithRouter(['/use-cases/zero-day-protection'])
-            expect(screen.getByTestId('zero-day-protection')).toBeInTheDocument()
+            renderWithRouter(['/use-cases/ciso-business-case'])
+            expect(screen.getByTestId('ciso-business-case')).toBeInTheDocument()
         })
 
         it('handles multiple consecutive slashes', () => {
@@ -170,16 +163,14 @@ describe('App Router - Updated Architecture', () => {
     describe('Use Case Route Validation', () => {
         const validUseCaseRoutes = [
             '/use-cases/phishing-detection',
-            '/use-cases/account-takeover', 
             '/use-cases/insider-threat',
-            '/use-cases/zero-day-protection'
+            '/use-cases/ciso-business-case'
         ];
 
         const expectedComponents = [
             'phishing-detection',
-            'account-takeover',
             'insider-threat', 
-            'zero-day-protection'
+            'ciso-business-case'
         ];
 
         it('all valid use case routes render correct components', () => {
@@ -194,7 +185,7 @@ describe('App Router - Updated Architecture', () => {
             const invalidRoutes = [
                 '/use-cases/non-existent',
                 '/use-cases/phishing', // Partial match
-                '/use-cases/account-takeover-prevention', // Too long
+                '/use-cases/account-takeover-prevention', // Removed use case
                 '/use-cases/123' // Numeric
             ];
 
@@ -225,9 +216,8 @@ describe('App Router - Updated Architecture', () => {
         it('handles rapid route changes', () => {
             const routes = [
                 '/use-cases/phishing-detection',
-                '/use-cases/account-takeover',
                 '/use-cases/insider-threat',
-                '/use-cases/zero-day-protection'
+                '/use-cases/ciso-business-case'
             ];
 
             routes.forEach(route => {

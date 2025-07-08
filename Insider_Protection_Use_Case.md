@@ -139,6 +139,5 @@ We frame detection as **protection** — nudging users back into safe workflows:
 
 ---
 
-**Category**: Runtime ITDR  
 **Strategic Identity**: Post-auth browser visibility  
 **Differentiator**: Real-time, semantic detection of user behavior

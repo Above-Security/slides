@@ -50,9 +50,8 @@ This React application is designed for technical buyers including CISOs, SecOps 
 ### **2. Use Cases Section:**
 Four detailed technical implementation scenarios:
 - **Phishing Detection** - Real-time behavioral analysis of suspicious login patterns
-- **Account Takeover** - Session anomaly detection and prevention
 - **Insider Threat** - Behavioral drift monitoring and early warning systems
-- **Zero-Day Protection** - Unknown threat detection through semantic analysis
+- **CISO Business Case** - Executive business case and ROI analysis
 
 ### **3. Company Narrative:**
 Strategic business overview with interactive table of contents:

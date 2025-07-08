@@ -52,7 +52,7 @@ describe('FloatingNavigation E2E Test Scenarios', () => {
         const testTopOffset = {
             title: 'should maintain configured top offset during scroll',
             scenario: async (page) => {
-                await page.goto('/use-cases/account-takeover');
+                await page.goto('/use-cases/insider-threat');
                 
                 const nav = await page.locator('[data-testid="floating-navigation"]');
                 
@@ -200,15 +200,15 @@ describe('FloatingNavigation E2E Test Scenarios', () => {
             scenario: async (page) => {
                 await page.goto('/use-cases');
                 
-                // Click on Account Takeover link
-                const accountTakeoverLink = await page.locator('[data-testid="nav-link--use-cases-account-takeover"]');
-                await accountTakeoverLink.click();
+                // Click on Insider Threat link
+                const insiderThreatLink = await page.locator('[data-testid="nav-link--use-cases-insider-threat"]');
+                await insiderThreatLink.click();
                 
-                // Should navigate to account takeover page
-                await page.waitForURL('**/use-cases/account-takeover');
+                // Should navigate to insider threat page
+                await page.waitForURL('**/use-cases/insider-threat');
                 
                 // Link should now be active
-                await expect(accountTakeoverLink).toHaveClass(/active/);
+                await expect(insiderThreatLink).toHaveClass(/active/);
             }
         };
     });
@@ -236,7 +236,7 @@ describe('FloatingNavigation E2E Test Scenarios', () => {
                 }
                 
                 // Last link should have focus
-                const lastLink = await page.locator('[data-testid="nav-link--use-cases-zero-day-protection"]');
+                const lastLink = await page.locator('[data-testid="nav-link--use-cases-ciso-business-case"]');
                 await expect(lastLink).toBeFocused();
             }
         };
@@ -397,9 +397,8 @@ describe('FloatingNavigation E2E Test Scenarios', () => {
                 const pages = [
                     '/use-cases',
                     '/use-cases/phishing-detection',
-                    '/use-cases/account-takeover',
                     '/use-cases/insider-threat',
-                    '/use-cases/zero-day-protection'
+                    '/use-cases/ciso-business-case'
                 ];
                 
                 for (const pageUrl of pages) {
