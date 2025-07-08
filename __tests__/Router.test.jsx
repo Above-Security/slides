@@ -18,7 +18,8 @@ vi.mock('../src/use-cases', () => ({
     PhishingDetection: () => <div data-testid="phishing-detection">Phishing Detection</div>,
     AccountTakeover: () => <div data-testid="account-takeover">Account Takeover</div>,
     InsiderThreat: () => <div data-testid="insider-threat">Insider Threat</div>,
-    ZeroDayProtection: () => <div data-testid="zero-day-protection">Zero-Day Protection</div>
+    ZeroDayProtection: () => <div data-testid="zero-day-protection">Zero-Day Protection</div>,
+    CISOBusinessCase: () => <div data-testid="ciso-business-case">CISO Business Case</div>
 }))
 
 describe('App Router - Updated Architecture', () => {

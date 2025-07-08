@@ -140,7 +140,7 @@ describe('UseCasesIndex Component', () => {
             expect(mainTitle).toHaveTextContent('Runtime ITDR Use Cases')
 
             const useCaseTitles = screen.getAllByRole('heading', { level: 3 })
-            expect(useCaseTitles).toHaveLength(4)
+            expect(useCaseTitles).toHaveLength(5)
         })
 
         it('has proper link accessibility', () => {
