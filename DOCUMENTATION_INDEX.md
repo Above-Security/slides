@@ -42,7 +42,7 @@ This directory contains all essential documentation for the Above Security prese
 ## 🎯 **Presentation Content (PRESERVE)**
 
 ### **14 Production Slides - DO NOT REMOVE:**
-1. **SlideIntro.jsx** - Above Runtime ITDR introduction
+1. **SlideIntro.jsx** - Above Runtime Insider Protection introduction
 2. **SlideRuntimeITDR.jsx** - Technology definition and positioning
 3. **SlideProblem.jsx** - Current identity security challenges  
 4. **SlideHowItWorks.jsx** - Technical implementation details

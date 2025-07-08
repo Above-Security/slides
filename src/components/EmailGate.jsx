@@ -115,12 +115,12 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
                             <Logo />
                         </div>
                         <h1 className="email-gate-title">Above Security</h1>
-                        <h2 className="email-gate-subtitle">Runtime ITDR Presentation</h2>
+                        <h2 className="email-gate-subtitle">Runtime Insider Protection Presentation</h2>
                     </div>
 
                     <div className="email-gate-body">
                         <p className="email-gate-description">
-                            Get exclusive access to our comprehensive Runtime ITDR presentation.
+                            Get exclusive access to our comprehensive Runtime Insider Protection presentation.
                             Enter your business email to view detailed insights on modern threat detection,
                             incident response, and Above Security's innovative approach to runtime protection.
                         </p>

@@ -449,7 +449,7 @@ const CISOBusinessCase = () => {
             {/* Document Head Metadata */}
             <title>{CISO_BUSINESS_CASE_DATA.title} - Above Security Business Case</title>
             <meta name="description" content={CISO_BUSINESS_CASE_DATA.description} />
-            <meta name="keywords" content="CISO business case, runtime ITDR, insider protection, SaaS security, behavioral analysis" />
+            <meta name="keywords" content="CISO business case, Runtime Insider Protection, insider protection, SaaS security, behavioral analysis" />
 
             <div className="ciso-business-case-container" data-testid="ciso-business-case">
                 {/* Floating Navigation */}

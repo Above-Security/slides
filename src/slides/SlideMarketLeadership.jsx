@@ -7,7 +7,7 @@ const SlideMarketLeadership = () => (
   <SlideLayout>
     <header className="slide-header">
       <h1 className="slide-title">Capability Comparison</h1>
-      <p className="slide-subtitle">Runtime ITDR vs. Traditional Security</p>
+      <p className="slide-subtitle">Runtime Insider Protection vs. Traditional Security</p>
     </header>
 
     <div className={styles['market-leadership']}>
@@ -34,7 +34,7 @@ const SlideMarketLeadership = () => (
           </div>
 
           {[
-            ['Real-Time Session Threat Detection (Runtime ITDR)', '✅', '✅', '❌', '❌', '❌'],
+            ['Real-Time Session Threat Detection (Runtime Insider Protection)', '✅', '✅', '❌', '❌', '❌'],
             ['Post-authentication User Behavior Visibility', '✅', '✅', '❌', '❌', '❌'],
             ['Browser-Based Phishing Detection (AiTM, Consent)', '✅', '❌', '❌', '✅', '❌'],
             ['High-Fidelity Insider Threat Prevention', '✅', '❌', '❌', '❌', '❌'],

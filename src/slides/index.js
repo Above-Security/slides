@@ -15,8 +15,8 @@ import SlideBusinessCase from './SlideBusinessCase';
 import SlideAppendix from './SlideAppendix';
 
 export const slideData = [
-  { title: 'Above Runtime ITDR', Component: SlideIntro },
-  { title: 'What is Runtime ITDR?', Component: SlideRuntimeITDR },
+  { title: 'Above Runtime Insider Protection', Component: SlideIntro },
+  { title: 'What is Runtime Insider Protection?', Component: SlideRuntimeITDR },
   { title: 'The Problem', Component: SlideProblem },
   { title: 'How It Works', Component: SlideHowItWorks },
   { title: 'Cyberhaven Case Study', Component: SlideCaseStudy },

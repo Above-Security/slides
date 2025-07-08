@@ -23,7 +23,7 @@
 
 ## Executive Summary
 
-**Above Security** delivers the industry's first **Runtime Identity Threat Detection & Response (Runtime ITDR)** platform. Unlike traditional security tools that rely on logs and post-facto analysis, Above provides real-time visibility into user behavior *inside* applications after authentication.
+**Above Security** delivers the industry's first **Runtime Identity Threat Detection & Response (Runtime Insider Protection)** platform. Unlike traditional security tools that rely on logs and post-facto analysis, Above provides real-time visibility into user behavior *inside* applications after authentication.
 
 ### The Core Problem
 - **80% of breaches happen after authentication** — when users are already inside applications
@@ -81,9 +81,9 @@ Traditional security tools focus on **access control** rather than **actual beha
 
 ## Solution Overview
 
-### What is Runtime ITDR?
+### What is Runtime Insider Protection?
 
-Runtime ITDR provides visibility into user behavior **after authentication** by capturing and analyzing real user interactions within applications — not just logs or access patterns.
+Runtime Insider Protection provides visibility into user behavior **after authentication** by capturing and analyzing real user interactions within applications — not just logs or access patterns.
 
 #### Key Differentiators
 
@@ -488,7 +488,7 @@ Above's browser-native runtime intelligence positions the company to capture sig
 
 ## Strategic Growth Roadmap
 
-### Phase 1: Runtime ITDR for SaaS (2025-27)
+### Phase 1: Runtime Insider Protection for SaaS (2025-27)
 **Target Market**: $2-3B TAM
 
 #### Objectives
@@ -501,7 +501,7 @@ Above's browser-native runtime intelligence positions the company to capture sig
 - **Product**: LLM-powered semantic phishing detection at scale
 - **Sales**: $50M ARR with 50+ enterprise customers
 - **Partnerships**: Integrations with top 5 SIEM platforms
-- **Market**: Recognized as Runtime ITDR category creator
+- **Market**: Recognized as Runtime Insider Protection category creator
 
 ### Phase 2: Identity-Centric Zero-Trust (2027-29)  
 **Expansion Market**: +$2B TAM
@@ -540,7 +540,7 @@ Above's browser-native runtime intelligence positions the company to capture sig
 | **False Positive Rate** | <5% | Required to win competitive evaluations |
 | **Deployment Timeline** | 90 days to 250K endpoints | 4-6x faster than alternatives |
 | **CASB Displacement** | 20% license replacement | Significant customer cost savings |
-| **Market Position** | Category leadership by 2027 | First-mover advantage in Runtime ITDR |
+| **Market Position** | Category leadership by 2027 | First-mover advantage in Runtime Insider Protection |
 
 ---
 

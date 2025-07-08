@@ -4,7 +4,7 @@ import styles from './SlideIntro.module.css';
 // Note: Common styles like key-points-grid, executive-summary are now in shared-slide-components.css
 
 /**
- * Above Intro Slide — highlighting precise runtime ITDR and in-browser phishing prevention.
+ * Above Intro Slide — highlighting precise Runtime Insider Protection and in-browser phishing prevention.
  */
 const SlideIntro = () => (
   <SlideLayout>

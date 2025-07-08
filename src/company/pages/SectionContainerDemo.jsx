@@ -90,7 +90,7 @@ const SectionContainerDemo = () => {
               <ol>
                 <li><strong>Starter ($8/user/month):</strong> PhishGuard core with user coaching and basic reporting</li>
                 <li><strong>Growth ($18/user/month):</strong> + ScopeLens telemetry with SIEM integration and advanced analytics</li>
-                <li><strong>Platform ($32/user/month):</strong> + Runtime ITDR with insider threat detection and forensic workflows</li>
+                <li><strong>Platform ($32/user/month):</strong> + Runtime Insider Protection with insider threat detection and forensic workflows</li>
               </ol>
             </div>
 
