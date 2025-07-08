@@ -7,7 +7,8 @@ import {
   PhishingDetection,
   AccountTakeover,
   InsiderThreat,
-  ZeroDayProtection
+  ZeroDayProtection,
+  CISOBusinessCase
 } from './use-cases';
 import {
   CompanyIndex
@@ -43,6 +44,11 @@ const App = () => {
       <Route
         path="/use-cases/zero-day-protection"
         element={<ZeroDayProtection />}
+        caseSensitive
+      />
+      <Route
+        path="/use-cases/ciso-business-case"
+        element={<CISOBusinessCase />}
         caseSensitive
       />
       <Route path="/use-cases/*" element={<Navigate to="/" replace />} />

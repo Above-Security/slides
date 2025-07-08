@@ -1,41 +1,66 @@
 /* MetricCard Component Styles */
-/* Extracted from PhishingDetection.css - maintaining exact design */
+/* Fixed spacing, borders, and consistent variable usage with improved alignment */
 
 .business-metric-card {
     background: var(--color-background-primary);
-    border-radius: var(--radius-lg);
+    border-radius: var(--border-radius-lg);
     border: 1px solid var(--color-border-primary);
     padding: var(--spacing-xl);
-    transition: all var(--transition-normal);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.business-metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), #5FED83);
 }
 
 .business-metric-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border-color: var(--color-primary);
 }
 
 .metric-title {
     font-size: var(--font-size-md);
-    font-weight: var(--font-weight-semibold);
+    font-weight: 600;
     color: var(--color-text-primary);
     margin: 0 0 var(--spacing-lg) 0;
     line-height: 1.4;
+    min-height: 3.2em;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    padding: 0 var(--spacing-sm);
 }
 
 .metric-comparison {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
+    flex-grow: 1;
 }
 
 .before-after {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     padding: var(--spacing-md);
     background: var(--color-background-secondary);
-    border-radius: var(--radius-md);
+    border-radius: var(--border-radius-md);
+    flex-grow: 1;
+    min-height: 80px;
 }
 
 .before,
@@ -44,74 +69,139 @@
     flex-direction: column;
     gap: var(--spacing-xs);
     flex: 1;
+    text-align: center;
+    padding: var(--spacing-sm);
 }
 
 .before .label,
 .after .label {
     font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
 }
 
 .before .value,
 .after .value {
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+    font-weight: 600;
     color: var(--color-text-primary);
+    line-height: 1.2;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--color-border-secondary);
+    word-break: break-word;
+    min-height: 2.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .before-after i {
     color: var(--color-primary);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
 }
 
 .improvement {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xs);
-    padding: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-5));
-    color: var(--color-text-inverse);
-    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary), #1F7A3A);
+    color: white;
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-md);
+    flex-shrink: 0;
+    min-height: 50px;
+    text-align: center;
 }
 
 .improvement-value {
-    font-size: 18px;
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
 }
 
 .improvement-label {
     font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-medium);
+    font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .business-metric-card {
-        padding: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        min-height: 300px;
+        max-width: 100%;
+    }
+    
+    .metric-title {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-md);
+        min-height: 2.8em;
+        padding: 0 var(--spacing-xs);
     }
     
     .before-after {
         flex-direction: column;
         gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+        min-height: 120px;
+    }
+    
+    .before,
+    .after {
+        text-align: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs);
     }
     
     .before-after i {
         transform: rotate(90deg);
-        margin: var(--spacing-sm) 0;
+        margin: var(--spacing-xs) 0;
+        order: 1;
+        font-size: var(--font-size-md);
+    }
+    
+    .before {
+        order: 0;
+    }
+    
+    .after {
+        order: 2;
     }
     
     .before .value,
     .after .value {
         font-size: var(--font-size-sm);
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .improvement {
+        padding: var(--spacing-md);
+        gap: var(--spacing-xs);
+        flex-direction: column;
+        text-align: center;
+        min-height: 60px;
     }
     
     .improvement-value {
         font-size: var(--font-size-lg);
+    }
+    
+    .improvement-label {
+        font-size: var(--font-size-xs);
     }
 }
