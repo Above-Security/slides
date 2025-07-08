@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 import { clarityEvent, claritySet, initializeClarity } from '../src/utils/clarity'
@@ -35,7 +35,7 @@ describe('UseCasesIndex Component', () => {
         it('renders the main title and subtitle', () => {
             renderWithRouter()
 
-            expect(screen.getByText('Runtime Insider Protection & SaaS Observability')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & SaaS Behavioral Visibility')).toBeInTheDocument()
             expect(screen.getByText(/Real-world scenarios where Above Security/)).toBeInTheDocument()
         })
 
@@ -54,7 +54,10 @@ describe('UseCasesIndex Component', () => {
 
             expect(screen.getByText('Phishing Detection')).toBeInTheDocument()
             expect(screen.getByText('Insider Threat Detection')).toBeInTheDocument()
-            expect(screen.getByText('CISO Business Case')).toBeInTheDocument()
+            
+            // Be more specific to avoid finding the navigation element
+            const useCaseGrid = screen.getByRole('main')
+            expect(useCaseGrid).toHaveTextContent('Business Case')
         })
 
         it('displays correct scenario counts for each use case', () => {
@@ -86,7 +89,9 @@ describe('UseCasesIndex Component', () => {
             const insiderCard = screen.getByText('Insider Threat Detection').closest('a')
             expect(insiderCard).toHaveAttribute('href', '/use-cases/insider-threat')
 
-            const businessCard = screen.getByText('CISO Business Case').closest('a')
+            // Find Business Case within the main content area to avoid the navigation
+            const mainContent = screen.getByRole('main')
+            const businessCard = within(mainContent).getByText('Business Case').closest('a')
             expect(businessCard).toHaveAttribute('href', '/use-cases/ciso-business-case')
         })
     })
@@ -139,7 +144,7 @@ describe('UseCasesIndex Component', () => {
             renderWithRouter()
 
             const mainTitle = screen.getByRole('heading', { level: 1 })
-            expect(mainTitle).toHaveTextContent('Runtime Insider Protection & SaaS Observability')
+            expect(mainTitle).toHaveTextContent('Runtime Insider Protection & SaaS Behavioral Visibility')
 
             const useCaseTitles = screen.getAllByRole('heading', { level: 3 })
             expect(useCaseTitles).toHaveLength(3)
@@ -169,7 +174,7 @@ describe('UseCasesIndex Component', () => {
             // For now, we ensure the component renders without errors
             renderWithRouter()
 
-            expect(screen.getByText('Runtime Insider Protection & SaaS Observability')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & SaaS Behavioral Visibility')).toBeInTheDocument()
         })
     })
 
@@ -182,7 +187,7 @@ describe('UseCasesIndex Component', () => {
 
             // Component should still render even if analytics fail
             expect(() => renderWithRouter()).not.toThrow()
-            expect(screen.getByText('Runtime Insider Protection & SaaS Observability')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & SaaS Behavioral Visibility')).toBeInTheDocument()
         })
     })
 
@@ -192,7 +197,7 @@ describe('UseCasesIndex Component', () => {
 
             // In a real browser environment, this would check document.title
             // For testing, we verify the component attempts to set it
-            expect(screen.getByText('Runtime Insider Protection & SaaS Observability')).toBeInTheDocument()
+            expect(screen.getByText('Runtime Insider Protection & SaaS Behavioral Visibility')).toBeInTheDocument()
         })
     })
 })

@@ -36,7 +36,7 @@ import '../styles/CISOBusinessCase.css';
 const CISO_BUSINESS_CASE_DATA = {
     id: 'ciso-business-case',
     title: 'Above Security: Runtime Identity & Insider Protection Platform',
-    subtitle: 'Beyond Shadow App Discovery: Behavioral Intelligence for CISOs',
+    subtitle: 'Beyond Shadow App Discovery: Behavioral Intelligence for security teams',
     description: 'While others tell you WHICH shadow SaaS and AI apps users access, Above tells you WHAT they\'re doing inside those apps — and WHY it\'s risky. We provide runtime behavioral intelligence that goes beyond app inventory to deliver true insider protection through intent analysis and real-time intervention.',
     icon: 'fas fa-chart-line',
     color: 'var(--brand-primary)',

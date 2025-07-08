@@ -49,7 +49,7 @@ const UseCasesIndex = () => {
         },
         {
             id: 'ciso-business-case',
-            title: 'CISO Business Case',
+            title: 'Business Case',
             description: 'Comprehensive business case for runtime identity & insider protection platform',
             icon: 'fas fa-briefcase',
             color: 'var(--brand-primary)',
@@ -162,7 +162,7 @@ const UseCasesIndex = () => {
 
                         <div className="use-cases-hero">
                             <h1 className="use-cases-title">
-                                Runtime Insider Protection & SaaS Observability
+                                Runtime Insider Protection & SaaS Behavioral Visibility
                             </h1>
                             <p className="use-cases-subtitle">
                                 Real-world scenarios where Above Security's advanced runtime visibility
