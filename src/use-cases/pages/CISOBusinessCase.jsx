@@ -36,20 +36,20 @@ import '../styles/CISOBusinessCase.css';
 const CISO_BUSINESS_CASE_DATA = {
     id: 'ciso-business-case',
     title: 'Above Security: Runtime Identity & Insider Protection Platform',
-    subtitle: 'Business Case for CISOs',
-    description: 'Above delivers runtime visibility into user behavior inside SaaS applications after authentication — the critical blind spot that traditional security tools miss. We sit inside the browser, observing what users actually do within applications like Salesforce, Notion, Slack, and thousands of other SaaS tools.',
+    subtitle: 'Beyond Shadow App Discovery: Behavioral Intelligence for CISOs',
+    description: 'While others tell you WHICH shadow SaaS and AI apps users access, Above tells you WHAT they\'re doing inside those apps — and WHY it\'s risky. We provide runtime behavioral intelligence that goes beyond app inventory to deliver true insider protection through intent analysis and real-time intervention.',
     icon: 'fas fa-chart-line',
     color: 'var(--brand-primary)',
 
     executiveSummary: {
         title: 'What We Do',
-        description: 'Above delivers runtime visibility into user behavior inside SaaS applications after authentication — the critical blind spot that traditional security tools miss. We sit inside the browser, observing what users actually do within applications like Salesforce, Notion, Slack, and thousands of other SaaS tools.',
+        description: 'Above delivers runtime behavioral intelligence inside SaaS applications — going beyond shadow app discovery to understand user intent and prevent risky actions in real-time. While competitors tell you WHICH unauthorized apps users access, Above tells you WHAT they\'re doing inside those apps and WHY it\'s risky.',
         keyPoints: [
-            'Real-time insider protection — detect risky behavior as it happens',
-            'Shadow SaaS & AI discovery — see what users are actually using',
-            'OAuth abuse detection — monitor third-party app authorizations',
-            'Session timeline reconstruction — complete forensic visibility for incidents',
-            'Offboarding drift detection — catch residual sessions after deprovisioning'
+            'Behavioral intelligence in shadow SaaS & AI tools — not just discovery',
+            'Real-time intervention during risky actions — not just app blocking',
+            'Intent analysis within unauthorized applications — understand the "why"',
+            'Session-level forensics — complete user journey reconstruction',
+            'Semantic data protection — contextual awareness of exposure risk'
         ]
     },
 
@@ -137,106 +137,111 @@ const CISO_BUSINESS_CASE_DATA = {
     },
 
     competitiveDifferentiation: {
-        title: 'Why We Win vs. Traditional SaaS Security',
-        subtitle: 'The Fundamental Difference vs. Obsidian/Reco/Grip',
+        title: 'Why We Win vs. Shadow SaaS/AI Detection Tools',
+        subtitle: 'The Critical Difference vs. Obsidian/Reco/Grip',
         comparisonTable: [
             {
-                category: 'When',
-                traditional: 'After the fact (logs/APIs)',
-                above: 'During activity (real-time)',
-                advantage: 'Prevention vs. detection'
+                category: 'Discovery',
+                traditional: 'WHICH shadow apps users access',
+                above: 'WHAT users do inside shadow apps',
+                advantage: 'Behavioral intelligence vs. app inventory'
             },
             {
-                category: 'What',
-                traditional: 'App inventory & configuration',
-                above: 'User behavior & intent',
-                advantage: 'Behavioral intelligence'
+                category: 'Analysis',
+                traditional: 'App lists and access patterns',
+                above: 'User intent and risk context',
+                advantage: 'Understanding WHY behavior is risky'
             },
             {
-                category: 'Where',
-                traditional: 'API-integrated apps only',
-                above: 'Any web application',
-                advantage: 'Complete coverage'
+                category: 'Protection',
+                traditional: 'Block/allow at access level',
+                above: 'Real-time intervention during risky actions',
+                advantage: 'Behavioral prevention vs. blanket blocking'
             },
             {
-                category: 'How',
-                traditional: 'Post-incident analysis',
-                above: 'Prevention during session',
-                advantage: 'Real-time protection'
+                category: 'Intelligence',
+                traditional: 'Static app categorization',
+                above: 'Dynamic user behavior analysis',
+                advantage: 'Adaptive risk assessment'
             }
         ],
         specificCompetitors: [
             {
-                category: 'Discovery Method',
-                competitors: 'API scanning, OAuth enumeration, SSPM posture checks',
-                above: 'Real-time browser observation of user behavior'
+                category: 'Shadow SaaS Discovery',
+                competitors: 'Browser extension for app discovery and blocking',
+                above: 'Browser extension plus behavioral analysis of shadow app usage'
             },
             {
-                category: 'Coverage',
-                competitors: 'API-integrated apps only (limited to vendor APIs)',
-                above: 'All web applications including long-tail and unsanctioned tools'
+                category: 'Shadow AI Detection',
+                competitors: 'Identifies unauthorized AI tools and blocks access',
+                above: 'Analyzes sensitive data exposure and intent within AI tools'
             },
             {
-                category: 'Detection Speed',
-                competitors: 'Hours to days (batch log analysis, periodic scans)',
-                above: 'Real-time during session (immediate behavioral detection)'
+                category: 'Real-time Prevention',
+                competitors: 'Blocks access to unauthorized applications',
+                above: 'Prevents risky actions within authorized and unauthorized apps'
             },
             {
-                category: 'Threat Focus',
-                competitors: 'Misconfigurations, stale permissions, compliance gaps',
-                above: 'Active user behavior, intent analysis, insider risk patterns'
+                category: 'Risk Assessment',
+                competitors: 'App-level risk scoring based on categories',
+                above: 'User behavior risk scoring based on actual actions and intent'
             },
             {
                 category: 'Insider Protection',
-                competitors: 'Limited to API-visible actions and policy violations',
-                above: 'Complete user behavior visibility and intent understanding'
+                competitors: 'Policy violations and access control enforcement',
+                above: 'Behavioral drift detection and intent-based threat identification'
             },
             {
-                category: 'Deployment Complexity',
-                competitors: 'Complex API integrations, vendor-specific connectors',
-                above: 'Single browser extension deployment via MDM'
+                category: 'Investigation Support',
+                competitors: 'App usage logs and access reports',
+                above: 'Complete session timeline reconstruction with behavioral context'
             },
             {
-                category: 'Prevention Capability',
-                competitors: 'Reactive alerting after policy violations detected',
-                above: 'Proactive intervention during risky activity in real-time'
+                category: 'Data Protection',
+                competitors: 'DLP rules applied at app access points',
+                above: 'Semantic understanding of data sensitivity in real-time context'
             },
             {
-                category: 'Shadow SaaS Detection',
-                competitors: 'Only apps with OAuth integrations or known domains',
-                above: 'Any web application accessed by users, including unknown tools'
+                category: 'Long-tail Coverage',
+                competitors: 'Limited to known app signatures and domains',
+                above: 'Universal coverage of any web application through browser observation'
             },
             {
-                category: 'Session Context',
-                competitors: 'No visibility into user sessions or click-level behavior',
-                above: 'Complete session timeline reconstruction and behavioral analysis'
+                category: 'False Positive Rate',
+                competitors: 'High alerts due to blanket policy enforcement',
+                above: 'Low alerts through contextual behavioral understanding'
             }
         ],
         traditionalToolMisses: [
             {
-                gap: 'Gray-area insider behavior',
-                description: 'Legitimate users doing inappropriate things',
+                gap: 'Behavioral context in shadow apps',
+                description: 'WHAT users do inside unauthorized tools, not just WHICH tools they access',
                 icon: 'fas fa-user-secret'
             },
             {
-                gap: 'Real-time session hijacking',
-                description: 'Stolen tokens/cookies in active use',
-                icon: 'fas fa-key'
+                gap: 'Intent analysis in AI tools',
+                description: 'Understanding WHY AI usage is risky, not just detecting usage',
+                icon: 'fas fa-brain'
             },
             {
-                gap: 'Semantic phishing',
-                description: 'Sophisticated attacks that bypass email filters',
-                icon: 'fas fa-fish'
+                gap: 'Real-time behavioral intervention',
+                description: 'Preventing risky actions during sessions, not just blocking apps',
+                icon: 'fas fa-shield-alt'
             },
             {
-                gap: 'Long-tail SaaS usage',
-                description: 'Applications without APIs or integrations',
-                icon: 'fas fa-cloud'
+                gap: 'Semantic data understanding',
+                description: 'Contextual awareness of data sensitivity and exposure risk',
+                icon: 'fas fa-eye'
             },
             {
-                gap: 'User intent and context',
-                description: 'The "why" behind actions',
-                icon: 'fas fa-question-circle'
+                gap: 'User-centric risk assessment',
+                description: 'Individual behavioral patterns vs. blanket policy enforcement',
+                icon: 'fas fa-user-check'
+            },
+            {
+                gap: 'Session-level forensics',
+                description: 'Complete user journey reconstruction for incident investigation',
+                icon: 'fas fa-search'
             }
         ]
     },
@@ -543,7 +548,7 @@ const CISOBusinessCase = () => {
                                     id="competitive-heading"
                                     title={CISO_BUSINESS_CASE_DATA.competitiveDifferentiation.title}
                                     icon="fas fa-chess"
-                                    description="How Above fundamentally differs from traditional SaaS security vendors"
+                                    description="How Above's behavioral intelligence differs from shadow app discovery tools"
                                 />
 
                                 {/* Fundamental Difference Table */}
@@ -552,7 +557,7 @@ const CISOBusinessCase = () => {
                                     <div className="comparison-table">
                                         <div className="table-header">
                                             <div>Approach</div>
-                                            <div>Traditional (Obsidian/Grip/Reco)</div>
+                                            <div>Obsidian/Reco/Grip Approach</div>
                                             <div>Above Security</div>
                                         </div>
                                         {CISO_BUSINESS_CASE_DATA.competitiveDifferentiation.comparisonTable.map((row, index) => (
@@ -567,7 +572,7 @@ const CISOBusinessCase = () => {
 
                                 {/* Specific Competitor Comparison */}
                                 <div className="specific-competitors">
-                                    <h3>Competitive Differentiation</h3>
+                                    <h3>Direct Feature Comparison vs. Obsidian/Reco/Grip</h3>
                                     <div className="competitor-comparison-table">
                                         <div className="table-header">
                                             <div>Category</div>
@@ -586,7 +591,7 @@ const CISOBusinessCase = () => {
 
                                 {/* What Traditional Tools Miss */}
                                 <div className="traditional-tool-gaps">
-                                    <h3>What Traditional Tools Miss</h3>
+                                    <h3>What Shadow App Discovery Tools Miss</h3>
                                     <CardGrid className="gaps-grid">
                                         {CISO_BUSINESS_CASE_DATA.competitiveDifferentiation.traditionalToolMisses.map((gap, index) => (
                                             <div key={index} className="gap-card">
