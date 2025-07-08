@@ -16,9 +16,7 @@ vi.mock('../src/components/LogoWatermark', () => ({
 }));
 
 import PhishingDetection from '../src/use-cases/pages/PhishingDetection';
-import AccountTakeover from '../src/use-cases/pages/AccountTakeover';
 import InsiderThreat from '../src/use-cases/pages/InsiderThreat';
-import ZeroDayProtection from '../src/use-cases/pages/ZeroDayProtection';
 
 describe('Individual Use Case Components', () => {
     const renderWithRouter = (Component) => {
@@ -74,160 +72,75 @@ describe('Individual Use Case Components', () => {
         });
     });
 
-    describe('AccountTakeover Component', () => {
-        it('renders account takeover use case correctly', () => {
-            renderWithRouter(AccountTakeover);
-
-            expect(screen.getByText('Account Takeover Prevention')).toBeInTheDocument();
-            expect(screen.getByText('Behavioral analysis to detect unauthorized access')).toBeInTheDocument();
-            expect(screen.getByText('99.5%')).toBeInTheDocument(); // Detection rate
-        });
-
-        it('renders all 3 account takeover scenarios', () => {
-            renderWithRouter(AccountTakeover);
-
-            expect(screen.getByText('Account Takeover via Shared Cookie')).toBeInTheDocument();
-            expect(screen.getByText('Credential Stuffing Attack')).toBeInTheDocument();
-            expect(screen.getByText('Privilege Escalation Attack')).toBeInTheDocument();
-        });
-
-        it('renders behavioral analysis content', () => {
-            renderWithRouter(AccountTakeover);
-
-            expect(screen.getByText('Advanced Behavioral Analysis')).toBeInTheDocument();
-            expect(screen.getByText('Identity Drift Detection')).toBeInTheDocument();
-            expect(screen.getByText('Session Analysis')).toBeInTheDocument();
-            expect(screen.getByText('Privilege Monitoring')).toBeInTheDocument();
-        });
-
-        it('tracks analytics correctly for account takeover', () => {
-            renderWithRouter(AccountTakeover);
-
-            expect(clarityEvent).toHaveBeenCalledWith('account_takeover_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'account_takeover');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'account-takeover');
-        });
-    });
-
     describe('InsiderThreat Component', () => {
         it('renders insider threat use case correctly', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(screen.getByText('Insider Threat Detection')).toBeInTheDocument();
-            expect(screen.getByText('Cross-app behavior correlation for privileged misuse')).toBeInTheDocument();
-            expect(screen.getByText('98.9%')).toBeInTheDocument(); // Detection rate
+            expect(screen.getByRole('heading', { name: 'Insider Protection' })).toBeInTheDocument();
+            expect(screen.getByText('Post-auth browser visibility for human-centric security')).toBeInTheDocument();
+            expect(screen.getByText('<15 minutes')).toBeInTheDocument(); // MTTD improvement
         });
 
-        it('renders all 3 insider threat scenarios', () => {
+        it('renders all 4 insider protection scenarios', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(screen.getByText('Privileged Misuse by Insider')).toBeInTheDocument();
-            expect(screen.getByText('Mass Data Download')).toBeInTheDocument();
-            expect(screen.getByText('Compliance Policy Violation')).toBeInTheDocument();
+            expect(screen.getByText('Notion Session After IdP Offboarding')).toBeInTheDocument();
+            expect(screen.getByText('Confluence Export of Financial Data')).toBeInTheDocument();
+            expect(screen.getByText('OAuth Grants to Unapproved Apps')).toBeInTheDocument();
+            expect(screen.getByText('Sensitive Data into GenAI Tools')).toBeInTheDocument();
         });
 
-        it('renders cross-application behavior correlation content', () => {
+        it('renders comprehensive insider protection content', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(screen.getByText('Cross-Application Behavior Correlation')).toBeInTheDocument();
-            expect(screen.getByText('Temporal Patterns')).toBeInTheDocument();
-            expect(screen.getByText('Data Access Patterns')).toBeInTheDocument();
-            expect(screen.getByText('Sharing Behaviors')).toBeInTheDocument();
+            expect(screen.getByText('Real-Time User Engagement & Nudging')).toBeInTheDocument();
+            expect(screen.getByText('Behavioral Pattern Recognition')).toBeInTheDocument();
+            expect(screen.getByText('Human-Centric Protection Framework')).toBeInTheDocument();
         });
 
-        it('renders specific insider threat indicators', () => {
+        it('renders specific insider protection indicators', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(screen.getByText(/Unusual access times and duration/)).toBeInTheDocument();
-            expect(screen.getByText(/Mass data downloads and exports/)).toBeInTheDocument();
-            expect(screen.getByText(/External sharing of internal documents/)).toBeInTheDocument();
+            expect(screen.getByText(/Stale session cookies/)).toBeInTheDocument();
+            expect(screen.getByText(/Incremental exports/)).toBeInTheDocument();
+            expect(screen.getByText(/OAuth permissions to unsanctioned third-party applications/)).toBeInTheDocument();
         });
 
-        it('tracks analytics correctly for insider threat', () => {
+        it('tracks analytics correctly for insider protection', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(clarityEvent).toHaveBeenCalledWith('insider_threat_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'insider_threat');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'insider-threat');
-        });
-    });
-
-    describe('ZeroDayProtection Component', () => {
-        it('renders zero-day protection use case correctly', () => {
-            renderWithRouter(ZeroDayProtection);
-
-            expect(screen.getByText('Zero-Day Protection')).toBeInTheDocument();
-            expect(screen.getByText('Runtime analysis for unknown threat detection')).toBeInTheDocument();
-            expect(screen.getByText('97.8%')).toBeInTheDocument(); // Detection rate
-        });
-
-        it('renders all 2 zero-day scenarios', () => {
-            renderWithRouter(ZeroDayProtection);
-
-            expect(screen.getByText('Novel Browser-Based Malware')).toBeInTheDocument();
-            expect(screen.getByText('Unknown Command & Control')).toBeInTheDocument();
-        });
-
-        it('renders runtime analysis content', () => {
-            renderWithRouter(ZeroDayProtection);
-
-            expect(screen.getByText('Runtime Analysis for Unknown Threats')).toBeInTheDocument();
-            expect(screen.getByText('DOM Manipulation Analysis')).toBeInTheDocument();
-            expect(screen.getByText('Communication Pattern Detection')).toBeInTheDocument();
-            expect(screen.getByText('Machine Learning Models')).toBeInTheDocument();
-        });
-
-        it('renders zero-day protection benefits', () => {
-            renderWithRouter(ZeroDayProtection);
-
-            expect(screen.getByText('Zero-Day Protection Benefits')).toBeInTheDocument();
-            expect(screen.getByText(/Proactive defense against unknown attack vectors/)).toBeInTheDocument();
-            expect(screen.getByText(/No reliance on signature updates/)).toBeInTheDocument();
-        });
-
-        it('tracks analytics correctly for zero-day protection', () => {
-            renderWithRouter(ZeroDayProtection);
-
-            expect(clarityEvent).toHaveBeenCalledWith('zero_day_protection_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'zero_day_protection');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'zero-day-protection');
+            expect(clarityEvent).toHaveBeenCalledWith('insider_protection_view');
+            expect(claritySet).toHaveBeenCalledWith('page_type', 'insider_protection');
+            expect(claritySet).toHaveBeenCalledWith('use_case', 'insider-protection');
         });
     });
 
     describe('Cross-Component Consistency', () => {
         const components = [
             { name: 'PhishingDetection', Component: PhishingDetection },
-            { name: 'AccountTakeover', Component: AccountTakeover },
-            { name: 'InsiderThreat', Component: InsiderThreat },
-            { name: 'ZeroDayProtection', Component: ZeroDayProtection }
+            { name: 'InsiderThreat', Component: InsiderThreat }
         ];
 
         it('all components render metrics section', () => {
-            // PhishingDetection has "Business Impact", others have "Performance Metrics"
+            // PhishingDetection has "Business Impact", InsiderThreat has "Business Impact"
             const { unmount: unmountPhishing } = renderWithRouter(PhishingDetection);
             expect(screen.getByText('Business Impact')).toBeInTheDocument();
             unmountPhishing();
 
-            [AccountTakeover, InsiderThreat, ZeroDayProtection].forEach((Component) => {
-                const { unmount } = renderWithRouter(Component);
-                expect(screen.getByText('Performance Metrics')).toBeInTheDocument();
-                unmount();
-            });
+            const { unmount: unmountInsider } = renderWithRouter(InsiderThreat);
+            expect(screen.getByText('Business Impact')).toBeInTheDocument();
+            unmountInsider();
         });
 
         it('all components render scenarios section', () => {
-            // PhishingDetection has "Real-World Phishing Incidents", others have different scenario sections
+            // PhishingDetection has "Real-World Phishing Incidents", InsiderThreat has "Real-World Incidents"
             const { unmount: unmountPhishing } = renderWithRouter(PhishingDetection);
             expect(screen.getByText('Real-World Phishing Incidents')).toBeInTheDocument();
             unmountPhishing();
 
-            [AccountTakeover, InsiderThreat, ZeroDayProtection].forEach((Component) => {
-                const { unmount } = renderWithRouter(Component);
-                // Each component has its own scenario section title
-                const scenarioText = screen.getByText(/Real-World.*Scenarios/);
-                expect(scenarioText).toBeInTheDocument();
-                unmount();
-            });
+            const { unmount: unmountInsider } = renderWithRouter(InsiderThreat);
+            expect(screen.getByText('Real-World Insider Protection Incidents')).toBeInTheDocument();
+            unmountInsider();
         });
 
         it('all components have navigation footer', () => {
@@ -253,16 +166,12 @@ describe('Individual Use Case Components', () => {
         it('all components initialize analytics', () => {
             const expectedEvents = {
                 PhishingDetection: 'comprehensive_phishing_prevention_view',
-                AccountTakeover: 'account_takeover_view',
-                InsiderThreat: 'insider_threat_view',
-                ZeroDayProtection: 'zero_day_protection_view'
+                InsiderThreat: 'insider_protection_view'
             };
 
             const expectedPageTypes = {
                 PhishingDetection: 'comprehensive_phishing_prevention',
-                AccountTakeover: 'account_takeover',
-                InsiderThreat: 'insider_threat',
-                ZeroDayProtection: 'zero_day_protection'
+                InsiderThreat: 'insider_protection'
             };
 
             components.forEach(({ Component, name }) => {
@@ -288,7 +197,7 @@ describe('Individual Use Case Components', () => {
 
     describe('Error Handling', () => {
         it('all components handle analytics failures gracefully', () => {
-            const components = [PhishingDetection, AccountTakeover, InsiderThreat, ZeroDayProtection];
+            const components = [PhishingDetection, InsiderThreat];
 
             // Mock analytics to fail
             initializeClarity.mockImplementation(() => {
@@ -311,22 +220,10 @@ describe('Individual Use Case Components', () => {
             expect(screen.getByTestId('comprehensive-phishing')).toBeInTheDocument();
             cleanup();
 
-            // AccountTakeover should load account-takeover data
-            renderWithRouter(AccountTakeover);
-            expect(screen.getByText('99.5%')).toBeInTheDocument(); // Account takeover detection rate
-            expect(screen.getByTestId('account-takeover')).toBeInTheDocument();
-            cleanup();
-
-            // InsiderThreat should load insider-threat data
+            // InsiderThreat should load insider-protection data
             renderWithRouter(InsiderThreat);
-            expect(screen.getByText('98.9%')).toBeInTheDocument(); // Insider threat detection rate
-            expect(screen.getByTestId('insider-threat')).toBeInTheDocument();
-            cleanup();
-
-            // ZeroDayProtection should load zero-day-protection data
-            renderWithRouter(ZeroDayProtection);
-            expect(screen.getByText('97.8%')).toBeInTheDocument(); // Zero-day detection rate
-            expect(screen.getByTestId('zero-day-protection')).toBeInTheDocument();
+            expect(screen.getByText('99%')).toBeInTheDocument(); // MTTD improvement
+            expect(screen.getByTestId('insider-protection')).toBeInTheDocument();
         });
     });
 });

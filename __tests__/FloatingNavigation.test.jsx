@@ -39,9 +39,8 @@ describe('FloatingNavigation Component', () => {
             // Check if default links are rendered
             expect(screen.getByText('All Use Cases')).toBeInTheDocument();
             expect(screen.getByText('Phishing')).toBeInTheDocument();
-            expect(screen.getByText('Account Takeover')).toBeInTheDocument();
-            expect(screen.getByText('Insider Threat')).toBeInTheDocument();
-            expect(screen.getByText('Zero-Day')).toBeInTheDocument();
+            expect(screen.getByText('Insider Protection')).toBeInTheDocument();
+            expect(screen.getByText('Business Case')).toBeInTheDocument();
         });
 
         it('renders with custom links when provided', () => {
@@ -146,7 +145,7 @@ describe('FloatingNavigation Component', () => {
 
             // List structure
             expect(screen.getByRole('list')).toBeInTheDocument();
-            expect(screen.getAllByRole('listitem')).toHaveLength(5);
+            expect(screen.getAllByRole('listitem')).toHaveLength(4);
 
             // Links with proper labels
             const links = screen.getAllByRole('link');
@@ -340,7 +339,7 @@ describe('FloatingNavigation Component', () => {
             // Link test IDs
             expect(screen.getByTestId('nav-link--use-cases')).toBeInTheDocument();
             expect(screen.getByTestId('nav-link--use-cases-phishing-detection')).toBeInTheDocument();
-            expect(screen.getByTestId('nav-link--use-cases-account-takeover')).toBeInTheDocument();
+            expect(screen.getByTestId('nav-link--use-cases-insider-threat')).toBeInTheDocument();
         });
     });
 
@@ -411,8 +410,8 @@ describe('FloatingNavigation Component', () => {
             // Verify semantic structure
             expect(screen.getByRole('navigation')).toBeInTheDocument();
             expect(screen.getByRole('list')).toBeInTheDocument();
-            expect(screen.getAllByRole('listitem')).toHaveLength(5);
-            expect(screen.getAllByRole('link')).toHaveLength(5);
+            expect(screen.getAllByRole('listitem')).toHaveLength(4);
+            expect(screen.getAllByRole('link')).toHaveLength(4);
         });
 
         it('applies proper CSS classes for styling', () => {

@@ -1,102 +1,104 @@
-/* Insider Threat Use Case - Independent Styling */
+/* Insider Protection Component Styles - Enterprise Grade */
+/* Following GitHub Brand Guidelines with Mona Sans typography and official color palette */
 
+@import url('https://github.githubassets.com/assets/mona-sans.css');
+
+/* Import base design system */
+@import '../../styles/base/variables.css';
+@import '../../styles/components/buttons.css';
+@import '../../styles/components/timeline.css';
+@import '../../styles/components/content-groups.css';
+@import '../../styles/components/section-headers.css';
+@import '../../styles/components/use-case-cards.css';
+@import '../../styles/layout/navigation-footer.css';
+
+/* Component-specific overrides and extensions */
 :root {
-    /* Insider Threat Specific Color Variables */
-    --insider-threat-primary: var(--text-danger, #dc2626);
-    --insider-threat-secondary: var(--text-danger-dark, #b91c1c);
-    --insider-threat-accent: var(--brand-secondary, #10b981);
-    --insider-threat-critical: var(--text-danger, #dc2626);
-    --insider-threat-high: var(--text-warning, #ea580c);
-    --insider-threat-medium: var(--text-info, #0284c7);
-    
-    /* Insider Threat Surface Colors */
-    --insider-threat-surface: var(--surface-primary, #ffffff);
-    --insider-threat-surface-raised: var(--surface-raised, #f8fafc);
-    --insider-threat-surface-hover: var(--surface-hover, #f1f5f9);
-    
-    /* Insider Threat Border Colors */
-    --insider-threat-border: var(--border-primary, #e2e8f0);
-    --insider-threat-border-secondary: var(--border-secondary, #cbd5e1);
-    --insider-threat-border-focus: var(--border-focus, #dc2626);
-    
-    /* Insider Threat Text Colors */
-    --insider-threat-text: var(--text-primary, #1e293b);
-    --insider-threat-text-secondary: var(--text-secondary, #64748b);
-    --insider-threat-text-muted: var(--text-muted, #94a3b8);
+    /* Insider Protection-specific color enhancements - map to base system */
+    --insider-severity-critical: #DA1B2B;
+    --insider-severity-high: #E8591A;
+    --insider-severity-medium: #C7750B;
+    --insider-brand-green-1: #BFFFD1;
+    --insider-brand-green-3: #5FED83;
+    --insider-brand-green-4: #08872B;
+    --insider-brand-green-5: #104C35;
+
+    /* Legacy variable mappings for compatibility */
+    --brand-primary: var(--color-primary);
+    --brand-primary-light: var(--color-primary-light);
+    --brand-accent: rgba(0, 135, 43, 0.1);
+    --brand-green-3: var(--insider-brand-green-3);
+    --brand-green-4: var(--insider-brand-green-4);
+    --brand-green-5: var(--insider-brand-green-5);
+
+    --text-primary: var(--color-text-primary);
+    --text-secondary: var(--color-text-secondary);
+    --text-white: var(--color-text-inverse);
+
+    --bg-primary: var(--color-background-primary);
+    --bg-secondary: var(--color-background-secondary);
+    --bg-surface: var(--color-background-primary);
+
+    --border-primary: var(--color-border-primary);
+    --border-secondary: var(--color-border-primary);
+
+    --severity-critical: var(--insider-severity-critical);
+    --severity-high: var(--insider-severity-high);
+    --severity-medium: var(--insider-severity-medium);
+
+    /* Font scale compatibility */
+    --text-xs: var(--font-size-xs);
+    --text-sm: var(--font-size-sm);
+    --text-base: var(--font-size-base);
+    --text-lg: var(--font-size-lg);
+    --text-xl: var(--font-size-xl);
+    --text-2xl: var(--font-size-2xl);
+    --text-3xl: var(--font-size-3xl);
+    --text-4xl: var(--font-size-4xl);
+    --text-5xl: 48px;
+
+    /* Transition compatibility */
+    --transition-fast: var(--transition-fast);
+    --transition-standard: var(--transition-normal);
+    --transition-slow: var(--transition-slow);
+
+    /* Font family compatibility */
+    --font-family: var(--font-family-primary);
+
+    /* Shadow compatibility */
+    --shadow-sm: var(--shadow-sm);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
 }
 
-/* Container and Layout */
-.insider-threat-container {
+/* Base Container - Enhanced Layout */
+.insider-protection-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--insider-threat-surface) 0%, var(--insider-threat-surface-raised) 100%);
-    color: var(--insider-threat-text);
-    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    font-weight: 400;
 }
 
-.insider-threat-content {
+.insider-protection-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-lg, 24px);
+    padding: var(--spacing-2xl);
 }
 
-/* Header Styles */
-.insider-threat-header {
-    margin-bottom: var(--spacing-2xl, 48px);
-}
-
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm, 8px);
-    color: var(--insider-threat-text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    margin-bottom: var(--spacing-xl, 32px);
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: var(--insider-threat-primary);
-}
-
-.back-link i {
-    font-size: 0.9em;
-}
-
-/* Hero Section */
-.insider-threat-hero {
-    text-align: center;
-    padding: var(--spacing-2xl, 48px) var(--spacing-xl, 32px);
-    background: var(--insider-threat-surface);
-    border-radius: var(--radius-xl, 12px);
-    border: 1px solid var(--insider-threat-border);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+/* Page-specific grid layouts for the extracted components */
+.real-world-incidents {
+    margin-bottom: var(--spacing-4xl);
     position: relative;
-    overflow: hidden;
 }
 
-.insider-threat-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-color, var(--insider-threat-primary)) 0%, var(--insider-threat-secondary) 100%);
-}
-
-.insider-threat-hero-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--accent-color, var(--insider-threat-primary)) 0%, var(--insider-threat-secondary) 100%);
-    border-radius: 50%;
-    margin: 0 auto var(--spacing-lg, 24px);
-    color: white;
-    font-size: 2rem;
-    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+.incidents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-lg);
 }
 
 .insider-threat-hero-title {
@@ -291,8 +293,8 @@
     color: var(--insider-threat-medium);
 }
 
-.insider-threat-scenario-content {
-    space-y: var(--spacing-md, 16px);
+.insider-threat-scenario-content > * + * {
+    margin-top: var(--spacing-md, 16px);
 }
 
 .insider-threat-scenario-section {
@@ -494,6 +496,105 @@
 
 .insider-threat-footer-link:hover {
     color: var(--insider-threat-primary);
+}
+
+/* Matrix Coverage Section */
+.threat-matrix-coverage {
+    margin-bottom: var(--spacing-4xl, 64px);
+}
+
+.matrix-coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl, 32px);
+    margin-top: var(--spacing-2xl, 48px);
+}
+
+.coverage-category {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: var(--spacing-2xl, 48px);
+    transition: var(--transition-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.coverage-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
+}
+
+.coverage-category:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-primary);
+}
+
+.coverage-category h3 {
+    font-size: var(--text-lg, 18px);
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md, 16px);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.coverage-category h3 i {
+    color: var(--brand-primary);
+    font-size: var(--text-xl, 20px);
+}
+
+.coverage-category p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg, 24px);
+    font-size: var(--text-sm, 14px);
+    line-height: 1.6;
+}
+
+.coverage-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.coverage-category li {
+    padding: var(--spacing-xs, 6px) 0;
+    color: var(--text-primary);
+    font-size: var(--text-sm, 14px);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border-secondary);
+}
+
+.coverage-category li:last-child {
+    border-bottom: none;
+}
+
+.coverage-category li strong {
+    color: var(--brand-primary);
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Responsive adjustments for matrix coverage */
+@media (max-width: 768px) {
+    .matrix-coverage-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg, 24px);
+    }
+    
+    .coverage-category {
+        padding: var(--spacing-xl, 32px);
+    }
+    
+    .coverage-category h3 {
+        font-size: var(--text-md, 16px);
+    }
 }
 
 /* Responsive Design */

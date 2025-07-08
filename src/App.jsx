@@ -5,9 +5,7 @@ import PresentationApp from './components/PresentationApp';
 import {
   UseCasesIndex,
   PhishingDetection,
-  AccountTakeover,
   InsiderThreat,
-  ZeroDayProtection,
   CISOBusinessCase
 } from './use-cases';
 import {
@@ -32,18 +30,8 @@ const App = () => {
         caseSensitive
       />
       <Route
-        path="/use-cases/account-takeover"
-        element={<AccountTakeover />}
-        caseSensitive
-      />
-      <Route
         path="/use-cases/insider-threat"
         element={<InsiderThreat />}
-        caseSensitive
-      />
-      <Route
-        path="/use-cases/zero-day-protection"
-        element={<ZeroDayProtection />}
         caseSensitive
       />
       <Route

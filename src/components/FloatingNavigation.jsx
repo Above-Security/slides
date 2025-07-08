@@ -143,25 +143,18 @@ const FloatingNavigation = ({
             tooltip: 'Phishing detection and prevention'
         },
         {
-            to: '/use-cases/account-takeover',
-            icon: 'fas fa-user-shield',
-            text: 'Account Takeover',
-            ariaLabel: 'Navigate to account takeover prevention use case',
-            tooltip: 'Account takeover prevention'
-        },
-        {
             to: '/use-cases/insider-threat',
             icon: 'fas fa-user-times',
-            text: 'Insider Threat',
-            ariaLabel: 'Navigate to insider threat detection use case',
-            tooltip: 'Insider threat detection'
+            text: 'Insider Protection',
+            ariaLabel: 'Navigate to insider protection detection use case',
+            tooltip: 'Insider protection & threat detection'
         },
         {
-            to: '/use-cases/zero-day-protection',
-            icon: 'fas fa-bug',
-            text: 'Zero-Day',
-            ariaLabel: 'Navigate to zero-day protection use case',
-            tooltip: 'Zero-day threat protection'
+            to: '/use-cases/ciso-business-case',
+            icon: 'fas fa-briefcase',
+            text: 'Business Case',
+            ariaLabel: 'Navigate to CISO business case',
+            tooltip: 'Executive business case and ROI analysis'
         }
     ], []);
 
