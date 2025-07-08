@@ -66,6 +66,16 @@ const UseCasesIndex = () => {
             scenarios: 2,
             complexity: 'Advanced',
             impact: 'High'
+        },
+        {
+            id: 'ciso-business-case',
+            title: 'CISO Business Case',
+            description: 'Comprehensive business case for runtime identity & insider protection platform',
+            icon: 'fas fa-chart-line',
+            color: 'var(--brand-primary)',
+            scenarios: 1,
+            complexity: 'Strategic',
+            impact: 'Business Critical'
         }
     ];
 

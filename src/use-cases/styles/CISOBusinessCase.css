@@ -1,0 +1,1014 @@
+/* CISO Business Case Component Styles - Enterprise Grade */
+/* Following GitHub Brand Guidelines with Mona Sans typography and official color palette */
+
+@import url('https://github.githubassets.com/assets/mona-sans.css');
+
+/* Import base design system - excluding problematic timeline.css */
+@import '../../styles/base/variables.css';
+@import '../../styles/components/buttons.css';
+@import '../../styles/components/content-groups.css';
+@import '../../styles/components/section-headers.css';
+@import '../../styles/components/use-case-cards.css';
+@import '../../styles/layout/navigation-footer.css';
+
+/* Component-specific overrides and extensions */
+:root {
+    /* Business case specific color enhancements - map to base system */
+    --business-case-primary: var(--color-primary);
+    --business-case-secondary: #1F7A3A;
+    --business-case-accent: #0D5421;
+    --business-case-success: #08872B;
+    --business-case-brand-green-1: #BFFFD1;
+    --business-case-brand-green-3: #5FED83;
+    --business-case-brand-green-4: #08872B;
+    --business-case-brand-green-5: #104C35;
+
+    /* ROI type colors */
+    --roi-prevention: #E8591A;
+    --roi-efficiency: #C7750B;
+    --roi-consolidation: #1F7A3A;
+    --roi-compliance: #0D5421;
+
+    /* Legacy variable mappings for compatibility */
+    --brand-primary: var(--color-primary);
+    --brand-primary-light: var(--color-primary-light);
+    --brand-accent: rgba(0, 135, 43, 0.1);
+    --brand-green-3: var(--business-case-brand-green-3);
+    --brand-green-4: var(--business-case-brand-green-4);
+    --brand-green-5: var(--business-case-brand-green-5);
+
+    --text-primary: var(--color-text-primary);
+    --text-secondary: var(--color-text-secondary);
+    --text-white: var(--color-text-inverse);
+
+    --bg-primary: var(--color-background-primary);
+    --bg-secondary: var(--color-background-secondary);
+    --bg-surface: var(--color-background-primary);
+
+    --border-primary: var(--color-border-primary);
+    --border-secondary: var(--color-border-primary);
+
+    /* Font scale compatibility */
+    --text-xs: var(--font-size-xs);
+    --text-sm: var(--font-size-sm);
+    --text-base: var(--font-size-base);
+    --text-lg: var(--font-size-lg);
+    --text-xl: var(--font-size-xl);
+    --text-2xl: var(--font-size-2xl);
+    --text-3xl: var(--font-size-3xl);
+    --text-4xl: var(--font-size-4xl);
+    --text-5xl: 48px;
+
+    /* Transition compatibility */
+    --transition-fast: var(--transition-fast);
+    --transition-standard: var(--transition-normal);
+    --transition-slow: var(--transition-slow);
+
+    /* Font family compatibility */
+    --font-family: var(--font-family-primary);
+
+    /* Shadow compatibility */
+    --shadow-sm: var(--shadow-sm);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+}
+
+/* Base Container - Enhanced Layout */
+.ciso-business-case-container {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.ciso-business-case-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+}
+
+/* How We Do It Section */
+.how-we-do-it {
+    margin-bottom: var(--spacing-4xl);
+    position: relative;
+}
+
+.how-we-do-it-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+}
+
+.how-we-do-it-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    transition: var(--transition-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.how-we-do-it-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-green-3));
+}
+
+.how-we-do-it-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand-primary);
+}
+
+.how-we-do-it-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-3));
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.how-we-do-it-card .card-icon i {
+    font-size: var(--text-2xl);
+    color: white;
+}
+
+.how-we-do-it-card h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.how-we-do-it-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Success Metrics Section */
+.success-metrics {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.deployment-timeline {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.deployment-timeline h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+/* Timeline phases - Maximum specificity to override all global CSS */
+.ciso-business-case-container .success-metrics .deployment-timeline .timeline-phases {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: var(--spacing-lg) !important;
+    margin: var(--spacing-2xl) 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .timeline-phase {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-primary) !important;
+    border-radius: var(--border-radius-lg) !important;
+    padding: var(--spacing-xl) !important;
+    position: relative !important;
+    transition: var(--transition-standard) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 200px !important;
+    width: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .timeline-phase::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: var(--phase-color, var(--brand-primary)) !important;
+    border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0 !important;
+    width: auto !important;
+    z-index: 1 !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .timeline-phase::after {
+    display: none !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .timeline-phase:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--phase-color, var(--brand-primary)) !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .phase-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: var(--spacing-sm) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .phase-number {
+    width: 50px !important;
+    height: 50px !important;
+    background: var(--phase-color, var(--brand-primary)) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    font-size: var(--text-xl) !important;
+    margin: 0 auto var(--spacing-sm) auto !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .phase-header h4 {
+    font-size: var(--text-lg) !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin: 0 !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .phase-timeline {
+    font-size: var(--text-sm) !important;
+    color: var(--text-secondary) !important;
+    background: var(--bg-secondary) !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    margin: var(--spacing-xs) 0 !important;
+    text-align: center !important;
+}
+
+.ciso-business-case-container .success-metrics .deployment-timeline .phase-outcome {
+    color: var(--text-secondary) !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-size: var(--text-sm) !important;
+    text-align: center !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+/* Measurable Outcomes */
+.ciso-business-case-container .measurable-outcomes {
+    margin-top: var(--spacing-4xl) !important;
+    text-align: center !important;
+}
+
+.ciso-business-case-container .measurable-outcomes h3 {
+    font-size: var(--text-2xl) !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: var(--spacing-2xl) !important;
+    text-align: center !important;
+}
+
+.ciso-business-case-container .outcomes-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: var(--spacing-xl) !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    padding: var(--spacing-lg) 0 !important;
+}
+
+/* Ensure MetricCard components have consistent spacing and alignment */
+.ciso-business-case-container .outcomes-grid .business-metric-card {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Competitive Differentiation Section */
+.competitive-differentiation {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.fundamental-difference {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.fundamental-difference h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+/* Comparison tables - Maximum specificity to override all global CSS */
+.ciso-business-case-container .competitive-differentiation .comparison-table,
+.ciso-business-case-container .competitive-differentiation .competitor-comparison-table {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-primary) !important;
+    border-radius: var(--border-radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: var(--spacing-2xl) !important;
+    box-shadow: var(--shadow-sm) !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-header {
+    display: grid !important;
+    grid-template-columns: 200px 1fr 1fr !important;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-3)) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: var(--text-sm) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-header > div {
+    padding: var(--spacing-lg) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 60px !important;
+    margin: 0 !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-header > div:last-child {
+    border-right: none !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row {
+    display: grid !important;
+    grid-template-columns: 200px 1fr 1fr !important;
+    border-bottom: 1px solid var(--border-primary) !important;
+    transition: var(--transition-fast) !important;
+    cursor: pointer !important;
+    min-height: 80px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row:hover {
+    background: var(--bg-secondary) !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row:last-child {
+    border-bottom: none !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row > div {
+    padding: var(--spacing-lg) !important;
+    border-right: 1px solid var(--border-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row > div:last-child {
+    border-right: none !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row .category {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    font-size: var(--text-base) !important;
+    background: var(--bg-secondary) !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row .traditional,
+.ciso-business-case-container .competitive-differentiation .table-row .competitors {
+    color: var(--text-secondary) !important;
+    font-size: var(--text-sm) !important;
+    background: transparent !important;
+}
+
+.ciso-business-case-container .competitive-differentiation .table-row .above {
+    color: var(--brand-primary) !important;
+    font-weight: 500 !important;
+    font-size: var(--text-sm) !important;
+    background: transparent !important;
+}
+
+/* Specific Competitors */
+.specific-competitors {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.specific-competitors h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+/* Traditional Tool Gaps */
+.traditional-tool-gaps {
+    margin-top: var(--spacing-4xl);
+}
+
+.traditional-tool-gaps h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.gaps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.gap-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    transition: var(--transition-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.gap-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #E8591A, #C7750B);
+}
+
+.gap-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: #E8591A;
+}
+
+.gap-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #E8591A, #C7750B);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gap-icon i {
+    font-size: var(--text-xl);
+    color: white;
+}
+
+.gap-content h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.gap-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Strategic Vision Section */
+.strategic-vision {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.market-opportunity {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.market-opportunity h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.market-opportunity p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-2xl);
+    font-size: var(--text-lg);
+}
+
+.vision-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.vision-phase {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    transition: var(--transition-standard);
+}
+
+.vision-phase:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-primary);
+}
+
+.vision-phase h4 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.vision-phase .phase-timeline {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.vision-phase p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Beyond SaaS Security - Fixed styling */
+.beyond-saas {
+    margin-top: var(--spacing-4xl);
+    padding: var(--spacing-2xl);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.beyond-saas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-green-3));
+}
+
+.beyond-saas h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.beyond-saas p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: var(--text-lg);
+    margin: 0;
+}
+
+/* Business Case Summary Section */
+.business-case-summary {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.strategic-value, .operational-benefits {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.strategic-value h3, .operational-benefits h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.value-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.value-card, .benefit-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    transition: var(--transition-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before, .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-green-3));
+}
+
+.value-card:hover, .benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-primary);
+}
+
+.value-icon, .benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-3));
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.value-icon i, .benefit-icon i {
+    font-size: var(--text-xl);
+    color: white;
+}
+
+.value-content h4, .benefit-content h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.value-content p, .benefit-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ROI Calculation */
+.roi-calculation {
+    margin-top: var(--spacing-4xl);
+}
+
+.roi-calculation h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.roi-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    transition: var(--transition-standard);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.roi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.roi-prevention::before {
+    background: var(--roi-prevention);
+}
+
+.roi-efficiency::before {
+    background: var(--roi-efficiency);
+}
+
+.roi-consolidation::before {
+    background: var(--roi-consolidation);
+}
+
+.roi-compliance::before {
+    background: var(--roi-compliance);
+}
+
+.roi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.roi-card h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.roi-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Why Now Section */
+.why-now {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.threat-landscape, .technology-readiness {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.threat-landscape h3, .technology-readiness h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.threats-grid, .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.threat-card, .tech-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    transition: var(--transition-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.threat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #E8591A, #C7750B);
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-green-3));
+}
+
+.threat-card:hover, .tech-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.threat-icon, .tech-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.threat-icon {
+    background: linear-gradient(135deg, #E8591A, #C7750B);
+}
+
+.tech-icon {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-3));
+}
+
+.threat-icon i, .tech-icon i {
+    font-size: var(--text-xl);
+    color: white;
+}
+
+.threat-content h4, .tech-content h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.threat-content p, .tech-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Call to Action */
+.summary-cta {
+    position: relative;
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-4xl);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid var(--border-primary);
+}
+
+.cta-gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 135, 43, 0.05) 0%, 
+        rgba(95, 237, 131, 0.05) 50%, 
+        rgba(8, 135, 43, 0.05) 100%);
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h2 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+}
+
+.cta-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-2xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-highlight {
+    background: rgba(0, 135, 43, 0.1);
+    border: 1px solid var(--brand-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.cta-highlight h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-tagline {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.cta-tagline strong {
+    color: var(--brand-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ciso-business-case-content {
+        padding: var(--spacing-lg);
+    }
+
+    /* Mobile MetricCard grid layout */
+    .ciso-business-case-container .outcomes-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+        padding: var(--spacing-md) 0 !important;
+    }
+
+    /* Mobile table layout - Maximum specificity */
+    .ciso-business-case-container .competitive-differentiation .table-header,
+    .ciso-business-case-container .competitive-differentiation .table-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    .ciso-business-case-container .competitive-differentiation .table-header > div,
+    .ciso-business-case-container .competitive-differentiation .table-row > div {
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-primary) !important;
+        padding: var(--spacing-md) !important;
+        min-height: auto !important;
+    }
+
+    .ciso-business-case-container .competitive-differentiation .table-header > div:last-child,
+    .ciso-business-case-container .competitive-differentiation .table-row > div:last-child {
+        border-bottom: none !important;
+    }
+
+    .ciso-business-case-container .competitive-differentiation .table-header > div:first-child,
+    .ciso-business-case-container .competitive-differentiation .table-row .category {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-green-3)) !important;
+        color: white !important;
+        font-weight: 600 !important;
+    }
+
+    /* Timeline mobile layout - Maximum specificity */
+    .ciso-business-case-container .success-metrics .deployment-timeline .timeline-phases {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+    }
+
+    .ciso-business-case-container .success-metrics .deployment-timeline .phase-header {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .ciso-business-case-container .success-metrics .deployment-timeline .phase-header h4 {
+        text-align: left !important;
+    }
+
+    .ciso-business-case-container .success-metrics .deployment-timeline .phase-outcome {
+        text-align: left !important;
+    }
+
+    .cta-content h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .cta-description {
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .how-we-do-it-grid,
+    .gaps-grid,
+    .value-grid,
+    .benefits-grid,
+    .roi-grid,
+    .threats-grid,
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-phases,
+    .vision-phases {
+        grid-template-columns: 1fr;
+    }
+}
