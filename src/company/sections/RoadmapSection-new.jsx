@@ -37,7 +37,7 @@ const RoadmapSection = () => {
   const icpLayers = [
     {
       title: 'Existing PhishGuard customers',
-      description: 'Upsell Runtime ITDR to proven successful deployments',
+      description: 'Upsell Runtime Insider Protection to proven successful deployments',
       icon: 'fas fa-arrow-up'
     },
     {
@@ -62,7 +62,7 @@ const RoadmapSection = () => {
           borderRadius: 'var(--border-radius-lg)',
           borderLeft: '4px solid var(--brand-primary)'
         }}>
-          <strong>Year-2 Strategy:</strong> Transition from phishing prevention to full Runtime ITDR platform with insider threat detection, real-time policy enforcement, and orchestrated response capabilities.
+          <strong>Year-2 Strategy:</strong> Transition from phishing prevention to full Runtime Insider Protection platform with insider threat detection, real-time policy enforcement, and orchestrated response capabilities.
         </div>
 
         <div style={{ display: 'grid', gap: 'var(--spacing-lg)', marginBottom: 'var(--spacing-2xl)' }}>

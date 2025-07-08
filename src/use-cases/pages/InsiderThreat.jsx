@@ -362,7 +362,7 @@ const InsiderThreat = () => {
             {/* Document Head Metadata */}
             <title>{INSIDER_PROTECTION_DATA.title} - Above Security Use Cases</title>
             <meta name="description" content={INSIDER_PROTECTION_DATA.description} />
-            <meta name="keywords" content="insider threat, insider protection, runtime ITDR, behavioral analysis, post-auth monitoring" />
+            <meta name="keywords" content="insider threat, insider protection, Runtime Insider Protection, behavioral analysis, post-auth monitoring" />
 
             <div className="insider-protection-container" data-testid="insider-protection">
                 {/* Floating Navigation */}
@@ -636,7 +636,7 @@ const InsiderThreat = () => {
                                         Most insider risk isn't malicious — it's users trying to get work done, the wrong way. Above provides the visibility and context needed to protect both your organization and your people.
                                     </p>
                                     <div className="cta-highlight">
-                                        <h3>Above is the only runtime ITDR platform capable of detecting and preventing insider threats in real-time, with human-centric protection rather than punishment.</h3>
+                                        <h3>Above is the only Runtime Insider Protection platform capable of detecting and preventing insider threats in real-time, with human-centric protection rather than punishment.</h3>
                                         <p className="cta-tagline">
                                             <strong>Post-auth visibility. Behavioral analysis. Human-centric protection.</strong>
                                         </p>

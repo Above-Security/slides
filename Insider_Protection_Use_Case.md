@@ -26,7 +26,7 @@ Someone scraping data over weeks doesn’t break a rule — until it’s too lat
 
 ---
 
-## Our Approach: Runtime Insider Threat Detection & Response (Runtime ITDR)
+## Our Approach: Runtime Insider Threat Detection & Response (Runtime Insider Protection)
 
 Above sits *inside the browser*, observing what users do *after authentication* — across all SaaS, internal, and even unsanctioned tools. It analyzes user behavior in real time using LLMs to semantically understand clicks, exports, edits, and prompts.
 
@@ -35,7 +35,7 @@ Above sits *inside the browser*, observing what users do *after authentication* 
 - **No Agents or API Dependencies**: Instant deployment via browser extension. No EDR, SIEM, or SASE integration needed.
 - **Intent-Aware Alerts**: Move beyond violations to detect misuse patterns: admin reactivation, scraping before resignation, sensitive data into LLMs.
 
-> [Explore Runtime ITDR](https://abovesec.com/#/insider-threat-matrix?id=MT022)
+> [Explore Runtime Insider Protection](https://abovesec.com/#/insider-threat-matrix?id=MT022)
 
 ---
 

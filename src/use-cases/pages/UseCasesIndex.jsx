@@ -140,9 +140,9 @@ const UseCasesIndex = () => {
     return (
         <>
             {/* Enhanced Document Head Metadata */}
-            <title>Runtime ITDR Use Cases - Above Security | Advanced Threat Detection</title>
-            <meta name="description" content="Discover Above Security's world-class Runtime ITDR solutions. Advanced phishing detection, insider threat protection, and executive business case analysis." />
-            <meta name="keywords" content="runtime ITDR, advanced phishing detection, insider threat protection, CISO business case, behavioral analysis, real-time security" />
+            <title>Runtime Insider Protection Use Cases - Above Security | Advanced Threat Detection</title>
+            <meta name="description" content="Discover Above Security's world-class Runtime Insider Protection solutions. Advanced phishing detection, insider threat protection, and executive business case analysis." />
+            <meta name="keywords" content="Runtime Insider Protection, advanced phishing detection, insider threat protection, CISO business case, behavioral analysis, real-time security" />
 
             <div className="use-cases-container" data-testid="use-cases-index">
                 {/* Floating Navigation with Enhanced Integration */}

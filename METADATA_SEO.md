@@ -17,7 +17,7 @@ The HomePage component includes:
 
 ### Presentation Metadata (/slides/slide/N)
 The PresentationApp component includes:
-- **Dynamic Titles**: "Above Security - Slide X | Runtime ITDR Platform"
+- **Dynamic Titles**: "Above Security - Slide X | Runtime Insider Protection Platform"
 - **Dynamic Descriptions**: Slide-specific descriptions
 - **Base Metadata**: Inherits from index.html for consistency
 

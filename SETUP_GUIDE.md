@@ -39,7 +39,7 @@ npm run build
 ## ✅ What's Included
 
 ### Technical Content (6 Slides)
-1. **Above Runtime ITDR** - Core value proposition with key differentiators
+1. **Above Runtime Insider Protection** - Core value proposition with key differentiators
 2. **The Problem** - Real attack examples (Cyberhaven incident, OAuth abuse, session theft)
 3. **Technical Approach** - Browser extension deployment, LLM normalization engine
 4. **Detection Capabilities** - Specific examples with concrete scenarios

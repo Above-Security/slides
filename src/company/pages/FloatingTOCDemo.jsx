@@ -84,7 +84,7 @@ const FloatingTOCDemo = () => {
               <ol>
                 <li><strong>Starter (PhishGuard)</strong> – real‑time phishing soft‑block & coaching (Chrome Extension only)</li>
                 <li><strong>Growth (PhishGuard + ScopeLens)</strong> – adds full browser telemetry export to SIEM/XDR</li>
-                <li><strong>Platform (Runtime ITDR)</strong> – unlocks Year‑2 detections (privilege misuse, insider drift)</li>
+                <li><strong>Platform (Runtime Insider Protection)</strong> – unlocks Year‑2 detections (privilege misuse, insider drift)</li>
               </ol>
               <div className="critical-stance">
                 <strong>Critical stance:</strong> Don't attempt full insider detections in Year‑1 – "visibility first" avoids promise/delivery gap.

@@ -42,7 +42,7 @@ const COMPREHENSIVE_PHISHING_DATA = {
     id: 'comprehensive-phishing-prevention',
     title: 'Comprehensive Phishing Prevention',
     subtitle: 'Beyond Email, Beyond LOTS — Runtime Protection Against Modern Threats',
-    description: 'Advanced phishing operates inside trusted environments using OAuth flows, productivity apps, and legitimate workflows. Above\'s runtime ITDR prevents these threats during live user interaction where no log or rule-based tool can intervene.',
+    description: 'Advanced phishing operates inside trusted environments using OAuth flows, productivity apps, and legitimate workflows. Above\'s Runtime Insider Protection prevents these threats during live user interaction where no log or rule-based tool can intervene.',
     icon: 'fas fa-shield',
     color: 'var(--brand-primary)',
 
@@ -605,7 +605,7 @@ const PhishingDetection = () => {
                                         It's an interface deception problem. LOTS, OAuth scams, AiTM takeovers, and embedded phishing attacks exploit trusted environments that traditional tools can't see.
                                     </p>
                                     <div className="cta-highlight">
-                                        <h3>Above is the only runtime ITDR platform capable of flagging and blocking phishing attacks from within trusted apps, before consent or access is granted.</h3>
+                                        <h3>Above is the only Runtime Insider Protection platform capable of flagging and blocking phishing attacks from within trusted apps, before consent or access is granted.</h3>
                                         <p className="cta-tagline">
                                             <strong>Runtime semantic analysis. Pre-consent blocking. Zero infrastructure changes.</strong>
                                         </p>

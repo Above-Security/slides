@@ -18,7 +18,7 @@ A comprehensive React-based platform showcasing Above Security's Runtime Identit
 
 ## 🎯 **Application Overview**
 
-This React application is designed for technical buyers including CISOs, SecOps leads, and threat analysts. It provides comprehensive information about Above Security's Runtime ITDR platform through multiple interactive sections.
+This React application is designed for technical buyers including CISOs, SecOps leads, and threat analysts. It provides comprehensive information about Above Security's Runtime Insider Protection platform through multiple interactive sections.
 
 **Key Features:**
 - ✅ **Multi-Section Architecture** - Homepage, slides, use cases, company narrative, and threat matrix
@@ -31,8 +31,8 @@ This React application is designed for technical buyers including CISOs, SecOps 
 ## 📋 **Application Sections**
 
 ### **1. Presentation Slides (15 Slides):**
-1. **Above Runtime ITDR** (`SlideIntro`) - Company introduction and platform overview
-2. **What is Runtime ITDR?** (`SlideRuntimeITDR`) - Technology definition and positioning  
+1. **Above Runtime Insider Protection** (`SlideIntro`) - Company introduction and platform overview
+2. **What is Runtime Insider Protection?** (`SlideRuntimeITDR`) - Technology definition and positioning  
 3. **The Problem** (`SlideProblem`) - Current identity security challenges
 4. **How It Works** (`SlideHowItWorks`) - Technical implementation and architecture
 5. **Cyberhaven Case Study** (`SlideCaseStudy`) - Real-world insider threat detection

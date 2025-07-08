@@ -484,7 +484,7 @@ const SlideBusinessCase = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '32px' }}>
             <div style={{ padding: '20px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', border: '2px solid var(--brand-primary-light)' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--brand-primary-light)', marginBottom: '12px' }}>Phase 1: 2025-27</div>
-              <div style={{ fontSize: '0.95rem', color: 'var(--text-inverse)', marginBottom: '12px', fontWeight: 600 }}>Runtime ITDR for SaaS</div>
+              <div style={{ fontSize: '0.95rem', color: 'var(--text-inverse)', marginBottom: '12px', fontWeight: 600 }}>Runtime Insider Protection for SaaS</div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-inverse)', lineHeight: 1.4 }}>
                 Target: &lt;5% FP rate, 90-day deployments to 250K endpoints, aim to replace 20% of legacy CASB licenses
               </div>

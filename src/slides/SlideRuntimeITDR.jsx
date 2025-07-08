@@ -5,7 +5,7 @@ import styles from './SlideRuntimeITDR.module.css';
 const SlideRuntimeITDR = () => (
   <SlideLayout>
     <header className="slide-header">
-      <h1 className="slide-title">What is Runtime ITDR?</h1>
+      <h1 className="slide-title">What is Runtime Insider Protection?</h1>
       <p className="slide-subtitle">Why everything else misses the point</p>
     </header>
 
@@ -17,7 +17,7 @@ const SlideRuntimeITDR = () => (
           What It Actually Does
         </h2>
         <p className="summary-text">
-          Runtime ITDR sees what users do <strong>after they log in</strong>. It captures real user behavior inside apps — not just logs, not just alerts.
+          Runtime Insider Protection sees what users do <strong>after they log in</strong>. It captures real user behavior inside apps — not just logs, not just alerts.
         </p>
         <p className="summary-text mt-4">
           It works by analyzing the actual session: clicks, actions, intent. If someone misuses access, steals data, masks their behavior — or falls for a phishing page that looks legitimate — you’ll know. In real time.
@@ -57,11 +57,11 @@ const SlideRuntimeITDR = () => (
           </div>
         </div>
 
-        {/* Runtime ITDR */}
+        {/* Runtime Insider Protection */}
         <div className="landscape-card">
           <h3 className="landscape-title">
             <i className="fas fa-eye"></i>
-            Runtime ITDR
+            Runtime Insider Protection
           </h3>
 
           <div className="mb-6">

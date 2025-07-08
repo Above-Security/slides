@@ -1,6 +1,6 @@
 # Above Security Brand Guidelines
 
-Comprehensive brand and design system documentation for the Above Security Runtime ITDR presentation platform, fully aligned with **[GitHub's Official Brand Guidelines](https://brand.github.com/)**.
+Comprehensive brand and design system documentation for the Above Security Runtime Insider Protection presentation platform, fully aligned with **[GitHub's Official Brand Guidelines](https://brand.github.com/)**.
 
 ## 🔗 Official GitHub Brand Resources
 

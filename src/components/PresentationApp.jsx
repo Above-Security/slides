@@ -164,7 +164,7 @@ const PresentationApp = () => {
   return (
     <EmailGate onEmailSubmitted={handleEmailSubmitted}>
       {/* Dynamic title for presentation slides */}
-      <title>{`Above Security - Slide ${currentSlide + 1} | Runtime ITDR Platform`}</title>
+      <title>{`Above Security - Slide ${currentSlide + 1} | Runtime Insider Protection Platform`}</title>
       <meta name="description" content={`Above Security presentation slide ${currentSlide + 1} - Runtime Identity Threat Detection & Response platform.`} />
 
       <div className="presentation-container" data-testid="presentation-app">
