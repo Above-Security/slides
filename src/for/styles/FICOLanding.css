@@ -66,7 +66,7 @@
     --shadow-md: var(--shadow-md);
     --shadow-lg: var(--shadow-lg);
     --shadow-xl: var(--shadow-xl);
-    
+
     /* Additional radius for full round elements */
     --radius-full: 9999px;
 }
@@ -79,6 +79,37 @@
     font-family: var(--font-family);
     line-height: 1.6;
     font-weight: 400;
+}
+
+/* Enhanced Header Section with Logo */
+.fico-landing-header-section {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fico-landing-header-section .logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+}
+
+.fico-landing-header-section .logo-container:hover {
+    transform: translateY(-2px);
+}
+
+.fico-landing-header-section .fico-landing-logo {
+    height: 40px;
+    width: auto;
+    transition: all var(--transition-fast);
+}
+
+.fico-landing-header-section .logo-container:hover .fico-landing-logo {
+    transform: scale(1.05);
 }
 
 .fico-landing-container main {
@@ -810,47 +841,112 @@
         gap: var(--spacing-md);
         align-items: stretch;
     }
-    
+
     .fico-nav-sections {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .hero-ctas {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .comparison-header,
     .comparison-row {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .next-steps-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
 }
 
+/* Executive Summary Dark Mode - Following CISOBusinessCase patterns */
+.fico-landing-container .executive-summary--dark {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%) !important;
+    border-radius: var(--radius-xl) !important;
+    padding: var(--space-8) !important;
+    color: var(--text-inverse) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: summaryReveal 1.5s var(--ease-out) .6s both !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.fico-landing-container .executive-summary--dark .section-title {
+    color: var(--text-inverse) !important;
+}
+
+.fico-landing-container .executive-summary--dark .executive-description--dark {
+    color: var(--text-inverse) !important;
+    opacity: 0.9 !important;
+}
+
+/* Animation for dark mode reveal */
+@keyframes summaryReveal {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 /* Executive Summary Key Points Fix - Following PhishingDetection.css patterns */
 .fico-landing-container .executive-summary .executive-key-point {
-    margin-bottom: var(--spacing-lg) !important;
-    padding: var(--spacing-md) var(--spacing-lg) !important;
+    margin: var(--spacing-lg) !important;
+    padding: var(--spacing-lg) !important;
     background: var(--color-background-secondary) !important;
     border-radius: var(--border-radius-lg) !important;
     border-left: 4px solid var(--fico-primary) !important;
     display: flex !important;
     align-items: flex-start !important;
-    gap: var(--spacing-md) !important;
+    gap: var(--spacing-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    min-height: 80px !important;
+    flex: 1 !important;
+}
+
+/* Dark mode key points styling */
+.fico-landing-container .executive-summary--dark .executive-key-point {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-left: 4px solid var(--fico-primary) !important;
+    color: var(--text-inverse) !important;
+}
+
+.fico-landing-container .executive-summary--dark .executive-key-point i {
+    color: #ffffff !important;
+    background: var(--fico-primary) !important;
+    border-radius: var(--radius-md) !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+}
+
+.fico-landing-container .executive-summary .key-points-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: var(--spacing-lg) !important;
+    margin: var(--spacing-xl) 0 !important;
 }
 
 .fico-landing-container .executive-summary .executive-key-point:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: var(--spacing-lg) !important;
 }
 
 .fico-landing-container .executive-summary .executive-key-point .key-point-icon {
@@ -858,14 +954,17 @@
     font-size: var(--font-size-lg) !important;
     margin-top: 2px !important;
     flex-shrink: 0 !important;
+    width: 24px !important;
+    text-align: center !important;
 }
 
 .fico-landing-container .executive-summary .executive-key-point .key-point-text {
     flex: 1 !important;
     font-size: var(--font-size-base) !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     margin: 0 !important;
     color: var(--color-text-primary) !important;
+    font-weight: 500 !important;
 }
 
 /* Use Case Tabs Styling Fix - Improved contrast and visual design */
@@ -965,7 +1064,7 @@
     padding: 0 !important;
 }
 
-.fico-landing-container .comparison-table .table-header > div {
+.fico-landing-container .comparison-table .table-header>div {
     padding: var(--spacing-lg) !important;
     border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
     display: flex !important;
@@ -974,7 +1073,7 @@
     margin: 0 !important;
 }
 
-.fico-landing-container .comparison-table .table-header > div:last-child {
+.fico-landing-container .comparison-table .table-header>div:last-child {
     border-right: none !important;
 }
 
@@ -997,7 +1096,7 @@
     border-bottom: none !important;
 }
 
-.fico-landing-container .comparison-table .table-row > div {
+.fico-landing-container .comparison-table .table-row>div {
     padding: var(--spacing-lg) !important;
     border-right: 1px solid var(--border-primary) !important;
     display: flex !important;
@@ -1006,7 +1105,7 @@
     margin: 0 !important;
 }
 
-.fico-landing-container .comparison-table .table-row > div:last-child {
+.fico-landing-container .comparison-table .table-row>div:last-child {
     border-right: none !important;
 }
 
@@ -1058,18 +1157,19 @@
 }
 
 @media (max-width: 768px) {
+
     .fico-landing-container .comparison-table .table-header,
     .fico-landing-container .comparison-table .table-row {
         grid-template-columns: 1fr !important;
         gap: var(--spacing-sm) !important;
     }
-    
-    .fico-landing-container .comparison-table .table-row > div {
+
+    .fico-landing-container .comparison-table .table-row>div {
         border-right: none !important;
         border-bottom: 1px solid var(--border-primary) !important;
     }
-    
-    .fico-landing-container .comparison-table .table-row > div:last-child {
+
+    .fico-landing-container .comparison-table .table-row>div:last-child {
         border-bottom: none !important;
     }
 }

@@ -86,55 +86,42 @@ const FICO_LANDING_DATA = {
         },
         {
             id: 'saas-misuse',
-            title: 'SaaS Misuse',
+            title: 'Cross-Department Access',
             icon: 'fas fa-user-slash',
-            description: 'Employee exports customer financial data from Salesforce incrementally before departure',
-            impact: 'Financial data exfiltration and regulatory violations',
-            attackVector: 'Legitimate access → incremental data exports → data theft',
-            obsidianResponse: 'No visibility into export behavior within sanctioned applications',
-            abovePrevention: 'Behavioral drift detection flags unusual export patterns, triggers investigation and policy enforcement',
-            severity: 'high',
-            affected: 'Customer financial records',
-            category: 'Data Exfiltration'
+            description: 'Payroll employee accesses CRM opportunities data outside their role scope',
+            impact: 'Unauthorized access to sensitive sales data and potential compliance violations',
+            attackVector: 'Legitimate credentials → cross-department access → sensitive data exposure',
+            obsidianResponse: 'No visibility into behavioral context - only sees app access is allowed',
+            abovePrevention: 'Real-time nudge asking employee to justify cross-department access, escalates if no valid business reason provided',
+            severity: 'medium',
+            affected: 'Sales opportunity data',
+            category: 'Access Governance'
         },
         {
-            id: 'insider-drift',
-            title: 'Insider Drift',
-            icon: 'fas fa-user-clock',
-            description: 'Finance director begins accessing unusual systems and exporting data incrementally',
-            impact: 'Major financial data breach and insider threat escalation',
-            attackVector: 'Legitimate access → behavioral changes → systematic data collection',
-            obsidianResponse: 'No behavioral analysis capabilities - only app access tracking',
-            abovePrevention: 'Intent analysis detects pattern changes, provides early warning system with contextual alerts',
-            severity: 'critical',
-            affected: 'Financial systems',
-            category: 'Insider Threat'
-        },
-        {
-            id: 'shadow-ai',
-            title: 'Shadow AI',
+            id: 'ai-shadow-bypass',
+            title: 'Shadow AI Bypass',
             icon: 'fas fa-robot',
-            description: 'Analyst copies customer PII into ChatGPT for data analysis assistance',
-            impact: 'Regulatory violations and data exposure to unauthorized AI systems',
-            attackVector: 'Productivity tool usage → sensitive data exposure → compliance violation',
-            obsidianResponse: 'Can block access to ChatGPT but cannot analyze data exposure risk',
-            abovePrevention: 'Detects sensitive data patterns in real-time, provides coaching and secure alternatives',
+            description: 'Finance analyst copies sensitive customer data into Amazon.com\'s AI chatbot to bypass company AI restrictions',
+            impact: 'Data exposure to unauthorized AI systems and compliance violations',
+            attackVector: 'Blocked company AI → Amazon.com AI chatbot workaround → data exposure',
+            obsidianResponse: 'Detects company AI is blocked but misses Amazon.com AI chatbot workaround and actual data exposure',
+            abovePrevention: 'Runtime monitoring detects copy-paste behavior with sensitive data patterns, provides real-time nudge to use approved AI tools',
             severity: 'high',
-            affected: 'Customer PII',
-            category: 'Shadow AI Usage'
+            affected: 'Customer financial data',
+            category: 'AI Shadow Usage'
         },
         {
-            id: 'insider-protection',
-            title: 'Post-Termination Access',
-            icon: 'fas fa-user-shield',
-            description: 'Contractor maintains access to financial systems after termination via session cookies',
-            impact: 'Continued access to sensitive data post-termination',
-            attackVector: 'Stale session cookies → continued access → data exposure',
-            obsidianResponse: 'No session-level visibility after IdP offboarding',
-            abovePrevention: 'Detects stale session reuse, correlates with HR systems, immediate session termination',
-            severity: 'critical',
-            affected: 'Financial systems',
-            category: 'Offboarding Drift'
+            id: 'incident-response',
+            title: 'Incident Response Timeline',
+            icon: 'fas fa-clock',
+            description: 'Security team needs to reconstruct user behavior during a suspected data breach incident',
+            impact: 'Delayed incident response and incomplete forensic evidence for compliance reporting',
+            attackVector: 'Security incident → investigation needed → limited visibility into user actions',
+            obsidianResponse: 'Basic app access logs only - no detailed user behavior or intent context',
+            abovePrevention: 'Complete timeline reconstruction: clicks, navigations, copy-paste actions, semantic analysis of user intent, and behavioral patterns for comprehensive incident response',
+            severity: 'high',
+            affected: 'Incident investigation process',
+            category: 'Digital Forensics'
         }
     ],
 
@@ -409,49 +396,46 @@ const FICO_LANDING_DATA = {
     },
 
     nextSteps: {
-        title: 'Ready to See the Difference?',
-        subtitle: 'Experience runtime behavioral intelligence for yourself',
+        title: 'Ready to Partner with Us?',
+        subtitle: 'Join forces with Above Security as our premier design partner',
         options: [
             {
-                id: 'demo',
-                title: 'Schedule Demo',
-                description: 'See Above in action with FICO-specific use cases and behavioral analysis',
-                cta: 'Book Demo',
-                icon: 'fas fa-calendar',
+                id: 'design-partner',
+                title: 'Become Our Design Partner',
+                description: 'Work directly with our team to build the future of insider protection specifically for FICO\'s needs',
+                icon: 'fas fa-handshake',
                 primary: true,
                 benefits: [
-                    'Live behavioral analysis demonstration',
-                    'FICO-specific use case walkthrough',
-                    'Comparison with existing tools',
-                    'Q&A with technical experts'
+                    'Direct collaboration with Above\'s engineering team',
+                    'Priority development of FICO-specific features',
+                    'Exclusive access to cutting-edge behavioral intelligence',
+                    'Co-creation of insider protection solutions'
                 ]
             },
             {
-                id: 'pov',
-                title: 'Start Proof of Value',
-                description: '2-week structured POV with measurable outcomes and clear success criteria',
-                cta: 'Start POV',
-                icon: 'fas fa-flask',
+                id: 'dedicated-team',
+                title: 'Dedicated Security Team',
+                description: 'We become your extended insider protection team, fully focused on FICO\'s security priorities',
+                icon: 'fas fa-users',
                 primary: false,
                 benefits: [
-                    'Live deployment in your environment',
-                    'Real behavioral analysis of your users',
-                    'Quantified business impact assessment',
-                    'Executive-ready business case'
+                    'Above team works as extension of FICO security',
+                    'Weekly strategy sessions and threat analysis',
+                    'Custom behavioral models for financial services',
+                    'Immediate response to emerging threats'
                 ]
             },
             {
-                id: 'comparison',
-                title: 'Download Comparison',
-                description: 'Detailed technical and business comparison: Above vs. Obsidian Security',
-                cta: 'Download PDF',
-                icon: 'fas fa-download',
+                id: 'strategic-priority',
+                title: 'Our Top Priority',
+                description: 'FICO becomes Above\'s most important customer with dedicated resources and attention',
+                icon: 'fas fa-star',
                 primary: false,
                 benefits: [
-                    'Feature-by-feature comparison',
-                    'ROI analysis and business case',
-                    'Technical architecture details',
-                    'Implementation roadmap'
+                    'FICO-first development roadmap',
+                    'Executive-level strategic partnership',
+                    'Influence on product direction and features',
+                    'Preferred partner status for all initiatives'
                 ]
             }
         ]
@@ -487,12 +471,21 @@ const FICOLanding = () => {
             <meta name="keywords" content="FICO, financial services security, behavioral intelligence, insider threat, OAuth security" />
 
             <div className="fico-landing-container" data-testid="fico-landing">
-                {/* Floating Navigation */}
-                <FloatingNavigation />
-                
                 <div className="fico-landing-content">
+                    {/* Enhanced Header Section */}
+                    <header className="fico-landing-header-section">
+                        <Link 
+                            to="/" 
+                            className="logo-container" 
+                            onClick={() => clarityEvent('logo_clicked_from_fico_landing')}
+                            aria-label="Navigate to Above Security homepage"
+                        >
+                            <Logo className="fico-landing-logo" />
+                        </Link>
+                    </header>
+
                     {/* Header */}
-                    <HeroSection 
+                    <HeroSection
                         title={FICO_LANDING_DATA.title}
                         subtitle={FICO_LANDING_DATA.subtitle}
                         description={FICO_LANDING_DATA.description}
@@ -504,9 +497,9 @@ const FICOLanding = () => {
                     <main>
                         <ContentGroup id="problem-definition">
                             {/* Executive Summary */}
-                            <ExecutiveSummary 
+                            <ExecutiveSummary
                                 summary={FICO_LANDING_DATA.executiveSummary}
-                                variant="light"
+                                variant="dark"
                             />
 
                             {/* Real-World Incidents */}
@@ -517,33 +510,15 @@ const FICOLanding = () => {
                                     icon="fas fa-exclamation-circle"
                                     description="Real-world scenarios where Above provides unique value"
                                 />
-                                
-                                <div className="use-case-tabs">
-                                    {FICO_LANDING_DATA.realWorldIncidents.map((incident) => (
-                                        <button
-                                            key={incident.id}
-                                            className={`use-case-tab ${activeUseCase === incident.id ? 'active' : ''}`}
-                                            onClick={() => {
-                                                setActiveUseCase(incident.id);
-                                                clarityEvent('fico_use_case_view', { case: incident.id });
-                                            }}
-                                        >
-                                            <i className={incident.icon}></i>
-                                            <span>{incident.title}</span>
-                                        </button>
-                                    ))}
-                                </div>
 
                                 <CardGrid>
-                                    {FICO_LANDING_DATA.realWorldIncidents
-                                        .filter(incident => incident.id === activeUseCase)
-                                        .map((incident) => (
-                                            <IncidentCard
-                                                key={incident.id}
-                                                incident={incident}
-                                                onClick={handleIncidentClick}
-                                            />
-                                        ))}
+                                    {FICO_LANDING_DATA.realWorldIncidents.map((incident) => (
+                                        <IncidentCard
+                                            key={incident.id}
+                                            incident={incident}
+                                            onClick={handleIncidentClick}
+                                        />
+                                    ))}
                                 </CardGrid>
                             </section>
                         </ContentGroup>
@@ -597,7 +572,7 @@ const FICOLanding = () => {
                                     icon="fas fa-balance-scale"
                                     description={FICO_LANDING_DATA.comparisonChart.subtitle}
                                 />
-                                
+
                                 <div className="comparison-table">
                                     <div className="table-header">
                                         <div>Feature</div>
@@ -634,7 +609,7 @@ const FICOLanding = () => {
                                     icon="fas fa-arrow-right"
                                     description={FICO_LANDING_DATA.nextSteps.subtitle}
                                 />
-                                
+
                                 <div className="next-steps-grid">
                                     {FICO_LANDING_DATA.nextSteps.options.map((option) => (
                                         <div key={option.id} className={`next-step-card ${option.primary ? 'primary' : ''}`}>
@@ -650,15 +625,6 @@ const FICOLanding = () => {
                                                     ))}
                                                 </ul>
                                             </div>
-                                            <button 
-                                                className={`btn ${option.primary ? 'btn-primary' : 'btn-secondary'}`}
-                                                onClick={() => clarityEvent('fico_cta_click', { 
-                                                    action: option.cta, 
-                                                    location: 'next-steps' 
-                                                })}
-                                            >
-                                                {option.cta}
-                                            </button>
                                         </div>
                                     ))}
                                 </div>
