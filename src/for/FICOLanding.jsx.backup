@@ -588,43 +588,6 @@ const FICOLanding = () => {
                             </section>
                         </ContentGroup>
 
-                        <ContentGroup id="comparison-analysis">
-                            {/* Comparison Chart */}
-                            <section className="comparison-chart" role="region" aria-labelledby="comparison-heading">
-                                <SectionHeader
-                                    id="comparison-heading"
-                                    title={FICO_LANDING_DATA.comparisonChart.title}
-                                    icon="fas fa-balance-scale"
-                                    description={FICO_LANDING_DATA.comparisonChart.subtitle}
-                                />
-                                
-                                <div className="comparison-table">
-                                    <div className="table-header">
-                                        <div>Feature</div>
-                                        <div>Obsidian Security</div>
-                                        <div>Above Security</div>
-                                    </div>
-                                    {FICO_LANDING_DATA.comparisonChart.features.map((feature, index) => (
-                                        <div key={index} className="table-row">
-                                            <div className="category">
-                                                <h4>{feature.feature}</h4>
-                                                <p className="feature-impact">{feature.impact}</p>
-                                            </div>
-                                            <div className="traditional">
-                                                <p>{feature.obsidian}</p>
-                                            </div>
-                                            <div className={`above ${feature.winner === 'above' ? 'winner' : ''}`}>
-                                                <p>{feature.above}</p>
-                                                {feature.winner === 'above' && (
-                                                    <i className="fas fa-crown winner-icon"></i>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
-                        </ContentGroup>
-
                         <ContentGroup id="next-steps">
                             {/* Next Steps */}
                             <section className="next-steps" role="region" aria-labelledby="next-steps-heading">
@@ -688,5 +651,286 @@ const FICOLanding = () => {
         </>
     );
 };
+
+                    <main>
+                {/* Executive Summary */}
+                <section id="problem" className="executive-summary">
+                    <ExecutiveSummary
+                        summary={FICO_LANDING_DATA.executiveSummary}
+                        variant="light"
+                    />
+                </section>
+
+                {/* Real-World Incidents */}
+                <section id="use-cases" className="real-world-incidents">
+                    <SectionHeader
+                        title="Critical Use Cases for Financial Services"
+                        subtitle="Real-world scenarios where Above provides unique value"
+                        icon="fas fa-exclamation-circle"
+                    />
+                    
+                    <div className="use-case-tabs">
+                        {FICO_LANDING_DATA.realWorldIncidents.map((incident) => (
+                            <button
+                                key={incident.id}
+                                className={`use-case-tab ${activeUseCase === incident.id ? 'active' : ''}`}
+                                onClick={() => {
+                                    setActiveUseCase(incident.id);
+                                    clarityEvent('fico_use_case_view', { case: incident.id });
+                                }}
+                            >
+                                <i className={incident.icon}></i>
+                                <span>{incident.title}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    <CardGrid>
+                        {FICO_LANDING_DATA.realWorldIncidents
+                            .filter(incident => incident.id === activeUseCase)
+                            .map((incident) => (
+                                <IncidentCard
+                                    key={incident.id}
+                                    incident={incident}
+                                />
+                            ))}
+                    </CardGrid>
+                </section>
+
+                {/* Traditional Tool Gaps */}
+                <section id="solution" className="traditional-tool-gaps">
+                    <SectionHeader
+                        title="Why Traditional Tools Fall Short"
+                        subtitle="Critical gaps in existing security solutions"
+                        icon="fas fa-exclamation-triangle"
+                    />
+                    
+                    <CardGrid>
+                        {FICO_LANDING_DATA.traditionalToolGaps.map((gap) => (
+                            <ToolGapCard
+                                key={gap.id}
+                                tool={gap}
+                            />
+                        ))}
+                    </CardGrid>
+                </section>
+
+                {/* Above Differentiators */}
+                <section className="above-differentiators">
+                    <SectionHeader
+                        title="Above's Unique Advantages"
+                        subtitle="What makes Above different from Obsidian and other tools"
+                        icon="fas fa-star"
+                    />
+                    
+                    <CardGrid>
+                        {FICO_LANDING_DATA.aboveDifferentiators.map((differentiator) => (
+                            <DifferentiatorCard
+                                key={differentiator.id}
+                                differentiator={differentiator}
+                            />
+                        ))}
+                    </CardGrid>
+                </section>
+
+                {/* Business Impact */}
+                <section className="business-impact">
+                    <SectionHeader
+                        title={FICO_LANDING_DATA.businessImpact.title}
+                        subtitle="Quantified outcomes from Above deployment"
+                        icon="fas fa-chart-line"
+                    />
+                    
+                    <CardGrid>
+                        {FICO_LANDING_DATA.businessImpact.metrics.map((metric, index) => (
+                            <MetricCard
+                                key={index}
+                                metric={metric}
+                            />
+                        ))}
+                    </CardGrid>
+                </section>
+
+                {/* Customer Proof */}
+                <section id="proof" className="customer-proof">
+                    <SectionHeader
+                        title={FICO_LANDING_DATA.customerProof.title}
+                        subtitle={FICO_LANDING_DATA.customerProof.subtitle}
+                        icon="fas fa-quote-left"
+                    />
+                    
+                    <div className="testimonial-card">
+                        <div className="testimonial-content">
+                            <div className="testimonial-quote">
+                                <i className="fas fa-quote-left"></i>
+                                <p>{FICO_LANDING_DATA.customerProof.testimonial.quote}</p>
+                            </div>
+                            <div className="testimonial-author">
+                                <span className="author-name">{FICO_LANDING_DATA.customerProof.testimonial.author}</span>
+                                <span className="author-company">{FICO_LANDING_DATA.customerProof.testimonial.company}</span>
+                            </div>
+                        </div>
+                        <div className="testimonial-results">
+                            {FICO_LANDING_DATA.customerProof.testimonial.results.map((result, index) => (
+                                <div key={index} className="result-metric">
+                                    <span className="result-label">{result.metric}</span>
+                                    <span className="result-value">{result.improvement}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="case-study-card">
+                        <h3>{FICO_LANDING_DATA.customerProof.caseStudy.title}</h3>
+                        <div className="case-study-content">
+                            <div className="case-study-section">
+                                <h4>Scenario</h4>
+                                <p>{FICO_LANDING_DATA.customerProof.caseStudy.scenario}</p>
+                            </div>
+                            <div className="case-study-section">
+                                <h4>Challenge</h4>
+                                <p>{FICO_LANDING_DATA.customerProof.caseStudy.challenge}</p>
+                            </div>
+                            <div className="case-study-section">
+                                <h4>Solution</h4>
+                                <p>{FICO_LANDING_DATA.customerProof.caseStudy.solution}</p>
+                            </div>
+                            <div className="case-study-section">
+                                <h4>Outcome</h4>
+                                <p>{FICO_LANDING_DATA.customerProof.caseStudy.outcome}</p>
+                            </div>
+                            <div className="case-study-impact">
+                                <h4>Business Impact</h4>
+                                <p>{FICO_LANDING_DATA.customerProof.caseStudy.impact}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Comparison Chart */}
+                <section id="comparison" className="comparison-chart">
+                    <SectionHeader
+                        title={FICO_LANDING_DATA.comparisonChart.title}
+                        subtitle={FICO_LANDING_DATA.comparisonChart.subtitle}
+                        icon="fas fa-balance-scale"
+                    />
+                    
+                    <div className="comparison-table">
+                        <div className="comparison-header">
+                            <div className="comparison-feature">Feature</div>
+                            <div className="comparison-obsidian">Obsidian Security</div>
+                            <div className="comparison-above">Above Security</div>
+                        </div>
+                        {FICO_LANDING_DATA.comparisonChart.features.map((feature, index) => (
+                            <div key={index} className="comparison-row">
+                                <div className="comparison-feature">
+                                    <h4>{feature.feature}</h4>
+                                    <p className="feature-impact">{feature.impact}</p>
+                                </div>
+                                <div className="comparison-obsidian">
+                                    <p>{feature.obsidian}</p>
+                                </div>
+                                <div className={`comparison-above ${feature.winner === 'above' ? 'winner' : ''}`}>
+                                    <p>{feature.above}</p>
+                                    {feature.winner === 'above' && (
+                                        <i className="fas fa-crown winner-icon"></i>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* POV Success Timeline */}
+                <section className="pov-timeline">
+                    <SectionHeader
+                        title={FICO_LANDING_DATA.povSuccess.timeline}
+                        subtitle={FICO_LANDING_DATA.povSuccess.timelineDescription}
+                        icon="fas fa-calendar-alt"
+                    />
+                    <div className="pov-phases">
+                        {FICO_LANDING_DATA.povSuccess.phases.map((phase, index) => (
+                            <div key={index} className="pov-phase">
+                                <div className="phase-header">
+                                    <h3>{phase.title}</h3>
+                                    <span className="phase-duration">{phase.duration}</span>
+                                </div>
+                                <p className="phase-description">{phase.description}</p>
+                                <div className="phase-milestones">
+                                    <h4>Key Milestones:</h4>
+                                    <ul>
+                                        {phase.keyMilestones.map((milestone, idx) => (
+                                            <li key={idx}>{milestone}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="phase-deliverable">
+                                    <strong>Deliverable:</strong> {phase.deliverable}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Next Steps */}
+                <section id="next-steps" className="next-steps">
+                    <SectionHeader
+                        title={FICO_LANDING_DATA.nextSteps.title}
+                        subtitle={FICO_LANDING_DATA.nextSteps.subtitle}
+                        icon="fas fa-arrow-right"
+                    />
+                    
+                    <div className="next-steps-grid">
+                        {FICO_LANDING_DATA.nextSteps.options.map((option) => (
+                            <div key={option.id} className={`next-step-card ${option.primary ? 'primary' : ''}`}>
+                                <div className="next-step-icon">
+                                    <i className={option.icon}></i>
+                                </div>
+                                <div className="next-step-content">
+                                    <h3>{option.title}</h3>
+                                    <p>{option.description}</p>
+                                    <ul className="next-step-benefits">
+                                        {option.benefits.map((benefit, index) => (
+                                            <li key={index}>{benefit}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <button 
+                                    className="nav-link primary"
+                                    onClick={() => clarityEvent('fico_cta_click', { 
+                                        action: option.cta, 
+                                        location: 'next-steps' 
+                                    })}
+                                >
+                                    {option.cta}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </ContentGroup>
+        </main>
+    </div>
+
+    {/* Footer */}
+    <footer className="landing-footer">
+        <div className="footer-content">
+            <div className="footer-logo">
+                <Logo />
+                <span>Above Security</span>
+            </div>
+            <div className="footer-links">
+                <Link to="/use-cases" className="footer-link">Use Cases</Link>
+                <Link to="/slides" className="footer-link">Company Deck</Link>
+                <a href="mailto:hello@above.ai" className="footer-link">Contact</a>
+            </div>
+        </div>
+        <div className="footer-bottom">
+            <p>&copy; 2025 Above Security. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+</>
+);
 
 export default FICOLanding;
