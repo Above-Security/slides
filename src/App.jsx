@@ -11,6 +11,9 @@ import {
 import {
   CompanyIndex
 } from './company';
+import {
+  FICOLanding
+} from './for';
 import FloatingTOCDemo from './company/pages/FloatingTOCDemo';
 import SectionContainerDemo from './company/pages/SectionContainerDemo';
 import InsiderThreatMatrix from './pages/InsiderThreatMatrix';
@@ -40,6 +43,8 @@ const App = () => {
         caseSensitive
       />
       <Route path="/use-cases/*" element={<Navigate to="/" replace />} />
+      <Route path="/for/fico" element={<FICOLanding />} />
+      <Route path="/for/*" element={<Navigate to="/for/fico" replace />} />
       <Route path="/company" element={<CompanyIndex />} />
       <Route path="/company/toc-demo" element={<FloatingTOCDemo />} />
       <Route path="/company/section-demo" element={<SectionContainerDemo />} />
