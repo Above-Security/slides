@@ -474,9 +474,9 @@ const FICOLanding = () => {
                 <div className="fico-landing-content">
                     {/* Enhanced Header Section */}
                     <header className="fico-landing-header-section">
-                        <Link 
-                            to="/" 
-                            className="logo-container" 
+                        <Link
+                            to="/"
+                            className="logo-container"
                             onClick={() => clarityEvent('logo_clicked_from_fico_landing')}
                             aria-label="Navigate to Above Security homepage"
                         >
