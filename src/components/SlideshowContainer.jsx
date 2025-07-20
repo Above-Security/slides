@@ -15,9 +15,9 @@ import './SlideshowContainer.css';
  * - No CSS bleed - uses scoped identifiers
  */
 
-const SlideshowContainer = ({ 
-    children, 
-    isSlideshow, 
+const SlideshowContainer = ({
+    children,
+    isSlideshow,
     onToggleSlideshow,
     className = '',
     slideConfig = []
@@ -28,18 +28,18 @@ const SlideshowContainer = ({
     // Extract slides from children based on slideConfig
     const extractSlides = () => {
         const allChildren = React.Children.toArray(children);
-        
+
         if (!slideConfig.length) {
             // If no config, treat each top-level child as a slide
             return allChildren;
         }
-        
+
         // Find slide sections based on data-slide attribute
-        const slideElements = allChildren.filter(child => 
-            child?.props?.['data-slide'] || 
+        const slideElements = allChildren.filter(child =>
+            child?.props?.['data-slide'] ||
             child?.props?.className?.includes('slide-section')
         );
-        
+
         return slideElements.length > 0 ? slideElements : allChildren;
     };
 
@@ -116,16 +116,16 @@ const SlideshowContainer = ({
     const getSlideTitle = (slideIndex) => {
         const config = slideConfig[slideIndex];
         if (config?.title) return config.title;
-        
+
         // Try to extract title from slide content
         const slide = slides[slideIndex];
         if (slide?.props?.children) {
-            const headerElement = React.Children.toArray(slide.props.children).find(child => 
+            const headerElement = React.Children.toArray(slide.props.children).find(child =>
                 child?.props?.title || child?.props?.children?.props?.title
             );
             if (headerElement?.props?.title) return headerElement.props.title;
         }
-        
+
         return `Slide ${slideIndex + 1}`;
     };
 
@@ -144,13 +144,13 @@ const SlideshowContainer = ({
                 <div className="slideshow-title">
                     <h1>{getSlideTitle(currentSlide)}</h1>
                 </div>
-                
+
                 <div className="slideshow-controls">
                     <span className="slide-counter">
                         {currentSlide + 1} / {totalSlides}
                     </span>
-                    
-                    <button 
+
+                    <button
                         className="slideshow-exit-btn"
                         onClick={onToggleSlideshow}
                         aria-label="Exit slideshow"
@@ -163,12 +163,9 @@ const SlideshowContainer = ({
 
             {/* Slide Content */}
             <main className="slideshow-main">
-                <div 
-                    className="slideshow-slide-container"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                >
+                <div className="slideshow-slide-container">
                     {slides.map((slide, index) => (
-                        <div 
+                        <div
                             key={index}
                             className={`slideshow-slide ${index === currentSlide ? 'active' : ''}`}
                             data-slide-index={index}
@@ -183,7 +180,7 @@ const SlideshowContainer = ({
 
             {/* Navigation Controls */}
             <div className="slideshow-navigation">
-                <button 
+                <button
                     className="slideshow-nav-btn slideshow-prev"
                     onClick={prevSlide}
                     disabled={isTransitioning}
@@ -206,7 +203,7 @@ const SlideshowContainer = ({
                     ))}
                 </div>
 
-                <button 
+                <button
                     className="slideshow-nav-btn slideshow-next"
                     onClick={nextSlide}
                     disabled={isTransitioning}
