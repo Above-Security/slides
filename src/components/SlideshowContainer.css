@@ -1,0 +1,346 @@
+/* SlideshowContainer.css - Scoped styles for slideshow functionality */
+/* Following Above Security brand guidelines and design tokens */
+
+/* Container States */
+.slideshow-container-normal {
+    /* Normal page layout - maintains existing styles */
+    position: relative;
+}
+
+.slideshow-container-presentation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-background-primary);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-primary);
+    overflow: hidden;
+}
+
+/* Slideshow Header */
+.slideshow-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: var(--color-background-primary);
+    border-bottom: 1px solid var(--color-border-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.slideshow-title h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.slideshow-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.slide-counter {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-background-secondary);
+    border-radius: 4px;
+}
+
+.slideshow-exit-btn {
+    background: none;
+    border: 1px solid var(--color-border-primary);
+    color: var(--color-text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.slideshow-exit-btn:hover {
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-focus);
+}
+
+/* Main Slide Area */
+.slideshow-main {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow-slide-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slideshow-slide {
+    min-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+    box-sizing: border-box;
+}
+
+.slideshow-slide-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Ensure content maintains proper spacing in slideshow mode */
+.slideshow-slide-content .hero-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.slideshow-slide-content .executive-summary,
+.slideshow-slide-content .real-world-incidents,
+.slideshow-slide-content .tool-gaps,
+.slideshow-slide-content .above-differentiators,
+.slideshow-slide-content .comparison-chart,
+.slideshow-slide-content .next-steps {
+    margin: var(--spacing-lg) 0;
+}
+
+/* Navigation Controls */
+.slideshow-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--color-background-primary);
+    border-top: 1px solid var(--color-border-primary);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow-nav-btn {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(8, 135, 43, 0.2);
+}
+
+.slideshow-nav-btn:hover:not(:disabled) {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(8, 135, 43, 0.3);
+}
+
+.slideshow-nav-btn:disabled {
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Slide Indicators */
+.slideshow-indicators {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.slideshow-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-border-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slideshow-indicator:hover {
+    background: var(--color-text-secondary);
+    transform: scale(1.1);
+}
+
+.slideshow-indicator.active {
+    background: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.slideshow-shortcuts {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Slideshow Toggle Button (for the page) */
+.slideshow-toggle-btn {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    z-index: 1000;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(8, 135, 43, 0.3);
+}
+
+.slideshow-toggle-btn:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(8, 135, 43, 0.4);
+}
+
+.slideshow-toggle-btn i {
+    font-size: var(--font-size-base);
+}
+
+/* Slide Section Styles */
+.slide-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--spacing-xl) 0;
+}
+
+.slide-section[data-slide="header"] {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-background-primary) 0%, var(--color-background-secondary) 100%);
+}
+
+.slide-section[data-slide="executive-summary"] {
+    background: var(--color-background-dark);
+    color: var(--color-text-inverse);
+}
+
+.slide-section[data-slide="use-cases"],
+.slide-section[data-slide="tool-gaps"],
+.slide-section[data-slide="differentiators"],
+.slide-section[data-slide="comparison"],
+.slide-section[data-slide="next-steps"] {
+    background: var(--color-background-primary);
+}
+
+/* Normal view - hide slide-section wrapper styles */
+.slideshow-container-normal .slide-section {
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+}
+
+/* Slideshow mode enhancements */
+.slideshow-container-presentation .slide-section {
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-header {
+        padding: var(--spacing-md);
+    }
+    
+    .slideshow-title h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .slideshow-slide {
+        padding: var(--spacing-lg);
+    }
+    
+    .slideshow-navigation {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .slideshow-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+    
+    .slideshow-toggle-btn {
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+    
+    .slideshow-shortcuts {
+        font-size: 10px;
+        padding: 2px var(--spacing-xs);
+    }
+}
+
+/* Focus states for accessibility */
+.slideshow-nav-btn:focus,
+.slideshow-indicator:focus,
+.slideshow-exit-btn:focus,
+.slideshow-toggle-btn:focus {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+}
+
+/* Animation for slide transitions */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slideshow-slide.active .slideshow-slide-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Ensure no interference with existing page styles */
+.fico-landing-container:not(.slideshow-mode) .slideshow-toggle-btn {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+}
+
+.fico-landing-container.slideshow-mode .slideshow-toggle-btn {
+    display: none;
+}
