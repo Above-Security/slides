@@ -13,7 +13,6 @@ import {
     HeroSection,
     CardGrid,
     IncidentCard,
-    ToolGapCard,
     DifferentiatorCard,
     MetricCard,
     ExecutiveSummary,
@@ -42,7 +41,7 @@ import './styles/FICOLanding.css';
 // FICO-Specific Landing Page Data - Following PhishingDetection.jsx structure
 const FICO_LANDING_DATA = {
     id: 'fico-landing',
-    title: 'Runtime Identity Protection for FICO',
+    title: 'Runtime Insider Protection for FICO',
     subtitle: 'Beyond Shadow App Discovery: Behavioral Intelligence for Financial Services',
     description: 'While Obsidian tells you WHICH shadow apps users access, Above tells you WHAT they\'re doing inside those apps — and WHY it\'s risky. Get behavioral intelligence that matters for financial services compliance and insider protection.',
     icon: 'fas fa-university',
@@ -60,6 +59,85 @@ const FICO_LANDING_DATA = {
             'OAuth risk analysis with semantic permission understanding'
         ]
     },
+
+    keyFeatures: [
+        {
+            id: 'saas-discovery',
+            title: 'SaaS & Internal App Discovery',
+            icon: 'fas fa-search',
+            description: 'Comprehensive visibility into all applications and authentication methods',
+            details: [
+                'Real-time discovery of SaaS applications and internal web apps',
+                'Authentication method analysis (SSO, OAuth, direct login)',
+                'Shadow IT identification with risk categorization',
+                'Access pattern analysis and user behavior mapping',
+                'Integration with identity providers and access management systems'
+            ],
+            example: '"Employee accessing Notion via personal account instead of corporate SSO detected"',
+            benefit: 'Complete application visibility with authentication context'
+        },
+        {
+            id: 'shadow-ai',
+            title: 'Shadow AI Discovery',
+            icon: 'fas fa-robot',
+            description: 'Detect and monitor unauthorized AI tool usage across your organization',
+            details: [
+                'Detection of AI chatbots and generative AI tools (ChatGPT, Claude, etc.)',
+                'Monitoring of AI browser extensions and plugins',
+                'Analysis of data inputs to AI systems',
+                'Policy enforcement for approved AI tools',
+                'Risk assessment of AI-generated content and decisions'
+            ],
+            example: '"Finance analyst copying customer data to unauthorized chatbot inside Amazon.com detected and blocked"',
+            benefit: 'Prevent data exposure through unauthorized AI tools'
+        },
+        {
+            id: 'oauth-discovery',
+            title: '3rd Party OAuth Discovery',
+            icon: 'fas fa-key',
+            description: 'Deep analysis of OAuth permissions and third-party app integrations',
+            details: [
+                'Semantic analysis of OAuth permission requests',
+                'Detection of deceptive or malicious OAuth applications',
+                'Monitoring of granted permissions and scope analysis',
+                'Brand impersonation detection in OAuth flows',
+                'Risk scoring based on requested permissions and app reputation'
+            ],
+            example: '"Malicious app requesting excessive Gmail permissions flagged during OAuth flow"',
+            benefit: 'Prevent OAuth-based attacks and unauthorized data access'
+        },
+        {
+            id: 'phishing-prevention',
+            title: 'Advanced Phishing Prevention',
+            icon: 'fas fa-shield-alt',
+            description: 'Real-time protection against sophisticated phishing attacks',
+            details: [
+                'Real-time URL and domain analysis during browsing',
+                'Detection of credential harvesting attempts',
+                'Brand impersonation and lookalike domain identification',
+                'Behavioral analysis to detect social engineering attempts',
+                'Integration with email security for comprehensive protection'
+            ],
+            example: '"Fake Microsoft login page detected and blocked before credential entry"',
+            benefit: 'Stop phishing attacks before credentials are compromised'
+        },
+        {
+            id: 'intelligent-nudging',
+            title: 'Intelligent User Nudging',
+            icon: 'fas fa-lightbulb',
+            description: 'Real-time guidance and intervention to redirect users to approved alternatives',
+            details: [
+                'Contextual messaging when users access blocked applications',
+                'Smart recommendations for approved corporate alternatives',
+                'Educational pop-ups explaining security policies and risks',
+                'User justification requests for unusual access patterns',
+                'Behavioral coaching to improve security awareness',
+                'Seamless redirection to compliant tools and workflows'
+            ],
+            benefit: 'Transform security friction into positive user education',
+            example: '"This app is blocked. Use Microsoft Teams instead." or "Justify why you need access to this external tool."'
+        }
+    ],
 
     realWorldIncidents: [
         {
@@ -113,33 +191,6 @@ const FICO_LANDING_DATA = {
             severity: 'high',
             affected: 'Incident investigation process',
             category: 'Digital Forensics'
-        }
-    ],
-
-    traditionalToolGaps: [
-        {
-            id: 'obsidian-gaps',
-            tool: 'Obsidian Security',
-            limitation: 'App discovery without behavioral context - cannot detect intent or behavioral drift patterns',
-            coverage: '35%'
-        },
-        {
-            id: 'casb-gaps',
-            tool: 'CASB Solutions',
-            limitation: 'API-dependent with limited session visibility - no real-time intervention during risky actions',
-            coverage: '45%'
-        },
-        {
-            id: 'dlp-gaps',
-            tool: 'Traditional DLP',
-            limitation: 'Content-focused without behavioral context - cannot understand user intent behind data actions',
-            coverage: '40%'
-        },
-        {
-            id: 'siem-gaps',
-            tool: 'SIEM/SOAR',
-            limitation: 'Reactive log-based detection - misses real-time behavioral threats and user intent',
-            coverage: '30%'
         }
     ],
 
@@ -335,20 +386,16 @@ const FICOLanding = () => {
         clarityEvent('fico_incident_view', { incident: incidentId });
     };
 
-    const handleToolGapClick = (toolName) => {
-        clarityEvent('fico_tool_gap_view', { tool: toolName });
-    };
-
     const handleDifferentiatorClick = (capability) => {
         clarityEvent('fico_differentiator_view', { capability });
     };
 
     // Define slide configuration for slideshow mode
     const slideConfig = [
-        { title: 'Runtime Identity Protection for FICO', index: 0 },
+        { title: 'Runtime Insider Protection for FICO', index: 0 },
         { title: 'The Critical Difference: Behavioral Intelligence', index: 1 },
-        { title: 'Critical Use Cases for Financial Services', index: 2 },
-        { title: 'Why Traditional Tools Fall Short', index: 3 },
+        { title: 'Key Platform Features', index: 2 },
+        { title: 'Critical Use Cases for Financial Services', index: 3 },
         { title: "Above's Unique Advantages", index: 4 },
         { title: 'Above vs. Obsidian: Feature Comparison', index: 5 },
         { title: 'Ready to Partner with Us?', index: 6 }
@@ -364,7 +411,7 @@ const FICOLanding = () => {
             <div className={`fico-landing-container ${isSlideshow ? 'slideshow-mode' : ''}`} data-testid="fico-landing">
                 {/* Slideshow Toggle Button */}
                 {!isSlideshow && (
-                    <button 
+                    <button
                         className="slideshow-toggle-btn"
                         onClick={handleToggleSlideshow}
                         aria-label="Show as slideshow"
@@ -375,8 +422,8 @@ const FICOLanding = () => {
                     </button>
                 )}
 
-                <SlideshowContainer 
-                    isSlideshow={isSlideshow} 
+                <SlideshowContainer
+                    isSlideshow={isSlideshow}
                     onToggleSlideshow={handleToggleSlideshow}
                     slideConfig={slideConfig}
                     className="fico-landing-content"
@@ -412,7 +459,60 @@ const FICOLanding = () => {
                         />
                     </div>
 
-                    {/* Slide 3: Real-World Incidents */}
+                    {/* Slide 3: Key Platform Features */}
+                    <div className="slide-section" data-slide="key-features">
+                        <section className="key-features" role="region" aria-labelledby="features-heading">
+                            <SectionHeader
+                                id="features-heading"
+                                title="Platform Overview"
+                                icon="fas fa-rocket"
+                                description="Core capabilities that power next-generation insider protection"
+                            />
+
+                            <div className="features-showcase">
+                                {FICO_LANDING_DATA.keyFeatures.map((feature, index) => (
+                                    <div key={feature.id} className="feature-showcase-card" data-index={index}>
+                                        <div className="feature-showcase-header">
+                                            <div className="feature-showcase-icon">
+                                                <i className={feature.icon}></i>
+                                            </div>
+                                            <div className="feature-showcase-title">
+                                                <h3>{feature.title}</h3>
+                                                <p className="feature-showcase-description">{feature.description}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="feature-showcase-content">
+                                            <div className="feature-showcase-details">
+                                                {feature.details.map((detail, idx) => (
+                                                    <div key={idx} className="feature-detail-item">
+                                                        <span className="detail-bullet"></span>
+                                                        <span className="detail-text">{detail}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {feature.example && (
+                                                <div className="feature-example">
+                                                    <div className="example-label">Example:</div>
+                                                    <div className="example-text">{feature.example}</div>
+                                                </div>
+                                            )}
+
+                                            <div className="feature-showcase-benefit">
+                                                <div className="benefit-icon">
+                                                    <i className="fas fa-star"></i>
+                                                </div>
+                                                <div className="benefit-text">{feature.benefit}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    </div>
+
+                    {/* Slide 4: Real-World Incidents */}
                     <div className="slide-section" data-slide="use-cases">
                         <section className="real-world-incidents" role="region" aria-labelledby="incidents-heading">
                             <SectionHeader
@@ -428,27 +528,6 @@ const FICOLanding = () => {
                                         key={incident.id}
                                         incident={incident}
                                         onClick={handleIncidentClick}
-                                    />
-                                ))}
-                            </CardGrid>
-                        </section>
-                    </div>
-
-                    {/* Slide 4: Traditional Tool Gaps */}
-                    <div className="slide-section" data-slide="tool-gaps">
-                        <section className="tool-gaps" role="region" aria-labelledby="tool-gaps-heading">
-                            <SectionHeader
-                                id="tool-gaps-heading"
-                                title="Why Traditional Tools Fall Short"
-                                icon="fas fa-exclamation-triangle"
-                                description="Critical gaps in existing security solutions"
-                            />
-                            <CardGrid className="tool-gaps-grid">
-                                {FICO_LANDING_DATA.traditionalToolGaps.map((tool, index) => (
-                                    <ToolGapCard
-                                        key={index}
-                                        tool={tool}
-                                        onClick={handleToolGapClick}
                                     />
                                 ))}
                             </CardGrid>

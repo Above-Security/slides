@@ -1156,6 +1156,304 @@
     font-size: var(--text-sm) !important;
 }
 
+/* Key Features Section - Modern Showcase Design */
+.fico-landing-container .key-features .features-showcase {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+    gap: var(--spacing-2xl) !important;
+    margin-top: var(--spacing-2xl) !important;
+    padding: 0 var(--spacing-lg) !important;
+}
+
+.fico-landing-container .feature-showcase-card {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%) !important;
+    border: 1px solid var(--border-primary) !important;
+    border-radius: 16px !important;
+    padding: var(--spacing-2xl) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.fico-landing-container .feature-showcase-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--fico-primary), var(--fico-primary-light)) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.fico-landing-container .feature-showcase-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 40px rgba(8, 135, 43, 0.15) !important;
+    border-color: var(--fico-primary) !important;
+}
+
+.fico-landing-container .feature-showcase-card:hover::before {
+    opacity: 1 !important;
+}
+
+.fico-landing-container .feature-showcase-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--spacing-lg) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    flex-shrink: 0 !important;
+}
+
+.fico-landing-container .feature-showcase-icon {
+    flex-shrink: 0 !important;
+    width: 64px !important;
+    height: 64px !important;
+    background: linear-gradient(135deg, var(--fico-primary), var(--fico-primary-light)) !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 16px rgba(8, 135, 43, 0.25) !important;
+}
+
+.fico-landing-container .feature-showcase-icon i {
+    font-size: 24px !important;
+    color: var(--text-white) !important;
+}
+
+.fico-landing-container .feature-showcase-title {
+    flex: 1 !important;
+}
+
+.fico-landing-container .feature-showcase-title h3 {
+    font-size: var(--text-xl) !important;
+    font-weight: var(--font-weight-bold) !important;
+    color: var(--text-primary) !important;
+    margin: 0 0 var(--spacing-sm) 0 !important;
+    line-height: 1.3 !important;
+}
+
+.fico-landing-container .feature-showcase-description {
+    font-size: var(--text-base) !important;
+    color: var(--text-secondary) !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+.fico-landing-container .feature-showcase-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.fico-landing-container .feature-showcase-details {
+    margin-bottom: var(--spacing-lg) !important;
+    flex: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    gap: var(--spacing-sm) !important;
+    align-content: start !important;
+}
+
+.fico-landing-container .feature-detail-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--spacing-sm) !important;
+    padding: var(--spacing-sm) !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.fico-landing-container .feature-detail-item:hover {
+    background: rgba(8, 135, 43, 0.03) !important;
+}
+
+.fico-landing-container .detail-bullet {
+    flex-shrink: 0 !important;
+    width: 6px !important;
+    height: 6px !important;
+    background: var(--fico-primary) !important;
+    border-radius: 50% !important;
+    margin-top: 6px !important;
+}
+
+.fico-landing-container .detail-text {
+    font-size: var(--text-sm) !important;
+    color: var(--text-secondary) !important;
+    line-height: 1.5 !important;
+    font-weight: var(--font-weight-regular) !important;
+}
+
+.fico-landing-container .feature-example {
+    background: rgba(8, 135, 43, 0.05) !important;
+    border: 1px solid rgba(8, 135, 43, 0.15) !important;
+    border-radius: 12px !important;
+    padding: var(--spacing-lg) !important;
+    margin: var(--spacing-lg) 0 !important;
+}
+
+.fico-landing-container .example-label {
+    font-size: var(--text-xs) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    color: var(--fico-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: var(--spacing-sm) !important;
+}
+
+.fico-landing-container .example-text {
+    font-size: var(--text-sm) !important;
+    color: var(--text-primary) !important;
+    font-style: italic !important;
+    line-height: 1.5 !important;
+    background: var(--bg-primary) !important;
+    padding: var(--spacing-md) !important;
+    border-radius: 8px !important;
+    border-left: 3px solid var(--fico-primary) !important;
+}
+
+.fico-landing-container .feature-showcase-benefit {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--spacing-md) !important;
+    padding: var(--spacing-lg) !important;
+    background: linear-gradient(135deg, rgba(8, 135, 43, 0.05), rgba(95, 237, 131, 0.05)) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(8, 135, 43, 0.1) !important;
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+}
+
+.fico-landing-container .benefit-icon {
+    flex-shrink: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: var(--fico-primary) !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0 !important;
+}
+
+.fico-landing-container .benefit-icon i {
+    font-size: var(--text-sm) !important;
+    color: var(--text-white) !important;
+}
+
+.fico-landing-container .benefit-text {
+    font-size: var(--text-sm) !important;
+    font-weight: var(--font-weight-medium) !important;
+    color: var(--text-primary) !important;
+    margin: 0 !important;
+}
+
+/* Legacy feature cards (keep for compatibility) */
+.fico-landing-container .key-features .features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: var(--spacing-xl) !important;
+    margin-top: var(--spacing-xl) !important;
+}
+
+.fico-landing-container .feature-card {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-primary) !important;
+    border-radius: 12px !important;
+    padding: var(--spacing-xl) !important;
+    transition: all 0.3s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.fico-landing-container .feature-card:hover {
+    border-color: var(--fico-primary) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 32px rgba(8, 135, 43, 0.12) !important;
+}
+
+.fico-landing-container .feature-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, var(--fico-primary), var(--fico-primary-light)) !important;
+    border-radius: 12px !important;
+    margin-bottom: var(--spacing-lg) !important;
+}
+
+.fico-landing-container .feature-icon i {
+    font-size: var(--text-xl) !important;
+    color: var(--text-white) !important;
+}
+
+.fico-landing-container .feature-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.fico-landing-container .feature-content h3 {
+    font-size: var(--text-xl) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    color: var(--text-primary) !important;
+    margin: 0 0 var(--spacing-md) 0 !important;
+    line-height: 1.3 !important;
+}
+
+.fico-landing-container .feature-description {
+    font-size: var(--text-base) !important;
+    color: var(--text-secondary) !important;
+    line-height: 1.6 !important;
+    margin: 0 0 var(--spacing-lg) 0 !important;
+}
+
+.fico-landing-container .feature-details {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 var(--spacing-lg) 0 !important;
+    flex: 1 !important;
+}
+
+.fico-landing-container .feature-details li {
+    position: relative !important;
+    padding-left: var(--spacing-lg) !important;
+    margin-bottom: var(--spacing-sm) !important;
+    font-size: var(--text-sm) !important;
+    color: var(--text-secondary) !important;
+    line-height: 1.5 !important;
+}
+
+.fico-landing-container .feature-details li::before {
+    content: '✓' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: var(--fico-primary) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+.fico-landing-container .feature-benefit {
+    background: var(--bg-secondary) !important;
+    border-radius: 8px !important;
+    padding: var(--spacing-md) !important;
+    border-left: 4px solid var(--fico-primary) !important;
+    font-size: var(--text-sm) !important;
+    line-height: 1.5 !important;
+}
+
+.fico-landing-container .feature-benefit strong {
+    color: var(--fico-primary) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
 @media (max-width: 768px) {
 
     .fico-landing-container .comparison-table .table-header,
@@ -1171,5 +1469,66 @@
 
     .fico-landing-container .comparison-table .table-row>div:last-child {
         border-bottom: none !important;
+    }
+
+    /* Modern features showcase responsive */
+    .fico-landing-container .key-features .features-showcase {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xl) !important;
+        padding: 0 !important;
+    }
+
+    .fico-landing-container .feature-showcase-card {
+        padding: var(--spacing-xl) !important;
+    }
+
+    .fico-landing-container .feature-showcase-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: var(--spacing-md) !important;
+        margin-bottom: var(--spacing-md) !important;
+    }
+
+    .fico-landing-container .feature-showcase-icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .fico-landing-container .feature-showcase-icon i {
+        font-size: 20px !important;
+    }
+
+    .fico-landing-container .feature-showcase-title h3 {
+        font-size: var(--text-lg) !important;
+    }
+
+    .fico-landing-container .feature-showcase-details {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xs) !important;
+    }
+
+    .fico-landing-container .feature-detail-item {
+        padding: var(--spacing-xs) !important;
+    }
+
+    /* Legacy feature cards responsive */
+    .fico-landing-container .key-features .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+    }
+
+    .fico-landing-container .feature-card {
+        padding: var(--spacing-lg) !important;
+    }
+
+    .fico-landing-container .feature-icon {
+        width: 50px !important;
+        height: 50px !important;
+        margin-bottom: var(--spacing-md) !important;
+    }
+
+    .fico-landing-container .feature-icon i {
+        font-size: var(--text-lg) !important;
     }
 }
