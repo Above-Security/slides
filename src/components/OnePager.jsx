@@ -749,21 +749,6 @@ const OnePager = () => {
                                 description={ONE_PAGER_DATA.industryBacking.subtitle}
                             />
 
-                            {/* Advisory Board */}
-                            <div className="advisory-board">
-                                <h3 className="advisory-board-title">Advisory Board</h3>
-                                <CardGrid className="advisors-grid">
-                                    {ONE_PAGER_DATA.industryBacking.advisors.map((advisor) => (
-                                        <div key={advisor.id} className="advisor-card">
-                                            <div className="advisor-info">
-                                                <h4 className="advisor-name">{advisor.name}</h4>
-                                                <p className="advisor-role">{advisor.title} @ {advisor.company}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </CardGrid>
-                            </div>
-
                             {/* Investors */}
                             <div className="investors-section">
                                 <h3 className="investors-title">Investment Partners</h3>
