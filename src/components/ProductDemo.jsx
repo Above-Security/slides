@@ -35,7 +35,7 @@ const PRODUCT_DEMO_DATA = {
     description: 'Watch our comprehensive product demonstration to see how Above Security detects insider threats through behavioral analysis and real-time monitoring.',
     icon: 'fas fa-play-circle',
     color: 'var(--primary-color)',
-    videoFile: '/Above demo 1080p studio with new audio.mp4',
+    videoFile: 'https://github.com/Above-Security/slides/blob/main/public/Above%20demo%201080p%20studio%20with%20new%20audio.mp4?raw=true',
     
     navigation: {
         title: 'Explore More',
