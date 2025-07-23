@@ -144,32 +144,15 @@ const ProductDemo = () => {
                     className="product-demo-video-group"
                 >
                     <div className="product-demo-video-container">
-                        <video
+                        <iframe 
+                            src="https://drive.google.com/file/d/1qvDH0bVcrLj55O5U914vcG8zHvH8nirW/preview?hd=1&vq=hd1080&embedded=true&controls=1"
+                            allow="autoplay"
+                            allowFullScreen
                             className="product-demo-video"
-                            controls
-                            preload="metadata"
-                            onPlay={handleVideoPlay}
                             aria-label="Above Security Product Demonstration Video"
-                        >
-                            <source 
-                                src={PRODUCT_DEMO_DATA.videoFile} 
-                                type="video/mp4" 
-                            />
-                            Your browser does not support the video tag. 
-                            Please download the video to view it.
-                        </video>
-                        <div className="product-demo-video-fallback">
-                            <p>
-                                If the video doesn't load, you can{' '}
-                                <a 
-                                    href={PRODUCT_DEMO_DATA.videoFile} 
-                                    download
-                                    className="product-demo-download-link"
-                                >
-                                    download it here
-                                </a>
-                            </p>
-                        </div>
+                            onLoad={() => clarityEvent('video_iframe_loaded', { source: 'google_drive' })}
+                            title="Above Security Product Demo"
+                        />
                     </div>
 
                     {/* CTA Navigation - Moved directly under video */}
