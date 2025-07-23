@@ -31,7 +31,7 @@ import './ProductDemo.css';
 const PRODUCT_DEMO_DATA = {
     id: 'product-demo',
     title: 'Above Security Product Demo',
-    subtitle: 'See Our Behavioral Intelligence Platform in Action',
+    subtitle: 'See Our Insider Protection Platform in Action',
     description: 'Watch our comprehensive product demonstration to see how Above Security detects insider threats through behavioral analysis and real-time monitoring.',
     icon: 'fas fa-play-circle',
     color: 'var(--primary-color)',

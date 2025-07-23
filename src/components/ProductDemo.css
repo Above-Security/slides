@@ -3,7 +3,7 @@
 
 .product-demo-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #f6f8fa 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f6f8fa 50%, #e6f7ff 100%);
     color: #24292f;
     /* Brand guideline: text-primary */
     font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -15,7 +15,35 @@
     padding: 0;
 }
 
-/* Header Section - HomePage Style */
+/* Animated Background Particles */
+.product-demo-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(8, 135, 43, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(95, 237, 131, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(8, 135, 43, 0.05) 0%, transparent 50%);
+    animation: particleFloat 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+        opacity: 1;
+    }
+}
+
+/* Header Section - Clean and Simple */
 .product-demo-container .product-demo-header-section {
     padding: 2rem 2rem 1rem;
     position: relative;
@@ -111,31 +139,59 @@
     text-align: center;
 }
 
-/* Compact Description Section - Replacing Title Section */
+/* Compact Description Section - Enhanced with Glassmorphism */
 .product-demo-container .product-demo-description-section {
     max-width: 1400px;
     margin: 0 auto 2rem;
-    padding: 1.5rem 2rem 1rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(8, 135, 43, 0.08);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(8, 135, 43, 0.1);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 8px 32px rgba(8, 135, 43, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
     position: relative;
     overflow: hidden;
-    /* Subtle entrance animation */
+    /* Enhanced entrance animation */
     opacity: 0;
-    transform: translateY(16px);
-    animation: descriptionSectionReveal 0.6s ease-out 0.3s forwards;
+    transform: translateY(32px);
+    animation: descriptionSectionReveal 0.8s ease-out 0.3s forwards;
+}
+
+.product-demo-container .product-demo-description-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at top left, rgba(8, 135, 43, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(95, 237, 131, 0.02) 0%, transparent 50%);
+    animation: sectionGlow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes sectionGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 @keyframes descriptionSectionReveal {
     from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(32px) scale(0.98);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -177,6 +233,7 @@
     flex-shrink: 0;
     box-shadow: 0 6px 18px rgba(8, 135, 43, 0.25);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .product-demo-container .product-demo-description-icon i {
@@ -189,36 +246,35 @@
     box-shadow: 0 8px 24px rgba(8, 135, 43, 0.35);
 }
 
-.product-demo-container .product-demo-description-text {
-    min-width: 0;
-}
-
-.product-demo-container .product-demo-section-title {
-    font-size: 1.5rem;
+/* Clean CTA Button Styling */
+.product-demo-container .product-demo-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
     font-weight: 600;
-    color: #08872B;
-    margin: 0 0 0.5rem 0;
-    line-height: 1.3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    cursor: pointer;
+    font-family: inherit;
+    position: relative;
 }
 
-.product-demo-container .product-demo-section-description {
-    font-size: 1rem;
-    color: #656d76;
-    margin: 0;
-    line-height: 1.6;
-    font-weight: 400;
-    max-width: 600px;
-}
-
-/* Video Section - Modern Design with integrated CTA - Constrained Width */
+/* Video Section - Clean Professional Design */
 .product-demo-container .product-demo-video-section {
     max-width: 1200px;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
     margin: 0 auto 3rem;
     border-radius: 20px;
-    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(8, 135, 43, 0.1);
+    position: relative;
 }
 
 .product-demo-container .product-demo-video-group {
@@ -237,24 +293,16 @@
     max-width: 100%;
 }
 
-/* Video Container - Simplified for Performance */
+/* Video Container - Clean and Simple */
 .product-demo-container .product-demo-video-container {
     position: relative;
     width: 100%;
     max-width: 1000px;
     margin: 2rem auto 0;
     background: #000000;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    /* Simplified single shadow */
-    transition: box-shadow 0.3s ease;
-    /* Removed complex 3D transforms */
-}
-
-.product-demo-container .product-demo-video-container:hover {
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
-    /* Simplified hover effect */
 }
 
 .product-demo-container .product-demo-video {
@@ -298,7 +346,7 @@
 
 /* Navigation section styles removed - CTA buttons now integrated into video section */
 
-/* Simplified CTA Button Styling - Brand Guidelines Only */
+/* Clean CTA Button Styling */
 .product-demo-container .product-demo-cta-button {
     display: inline-flex;
     align-items: center;
@@ -317,13 +365,17 @@
     position: relative;
 }
 
+.product-demo-container .product-demo-cta-button:hover {
+    transform: translateY(-2px);
+}
+
 /* Remove complex animations for performance */
 /* .product-demo-container .product-demo-cta-button::before - REMOVED */
 
 /* Remove animation trigger */
 /* .product-demo-container .product-demo-cta-button:hover::before - REMOVED */
 
-/* Primary Button - Brand Guidelines */
+/* Primary Button - Clean Professional Style */
 .product-demo-container .product-demo-cta-button--primary {
     background: #08872B;
     color: #ffffff;
@@ -332,12 +384,11 @@
 }
 
 .product-demo-container .product-demo-cta-button--primary:hover {
-    background: #065a1e;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(8, 135, 43, 0.35);
+    background: #0a9f32;
+    box-shadow: 0 6px 20px rgba(8, 135, 43, 0.35);
 }
 
-/* Secondary Button - Brand Guidelines */
+/* Secondary Button - Clean Professional Style */
 .product-demo-container .product-demo-cta-button--secondary {
     background: #ffffff;
     color: #08872B;
@@ -348,11 +399,10 @@
 .product-demo-container .product-demo-cta-button--secondary:hover {
     background: #08872B;
     color: #ffffff;
-    transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(8, 135, 43, 0.25);
 }
 
-/* Tertiary Button - Brand Guidelines */
+/* Tertiary Button - Clean Professional Style */
 .product-demo-container .product-demo-cta-button--tertiary {
     background: #0366d6;
     color: #ffffff;
@@ -362,7 +412,6 @@
 
 .product-demo-container .product-demo-cta-button--tertiary:hover {
     background: #0256c7;
-    transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(3, 102, 214, 0.35);
 }
 
@@ -438,168 +487,39 @@
     background: rgba(8, 135, 43, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .product-demo-container .product-demo-header-section {
-        padding: 1rem;
-    }
-    
-    .product-demo-container .product-demo-title-section {
-        padding: 1.5rem 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 16px;
-    }
-    
-    .product-demo-container .product-demo-title-group {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        text-align: center;
-    }
-    
-    .product-demo-container .product-demo-title-icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto;
-        border-radius: 16px;
-    }
-    
-    .product-demo-container .product-demo-title-icon i {
-        font-size: 24px;
-    }
-    
-    .product-demo-container .product-demo-title-text {
-        text-align: center;
-    }
-    
-    .product-demo-container .product-demo-main-title {
-        font-size: 2rem;
-    }
-    
-    .product-demo-container .product-demo-subtitle {
-        font-size: 1.125rem;
-        justify-content: center;
-    }
-    
-    .product-demo-container .product-demo-description {
-        font-size: 1rem;
-        max-width: none;
-    }
-    
-    .product-demo-container .product-demo-video-section {
-        padding: 2rem 1rem;
-        margin-bottom: 2rem;
-        border-radius: 16px;
-    }
-    
-    .product-demo-container .product-demo-video-container {
-        margin-top: 1rem;
-        border-radius: 16px;
-        /* Removed complex transforms for mobile performance */
-    }
-    
-    .product-demo-container .product-demo-video-container:hover {
-        /* Simplified mobile hover */
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
-    }
-    
-    .product-demo-container .product-demo-video-section .product-demo-navigation-grid {
-        gap: 1rem;
-        margin-top: 1.5rem;
-        flex-direction: column;
-        /* Stack vertically on mobile */
-    }
-    
-    .product-demo-container .product-demo-cta-button {
-        min-width: auto;
-        width: 100%;
-        max-width: 300px;
-        padding: 14px 20px;
-        border-radius: 10px;
-    }
-    
-    .product-demo-container .product-demo-footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+/* Floating Decorative Elements */
+.product-demo-container::after {
+    content: '';
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(95, 237, 131, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatRight 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
 }
 
-@media (max-width: 480px) {
-    .product-demo-container .product-demo-logo {
-        width: 100px;
+@keyframes floatRight {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.6;
     }
-    
-    .product-demo-container .product-demo-video-container {
-        border-radius: 12px;
+    25% {
+        transform: translateY(-30px) translateX(-15px) scale(1.1);
+        opacity: 0.8;
     }
-    
-    .product-demo-container .product-demo-video-section {
-        border-radius: 12px;
-    }
-    
-    .product-demo-container .product-demo-cta-button {
-        padding: 14px 20px;
-        min-width: auto;
-    }
-    
-    .product-demo-container .product-demo-cta-title {
-        font-size: 16px;
-    }
-    
-    .product-demo-container .product-demo-cta-description {
-        font-size: 13px;
-    }
-}
-
-/* Performance optimizations - remove complex animations for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .product-demo-container .product-demo-cta-button,
-    .product-demo-container .product-demo-logo-link,
-    .product-demo-container .product-demo-video-container,
-    .product-demo-container .product-demo-logo,
-    .product-demo-container .product-demo-title-icon,
-    .product-demo-container .product-demo-title-section {
-        transition: none;
-        animation: none;
+    50% {
+        transform: translateY(-15px) translateX(10px) scale(1.05);
         opacity: 1;
-        transform: none;
     }
-    
-    .product-demo-container .product-demo-cta-button:hover,
-    .product-demo-container .product-demo-logo-link:hover,
-    .product-demo-container .product-demo-video-container:hover,
-    .product-demo-container .product-demo-title-icon:hover {
-        transform: none;
-    }
-    
-    .product-demo-container .product-demo-video-container {
-        /* Remove 3D transforms completely */
-        transform: none;
-    }
-    
-    .product-demo-container .product-demo-main-title {
-        background: #24292f;
-        -webkit-text-fill-color: unset;
+    75% {
+        transform: translateY(-40px) translateX(-5px) scale(0.95);
+        opacity: 0.7;
     }
 }
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .product-demo-container .product-demo-cta-button {
-        border-width: 3px;
-    }
-    
-    .product-demo-container .product-demo-video:focus {
-        outline-width: 4px;
-    }
-    
-    .product-demo-container .product-demo-video-section,
-    .product-demo-container .product-demo-navigation-section {
-        border: 2px solid #24292f;
-    }
-}
-
-/* Remove complex video container animations for performance */
-/* Modern loading states and micro-interactions - REMOVED FOR PERFORMANCE */
 
 /* Logo Float Animation - Required for HomePage-style logo */
 @keyframes logoFloat {
