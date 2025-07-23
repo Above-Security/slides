@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import PresentationApp from './components/PresentationApp';
 import OnePager from './components/OnePager';
+import ProductDemo from './components/ProductDemo';
 import {
   UseCasesIndex,
   PhishingDetection,
@@ -45,6 +46,7 @@ const App = () => {
       />
       <Route path="/use-cases/*" element={<Navigate to="/" replace />} />
       <Route path="/one-pager" element={<OnePager />} />
+      <Route path="/product-demo" element={<ProductDemo />} />
       <Route path="/for/fico" element={<FICOLanding />} />
       <Route path="/for/*" element={<Navigate to="/for/fico" replace />} />
       <Route path="/company" element={<CompanyIndex />} />

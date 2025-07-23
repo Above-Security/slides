@@ -9,5 +9,6 @@ export { default as IncidentCard } from './IncidentCard.jsx';
 export { default as ToolGapCard } from './ToolGapCard.jsx';
 export { default as DifferentiatorCard } from './DifferentiatorCard.jsx';
 export { default as MetricCard } from './MetricCard.jsx';
+export { default as BenefitCard } from './BenefitCard.jsx';
 export { default as ExecutiveSummary } from './ExecutiveSummary.jsx';
 export { default as POVSection } from './POVSection.jsx';

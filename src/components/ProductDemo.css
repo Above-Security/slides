@@ -1,0 +1,612 @@
+/* ProductDemo.css - Product Demo Page Styling */
+/* Scoped styles to prevent CSS bleeding - Using Brand Guidelines Colors */
+
+.product-demo-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f6f8fa 100%);
+    color: #24292f;
+    /* Brand guideline: text-primary */
+    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Brand guideline: Mona Sans */
+    position: relative;
+    overflow-x: hidden;
+    /* Reset any inherited styles */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section - HomePage Style */
+.product-demo-container .product-demo-header-section {
+    padding: 2rem 2rem 1rem;
+    position: relative;
+    z-index: 10;
+    background: transparent;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* HomePage Header Styles - Exact Copy */
+.product-demo-container .homepage-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg, 16px);
+}
+
+.product-demo-container .company-logo {
+    margin-bottom: var(--spacing-lg, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* HomePage-specific logo styles - Exact Copy */
+.product-demo-container .company-logo .logo {
+    width: 60px;
+    height: auto;
+    display: block;
+    fill: var(--brand-primary, #08872b);
+    filter: drop-shadow(0 4px 8px rgba(0, 135, 43, 0.2));
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+.product-demo-container .company-logo .logo:hover {
+    fill: var(--color-primary-light, #5fed83);
+    transform: scale(1.05) translateY(-2px) rotate(2deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 135, 43, 0.3));
+}
+
+.product-demo-container .homepage-title {
+    font-family: var(--font-family-primary, 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+    font-weight: var(--font-weight-bold, 700);
+    font-size: var(--font-size-3xl, 2.25rem);
+    line-height: var(--line-height-tight, 1.25);
+    color: var(--color-text-primary, #24292f);
+    margin: 0 0 var(--spacing-md, 12px) 0;
+    text-align: center;
+}
+
+/* Brand Styling Components - Exact Copy */
+.product-demo-container .brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+}
+
+.product-demo-container .brand-name {
+    position: relative;
+    display: inline-block;
+    color: var(--color-text-primary, #24292f);
+}
+
+.product-demo-container .brand-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #08872B, #5fed83);
+    animation: underline-grow 1s ease-out 1.8s both;
+}
+
+@keyframes underline-grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.product-demo-container .homepage-subtitle {
+    font-family: var(--font-family-primary, 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+    font-weight: var(--font-weight-semibold, 600);
+    font-size: var(--font-size-xl, 1.25rem);
+    line-height: var(--line-height-relaxed, 1.625);
+    color: var(--color-text-secondary, #656d76);
+    margin: 0;
+    text-align: center;
+}
+
+/* Compact Description Section - Replacing Title Section */
+.product-demo-container .product-demo-description-section {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    padding: 1.5rem 2rem 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(8, 135, 43, 0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    /* Subtle entrance animation */
+    opacity: 0;
+    transform: translateY(16px);
+    animation: descriptionSectionReveal 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes descriptionSectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-demo-container .product-demo-description-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top left, rgba(8, 135, 43, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.product-demo-container .product-demo-description-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.product-demo-container .product-demo-description-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.product-demo-container .product-demo-description-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #08872B 0%, #0a9f32 100%);
+    border-radius: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(8, 135, 43, 0.25);
+    transition: all 0.3s ease;
+}
+
+.product-demo-container .product-demo-description-icon i {
+    font-size: 22px;
+    color: white;
+}
+
+.product-demo-container .product-demo-description-icon:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(8, 135, 43, 0.35);
+}
+
+.product-demo-container .product-demo-description-text {
+    min-width: 0;
+}
+
+.product-demo-container .product-demo-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #08872B;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.product-demo-container .product-demo-section-description {
+    font-size: 1rem;
+    color: #656d76;
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+/* Video Section - Modern Design with integrated CTA - Constrained Width */
+.product-demo-container .product-demo-video-section {
+    max-width: 1200px;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    margin: 0 auto 3rem;
+    border-radius: 20px;
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(8, 135, 43, 0.1);
+}
+
+.product-demo-container .product-demo-video-group {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CTA buttons within video section */
+.product-demo-container .product-demo-video-section .product-demo-navigation-grid {
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* Video Container - Simplified for Performance */
+.product-demo-container .product-demo-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    background: #000000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    /* Simplified single shadow */
+    transition: box-shadow 0.3s ease;
+    /* Removed complex 3D transforms */
+}
+
+.product-demo-container .product-demo-video-container:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+    /* Simplified hover effect */
+}
+
+.product-demo-container .product-demo-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    background: #000000;
+    border-radius: 20px;
+}
+
+.product-demo-container .product-demo-video:focus {
+    outline: 3px solid #08872B;
+    outline-offset: 6px;
+    border-radius: 20px;
+}
+
+.product-demo-container .product-demo-video-fallback {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+    border-top: 1px solid #d1d9e0;
+    border-radius: 0 0 20px 20px;
+}
+
+.product-demo-container .product-demo-download-link {
+    color: #08872B;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.product-demo-container .product-demo-download-link:hover {
+    background: rgba(8, 135, 43, 0.1);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Navigation section styles removed - CTA buttons now integrated into video section */
+
+/* Simplified CTA Button Styling - Brand Guidelines Only */
+.product-demo-container .product-demo-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    cursor: pointer;
+    font-family: inherit;
+    position: relative;
+}
+
+/* Remove complex animations for performance */
+/* .product-demo-container .product-demo-cta-button::before - REMOVED */
+
+/* Remove animation trigger */
+/* .product-demo-container .product-demo-cta-button:hover::before - REMOVED */
+
+/* Primary Button - Brand Guidelines */
+.product-demo-container .product-demo-cta-button--primary {
+    background: #08872B;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(8, 135, 43, 0.25);
+    border: 2px solid transparent;
+}
+
+.product-demo-container .product-demo-cta-button--primary:hover {
+    background: #065a1e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(8, 135, 43, 0.35);
+}
+
+/* Secondary Button - Brand Guidelines */
+.product-demo-container .product-demo-cta-button--secondary {
+    background: #ffffff;
+    color: #08872B;
+    border: 2px solid #08872B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-demo-container .product-demo-cta-button--secondary:hover {
+    background: #08872B;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(8, 135, 43, 0.25);
+}
+
+/* Tertiary Button - Brand Guidelines */
+.product-demo-container .product-demo-cta-button--tertiary {
+    background: #0366d6;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(3, 102, 214, 0.25);
+    border: 2px solid transparent;
+}
+
+.product-demo-container .product-demo-cta-button--tertiary:hover {
+    background: #0256c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(3, 102, 214, 0.35);
+}
+
+.product-demo-container .product-demo-cta-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.product-demo-container .product-demo-cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.product-demo-container .product-demo-cta-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.product-demo-container .product-demo-cta-description {
+    font-size: 13px;
+    font-weight: 400;
+    margin: 4px 0 0;
+    opacity: 0.9;
+    line-height: 1.3;
+}
+
+/* Footer - Modern Design */
+.product-demo-container .product-demo-footer {
+    background: linear-gradient(135deg, #24292f 0%, #1c2127 100%);
+    color: #f6f8fa;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.product-demo-container .product-demo-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.product-demo-container .product-demo-footer-text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #8d96a0;
+}
+
+.product-demo-container .product-demo-footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.product-demo-container .product-demo-footer-link {
+    color: #f6f8fa;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.product-demo-container .product-demo-footer-link:hover {
+    color: #08872B;
+    background: rgba(8, 135, 43, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-demo-container .product-demo-header-section {
+        padding: 1rem;
+    }
+    
+    .product-demo-container .product-demo-title-section {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .product-demo-container .product-demo-title-group {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .product-demo-container .product-demo-title-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+    
+    .product-demo-container .product-demo-title-icon i {
+        font-size: 24px;
+    }
+    
+    .product-demo-container .product-demo-title-text {
+        text-align: center;
+    }
+    
+    .product-demo-container .product-demo-main-title {
+        font-size: 2rem;
+    }
+    
+    .product-demo-container .product-demo-subtitle {
+        font-size: 1.125rem;
+        justify-content: center;
+    }
+    
+    .product-demo-container .product-demo-description {
+        font-size: 1rem;
+        max-width: none;
+    }
+    
+    .product-demo-container .product-demo-video-section {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 16px;
+    }
+    
+    .product-demo-container .product-demo-video-container {
+        margin-top: 1rem;
+        border-radius: 16px;
+        /* Removed complex transforms for mobile performance */
+    }
+    
+    .product-demo-container .product-demo-video-container:hover {
+        /* Simplified mobile hover */
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-demo-container .product-demo-video-section .product-demo-navigation-grid {
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-direction: column;
+        /* Stack vertically on mobile */
+    }
+    
+    .product-demo-container .product-demo-cta-button {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 20px;
+        border-radius: 10px;
+    }
+    
+    .product-demo-container .product-demo-footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-demo-container .product-demo-logo {
+        width: 100px;
+    }
+    
+    .product-demo-container .product-demo-video-container {
+        border-radius: 12px;
+    }
+    
+    .product-demo-container .product-demo-video-section {
+        border-radius: 12px;
+    }
+    
+    .product-demo-container .product-demo-cta-button {
+        padding: 14px 20px;
+        min-width: auto;
+    }
+    
+    .product-demo-container .product-demo-cta-title {
+        font-size: 16px;
+    }
+    
+    .product-demo-container .product-demo-cta-description {
+        font-size: 13px;
+    }
+}
+
+/* Performance optimizations - remove complex animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .product-demo-container .product-demo-cta-button,
+    .product-demo-container .product-demo-logo-link,
+    .product-demo-container .product-demo-video-container,
+    .product-demo-container .product-demo-logo,
+    .product-demo-container .product-demo-title-icon,
+    .product-demo-container .product-demo-title-section {
+        transition: none;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .product-demo-container .product-demo-cta-button:hover,
+    .product-demo-container .product-demo-logo-link:hover,
+    .product-demo-container .product-demo-video-container:hover,
+    .product-demo-container .product-demo-title-icon:hover {
+        transform: none;
+    }
+    
+    .product-demo-container .product-demo-video-container {
+        /* Remove 3D transforms completely */
+        transform: none;
+    }
+    
+    .product-demo-container .product-demo-main-title {
+        background: #24292f;
+        -webkit-text-fill-color: unset;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .product-demo-container .product-demo-cta-button {
+        border-width: 3px;
+    }
+    
+    .product-demo-container .product-demo-video:focus {
+        outline-width: 4px;
+    }
+    
+    .product-demo-container .product-demo-video-section,
+    .product-demo-container .product-demo-navigation-section {
+        border: 2px solid #24292f;
+    }
+}
+
+/* Remove complex video container animations for performance */
+/* Modern loading states and micro-interactions - REMOVED FOR PERFORMANCE */
+
+/* Logo Float Animation - Required for HomePage-style logo */
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
