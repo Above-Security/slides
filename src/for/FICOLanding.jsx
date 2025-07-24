@@ -374,7 +374,7 @@ const FICOLanding = () => {
     useEffect(() => {
         initializePostHog();
         posthogEvent('fico_landing_page_view');
-        posthogSet({page_type: 'fico_landing'});
+        posthogSet({ page_type: 'fico_landing' });
     }, []);
 
     const handleToggleSlideshow = () => {

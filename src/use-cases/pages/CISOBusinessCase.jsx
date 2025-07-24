@@ -399,18 +399,18 @@ const CISOBusinessCase = () => {
         try {
             // Initialize analytics
             initializePostHog();
-            
+
             // Set user properties for this specific use case
-            posthogSet({page_type: 'ciso_business_case'});
-            posthogSet({content_category: 'business_case'});
-            posthogSet({user_intent: 'evaluation'});
-            
+            posthogSet({ page_type: 'ciso_business_case' });
+            posthogSet({ content_category: 'business_case' });
+            posthogSet({ user_intent: 'evaluation' });
+
             // Track page view
             posthogEvent('ciso_business_case_viewed', {
                 timestamp: new Date().toISOString(),
                 user_type: 'ciso_evaluation'
             });
-            
+
             console.log('CISO Business Case analytics initialized');
         } catch (error) {
             console.warn('Analytics initialization failed:', error);
@@ -454,10 +454,10 @@ const CISOBusinessCase = () => {
             <div className="ciso-business-case-container" data-testid="ciso-business-case">
                 {/* Floating Navigation */}
                 <FloatingNavigation />
-                
+
                 <div className="ciso-business-case-content">
                     {/* Header */}
-                    <HeroSection 
+                    <HeroSection
                         title={CISO_BUSINESS_CASE_DATA.title}
                         subtitle={CISO_BUSINESS_CASE_DATA.subtitle}
                         description={CISO_BUSINESS_CASE_DATA.description}
@@ -469,7 +469,7 @@ const CISOBusinessCase = () => {
                     <main>
                         <ContentGroup id="what-we-do">
                             {/* Executive Summary */}
-                            <ExecutiveSummary 
+                            <ExecutiveSummary
                                 summary={CISO_BUSINESS_CASE_DATA.executiveSummary}
                                 variant="dark"
                             />
@@ -513,7 +513,7 @@ const CISOBusinessCase = () => {
                                     <h3>{CISO_BUSINESS_CASE_DATA.successMetrics.title}</h3>
                                     <div className="timeline-phases">
                                         {CISO_BUSINESS_CASE_DATA.successMetrics.phases.map((phase, index) => (
-                                            <div key={index} className="timeline-phase" style={{'--phase-color': phase.color}}>
+                                            <div key={index} className="timeline-phase" style={{ '--phase-color': phase.color }}>
                                                 <div className="phase-header">
                                                     <span className="phase-number">{index + 1}</span>
                                                     <h4>{phase.phase}</h4>
@@ -623,7 +623,7 @@ const CISOBusinessCase = () => {
                                 <div className="market-opportunity">
                                     <h3>{CISO_BUSINESS_CASE_DATA.strategicVision.marketOpportunity.title}</h3>
                                     <p>{CISO_BUSINESS_CASE_DATA.strategicVision.marketOpportunity.description}</p>
-                                    
+
                                     <div className="vision-phases">
                                         {CISO_BUSINESS_CASE_DATA.strategicVision.marketOpportunity.phases.map((phase, index) => (
                                             <div key={index} className="vision-phase">

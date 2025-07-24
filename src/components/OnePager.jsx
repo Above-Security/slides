@@ -454,7 +454,7 @@ const OnePager = () => {
     useEffect(() => {
         initializePostHog();
         posthogEvent('one_pager_view');
-        posthogSet({page_type: 'one_pager'});
+        posthogSet({ page_type: 'one_pager' });
     }, []);
 
     const handleToggleSlideshow = () => {
@@ -475,7 +475,7 @@ const OnePager = () => {
             page: 'one_pager',
             email_domain: email.split('@')[1]
         });
-        posthogSet({one_pager_access_granted: true});
+        posthogSet({ one_pager_access_granted: true });
     };
 
     // Define slide configuration for slideshow mode

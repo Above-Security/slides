@@ -35,7 +35,7 @@ const SectionContainerDemo = () => {
   return (
     <div className="section-demo-container">
       <FloatingTOC sections={tocSections} />
-      
+
       <div className="demo-content">
         <header className="demo-header">
           <h1>SectionContainer Component Showcase</h1>
@@ -55,7 +55,7 @@ const SectionContainerDemo = () => {
             </p>
             <div>
               <p>This foundational vision drives every product decision, architectural choice, and go-to-market strategy. It represents our commitment to seamless security that enhances rather than disrupts user workflows.</p>
-              
+
               <h3>Strategic Positioning</h3>
               <p>We occupy the unique intersection of <strong>browser security</strong>, <strong>user behavior analytics</strong>, and <strong>zero-friction deployment</strong> – a space no incumbent can easily replicate due to technical and go-to-market constraints.</p>
             </div>
@@ -195,35 +195,35 @@ const SectionContainerDemo = () => {
               <div className="metric-cell">Baseline Pain</div>
               <div className="metric-cell">Win Condition</div>
             </div>
-            
+
             <div className="metric-row">
               <div className="metric-cell"><strong>Phish Prevention</strong></div>
               <div className="metric-cell">% Consent/OAuth phish blocked pre‑credential</div>
               <div className="metric-cell">Unknown</div>
               <div className="metric-cell success">&gt;90% of events</div>
             </div>
-            
+
             <div className="metric-row">
               <div className="metric-cell"><strong>User Coaching</strong></div>
               <div className="metric-cell">Override‑after‑coaching rate</div>
               <div className="metric-cell">N/A</div>
               <div className="metric-cell success">&lt;2%</div>
             </div>
-            
+
             <div className="metric-row">
               <div className="metric-cell"><strong>IR Efficiency</strong></div>
               <div className="metric-cell">Analyst triage time per phish incident</div>
               <div className="metric-cell warning">45 min</div>
               <div className="metric-cell success">&lt;15 min</div>
             </div>
-            
+
             <div className="metric-row">
               <div className="metric-cell"><strong>Visibility Lift</strong></div>
               <div className="metric-cell">Net‑new SaaS apps surfaced</div>
               <div className="metric-cell">?</div>
               <div className="metric-cell success">+20% in 30d</div>
             </div>
-            
+
             <div className="metric-row">
               <div className="metric-cell"><strong>Deployment Friction</strong></div>
               <div className="metric-cell">Support tickets per 1,000 users</div>

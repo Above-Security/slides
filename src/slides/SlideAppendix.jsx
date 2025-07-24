@@ -10,7 +10,7 @@ const SlideAppendix = () => {
     const handleDirectNavigation = () => {
         // Navigate directly to the matrix
         posthogEvent('appendix_matrix_navigation');
-        posthogSet({user_action: 'direct_matrix_navigation'});
+        posthogSet({ user_action: 'direct_matrix_navigation' });
         navigate('/insider-threat-matrix');
     };
 

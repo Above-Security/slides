@@ -67,8 +67,8 @@ describe('Individual Use Case Components', () => {
 
             expect(initializePostHog).toHaveBeenCalledOnce();
             expect(posthogEvent).toHaveBeenCalledWith('comprehensive_phishing_prevention_view');
-            expect(posthogSet).toHaveBeenCalledWith({page_type: 'comprehensive_phishing_prevention'});
-            expect(posthogSet).toHaveBeenCalledWith({use_case: 'comprehensive-phishing-prevention'});
+            expect(posthogSet).toHaveBeenCalledWith({ page_type: 'comprehensive_phishing_prevention' });
+            expect(posthogSet).toHaveBeenCalledWith({ use_case: 'comprehensive-phishing-prevention' });
         });
     });
 
@@ -110,8 +110,8 @@ describe('Individual Use Case Components', () => {
             renderWithRouter(InsiderThreat);
 
             expect(posthogEvent).toHaveBeenCalledWith('insider_protection_view');
-            expect(posthogSet).toHaveBeenCalledWith({page_type: 'insider_protection'});
-            expect(posthogSet).toHaveBeenCalledWith({use_case: 'insider-protection'});
+            expect(posthogSet).toHaveBeenCalledWith({ page_type: 'insider_protection' });
+            expect(posthogSet).toHaveBeenCalledWith({ use_case: 'insider-protection' });
         });
     });
 
@@ -179,7 +179,7 @@ describe('Individual Use Case Components', () => {
                 const { unmount } = renderWithRouter(Component);
                 expect(initializePostHog).toHaveBeenCalledOnce();
                 expect(posthogEvent).toHaveBeenCalledWith(expectedEvents[name]);
-                expect(posthogSet).toHaveBeenCalledWith({page_type: expectedPageTypes[name]});
+                expect(posthogSet).toHaveBeenCalledWith({ page_type: expectedPageTypes[name] });
                 unmount();
             });
         });

@@ -54,7 +54,7 @@ describe('UseCasesIndex Component', () => {
 
             expect(screen.getByText('Phishing Detection')).toBeInTheDocument()
             expect(screen.getByText('Insider Threat Detection')).toBeInTheDocument()
-            
+
             // Be more specific to avoid finding the navigation element
             const useCaseGrid = screen.getByRole('main')
             expect(useCaseGrid).toHaveTextContent('Business Case')
@@ -102,7 +102,7 @@ describe('UseCasesIndex Component', () => {
 
             expect(initializePostHog).toHaveBeenCalledOnce()
             expect(posthogEvent).toHaveBeenCalledWith('use_cases_index_view')
-            expect(posthogSet).toHaveBeenCalledWith({page_type: 'use_cases_index'})
+            expect(posthogSet).toHaveBeenCalledWith({ page_type: 'use_cases_index' })
         })
 
         it('tracks use case clicks', async () => {
@@ -112,15 +112,15 @@ describe('UseCasesIndex Component', () => {
             const phishingCard = screen.getByText('Phishing Detection').closest('a')
             await user.click(phishingCard)
 
-            expect(posthogEvent).toHaveBeenCalledWith('use_case_clicked', 
+            expect(posthogEvent).toHaveBeenCalledWith('use_case_clicked',
                 expect.objectContaining({
                     use_case: 'phishing-detection',
                     interaction_type: 'enhanced_card_click',
                     timestamp: expect.any(Number)
                 })
             )
-            expect(posthogSet).toHaveBeenCalledWith({selected_use_case: 'phishing-detection'})
-            expect(posthogSet).toHaveBeenCalledWith({interaction_method: 'enhanced_ui'})
+            expect(posthogSet).toHaveBeenCalledWith({ selected_use_case: 'phishing-detection' })
+            expect(posthogSet).toHaveBeenCalledWith({ interaction_method: 'enhanced_ui' })
         })
 
         it('tracks logo clicks', async () => {

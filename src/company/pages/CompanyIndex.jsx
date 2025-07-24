@@ -35,7 +35,7 @@ const CompanyIndex = () => {
 
     // Add scroll listener for progress indicator
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -58,8 +58,8 @@ const CompanyIndex = () => {
     <div className={styles["company-narrative-container"]}>
       {/* Progress indicator */}
       <div className={styles["progress-indicator"]}>
-        <div 
-          className={styles["progress-bar"]} 
+        <div
+          className={styles["progress-bar"]}
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -67,7 +67,7 @@ const CompanyIndex = () => {
       {/* Enhanced Hero with gradient background */}
       <div className={styles["hero-wrapper"]}>
         <VisionHero />
-        
+
         {/* Action Buttons - Moved to top */}
         <div className={styles["hero-actions"]}>
           <a href="/#/insider-threat-matrix" className={styles["primary-cta-button"]}>
@@ -79,7 +79,7 @@ const CompanyIndex = () => {
             View Presentation Deck
           </a>
         </div>
-        
+
         {/* Strategic Overview Cards with integrated quotes */}
         <div className={styles["overview-cards"]}>
           <div className={styles["overview-card"]}>
@@ -119,7 +119,7 @@ const CompanyIndex = () => {
       </div>
 
       {/* Floating Table of Contents */}
-      <FloatingTOC 
+      <FloatingTOC
         sections={tocSections}
         className={styles["narrative-toc"]}
       />
@@ -145,28 +145,28 @@ const CompanyIndex = () => {
           </div>
 
           <GoToMarket />
-          
+
           <div className={styles["section-break"]} />
           <PovPlaybook />
-          
+
           <div className={styles["section-break"]} />
           <MetricsSection />
-          
+
           <div className={styles["section-break"]} />
           <PositioningSection />
-          
+
           <div className={styles["section-break"]} />
           <RoadmapSection />
-          
+
           <div className={styles["section-break"]} />
           <HypothesesSection />
-          
+
           <div className={styles["section-break"]} />
           <ValueProofSection />
-          
+
           <div className={styles["section-break"]} />
           <RisksSection />
-          
+
           <div className={styles["section-break"]} />
           <ExecutiveSummarySection />
         </div>
@@ -179,7 +179,7 @@ const CompanyIndex = () => {
             <h2>What CISOs Are Saying</h2>
             <p>Insights from our advisory board validate Above's unique position in insider protection</p>
           </div>
-          
+
           <div className={styles["quotes-grid"]}>
             <div className={styles["quote-card"]}>
               <div className={styles["quote-content"]}>
@@ -189,7 +189,7 @@ const CompanyIndex = () => {
                 <cite>— Carl, former CISO at Johnson Controls</cite>
               </div>
             </div>
-            
+
             <div className={styles["quote-card"]}>
               <div className={styles["quote-content"]}>
                 <blockquote>
@@ -198,7 +198,7 @@ const CompanyIndex = () => {
                 <cite>— Leon, CISO at OpenLane</cite>
               </div>
             </div>
-            
+
             <div className={styles["quote-card"]}>
               <div className={styles["quote-content"]}>
                 <blockquote>
@@ -207,7 +207,7 @@ const CompanyIndex = () => {
                 <cite>— Israel, CISO at MIO Partners</cite>
               </div>
             </div>
-            
+
             <div className={styles["quote-card"]}>
               <div className={styles["quote-content"]}>
                 <blockquote>
@@ -217,7 +217,7 @@ const CompanyIndex = () => {
               </div>
             </div>
           </div>
-          
+
           <div className={styles["ciso-insights"]}>
             <h3>Key Validated Themes</h3>
             <div className={styles["insights-grid"]}>
@@ -249,7 +249,7 @@ const CompanyIndex = () => {
             <h2>Backed by Industry Leaders</h2>
             <p>Our advisory board includes CEOs, CISOs, and security leaders from the world's most innovative companies</p>
           </div>
-          
+
           <div className={styles["advisors-grid"]}>
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
@@ -257,28 +257,28 @@ const CompanyIndex = () => {
                 <p>CEO @ Talon</p>
               </div>
             </div>
-            
+
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
                 <h4>Ofer Smadari</h4>
                 <p>CEO @ Torq</p>
               </div>
             </div>
-            
+
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
                 <h4>Etay Bogner</h4>
                 <p>GM @ Proofpoint</p>
               </div>
             </div>
-            
+
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
                 <h4>Karl Mattson</h4>
                 <p>CISO @ Endor Labs</p>
               </div>
             </div>
-            
+
             <div className={styles["advisor-card"]}>
               <div className={styles["advisor-info"]}>
                 <h4>Matan Fattal</h4>
@@ -286,7 +286,7 @@ const CompanyIndex = () => {
               </div>
             </div>
           </div>
-          
+
           <div className={styles["additional-advisors"]}>
             <p className={styles["additional-text"]}>
               <strong>Plus directors and executives from</strong> Wiz, Island, and other leading security companies

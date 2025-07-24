@@ -16,8 +16,8 @@ const UseCasesIndex = () => {
 
             // Track use cases index view
             posthogEvent('use_cases_index_view');
-            posthogSet({page_type: 'use_cases_index'});
-            posthogSet({user_journey: 'use_cases_exploration'});
+            posthogSet({ page_type: 'use_cases_index' });
+            posthogSet({ user_journey: 'use_cases_exploration' });
 
             console.log('Use Cases Index loaded with PostHog tracking');
         } catch (error) {
@@ -64,7 +64,7 @@ const UseCasesIndex = () => {
         if (!gridRef.current) return;
 
         const cards = gridRef.current.querySelectorAll('.use-case-card');
-        
+
         // Fallback: Show all cards after 1 second if IntersectionObserver fails
         const fallbackTimer = setTimeout(() => {
             cards.forEach((card, index) => {
@@ -83,7 +83,7 @@ const UseCasesIndex = () => {
             });
             return;
         }
-        
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry, index) => {
@@ -113,13 +113,13 @@ const UseCasesIndex = () => {
 
     const handleUseCaseClick = (useCaseId) => {
         try {
-            posthogEvent('use_case_clicked', { 
+            posthogEvent('use_case_clicked', {
                 use_case: useCaseId,
                 interaction_type: 'enhanced_card_click',
                 timestamp: Date.now()
             });
-            posthogSet({selected_use_case: useCaseId});
-            posthogSet({interaction_method: 'enhanced_ui'});
+            posthogSet({ selected_use_case: useCaseId });
+            posthogSet({ interaction_method: 'enhanced_ui' });
             console.log(`Enhanced use case selected: ${useCaseId}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -147,13 +147,13 @@ const UseCasesIndex = () => {
             <div className="use-cases-container" data-testid="use-cases-index">
                 {/* Floating Navigation with Enhanced Integration */}
                 <FloatingNavigation />
-                
+
                 <div className="use-cases-content">
                     {/* Enhanced Header Section */}
                     <header className="use-cases-header">
-                        <Link 
-                            to="/" 
-                            className="logo-container" 
+                        <Link
+                            to="/"
+                            className="logo-container"
                             onClick={handleLogoClick}
                             aria-label="Navigate to Above Security homepage"
                         >
@@ -208,17 +208,17 @@ const UseCasesIndex = () => {
 
                     {/* Enhanced Navigation Footer */}
                     <footer className="use-cases-navigation">
-                        <Link 
-                            to="/" 
+                        <Link
+                            to="/"
                             className="nav-link secondary"
                             aria-label="Return to homepage"
                         >
                             <i className="fas fa-home" aria-hidden="true"></i>
                             Back to Home
                         </Link>
-                        
-                        <Link 
-                            to="/slides/1" 
+
+                        <Link
+                            to="/slides/1"
                             className="nav-link primary"
                             aria-label="View complete presentation deck"
                         >

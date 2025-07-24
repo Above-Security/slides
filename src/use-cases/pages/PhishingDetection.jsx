@@ -341,8 +341,8 @@ const PhishingDetection = () => {
             // Initialize PostHog tracking for this specific use case
             initializePostHog();
             posthogEvent('comprehensive_phishing_prevention_view');
-            posthogSet({page_type: 'comprehensive_phishing_prevention'});
-            posthogSet({use_case: 'comprehensive-phishing-prevention'});
+            posthogSet({ page_type: 'comprehensive_phishing_prevention' });
+            posthogSet({ use_case: 'comprehensive-phishing-prevention' });
             console.log('Comprehensive Phishing Prevention component loaded with analytics');
         } catch (error) {
             console.warn('Analytics initialization failed in Comprehensive Phishing Prevention:', error);
@@ -386,10 +386,10 @@ const PhishingDetection = () => {
             <div className="comprehensive-phishing-container" data-testid="comprehensive-phishing">
                 {/* Floating Navigation */}
                 <FloatingNavigation />
-                
+
                 <div className="comprehensive-phishing-content">
                     {/* Header */}
-                    <HeroSection 
+                    <HeroSection
                         title={COMPREHENSIVE_PHISHING_DATA.title}
                         subtitle={COMPREHENSIVE_PHISHING_DATA.subtitle}
                         description={COMPREHENSIVE_PHISHING_DATA.description}
@@ -401,7 +401,7 @@ const PhishingDetection = () => {
                     <main>
                         <ContentGroup id="problem-definition">
                             {/* Executive Summary */}
-                            <ExecutiveSummary 
+                            <ExecutiveSummary
                                 summary={COMPREHENSIVE_PHISHING_DATA.executiveSummary}
                                 variant="dark"
                             />
@@ -578,15 +578,15 @@ const PhishingDetection = () => {
 
                                 {/* Metrics Grid */}
                                 <div className="pov-grid">
-                                    <POVSection 
+                                    <POVSection
                                         title="Core Metrics"
                                         items={COMPREHENSIVE_PHISHING_DATA.povSuccess.coreMetrics}
                                     />
-                                    <POVSection 
+                                    <POVSection
                                         title="Executive Outcomes"
                                         items={COMPREHENSIVE_PHISHING_DATA.povSuccess.executiveOutcomes}
                                     />
-                                    <POVSection 
+                                    <POVSection
                                         title="CISO Buying Triggers"
                                         items={COMPREHENSIVE_PHISHING_DATA.povSuccess.buyingTriggers}
                                     />

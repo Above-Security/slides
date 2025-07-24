@@ -50,8 +50,8 @@ const PresentationApp = () => {
     // Enhanced session tracking with email context
     posthogEvent('presentation_session_start');
     posthogSet({
-        presentation_name: 'Above Security Pitch Deck',
-        session_id: sessionInfo.sessionId
+      presentation_name: 'Above Security Pitch Deck',
+      session_id: sessionInfo.sessionId
     });
 
     if (sessionInfo.email) {
@@ -61,7 +61,7 @@ const PresentationApp = () => {
       });
       posthogEvent('presentation_start_with_email');
     } else {
-      posthogSet({user_has_email: false});
+      posthogSet({ user_has_email: false });
       posthogEvent('presentation_start_without_email');
     }
 
@@ -83,9 +83,9 @@ const PresentationApp = () => {
       userEmail
     );
 
-    posthogSet({current_slide_number: currentSlide + 1});
+    posthogSet({ current_slide_number: currentSlide + 1 });
     if (currentSlideData?.title) {
-      posthogSet({current_slide_title: currentSlideData.title});
+      posthogSet({ current_slide_title: currentSlideData.title });
     }
   }, [currentSlide, isInitialLoad, userEmail, navigate]);
 

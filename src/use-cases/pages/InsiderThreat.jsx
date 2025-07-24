@@ -322,8 +322,8 @@ const InsiderThreat = () => {
             // Initialize PostHog tracking for this specific use case
             initializePostHog();
             posthogEvent('insider_protection_view');
-            posthogSet({page_type: 'insider_protection'});
-            posthogSet({use_case: 'insider-protection'});
+            posthogSet({ page_type: 'insider_protection' });
+            posthogSet({ use_case: 'insider-protection' });
             console.log('Insider Protection component loaded with analytics');
         } catch (error) {
             console.warn('Analytics initialization failed in Insider Protection:', error);
@@ -367,10 +367,10 @@ const InsiderThreat = () => {
             <div className="insider-protection-container" data-testid="insider-protection">
                 {/* Floating Navigation */}
                 <FloatingNavigation />
-                
+
                 <div className="insider-protection-content">
                     {/* Header */}
-                    <HeroSection 
+                    <HeroSection
                         title={INSIDER_PROTECTION_DATA.title}
                         subtitle={INSIDER_PROTECTION_DATA.subtitle}
                         description={INSIDER_PROTECTION_DATA.description}
@@ -382,7 +382,7 @@ const InsiderThreat = () => {
                     <main>
                         <ContentGroup id="problem-definition">
                             {/* Executive Summary */}
-                            <ExecutiveSummary 
+                            <ExecutiveSummary
                                 summary={INSIDER_PROTECTION_DATA.executiveSummary}
                                 variant="dark"
                             />
@@ -448,7 +448,7 @@ const InsiderThreat = () => {
                                             <li><strong>Third-party Collusion:</strong> External coordination and financial motivation</li>
                                         </ul>
                                     </div>
-                                    
+
                                     <div className="coverage-category">
                                         <h3><i className="fas fa-tools"></i> Methods Detected</h3>
                                         <p>Comprehensive detection across all attack vectors:</p>
@@ -461,7 +461,7 @@ const InsiderThreat = () => {
                                             <li><strong>Social Engineering:</strong> Internal influence and manipulation</li>
                                         </ul>
                                     </div>
-                                    
+
                                     <div className="coverage-category">
                                         <h3><i className="fas fa-graduation-cap"></i> User Engagement</h3>
                                         <p>Educational approach that protects and guides:</p>
@@ -609,15 +609,15 @@ const InsiderThreat = () => {
 
                                 {/* Metrics Grid */}
                                 <div className="pov-grid">
-                                    <POVSection 
+                                    <POVSection
                                         title="Core Metrics"
                                         items={INSIDER_PROTECTION_DATA.povSuccess.coreMetrics}
                                     />
-                                    <POVSection 
+                                    <POVSection
                                         title="Executive Outcomes"
                                         items={INSIDER_PROTECTION_DATA.povSuccess.executiveOutcomes}
                                     />
-                                    <POVSection 
+                                    <POVSection
                                         title="CISO Buying Triggers"
                                         items={INSIDER_PROTECTION_DATA.povSuccess.buyingTriggers}
                                     />

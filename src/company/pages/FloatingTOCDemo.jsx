@@ -44,7 +44,7 @@ const FloatingTOCDemo = () => {
   return (
     <div className="toc-demo-container">
       <FloatingTOC sections={tocSections} />
-      
+
       <div className="demo-content">
         <header className="demo-header">
           <h1>Above Strategic Narrative</h1>
@@ -62,7 +62,7 @@ const FloatingTOCDemo = () => {
 
         <section id="go-to-market" className="demo-section">
           <h2>1 | YEAR‑1 GO‑TO‑MARKET (0‑12 Months)</h2>
-          
+
           <div id="sales-motion" className="demo-subsection">
             <h3>1.1 How We Sell (Motion)</h3>
             <div className="content-block">
