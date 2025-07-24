@@ -8,7 +8,18 @@ const __dirname = path.dirname(__filename);
 async function takeBlackHatScreenshot() {
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security']
+        args: [
+            '--no-sandbox', 
+            '--disable-setuid-sandbox', 
+            '--disable-web-security',
+            '--font-render-hinting=none',
+            '--disable-font-subpixel-positioning',
+            '--enable-font-antialiasing',
+            '--disable-dev-shm-usage',
+            '--no-first-run',
+            '--disable-default-apps',
+            '--disable-extensions'
+        ]
     });
 
     const page = await browser.newPage();
@@ -21,6 +32,11 @@ async function takeBlackHatScreenshot() {
     });
 
     try {
+        // Set up font loading detection before navigation
+        await page.evaluateOnNewDocument(() => {
+            document.fonts.ready.then(() => console.log('Fonts loaded'));
+        });
+
         // Navigate to the BlackHat LinkedIn post
         const templatePath = `file://${path.join(__dirname, 'public', 'blackhat-2025-linkedin.html')}`;
         console.log(`📸 Taking screenshot of BlackHat LinkedIn post: ${templatePath}`);
@@ -31,7 +47,7 @@ async function takeBlackHatScreenshot() {
         });
 
         // Wait for fonts, animations, and content to load
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Increased wait time
 
         // Take screenshot
         const screenshotPath = path.join(__dirname, 'public', 'blackhat-2025-linkedin.png');
