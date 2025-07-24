@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { Logo } from './LogoWatermark';
-import { initializeClarity, clarityEvent, claritySet } from '../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../utils/posthog';
 import './HomePage.css';
 
 const HomePage = () => {
     useEffect(() => {
-        // Initialize Clarity when the homepage loads
-        initializeClarity();
+        // Initialize PostHog when the homepage loads
+        initializePostHog();
 
         // Track homepage view
-        clarityEvent('homepage_view');
-        claritySet('page_type', 'homepage');
-        claritySet('user_journey', 'homepage_landing');
+        posthogEvent('homepage_view');
+        posthogSet({ page_type: 'homepage' });
+        posthogSet({ user_journey: 'homepage_landing' });
 
         // Track homepage engagement timing
         const startTime = Date.now();
@@ -19,8 +19,9 @@ const HomePage = () => {
         // Track how long users stay on homepage
         const trackEngagementTime = () => {
             const timeSpent = Math.round((Date.now() - startTime) / 1000);
-            clarityEvent('homepage_engagement_time', { time_spent_seconds: timeSpent });
-            claritySet('homepage_time_spent', timeSpent.toString());
+            posthogEvent('homepage_engagement_time', { time_spent_seconds: timeSpent });
+            posthogSet({ homepage_time_spent: timeSpent.toString() });
+            console.log(`User spent ${timeSpent} seconds on homepage`);
         };
 
         // Track when user leaves or closes tab
@@ -30,7 +31,7 @@ const HomePage = () => {
 
         window.addEventListener('beforeunload', handleBeforeUnload);
 
-        console.log('Homepage loaded with Clarity tracking');
+        console.log('Homepage loaded with PostHog tracking');
 
         // Cleanup
         return () => {
@@ -40,16 +41,16 @@ const HomePage = () => {
     }, []);
 
     const handleEmailClick = () => {
-        clarityEvent('email_contact_clicked');
-        claritySet('user_action', 'email_contact');
-        claritySet('cta_clicked', 'get_early_access');
+        posthogEvent('email_contact_clicked');
+        posthogSet({ user_action: 'email_contact' });
+        posthogSet({ cta_clicked: 'get_early_access' });
         console.log('Email contact tracked');
     };
 
     const handleLogoClick = () => {
         try {
-            clarityEvent('logo_clicked');
-            claritySet('user_action', 'logo_interaction');
+            posthogEvent('logo_clicked');
+            posthogSet({ user_action: 'logo_interaction' });
             console.log('Logo interaction tracked');
         } catch (error) {
             console.warn('Analytics tracking failed:', error);

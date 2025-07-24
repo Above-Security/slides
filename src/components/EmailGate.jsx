@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { clarityIdentify, clarityEvent, claritySet } from '../utils/clarity';
+import { posthogIdentify, posthogEvent, posthogSet } from '../utils/posthog';
 import { validateEmail, getStoredEmail, storeEmail, generateUserId } from '../utils/emailGating';
 import { Logo } from './LogoWatermark';
 import './EmailGate.css';
@@ -18,11 +18,12 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
             setIsEmailSubmitted(true);
             setEmail(storedEmail);
 
-            // Re-identify user in Clarity with stored email
-            const userId = generateUserId(storedEmail);
-            clarityIdentify(userId, null, null, storedEmail);
-            claritySet('user_email_domain', storedEmail.split('@')[1]);
-            clarityEvent('email_gate_bypassed_stored');
+            // Re-identify user in PostHog with stored email
+            posthogIdentify(storedEmail, {
+                email: storedEmail,
+                email_domain: storedEmail.split('@')[1]
+            });
+            posthogEvent('email_gate_bypassed_stored');
 
             if (onEmailSubmitted) {
                 onEmailSubmitted(storedEmail);
@@ -42,28 +43,25 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
             if (!validation.isValid) {
                 setError(validation.error);
                 setIsLoading(false);
-                clarityEvent('email_validation_failed', { reason: validation.error });
+                posthogEvent('email_validation_failed', { reason: validation.error });
                 return;
             }
 
             // Store email locally
             storeEmail(email);
 
-            // Generate consistent user ID for Clarity
-            const userId = generateUserId(email);
             const emailDomain = email.split('@')[1];
 
-            // Identify user in Clarity
-            clarityIdentify(userId, null, null, email);
-
-            // Set additional context tags
-            claritySet('user_email', email);
-            claritySet('user_email_domain', emailDomain);
-            claritySet('email_submission_timestamp', new Date().toISOString());
-            claritySet('is_business_email', validation.isBusinessEmail);
+            // Identify user in PostHog
+            posthogIdentify(email, {
+                email: email,
+                email_domain: emailDomain,
+                email_submission_timestamp: new Date().toISOString(),
+                is_business_email: validation.isBusinessEmail
+            });
 
             // Track successful email submission
-            clarityEvent('email_gate_submitted', {
+            posthogEvent('email_gate_submitted', {
                 domain: emailDomain,
                 isBusinessEmail: validation.isBusinessEmail
             });
@@ -76,7 +74,7 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
 
         } catch (err) {
             setError('An unexpected error occurred. Please try again.');
-            clarityEvent('email_gate_error', { error: err.message });
+            posthogEvent('email_gate_error', { error: err.message });
             console.error('Email submission error:', err);
         }
 

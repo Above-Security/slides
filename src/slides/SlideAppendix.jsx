@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import SlideLayout from '../components/SlideLayout';
-import { clarityEvent, claritySet } from '../utils/clarity';
+import { posthogEvent, posthogSet } from '../utils/posthog';
 import '../styles/components/shared-slide-components.css';
 
 const SlideAppendix = () => {
@@ -9,8 +9,8 @@ const SlideAppendix = () => {
 
     const handleDirectNavigation = () => {
         // Navigate directly to the matrix
-        clarityEvent('appendix_matrix_navigation');
-        claritySet('user_action', 'direct_matrix_navigation');
+        posthogEvent('appendix_matrix_navigation');
+        posthogSet({user_action: 'direct_matrix_navigation'});
         navigate('/insider-threat-matrix');
     };
 

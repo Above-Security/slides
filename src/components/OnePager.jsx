@@ -7,7 +7,7 @@ import EmailGate from './EmailGate';
 import './FloatingNavigationIntegration.css';
 import './SlideshowContainer.css';
 import '../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,
@@ -452,30 +452,30 @@ const OnePager = () => {
     const [isSlideshow, setIsSlideshow] = useState(false);
 
     useEffect(() => {
-        initializeClarity();
-        clarityEvent('one_pager_view');
-        claritySet('page_type', 'one_pager');
+        initializePostHog();
+        posthogEvent('one_pager_view');
+        posthogSet({page_type: 'one_pager'});
     }, []);
 
     const handleToggleSlideshow = () => {
         setIsSlideshow(!isSlideshow);
-        clarityEvent('one_pager_slideshow_toggle', { mode: !isSlideshow ? 'slideshow' : 'normal' });
+        posthogEvent('one_pager_slideshow_toggle', { mode: !isSlideshow ? 'slideshow' : 'normal' });
     };
 
     const handleIncidentClick = (incidentId) => {
-        clarityEvent('one_pager_incident_view', { incident: incidentId });
+        posthogEvent('one_pager_incident_view', { incident: incidentId });
     };
 
     const handleAdvantageClick = (capability) => {
-        clarityEvent('one_pager_advantage_view', { capability });
+        posthogEvent('one_pager_advantage_view', { capability });
     };
 
     const handleEmailSubmitted = (email) => {
-        clarityEvent('one_pager_email_submitted', {
+        posthogEvent('one_pager_email_submitted', {
             page: 'one_pager',
             email_domain: email.split('@')[1]
         });
-        claritySet('one_pager_access_granted', true);
+        posthogSet({one_pager_access_granted: true});
     };
 
     // Define slide configuration for slideshow mode
@@ -524,7 +524,7 @@ const OnePager = () => {
                             <Link
                                 to="/"
                                 className="logo-container"
-                                onClick={() => clarityEvent('logo_clicked_from_one_pager')}
+                                onClick={() => posthogEvent('logo_clicked_from_one_pager')}
                                 aria-label="Navigate to Above Security homepage"
                             >
                                 <Logo className="one-pager-logo" />

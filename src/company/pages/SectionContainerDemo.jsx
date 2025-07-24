@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SectionContainer from '../../components/SectionContainer';
 import FloatingTOC from '../../components/FloatingTOC';
-import { initializeClarity, clarityEvent } from '../../utils/clarity';
+import { initializePostHog, posthogEvent } from '../../utils/posthog';
 import './SectionContainerDemo.css';
 
 /**
@@ -16,8 +16,8 @@ import './SectionContainerDemo.css';
 const SectionContainerDemo = () => {
   useEffect(() => {
     try {
-      initializeClarity();
-      clarityEvent('section_container_demo_view');
+      initializePostHog();
+      posthogEvent('section_container_demo_view');
     } catch (error) {
       console.warn('Analytics initialization failed:', error);
     }

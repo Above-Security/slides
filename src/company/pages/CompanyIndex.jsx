@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { initializeClarity, clarityEvent } from '../../utils/clarity';
+import { initializePostHog, posthogEvent } from '../../utils/posthog';
 import FloatingTOC from '../../components/FloatingTOC';
 import VisionHero from '../sections/VisionHero';
 import GoToMarket from '../sections/GoToMarket';
@@ -27,8 +27,8 @@ const CompanyIndex = () => {
 
   useEffect(() => {
     try {
-      initializeClarity();
-      clarityEvent('company_narrative_view');
+      initializePostHog();
+      posthogEvent('company_narrative_view');
     } catch (error) {
       console.warn('Analytics initialization failed:', error);
     }

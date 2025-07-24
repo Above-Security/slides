@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from './LogoWatermark';
 import EmailGate from './EmailGate';
 import '../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent } from '../utils/clarity';
+import { initializePostHog, posthogEvent } from '../utils/posthog';
 import {
     HeroSection,
     ContentGroup
@@ -25,7 +25,7 @@ import './ProductDemo.css';
  * - Brand-compliant styling
  * - Scoped CSS to prevent bleeding
  * - Accessible navigation
- * - Clarity analytics integration
+ * - PostHog analytics integration
  */
 
 const PRODUCT_DEMO_DATA = {
@@ -66,30 +66,30 @@ const PRODUCT_DEMO_DATA = {
 };
 
 const ProductDemo = () => {
-    const [clarityInitialized, setClarityInitialized] = useState(false);
+    const [posthogInitialized, setPosthogInitialized] = useState(false);
 
     useEffect(() => {
-        if (!clarityInitialized) {
-            initializeClarity('product-demo');
-            setClarityInitialized(true);
+        if (!posthogInitialized) {
+            initializePostHog('product-demo');
+            setPosthogInitialized(true);
         }
 
         // Track page view
-        clarityEvent('page_view', {
+        posthogEvent('page_view', {
             page: 'product-demo',
             title: 'Product Demo Page'
         });
-    }, [clarityInitialized]);
+    }, [posthogInitialized]);
 
     const handleVideoPlay = () => {
-        clarityEvent('video_play', {
+        posthogEvent('video_play', {
             video: 'product_demo',
             location: 'product-demo-page'
         });
     };
 
     const handleNavigationClick = (destination) => {
-        clarityEvent('navigation_click', {
+        posthogEvent('navigation_click', {
             from: 'product-demo',
             to: destination,
             type: 'internal_link'
@@ -97,7 +97,7 @@ const ProductDemo = () => {
     };
 
     const handleEmailSubmitted = (email) => {
-        clarityEvent('product_demo_email_submitted', {
+        posthogEvent('product_demo_email_submitted', {
             page: 'product_demo',
             email_domain: email.split('@')[1]
         });
@@ -109,7 +109,7 @@ const ProductDemo = () => {
             {/* Header with Logo and Title - Matching HomePage */}
             <header className="product-demo-header-section">
                 <div className="homepage-header">
-                    <div className="company-logo" onClick={() => clarityEvent('logo_clicked_from_product_demo')}>
+                    <div className="company-logo" onClick={() => posthogEvent('logo_clicked_from_product_demo')}>
                         <Logo />
                     </div>
                     <h1 className="homepage-title">
@@ -150,7 +150,7 @@ const ProductDemo = () => {
                             allowFullScreen
                             className="product-demo-video"
                             aria-label="Above Security Product Demonstration Video"
-                            onLoad={() => clarityEvent('video_iframe_loaded', { source: 'google_drive' })}
+                            onLoad={() => posthogEvent('video_iframe_loaded', { source: 'google_drive' })}
                             title="Above Security Product Demo"
                         />
                     </div>

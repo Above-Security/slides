@@ -4,7 +4,7 @@ import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
 import '../../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,
@@ -398,15 +398,15 @@ const CISOBusinessCase = () => {
     useEffect(() => {
         try {
             // Initialize analytics
-            initializeClarity();
+            initializePostHog();
             
             // Set user properties for this specific use case
-            claritySet('page_type', 'ciso_business_case');
-            claritySet('content_category', 'business_case');
-            claritySet('user_intent', 'evaluation');
+            posthogSet({page_type: 'ciso_business_case'});
+            posthogSet({content_category: 'business_case'});
+            posthogSet({user_intent: 'evaluation'});
             
             // Track page view
-            clarityEvent('ciso_business_case_viewed', {
+            posthogEvent('ciso_business_case_viewed', {
                 timestamp: new Date().toISOString(),
                 user_type: 'ciso_evaluation'
             });
@@ -419,7 +419,7 @@ const CISOBusinessCase = () => {
 
     const handleMetricClick = (metric) => {
         try {
-            clarityEvent('business_metric_viewed', { metric });
+            posthogEvent('business_metric_viewed', { metric });
             console.log(`Business metric viewed: ${metric}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -428,7 +428,7 @@ const CISOBusinessCase = () => {
 
     const handleCompetitorClick = (competitor) => {
         try {
-            clarityEvent('competitor_comparison_viewed', { competitor });
+            posthogEvent('competitor_comparison_viewed', { competitor });
             console.log(`Competitor comparison viewed: ${competitor}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -437,7 +437,7 @@ const CISOBusinessCase = () => {
 
     const handleROIClick = (item) => {
         try {
-            clarityEvent('roi_item_viewed', { item });
+            posthogEvent('roi_item_viewed', { item });
             console.log(`ROI item viewed: ${item}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);

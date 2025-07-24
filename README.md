@@ -276,7 +276,7 @@ npm run preview
 - **[BRAND_GUIDELINES.md](BRAND_GUIDELINES.md)** - Design system and brand compliance
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Development environment setup
 - **[NARRATIVE.md](NARRATIVE.md)** - Strategic business narrative content
-- **[CLARITY_ANALYTICS.md](CLARITY_ANALYTICS.md)** - Microsoft Clarity analytics setup
+- **[POSTHOG_ANALYTICS.md](POSTHOG_ANALYTICS.md)** - PostHog analytics setup
 - **[METADATA_SEO.md](METADATA_SEO.md)** - SEO and social media optimization
 - **[DOMAIN_SETUP.md](DOMAIN_SETUP.md)** - Custom domain configuration guide
 - **[DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)** - Complete documentation index

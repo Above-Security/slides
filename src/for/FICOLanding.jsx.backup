@@ -4,7 +4,7 @@ import { Logo } from '../components/LogoWatermark';
 import FloatingNavigation from '../components/FloatingNavigation';
 import '../components/FloatingNavigationIntegration.css';
 import '../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,

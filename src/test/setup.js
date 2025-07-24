@@ -12,8 +12,16 @@ window.location = {
     reload: vi.fn()
 }
 
-// Mock Microsoft Clarity
-window.clarity = vi.fn()
+// Mock PostHog
+window.posthog = {
+    init: vi.fn(),
+    capture: vi.fn(),
+    identify: vi.fn(),
+    setPersonProperties: vi.fn(),
+    opt_in_capturing: vi.fn(),
+    opt_out_capturing: vi.fn(),
+    reset: vi.fn()
+}
 
 // Mock console methods to reduce noise in tests
 global.console = {

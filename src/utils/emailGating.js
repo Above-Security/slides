@@ -120,7 +120,7 @@ export const clearStoredEmail = () => {
     }
 };
 
-// Generate consistent user ID from email for Clarity
+// Generate consistent user ID from email for PostHog
 export const generateUserId = (email) => {
     if (!email) return null;
 

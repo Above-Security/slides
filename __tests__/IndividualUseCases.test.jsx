@@ -1,13 +1,13 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { clarityEvent, claritySet, initializeClarity } from '../src/utils/clarity';
+import { posthogEvent, posthogSet, initializePostHog } from '../src/utils/posthog';
 
-// Mock Clarity analytics
-vi.mock('../src/utils/clarity', () => ({
-    clarityEvent: vi.fn(),
-    claritySet: vi.fn(),
-    initializeClarity: vi.fn()
+// Mock PostHog analytics
+vi.mock('../src/utils/posthog', () => ({
+    posthogEvent: vi.fn(),
+    posthogSet: vi.fn(),
+    initializePostHog: vi.fn()
 }));
 
 // Mock LogoWatermark component
@@ -65,10 +65,10 @@ describe('Individual Use Case Components', () => {
         it('tracks analytics correctly for phishing detection', () => {
             renderWithRouter(PhishingDetection);
 
-            expect(initializeClarity).toHaveBeenCalledOnce();
-            expect(clarityEvent).toHaveBeenCalledWith('comprehensive_phishing_prevention_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'comprehensive_phishing_prevention');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'comprehensive-phishing-prevention');
+            expect(initializePostHog).toHaveBeenCalledOnce();
+            expect(posthogEvent).toHaveBeenCalledWith('comprehensive_phishing_prevention_view');
+            expect(posthogSet).toHaveBeenCalledWith({page_type: 'comprehensive_phishing_prevention'});
+            expect(posthogSet).toHaveBeenCalledWith({use_case: 'comprehensive-phishing-prevention'});
         });
     });
 
@@ -109,9 +109,9 @@ describe('Individual Use Case Components', () => {
         it('tracks analytics correctly for insider protection', () => {
             renderWithRouter(InsiderThreat);
 
-            expect(clarityEvent).toHaveBeenCalledWith('insider_protection_view');
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'insider_protection');
-            expect(claritySet).toHaveBeenCalledWith('use_case', 'insider-protection');
+            expect(posthogEvent).toHaveBeenCalledWith('insider_protection_view');
+            expect(posthogSet).toHaveBeenCalledWith({page_type: 'insider_protection'});
+            expect(posthogSet).toHaveBeenCalledWith({use_case: 'insider-protection'});
         });
     });
 
@@ -177,9 +177,9 @@ describe('Individual Use Case Components', () => {
             components.forEach(({ Component, name }) => {
                 vi.clearAllMocks();
                 const { unmount } = renderWithRouter(Component);
-                expect(initializeClarity).toHaveBeenCalledOnce();
-                expect(clarityEvent).toHaveBeenCalledWith(expectedEvents[name]);
-                expect(claritySet).toHaveBeenCalledWith('page_type', expectedPageTypes[name]);
+                expect(initializePostHog).toHaveBeenCalledOnce();
+                expect(posthogEvent).toHaveBeenCalledWith(expectedEvents[name]);
+                expect(posthogSet).toHaveBeenCalledWith({page_type: expectedPageTypes[name]});
                 unmount();
             });
         });
@@ -200,9 +200,10 @@ describe('Individual Use Case Components', () => {
             const components = [PhishingDetection, InsiderThreat];
 
             // Mock analytics to fail
-            initializeClarity.mockImplementation(() => {
+            const mockInit = vi.fn(() => {
                 throw new Error('Analytics failed');
             });
+            vi.mocked(initializePostHog).mockImplementation(mockInit);
 
             components.forEach(Component => {
                 expect(() => renderWithRouter(Component)).not.toThrow();

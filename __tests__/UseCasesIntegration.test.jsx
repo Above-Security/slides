@@ -2,13 +2,13 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import { clarityEvent, claritySet, initializeClarity } from '../src/utils/clarity';
+import { posthogEvent, posthogSet, initializePostHog } from '../src/utils/posthog';
 
-// Mock Clarity analytics
-vi.mock('../src/utils/clarity', () => ({
-    clarityEvent: vi.fn(),
-    claritySet: vi.fn(),
-    initializeClarity: vi.fn()
+// Mock PostHog analytics
+vi.mock('../src/utils/posthog', () => ({
+    posthogEvent: vi.fn(),
+    posthogSet: vi.fn(),
+    initializePostHog: vi.fn()
 }));
 
 // Mock LogoWatermark component
@@ -96,8 +96,8 @@ describe('Use Cases Integration Tests - Standalone Components', () => {
                     </MemoryRouter>
                 );
 
-                expect(initializeClarity).toHaveBeenCalled();
-                expect(clarityEvent).toHaveBeenCalledWith(expectedEvent);
+                expect(initializePostHog).toHaveBeenCalled();
+                expect(posthogEvent).toHaveBeenCalledWith(expectedEvent);
 
                 unmount();
             });

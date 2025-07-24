@@ -4,7 +4,7 @@ import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
 import '../../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,
@@ -338,11 +338,11 @@ const COMPREHENSIVE_PHISHING_DATA = {
 const PhishingDetection = () => {
     useEffect(() => {
         try {
-            // Initialize Clarity tracking for this specific use case
-            initializeClarity();
-            clarityEvent('comprehensive_phishing_prevention_view');
-            claritySet('page_type', 'comprehensive_phishing_prevention');
-            claritySet('use_case', 'comprehensive-phishing-prevention');
+            // Initialize PostHog tracking for this specific use case
+            initializePostHog();
+            posthogEvent('comprehensive_phishing_prevention_view');
+            posthogSet({page_type: 'comprehensive_phishing_prevention'});
+            posthogSet({use_case: 'comprehensive-phishing-prevention'});
             console.log('Comprehensive Phishing Prevention component loaded with analytics');
         } catch (error) {
             console.warn('Analytics initialization failed in Comprehensive Phishing Prevention:', error);
@@ -351,7 +351,7 @@ const PhishingDetection = () => {
 
     const handleIncidentClick = (incidentId) => {
         try {
-            clarityEvent('phishing_incident_clicked', { incident: incidentId });
+            posthogEvent('phishing_incident_clicked', { incident: incidentId });
             console.log(`Phishing incident clicked: ${incidentId}`);
         } catch (error) {
             console.warn('Analytics tracking failed in Comprehensive Phishing Prevention:', error);
@@ -360,7 +360,7 @@ const PhishingDetection = () => {
 
     const handleToolGapClick = (toolName) => {
         try {
-            clarityEvent('tool_gap_analyzed', { tool: toolName });
+            posthogEvent('tool_gap_analyzed', { tool: toolName });
             console.log(`Tool gap analyzed: ${toolName}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -369,7 +369,7 @@ const PhishingDetection = () => {
 
     const handleDifferentiatorClick = (capability) => {
         try {
-            clarityEvent('above_differentiator_viewed', { capability });
+            posthogEvent('above_differentiator_viewed', { capability });
             console.log(`Above differentiator viewed: ${capability}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);

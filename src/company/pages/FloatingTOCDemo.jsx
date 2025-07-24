@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import FloatingTOC from '../../components/FloatingTOC';
-import { initializeClarity, clarityEvent } from '../../utils/clarity';
+import { initializePostHog, posthogEvent } from '../../utils/posthog';
 import './FloatingTOCDemo.css';
 
 /**
@@ -15,8 +15,8 @@ import './FloatingTOCDemo.css';
 const FloatingTOCDemo = () => {
   useEffect(() => {
     try {
-      initializeClarity();
-      clarityEvent('floating_toc_demo_view');
+      initializePostHog();
+      posthogEvent('floating_toc_demo_view');
     } catch (error) {
       console.warn('Analytics initialization failed:', error);
     }

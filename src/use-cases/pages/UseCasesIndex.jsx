@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
-import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../../utils/posthog';
 import '../styles/UseCasesIndex.enhanced.css';
 
 const UseCasesIndex = () => {
@@ -11,15 +11,15 @@ const UseCasesIndex = () => {
 
     useEffect(() => {
         try {
-            // Initialize Clarity tracking for use cases
-            initializeClarity();
+            // Initialize PostHog tracking for use cases
+            initializePostHog();
 
             // Track use cases index view
-            clarityEvent('use_cases_index_view');
-            claritySet('page_type', 'use_cases_index');
-            claritySet('user_journey', 'use_cases_exploration');
+            posthogEvent('use_cases_index_view');
+            posthogSet({page_type: 'use_cases_index'});
+            posthogSet({user_journey: 'use_cases_exploration'});
 
-            console.log('Use Cases Index loaded with Clarity tracking');
+            console.log('Use Cases Index loaded with PostHog tracking');
         } catch (error) {
             console.warn('Analytics initialization failed:', error);
         }
@@ -113,13 +113,13 @@ const UseCasesIndex = () => {
 
     const handleUseCaseClick = (useCaseId) => {
         try {
-            clarityEvent('use_case_clicked', { 
+            posthogEvent('use_case_clicked', { 
                 use_case: useCaseId,
                 interaction_type: 'enhanced_card_click',
                 timestamp: Date.now()
             });
-            claritySet('selected_use_case', useCaseId);
-            claritySet('interaction_method', 'enhanced_ui');
+            posthogSet({selected_use_case: useCaseId});
+            posthogSet({interaction_method: 'enhanced_ui'});
             console.log(`Enhanced use case selected: ${useCaseId}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -128,7 +128,7 @@ const UseCasesIndex = () => {
 
     const handleLogoClick = () => {
         try {
-            clarityEvent('logo_clicked_from_use_cases', {
+            posthogEvent('logo_clicked_from_use_cases', {
                 interaction_type: 'enhanced_logo_hover',
                 timestamp: Date.now()
             });

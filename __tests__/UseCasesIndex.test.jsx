@@ -2,13 +2,13 @@ import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { render, screen, fireEvent, waitFor, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
-import { clarityEvent, claritySet, initializeClarity } from '../src/utils/clarity'
+import { posthogEvent, posthogSet, initializePostHog } from '../src/utils/posthog'
 
-// Mock Clarity analytics - use vi.fn() directly in the mock
-vi.mock('../src/utils/clarity', () => ({
-    clarityEvent: vi.fn(),
-    claritySet: vi.fn(),
-    initializeClarity: vi.fn()
+// Mock PostHog analytics - use vi.fn() directly in the mock
+vi.mock('../src/utils/posthog', () => ({
+    posthogEvent: vi.fn(),
+    posthogSet: vi.fn(),
+    initializePostHog: vi.fn()
 }))
 
 // Mock LogoWatermark component
@@ -97,12 +97,12 @@ describe('UseCasesIndex Component', () => {
     })
 
     describe('Analytics Integration', () => {
-        it('initializes Clarity on component mount', () => {
+        it('initializes PostHog on component mount', () => {
             renderWithRouter()
 
-            expect(initializeClarity).toHaveBeenCalledOnce()
-            expect(clarityEvent).toHaveBeenCalledWith('use_cases_index_view')
-            expect(claritySet).toHaveBeenCalledWith('page_type', 'use_cases_index')
+            expect(initializePostHog).toHaveBeenCalledOnce()
+            expect(posthogEvent).toHaveBeenCalledWith('use_cases_index_view')
+            expect(posthogSet).toHaveBeenCalledWith({page_type: 'use_cases_index'})
         })
 
         it('tracks use case clicks', async () => {
@@ -112,15 +112,15 @@ describe('UseCasesIndex Component', () => {
             const phishingCard = screen.getByText('Phishing Detection').closest('a')
             await user.click(phishingCard)
 
-            expect(clarityEvent).toHaveBeenCalledWith('use_case_clicked', 
+            expect(posthogEvent).toHaveBeenCalledWith('use_case_clicked', 
                 expect.objectContaining({
                     use_case: 'phishing-detection',
                     interaction_type: 'enhanced_card_click',
                     timestamp: expect.any(Number)
                 })
             )
-            expect(claritySet).toHaveBeenCalledWith('selected_use_case', 'phishing-detection')
-            expect(claritySet).toHaveBeenCalledWith('interaction_method', 'enhanced_ui')
+            expect(posthogSet).toHaveBeenCalledWith({selected_use_case: 'phishing-detection'})
+            expect(posthogSet).toHaveBeenCalledWith({interaction_method: 'enhanced_ui'})
         })
 
         it('tracks logo clicks', async () => {
@@ -130,7 +130,7 @@ describe('UseCasesIndex Component', () => {
             const logoLink = screen.getByTestId('logo').closest('a')
             await user.click(logoLink)
 
-            expect(clarityEvent).toHaveBeenCalledWith('logo_clicked_from_use_cases',
+            expect(posthogEvent).toHaveBeenCalledWith('logo_clicked_from_use_cases',
                 expect.objectContaining({
                     interaction_type: 'enhanced_logo_hover',
                     timestamp: expect.any(Number)
@@ -179,11 +179,12 @@ describe('UseCasesIndex Component', () => {
     })
 
     describe('Error Handling', () => {
-        it('handles missing clarity utils gracefully', () => {
-            // Temporarily mock clarity functions to throw errors
-            initializeClarity.mockImplementationOnce(() => {
-                throw new Error('Clarity not available')
+        it('handles missing PostHog utils gracefully', () => {
+            // Temporarily mock PostHog functions to throw errors
+            const mockInit = vi.fn(() => {
+                throw new Error('PostHog not available')
             })
+            vi.mocked(initializePostHog).mockImplementationOnce(mockInit)
 
             // Component should still render even if analytics fail
             expect(() => renderWithRouter()).not.toThrow()

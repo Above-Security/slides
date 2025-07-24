@@ -4,7 +4,7 @@ import { Logo } from '../../components/LogoWatermark';
 import FloatingNavigation from '../../components/FloatingNavigation';
 import '../../components/FloatingNavigationIntegration.css';
 import '../../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,
@@ -319,11 +319,11 @@ const INSIDER_PROTECTION_DATA = {
 const InsiderThreat = () => {
     useEffect(() => {
         try {
-            // Initialize Clarity tracking for this specific use case
-            initializeClarity();
-            clarityEvent('insider_protection_view');
-            claritySet('page_type', 'insider_protection');
-            claritySet('use_case', 'insider-protection');
+            // Initialize PostHog tracking for this specific use case
+            initializePostHog();
+            posthogEvent('insider_protection_view');
+            posthogSet({page_type: 'insider_protection'});
+            posthogSet({use_case: 'insider-protection'});
             console.log('Insider Protection component loaded with analytics');
         } catch (error) {
             console.warn('Analytics initialization failed in Insider Protection:', error);
@@ -332,7 +332,7 @@ const InsiderThreat = () => {
 
     const handleIncidentClick = (incidentId) => {
         try {
-            clarityEvent('insider_incident_clicked', { incident: incidentId });
+            posthogEvent('insider_incident_clicked', { incident: incidentId });
             console.log(`Insider incident clicked: ${incidentId}`);
         } catch (error) {
             console.warn('Analytics tracking failed in Insider Protection:', error);
@@ -341,7 +341,7 @@ const InsiderThreat = () => {
 
     const handleToolGapClick = (toolName) => {
         try {
-            clarityEvent('tool_gap_analyzed', { tool: toolName });
+            posthogEvent('tool_gap_analyzed', { tool: toolName });
             console.log(`Tool gap analyzed: ${toolName}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);
@@ -350,7 +350,7 @@ const InsiderThreat = () => {
 
     const handleDifferentiatorClick = (capability) => {
         try {
-            clarityEvent('above_differentiator_viewed', { capability });
+            posthogEvent('above_differentiator_viewed', { capability });
             console.log(`Above differentiator viewed: ${capability}`);
         } catch (error) {
             console.warn('Analytics tracking failed:', error);

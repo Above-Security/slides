@@ -6,7 +6,7 @@ import SlideshowContainer from '../components/SlideshowContainer';
 import '../components/FloatingNavigationIntegration.css';
 import '../components/SlideshowContainer.css';
 import '../styles/layout/navigation-footer.css';
-import { initializeClarity, clarityEvent, claritySet } from '../utils/clarity';
+import { initializePostHog, posthogEvent, posthogSet } from '../utils/posthog';
 import {
     SectionHeader,
     ContentGroup,
@@ -372,22 +372,22 @@ const FICOLanding = () => {
     const [isSlideshow, setIsSlideshow] = useState(false);
 
     useEffect(() => {
-        initializeClarity();
-        clarityEvent('fico_landing_page_view');
-        claritySet('page_type', 'fico_landing');
+        initializePostHog();
+        posthogEvent('fico_landing_page_view');
+        posthogSet({page_type: 'fico_landing'});
     }, []);
 
     const handleToggleSlideshow = () => {
         setIsSlideshow(!isSlideshow);
-        clarityEvent('fico_slideshow_toggle', { mode: !isSlideshow ? 'slideshow' : 'normal' });
+        posthogEvent('fico_slideshow_toggle', { mode: !isSlideshow ? 'slideshow' : 'normal' });
     };
 
     const handleIncidentClick = (incidentId) => {
-        clarityEvent('fico_incident_view', { incident: incidentId });
+        posthogEvent('fico_incident_view', { incident: incidentId });
     };
 
     const handleDifferentiatorClick = (capability) => {
-        clarityEvent('fico_differentiator_view', { capability });
+        posthogEvent('fico_differentiator_view', { capability });
     };
 
     // Define slide configuration for slideshow mode
@@ -434,7 +434,7 @@ const FICOLanding = () => {
                             <Link
                                 to="/"
                                 className="logo-container"
-                                onClick={() => clarityEvent('logo_clicked_from_fico_landing')}
+                                onClick={() => posthogEvent('logo_clicked_from_fico_landing')}
                                 aria-label="Navigate to Above Security homepage"
                             >
                                 <Logo className="fico-landing-logo" />

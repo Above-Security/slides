@@ -8,18 +8,7 @@ const __dirname = path.dirname(__filename);
 async function takeBlackHatScreenshot() {
     const browser = await puppeteer.launch({
         headless: true,
-        args: [
-            '--no-sandbox', 
-            '--disable-setuid-sandbox', 
-            '--disable-web-security',
-            '--font-render-hinting=none',
-            '--disable-font-subpixel-positioning',
-            '--enable-font-antialiasing',
-            '--disable-dev-shm-usage',
-            '--no-first-run',
-            '--disable-default-apps',
-            '--disable-extensions'
-        ]
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security']
     });
 
     const page = await browser.newPage();
@@ -27,16 +16,11 @@ async function takeBlackHatScreenshot() {
     // Set viewport to exact LinkedIn post dimensions
     await page.setViewport({
         width: 1200,
-        height: 628,
+        height: 630,
         deviceScaleFactor: 2 // For high quality
     });
 
     try {
-        // Set up font loading detection before navigation
-        await page.evaluateOnNewDocument(() => {
-            document.fonts.ready.then(() => console.log('Fonts loaded'));
-        });
-
         // Navigate to the BlackHat LinkedIn post
         const templatePath = `file://${path.join(__dirname, 'public', 'blackhat-2025-linkedin.html')}`;
         console.log(`📸 Taking screenshot of BlackHat LinkedIn post: ${templatePath}`);
@@ -47,7 +31,7 @@ async function takeBlackHatScreenshot() {
         });
 
         // Wait for fonts, animations, and content to load
-        await new Promise(resolve => setTimeout(resolve, 5000)); // Increased wait time
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         // Take screenshot
         const screenshotPath = path.join(__dirname, 'public', 'blackhat-2025-linkedin.png');
@@ -59,7 +43,7 @@ async function takeBlackHatScreenshot() {
                 x: 0,
                 y: 0,
                 width: 1200,
-                height: 628
+                height: 630
             }
         });
 

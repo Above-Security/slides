@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { slideData } from '../slides';
-import { clarityEvent, claritySet, trackPresentationEngagement } from '../utils/clarity';
+import { posthogEvent, posthogSet, trackPresentationEngagement } from '../utils/posthog';
 import { getStoredEmail, getSessionInfo } from '../utils/emailGating';
 import EmailGate from './EmailGate';
 
@@ -48,17 +48,21 @@ const PresentationApp = () => {
     }
 
     // Enhanced session tracking with email context
-    clarityEvent('presentation_session_start');
-    claritySet('presentation_name', 'Above Security Pitch Deck');
-    claritySet('session_id', sessionInfo.sessionId);
+    posthogEvent('presentation_session_start');
+    posthogSet({
+        presentation_name: 'Above Security Pitch Deck',
+        session_id: sessionInfo.sessionId
+    });
 
     if (sessionInfo.email) {
-      claritySet('user_has_email', 'true');
-      claritySet('user_email_domain', sessionInfo.email.split('@')[1]);
-      clarityEvent('presentation_start_with_email');
+      posthogSet({
+        user_has_email: true,
+        user_email_domain: sessionInfo.email.split('@')[1]
+      });
+      posthogEvent('presentation_start_with_email');
     } else {
-      claritySet('user_has_email', 'false');
-      clarityEvent('presentation_start_without_email');
+      posthogSet({user_has_email: false});
+      posthogEvent('presentation_start_without_email');
     }
 
     setIsInitialLoad(false);
@@ -79,9 +83,9 @@ const PresentationApp = () => {
       userEmail
     );
 
-    claritySet('current_slide_number', currentSlide + 1);
+    posthogSet({current_slide_number: currentSlide + 1});
     if (currentSlideData?.title) {
-      claritySet('current_slide_title', currentSlideData.title);
+      posthogSet({current_slide_title: currentSlideData.title});
     }
   }, [currentSlide, isInitialLoad, userEmail, navigate]);
 
@@ -113,7 +117,7 @@ const PresentationApp = () => {
     setCurrentSlide(newSlide);
 
     // Track navigation with email context
-    clarityEvent('slide_navigation', {
+    posthogEvent('slide_navigation', {
       direction: 'next',
       from_slide: currentSlide + 1,
       to_slide: newSlide + 1,
@@ -126,7 +130,7 @@ const PresentationApp = () => {
     setCurrentSlide(newSlide);
 
     // Track navigation with email context
-    clarityEvent('slide_navigation', {
+    posthogEvent('slide_navigation', {
       direction: 'previous',
       from_slide: currentSlide + 1,
       to_slide: newSlide + 1,
@@ -140,7 +144,7 @@ const PresentationApp = () => {
     setShowMenu(false);
 
     // Track menu navigation
-    clarityEvent('slide_menu_navigation', {
+    posthogEvent('slide_menu_navigation', {
       from_slide: previousSlide + 1,
       to_slide: index + 1,
       has_email: !!userEmail
@@ -155,7 +159,7 @@ const PresentationApp = () => {
   // Handle email submission from EmailGate
   const handleEmailSubmitted = (email) => {
     setUserEmail(email);
-    clarityEvent('email_gate_completed', {
+    posthogEvent('email_gate_completed', {
       email_domain: email.split('@')[1],
       timestamp: new Date().toISOString()
     });
