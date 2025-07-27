@@ -101,51 +101,64 @@ const HomePage = () => {
             <link rel="canonical" href="https://abovesec.com/" />
 
             <div className="homepage-container" data-testid="home-page">
-                <div className="homepage-overlay">
-                    <div className="homepage-content">
-                        <div className="homepage-header">
+                {/* Background decorations outside hero section */}
+                <div className="hero-decoration">
+                    <div className="decoration-grid"></div>
+                    <div className="decoration-glow"></div>
+                </div>
+                
+                <div className="hero-section">
+                    <div className="hero-content">
+                        <header className="hero-header">
                             <div className="company-logo" onClick={handleLogoClick}>
                                 <Logo />
                             </div>
-                            <h1 className="homepage-title">
-                                <div className="brand-container">
-                                    <span className="brand-name">Above</span>
-                                </div>
+                            <h1 className="brand-title">
+                                <span className="brand-name">Above</span>
                             </h1>
-                            <h2 className="homepage-subtitle">Coming Soon</h2>
-                        </div>
+                        </header>
 
-                        <div className="homepage-body">
-                            <div className="coming-soon-content">
-                                <p className="coming-soon-description">
-                                    We're building something incredible. <br /><br />Backed by tier 1 investors,
-                                    our team is working on revolutionary technology that will transform
-                                    how organizations approach security and threat detection.
+                        <div className="hero-main">
+                            <div className="hero-message">
+                                <h2 className="hero-headline">
+                                    Insider Protection.
+                                    <br />
+                                    <span className="hero-emphasis">Where It Actually Happens.</span>
+                                </h2>
+                                
+                                <p className="hero-description">
+                                    Revolutionary security technology backed by tier 1 investors. 
+                                    We're building the future of insider threat protection 
+                                    where organizations need it most.
                                 </p>
+                            </div>
 
-                                <br />
-                                <div className="action-buttons">
-                                    <a
-                                        href="mailto:aviv@abovesec.com"
-                                        className="secondary-button"
-                                        onClick={handleEmailClick}
-                                    >
-                                        <svg className="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                        Get Early Access
-                                    </a>
+                            <div className="hero-actions">
+                                <a
+                                    href="mailto:aviv@abovesec.com"
+                                    className="primary-cta"
+                                    onClick={handleEmailClick}
+                                >
+                                    <svg className="cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    Get Early Access
+                                </a>
+                                <div className="coming-soon-badge">
+                                    <span className="badge-text">Coming Soon</span>
+                                    <div className="badge-pulse"></div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="homepage-footer">
-                                <p className="brand-notice">
-                                    Above is revolutionizing technology with cutting-edge innovation and world-class engineering.
-                                    Stay tuned for updates on our breakthrough platform.
+                        <footer className="hero-footer">
+                            <div className="social-proof">
+                                <p className="proof-text">
+                                    Backed by tier 1 investors • Built by world-class security experts
                                 </p>
                             </div>
-                        </div>
+                        </footer>
                     </div>
                 </div>
             </div>
