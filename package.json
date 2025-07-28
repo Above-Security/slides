@@ -14,16 +14,12 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@react-three/drei": "^10.6.1",
-    "@react-three/fiber": "^9.3.0",
-    "framer-motion": "^12.23.9",
     "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
     "posthog-js": "^1.258.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.2",
-    "three": "^0.178.0"
+    "react-router-dom": "^7.6.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
