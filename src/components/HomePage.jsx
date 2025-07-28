@@ -65,7 +65,7 @@ const HomePage = () => {
     return (
         <>
             {/* Document Head Metadata - React 19 native support */}
-            <title>Above - Coming Soon | Revolutionary Security Technology</title>
+            <title>Above - Coming Soon</title>
             <meta name="description" content="Above is building revolutionary security technology backed by tier 1 investors. Coming soon." />
             <meta name="keywords" content="Above, security, technology, tier 1 investors, coming soon, innovation" />
             <meta name="author" content="Above Security" />
@@ -89,7 +89,7 @@ const HomePage = () => {
             {/* Open Graph / Social Media */}
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://abovesec.com/" />
-            <meta property="og:title" content="Above - Coming Soon | Revolutionary Security Technology" />
+            <meta property="og:title" content="Above - Coming Soon" />
             <meta property="og:description" content="Above is building revolutionary security technology backed by tier 1 investors. Coming soon." />
             <meta property="og:image" content="https://abovesec.com/og-image.png" />
             <meta property="og:site_name" content="Above" />
@@ -98,7 +98,7 @@ const HomePage = () => {
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:url" content="https://abovesec.com/" />
-            <meta name="twitter:title" content="Above - Coming Soon | Revolutionary Security Technology" />
+            <meta name="twitter:title" content="Above - Coming Soon" />
             <meta name="twitter:description" content="Above is building revolutionary security technology backed by tier 1 investors. Coming soon." />
             <meta name="twitter:image" content="https://abovesec.com/og-image.png" />
 
