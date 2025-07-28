@@ -101,12 +101,6 @@ const HomePage = () => {
             <link rel="canonical" href="https://abovesec.com/" />
 
             <div className="homepage-container" data-testid="home-page">
-                {/* Background decorations outside hero section */}
-                <div className="hero-decoration">
-                    <div className="decoration-grid"></div>
-                    <div className="decoration-glow"></div>
-                </div>
-                
                 <div className="hero-section">
                     <div className="hero-content">
                         <header className="hero-header">
