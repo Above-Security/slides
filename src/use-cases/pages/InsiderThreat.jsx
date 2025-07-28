@@ -360,8 +360,8 @@ const InsiderThreat = () => {
     return (
         <>
             {/* Document Head Metadata */}
-            <title>{INSIDER_PROTECTION_DATA.title} - Above Security Use Cases</title>
-            <meta name="description" content={INSIDER_PROTECTION_DATA.description} />
+            <title>Insider Protection - Above Security Use Cases</title>
+            <meta name="description" content="Real-time detection and response to insider threats through browser-based monitoring of user behavior across all SaaS applications, with semantic understanding of intent and context." />
             <meta name="keywords" content="insider threat, insider protection, Runtime Insider Protection, behavioral analysis, post-auth monitoring" />
 
             <div className="insider-protection-container" data-testid="insider-protection">

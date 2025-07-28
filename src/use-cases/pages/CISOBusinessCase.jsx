@@ -447,8 +447,8 @@ const CISOBusinessCase = () => {
     return (
         <>
             {/* Document Head Metadata */}
-            <title>{CISO_BUSINESS_CASE_DATA.title} - Above Security Business Case</title>
-            <meta name="description" content={CISO_BUSINESS_CASE_DATA.description} />
+            <title>Above Security: Runtime Identity & Insider Protection Platform - Above Security Business Case</title>
+            <meta name="description" content="While others tell you WHICH shadow SaaS and AI apps users access, Above tells you WHAT they're doing inside those apps — and WHY it's risky. We provide runtime behavioral intelligence that goes beyond app inventory to deliver true insider protection through intent analysis and real-time intervention." />
             <meta name="keywords" content="CISO business case, Runtime Insider Protection, insider protection, SaaS security, behavioral analysis" />
 
             <div className="ciso-business-case-container" data-testid="ciso-business-case">

@@ -112,6 +112,7 @@ const PresentationApp = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentSlide]);
 
+  
   const nextSlide = () => {
     const newSlide = (currentSlide + 1) % slides.length;
     setCurrentSlide(newSlide);
@@ -169,7 +170,7 @@ const PresentationApp = () => {
     <EmailGate onEmailSubmitted={handleEmailSubmitted}>
       {/* Dynamic title for presentation slides */}
       <title>{`Above Security - Slide ${currentSlide + 1} | Runtime Insider Protection Platform`}</title>
-      <meta name="description" content={`Above Security presentation slide ${currentSlide + 1} - Runtime Identity Threat Detection & Response platform.`} />
+      <meta name="description" content={`Above Security presentation slide ${currentSlide + 1} - Runtime Insider Protection platform.`} />
 
       <div className="presentation-container" data-testid="presentation-app">
         <div className="presentation-controls">

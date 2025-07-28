@@ -379,8 +379,8 @@ const PhishingDetection = () => {
     return (
         <>
             {/* Document Head Metadata */}
-            <title>{COMPREHENSIVE_PHISHING_DATA.title} - Above Security Use Cases</title>
-            <meta name="description" content={COMPREHENSIVE_PHISHING_DATA.description} />
+            <title>Comprehensive Phishing Prevention - Above Security Use Cases</title>
+            <meta name="description" content="Advanced phishing operates inside trusted environments using OAuth flows, productivity apps, and legitimate workflows. Above's Runtime Insider Protection prevents these threats during live user interaction where no log or rule-based tool can intervene." />
             <meta name="keywords" content="phishing prevention, LOTS attacks, OAuth abuse, AiTM, runtime security, browser protection" />
 
             <div className="comprehensive-phishing-container" data-testid="comprehensive-phishing">

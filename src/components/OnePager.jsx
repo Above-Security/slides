@@ -492,11 +492,13 @@ const OnePager = () => {
     ];
 
     return (
-        <EmailGate onEmailSubmitted={handleEmailSubmitted}>
-            {/* Document Head Metadata */}
-            <title>{ONE_PAGER_DATA.title} - Executive Summary</title>
+        <>
+            {/* Document Head Metadata - React 19 native support */}
+            <title>Executive Summary</title>
             <meta name="description" content={ONE_PAGER_DATA.description} />
             <meta name="keywords" content="insider threat protection, behavioral intelligence, enterprise security, SaaS security" />
+            
+            <EmailGate onEmailSubmitted={handleEmailSubmitted}>
 
             <div className={`one-pager-container ${isSlideshow ? 'slideshow-mode' : ''}`} data-testid="one-pager">
                 {/* Slideshow Toggle Button */}
@@ -801,7 +803,8 @@ const OnePager = () => {
                     </div>
                 </SlideshowContainer>
             </div>
-        </EmailGate>
+            </EmailGate>
+        </>
     );
 };
 

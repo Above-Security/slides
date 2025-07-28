@@ -401,13 +401,48 @@ const FICOLanding = () => {
         { title: 'Ready to Partner with Us?', index: 6 }
     ];
 
+    // Update document head with proper cleanup
+    useEffect(() => {
+        const originalTitle = document.title;
+        const originalDescription = document.querySelector('meta[name="description"]')?.content || '';
+        
+        // Set new title and meta
+        document.title = `${FICO_LANDING_DATA.title} - Above Security for FICO`;
+        
+        // Update or create description meta tag
+        let descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta) {
+            descriptionMeta.content = FICO_LANDING_DATA.description;
+        } else {
+            descriptionMeta = document.createElement('meta');
+            descriptionMeta.name = 'description';
+            descriptionMeta.content = FICO_LANDING_DATA.description;
+            document.head.appendChild(descriptionMeta);
+        }
+        
+        // Update or create keywords meta tag
+        let keywordsMeta = document.querySelector('meta[name="keywords"]');
+        if (keywordsMeta) {
+            keywordsMeta.content = 'FICO, financial services security, behavioral intelligence, insider threat, OAuth security';
+        } else {
+            keywordsMeta = document.createElement('meta');
+            keywordsMeta.name = 'keywords';
+            keywordsMeta.content = 'FICO, financial services security, behavioral intelligence, insider threat, OAuth security';
+            document.head.appendChild(keywordsMeta);
+        }
+        
+        // Cleanup function to restore original values
+        return () => {
+            document.title = originalTitle;
+            const currentDescriptionMeta = document.querySelector('meta[name="description"]');
+            if (currentDescriptionMeta) {
+                currentDescriptionMeta.content = originalDescription;
+            }
+        };
+    }, []);
+
     return (
         <>
-            {/* Document Head Metadata */}
-            <title>{FICO_LANDING_DATA.title} - Above Security for FICO</title>
-            <meta name="description" content={FICO_LANDING_DATA.description} />
-            <meta name="keywords" content="FICO, financial services security, behavioral intelligence, insider threat, OAuth security" />
-
             <div className={`fico-landing-container ${isSlideshow ? 'slideshow-mode' : ''}`} data-testid="fico-landing">
                 {/* Slideshow Toggle Button */}
                 {!isSlideshow && (
