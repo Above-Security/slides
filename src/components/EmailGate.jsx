@@ -12,36 +12,64 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
     const [isInitialLoad, setIsInitialLoad] = useState(true);
 
     useEffect(() => {
-        // Check if user has already provided email
-        const storedEmail = getStoredEmail();
-        if (storedEmail) {
-            setIsEmailSubmitted(true);
-            setEmail(storedEmail);
+        try {
+            // Check if user has already provided email
+            const storedEmail = getStoredEmail();
+            if (storedEmail) {
+                // Validate stored email before using it
+                const validation = validateEmail(storedEmail);
+                if (validation.isValid) {
+                    setIsEmailSubmitted(true);
+                    setEmail(storedEmail);
 
-            // Always re-identify user in PostHog with stored email on every visit
-            posthogIdentify(storedEmail, {
-                email: storedEmail,
-                email_domain: storedEmail.split('@')[1],
-                revisit_timestamp: new Date().toISOString(),
-                is_return_visitor: true
-            });
-            
-            // Always track email gate events on initialization, even for stored emails
-            posthogEvent('email_gate_initialized_with_stored_email', {
-                email_domain: storedEmail.split('@')[1],
-                timestamp: new Date().toISOString()
-            });
+                    // Always re-identify user in PostHog with stored email on every visit
+                    posthogIdentify(storedEmail, {
+                        email: storedEmail,
+                        email_domain: validation.domain,
+                        revisit_timestamp: new Date().toISOString(),
+                        is_return_visitor: true,
+                        is_business_email: validation.isBusinessEmail
+                    });
+                    
+                    // Always track email gate events on initialization, even for stored emails
+                    posthogEvent('email_gate_initialized_with_stored_email', {
+                        email_domain: validation.domain,
+                        timestamp: new Date().toISOString(),
+                        is_business_email: validation.isBusinessEmail
+                    });
 
-            if (onEmailSubmitted) {
-                onEmailSubmitted(storedEmail);
+                    if (onEmailSubmitted) {
+                        onEmailSubmitted(storedEmail);
+                    }
+                } else {
+                    // Stored email is invalid, clear it and treat as new visitor
+                    console.warn('Stored email is invalid:', validation.error);
+                    // Clear invalid stored email (assuming there's a clear function)
+                    if (typeof window !== 'undefined') {
+                        localStorage.removeItem('above_user_email');
+                        sessionStorage.removeItem('above_user_email');
+                    }
+                    
+                    posthogEvent('email_gate_invalid_stored_email_cleared', {
+                        timestamp: new Date().toISOString(),
+                        error: validation.error
+                    });
+                }
+            } else {
+                // Track when EmailGate is initialized without stored email
+                posthogEvent('email_gate_initialized_new_visitor', {
+                    timestamp: new Date().toISOString()
+                });
             }
-        } else {
-            // Track when EmailGate is initialized without stored email
-            posthogEvent('email_gate_initialized_new_visitor', {
-                timestamp: new Date().toISOString()
+        } catch (error) {
+            console.error('EmailGate initialization error:', error);
+            posthogEvent('email_gate_initialization_error', {
+                timestamp: new Date().toISOString(),
+                error: error.message
             });
+        } finally {
+            setIsInitialLoad(false);
         }
-        setIsInitialLoad(false);
     }, [onEmailSubmitted]);
 
     const handleEmailSubmit = async (e) => {
