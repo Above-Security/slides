@@ -18,16 +18,28 @@ const EmailGate = ({ children, onEmailSubmitted }) => {
             setIsEmailSubmitted(true);
             setEmail(storedEmail);
 
-            // Re-identify user in PostHog with stored email
+            // Always re-identify user in PostHog with stored email on every visit
             posthogIdentify(storedEmail, {
                 email: storedEmail,
-                email_domain: storedEmail.split('@')[1]
+                email_domain: storedEmail.split('@')[1],
+                revisit_timestamp: new Date().toISOString(),
+                is_return_visitor: true
             });
-            posthogEvent('email_gate_bypassed_stored');
+            
+            // Always track email gate events on initialization, even for stored emails
+            posthogEvent('email_gate_initialized_with_stored_email', {
+                email_domain: storedEmail.split('@')[1],
+                timestamp: new Date().toISOString()
+            });
 
             if (onEmailSubmitted) {
                 onEmailSubmitted(storedEmail);
             }
+        } else {
+            // Track when EmailGate is initialized without stored email
+            posthogEvent('email_gate_initialized_new_visitor', {
+                timestamp: new Date().toISOString()
+            });
         }
         setIsInitialLoad(false);
     }, [onEmailSubmitted]);
