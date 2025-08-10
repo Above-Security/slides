@@ -1,0 +1,162 @@
+/* Above Brand Gradients - Soft Security Design System */
+
+/* Base gradient with grain texture */
+.above-gradient {
+  position: relative;
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.6), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.5), transparent 50%),
+    radial-gradient(circle at center, rgba(255, 212, 196, 0.4), transparent 60%),
+    linear-gradient(135deg, #FFFAF8 0%, #FFF5F0 100%);
+}
+
+/* Grain overlay - apply to ::after pseudo element */
+.above-gradient::after,
+.above-grain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/noise.svg');
+  background-repeat: repeat;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure content appears above grain */
+.above-gradient > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Subtle variant for dashboards */
+.above-gradient-subtle {
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.3), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.25), transparent 50%),
+    radial-gradient(circle at center, rgba(255, 212, 196, 0.2), transparent 60%),
+    linear-gradient(135deg, #FFFAF8 0%, #FFF5F0 100%);
+}
+
+/* Light variant for cards */
+.above-gradient-light {
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.15), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.12), transparent 50%),
+    radial-gradient(circle at center, rgba(255, 212, 196, 0.1), transparent 60%),
+    linear-gradient(135deg, #FFFFFF 0%, #FFFAF8 100%);
+}
+
+/* Animated gradient */
+.above-gradient-animated {
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+/* Contextual gradients for different emotions */
+
+/* Empathy & Protection - Rose dominant */
+.above-gradient-empathy {
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 197, 214, 0.7), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(255, 224, 236, 0.4), transparent 50%),
+    linear-gradient(135deg, #FFF5F8 0%, #FFFAF8 100%);
+}
+
+/* Technology & Intelligence - Blue dominant */
+.above-gradient-tech {
+  background: 
+    radial-gradient(ellipse at top right, rgba(212, 233, 255, 0.7), transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(230, 243, 255, 0.4), transparent 50%),
+    linear-gradient(135deg, #F8FBFF 0%, #FFFAF8 100%);
+}
+
+/* Action & Trust - Peach dominant */
+.above-gradient-action {
+  background: 
+    radial-gradient(circle at center, rgba(255, 186, 160, 0.6), transparent 50%),
+    radial-gradient(ellipse at top, rgba(255, 212, 196, 0.3), transparent 50%),
+    linear-gradient(135deg, #FFF8F5 0%, #FFF5F0 100%);
+}
+
+/* Innovation & Insight - Lavender dominant */
+.above-gradient-insight {
+  background: 
+    radial-gradient(ellipse at bottom right, rgba(224, 212, 255, 0.6), transparent 50%),
+    radial-gradient(circle at top left, rgba(240, 230, 255, 0.3), transparent 50%),
+    linear-gradient(135deg, #FAF8FF 0%, #FFFAF8 100%);
+}
+
+/* Utility classes for quick application */
+.soft-glow {
+  box-shadow: 0 12px 45px -20px rgba(2, 6, 23, 0.25);
+}
+
+.soft-glow-rose {
+  box-shadow: 0 12px 45px -20px rgba(255, 197, 214, 0.45);
+}
+
+.soft-glow-peach {
+  box-shadow: 0 12px 45px -20px rgba(255, 186, 160, 0.45);
+}
+
+.soft-glow-blue {
+  box-shadow: 0 12px 45px -20px rgba(212, 233, 255, 0.45);
+}
+
+.soft-glow-lavender {
+  box-shadow: 0 12px 45px -20px rgba(224, 212, 255, 0.45);
+}
+
+/* Hover states with subtle color shifts */
+.above-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.above-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px -30px rgba(2, 6, 23, 0.30);
+}
+
+/* Accessibility - reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .above-gradient-animated {
+    animation: none;
+  }
+  
+  .above-interactive {
+    transition: none;
+  }
+  
+  .above-interactive:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode fallbacks */
+@media (prefers-contrast: high) {
+  .above-gradient,
+  .above-gradient-subtle,
+  .above-gradient-light {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+  }
+  
+  .above-gradient::after,
+  .above-grain::after {
+    display: none;
+  }
+}

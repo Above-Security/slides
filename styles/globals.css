@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Above brand gradients */
+@import './gradients.css';
+
 html, body {
-  @apply bg-white text-slate-900;
+  @apply bg-above-cream text-slate-900;
   scroll-behavior: smooth;
 }
 
 :root {
-  --ring: 0 0 0 3px rgba(99,102,241,0.2);
+  /* Above Brand Colors */
+  --above-rose: #FFE0EC;
+  --above-peach: #FFD4C4;
+  --above-blue: #D4E9FF;
+  --above-lavender: #E0D4FF;
+  --above-cream: #FFFAF8;
+  --above-white: #FFF5F0;
+  
+  /* Focus ring using soft blue */
+  --ring: 0 0 0 3px rgba(212, 233, 255, 0.5);
 }
