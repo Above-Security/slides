@@ -13,6 +13,9 @@ export default function TestPostHog() {
       uiHost: posthog.config?.ui_host || 'Not configured',
       projectKey: posthog.config?.token || 'Not configured',
       capturedEvents: posthog._capturedEvents?.length || 0,
+      deploymentVersion: window.__POSTHOG_DEPLOYMENT_VERSION || 'Not set',
+      disableDecide: posthog.config?.disable_decide || false,
+      advancedDisableDecide: posthog.config?.advanced_disable_decide || false,
     };
     setStatus(checkStatus);
 
@@ -53,6 +56,19 @@ export default function TestPostHog() {
   return (
     <div style={{ padding: '20px', fontFamily: 'monospace' }}>
       <h1>PostHog Proxy Test Page</h1>
+      
+      <div style={{
+        padding: '10px',
+        margin: '10px 0',
+        backgroundColor: status.deploymentVersion?.includes('v2-disable-decide') ? '#d4edda' : '#f8d7da',
+        border: '1px solid',
+        borderColor: status.deploymentVersion?.includes('v2-disable-decide') ? '#c3e6cb' : '#f5c6cb',
+        borderRadius: '4px',
+        color: status.deploymentVersion?.includes('v2-disable-decide') ? '#155724' : '#721c24',
+      }}>
+        <strong>Deployment Status:</strong> {status.deploymentVersion}
+        {status.deploymentVersion?.includes('v2-disable-decide') && ' ✓ Latest version deployed'}
+      </div>
       
       <h2>PostHog Status</h2>
       <pre>{JSON.stringify(status, null, 2)}</pre>
