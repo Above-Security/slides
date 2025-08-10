@@ -17,7 +17,7 @@ export default function TestPostHog() {
     setStatus(checkStatus);
 
     // Test proxy endpoint
-    fetch('/api/ingest')
+    fetch('/ph-proxy/')
       .then(res => {
         setProxyTest({
           status: res.status,
@@ -63,9 +63,10 @@ export default function TestPostHog() {
       <h2>Network Requests</h2>
       <p>Open DevTools Network tab to see requests to:</p>
       <ul>
-        <li>/api/ingest (proxy endpoint)</li>
-        <li>/api/ingest/decide</li>
-        <li>/api/ingest/batch</li>
+        <li>/ph-proxy/ (proxy endpoint)</li>
+        <li>/ph-proxy/decide</li>
+        <li>/ph-proxy/batch</li>
+        <li>/ph-proxy/flags</li>
       </ul>
       
       <button 
