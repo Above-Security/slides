@@ -1,17 +1,44 @@
-/* Above Brand Gradients - Soft Security Design System */
+/* Nudge.png Brand System - Exact Implementation */
 
-/* Base gradient with grain texture */
-.above-gradient {
+/* Primary nudge.png background gradient */
+.nudge-gradient {
   position: relative;
   background: 
-    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.6), transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.5), transparent 50%),
-    radial-gradient(circle at center, rgba(255, 212, 196, 0.4), transparent 60%),
-    linear-gradient(135deg, #FFFAF8 0%, #FFF5F0 100%);
+    radial-gradient(ellipse at top left, #FFB3C1 0%, transparent 40%),
+    radial-gradient(ellipse at center, #FFD4C9 0%, transparent 50%),
+    linear-gradient(to bottom right, #FFB3C1 0%, #FFD4C9 30%, #FFF5F0 100%);
+  background-attachment: fixed;
 }
 
-/* Grain overlay - apply to ::after pseudo element */
-.above-gradient::after,
+/* Nudge.png grain texture - high frequency noise */
+.nudge-grain {
+  position: relative;
+}
+
+.nudge-grain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' seed='5' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nudge-grain > *,
+.above-grain > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Legacy above-grain mapping */
 .above-grain::after {
   content: '';
   position: absolute;
@@ -19,27 +46,36 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/noise.svg');
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' seed='5' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  opacity: 0.04;
+  background-size: 200px 200px;
+  opacity: 0.3;
   mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Ensure content appears above grain */
-.above-gradient > * {
-  position: relative;
-  z-index: 2;
+/* Nudge.png glass morphism - exact match */
+.nudge-glass,
+.above-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 80px rgba(255, 182, 193, 0.2);
 }
 
-/* Subtle variant for dashboards */
+/* Subtle variant matching nudge.png aesthetic */
 .above-gradient-subtle {
-  background: 
-    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.3), transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.25), transparent 50%),
-    radial-gradient(circle at center, rgba(255, 212, 196, 0.2), transparent 60%),
-    linear-gradient(135deg, #FFFAF8 0%, #FFF5F0 100%);
+  position: relative;
+  background: linear-gradient(135deg,
+    rgba(255, 201, 214, 0.28) 0%,
+    rgba(255, 223, 205, 0.22) 35%,
+    rgba(255, 240, 235, 0.15) 70%,
+    rgba(255, 250, 248, 1) 100%);
 }
 
 /* Light variant for cards */

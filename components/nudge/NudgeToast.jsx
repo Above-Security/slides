@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function NudgeToast({ title = "Greetings from Above", body, primary = "Acknowledge", secondary = "View policy" }) {
+export default function NudgeToast({ title = "Greetings from Above", subtitle = "Risk detected", body, primary = "Justify", secondary = "Review Evidence" }) {
   return (
     <motion.div
       initial={{ x: 24, opacity: 0 }}
@@ -13,13 +13,14 @@ export default function NudgeToast({ title = "Greetings from Above", body, prima
       <motion.div
         animate={{ x: [0, 4, 0], rotate: [0, -0.6, 0] }}
         transition={{ repeat: Infinity, repeatDelay: 3.2, duration: 0.7, ease: "easeInOut" }}
-        className="rounded-xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-violet-50 p-4 text-slate-800 text-sm shadow-sm"
+        className="rounded-[24px] nudge-glass p-6 text-[var(--text-primary)] text-sm nudge-grain"
       >
-        <div className="text-[12px] font-semibold tracking-wide text-slate-600">{title}</div>
-        <div className="mt-1 leading-relaxed">{body}</div>
+        <div className="text-base font-semibold text-[var(--text-primary)] mb-1.5">{title}</div>
+        {subtitle && <div className="text-sm font-semibold text-[var(--text-secondary)] mb-3">{subtitle}</div>}
+        <div className="text-sm leading-relaxed text-[var(--text-body)] mb-4">{body}</div>
         <div className="mt-3 flex flex-wrap gap-2">
-          <button className="rounded-lg bg-slate-900 text-white px-3 py-1.5 text-xs font-medium">{primary}</button>
-          <button className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-800">{secondary}</button>
+          <button className="rounded-[var(--radius-button)] bg-[#0f0f0f] text-white px-4 py-2.5 text-xs font-medium hover:bg-[#1a1a1a] transition-all shadow-[var(--shadow-button)]">{primary}</button>
+          <button className="rounded-[var(--radius-button)] border border-[rgba(0,0,0,0.1)] bg-[rgba(255,255,255,0.9)] px-4 py-2.5 text-xs font-medium text-[var(--text-secondary)] hover:bg-white transition-all">{secondary}</button>
         </div>
       </motion.div>
     </motion.div>

@@ -1,7 +1,7 @@
 # Above Design System
 
 ## Overview
-The Above design system is built on principles of clarity, subtle sophistication, and contextual awareness. It combines glassmorphism effects with careful typography and motion to create an interface that feels both advanced and approachable.
+The Above design system is built on principles of clarity, subtle sophistication, and contextual awareness. It emphasizes restraint and professionalism through minimal use of color, subtle effects, and clear information hierarchy.
 
 ## Core Principles
 
@@ -11,9 +11,10 @@ The Above design system is built on principles of clarity, subtle sophistication
 - Color usage is intentional and minimal
 
 ### 2. **Subtle Sophistication**
-- Glass effects create depth without distraction
-- Animations enhance understanding, not decoration
-- Borders and shadows are light but purposeful
+- Minimal use of visual effects for maximum clarity
+- Animations are functional, not decorative
+- Borders and shadows are extremely light
+- Brand colors used sparingly as accents only
 
 ### 3. **Contextual Awareness**
 - Components adapt to their container and content
@@ -24,37 +25,40 @@ The Above design system is built on principles of clarity, subtle sophistication
 
 ### Colors
 
-#### Brand Palette
+#### Brand Palette (Use Sparingly)
 ```css
-/* Primary Brand Colors */
---brand-50:  #f5f7ff;  /* Lightest - backgrounds */
---brand-100: #eef1ff;  /* Light - hover states */
---brand-200: #dfe4ff;  /* Light accent */
---brand-300: #c9d1ff;  /* Medium light */
---brand-400: #a7b2ff;  /* Medium - secondary actions */
---brand-500: #8a95ff;  /* Primary brand color */
---brand-600: #6c78f7;  /* Primary dark */
---brand-700: #515cda;  /* Dark - active states */
---brand-800: #3842b1;  /* Very dark - headers */
---brand-900: #2e378f;  /* Darkest - high contrast */
+/* Subtle Brand Accents - Use with extreme restraint */
+--above-rose-200: #FFE0EC;     /* Very subtle rose accent */
+--above-peach-200: #FFD4C4;    /* Very subtle peach accent */
+--above-blue-200: #D4E9FF;     /* Very subtle blue accent */
+--above-lavender-200: #E0D4FF; /* Very subtle lavender accent */
+
+/* Primary UI Colors - Use as main palette */
+--slate-900: #0f172a;  /* Primary text, buttons */
+--slate-800: #1e293b;  /* Secondary text */
+--slate-700: #334155;  /* Tertiary text */
+--slate-600: #475569;  /* Body text */
+--slate-200: #e2e8f0;  /* Borders */
+--white: #ffffff;      /* Backgrounds */
 ```
 
 #### Semantic Colors
 ```css
 /* Text */
---text-primary:   slate-900;  /* Main content */
---text-secondary: slate-700;  /* Supporting text */
---text-tertiary:  slate-600;  /* Metadata */
---text-muted:     slate-500;  /* Disabled/placeholder */
+--text-primary:   #0f172a;  /* Main content (slate-900) */
+--text-secondary: #1e293b;  /* Supporting text (slate-800) */
+--text-tertiary:  #334155;  /* Metadata (slate-700) */
+--text-body:      #475569;  /* Body text (slate-600) */
+--text-muted:     #64748b;  /* Disabled (slate-500) */
 
 /* Backgrounds */
---bg-primary:   white;       /* Main surfaces */
---bg-secondary: slate-50;    /* Alternate sections */
---bg-tertiary:  slate-100;   /* Nested containers */
+--bg-primary:   #ffffff;    /* Main surfaces */
+--bg-secondary: #FFFAF8;    /* Subtle cream background */
+--bg-tertiary:  #f8fafc;    /* Alternate sections (slate-50) */
 
 /* Borders */
---border-default: slate-200;  /* Standard borders */
---border-light:   black/5;    /* Subtle glass borders */
+--border-default: #e2e8f0;  /* Standard borders (slate-200) */
+--border-light:   rgba(0,0,0,0.05);  /* Very subtle borders */
 ```
 
 ### Typography
@@ -62,9 +66,9 @@ The Above design system is built on principles of clarity, subtle sophistication
 #### Type Scale
 ```css
 /* Display */
---text-7xl: 7rem;    /* 112px - Hero only */
---text-6xl: 6rem;    /* 96px - Main headline */
---text-5xl: 3rem;    /* 48px - Section titles */
+--text-6xl: 3.75rem; /* 60px - Hero only (reduced) */
+--text-5xl: 3rem;    /* 48px - Main headline */
+--text-4xl: 2.25rem; /* 36px - Section titles */
 --text-3xl: 1.875rem;/* 30px - Subsections */
 --text-2xl: 1.5rem;  /* 24px - Cards */
 --text-xl:  1.25rem; /* 20px - Large body */
@@ -77,12 +81,10 @@ The Above design system is built on principles of clarity, subtle sophistication
 
 #### Font Weights
 ```css
---font-black:    900;  /* Hero headlines */
---font-bold:     700;  /* Strong emphasis */
+--font-bold:     700;  /* Primary headings only */
 --font-semibold: 600;  /* Section headers */
---font-medium:   500;  /* Interactive elements */
+--font-medium:   500;  /* Buttons, labels */
 --font-normal:   400;  /* Body text */
---font-light:    300;  /* Subtle text */
 ```
 
 ### Spacing
@@ -117,47 +119,32 @@ The Above design system is built on principles of clarity, subtle sophistication
 
 ### Shadows
 ```css
-/* Elevation Levels */
---shadow-xs:   0 1px 2px rgba(0,0,0,0.05);
---shadow-sm:   0 2px 4px rgba(0,0,0,0.07);
---shadow-md:   0 4px 8px rgba(0,0,0,0.10);
---shadow-lg:   0 8px 16px rgba(0,0,0,0.12);
---shadow-xl:   0 12px 24px rgba(0,0,0,0.15);
---shadow-soft: 0 12px 45px -20px rgba(2,6,23,0.25);
+/* Elevation Levels - Keep subtle */
+--shadow-sm:   0 1px 2px rgba(0,0,0,0.05);
+--shadow:      0 1px 3px rgba(0,0,0,0.1);
+--shadow-md:   0 4px 6px -1px rgba(0,0,0,0.1);
+--shadow-lg:   0 10px 15px -3px rgba(0,0,0,0.1);
 ```
 
 ## Glass Morphism System
 
 ### Glass Panel Variants
 
-#### Light Glass (Default)
+#### Subtle Glass (Primary)
+```css
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 1); /* slate-200 */
+}
+```
+
+#### Light Glass (Secondary)
 ```css
 .glass-light {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-```
-
-#### Strong Glass
-```css
-.glass-strong {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-```
-
-#### Colored Glass
-```css
-.glass-brand {
-  background: linear-gradient(
-    135deg,
-    rgba(138, 149, 255, 0.1),
-    rgba(255, 255, 255, 0.7)
-  );
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(138, 149, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(226, 232, 240, 0.5);
 }
 ```
 
@@ -192,50 +179,52 @@ The Above design system is built on principles of clarity, subtle sophistication
 - Tied to scroll progress for smooth feel
 
 #### Hover Interactions
-- Subtle Y-axis lift (-2px)
-- Shadow enhancement for depth
+- Minimal Y-axis lift (-1px to -2px max)
+- Subtle color transitions instead of shadow changes
 - Duration: 200ms with ease-out
+- Focus on color and opacity changes over movement
 
-#### Ambient Motion
-- Floating elements with 6-10s loops
-- Subtle scale and rotation changes
-- Creates life without distraction
+#### Ambient Motion (Use Very Sparingly)
+- Floating elements with 8-12s loops
+- Extremely subtle scale changes (1-3% max)
+- Minimal rotation (0-8 degrees max)
+- Only for decorative background elements, never content
 
 ## Gradient System
 
 ### Brand Gradients
 
-#### Primary Gradient
-```css
-.gradient-primary {
-  background: linear-gradient(
-    135deg,
-    #a78bfa,  /* violet-400 */
-    #22d3ee   /* cyan-400 */
-  );
-}
-```
-
-#### Extended Gradient
-```css
-.gradient-extended {
-  background: linear-gradient(
-    135deg,
-    #a78bfa,     /* violet-400 */
-    #22d3ee,     /* cyan-400 */
-    transparent
-  );
-}
-```
-
-#### Subtle Background
+#### Subtle Background Gradient (Use Sparingly)
 ```css
 .gradient-subtle {
-  background: radial-gradient(
-    circle at center,
-    rgba(167, 139, 250, 0.15),
-    transparent 70%
-  );
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.15), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(212, 233, 255, 0.12), transparent 50%),
+    linear-gradient(135deg, #FFFAF8 0%, #FFF5F0 100%);
+}
+```
+
+#### Very Light Gradient (For large areas)
+```css
+.gradient-light {
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 224, 236, 0.08), transparent 50%),
+    linear-gradient(135deg, #FFFFFF 0%, #FFFAF8 100%);
+}
+```
+
+#### No Gradients on Interactive Elements
+```css
+/* Buttons and interactive elements should use solid colors */
+.button-primary {
+  background: #0f172a; /* slate-900 */
+  color: white;
+}
+
+.button-secondary {
+  background: white;
+  border: 1px solid #e2e8f0; /* slate-200 */
+  color: #334155; /* slate-700 */
 }
 ```
 

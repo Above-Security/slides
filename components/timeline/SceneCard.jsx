@@ -13,7 +13,7 @@ function BGScaffold({ kind }) {
         <UIChrome title="HR System • Change Log">
           <div className="text-xs text-slate-500 space-y-2">
             <div className="flex items-center justify-between"><span>Subject</span><span className="font-medium text-slate-700">Employee-123</span></div>
-            <div className="flex items-center justify-between"><span>Action</span><span className="rounded bg-violet-50 px-2 py-0.5 text-violet-700">Demotion</span></div>
+            <div className="flex items-center justify-between"><span>Action</span><span className="rounded bg-slate-100 px-2 py-0.5 text-slate-700">Demotion</span></div>
             <div className="flex items-center justify-between"><span>Effective</span><span>Mon 9:12 AM</span></div>
             <div className="mt-2 text-[11px] italic text-slate-400">Context signal • No end-user alert</div>
           </div>
@@ -26,7 +26,7 @@ function BGScaffold({ kind }) {
             <div className="flex items-center justify-between text-[11px] text-slate-500">
               <span>Department</span><span>Finance (subject)</span>
             </div>
-            <div className="rounded-lg border border-slate-200 p-3">
+            <div className="rounded-[10px] border border-white/30 bg-white/40 backdrop-blur-sm p-3">
               <div className="h-2 w-1/2 rounded bg-slate-100 mb-2" />
               <div className="h-2 w-2/3 rounded bg-slate-100 mb-2" />
               <div className="h-24 rounded bg-slate-50" />
@@ -40,15 +40,15 @@ function BGScaffold({ kind }) {
         <UIChrome title="CRM • Data Staging (Org View)">
           <div className="text-sm space-y-2">
             <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-lg border border-slate-200 p-3 text-center">
+              <div className="rounded-[10px] border border-white/30 bg-white/40 backdrop-blur-sm p-3 text-center">
                 <div className="text-xs text-slate-500">Exports</div>
                 <div className="mt-1 text-lg font-semibold">3</div>
               </div>
-              <div className="rounded-lg border border-slate-200 p-3 text-center">
+              <div className="rounded-[10px] border border-white/30 bg-white/40 backdrop-blur-sm p-3 text-center">
                 <div className="text-xs text-slate-500">Copy/Paste bursts</div>
                 <div className="mt-1 text-lg font-semibold">5</div>
               </div>
-              <div className="rounded-lg border border-slate-200 p-3 text-center">
+              <div className="rounded-[10px] border border-white/30 bg-white/40 backdrop-blur-sm p-3 text-center">
                 <div className="text-xs text-slate-500">Objects</div>
                 <div className="mt-1 text-xs">Opportunities, Contacts</div>
               </div>
@@ -61,7 +61,7 @@ function BGScaffold({ kind }) {
       return (
         <UIChrome title="Salesforce • OAuth Consent Logged">
           <div className="text-sm space-y-3">
-            <div className="rounded-lg border border-slate-200 p-3 flex items-center justify-between">
+            <div className="rounded-[10px] border border-white/30 bg-white/40 backdrop-blur-sm p-3 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-lg bg-slate-200" />
                 <div>
@@ -79,7 +79,7 @@ function BGScaffold({ kind }) {
       return (
         <UIChrome title="Shadow SaaS • Notes App (Org View)">
           <div className="text-sm space-y-2">
-            <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-amber-900">Unapproved tool active alongside CRM session.</div>
+            <div className="rounded-lg border border-above-rose-100 bg-above-rose-50 p-3 text-slate-700">Unapproved tool active alongside CRM session.</div>
             <div className="text-[11px] text-slate-500">Linked to subject timeline • Guidance issued</div>
           </div>
         </UIChrome>
@@ -147,11 +147,11 @@ function BGScaffold({ kind }) {
             <div className="h-2 w-56 rounded bg-slate-100" />
             <div className="rounded-xl border border-slate-200 p-3">
               <div className="h-2 w-1/2 rounded bg-slate-100 mb-2" />
-              <div className="h-3 w-full rounded bg-gradient-to-r from-violet-400 to-cyan-400" />
+              <div className="h-3 w-full rounded bg-above-rose-100" />
             </div>
             <div className="grid grid-cols-3 gap-3">
               {Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="rounded-xl border border-slate-200 p-3">
+                <div key={i} className="rounded-[12px] border border-white/30 bg-white/40 backdrop-blur-sm p-3">
                   <div className="h-2 w-2/3 rounded bg-slate-100 mb-2" />
                   <div className="h-14 rounded bg-slate-50" />
                 </div>
@@ -166,13 +166,13 @@ function BGScaffold({ kind }) {
         <UIChrome title="Above • Guidance">
           <div className="space-y-3">
             <div className="h-2 w-56 rounded bg-slate-100" />
-            <div className="rounded-xl border border-slate-200 p-4">
+            <div className="rounded-[12px] border border-white/30 bg-white/40 backdrop-blur-sm p-4">
               <div className="h-2 w-2/3 rounded bg-slate-100 mb-2" />
               <div className="h-2 w-1/2 rounded bg-slate-100 mb-4" />
-              <div className="h-10 rounded bg-gradient-to-br from-cyan-50 to-violet-50" />
+              <div className="h-10 rounded bg-slate-50" />
             </div>
             <div className="flex items-center gap-2 text-[11px] text-slate-500">
-              <div className="h-2 w-2 rounded-full bg-cyan-400" />
+              <div className="h-2 w-2 rounded-full bg-above-rose-300" />
               <span>Guided at each step • No incident</span>
             </div>
           </div>
