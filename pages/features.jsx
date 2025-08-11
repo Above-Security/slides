@@ -1,5 +1,6 @@
 "use client";
 
+import SEO from "../components/SEO";
 import EmailGate from "../components/ui/EmailGate";
 import HeroHeader from "../components/sections/HeroHeader";
 import ProductShowcase from "../components/sections/ProductShowcase";
@@ -16,6 +17,17 @@ import ApplicationDiscoveryDemo from "../components/demos/ApplicationDiscoveryDe
 
 export default function Features() {
     return (
+        <>
+            <SEO 
+                title="Platform Features - Runtime Insider Protection"
+                description="Discover Above Security's comprehensive platform features: real-time threat detection, behavioral analytics, AI-powered phishing detection, and complete application discovery with authentication analysis."
+                canonicalUrl="https://above.security/features"
+                keywords="security platform features, runtime protection, threat detection, behavioral analytics, phishing detection, application discovery, insider threat prevention"
+                breadcrumbs={[
+                    { name: "Home", url: "/" },
+                    { name: "Features", url: "/features" }
+                ]}
+            />
         <EmailGate
             title="Access Above Insider Protection Platform"
             subtitle="Get exclusive access to our comprehensive security features and see how Above stops risk before it happens."
@@ -272,6 +284,7 @@ export default function Features() {
                 </section>
             </div>
         </EmailGate>
+        </>
     );
 }
 

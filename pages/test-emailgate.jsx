@@ -1,7 +1,15 @@
+import SEO from '../components/SEO';
 import EmailGate from '../components/ui/EmailGate';
 
 export default function TestEmailGate() {
   return (
+    <>
+      <SEO 
+        title="Email Gate Demo - Above Security"
+        description="Test the Above Security email gate component - experience our premium content access system with elegant design and smooth user experience."
+        canonicalUrl="https://above.security/test-emailgate"
+        keywords="email gate demo, content access, Above Security demo"
+      />
     <EmailGate 
       title="Access Above Insider Protection Slides"
       subtitle="Get exclusive access to our latest security insights and protection strategies designed for modern businesses."
@@ -39,5 +47,6 @@ export default function TestEmailGate() {
         </div>
       </div>
     </EmailGate>
+    </>
   );
 }

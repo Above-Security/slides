@@ -2,6 +2,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
+import SEO from "../components/SEO";
 import SceneCard from "../components/timeline/SceneCard";
 import TimelineBox from "../components/timeline/TimelineBox";
 import Connector from "../components/timeline/Connector";
@@ -35,7 +36,14 @@ export default function Home() {
   const progressSpring = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.6 });
 
   return (
-    <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
+    <>
+      <SEO 
+        title="Above Security - Real-time Insider Threat Protection"
+        description="Above Security delivers real-time behavioral analytics and AI-powered insider threat detection. Stop data breaches before they happen with runtime protection for modern enterprises."
+        canonicalUrl="https://above.security"
+        keywords="insider threat protection, behavioral analytics, AI threat detection, data breach prevention, enterprise security, runtime protection, security monitoring"
+      />
+      <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
       <Hero />
 
       {/* Dual Timelines */}
@@ -112,6 +120,7 @@ export default function Home() {
           </form>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
