@@ -6,6 +6,7 @@ import UIChrome from "../primitives/UIChrome";
 
 export default function EvidenceTimelineDemo() {
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobileEnlarged, setIsMobileEnlarged] = useState(false);
     const imageSrc = "/single-incident-page.png";
 
     // Preload the image
@@ -21,6 +22,7 @@ export default function EvidenceTimelineDemo() {
                     className="relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 cursor-pointer"
                     onHoverStart={() => setIsHovered(true)}
                     onHoverEnd={() => setIsHovered(false)}
+                    onClick={() => setIsMobileEnlarged(true)}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.5 }}
                 >
@@ -42,9 +44,44 @@ export default function EvidenceTimelineDemo() {
                 </motion.div>
             </UIChrome>
 
-            {/* Floating enlarged preview */}
+            {/* Mobile click-to-enlarge modal */}
+            <AnimatePresence>
+                {isMobileEnlarged && (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center md:hidden bg-black/80 p-4"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsMobileEnlarged(false)}
+                    >
+                        <motion.div
+                            className="relative max-w-full max-h-full overflow-auto bg-white rounded-xl"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setIsMobileEnlarged(false)}
+                                className="absolute top-2 right-2 z-10 bg-white/90 rounded-full p-2 shadow-lg"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <img
+                                src={imageSrc}
+                                alt="Evidence Timeline Dashboard - Enlarged"
+                                className="w-full h-auto block"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Desktop floating enlarged preview */}
             <motion.div
-                className="fixed z-50 pointer-events-none"
+                className="fixed z-50 pointer-events-none hidden md:block"
                 initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
                 animate={{
                     opacity: isHovered ? 1 : 0,
