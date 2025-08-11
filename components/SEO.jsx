@@ -183,7 +183,7 @@ export default function SEO({
       <meta name="format-detection" content="telephone=no" />
       
       {/* Favicons and Icons */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/png" href="/logo.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
       <link rel="manifest" href="/site.webmanifest" />
       
