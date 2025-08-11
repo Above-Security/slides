@@ -124,7 +124,7 @@ export default function Features() {
                                 description="LLM-based semantic analysis catches credential harvesting even on legitimate platforms."
                                 points={[
                                     { text: "LOTS attacks on Microsoft, Google, Dropbox platforms", dotColor: "bg-above-blue-400" },
-                                    { text: "Deepfakes, QR codes, and browser-in-browser attacks", dotColor: "bg-above-blue-400" },
+                                    { text: "DocuSign phishing, QR codes, and browser-in-browser attacks", dotColor: "bg-above-blue-400" },
                                     { text: "Real-time page inspection beyond URL checking", dotColor: "bg-above-blue-400" }
                                 ]}
                                 visualComponent={<PhishingDetectionDemo />}
@@ -187,33 +187,33 @@ export default function Features() {
                             cards={[
                                 {
                                     title: "LOTS Phishing",
-                                    description: "Credential harvesting on legitimate trusted sites",
-                                    items: ["Forms on microsoft.com", "Deepfakes in meetings", "MFA bypass attempts"]
+                                    description: "Advanced phishing that bypasses traditional defenses",
+                                    items: ["Phishing hosted on trusted services", "Forms on microsoft.com", "DocuSign phishing attacks"]
                                 },
                                 {
                                     title: "Data Exfiltration",
-                                    description: "Mass downloads and data staging patterns",
-                                    items: ["Copy/paste bursts", "Cross-app transfers", "Database enumeration"]
+                                    description: "Data staging or hoarding pre-departure",
+                                    items: ["Mass downloads before leaving", "Cross-app data transfers", "Unauthorized data collection"]
                                 },
                                 {
-                                    title: "Shadow SaaS",
-                                    description: "Unsanctioned apps and risky OAuth grants",
-                                    items: ["Unapproved tools", "Personal accounts", "API connections"]
+                                    title: "Shadow IT & OAuth",
+                                    description: "Unauthorized applications and permissions",
+                                    items: ["Downloading risky software", "Authorizing unsanctioned third-party apps", "OAuth over-permissioned consents"]
                                 },
                                 {
-                                    title: "AI Misuse",
-                                    description: "Sensitive data in prompts and outputs",
-                                    items: ["IP exposure", "Policy violations", "Jailbreak attempts"]
+                                    title: "Shadow AI Tools",
+                                    description: "AI tools circumventing approved workflows",
+                                    items: ["Unapproved AI usage", "Sensitive data in prompts", "Policy violations"]
                                 },
                                 {
-                                    title: "Insider Threats",
-                                    description: "Behavioral anomalies and reconnaissance",
-                                    items: ["Privilege escalation", "After-hours access", "Role switching"]
+                                    title: "Access Anomalies",
+                                    description: "Cross-role access and credential misuse",
+                                    items: ["Payroll accessing sales data", "Sharing floating credentials", "Circumventing monitoring controls"]
                                 },
                                 {
-                                    title: "Compliance Risk",
-                                    description: "Regulatory violations and audit gaps",
-                                    items: ["HIPAA/PII exposure", "Retention breaches", "MFA weakness"]
+                                    title: "Productivity & Compliance",
+                                    description: "Work hour misuse and security gaps",
+                                    items: ["Excessive personal use during work", "Operating without MFA", "High-risk web browsing"]
                                 }
                             ]}
                         />
