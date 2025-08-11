@@ -12,9 +12,9 @@ export default function PageHeader({ badge, headline, subheadline, ctaText, ctaH
           {headline}
         </h1>
         
-        <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+        <div className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
           {subheadline}
-        </p>
+        </div>
         
         {ctaText && (
           <a href={ctaHref} className="inline-flex items-center px-8 py-4 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors">
