@@ -36,7 +36,7 @@ export default function Features() {
                 {/* Hero Header */}
                 <HeroHeader
                     badge="Platform"
-                    headline="See intent. Stop risk."
+                    headline="Discover everything. See intent. Stop risk."
                     subheadline={
                         <>
                             Real-time intelligence on{' '}
@@ -138,7 +138,7 @@ export default function Features() {
                                 points={[
                                     { text: "Full session reconstruction and immutable logs", dotColor: "bg-above-lavender-400" },
                                     { text: "MFA hygiene checks and policy alignment (HIPAA, ISO, PCI)", dotColor: "bg-above-lavender-400" },
-                                    { text: "Evidence packs your auditors and investigators can trust", dotColor: "bg-above-lavender-400" }
+                                    { text: "Evidence packs your auditors, HR teams, and investigators can trust", dotColor: "bg-above-lavender-400" }
                                 ]}
                                 visualComponent={<EvidenceTimelineDemo />}
                                 reverse={true}
