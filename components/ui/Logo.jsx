@@ -10,10 +10,10 @@ export default function Logo({
     showText = false 
 }) {
     const sizeClasses = {
-        small: "w-10 h-10",
-        medium: "w-14 h-14",
-        large: "w-20 h-20",
-        xlarge: "w-28 h-28"
+        small: "w-8 h-8",
+        medium: "w-12 h-12",
+        large: "w-16 h-16",
+        xlarge: "w-20 h-20"
     };
 
     const logoSize = sizeClasses[size] || sizeClasses.large;
