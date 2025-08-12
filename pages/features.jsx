@@ -1,7 +1,7 @@
 "use client";
 
 import SEO from "../components/SEO";
-import Logo from "../components/ui/Logo";
+import BrandLogo from "../components/ui/BrandLogo";
 import EmailGate from "../components/ui/EmailGate";
 import HeroHeader from "../components/sections/HeroHeader";
 import ProductShowcase from "../components/sections/ProductShowcase";
@@ -34,9 +34,9 @@ export default function Features() {
             subtitle="Get exclusive access to our comprehensive security features and see how Above stops risk before it happens."
         >
             <div className="min-h-screen w-full bg-white">
-                {/* Logo Header */}
-                <div className="w-full pt-6 pb-2 px-6 flex justify-center">
-                    <Logo size="xlarge" showText={false} />
+                {/* Brand Header */}
+                <div className="w-full pt-8 pb-4 px-6 flex justify-center">
+                    <BrandLogo size="large" showText={true} showUnderline={true} />
                 </div>
                 
                 {/* Hero Header */}

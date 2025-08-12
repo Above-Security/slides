@@ -1,7 +1,7 @@
 "use client";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { BRAND } from "../lib/constants";
+import BrandLogo from "./ui/BrandLogo";
 
 export default function Hero() {
   const prefersReduced = useReducedMotion();
@@ -24,10 +24,7 @@ export default function Hero() {
     <header ref={heroRef} className="relative isolate overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-20 md:pt-24 md:pb-24">
         <motion.div style={{ y: yTitle }} className="flex items-center gap-3">
-          <div className="relative">
-            <div className="text-5xl md:text-6xl font-bold tracking-tight text-[var(--text-primary)]">{BRAND}</div>
-            <motion.span aria-hidden className="absolute left-0 -bottom-2 block h-[2px] w-20 rounded bg-gradient-to-r from-[#FFB6C1] to-[#FFDAC1]" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }} />
-          </div>
+          <BrandLogo size="xlarge" showText={true} showUnderline={true} href={null} />
         </motion.div>
 
         <motion.h1 style={{ y: yTitle }} className="mt-5 text-2xl md:text-4xl font-semibold leading-[1.1] text-[var(--text-primary)]">

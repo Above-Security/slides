@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Logo({ 
     size = "large", 
@@ -9,29 +8,31 @@ export default function Logo({
     href = "/",
     showText = false 
 }) {
-    const sizeClasses = {
-        small: "w-4 h-4",
-        medium: "w-6 h-6",
-        large: "w-8 h-8",
-        xlarge: "w-10 h-10"
+    // Define actual pixel sizes for each size variant
+    const sizes = {
+        tiny: 36,
+        small: 44,
+        medium: 52,
+        large: 60,
+        xlarge: 72
     };
 
-    const logoSize = sizeClasses[size] || sizeClasses.large;
+    const pixelSize = sizes[size] || sizes.large;
 
     return (
         <Link 
             href={href}
             className={`inline-flex items-center gap-3 group transition-all duration-300 ${className}`}
         >
-            <div className={`relative ${logoSize} transition-all duration-200 ease-out group-hover:scale-105`}>
+            <div 
+                className="relative transition-all duration-200 ease-out group-hover:scale-105"
+                style={{ width: `${pixelSize}px`, height: `${pixelSize}px` }}
+            >
                 <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/10 to-above-lavender-400/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
-                <Image
+                <img
                     src="/logo-black.svg"
                     alt="Above Security Logo"
-                    width={128}
-                    height={128}
                     className="w-full h-full object-contain relative z-10 drop-shadow-md group-hover:drop-shadow-lg transition-all duration-200"
-                    priority
                 />
             </div>
             {showText && (

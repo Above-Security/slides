@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import posthog from '../../lib/posthog';
+import BrandLogo from './BrandLogo';
 
 export default function EmailGate({ children, title = "Access Above Insider Protection Slides", subtitle = "Get exclusive access to our latest security insights and protection strategies." }) {
   const [email, setEmail] = useState('');
@@ -144,16 +145,9 @@ export default function EmailGate({ children, title = "Access Above Insider Prot
 
             {/* Content */}
             <div className="text-center mb-8">
-              {/* Logo with brand name */}
-              <div className="flex flex-col items-center justify-center mb-6 group cursor-pointer">
-                <img 
-                  src="/logo-black.svg" 
-                  alt="Above Security" 
-                  className="h-16 w-auto transition-transform duration-300 group-hover:scale-110 mb-2" 
-                />
-                <span className="text-xl font-bold text-slate-900 group-hover:text-slate-700 transition-colors duration-300">
-                  Above
-                </span>
+              {/* Brand Logo */}
+              <div className="flex justify-center mb-6">
+                <BrandLogo size="small" showText={true} showUnderline={false} layout="vertical" href={null} />
               </div>
               
               {/* Header */}
