@@ -46,8 +46,8 @@ export default function Home() {
       />
       <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
       {/* Logo Header */}
-      <div className="w-full py-8 px-6 flex justify-center">
-        <Logo size="large" showText={false} />
+      <div className="w-full py-3 px-6 flex justify-center">
+        <Logo size="xlarge" showText={false} />
       </div>
       
       <Hero />
