@@ -36,7 +36,7 @@ export default function Features() {
             <div className="min-h-screen w-full bg-white">
                 {/* Logo Header */}
                 <div className="w-full py-8 px-6 flex justify-center">
-                    <Logo size="xlarge" showText={false} />
+                    <Logo size="large" showText={false} />
                 </div>
                 
                 {/* Hero Header */}

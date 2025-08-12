@@ -10,10 +10,10 @@ export default function Logo({
     showText = false 
 }) {
     const sizeClasses = {
-        small: "w-10 h-10",
-        medium: "w-16 h-16",
-        large: "w-24 h-24",
-        xlarge: "w-32 h-32"
+        small: "w-8 h-8",
+        medium: "w-12 h-12",
+        large: "w-16 h-16",
+        xlarge: "w-20 h-20"
     };
 
     const logoSize = sizeClasses[size] || sizeClasses.large;
@@ -23,14 +23,14 @@ export default function Logo({
             href={href}
             className={`inline-flex items-center gap-3 group transition-all duration-300 ${className}`}
         >
-            <div className={`relative ${logoSize} transition-all duration-300 ease-out group-hover:scale-110 group-hover:rotate-3`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/20 to-above-lavender-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className={`relative ${logoSize} transition-all duration-200 ease-out group-hover:scale-105`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/10 to-above-lavender-400/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
                 <Image
                     src="/logo.png"
                     alt="Above Security Logo"
                     width={128}
                     height={128}
-                    className="w-full h-full object-contain relative z-10 drop-shadow-lg group-hover:drop-shadow-2xl transition-all duration-300"
+                    className="w-full h-full object-contain relative z-10 drop-shadow-md group-hover:drop-shadow-lg transition-all duration-200"
                     priority
                 />
             </div>
