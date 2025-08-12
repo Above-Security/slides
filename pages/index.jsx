@@ -3,6 +3,7 @@ import React from "react";
 import { useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import SEO from "../components/SEO";
+import Logo from "../components/ui/Logo";
 import SceneCard from "../components/timeline/SceneCard";
 import TimelineBox from "../components/timeline/TimelineBox";
 import Connector from "../components/timeline/Connector";
@@ -44,6 +45,11 @@ export default function Home() {
         keywords="insider threat protection, behavioral analytics, AI threat detection, data breach prevention, enterprise security, runtime protection, security monitoring"
       />
       <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
+      {/* Logo Header */}
+      <div className="w-full py-8 px-6 flex justify-center bg-gradient-to-b from-white to-gray-50/50">
+        <Logo size="xlarge" showText={true} />
+      </div>
+      
       <Hero />
 
       {/* Dual Timelines */}
