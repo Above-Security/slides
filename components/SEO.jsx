@@ -31,7 +31,7 @@ export default function SEO({
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${siteUrl}/logo.png`,
+      "url": `${siteUrl}/logo-black.svg`,
       "width": 400,
       "height": 400
     },
@@ -94,7 +94,7 @@ export default function SEO({
       "name": "Above Security",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`
+        "url": `${siteUrl}/logo-black.svg`
       }
     }
   };
@@ -115,7 +115,7 @@ export default function SEO({
       "name": "Above Security",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`
+        "url": `${siteUrl}/logo-black.svg`
       }
     },
     "datePublished": article.datePublished || new Date().toISOString(),
@@ -183,8 +183,8 @@ export default function SEO({
       <meta name="format-detection" content="telephone=no" />
       
       {/* Favicons and Icons */}
-      <link rel="icon" type="image/png" href="/logo.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+      <link rel="icon" type="image/svg+xml" href="/logo-black.svg" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/logo-black.svg" />
       <link rel="manifest" href="/site.webmanifest" />
       
       {/* Preconnect for Performance */}

@@ -26,7 +26,7 @@ export default function Logo({
             <div className={`relative ${logoSize} transition-all duration-200 ease-out group-hover:scale-105`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/10 to-above-lavender-400/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
                 <Image
-                    src="/logo.png"
+                    src="/logo-black.svg"
                     alt="Above Security Logo"
                     width={128}
                     height={128}

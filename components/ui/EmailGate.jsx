@@ -147,7 +147,7 @@ export default function EmailGate({ children, title = "Access Above Insider Prot
               {/* Logo with brand name */}
               <div className="flex flex-col items-center justify-center mb-6 group cursor-pointer">
                 <img 
-                  src="/logo.png" 
+                  src="/logo-black.svg" 
                   alt="Above Security" 
                   className="h-16 w-auto transition-transform duration-300 group-hover:scale-110 mb-2" 
                 />
