@@ -42,7 +42,7 @@ Turn live session intelligence into clear, defensible records.
 
 * Full session reconstruction and immutable logs
 * MFA hygiene checks and policy alignment (HIPAA, ISO, PCI)
-* Evidence packs your auditors — and investigators — can trust
+* Evidence packs your auditors, HR & investigators — can trust
 
 ---
 
