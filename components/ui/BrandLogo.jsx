@@ -11,36 +11,41 @@ export default function BrandLogo({
     className = "",
     layout = "horizontal" // horizontal or vertical
 }) {
-    // Logo sizes should be proportional to text x-height
-    // Following typography best practices: logo height ≈ 1.2-1.5x the x-height of text
+    // Logo sizes follow typography best practices:
+    // - Logo height ≈ 1.3-1.5x the cap height for optimal visual balance
+    // - Underline spacing: 0.15em from baseline (best practice)
     const sizes = {
         small: {
-            logo: 24,  // For ~20px text (text-xl)
+            logo: 20,  // Reduced for better proportion with text-xl (20px)
             text: "text-xl",
             textMd: "md:text-2xl",
             gap: "gap-2",
-            underlineHeight: "h-[1.5px]"
+            underlineHeight: "h-[1.5px]",
+            underlineBottom: "bottom-[-0.35rem]" // ~0.15em spacing from baseline
         },
         medium: {
-            logo: 32,  // For ~28px text (text-3xl)
+            logo: 28,  // Optimized for text-2xl (24px)
             text: "text-2xl",
             textMd: "md:text-3xl", 
             gap: "gap-2.5",
-            underlineHeight: "h-[2px]"
+            underlineHeight: "h-[2px]",
+            underlineBottom: "bottom-[-0.4rem]" // Proportional spacing
         },
         large: {
-            logo: 44,  // For ~36px text (text-4xl)
+            logo: 36,  // Balanced with text-3xl (30px)
             text: "text-3xl",
             textMd: "md:text-4xl",
             gap: "gap-3",
-            underlineHeight: "h-[2px]"
+            underlineHeight: "h-[2px]",
+            underlineBottom: "bottom-[-0.5rem]" // Increased gap for larger text
         },
         xlarge: {
-            logo: 56,  // For ~48px text (text-5xl)
+            logo: 48,  // Refined for text-4xl (36px)
             text: "text-4xl",
             textMd: "md:text-5xl",
             gap: "gap-4",
-            underlineHeight: "h-[2.5px]"
+            underlineHeight: "h-[2.5px]",
+            underlineBottom: "bottom-[-0.6rem]" // Optimal spacing for large text
         }
     };
 
@@ -73,7 +78,7 @@ export default function BrandLogo({
                     {showUnderline && (
                         <motion.span 
                             aria-hidden 
-                            className={`absolute left-0 -bottom-0.5 block ${currentSize.underlineHeight} w-full rounded-full bg-gradient-to-r from-above-rose-400 to-above-peach-400`}
+                            className={`absolute left-0 ${currentSize.underlineBottom} block ${currentSize.underlineHeight} w-full rounded-full bg-gradient-to-r from-above-rose-400 to-above-peach-400`}
                             initial={{ scaleX: 0, originX: 0 }} 
                             animate={{ scaleX: 1 }} 
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }} 
