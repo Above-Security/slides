@@ -5,7 +5,7 @@ export default function SEO({
   description = "Above Security provides real-time insider threat protection with behavioral analytics, AI-powered threat detection, and comprehensive security monitoring for modern enterprises.",
   ogTitle,
   ogDescription,
-  ogImage = "https://above.security/oauth-greeting.png",
+  ogImage = "https://abovesec.com/oauth-greeting.png",
   ogType = "website",
   canonicalUrl,
   keywords = "insider threat protection, behavioral analytics, security monitoring, AI threat detection, runtime protection, enterprise security, data exfiltration prevention",
@@ -13,7 +13,7 @@ export default function SEO({
   breadcrumbs = null,
   pageType = "website"
 }) {
-  const siteUrl = "https://above.security";
+  const siteUrl = "https://abovesec.com";
   const fullTitle = title.includes('Above Security') ? title : `${title} | Above Security`;
   const finalOgTitle = ogTitle || fullTitle;
   const finalOgDescription = ogDescription || description;

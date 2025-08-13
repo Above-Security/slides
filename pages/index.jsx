@@ -1,127 +1,184 @@
 "use client";
-import React from "react";
-import { useRef } from "react";
-import { useScroll, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
 import SEO from "../components/SEO";
 import Logo from "../components/ui/Logo";
-import SceneCard from "../components/timeline/SceneCard";
-import TimelineBox from "../components/timeline/TimelineBox";
-import Connector from "../components/timeline/Connector";
-import UnifiedDashboard from "../components/UnifiedDashboard";
-import Hero from "../components/Hero";
-import UIChrome from "../components/primitives/UIChrome";
-import NudgeToast from "../components/nudge/NudgeToast";
-import { POLICY_OAUTH } from "../lib/constants";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePostHog } from "../hooks/usePostHog";
 
 export default function Home() {
-  // Build scenes with explicit component wiring
-  const orgScenes = [
-    { time: "Mon 9:12 AM", headline: "HR role change ingested.", sub: "Above records demotion as context. Subject sensitivity adjusted; no end-user alert.", bgKind: "hr", Component: SceneCard },
-    { time: "Tue 10:41–11:23 AM", headline: "Cross-role deep session in CRM (42m).", sub: "Non-Sales user enumerates opportunities and contacts in sequence. Added as behavior signal.", bgKind: "org-crm-deep", Component: SceneCard },
-    { time: "Wed 9:06 AM", headline: "Data staging indicators detected.", sub: "3 exports • 5 copy/paste bursts • High-value objects touched (Opportunities, Contacts).", bgKind: "org-staging", Component: SceneCard },
-    { time: "Wed 2:47 PM", headline: "OAuth consent in Salesforce (Zapier).", sub: "Scopes captured: pipeline.read, contacts.read, offline_access. Provenance logged to the same subject timeline.", bgKind: "org-oauth-consent", Component: SceneCard },
-    { time: "Thu 4:18 PM", headline: "Shadow SaaS during sensitive workflow.", sub: "Unapproved notes app active while viewing CRM deals. Event linked; guidance issued to switch to approved tool.", bgKind: "org-shadow-saas", Component: SceneCard },
-    { time: "Fri 10:04 AM", headline: "Case timeline compiled.", sub: "Week’s context, behaviors, nudges assembled with timestamps, scopes, policy refs, and provenance.", bgKind: "cta-org", Component: SceneCard },
-  ];
-  const insiderScenes = [
-    { time: "Mon 9:12 AM", headline: "Start of week.", sub: "No prompts. Above updates context silently after HR change.", bgKind: "insider-start", Component: SceneCard },
-    { time: "Tue 10:41–11:23 AM", headline: "Browsing Sales pipeline (42m).", sub: "Nudge: You’re outside your usual scope. If legitimate, request approval.", bgKind: "insider-crm-deep", Component: SceneCard },
-    { time: "Wed 9:06 AM", headline: "Exporting and copying objects.", sub: "Nudge: Use approved export channel; large/bulk actions are recorded.", bgKind: "insider-staging", Component: SceneCard },
-    { time: "Wed 2:47 PM", headline: "Authorizing Zapier in Salesforce.", sub: "Nudge at consent: Review scopes; request approval if required. Event recorded.", bgKind: "insider-oauth-consent", Component: SceneCard },
-    { time: "Thu 4:18 PM", headline: "Using an unapproved notes app.", sub: "Nudge: Switch to the approved tool for sensitive data.", bgKind: "insider-shadow-saas", Component: SceneCard },
-    { time: "Fri 10:04 AM", headline: "Guided, contained.", sub: "No incident. Clear audit trail. User saw rationale at each step.", bgKind: "cta-insider", Component: SceneCard },
-  ];
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { identify, capture } = usePostHog();
 
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
-  const progressSpring = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.6 });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // PostHog tracking
+    identify(email, {
+      email: email,
+      waitlist_signup_date: new Date().toISOString(),
+      source: 'homepage_waitlist'
+    });
+    
+    capture('waitlist_signup', {
+      email: email,
+      page: 'homepage'
+    });
+    
+    // Here you would normally send to your backend
+    console.log("Waitlist submission:", email);
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setEmail("");
+  };
 
   return (
     <>
       <SEO 
-        title="Above Security - Real-time Insider Threat Protection"
-        description="Above Security delivers real-time behavioral analytics and AI-powered insider threat detection. Stop data breaches before they happen with runtime protection for modern enterprises."
+        title="Above Security - Insider Protection"
+        description="The future of insider threat protection. Protect your organization and your people with empathetic, intelligent security."
         canonicalUrl="https://above.security"
-        keywords="insider threat protection, behavioral analytics, AI threat detection, data breach prevention, enterprise security, runtime protection, security monitoring"
+        keywords="insider protection, security, threat detection, enterprise security, data protection"
       />
-      <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
       
-      <Hero />
-
-      {/* Dual Timelines */}
-      <section id="timeline" className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8">
-          <TimelineBox label="Protect the Organization" highlight="Detect intent. Assemble evidence. See the full story." scenes={orgScenes} progress={progressSpring} />
-          <Connector progress={progressSpring} />
-          <TimelineBox label="Protect the Insider" highlight="Prevent mistakes. Nudge with empathy." scenes={insiderScenes} progress={progressSpring} />
-        </div>
-      </section>
-
-      {/* Midpoint — consolidated */}
-      <section className="mx-auto max-w-6xl px-6">
-        <div className="my-12 md:my-16 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.25)] overflow-hidden">
-          <div className="mb-4 md:mb-6 text-center">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Midpoint</div>
-            <div className="text-2xl md:text-3xl font-semibold">Where the narratives meet</div>
-            <p className="mt-2 text-slate-600">A single interface showing behavioral context and real-time guidance.</p>
-          </div>
-          <div className="grid grid-cols-1 gap-5 md:gap-6">
-            <UnifiedDashboard />
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* Static gradient background */}
+        <div className="fixed inset-0 bg-gradient-to-br from-above-cream via-white to-above-white">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-above-rose-700/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-above-lavender-700/20 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-above-peach-700/15 rounded-full blur-3xl" />
           </div>
         </div>
-      </section>
 
-      {/* Nudge demo anchor */}
-      <section id="nudge" className="mx-auto max-w-6xl px-6 pb-12">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <div className="mb-3 text-lg md:text-xl font-semibold">Try the Nudge</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <UIChrome title="Salesforce • Authorizing Zapier (Demo)">
-              <div className="space-y-3">
-                <div className="h-20 rounded border border-slate-200 p-3">
-                  <div className="h-2 w-2/3 rounded bg-slate-100 mb-1" />
-                  <div className="h-2 w-1/2 rounded bg-slate-100" />
-                </div>
-                <NudgeToast body={<span>You're about to grant <span className="font-medium">sensitive permissions</span>. Please request approval if required.</span>} primary="Request approval" secondary="View policy" />
-              </div>
-            </UIChrome>
-            <div className="rounded-xl border border-slate-200 p-4 bg-slate-50/60">
-              <div className="text-sm text-slate-700 font-medium mb-2">What happens</div>
-              <ul className="text-sm text-slate-600 space-y-1 list-disc pl-5">
-                <li>Above shows in-context guidance without blocking.</li>
-                <li>Event is recorded with scopes and provenance.</li>
-                <li>Investigation timeline updates in real time.</li>
-              </ul>
+        {/* Navigation */}
+        <nav className="relative z-10 px-6 py-6 md:px-12 md:py-8">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Logo size="small" showText={false} />
+              <span className="text-2xl font-bold text-black">Above</span>
             </div>
           </div>
-        </div>
-      </section>
+        </nav>
 
-      {/* Access section */}
-      <section id="access" className="mx-auto max-w-4xl px-6 pb-24">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-lg font-semibold mb-2">Request Access</div>
-          <p className="text-sm text-slate-600 mb-4">We’re currently in private preview. Tell us a bit about your team and we’ll be in touch.</p>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="Work email" />
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="Company" />
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="# of employees" />
-            <select className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200">
-              <option>Role</option>
-              <option>Security</option>
-              <option>IT</option>
-              <option>HR</option>
-              <option>Compliance</option>
-              <option>Leadership</option>
-            </select>
-            <textarea className="md:col-span-2 rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" rows={4} placeholder="What problem are you trying to solve?" />
-            <div className="md:col-span-2 flex items-center justify-between">
-              <div className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</div>
-              <button className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white">Request Access</button>
-            </div>
-          </form>
-        </div>
-      </section>
+        {/* Main content */}
+        <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 md:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            {/* Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8"
+            >
+              <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+                Insider Protection
+              </span>
+              <span className="text-above-rose-700">.</span>
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="text-lg md:text-xl lg:text-2xl text-slate-600 mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed"
+            >
+              Protect your organization and your people. 
+              <span className="block mt-2 text-slate-500">
+                Security that understands intent, not just actions.
+              </span>
+            </motion.p>
+
+            {/* Waitlist form */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="max-w-md mx-auto"
+            >
+              <AnimatePresence mode="wait">
+                {!isSubmitted ? (
+                  <motion.form 
+                    key="form"
+                    onSubmit={handleSubmit}
+                    className="relative"
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <div className="relative">
+                      <div className="relative flex items-center bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-soft-sm">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your work email"
+                          className="flex-1 px-6 py-4 bg-transparent outline-none text-slate-800 placeholder-slate-400"
+                          disabled={isSubmitting}
+                          required
+                        />
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="px-6 py-3 mr-2 bg-gradient-to-r from-slate-900 to-slate-700 text-white rounded-xl font-medium hover:from-slate-800 hover:to-slate-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {isSubmitting ? (
+                            <span className="flex items-center gap-2">
+                              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                              </svg>
+                              Joining...
+                            </span>
+                          ) : (
+                            "Join Waitlist"
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-4 text-center">
+                      Early access for forward-thinking security teams
+                    </p>
+                  </motion.form>
+                ) : (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="text-center py-8"
+                  >
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-above-rose-200 to-above-lavender-200 rounded-full mb-4">
+                      <svg className="w-8 h-8 text-above-rose-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-2">You're on the list</h3>
+                    <p className="text-slate-600">We'll be in touch soon with early access.</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </motion.div>
+        </main>
+
+        {/* Footer */}
+        <footer className="relative z-10 px-6 py-6 md:px-12 text-center text-xs text-slate-500">
+          <p>© 2024 Above Security. Protecting what matters.</p>
+        </footer>
       </div>
     </>
   );
