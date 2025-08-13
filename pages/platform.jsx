@@ -87,7 +87,7 @@ export default function Home() {
       <SEO 
         title="Above Security Platform - Real-time Insider Threat Protection"
         description="Above Security delivers real-time behavioral analytics and AI-powered insider threat detection. Stop data breaches before they happen with runtime protection for modern enterprises."
-        canonicalUrl="https://above.security/platform"
+        canonicalUrl="https://abovesec.com/platform"
         keywords="insider threat protection, behavioral analytics, AI threat detection, data breach prevention, enterprise security, runtime protection, security monitoring"
       />
       <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">

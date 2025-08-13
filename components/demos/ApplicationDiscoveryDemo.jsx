@@ -11,7 +11,7 @@ export default function ApplicationDiscoveryDemo() {
     ];
 
     return (
-        <UIChrome title="above.security/discovery • Application Discovery">
+        <UIChrome title="abovesec.com/discovery • Application Discovery">
             <div className="bg-slate-50 p-4 rounded-lg">
                 {/* Header stats */}
                 <div className="grid grid-cols-4 gap-3 mb-4">

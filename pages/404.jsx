@@ -7,7 +7,7 @@ export default function Custom404() {
       <SEO 
         title="Page Not Found - Above Security"
         description="The page you're looking for doesn't exist. Return to Above Security's homepage to explore our insider threat protection solutions."
-        canonicalUrl="https://above.security/404"
+        canonicalUrl="https://abovesec.com/404"
         keywords="404, page not found, Above Security"
       />
       <div className="min-h-screen flex items-center justify-center bg-above-gradient px-6">

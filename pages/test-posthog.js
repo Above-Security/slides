@@ -7,7 +7,7 @@ export default function TestPostHog() {
       <SEO 
         title="PostHog Analytics Test - Above Security"
         description="Test page for PostHog analytics integration and tracking functionality."
-        canonicalUrl="https://above.security/test-posthog"
+        canonicalUrl="https://abovesec.com/test-posthog"
         keywords="posthog test, analytics test, Above Security test"
       />
     <div style={{ padding: '20px', fontFamily: 'monospace' }}>

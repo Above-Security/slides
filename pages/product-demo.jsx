@@ -19,7 +19,7 @@ export default function ProductDemo() {
       <SEO 
         title="Product Demo - Above Security"
         description="See Above Security in action. Watch our comprehensive product demonstration showcasing real-time insider threat protection capabilities."
-        canonicalUrl="https://above.security/product-demo"
+        canonicalUrl="https://abovesec.com/product-demo"
         keywords="product demo, Above Security demo, insider threat protection demo, security platform demonstration"
       />
       

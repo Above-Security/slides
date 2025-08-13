@@ -7,7 +7,7 @@ export default function TestEmailGate() {
       <SEO 
         title="Email Gate Demo - Above Security"
         description="Test the Above Security email gate component - experience our premium content access system with elegant design and smooth user experience."
-        canonicalUrl="https://above.security/test-emailgate"
+        canonicalUrl="https://abovesec.com/test-emailgate"
         keywords="email gate demo, content access, Above Security demo"
       />
     <EmailGate 

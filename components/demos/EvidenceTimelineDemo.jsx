@@ -17,7 +17,7 @@ export default function EvidenceTimelineDemo() {
 
     return (
         <div className="relative">
-            <UIChrome title="above.security/incidents • Evidence Timeline">
+            <UIChrome title="abovesec.com/incidents • Evidence Timeline">
                 <motion.div
                     className="relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 cursor-pointer"
                     onHoverStart={() => setIsHovered(true)}

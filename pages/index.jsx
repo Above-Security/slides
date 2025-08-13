@@ -45,7 +45,7 @@ export default function Home() {
       <SEO 
         title="Above Security - Insider Protection"
         description="The future of insider threat protection. Protect your organization and your people with empathetic, intelligent security."
-        canonicalUrl="https://above.security"
+        canonicalUrl="https://abovesec.com"
         keywords="insider protection, security, threat detection, enterprise security, data protection"
       />
       
@@ -61,14 +61,8 @@ export default function Home() {
 
         {/* Navigation */}
         <nav className="relative z-10 px-6 py-6 md:px-12 md:py-8">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="max-w-7xl mx-auto flex items-center">
             <BrandLogo size="medium" showText={true} showUnderline={true} />
-            <a 
-              href="/platform" 
-              className="text-sm text-slate-600 hover:text-slate-900 transition-colors duration-200"
-            >
-              Platform →
-            </a>
           </div>
         </nav>
 
