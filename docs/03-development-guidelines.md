@@ -35,8 +35,7 @@ above.github.io/
 │   ├── _app.js        # App wrapper
 │   └── index.jsx      # Homepage
 ├── public/             # Static assets
-│   ├── favicon.svg    # Site favicon
-│   └── CNAME          # GitHub Pages domain
+│   └── favicon.svg    # Site favicon
 ├── styles/             # Global styles
 │   └── globals.css    # Tailwind imports
 ├── lib/                # Utilities and constants
@@ -390,10 +389,21 @@ npm run start
 - [ ] SEO meta tags updated
 - [ ] Accessibility audit passed
 - [ ] Performance metrics acceptable
-- [ ] CNAME file in place for custom domain
 
-### GitHub Pages Deployment
-The site automatically deploys to GitHub Pages when changes are pushed to the main branch. The build output in `/dist` is served at the configured domain.
+### Vercel Deployment
+The site automatically deploys to Vercel when changes are pushed to the main branch. Vercel handles the build process and serves the site at the configured domain.
+
+#### Deployment Process
+1. Push changes to the main branch
+2. Vercel automatically detects the push
+3. Runs `npm run build` in the cloud
+4. Deploys the built site
+5. Preview deployments are created for pull requests
+
+#### Environment Variables
+Configure environment variables in the Vercel dashboard:
+- Production variables for the main branch
+- Preview variables for pull request deployments
 
 ## Debugging Tips
 
