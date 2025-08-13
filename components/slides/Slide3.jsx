@@ -6,7 +6,7 @@ export default function Slide3({ isPresenterMode, slideNumber }) {
     <div className="w-full max-w-5xl mx-auto">
       {!isPresenterMode && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
-          {slideNumber}/13
+          {slideNumber}/10
         </div>
       )}
 

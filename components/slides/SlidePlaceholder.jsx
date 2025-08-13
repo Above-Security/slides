@@ -6,7 +6,7 @@ export default function SlidePlaceholder({ title, subtitle, slideNumber, isPrese
     <div className="w-full max-w-5xl mx-auto text-center">
       {!isPresenterMode && slideNumber && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
-          {slideNumber}/13
+          {slideNumber}/10
         </div>
       )}
 
