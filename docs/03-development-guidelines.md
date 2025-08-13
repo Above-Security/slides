@@ -391,19 +391,30 @@ npm run start
 - [ ] Performance metrics acceptable
 
 ### Vercel Deployment
-The site automatically deploys to Vercel when changes are pushed to the main branch. Vercel handles the build process and serves the site at the configured domain.
+The site is deployed on Vercel and automatically builds and deploys when changes are pushed to GitHub.
 
 #### Deployment Process
-1. Push changes to the main branch
-2. Vercel automatically detects the push
-3. Runs `npm run build` in the cloud
-4. Deploys the built site
-5. Preview deployments are created for pull requests
+1. Push changes to GitHub (main branch or pull request)
+2. Vercel automatically detects the push via GitHub integration
+3. Vercel runs the build process in their cloud environment:
+   - Installs dependencies (`npm install`)
+   - Builds the Next.js application (`npm run build`)
+   - Optimizes and deploys the production build
+4. Main branch pushes trigger production deployments
+5. Pull requests create preview deployments with unique URLs
+
+#### Local Build Testing
+```bash
+# Test the production build locally before pushing
+npm run build  # Creates .next build directory
+npm run start  # Serves the production build locally
+```
 
 #### Environment Variables
 Configure environment variables in the Vercel dashboard:
-- Production variables for the main branch
-- Preview variables for pull request deployments
+- Production environment: Applied to main branch deployments
+- Preview environment: Applied to pull request deployments
+- Development environment: Used for branch deployments
 
 ## Debugging Tips
 
