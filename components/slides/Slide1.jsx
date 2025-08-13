@@ -47,7 +47,7 @@ export default function Slide1({ isPresenterMode }) {
         className="flex flex-wrap justify-center gap-4"
       >
         <Badge variant="primary">LLM semantics</Badge>
-        <Badge variant="secondary">Browser-native</Badge>
+        <Badge variant="secondary">In-app protection</Badge>
         <Badge variant="accent">Minutes to value</Badge>
       </motion.div>
 
@@ -62,7 +62,7 @@ export default function Slide1({ isPresenterMode }) {
           LLM semantics interpret sessions across all web apps
         </BulletPoint>
         <BulletPoint>
-          Browser-native capture; no agents or integrations
+          In-session capture; no agents or integrations
         </BulletPoint>
         <BulletPoint>
           Coach in session; document evidence automatically

@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import CapabilityComparison from "./CapabilityComparison";
 
 export default function Slide8({ isPresenterMode, slideNumber }) {
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto h-full overflow-y-auto py-4 pb-12">
       {!isPresenterMode && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
           {slideNumber}/12
@@ -14,18 +16,18 @@ export default function Slide8({ isPresenterMode, slideNumber }) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 text-center"
+        className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 text-center"
       >
-        Shadow AI & OAuth discovery
+        Complete Application Discovery
       </motion.h1>
       
       <motion.p 
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-xl text-slate-600 text-center mb-8"
+        className="text-lg text-slate-600 text-center mb-4"
       >
-        Every app, every permission, every risk
+        See everything your employees are using — from approved tools to shadow IT
       </motion.p>
 
       {/* OAuth greeting image */}
@@ -33,65 +35,43 @@ export default function Slide8({ isPresenterMode, slideNumber }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg mb-8"
+        className="rounded-xl overflow-hidden border border-slate-200 shadow-md mb-6"
       >
-        <img
+        <Image
           src="/oauth-greeting.png"
           alt="OAuth Application Discovery"
+          width={1600}
+          height={1000}
           className="w-full h-auto"
+          priority
+          quality={90}
         />
       </motion.div>
 
-      {/* Critical findings */}
+      {/* Discovery capabilities */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="grid md:grid-cols-2 gap-6"
       >
-        <div className="bg-white rounded-xl border border-slate-200 p-6">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">What we find</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5" />
-              <span className="text-sm text-slate-700">287 applications discovered, 142 with OAuth</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5" />
-              <span className="text-sm text-slate-700">31 AI tools, 11 unapproved with data access</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5" />
-              <span className="text-sm text-slate-700">Critical permissions: full workspace access</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5" />
-              <span className="text-sm text-slate-700">1,247 instances of PII in AI prompts</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className="bg-gradient-to-br from-above-rose-50 to-white rounded-xl border border-above-rose-200 p-6">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">How we stop it</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-above-rose-500 mt-1.5" />
-              <span className="text-sm text-slate-700">Real-time detection at point of use</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-above-rose-500 mt-1.5" />
-              <span className="text-sm text-slate-700">Block sensitive data before submission</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-above-rose-500 mt-1.5" />
-              <span className="text-sm text-slate-700">Redirect to approved enterprise tools</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-above-rose-500 mt-1.5" />
-              <span className="text-sm text-slate-700">Continuous permission monitoring</span>
-            </li>
-          </ul>
-        </div>
+        <CapabilityComparison
+          leftTitle="What we discover"
+          rightTitle="How we protect"
+          leftItems={[
+            "Real-time discovery of shadow IT and approved applications",
+            "AI tool detection including ChatGPT, Claude, and extensions",
+            "OAuth risk analysis with semantic permission understanding",
+            "Authentication method analysis and risk categorization"
+          ]}
+          rightItems={[
+            "Integration with identity providers and access management",
+            "Real-time nudges for unapproved applications",
+            "Block sensitive data in AI prompts before submission",
+            "Continuous monitoring of permission changes"
+          ]}
+          leftColor="blue"
+          rightColor="blue"
+        />
       </motion.div>
     </div>
   );

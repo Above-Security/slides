@@ -52,7 +52,7 @@ export default function Slide12({ isPresenterMode, slideNumber }) {
         >
           <h3 className="text-lg font-semibold text-slate-900 mb-4">Quick Deployment</h3>
           <div className="space-y-3">
-            <CheckItem>Browser-native, no agents</CheckItem>
+            <CheckItem>In-app protection, no agents</CheckItem>
             <CheckItem>No integrations required</CheckItem>
             <CheckItem>Minutes to first value</CheckItem>
             <CheckItem>Zero maintenance overhead</CheckItem>
