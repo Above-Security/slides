@@ -95,7 +95,6 @@ export default function Home() {
       {/* Navigation */}
       <nav className="px-6 py-6 md:px-12 md:py-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <BrandLogo size="medium" showText={true} showUnderline={true} />
           <a href="/" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
             ← Back to home
           </a>
