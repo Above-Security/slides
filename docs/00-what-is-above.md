@@ -94,6 +94,21 @@ Traditional tools stop at authentication or stitched logs. Above protects the ga
 * **Broad coverage** — SaaS, internal, and custom apps — including homegrown tools
 * **Privacy by design** — Policy-aware capture, least-privilege access, and redaction safeguards
 
+## Features
+
+- Excessive personal use during work hours
+- Downloading unauthorized or risky software
+- Authorizing unsanctioned third-party applications
+- Sharing floating or shared credentials
+- Falling for advanced phishing that bypasses traditional defenses (e.g., phishing hosted on trusted services — LOTS)
+- Authorizing OAuth misuse through over-permissioned consents
+- Payroll staff accessing sales or deal data — cross-role access anomalies
+- Operating without MFA on sensitive systems
+- Inappropriate or high-risk web browsing activity
+- Shadow AI tools circumventing approved workflows
+- Data staging or hoarding pre-departure
+- Circumventing monitoring and logging controls
+
 ---
 
 ## Get Started
