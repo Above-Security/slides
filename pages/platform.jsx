@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import SEO from "../components/SEO";
@@ -12,8 +12,19 @@ import Hero from "../components/Hero";
 import UIChrome from "../components/primitives/UIChrome";
 import NudgeToast from "../components/nudge/NudgeToast";
 import { POLICY_OAUTH } from "../lib/constants";
+import { usePostHog } from "../hooks/usePostHog";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    email: '',
+    company: '',
+    employees: '',
+    role: '',
+    problem: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { identify, capture } = usePostHog();
   // Build scenes with explicit component wiring
   const orgScenes = [
     { time: "Mon 9:12 AM", headline: "HR role change ingested.", sub: "Above records demotion as context. Subject sensitivity adjusted; no end-user alert.", bgKind: "hr", Component: SceneCard },
@@ -35,6 +46,41 @@ export default function Home() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
   const progressSpring = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.6 });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.company) return;
+    
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // PostHog tracking
+    identify(formData.email, {
+      email: formData.email,
+      company: formData.company,
+      employees: formData.employees,
+      role: formData.role,
+      problem: formData.problem,
+      signup_date: new Date().toISOString(),
+      source: 'platform_access_form'
+    });
+    
+    capture('platform_access_request', {
+      email: formData.email,
+      company: formData.company,
+      employees: formData.employees,
+      role: formData.role,
+      page: 'platform'
+    });
+    
+    console.log("Platform access request:", formData);
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ email: '', company: '', employees: '', role: '', problem: '' });
+  };
 
   return (
     <>
@@ -107,26 +153,81 @@ export default function Home() {
       {/* Access section */}
       <section id="access" className="mx-auto max-w-4xl px-6 pb-24">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-lg font-semibold mb-2">Request Access</div>
-          <p className="text-sm text-slate-600 mb-4">We’re currently in private preview. Tell us a bit about your team and we’ll be in touch.</p>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="Work email" />
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="Company" />
-            <input className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" placeholder="# of employees" />
-            <select className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200">
-              <option>Role</option>
-              <option>Security</option>
-              <option>IT</option>
-              <option>HR</option>
-              <option>Compliance</option>
-              <option>Leadership</option>
-            </select>
-            <textarea className="md:col-span-2 rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" rows={4} placeholder="What problem are you trying to solve?" />
-            <div className="md:col-span-2 flex items-center justify-between">
-              <div className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</div>
-              <button className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white">Request Access</button>
+          {!isSubmitted ? (
+            <>
+              <div className="text-lg font-semibold mb-2">Request Access</div>
+              <p className="text-sm text-slate-600 mb-4">We're currently in private preview. Tell us a bit about your team and we'll be in touch.</p>
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <input 
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" 
+                  placeholder="Work email"
+                  required
+                  disabled={isSubmitting}
+                />
+                <input 
+                  type="text"
+                  value={formData.company}
+                  onChange={(e) => setFormData({...formData, company: e.target.value})}
+                  className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" 
+                  placeholder="Company"
+                  required
+                  disabled={isSubmitting}
+                />
+                <input 
+                  type="text"
+                  value={formData.employees}
+                  onChange={(e) => setFormData({...formData, employees: e.target.value})}
+                  className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" 
+                  placeholder="# of employees"
+                  disabled={isSubmitting}
+                />
+                <select 
+                  value={formData.role}
+                  onChange={(e) => setFormData({...formData, role: e.target.value})}
+                  className="rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200"
+                  disabled={isSubmitting}
+                >
+                  <option value="">Role</option>
+                  <option value="Security">Security</option>
+                  <option value="IT">IT</option>
+                  <option value="HR">HR</option>
+                  <option value="Compliance">Compliance</option>
+                  <option value="Leadership">Leadership</option>
+                </select>
+                <textarea 
+                  value={formData.problem}
+                  onChange={(e) => setFormData({...formData, problem: e.target.value})}
+                  className="md:col-span-2 rounded-xl border border-slate-200 px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-200" 
+                  rows={4} 
+                  placeholder="What problem are you trying to solve?"
+                  disabled={isSubmitting}
+                />
+                <div className="md:col-span-2 flex items-center justify-between">
+                  <div className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</div>
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Request Access'}
+                  </button>
+                </div>
+              </form>
+            </>
+          ) : (
+            <div className="text-center py-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-above-rose-100 to-above-lavender-100 rounded-full mb-4">
+                <svg className="w-8 h-8 text-above-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Request Received</h3>
+              <p className="text-slate-600">Thank you for your interest. We'll be in touch soon with access details.</p>
             </div>
-          </form>
+          )}
         </div>
       </section>
       </div>

@@ -177,7 +177,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="relative z-10 px-6 py-6 md:px-12 text-center text-xs text-slate-500">
-          <p>© 2024 Above Security. Protecting what matters.</p>
+          <p>© 2025 Above Security. Protecting what matters.</p>
         </footer>
       </div>
     </>
