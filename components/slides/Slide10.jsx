@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import UIChrome from "../primitives/UIChrome";
+import NudgeToast from "../nudge/NudgeToast";
 
 export default function Slide10({ isPresenterMode, slideNumber }) {
   const [agentAction, setAgentAction] = useState(0);
@@ -13,37 +14,37 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
       action: "AI Agent initialized", 
       detail: "Perplexity Comet starting task",
       element: null,
-      cursor: { x: 400, y: 300 }
+      cursor: { x: 200, y: 200 } // Center
     },
     { 
-      action: "Navigating to CRM", 
-      detail: "Opening salesforce.com",
+      action: "Navigating to Salesforce", 
+      detail: "Opening opportunities pipeline",
       element: "url",
-      cursor: { x: 300, y: 120 }
+      cursor: { x: 150, y: 36 } // URL bar
     },
     { 
-      action: "Accessing customer data", 
-      detail: "Viewing account ABC Corp",
+      action: "Accessing opportunity", 
+      detail: "Opening ABC Corp - $450K deal",
       element: "click",
-      cursor: { x: 200, y: 280 }
+      cursor: { x: 100, y: 150 } // First opportunity card
     },
     { 
-      action: "Exporting records", 
-      detail: "Downloading 1,247 contacts",
+      action: "Exporting pipeline data", 
+      detail: "Downloading 247 opportunities",
       element: "button",
-      cursor: { x: 600, y: 350 }
+      cursor: { x: 340, y: 280 } // Export All button
     },
     { 
       action: "Opening AI tool", 
       detail: "Switching to ChatGPT",
       element: "tab",
-      cursor: { x: 450, y: 120 }
+      cursor: { x: 250, y: 36 } // URL bar different spot
     },
     { 
-      action: "Pasting sensitive data", 
-      detail: "Sharing customer list",
+      action: "Sharing sensitive data", 
+      detail: "Pasting customer pipeline",
       element: "paste",
-      cursor: { x: 400, y: 400 }
+      cursor: { x: 200, y: 180 } // Middle area
     }
   ];
 
@@ -63,7 +64,7 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
   }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto h-full overflow-y-auto py-4 pb-12">
+    <div className="w-full max-w-6xl mx-auto h-full overflow-y-auto py-4 pb-20 px-4">
       {!isPresenterMode && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
           {slideNumber}/13
@@ -89,7 +90,7 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
       </motion.p>
 
       {/* Main content area */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* Browser simulation */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -97,7 +98,7 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <UIChrome title="salesforce.com • AI Agent Active">
-            <div className="relative h-[400px] bg-slate-50 rounded-lg overflow-hidden">
+            <div className="relative h-[400px] bg-slate-50 rounded-lg">
               {/* Agent indicator */}
               <div className="absolute top-2 right-2 z-20">
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full text-xs font-medium shadow-lg">
@@ -106,60 +107,77 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
                 </div>
               </div>
 
-              {/* Mock browser content */}
+              {/* Mock browser content - Salesforce Opportunities */}
               <div className="p-4">
                 <div className="mb-4">
-                  <div className="h-8 bg-white rounded border border-slate-200 px-3 flex items-center text-sm text-slate-600">
+                  <div id="url-bar" className="h-8 bg-white rounded border border-slate-200 px-3 flex items-center text-sm text-slate-600">
                     {agentActions[agentAction].element === "url" && (
-                      <span className="text-blue-600">salesforce.com/accounts</span>
+                      <span className="text-blue-600">salesforce.com/opportunities</span>
                     )}
                   </div>
                 </div>
                 
-                {/* Page content */}
+                {/* Salesforce Opportunities content */}
                 <div className="space-y-3">
-                  <div className="h-12 bg-white rounded border border-slate-200 p-3">
-                    <div className="h-2 bg-slate-200 rounded w-3/4"></div>
-                    <div className="h-2 bg-slate-200 rounded w-1/2 mt-2"></div>
+                  {/* Header */}
+                  <div className="h-16 bg-white rounded border border-slate-200 p-3 flex flex-col justify-center">
+                    <div className="text-xs font-semibold text-slate-700">Q4 Opportunities</div>
+                    <div className="text-xs text-slate-500 mt-1">247 Records • $3.2M Pipeline</div>
                   </div>
                   
+                  {/* Opportunity cards */}
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="h-24 bg-white rounded border border-slate-200 p-3">
-                      {agentActions[agentAction].element === "click" && (
-                        <div className="w-full h-full bg-blue-50 border-2 border-blue-400 rounded animate-pulse" />
+                    <div id="click-area" className="bg-white rounded border border-slate-200 p-3">
+                      {agentActions[agentAction].element === "click" ? (
+                        <div className="w-full h-full bg-blue-50 border-2 border-blue-400 rounded animate-pulse p-2">
+                          <div className="text-xs font-semibold text-blue-700">ABC Corp</div>
+                          <div className="text-xs text-blue-600 mt-1">$450K • Stage 3</div>
+                          <div className="text-xs text-blue-500 mt-1">Close: Dec 15</div>
+                        </div>
+                      ) : (
+                        <div>
+                          <div className="text-xs font-semibold text-slate-700">ABC Corp</div>
+                          <div className="text-xs text-slate-600 mt-1">$450K • Stage 3</div>
+                          <div className="text-xs text-slate-500 mt-1">Close: Dec 15</div>
+                        </div>
                       )}
                     </div>
-                    <div className="h-24 bg-white rounded border border-slate-200 p-3">
-                      <div className="h-2 bg-slate-200 rounded w-full"></div>
-                      <div className="h-2 bg-slate-200 rounded w-3/4 mt-2"></div>
+                    <div className="bg-white rounded border border-slate-200 p-3">
+                      <div className="text-xs font-semibold text-slate-700">TechStart Inc</div>
+                      <div className="text-xs text-slate-600 mt-1">$280K • Stage 2</div>
+                      <div className="text-xs text-slate-500 mt-1">Close: Jan 20</div>
                     </div>
                   </div>
                   
                   <div className="flex justify-end gap-2">
-                    <button className={`px-4 py-2 rounded text-sm font-medium ${
+                    <button id="export-button" className={`px-4 py-2 rounded text-sm font-medium ${
                       agentActions[agentAction].element === "button" 
                         ? "bg-red-500 text-white animate-pulse" 
                         : "bg-slate-100 text-slate-600"
                     }`}>
-                      Export Data
+                      Export All
                     </button>
                     <button className="px-4 py-2 bg-slate-100 text-slate-600 rounded text-sm font-medium">
-                      Cancel
+                      Filter
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Animated cursor */}
+              {/* Animated cursor - INSIDE the container */}
               <motion.div
-                className="absolute w-4 h-4 pointer-events-none z-30"
+                className="absolute pointer-events-none z-30"
                 animate={{
-                  x: agentActions[agentAction].cursor.x,
-                  y: agentActions[agentAction].cursor.y,
+                  left: agentActions[agentAction].cursor.x,
+                  top: agentActions[agentAction].cursor.y,
                 }}
-                transition={{ type: "spring", stiffness: 100 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 100,
+                  damping: 25
+                }}
               >
-                <svg className="w-4 h-4 text-purple-600 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-purple-600 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                 </svg>
               </motion.div>
@@ -172,7 +190,7 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="space-y-4"
+          className="space-y-4 min-h-[450px]"
         >
           {/* Real-time monitoring */}
           <div className="bg-white rounded-xl border border-slate-200 p-4">
@@ -239,36 +257,20 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
             </div>
           </div>
 
-          {/* Control Actions */}
-          <AnimatePresence>
-            {showAttribution && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-above-rose-50 rounded-xl border border-above-rose-200 p-4"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <svg className="w-5 h-5 text-above-rose-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                  </svg>
-                  <div className="flex-1">
-                    <h4 className="text-sm font-semibold text-slate-900">Risk Detected</h4>
-                    <p className="text-xs text-slate-600 mt-1">AI Agent attempting to export sensitive customer data</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-2">
-                  <button className="flex-1 px-3 py-2 bg-above-rose-600 text-white rounded-lg text-xs font-medium hover:bg-above-rose-700 transition-colors">
-                    Block & Investigate
-                  </button>
-                  <button className="flex-1 px-3 py-2 bg-white text-above-rose-700 rounded-lg text-xs font-medium border border-above-rose-300 hover:bg-above-rose-50 transition-colors">
-                    Request Justification
-                  </button>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Control Actions - Nudge */}
+          <div className="min-h-[180px] pr-8">
+            <AnimatePresence>
+              {showAttribution && (
+                <NudgeToast 
+                  title="Greetings from Above"
+                  subtitle="Risk detected"
+                  body="AI Agent attempting to export 247 opportunities from Salesforce pipeline. This action requires justification for compliance."
+                  primary="Request Justification"
+                  secondary="Review Evidence"
+                />
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
       </div>
 
@@ -277,37 +279,56 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="mt-6 grid grid-cols-3 gap-4"
+        className="mt-6 relative rounded-2xl p-6 overflow-hidden"
       >
-        <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
-          <div className="w-10 h-10 bg-gradient-to-br from-above-blue-100 to-above-blue-200 rounded-lg flex items-center justify-center mx-auto mb-2">
-            <svg className="w-5 h-5 text-above-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </div>
-          <h4 className="text-sm font-semibold text-slate-900">Complete Visibility</h4>
-          <p className="text-xs text-slate-600 mt-1">Every agent action tracked</p>
-        </div>
+        {/* Grainy gradient background */}
+        <div 
+          className="absolute inset-0 rounded-2xl"
+          style={{
+            background: 'linear-gradient(135deg, #D4E9FF 0%, #E8D9FF 25%, #FFE0EC 50%, #FFD4C9 75%, #D4E9FF 100%)',
+          }}
+        />
+        <div 
+          className="absolute inset-0 rounded-2xl opacity-60"
+          style={{
+            background: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            mixBlendMode: 'overlay',
+            filter: 'contrast(170%) brightness(1000%)',
+          }}
+        />
         
-        <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
-          <div className="w-10 h-10 bg-gradient-to-br from-above-lavender-100 to-above-lavender-200 rounded-lg flex items-center justify-center mx-auto mb-2">
-            <svg className="w-5 h-5 text-above-lavender-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
+        {/* Content */}
+        <div className="relative z-10 grid grid-cols-3 gap-4">
+          <div className="bg-white/95 backdrop-blur-sm rounded-lg border border-white/50 shadow-sm p-4 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-above-blue-100 to-above-blue-200 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-above-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-semibold text-slate-900">Complete Visibility</h4>
+            <p className="text-xs text-slate-600 mt-1">Every agent action tracked</p>
           </div>
-          <h4 className="text-sm font-semibold text-slate-900">Full Attribution</h4>
-          <p className="text-xs text-slate-600 mt-1">Agent → User → Purpose</p>
-        </div>
-        
-        <div className="bg-white rounded-lg border border-slate-200 p-4 text-center">
-          <div className="w-10 h-10 bg-gradient-to-br from-above-rose-100 to-above-rose-200 rounded-lg flex items-center justify-center mx-auto mb-2">
-            <svg className="w-5 h-5 text-above-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
+          
+          <div className="bg-white/95 backdrop-blur-sm rounded-lg border border-white/50 shadow-sm p-4 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-above-lavender-100 to-above-lavender-200 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-above-lavender-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-semibold text-slate-900">Full Attribution</h4>
+            <p className="text-xs text-slate-600 mt-1">Agent → User → Purpose</p>
           </div>
-          <h4 className="text-sm font-semibold text-slate-900">Real-time Control</h4>
-          <p className="text-xs text-slate-600 mt-1">Block, pause, or approve</p>
+          
+          <div className="bg-white/95 backdrop-blur-sm rounded-lg border border-white/50 shadow-sm p-4 text-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-above-rose-100 to-above-rose-200 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-above-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-semibold text-slate-900">Real-time Control</h4>
+            <p className="text-xs text-slate-600 mt-1">Block, pause, or approve</p>
+          </div>
         </div>
       </motion.div>
     </div>
