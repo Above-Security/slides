@@ -61,7 +61,7 @@ export default function Slide9({ isPresenterMode, slideNumber }) {
     <div className="w-full max-w-7xl mx-auto h-full overflow-y-auto py-4 pb-12">
       {!isPresenterMode && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
-          {slideNumber}/12
+          {slideNumber}/13
         </div>
       )}
 

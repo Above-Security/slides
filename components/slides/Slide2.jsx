@@ -20,7 +20,7 @@ export default function Slide2({ isPresenterMode, slideNumber }) {
     <div className="w-full max-w-7xl mx-auto">
       {!isPresenterMode && (
         <div className="absolute top-8 right-8 text-xs text-slate-400">
-          {slideNumber}/12
+          {slideNumber}/13
         </div>
       )}
 
