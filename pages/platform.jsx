@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import SEO from "../components/SEO";
-import Logo from "../components/ui/Logo";
+import BrandLogo from "../components/ui/BrandLogo";
 import SceneCard from "../components/timeline/SceneCard";
 import TimelineBox from "../components/timeline/TimelineBox";
 import Connector from "../components/timeline/Connector";
@@ -92,11 +92,14 @@ export default function Home() {
       />
       <div ref={containerRef} className="min-h-screen w-full bg-white text-slate-900">
       
-      {/* Navigation back to home */}
-      <nav className="px-6 py-4 md:px-12">
-        <a href="/" className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 transition-colors">
-          ← Back to home
-        </a>
+      {/* Navigation */}
+      <nav className="px-6 py-6 md:px-12 md:py-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <BrandLogo size="medium" showText={true} showUnderline={true} />
+          <a href="/" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+            ← Back to home
+          </a>
+        </div>
       </nav>
       
       <Hero />

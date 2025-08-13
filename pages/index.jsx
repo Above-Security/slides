@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import SEO from "../components/SEO";
-import Logo from "../components/ui/Logo";
+import BrandLogo from "../components/ui/BrandLogo";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePostHog } from "../hooks/usePostHog";
 
@@ -62,10 +62,13 @@ export default function Home() {
         {/* Navigation */}
         <nav className="relative z-10 px-6 py-6 md:px-12 md:py-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Logo size="small" showText={false} />
-              <span className="text-2xl font-bold text-black">Above</span>
-            </div>
+            <BrandLogo size="medium" showText={true} showUnderline={true} />
+            <a 
+              href="/platform" 
+              className="text-sm text-slate-600 hover:text-slate-900 transition-colors duration-200"
+            >
+              Platform →
+            </a>
           </div>
         </nav>
 
