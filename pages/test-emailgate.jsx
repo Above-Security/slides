@@ -35,7 +35,7 @@ export default function TestEmailGate() {
               
               <div className="bg-gradient-to-br from-above-peach-50 to-above-rose-50 p-6 rounded-2xl">
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">Implementation Guide</h3>
-                <p className="text-slate-600">Step-by-step guide to implement Above's security solutions.</p>
+                <p className="text-slate-600">Step-by-step guide to implement Above&apos;s security solutions.</p>
               </div>
               
               <div className="bg-gradient-to-br from-above-lavender-50 to-above-blue-50 p-6 rounded-2xl">

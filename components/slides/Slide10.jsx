@@ -61,7 +61,7 @@ export default function Slide10({ isPresenterMode, slideNumber }) {
     }, 2000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [agentActions.length]);
 
   return (
     <div className="w-full max-w-6xl mx-auto h-full overflow-y-auto py-4 pb-20 px-4">

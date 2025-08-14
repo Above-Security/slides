@@ -163,8 +163,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2">You're on the list</h3>
-                    <p className="text-slate-600">We'll be in touch soon with early access.</p>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-2">You&apos;re on the list</h3>
+                    <p className="text-slate-600">We&apos;ll be in touch soon with early access.</p>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -92,7 +92,7 @@ export default function Slide3({ isPresenterMode, slideNumber }) {
           <span className="font-semibold">Catches what others miss:</span> Phishing on microsoft.com, malicious OAuth app on Jira
         </Point>
         <Point color="above-peach-400" delay={1.0}>
-          <span className="font-semibold">Real-time semantic understanding:</span> Knows a 'deal' from a 'contact' without rules
+          <span className="font-semibold">Real-time semantic understanding:</span> Knows a &apos;deal&apos; from a &apos;contact&apos; without rules
         </Point>
         <Point color="above-blue-400" delay={1.1}>
           <span className="font-semibold">Contextual intervention:</span> Nudges respect workflow, no blocking or alerts fatigue

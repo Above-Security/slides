@@ -89,7 +89,7 @@ export default function EmailGate({ children, title = "Access Above Insider Prot
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold mb-6 text-slate-800">Above Security Runtime Insider Protection Presentation</h1>
           <div className="text-lg space-y-4 columns-2 gap-8">
-            <p>Get exclusive access to our comprehensive Runtime Insider Protection presentation. Enter your business email to view detailed insights on modern threat detection, incident response, and Above Security's innovative approach to runtime protection.</p>
+            <p>Get exclusive access to our comprehensive Runtime Insider Protection presentation. Enter your business email to view detailed insights on modern threat detection, incident response, and Above Security&apos;s innovative approach to runtime protection.</p>
             <p>This presentation covers advanced runtime monitoring techniques that detect insider threats in real-time, including behavioral anomaly detection, privilege escalation monitoring, and data exfiltration prevention at the application layer.</p>
             <h2 className="text-3xl font-semibold mb-3 text-slate-700 break-before-column">Modern Threat Detection</h2>
             <p>Learn how our runtime protection platform identifies sophisticated insider attacks that traditional security tools miss. Our approach monitors user behavior patterns, application interactions, and data access patterns to detect threats before damage occurs.</p>
@@ -98,7 +98,7 @@ export default function EmailGate({ children, title = "Access Above Insider Prot
             <p>Detailed walkthrough of our incident response methodology, including automated threat containment, evidence collection, and forensic analysis capabilities. Learn how to reduce incident response time from hours to minutes.</p>
             <p>Step-by-step guidance on investigating insider threats, documenting evidence for compliance requirements, and implementing corrective actions to prevent similar incidents in the future.</p>
             <h2 className="text-3xl font-semibold mb-3 text-slate-700">Runtime Protection Innovation</h2>
-            <p>Discover Above Security's breakthrough approach to runtime insider protection, including our patent-pending behavioral analysis engine and real-time risk scoring algorithms that adapt to your organization's unique patterns.</p>
+            <p>Discover Above Security&apos;s breakthrough approach to runtime insider protection, including our patent-pending behavioral analysis engine and real-time risk scoring algorithms that adapt to your organization&apos;s unique patterns.</p>
           </div>
           
           <div className="mt-12 grid grid-cols-3 gap-6 text-center">
@@ -160,7 +160,7 @@ export default function EmailGate({ children, title = "Access Above Insider Prot
               
               {/* Description */}
               <p className="text-slate-600 leading-relaxed text-sm max-w-sm mx-auto">
-                Get exclusive access to our comprehensive presentation with detailed insights on modern threat detection, incident response, and Above Security's innovative runtime protection approach.
+                Get exclusive access to our comprehensive presentation with detailed insights on modern threat detection, incident response, and Above Security&apos;s innovative runtime protection approach.
               </p>
             </div>
             

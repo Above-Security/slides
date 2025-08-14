@@ -57,7 +57,7 @@ export default function Slide2({ isPresenterMode, slideNumber }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-slate-600 max-w-3xl mx-auto"
         >
-          Your security stack protects authentication. But 87% of insider risk happens after login — where you're blind.
+          Your security stack protects authentication. But 87% of insider risk happens after login — where you&apos;re blind.
         </motion.p>
       </div>
 
@@ -128,7 +128,7 @@ export default function Slide2({ isPresenterMode, slideNumber }) {
 
             {/* What happens in the gap */}
             <div className="border-t-2 border-slate-200/70 pt-6">
-              <div className="text-xs uppercase tracking-[0.2em] text-slate-400 text-center mb-4">What you're missing</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-slate-400 text-center mb-4">What you&apos;re missing</div>
               <div className="grid grid-cols-4 gap-4">
                 <GapRiskIcon icon="ai" label="Shadow AI" detail="ChatGPT, Claude, Bard" />
                 <GapRiskIcon icon="export" label="Data Exfiltration" detail="Downloads, copies, shares" />
@@ -156,7 +156,7 @@ export default function Slide2({ isPresenterMode, slideNumber }) {
             <div className="space-y-3">
               <ComparisonBulletPoint status="bad" text="Find out after data walks out" />
               <ComparisonBulletPoint status="bad" text="No context for user intent" />
-              <ComparisonBulletPoint status="bad" text="Can't guide users in real-time" />
+              <ComparisonBulletPoint status="bad" text="Can&apos;t guide users in real-time" />
               <ComparisonBulletPoint status="bad" text="Blind to in-app activity" />
             </div>
           </GlassPanel>

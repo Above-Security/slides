@@ -16,7 +16,7 @@ export default function UserExperiencePanel({ activeStep }) {
               subtitle="Unusual access pattern detected"
               body={
                 <span>
-                  You're accessing customer opportunities outside your assigned accounts during your notice period. 
+                  You&apos;re accessing customer opportunities outside your assigned accounts during your notice period. 
                   <span className="font-medium"> Please provide business justification.</span>
                 </span>
               }

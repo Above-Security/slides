@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React, { useState } from "react";
 import { useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
@@ -95,9 +96,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="px-6 py-6 md:px-12 md:py-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <a href="/" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+          <Link href="/" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
             ← Back to home
-          </a>
+          </Link>
         </div>
       </nav>
       
@@ -137,7 +138,7 @@ export default function Home() {
                   <div className="h-2 w-2/3 rounded bg-slate-100 mb-1" />
                   <div className="h-2 w-1/2 rounded bg-slate-100" />
                 </div>
-                <NudgeToast body={<span>You're about to grant <span className="font-medium">sensitive permissions</span>. Please request approval if required.</span>} primary="Request approval" secondary="View policy" />
+                <NudgeToast body={<span>You&apos;re about to grant <span className="font-medium">sensitive permissions</span>. Please request approval if required.</span>} primary="Request approval" secondary="View policy" />
               </div>
             </UIChrome>
             <div className="rounded-xl border border-slate-200 p-4 bg-slate-50/60">
@@ -158,7 +159,7 @@ export default function Home() {
           {!isSubmitted ? (
             <>
               <div className="text-lg font-semibold mb-2">Request Access</div>
-              <p className="text-sm text-slate-600 mb-4">We're currently in private preview. Tell us a bit about your team and we'll be in touch.</p>
+              <p className="text-sm text-slate-600 mb-4">We&apos;re currently in private preview. Tell us a bit about your team and we&apos;ll be in touch.</p>
               <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <input 
                   type="email"
@@ -227,7 +228,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Request Received</h3>
-              <p className="text-slate-600">Thank you for your interest. We'll be in touch soon with access details.</p>
+              <p className="text-slate-600">Thank you for your interest. We&apos;ll be in touch soon with access details.</p>
             </div>
           )}
         </div>
