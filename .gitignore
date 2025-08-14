@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules/
 
 # production
 /.next
@@ -14,3 +14,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .vercel
+
+*storybook.log
+storybook-static
