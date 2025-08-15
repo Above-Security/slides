@@ -31,7 +31,7 @@ export default function SlideStatistics({ isPresenterMode, slideNumber }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-slate-600 max-w-4xl mx-auto"
         >
-          Without evidence and coaching, organizations can't prove what happened or prevent it from happening again. <span className="font-semibold text-slate-800">2025 is the year this changes.</span>
+          Without evidence and coaching, organizations can&apos;t prove what happened or prevent it from happening again. <span className="font-semibold text-slate-800">2025 is the year this changes.</span>
         </motion.p>
       </div>
 
