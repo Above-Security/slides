@@ -21,8 +21,8 @@ import Slide9 from "../components/slides/Slide9";
 import Slide10 from "../components/slides/Slide10";
 
 const slides = [
-  Slide1, Slide2, SlideStatistics, Slide3, Slide4, SlideCompetitive, SlideTestimonials, Slide5, Slide6,
-  Slide7, Slide8, Slide9, Slide10
+  Slide1, Slide2, SlideStatistics, Slide3, Slide4, SlideCompetitive, Slide5, Slide6,
+  Slide7, Slide8, Slide9, Slide10, SlideTestimonials
 ];
 
 export default function Slides() {
