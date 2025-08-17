@@ -35,13 +35,13 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
         className="relative rounded-2xl overflow-hidden mb-6"
       >
         {/* Grainy gradient background */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(135deg, #D4E9FF 0%, #E8D9FF 25%, #FFE0EC 50%, #FFD4C9 75%, #D4E9FF 100%)',
           }}
         />
-        <div 
+        <div
           className="absolute inset-0 opacity-60"
           style={{
             background: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
@@ -49,14 +49,14 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
             filter: 'contrast(170%) brightness(1000%)',
           }}
         />
-        
+
         {/* White content area */}
         <div className="relative bg-white/80 m-6 rounded-xl p-8">
           <div className="relative h-[400px]">
             {/* Axes */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-slate-300"></div>
             <div className="absolute top-0 bottom-0 left-0 w-px bg-slate-300"></div>
-            
+
             {/* Center grid lines */}
             <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-200"></div>
             <div className="absolute left-0 right-0 top-1/2 h-px bg-slate-200"></div>
@@ -85,7 +85,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
 
             {/* Competitor Points with comprehensive hover */}
             <CompetitorPoint
-              name="Exabeam"
+              name="Exabeam & Gurucul"
               left="25%"
               bottom="15%"
               details={{
@@ -97,7 +97,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.5}
             />
-            
+
             <CompetitorPoint
               name="DTEX"
               left="60%"
@@ -111,7 +111,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.6}
             />
-            
+
             <CompetitorPoint
               name="Teramind"
               left="70%"
@@ -125,7 +125,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.7}
             />
-            
+
             <CompetitorPoint
               name="Proofpoint"
               left="65%"
@@ -139,7 +139,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.8}
             />
-            
+
             <CompetitorPoint
               name="Forcepoint"
               left="45%"
@@ -153,7 +153,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.85}
             />
-            
+
             <CompetitorPoint
               name="Code42"
               left="40%"
@@ -167,7 +167,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
               }}
               delay={0.9}
             />
-            
+
             {/* Above - Hero position */}
             <CompetitorPoint
               name="Above"
@@ -234,7 +234,7 @@ function CompetitorPoint({ name, left, right, top, bottom, details, delay, isHer
   if (right) style.right = right;
   if (top) style.top = top;
   if (bottom) style.bottom = bottom;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
@@ -248,17 +248,17 @@ function CompetitorPoint({ name, left, right, top, bottom, details, delay, isHer
         {isHero && (
           <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/50 to-above-peach-400/50 rounded-full blur-xl scale-125"></div>
         )}
-        
+
         {/* Point */}
         <div className={`relative ${isHero ? 'w-14 h-14' : 'w-12 h-12'} ${isHero ? 'bg-gradient-to-br from-above-rose-500 via-above-rose-400 to-above-peach-400' : 'bg-white'} border-2 ${isHero ? 'border-white' : 'border-slate-300'} rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all hover:scale-110 cursor-pointer`}>
           <span className={`text-xs font-bold ${isHero ? 'text-white' : 'text-slate-600'}`}>{name[0]}</span>
         </div>
-        
+
         {/* Label */}
         <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-medium ${isHero ? 'text-above-rose-600 font-bold' : 'text-slate-600'} whitespace-nowrap`}>
           {name}
         </div>
-        
+
         {/* Comprehensive hover card */}
         <div className={`absolute ${bottom ? 'bottom-20' : 'top-20'} ${left && parseInt(left) < 50 ? 'left-0' : 'right-0'} w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-40`}>
           <div className="bg-white rounded-lg p-3 shadow-2xl border border-slate-200">
