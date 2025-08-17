@@ -119,6 +119,7 @@ module.exports = {
         'gradient-shift': 'gradientShift 20s ease infinite',
         'float': 'float 6s ease-in-out infinite',
         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
       },
       keyframes: {
         gradientShift: {
