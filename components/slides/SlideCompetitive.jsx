@@ -15,13 +15,15 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-8"
+        className="text-center mb-6"
       >
         <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
           Competitive Landscape
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
-          Who Actually Stops Risk?
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="text-slate-900">They're Fighting </span>
+          <span className="text-slate-400 line-through">Yesterday's</span>
+          <span className="text-slate-900"> War</span>
         </h1>
       </motion.div>
 
@@ -30,7 +32,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative rounded-2xl overflow-hidden mb-8"
+        className="relative rounded-2xl overflow-hidden mb-6"
       >
         {/* Grainy gradient background */}
         <div 
@@ -69,16 +71,16 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
 
             {/* Quadrant Labels */}
             <div className="absolute top-4 left-4 text-xs text-slate-400 font-medium">
-              Prevents (Limited View)
+              Some Prevention (Narrow)
             </div>
             <div className="absolute top-4 right-4 text-xs text-above-rose-600 font-bold">
-              Prevents Everything
+              Prevention + Visibility
             </div>
             <div className="absolute bottom-4 left-4 text-xs text-slate-400 font-medium">
-              Detects (Limited View)
+              Limited Detection
             </div>
             <div className="absolute bottom-4 right-4 text-xs text-slate-400 font-medium">
-              Detects Everything
+              Detection Only
             </div>
 
             {/* Competitor Points with comprehensive hover */}
@@ -98,14 +100,14 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
             
             <CompetitorPoint
               name="DTEX"
-              left="45%"
-              bottom="45%"
+              left="60%"
+              top="30%"
               details={{
-                sees: "User behavior metadata, patterns, anomalies",
-                blind: "Content details, real-time coaching",
-                response: "Behavioral alerts, some prevention",
-                gap: "Metadata only, no app content",
-                approach: "Lightweight forwarders (<5MB/day)"
+                sees: "User behavior, Zero Trust context, patterns",
+                blind: "App internals, real-time coaching",
+                response: "Proactive alerts, risk mitigation",
+                gap: "No content visibility, complex setup",
+                approach: "Privacy-first, <5MB/day, scales to 500K+"
               }}
               delay={0.6}
             />
@@ -126,8 +128,8 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
             
             <CompetitorPoint
               name="Proofpoint"
-              left="75%"
-              bottom="45%"
+              left="65%"
+              bottom="30%"
               details={{
                 sees: "Screen recording, user timeline",
                 blind: "Intent, semantics, real-time prevention",
@@ -139,89 +141,66 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
             />
             
             <CompetitorPoint
+              name="Forcepoint"
+              left="45%"
+              bottom="35%"
+              details={{
+                sees: "User behavior, risk scores, DLP events",
+                blind: "App internals, real intent",
+                response: "Risk-adaptive policies",
+                gap: "Rule-heavy, complex deployment",
+                approach: "Behavioral DLP + UEBA"
+              }}
+              delay={0.85}
+            />
+            
+            <CompetitorPoint
               name="Code42"
               left="40%"
               top="25%"
               details={{
                 sees: "File movements, data at rest/in motion",
-                blind: "Web app activity, SaaS actions",
+                blind: "App activity, SaaS actions",
                 response: "Coaching + blocking for files",
-                gap: "File-centric, misses app context",
+                gap: "File-centric, misses 87% of app risk",
                 approach: "Cloud-native with coaching"
               }}
               delay={0.9}
             />
             
             {/* Above - Hero position */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1.1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="absolute"
-              style={{ right: '10%', top: '10%' }}
-            >
-              <div className="relative group">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-above-rose-400/30 rounded-full blur-2xl animate-pulse"></div>
-                
-                {/* Main point */}
-                <div className="relative w-20 h-20 bg-gradient-to-br from-above-rose-400 to-above-peach-400 rounded-full flex items-center justify-center border-4 border-white shadow-xl">
-                  <span className="text-white font-bold">Above</span>
-                </div>
-                
-                {/* Comprehensive hover card */}
-                <div className="absolute top-24 -right-4 w-72 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
-                  <div className="bg-white rounded-xl p-4 shadow-2xl border border-above-rose-200/50">
-                    <div className="text-sm font-bold text-slate-900 mb-3">The Only Complete Solution</div>
-                    <div className="space-y-2 text-xs">
-                      <div>
-                        <span className="font-semibold text-above-rose-600">Sees:</span>
-                        <span className="text-slate-700"> Everything - inside all web apps with LLM understanding</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-above-rose-600">Response:</span>
-                        <span className="text-slate-700"> Real-time coaching before mistakes happen</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-above-rose-600">Unique:</span>
-                        <span className="text-slate-700"> No predefinition needed - LLM understands context & intent</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-above-rose-600">Deploy:</span>
-                        <span className="text-slate-700"> 4 minutes, no agents, no rules</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Label */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <div className="text-xs font-bold text-above-rose-600">100% Visibility + Prevention</div>
-                </div>
-              </div>
-            </motion.div>
+            <CompetitorPoint
+              name="Above"
+              right="15%"
+              top="15%"
+              details={{
+                sees: "Everything - inside all apps with LLM understanding",
+                blind: "Nothing - complete visibility across all surfaces",
+                response: "Real-time coaching before mistakes happen",
+                gap: "None - comprehensive protection",
+                approach: "AI-powered, no rules needed"
+              }}
+              delay={1.2}
+              isHero={true}
+            />
           </div>
         </div>
       </motion.div>
 
-      {/* Key Differentiators */}
+      {/* Key Differentiators - Now 3 columns without "No Agents" */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
-        className="grid grid-cols-4 gap-4 mb-8"
+        className="grid grid-cols-3 gap-4 mb-6 max-w-3xl mx-auto"
       >
         <div className="bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/50 p-4 text-center">
           <div className="text-2xl font-bold text-above-rose-600 mb-1">No Rules</div>
           <div className="text-xs text-slate-600">LLM understands intent</div>
         </div>
         <div className="bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/50 p-4 text-center">
-          <div className="text-2xl font-bold text-above-rose-600 mb-1">No Agents</div>
-          <div className="text-xs text-slate-600">Browser-native sensor</div>
-        </div>
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/50 p-4 text-center">
           <div className="text-2xl font-bold text-above-rose-600 mb-1">No Blind Spots</div>
-          <div className="text-xs text-slate-600">Sees inside all web apps</div>
+          <div className="text-xs text-slate-600">Sees inside all apps</div>
         </div>
         <div className="bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/50 p-4 text-center">
           <div className="text-2xl font-bold text-above-rose-600 mb-1">Real-time</div>
@@ -249,7 +228,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
   );
 }
 
-function CompetitorPoint({ name, left, right, top, bottom, details, delay }) {
+function CompetitorPoint({ name, left, right, top, bottom, details, delay, isHero }) {
   const style = {};
   if (left) style.left = left;
   if (right) style.right = right;
@@ -259,19 +238,24 @@ function CompetitorPoint({ name, left, right, top, bottom, details, delay }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: 1, scale: isHero ? 1.2 : 1 }}
       transition={{ duration: 0.5, delay }}
       className="absolute group"
       style={style}
     >
       <div className="relative">
+        {/* Gradient glow for hero */}
+        {isHero && (
+          <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/50 to-above-peach-400/50 rounded-full blur-xl scale-125"></div>
+        )}
+        
         {/* Point */}
-        <div className="w-12 h-12 bg-white border-2 border-slate-300 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all hover:scale-110 cursor-pointer">
-          <span className="text-xs font-bold text-slate-600">{name[0]}</span>
+        <div className={`relative ${isHero ? 'w-14 h-14' : 'w-12 h-12'} ${isHero ? 'bg-gradient-to-br from-above-rose-500 via-above-rose-400 to-above-peach-400' : 'bg-white'} border-2 ${isHero ? 'border-white' : 'border-slate-300'} rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all hover:scale-110 cursor-pointer`}>
+          <span className={`text-xs font-bold ${isHero ? 'text-white' : 'text-slate-600'}`}>{name[0]}</span>
         </div>
         
         {/* Label */}
-        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-medium text-slate-600 whitespace-nowrap">
+        <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-medium ${isHero ? 'text-above-rose-600 font-bold' : 'text-slate-600'} whitespace-nowrap`}>
           {name}
         </div>
         
