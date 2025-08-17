@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Logo({ 
     size = "large", 
@@ -29,10 +30,13 @@ export default function Logo({
                 style={{ width: `${pixelSize}px`, height: `${pixelSize}px` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/10 to-above-lavender-400/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
-                <img
+                <Image
                     src="/logo-black.svg"
                     alt="Above Security Logo"
+                    width={pixelSize}
+                    height={pixelSize}
                     className="w-full h-full object-contain relative z-10 drop-shadow-md group-hover:drop-shadow-lg transition-all duration-200"
+                    priority
                 />
             </div>
             {showText && (

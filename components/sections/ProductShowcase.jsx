@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function ProductShowcase({ src, alt }) {
   const [isMobileEnlarged, setIsMobileEnlarged] = useState(false);
@@ -31,10 +32,13 @@ export default function ProductShowcase({ src, alt }) {
               className="relative rounded-t-lg border-white-200 overflow-hidden cursor-pointer md:cursor-default"
               onClick={() => setIsMobileEnlarged(true)}
             >
-              <img
+              <Image
                 src={src}
                 alt={alt}
+                width={1920}
+                height={1080}
                 className="w-full h-auto block"
+                priority
               />
               {/* Subtle fade overlay at bottom */}
               <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/100 via-white/70 to-transparent pointer-events-none" />
@@ -68,9 +72,11 @@ export default function ProductShowcase({ src, alt }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <img
+              <Image
                 src={src}
                 alt={`${alt} - Enlarged`}
+                width={1920}
+                height={1080}
                 className="w-full h-auto block"
               />
             </motion.div>

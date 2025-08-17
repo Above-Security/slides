@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function BrandLogo({ 
@@ -62,11 +63,14 @@ export default function BrandLogo({
                 }}
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-above-rose-400/10 to-above-lavender-400/10 rounded-lg blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-                <img
+                <Image
                     src="/logo-black.svg"
                     alt="Above Security Logo"
+                    width={currentSize.logo}
+                    height={currentSize.logo}
                     className="w-full h-full object-contain relative z-10 drop-shadow-sm group-hover:drop-shadow-md transition-all duration-200"
                     style={{ filter: 'contrast(1.1)' }}
+                    priority
                 />
             </div>
             

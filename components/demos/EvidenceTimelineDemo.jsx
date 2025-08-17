@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import UIChrome from "../primitives/UIChrome";
 
 export default function EvidenceTimelineDemo() {
@@ -26,10 +27,13 @@ export default function EvidenceTimelineDemo() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <img
+                    <Image
                         src={imageSrc}
                         alt="Evidence Timeline Dashboard"
+                        width={1920}
+                        height={1080}
                         className="w-full h-auto block"
+                        priority
                     />
 
                     {/* Glowing border effect on hover */}
@@ -69,9 +73,11 @@ export default function EvidenceTimelineDemo() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                            <img
+                            <Image
                                 src={imageSrc}
                                 alt="Evidence Timeline Dashboard - Enlarged"
+                                width={1920}
+                                height={1080}
                                 className="w-full h-auto block"
                             />
                         </motion.div>
@@ -101,9 +107,11 @@ export default function EvidenceTimelineDemo() {
                     <div className="bg-gradient-to-r from-above-blue-50 to-above-rose-50 p-2">
                         <div className="text-xs font-medium text-slate-600 text-center">Evidence Timeline • Full View</div>
                     </div>
-                    <img
+                    <Image
                         src={imageSrc}
                         alt="Evidence Timeline Dashboard - Enlarged"
+                        width={1920}
+                        height={1080}
                         className="w-full h-auto block"
                     />
                 </div>
