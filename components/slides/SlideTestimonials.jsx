@@ -1,22 +1,46 @@
 "use client";
 import { motion } from "framer-motion";
 
+// Component for underlined gradient text
+function UnderlinedText({ children }) {
+  return (
+    <span className="relative inline-block">
+      <span className="font-semibold text-slate-900">
+        {children}
+      </span>
+      <span className="absolute inset-x-0 bottom-0 h-[1.5px] bg-gradient-to-r from-above-rose-400 to-above-peach-400" />
+    </span>
+  );
+}
+
 export default function SlideTestimonials({ isPresenterMode, slideNumber }) {
   const testimonials = [
     {
-      quote: "For truly harmful insider threats, proving and documenting malicious intent is too often a backwards looking process and a real challenge when the activity and data are in third party web applications. You don't want to be sifting through logs, you want timely notification and evidence to be able to hand to your HR and Legal investigative partners.",
+      quote: (
+        <>
+          For truly harmful insider threats, proving and documenting malicious intent is too often a <UnderlinedText>backwards looking process</UnderlinedText> and a real challenge when the activity and data are in third party web applications. You don&apos;t want to be sifting through logs, you want <UnderlinedText>timely notification and evidence</UnderlinedText> to be able to hand to your HR and Legal investigative partners.
+        </>
+      ),
       author: "Carl Erickson",
       title: "Former CISO, Johnson Controls",
       delay: 0.3
     },
     {
-      quote: "The greatest insider risks don't happen at the perimeter—they happen after login. The market urgently needs solutions that illuminate post-authentication blind spots, where trust is assumed but visibility is lost.",
+      quote: (
+        <>
+          The greatest insider risks don&apos;t happen at the perimeter—they happen <UnderlinedText>after login</UnderlinedText>. The market urgently needs solutions that illuminate <UnderlinedText>post-authentication blind spots</UnderlinedText>, where trust is assumed but visibility is lost.
+        </>
+      ),
       author: "Jane Schalk",
       title: "Advisory CISO, Trace3",
       delay: 0.5
     },
     {
-      quote: "Insider risk is hard to measure and get right. Above is solving that by providing visibility into post authentication behaviours, showing user intent and helping CISOs gather evidence on user actions.",
+      quote: (
+        <>
+          Insider risk is hard to measure and get right. Above is solving that by providing <UnderlinedText>visibility into post authentication</UnderlinedText> behaviours, showing <UnderlinedText>user intent</UnderlinedText> and helping CISOs gather evidence on user actions.
+        </>
+      ),
       author: "Israel Bryski",
       title: "CISO, MIO Partners",
       delay: 0.7
@@ -87,9 +111,9 @@ export default function SlideTestimonials({ isPresenterMode, slideNumber }) {
                 </div>
                 
                 {/* Quote Text */}
-                <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                <div className="text-sm text-slate-700 leading-relaxed mb-4">
                   {testimonial.quote}
-                </p>
+                </div>
                 
                 {/* Author */}
                 <div className="flex items-center gap-3">
