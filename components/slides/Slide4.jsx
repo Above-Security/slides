@@ -147,7 +147,7 @@ export default function Slide4({ isPresenterMode, slideNumber }) {
       >
         <div className="inline-block bg-slate-50 rounded-xl px-8 py-4 border border-slate-200">
           <p className="text-lg font-medium text-slate-700">
-            Same LLM intelligence. Two protection modes. Zero blind spots.
+            <span className="font-bold text-slate-900">95% prevented</span> through coaching • <span className="font-bold text-slate-900">5% caught</span> with evidence • <span className="font-bold text-slate-900">100% protected</span>
           </p>
         </div>
       </motion.div>
