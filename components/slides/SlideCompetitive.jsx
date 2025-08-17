@@ -21,8 +21,8 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
           Competitive Landscape
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          <span className="text-slate-900">They're Fighting </span>
-          <span className="text-slate-400 line-through">Yesterday's</span>
+          <span className="text-slate-900">They&apos;re Fighting </span>
+          <span className="text-slate-400 line-through">Yesterday&apos;s</span>
           <span className="text-slate-900"> War</span>
         </h1>
       </motion.div>
@@ -217,7 +217,7 @@ export default function SlideCompetitive({ isPresenterMode, slideNumber }) {
       >
         <div className="inline-block bg-white/90 backdrop-blur-sm rounded-2xl px-8 py-4 border border-slate-200">
           <p className="text-lg font-semibold text-slate-900">
-            Above is the only solution that doesn't need predefinition.
+            Above is the only solution that doesn&apos;t need predefinition.
           </p>
           <p className="text-sm text-slate-600 mt-1">
             Our LLM understands context and intent automatically — no rules, no tuning, just protection.
