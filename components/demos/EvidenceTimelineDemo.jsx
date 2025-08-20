@@ -14,6 +14,7 @@ export default function EvidenceTimelineDemo() {
     useEffect(() => {
         const img = new window.Image();
         img.src = imageSrc;
+
     }, []);
 
     return (
