@@ -1,0 +1,22 @@
+<svg width="290" height="1812" viewBox="0 0 290 1812" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_df_0_4734)">
+<path d="M205.58 733.611C208.573 852.985 209.772 973.807 209.117 1090.1C208.416 1212.48 204.841 1323.89 198.774 1412.42C191.568 1518.31 182.43 1602.68 171.851 1660.96C166.012 1694.19 159.598 1715.38 152.834 1723.78C147.839 1731.34 142.717 1733.67 137.525 1730.76C132.589 1727.18 127.592 1715.82 122.662 1696.96C119.644 1686.48 116.753 1667.63 114.246 1642.09C112.801 1627.74 111.649 1609.59 110.918 1589.65C110.187 1569.71 109.905 1548.76 110.104 1529.14C110.22 1513.54 110.497 1498.52 110.929 1484.39C111.602 1461.78 112.479 1440.46 113.546 1420.76C114.75 1397.38 116.092 1375.35 117.43 1353.11C121.912 1278.81 126.695 1207.4 131.501 1136.19C135.427 1077.75 139.04 1016.19 142.325 951.789C146.387 872.335 149.356 784.187 151.144 689.962C152.562 615.616 153.546 539.419 154.376 462.76C154.995 402.296 155.88 342.828 157.029 284.584C157.775 248.143 158.848 213.398 160.231 180.877C161.186 156.654 162.637 136.37 164.474 121.519C166.607 105.045 167.969 105.719 170.371 127.361C173.746 157.49 176.948 190.561 179.943 226.213C180.243 229.335 180.509 232.904 180.731 236.794C182.139 261.82 183.768 285.283 185.581 306.68C192.623 406.19 198.339 516.636 202.462 632.902C203.887 672.61 204.935 712.142 205.58 733.611Z" fill="url(#paint0_linear_0_4734)"/>
+</g>
+<defs>
+<filter id="filter0_df_0_4734" x="0" y="0" width="289.321" height="1812" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-30" dy="-30"/>
+<feGaussianBlur stdDeviation="40"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_4734"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_4734" result="shape"/>
+<feGaussianBlur stdDeviation="40" result="effect2_foregroundBlur_0_4734"/>
+</filter>
+<linearGradient id="paint0_linear_0_4734" x1="172.45" y1="1613.5" x2="-48.482" y2="1512.52" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B1B3FC"/>
+<stop offset="1" stop-color="#FD8431"/>
+</linearGradient>
+</defs>
+</svg>
